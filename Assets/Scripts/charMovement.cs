@@ -3,20 +3,22 @@ using System.Collections;
 
 public class charMovement : MonoBehaviour {
 	//Fields
-	float speed = 2.0f;
-	float jumpSpeed = 10.0f;
+	public float moveSpeed;
+	public float jumpSpeed;
 
 	// Use this for initialization
-	void Start () {
+	void Start() {
 	}
 
 	// Update is called once per frame
-	void Update () {
-		rigidbody2d.veloctiy = new Vector2 (Input.GetAxis ("Horizontal") * speed, Input.GetAxis ("Vertical") * speed);
-		if (Input.GetButton (JumpButton)) Jump ();
+	void Update() {
+		if (Input.GetKeyDown(KeyCode.Space)) {
+			Jump ();
+		}
+		GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 	}
 
 	void Jump() {
-		rigidbody2D.AddForce (Vector2.up * jumpSpeed);
+		GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpSpeed), ForceMode2D.Impulse);
 	}
 }

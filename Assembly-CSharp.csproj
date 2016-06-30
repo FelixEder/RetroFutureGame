@@ -45,7 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\charMovement.cs" />
+     <Compile Include="Assets\Scripts\CharMovement.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program FilesUnity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

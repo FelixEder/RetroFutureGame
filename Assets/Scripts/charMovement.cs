@@ -12,9 +12,11 @@ public class charMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		var horizontalMove = new Vector2(Input.GetAxis("Horizontal"), 0);
-		var verticalMove = new Vector2(0, Input.GetAxis("Vertical"));
+		var horizontalMove = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+		var verticalMove = new Vector3(0, Input.GetAxis("Vertical"), 0);
 
-		transform.position += horizontalMove * verticalMove * speed * Time.deltaTime;
+		transform.position += horizontalMove * horizontalSpeed * Time.deltaTime;
+		transform.position += verticalMove * verticalSpeed * Time.deltaTime;
 	
+	}
 }

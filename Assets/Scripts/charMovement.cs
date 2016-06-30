@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class charMovement : MonoBehaviour {
 	//Fields
 	float speed = 1.0f;
 
@@ -11,7 +11,7 @@ public class NewBehaviourScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		int move = Vector3(Input.getAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+		var move = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
 		transform.position += move * speed * Time.deltaTime;
 	}
 }

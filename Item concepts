@@ -24,12 +24,14 @@
  - A simple double jump
  
  - A hat that hits everything above you, including certain blocks you need to hit
+ 
+ - A wall-jump, adds an ability to perform wall-jumps when sliding down a ledge.
 
 
 ##Collectibles
 
 - Something that will increase your health if you collected enough of them.
 
-- 
+- If your later futuristic items require some sort of ammo, an obvious choice could be to increase your ammo capacity.
   
 

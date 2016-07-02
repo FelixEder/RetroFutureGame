@@ -8,7 +8,7 @@ public class CharMovement : MonoBehaviour {
 	//Fields
 	public float moveSpeed;
 	public float jumpSpeed;
-	bool isGrounded = false;
+	bool isGrounded = false, onWall = false;
 
 	// Use this for initialization
 	void Start() {
@@ -23,9 +23,7 @@ public class CharMovement : MonoBehaviour {
 	 */
 	void FixedUpdate() {
 		GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-		if (Input.GetKeyDown(KeyCode.Space) && isGrounded) {
-			Jump();
-		}
+		if (Input.GetKeyDown(KeyCode.Space) && isGrounded) Jump();
 	}
 	/**
 	 * When called, makes the player character jump a set height.
@@ -41,6 +39,10 @@ public class CharMovement : MonoBehaviour {
 		if (col.gameObject.tag == "ground") {
 			isGrounded = true;
 		}
+		if (col.gameObject.tag == "wall") {
+			onWall = true;
+			GetComponent<Rigidbody2d> ().velocity.y - 10;
+		}
 	}
 
 	/**
@@ -49,6 +51,9 @@ public class CharMovement : MonoBehaviour {
 	void OnCollisionExit2D(Collision2D col) {
 		if(col.gameObject.tag == "ground") {
 			isGrounded = false;
+		}
+		if (col.gameObject.tag == "wall") {
+			onWall = false;
 		}
 	}
 }

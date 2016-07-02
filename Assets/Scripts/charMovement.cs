@@ -8,7 +8,7 @@ public class CharMovement : MonoBehaviour {
 	//Fields
 	public float moveSpeed;
 	public float jumpSpeed;
-	bool isJumping = false;
+	bool isGrounded = false;
 
 	// Use this for initialization
 	void Start() {
@@ -23,9 +23,8 @@ public class CharMovement : MonoBehaviour {
 	 */
 	void FixedUpdate() {
 		GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-		if (Input.GetKeyDown(KeyCode.Space) && !isJumping) {
+		if (Input.GetKeyDown(KeyCode.Space) && isGrounded) {
 			Jump();
-			isJumping = true;
 		}
 	}
 	/**
@@ -35,9 +34,21 @@ public class CharMovement : MonoBehaviour {
 		GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpSpeed), ForceMode2D.Impulse);
 	}
 
+	/**
+	 * Method is called when player object collides with the ground. 
+	 */
 	void OnCollisionEnter2D(Collision2D col) {
-		if (col.gameObject.tag == "floor") {
-			isJumping = false;
+		if (col.gameObject.tag == "ground") {
+			isGrounded = true;
+		}
+	}
+
+	/**
+	 * Method is called when player object leaves the ground.
+	 */
+	void OnCollisionExit2D(Collision2D col) {
+		if(col.gameObject.tag == "ground") {
+			isGrounded = false;
 		}
 	}
 }

@@ -8,7 +8,7 @@ public class CharMovement : MonoBehaviour {
 	//Fields
 	public float moveSpeed;
 	public float jumpSpeed;
-	bool isGrounded = false, onWall = false;
+	bool isGrounded = false, onLeftWall = false, onRightWall = false;
 
 	// Use this for initialization
 	void Start() {
@@ -22,9 +22,17 @@ public class CharMovement : MonoBehaviour {
 	 * Fixed update executes with a set time interval and calculates all physics equations required.
 	 */
 	void FixedUpdate() {
-		GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-		if (Input.GetKeyDown(KeyCode.Space) && isGrounded) Jump();
+		if (onLeftWall && Input.GetAxis ("Horizontal") < 0) {
+			GetComponent<Rigidbody2D> ().velocity.x = 0;
+		} else if (onRightWall && Input.GetAxis ("Horizontal") > 0) {
+			GetComponent<Rigidbody2D> ().velocity.x = 0;
+		} else {
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (Input.GetAxis ("Horizontal") * moveSpeed, GetComponent<Rigidbody2D> ().velocity.y);
+			if (Input.GetKeyDown (KeyCode.Space) && isGrounded)
+				Jump ();
+		}
 	}
+
 	/**
 	 * When called, makes the player character jump a set height.
 	 */ 
@@ -39,8 +47,12 @@ public class CharMovement : MonoBehaviour {
 		if (col.gameObject.tag == "ground") {
 			isGrounded = true;
 		}
-		if (col.gameObject.tag == "wall") {
-			onWall = true;
+		if (col.gameObject.tag == "leftWall") {
+			onLeftWall = true;
+			GetComponent<Rigidbody2d> ().velocity.y - 10;
+		}
+		if (col.gameObject.tag == "rightWall") {
+			onRightWall = true;
 			GetComponent<Rigidbody2d> ().velocity.y - 10;
 		}
 	}

@@ -23,16 +23,17 @@ public class charMovement : MonoBehaviour {
 
 		moveAcceleration = GetComponent<Rigidbody2D>().velocity.x * moveSpeed + Input.GetAxis("Horizontal");
 		//Rotate charcter model when moving and isJumping is not true.
-		if(Input.GetAxis("Horizontal") < 0){
-			if(!mirrored){
-				transform.rotation = Quaternion.Euler(0, 180, 0);
-				mirrored = true;
-			}
-		}
-		if(Input.GetAxis("Horizontal") > 0){
-			if(mirrored){
-				transform.rotation = Quaternion.Euler(0, 0, 0);
-				mirrored = false;
+		if (!isJumping) {
+			if (Input.GetAxis ("Horizontal") < 0) {
+				if (!mirrored) {
+					transform.rotation = Quaternion.Euler (0, 180, 0);
+					mirrored = true;
+				}
+			} else if (Input.GetAxis ("Horizontal") > 0) {
+				if (mirrored) {
+					transform.rotation = Quaternion.Euler (0, 0, 0);
+					mirrored = false;
+				}
 			}
 		}
 		if(moveAcceleration > maxMoveSpeed) {

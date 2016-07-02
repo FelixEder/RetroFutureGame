@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 //This class handles the movement for the player, including walking and jumps.
-public class CharMovement : MonoBehaviour {
+public class charMovement : MonoBehaviour {
 	//Fields
 	public float moveSpeed, airMoveSpeed, maxMoveSpeed, jumpSpeed;
 	float moveAcceleration;
@@ -19,21 +20,19 @@ public class CharMovement : MonoBehaviour {
 	//FixedUpdate executes with a set time interval and calculates all physics equations required.
 	void FixedUpdate() {
 		//Walk
-		if(isJumping) {
-			moveAcceleration = GetComponent<Rigidbody2D>().velocity.x * airMoveSpeed + Input.GetAxis("Horizontal");
-		}
-		else {
-			moveAcceleration = GetComponent<Rigidbody2D>().velocity.x * moveSpeed + Input.GetAxis("Horizontal");
-			//Rotate charcter model when moving and isJumping is not true.
-			if(Input.GetAxis("Horizontal") < 0){
-				if(!mirrored){
-					transform.rotation = Quaternion.Euler(0, 180, 0);
-				}
+
+		moveAcceleration = GetComponent<Rigidbody2D>().velocity.x * moveSpeed + Input.GetAxis("Horizontal");
+		//Rotate charcter model when moving and isJumping is not true.
+		if(Input.GetAxis("Horizontal") < 0){
+			if(!mirrored){
+				transform.rotation = Quaternion.Euler(0, 180, 0);
+				mirrored = true;
 			}
-			if(Input.GetAxis("Horizontal") > 0){
-				if(mirrored){
-					transform.rotation = Quaternion.Euler(0, 0, 0);
-				}
+		}
+		if(Input.GetAxis("Horizontal") > 0){
+			if(mirrored){
+				transform.rotation = Quaternion.Euler(0, 0, 0);
+				mirrored = false;
 			}
 		}
 		if(moveAcceleration > maxMoveSpeed) {

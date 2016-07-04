@@ -1,0 +1,32 @@
+###Enemy & boss concepts
+
+##Enemies
+
+1- A quadratic Goomba-like creature that simply walks left and changes to right if it hits a wall or equal.
+
+2- An similiar enemy but twice as big and has a really thich shell. This requires the player to use a stone or mecha-hand
+to destroy shell and reveal the softer enemy on the inside. This can at first be a mini-boss which then becomes a regular enemy.
+
+3- An enemy with a impenetrable skin, it's only weak spot is an eye that can be poked at with a stick or the ray gun.
+
+4- A jumping version of number 1, jumps back and forth, making your life miserable.
+
+
+##Bosses
+
+- The statue
+A giant statue in a huge room. It can't move, but when you enter the room and pass a certain spot, the music changes
+and room changes color. The statue fires lasers from it's mouth, but it's always clear when and where the statue will be firing. 
+The goal is to climb the statue, avoid it's simple attacks and reach it's mouth. A few branches lies in it's mouth, these can
+be picked up. Then continue climbing the statue until you reach it's eyes. Poke each eye 2-3 times and it will crumble.
+You wake up in it's ruins and can continue your journey. The remains of the statue should always be seen in this room.
+
+- The Burrower
+In the lowest place in the map, a sort of mole hides. By this point you have the crawl ability, so you enter a system of tunnels.
+In there, a little creature lurks. Since you cannot attack while crawling, it poses a serious danger. It has no real attacks,
+but walks a certain pattern in the tunnels. Your job is to surpass it and then somehow either punch it when you have an opening
+or drop something on it or something like that.
+
+- Final Boss
+Something that incorporates most of your mechanics in an epic boss fight. Should end with a timer which forces you to run all
+the way back to your entry point on the chair.

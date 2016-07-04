@@ -6,15 +6,15 @@ public class PlatformLogic : MonoBehaviour {
 
 	}
 
-	void OnCollisionEnter2d(Collission2d col) {
-		if (col.gameObject.tag == "charPlatformCollider") {
-			GetComponent<Collider> ().isTrigger = true;
+	void OnCollisionEnter2d(Collision2D col) {
+		if (col.gameObject.name == "platformTrigger") {
+			Physics2D.IgnoreCollision (col.collider, GameObject.Find ("char").GetComponent<Collider2D> (), true);
 		}
 	}
 
-	void OnTriggerExit2d(Collider2d col) {
-		if (col.gameObject.tag == "charPlatformCollider") {
-			GetComponent<Collider> ().isTrigger = false;
+	void OnCollisionExit2d(Collision2D col) {
+		if (col.gameObject.name == "platformTrigger") {
+			Physics2D.IgnoreCollision (col.collider, GameObject.Find ("char").GetComponent<Collider2D> (), false);
 		}
 	}
 }

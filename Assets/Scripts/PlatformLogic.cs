@@ -6,18 +6,14 @@ public class PlatformLogic : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col) {
 		if (col.gameObject.name == "platformTrigger") {
-			IgnorePlatformCollision (true);
+			Physics2D.IgnoreLayerCollision (8, 9, true);
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D col) {
 		if (col.gameObject.name == "platformTrigger") {
-			IgnorePlatformCollision (false);
+			Physics2D.IgnoreLayerCollision (8, 9, false);
 		}
-	}
-
-	public void IgnorePlatformCollision(bool input) {
-		Physics2D.IgnoreCollision (GetComponent<Collider2D> (), GameObject.Find ("char").GetComponent<Collider2D> (), input);
 	}
 }
 

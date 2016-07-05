@@ -5,6 +5,7 @@ public class CharJump : MonoBehaviour {
 	CharStatus status;
 	PlatformLogic logic;
 	public float jumpSpeed;
+	bool jumpDown;
 
 	void Start () {
 		status = GetComponent<CharStatus> ();
@@ -16,12 +17,12 @@ public class CharJump : MonoBehaviour {
 			status.spaceDown = false;
 		}
 		if (Input.GetKey (KeyCode.Space) && Input.GetAxis ("Vertical") < -0.5 && status.onGround) {
-			logic.IgnorePlatformCollision (true);
-			logic.jumpDown = true;
+			Physics2D.IgnoreLayerCollision (8, 9, true);
+			jumpDown = true;
 		}
-		 else if (!Input.GetKey (KeyCode.Space) && Input.GetAxis ("Vertical") > -0.5 && logic.jumpDown) {
-			logic.IgnorePlatformCollision (false);
-			logic.jumpDown = false;
+		 else if (!Input.GetKey (KeyCode.Space) && Input.GetAxis ("Vertical") > -0.5 && jumpDown) {
+			Physics2D.IgnoreLayerCollision (8, 9, false);
+			jumpDown = false;
 		}
 		else if (Input.GetKey (KeyCode.Space) && status.onGround && !status.spaceDown) {
 			GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0, jumpSpeed), ForceMode2D.Impulse);

@@ -6,13 +6,13 @@ public class CharPunch : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D victim) {
 		if(Input.GetKey(KeyCode.K)) {
 			//Here an animation and music will be played
-			switch(victim) {
+			switch(victim.gameObject.tag) {
 
-			case GameObject.tag("door"):
-				GetComponent<Door>().setInvisible ();
+			case "door" :
+				GetComponent<Door>().setInvisible (victim.gameObject);
 				break;
 
-			case GameObject.tag("softEnemy") :
+			case "softEnemy" :
 				break;
 			}
 		}

@@ -3,12 +3,12 @@ using System.Collections;
 
 public class Door : MonoBehaviour {
 
-	public void changeVisibility() {
-		gameObject.renderer.enabled = false;
+	public void setInvisible(GameObject smashedDoor) {
+		smashedDoor.GetComponent<Renderer>().enabled = false;
 	}
 
 	void OnBecameInvisible() {
-		gameObject.renderer.enabled = true;
+		gameObject.GetComponent<Renderer>().enabled = true;
 	}
 }
 

@@ -27,4 +27,17 @@ public class CharJump : MonoBehaviour {
 			status.spaceDown = true;
 		}
 	}
+	/*
+	function Update () {
+		//tracks if the button combo for falling through is pressed
+		//usually in video games this is down + jump
+		if(Input.GetAxis("Vertical") == -1){
+			//the layer moving platforms cannot collide with
+			gameObject.layer = 9;
+		}
+		else{
+			gameObject.layer = 0; //default layer
+		}
+	}
+	*/
 }

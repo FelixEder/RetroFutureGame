@@ -35,25 +35,27 @@ public class CharMovement : MonoBehaviour {
 		//Movement for when in air.
 		else if (!status.onGround) {
 			if (Mathf.Abs (rigidBody2D.velocity.x) < maxMoveSpeed) {
-				rigidBody2D.AddForce (Vector2.right * axisH * airSpeed);
+				rigidBody2D.velocity = new Vector2 (axisH * airSpeed, rigidBody2D.velocity.y);
 			} else if (Mathf.Sign (axisH) != Mathf.Sign (rigidBody2D.velocity.x)) {
-				rigidBody2D.AddForce (Vector2.right * axisH * airSpeed);
+				rigidBody2D.velocity = new Vector2 (axisH * airSpeed, rigidBody2D.velocity.y);
 			}
 		}
 		//Movement
 		else if (Mathf.Abs (rigidBody2D.velocity.x) < maxMoveSpeed) {
-			rigidBody2D.AddForce (Vector2.right * axisH * moveSpeed);
+			rigidBody2D.velocity = new Vector2 (axisH * moveSpeed, rigidBody2D.velocity.y);
 		} else if (Mathf.Sign (axisH) != Mathf.Sign (rigidBody2D.velocity.x)) {
-			rigidBody2D.AddForce (Vector2.right * axisH * moveSpeed);
+			rigidBody2D.velocity = new Vector2 (axisH * moveSpeed, rigidBody2D.velocity.y);
 		}
 		//Decrease velocity when not trying to move.
+		/*
 		if (axisH == 0 && status.onGround) {
 			if (rigidBody2D.velocity.x > maxMoveSpeed / 3) {
-				rigidBody2D.AddForce (Vector2.left * moveSpeed);
+				rigidBody2D.velocity = new Vector2 (axisH * moveSpeed, rigidBody2D.velocity.y);
 			}
 			else if (rigidBody2D.velocity.x < maxMoveSpeed / -3) {
-				rigidBody2D.AddForce (Vector2.right * moveSpeed);
+				rigidBody2D.velocity = new Vector2 (axisH * moveSpeed, rigidBody2D.velocity.y);
 			}
 		}
+		*/
 	}
 }

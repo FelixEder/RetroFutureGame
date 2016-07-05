@@ -3,18 +3,19 @@ using System.Collections;
 
 public class PlatformLogic : MonoBehaviour {
 	void Update() {
-
 	}
 
-	void OnCollisionEnter2d(Collision2D col) {
+	void OnTriggerEnter2D(Collider2D col) {
 		if (col.gameObject.name == "platformTrigger") {
-			Physics2D.IgnoreCollision (col.collider, GameObject.Find ("char").GetComponent<Collider2D> (), true);
+			Debug.Log ("collision enter");
+			Physics2D.IgnoreCollision (GetComponent<Collider2D>(), GameObject.Find("char").GetComponent<Collider2D>(), true);
 		}
 	}
 
-	void OnCollisionExit2d(Collision2D col) {
+	void OnTriggerExit2D(Collider2D col) {
 		if (col.gameObject.name == "platformTrigger") {
-			Physics2D.IgnoreCollision (col.collider, GameObject.Find ("char").GetComponent<Collider2D> (), false);
+			Debug.Log ("collision exit");
+			Physics2D.IgnoreCollision (GetComponent<Collider2D>(), GameObject.Find("char").GetComponent<Collider2D>(), false);
 		}
 	}
 }

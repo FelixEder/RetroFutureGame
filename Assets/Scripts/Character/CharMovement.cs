@@ -6,7 +6,7 @@ public class CharMovement : MonoBehaviour {
 	//Fields
 	CharStatus status;
 	Rigidbody2D rigidBody2D;
-	public float moveSpeed, airSpeed, maxMoveSpeed, moveForce;
+	public float moveSpeed, airSpeed, maxMoveSpeed, moveForce, maxFallSpeed;
 	float axisH;
 
 	//Start is called once on initialization
@@ -22,13 +22,16 @@ public class CharMovement : MonoBehaviour {
 		if (status.onLeftWall && axisH < 0) {
 			if (rigidBody2D.velocity.y < -1) {
 				rigidBody2D.velocity = new Vector2 (0, -1);
-			} else {
+			}
+			else {
 				rigidBody2D.velocity = new Vector2 (0, rigidBody2D.velocity.y);
 			}
-		} else if (status.onRightWall && axisH > 0) {
+		}
+		else if (status.onRightWall && axisH > 0) {
 			if (rigidBody2D.velocity.y < -1) {
 				rigidBody2D.velocity = new Vector2 (0, -1);
-			} else {
+			}
+			else {
 				rigidBody2D.velocity = new Vector2 (0, rigidBody2D.velocity.y);
 			}
 		}
@@ -36,26 +39,20 @@ public class CharMovement : MonoBehaviour {
 		else if (!status.onGround) {
 			if (Mathf.Abs (rigidBody2D.velocity.x) < maxMoveSpeed) {
 				rigidBody2D.velocity = new Vector2 (axisH * airSpeed, rigidBody2D.velocity.y);
-			} else if (Mathf.Sign (axisH) != Mathf.Sign (rigidBody2D.velocity.x)) {
+			}
+			else if (Mathf.Sign (axisH) != Mathf.Sign (rigidBody2D.velocity.x)) {
 				rigidBody2D.velocity = new Vector2 (axisH * airSpeed, rigidBody2D.velocity.y);
 			}
 		}
 		//Movement
 		else if (Mathf.Abs (rigidBody2D.velocity.x) < maxMoveSpeed) {
 			rigidBody2D.velocity = new Vector2 (axisH * moveSpeed, rigidBody2D.velocity.y);
-		} else if (Mathf.Sign (axisH) != Mathf.Sign (rigidBody2D.velocity.x)) {
+		}
+		else if (Mathf.Sign (axisH) != Mathf.Sign (rigidBody2D.velocity.x)) {
 			rigidBody2D.velocity = new Vector2 (axisH * moveSpeed, rigidBody2D.velocity.y);
 		}
-		//Decrease velocity when not trying to move.
-		/*
-		if (axisH == 0 && status.onGround) {
-			if (rigidBody2D.velocity.x > maxMoveSpeed / 3) {
-				rigidBody2D.velocity = new Vector2 (axisH * moveSpeed, rigidBody2D.velocity.y);
-			}
-			else if (rigidBody2D.velocity.x < maxMoveSpeed / -3) {
-				rigidBody2D.velocity = new Vector2 (axisH * moveSpeed, rigidBody2D.velocity.y);
-			}
+		if (rigidBody2D.velocity.y < -8) {
+			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, -8);
 		}
-		*/
 	}
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Emilia\Documents\GitHub\RetroFutureGame\Temp\bin\Debug\Assembly-CSharp.dll
 C:\Users\Emilia\Documents\GitHub\RetroFutureGame\Temp\bin\Debug\Assembly-CSharp.pdb
 C:\Users\Emilia\Documents\GitHub\RetroFutureGame\Temp\bin\Debug\UnityEditor.dll
@@ -19,3 +20,26 @@ C:\Users\Emilia\Documents\GitHub\RetroFutureGame\Temp\bin\Debug\UnityEngine.Netw
 C:\Users\Emilia\Documents\GitHub\RetroFutureGame\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\Emilia\Documents\GitHub\RetroFutureGame\obj\Debug\Assembly-CSharp.dll
 C:\Users\Emilia\Documents\GitHub\RetroFutureGame\obj\Debug\Assembly-CSharp.pdb
+=======
+D:\Spelprojekt\Games\RetroFutureGame\Temp\bin\Debug\Assembly-CSharp.dll
+D:\Spelprojekt\Games\RetroFutureGame\Temp\bin\Debug\Assembly-CSharp.pdb
+D:\Spelprojekt\Games\RetroFutureGame\Temp\bin\Debug\UnityEditor.dll
+D:\Spelprojekt\Games\RetroFutureGame\Temp\bin\Debug\UnityEngine.dll
+D:\Spelprojekt\Games\RetroFutureGame\Temp\bin\Debug\UnityEngine.Networking.dll
+D:\Spelprojekt\Games\RetroFutureGame\Temp\bin\Debug\UnityEngine.UI.dll
+D:\Spelprojekt\Games\RetroFutureGame\Temp\bin\Debug\Mono.Cecil.dll
+D:\Spelprojekt\Games\RetroFutureGame\Temp\bin\Debug\Unity.SerializationLogic.dll
+D:\Spelprojekt\Games\RetroFutureGame\Temp\bin\Debug\Unity.DataContract.dll
+D:\Spelprojekt\Games\RetroFutureGame\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+D:\Spelprojekt\Games\RetroFutureGame\Temp\bin\Debug\Unity.UNetWeaver.dll
+D:\Spelprojekt\Games\RetroFutureGame\Temp\bin\Debug\Unity.CecilTools.dll
+D:\Spelprojekt\Games\RetroFutureGame\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+D:\Spelprojekt\Games\RetroFutureGame\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+D:\Spelprojekt\Games\RetroFutureGame\Temp\bin\Debug\UnityEngine.xml
+D:\Spelprojekt\Games\RetroFutureGame\Temp\bin\Debug\UnityEditor.xml
+D:\Spelprojekt\Games\RetroFutureGame\Temp\bin\Debug\UnityEngine.UI.xml
+D:\Spelprojekt\Games\RetroFutureGame\Temp\bin\Debug\UnityEngine.Networking.xml
+D:\Spelprojekt\Games\RetroFutureGame\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+D:\Spelprojekt\Games\RetroFutureGame\obj\Debug\Assembly-CSharp.dll
+D:\Spelprojekt\Games\RetroFutureGame\obj\Debug\Assembly-CSharp.pdb
+>>>>>>> 3ed4d8f50089038431217d8cfc96ed4b9fafb2b9

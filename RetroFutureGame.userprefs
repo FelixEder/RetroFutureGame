@@ -1,5 +1,6 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character\CharMovement.cs">
     <Files>
       <File FileName="Assets\Scripts\Character\CharMovement.cs" Line="24" Column="46" />
@@ -10,6 +11,20 @@
       <File FileName="Assets\Scripts\Character\CharMirror.cs" Line="13" Column="86" />
       <File FileName="Assets\Scripts\Character\CharPunch.cs" Line="12" Column="24" />
       <File FileName="Assets\Scripts\Interactables\Door.cs" Line="13" Column="32" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character\CharPunch.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Character\CharMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\CharJump.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\CharMirror.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\CharTriggerDown.cs" Line="19" Column="40" />
+      <File FileName="Assets\Scripts\Character\CharStatus.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\CharTriggerBack.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\CharTriggerFront.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlatformLogic.cs" Line="17" Column="4" />
+      <File FileName="Assets\Scripts\Character\CharPunch.cs" Line="11" Column="4" />
+      <File FileName="Assets\Scripts\Interactables\Door.cs" Line="8" Column="3" />
+>>>>>>> 3ed4d8f50089038431217d8cfc96ed4b9fafb2b9
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

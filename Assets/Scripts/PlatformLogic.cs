@@ -2,36 +2,35 @@ using UnityEngine;
 using System.Collections;
 
 public class PlatformLogic : MonoBehaviour {
+	CharJump jump;
+
+	void Start() {
+		jump = GameObject.Find ("char").GetComponent<CharJump> ();
+	}
 
 	void OnTriggerEnter2D(Collider2D col) {
 		if (col.gameObject.name == "char") {
-			Physics2D.IgnoreLayerCollision (8, 9, false);
-			Debug.Log ("enter trigger");
+			ignoreCollision (true);
+		}
+			if (col.gameObject.name == "triggerPlatform" && jump.jumpDown) {
+				ignoreCollision (true);
+				jump.jumpDown = false;
 		}
 	}
 
-	void OnTriggerExit2D(Collider2D col) {
-		if (col.gameObject.name == "char") {
-			Physics2D.IgnoreLayerCollision (8, 9, true);
-			Debug.Log ("exit trigger");
+	void OnTriggerStay2D(Collider2D col) {
+		if (col.gameObject.name == "triggerPlatform" && jump.jumpDown) {
+			ignoreCollision (true);
+			jump.jumpDown = false;
 		}
 	}
-	/*
-	function OnTriggerEnter (jumper: Collider) {
-    //make the parent platform ignore the jumper
-    var platform = transform.parent;
-    Physics.IgnoreCollision(jumper.GetComponent(CharacterController), platform.GetComponent(BoxCollider));
-}
- 
-function OnTriggerExit (jumper: Collider) {
-    //reset jumper's layer to something that the platform collides with
-    //just in case we wanted to jump throgh this one
-    jumper.gameObject.layer = 0;
-   
-    //re-enable collision between jumper and parent platform, so we can stand on top again
-    var platform = transform.parent;
-    Physics.IgnoreCollision(jumper.GetComponent(CharacterController), platform.GetComponent(BoxCollider), false);
-}
-*/
+	void OnTriggerExit2D(Collider2D col) {
+		if (col.gameObject.name == "char") {
+			ignoreCollision (false);
+		}
+	}
+	public void ignoreCollision(bool input) {
+		Physics2D.IgnoreCollision (GameObject.Find ("char").GetComponent<Collider2D> (), transform.parent.GetComponent<Collider2D> (), input);
+	}
 }
 

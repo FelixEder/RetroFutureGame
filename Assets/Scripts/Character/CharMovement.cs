@@ -20,16 +20,16 @@ public class CharMovement : MonoBehaviour {
 		axisH = Input.GetAxis("Horizontal");
 		//Test if trying to move towards wall and stop movement as well as decrease negative y velocity.
 		if (status.onLeftWall && axisH < 0) {
-			if (rigidBody2D.velocity.y < -1) {
-				rigidBody2D.velocity = new Vector2 (0, -1);
+			if (rigidBody2D.velocity.y < -2) {
+				rigidBody2D.velocity = new Vector2 (0, -2);
 			}
 			else {
 				rigidBody2D.velocity = new Vector2 (0, rigidBody2D.velocity.y);
 			}
 		}
 		else if (status.onRightWall && axisH > 0) {
-			if (rigidBody2D.velocity.y < -1) {
-				rigidBody2D.velocity = new Vector2 (0, -1);
+			if (rigidBody2D.velocity.y < -2) {
+				rigidBody2D.velocity = new Vector2 (0, -2);
 			}
 			else {
 				rigidBody2D.velocity = new Vector2 (0, rigidBody2D.velocity.y);
@@ -51,8 +51,8 @@ public class CharMovement : MonoBehaviour {
 		else if (Mathf.Sign (axisH) != Mathf.Sign (rigidBody2D.velocity.x)) {
 			rigidBody2D.velocity = new Vector2 (axisH * moveSpeed, rigidBody2D.velocity.y);
 		}
-		if (rigidBody2D.velocity.y < -8) {
-			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, -8);
+		if (rigidBody2D.velocity.y < -10) {
+			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, -10);
 		}
 	}
 }

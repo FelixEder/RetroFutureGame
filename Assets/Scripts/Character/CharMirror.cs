@@ -10,7 +10,7 @@ public class CharMirror : MonoBehaviour {
 
 	void Update () {
 		//Rotate character model when moving and on ground
-		if (status.onGround) {
+		if (status.onGround || status.onPlatform || status.onLeftWall || status.onRightWall) {
 			if (Input.GetAxis("Horizontal") < 0) {
 				if (!status.isMirrored) {
 					transform.rotation = Quaternion.Euler(0, 180, 0);

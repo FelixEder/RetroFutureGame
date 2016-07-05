@@ -9,7 +9,7 @@ public class CharPunch : MonoBehaviour {
 			switch(victim.gameObject.tag) {
 
 			case "door" :
-				GetComponent<Door>().setInvisible (victim.gameObject);
+				victim.gameObject.GetComponent<Door>().setInvisible ();
 				break;
 
 			case "softEnemy" :

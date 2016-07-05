@@ -3,12 +3,14 @@ using System.Collections;
 
 public class Door : MonoBehaviour {
 
-	public void setInvisible(GameObject smashedDoor) {
-		smashedDoor.GetComponent<Renderer>().enabled = false;
+	public void setInvisible() {
+		GetComponent<Renderer>().enabled = false;
+		GetComponent<Collider2D> ().isTrigger = true;
 	}
 
 	void OnBecameInvisible() {
-		gameObject.GetComponent<Renderer>().enabled = true;
+		GetComponent<Renderer>().enabled = true;
+		GetComponent<Collider2D> ().isTrigger = false;
 	}
 }
 

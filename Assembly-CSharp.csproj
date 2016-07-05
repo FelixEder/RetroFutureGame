@@ -5,7 +5,6 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
     <ProjectGuid>{3CBFC496-3BD9-0ED6-922C-A02C97138AD6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -34,7 +33,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.XML" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
@@ -43,24 +41,24 @@
     <Reference Include="UnityEditor">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CameraMovement.cs" />
-     <Compile Include="Assets\Scripts\Character\CharAttributes.cs" />
-     <Compile Include="Assets\Scripts\Character\CharJump.cs" />
-     <Compile Include="Assets\Scripts\Character\CharMirror.cs" />
-     <Compile Include="Assets\Scripts\Character\CharMovement.cs" />
-     <Compile Include="Assets\Scripts\Character\CharStatus.cs" />
-     <Compile Include="Assets\Scripts\Character\CharTriggerBack.cs" />
-     <Compile Include="Assets\Scripts\Character\CharTriggerDown.cs" />
-     <Compile Include="Assets\Scripts\Character\CharTriggerFront.cs" />
-     <Compile Include="Assets\Scripts\PlatformLogic.cs" />
- <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Networking">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
+    <Compile Include="Assets\Scripts\CameraMovement.cs" />
+    <Compile Include="Assets\Scripts\Character\CharJump.cs" />
+    <Compile Include="Assets\Scripts\Character\CharMirror.cs" />
+    <Compile Include="Assets\Scripts\Character\CharMovement.cs" />
+    <Compile Include="Assets\Scripts\Character\CharStatus.cs" />
+    <Compile Include="Assets\Scripts\Character\CharTriggerBack.cs" />
+    <Compile Include="Assets\Scripts\Character\CharTriggerDown.cs" />
+    <Compile Include="Assets\Scripts\Character\CharTriggerFront.cs" />
+    <Compile Include="Assets\Scripts\PlatformLogic.cs" />
+    <Reference Include="UnityEngine.UI">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -70,5 +68,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  
 </Project>

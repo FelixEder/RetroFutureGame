@@ -1,16 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character\CharStatus.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlatformLogic.cs">
     <Files>
-      <File FileName="Assets\Scripts\Character\CharMovement.cs" Line="54" Column="5" />
-      <File FileName="Assets\Scripts\Character\CharJump.cs" Line="19" Column="4" />
-      <File FileName="Assets\Scripts\Character\CharMirror.cs" Line="22" Column="16" />
-      <File FileName="Assets\Scripts\Character\CharTriggerDown.cs" Line="5" Column="37" />
+      <File FileName="Assets\Scripts\Character\CharMovement.cs" Line="55" Column="66" />
+      <File FileName="Assets\Scripts\Character\CharJump.cs" Line="26" Column="107" />
+      <File FileName="Assets\Scripts\Character\CharMirror.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\CharTriggerDown.cs" Line="9" Column="65" />
       <File FileName="Assets\Scripts\Character\CharStatus.cs" Line="12" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharTriggerBack.cs" Line="14" Column="25" />
+      <File FileName="Assets\Scripts\Character\CharTriggerBack.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Character\CharTriggerFront.cs" Line="1" Column="1" />
       <File FileName="Assets\editor\HiddenObjectExplorer.cs" Line="87" Column="2" />
-      <File FileName="Assets\Scripts\PlatformLogic.cs" Line="18" Column="31" />
+      <File FileName="Assets\Scripts\PlatformLogic.cs" Line="14" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

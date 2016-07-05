@@ -49,10 +49,12 @@
      <Compile Include="Assets\Scripts\Character\CharJump.cs" />
      <Compile Include="Assets\Scripts\Character\CharMirror.cs" />
      <Compile Include="Assets\Scripts\Character\CharMovement.cs" />
+     <Compile Include="Assets\Scripts\Character\CharPunch.cs" />
      <Compile Include="Assets\Scripts\Character\CharStatus.cs" />
      <Compile Include="Assets\Scripts\Character\CharTriggerBack.cs" />
      <Compile Include="Assets\Scripts\Character\CharTriggerDown.cs" />
      <Compile Include="Assets\Scripts\Character\CharTriggerFront.cs" />
+     <Compile Include="Assets\Scripts\Interactables\Door.cs" />
      <Compile Include="Assets\Scripts\PlatformLogic.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Spelprojekt/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

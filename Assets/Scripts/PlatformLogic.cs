@@ -9,12 +9,11 @@ public class PlatformLogic : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
-		if (col.gameObject.name == "char") {
+		if (col.gameObject.name == "char")
 			ignoreCollision (true);
-		}
-			if (col.gameObject.name == "triggerPlatform" && jump.jumpDown) {
-				ignoreCollision (true);
-				jump.jumpDown = false;
+		if (col.gameObject.name == "triggerPlatform" && jump.jumpDown) {
+			ignoreCollision (true);
+			jump.jumpDown = false;
 		}
 	}
 
@@ -25,9 +24,8 @@ public class PlatformLogic : MonoBehaviour {
 		}
 	}
 	void OnTriggerExit2D(Collider2D col) {
-		if (col.gameObject.name == "char") {
+		if (col.gameObject.name == "char")
 			ignoreCollision (false);
-		}
 	}
 	public void ignoreCollision(bool input) {
 		Physics2D.IgnoreCollision (GameObject.Find ("char").GetComponent<Collider2D> (), transform.parent.GetComponent<Collider2D> (), input);

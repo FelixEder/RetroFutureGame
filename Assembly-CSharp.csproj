@@ -56,6 +56,8 @@
      <Compile Include="Assets\Scripts\Character\CharTriggerFront.cs" />
      <Compile Include="Assets\Scripts\Interactables\Door.cs" />
      <Compile Include="Assets\Scripts\PlatformLogic.cs" />
+     <Compile Include="Assets\Scripts\UI\BootCompany.cs" />
+     <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

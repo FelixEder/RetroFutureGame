@@ -3,13 +3,11 @@ using System.Collections;
 
 public class CharJump : MonoBehaviour {
 	CharStatus status;
-	PlatformLogic logic;
 	public float jumpSpeed;
 	public bool jumpDown;
 
 	void Start () {
 		status = GetComponent<CharStatus> ();
-		logic = GetComponent<PlatformLogic> ();
 	}
 		
 	void FixedUpdate () {

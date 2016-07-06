@@ -51,8 +51,8 @@ public class CharMovement : MonoBehaviour {
 		else if (Mathf.Sign (axisH) != Mathf.Sign (rigidBody2D.velocity.x)) {
 			rigidBody2D.velocity = new Vector2 (axisH * moveSpeed, rigidBody2D.velocity.y);
 		}
-		if (rigidBody2D.velocity.y < -10) {
-			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, -10);
+		if (rigidBody2D.velocity.y < maxFallSpeed * -1) {
+			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, maxFallSpeed * -1);
 		}
 	}
 }

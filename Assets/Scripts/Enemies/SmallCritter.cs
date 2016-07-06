@@ -29,18 +29,9 @@ public class SmallCritter : MonoBehaviour {
 			getMirrored;
 			break;
 
-		case "softEnemy":
+		default :
 			getMirrored;
 			break;
-		
-		case "wall" :
-			getMirrored;
-			break;
-		
-		case "door" :
-			getMirrored;
-			break;
-
 		}
 	}
 

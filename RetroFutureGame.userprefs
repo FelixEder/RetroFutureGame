@@ -1,11 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\MainMenu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\SmallCritter.cs">
     <Files>
-      <File FileName="Assets\Scripts\Character\CharMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharJump.cs" Line="10" Column="40" />
-      <File FileName="Assets\Scripts\UI\BootCompany.cs" Line="17" Column="3" />
+      <File FileName="Assets\Scripts\Interactables\Door.cs" Line="8" Column="3" />
+      <File FileName="Assets\Scripts\Character\CharMovement.cs" Line="47" Column="13" />
+      <File FileName="Assets\Scripts\Character\CharJump.cs" Line="21" Column="53" />
+      <File FileName="Assets\Scripts\UI\BootCompany.cs" Line="8" Column="16" />
       <File FileName="Assets\Scripts\UI\MainMenu.cs" Line="6" Column="9" />
+      <File FileName="Assets\Scripts\Character\CharPunch.cs" Line="27" Column="62" />
+      <File FileName="Assets\Scripts\Enemies\SmallCritter.cs" Line="4" Column="44" />
+      <File FileName="Assets\Scripts\Character\CharStatus.cs" Line="5" Column="71" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

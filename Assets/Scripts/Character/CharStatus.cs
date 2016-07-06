@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class CharStatus : MonoBehaviour {
-	public bool onGround, onLeftWall, onRightWall, onPlatform, isMirrored, spaceDown;
+	public bool onGround, onLeftWall, onRightWall, onPlatform, isMirrored;
 	public float velocityX, velocityY;
 	void Update() {
 		velocityX = GetComponent<Rigidbody2D> ().velocity.x;

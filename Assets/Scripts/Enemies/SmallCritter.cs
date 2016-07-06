@@ -2,15 +2,9 @@ using UnityEngine;
 using System.Collections;
 
 public class SmallCritter : MonoBehaviour {
-	Rigidbody2D rigidBody2D;
 	int health = 2;
 	public float moveSpeed;
 	bool isMirrored = false;
-
-
-	void start() {
-		rigidBody2D = gameObject.GetComponent<Rigidbody2D> ();
-	}
 
 	void FixedUpdate() {
 		transform.Translate(new Vector3(moveSpeed * -1, 0, 0));

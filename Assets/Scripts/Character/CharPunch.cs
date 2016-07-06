@@ -13,7 +13,8 @@ public class CharPunch : MonoBehaviour {
 				victim.gameObject.GetComponent<Door>().setInvisible ();
 				break;
 
-			case "softEnemy" :
+			case "softEnemy":
+				victim.gameObject.GetComponent<SmallCritter>.getHurt ();
 				break;
 			}
 		}

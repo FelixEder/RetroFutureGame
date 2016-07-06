@@ -2,43 +2,39 @@ using UnityEngine;
 using System.Collections;
 
 public class SmallCritter : MonoBehaviour {
-	RigidBody2D rb2D;
+	Rigidbody2D rigidBody2D;
 	int health = 2;
 	public float moveSpeed;
 	bool isMirrored = false;
 
 
 	void start() {
-		rb2D = GetComponent<RigidBody2D> ();
+		rigidBody2D = gameObject.GetComponent<Rigidbody2D> ();
 	}
 
 	void FixedUpdate() {
-		if (isMirrored) {
-			rb2D.velocity = new Vector2 (moveSpeed, rb2D.velocity.y);
-		} else {
-			rb2D.velocity = new Vector2 (-1 * moveSpeed, rb2D.velocity.y);
-		}
+		transform.Translate(new Vector3(moveSpeed * -1, 0, 0));
 	}
 
-	void OnCollisionEnter2D(Collision col) {
+	void OnCollisionEnter2D(Collision2D col) {
 
 		switch(col.gameObject.tag) {
 
 		case "char":
 			//Here, the player will be hurt
-			getMirrored;
+			getMirrored();
 			break;
 
 		case "softEnemy":
-			getMirrored;
+			getMirrored();
 			break;
 		
 		case "wall" :
-			getMirrored;
+			getMirrored();
 			break;
 		
 		case "door" :
-			getMirrored;
+			getMirrored();
 			break;
 
 		}
@@ -61,13 +57,13 @@ public class SmallCritter : MonoBehaviour {
 	/**
 	 * Method called when enemy is hit by the player
 	 */
-	void getHurt() {
+	public void getHurt() {
 		//Play a sound and animation.
 		health--;
-		if(health = 0) {
+		if(health == 0) {
 			//Enemy is dead, play animation and sound.
 			Destroy(this.gameObject);
 		}
-		getMirrored;
+		getMirrored();
 	}
 }

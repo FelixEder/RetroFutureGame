@@ -14,7 +14,7 @@ public class CharPunch : MonoBehaviour {
 				break;
 
 			case "softEnemy":
-				victim.gameObject.GetComponent<SmallCritter>.getHurt ();
+				victim.gameObject.GetComponent<SmallCritter>().getHurt ();
 				break;
 			}
 		}

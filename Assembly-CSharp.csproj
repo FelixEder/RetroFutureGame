@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\Character\CharTriggerBack.cs" />
      <Compile Include="Assets\Scripts\Character\CharTriggerDown.cs" />
      <Compile Include="Assets\Scripts\Character\CharTriggerFront.cs" />
+     <Compile Include="Assets\Scripts\Enemies\SmallCritter.cs" />
      <Compile Include="Assets\Scripts\Interactables\Door.cs" />
      <Compile Include="Assets\Scripts\PlatformLogic.cs" />
      <Compile Include="Assets\Scripts\UI\BootCompany.cs" />

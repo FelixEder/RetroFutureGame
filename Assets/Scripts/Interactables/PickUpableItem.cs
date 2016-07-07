@@ -4,7 +4,7 @@ using System.Collections;
 public class PickUpableItem : MonoBehaviour {
 	public float HoldPositionX = 0.341f, HoldPositionY = -0.332f;
 	bool beingHeld;
-
+	public int damage;
 
 	void FixedUpdate() {
 		if (beingHeld) {

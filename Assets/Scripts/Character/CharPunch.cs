@@ -28,12 +28,12 @@ public class CharPunch : MonoBehaviour {
 
 			case "rock":
 				//Play correct animation
-				damage = 2;
+				damage = holdingItem.damage;
 				break;
 
 			case "branch":
 				//Play correct animation
-				damage = 1;
+				damage = holdingItem.damage;
 				break;
 			}
 		}

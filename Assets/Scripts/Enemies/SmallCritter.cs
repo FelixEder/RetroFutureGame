@@ -41,8 +41,8 @@ public class SmallCritter : MonoBehaviour {
 			break;
 
 		case "rock":
-			if (col.gameObject.GetComponent<Rigidbody2D>.velocity.magnitude > 3.0f) {
-				getHurt (2);
+			if (col.gameObject.GetComponent<Rigidbody2D>.velocity.magnitude >= 3.0f) {
+				getHurt (col.gameObject.damage);
 			}
 			getMirrored ();
 		}

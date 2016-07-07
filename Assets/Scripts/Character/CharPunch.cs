@@ -4,7 +4,7 @@ using System.Collections;
 public class CharPunch : MonoBehaviour {
 	CharInventory charInventory;
 	bool holdPunch;
-	string attackType;
+	string attackType = "";
 
 	void Start() {
 		charInventory = transform.parent.GetComponent<CharInventory> ();

@@ -1,4 +1,8 @@
-﻿GameObject[] pauseObjects;
+﻿using UnityEngine;
+using System.Collections;
+
+public class UIManager : MonoBehaviour {
+GameObject pauseObjects;
 
 // Use this for initialization
 void Start()
@@ -73,4 +77,6 @@ public void hidePaused()
 public void LoadLevel(string level)
 {
     Application.LoadLevel(level);
+}
+		
 }

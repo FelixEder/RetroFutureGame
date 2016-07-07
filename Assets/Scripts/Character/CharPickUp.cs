@@ -24,6 +24,7 @@ public class CharPickUp : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D col) {
 		if(Input.GetButton ("Pickup") && !holdPickup && !charInventory.isHoldingItem()) {
+			Debug.Log (col.gameObject);
 			holdPickup = true;
 			switch(col.gameObject.tag) {
 

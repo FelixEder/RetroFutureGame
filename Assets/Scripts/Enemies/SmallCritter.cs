@@ -2,12 +2,21 @@ using UnityEngine;
 using System.Collections;
 
 public class SmallCritter : MonoBehaviour {
-	int health = 2;
 	public float moveSpeed;
 	bool isMirrored = false;
+	Rigidbody2D rb2D;
+	int health = 2;
+
+	void Start() {
+		rb2D = GetComponent<Rigidbody2D> ();
+	}
 
 	void FixedUpdate() {
-		transform.Translate(new Vector3(moveSpeed * -1, 0, 0));
+		if (isMirrored) {
+			rb2D.velocity = new Vector2 (moveSpeed, rb2D.velocity.y);
+		} else {
+			rb2D.velocity = new Vector2 (-1 * moveSpeed, rb2D.velocity.y);
+		}
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
@@ -16,7 +25,7 @@ public class SmallCritter : MonoBehaviour {
 
 		case "char":
 			//Here, the player will be hurt
-			getMirrored();
+			//Add force on player
 			break;
 
 		case "softEnemy":

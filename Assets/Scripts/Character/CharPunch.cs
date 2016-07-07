@@ -3,15 +3,14 @@ using System.Collections;
 
 public class CharPunch : MonoBehaviour {
 	CharInventory charInventory;
-	bool isPunching, holdPunch;
-	int damage;
+	bool holdPunch;
 
 	void Start() {
 		charInventory = transform.parent.GetComponent<CharInventory> ();
 	}
 
 	void Update() {
-		if (!Input.GetKey (KeyCode.K) && holdPunch) {
+		if (!Input.GetButton ("Attack") && holdPunch) {
 			holdPunch = false;
 		}
 	}
@@ -20,7 +19,7 @@ public class CharPunch : MonoBehaviour {
 	 * This method determines what kind of attack the player should do.
 	 * It then plays the correct animation and sets the right damage amount.
 	 */
-	void executePunch() {
+	int ExecutePunch() {
 		if (charInventory.isHoldingItem ()) {
 			GameObject holdingItem = charInventory.getHoldingItem ();
 
@@ -28,41 +27,39 @@ public class CharPunch : MonoBehaviour {
 
 			case "rock":
 				//Play correct animation
-				damage = 2;
-				break;
+				return holdingItem.GetComponent<PickUpableItem>().damage;
 
 			case "branch":
 				//Play correct animation
-				damage = 1;
-				break;
+				return holdingItem.GetComponent<PickUpableItem>().damage;
+
+			default:
+				return 1;
+				
 			}
 		}
 		else {
 			//Play the standard animation
-			damage = 1;
+			return 1;
 		}
 	}
 
 	void OnTriggerStay2D(Collider2D victim) {
-		if(Input.GetKey(KeyCode.K) && !holdPunch) {
-			if(!isPunching) {
-				isPunching = true;
-				holdPunch = true;
-				executePunch ();
-				switch (victim.gameObject.tag) {
+		if(Input.GetButton ("Attack") && !holdPunch) {
+			holdPunch = true;
+			int damage = ExecutePunch ();
+			switch (victim.gameObject.tag) {
 
-				case "door":
-					victim.gameObject.GetComponent<Door> ().setInvisible ();
-					break;
+			case "door":
+				victim.gameObject.GetComponent<Door> ().setInvisible ();
+				break;
 
-				case "softEnemy":
-					victim.gameObject.GetComponent<SmallCritter>().getHurt(damage);
-					break;
-				}
-				Debug.Log (victim);
-				//Make it so that this boolean is set to false only when the punch animation is finished
-				isPunching = false;
+			case "softEnemy":
+				victim.gameObject.GetComponent<SmallCritter>().getHurt(damage);
+				break;
 			}
+			Debug.Log (victim);
+			//Make it so that this boolean is set to false only when the punch animation is finished
 		}
 	}
 }

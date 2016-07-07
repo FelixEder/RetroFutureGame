@@ -9,18 +9,16 @@ public class CharMirror : MonoBehaviour {
 	}
 
 	void Update () {
-		//Rotate character model when moving and on ground
-		if (status.onGround || status.onPlatform || status.onLeftWall || status.onRightWall) {
-			if (Input.GetAxis("Horizontal") < 0) {
-				if (!status.isMirrored) {
-					transform.rotation = Quaternion.Euler(0, 180, 0);
-					status.isMirrored = true;
-				}
-			} else if (Input.GetAxis("Horizontal") > 0) {
-				if (status.isMirrored) {
-					transform.rotation = Quaternion.Euler(0, 0, 0);
-					status.isMirrored = false;
-				}
+		//Rotate character model
+		if (Input.GetAxis("Horizontal") < 0) {
+			if (!status.isMirrored) {
+				transform.rotation = Quaternion.Euler(0, 180, 0);
+				status.isMirrored = true;
+			}
+		} else if (Input.GetAxis("Horizontal") > 0) {
+			if (status.isMirrored) {
+				transform.rotation = Quaternion.Euler(0, 0, 0);
+				status.isMirrored = false;
 			}
 		}
 	}

@@ -3,13 +3,18 @@ using System.Collections;
 
 public class CharPickUp : MonoBehaviour {
 	CharInventory charInventory;
+	bool holdPickup;
 
 	void Start() {
 		charInventory = transform.parent.GetComponent<CharInventory> ();
 	}
 
-	void FixedUpdate() {
-		if (Input.GetKey (KeyCode.L) && charInventory.isHoldingItem ()) {
+	void Update() {
+		if (!Input.GetButton ("Pickup") && holdPickup) {
+			holdPickup = false;
+		}
+		if (Input.GetButton ("Pickup") && !holdPickup && charInventory.isHoldingItem ()) {
+			holdPickup = true;
 			charInventory.getHoldingItem ().GetComponent<PickUpableItem> ().Dropped ();
 			charInventory.setHoldingItem (null);
 			//Here the item should be dropped from the player
@@ -18,14 +23,15 @@ public class CharPickUp : MonoBehaviour {
 
 
 	void OnTriggerStay2D(Collider2D col) {
-		switch(col.gameObject.tag) {
+		if(Input.GetButton ("Pickup") && !holdPickup && !charInventory.isHoldingItem()) {
+			holdPickup = true;
+			switch(col.gameObject.tag) {
 
-		case "rock" :
-			if(Input.GetKey(KeyCode.L) && !charInventory.isHoldingItem()) {
+			case "rock" :
 				charInventory.setHoldingItem(col.gameObject);
 				col.gameObject.GetComponent<PickUpableItem>().PickedUp (this.gameObject);
+				break;
 			}
-			break;
 		}
 	}
 }

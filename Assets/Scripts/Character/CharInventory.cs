@@ -11,6 +11,7 @@ public class CharInventory : MonoBehaviour {
 	void Update() {
 		if (healthCollectables == 4) {
 			//Put a method here that permanently increases the players health
+			//Also display some nice graphics
 			healthCollectables = 0;
 		}
 	}
@@ -37,4 +38,3 @@ public class CharInventory : MonoBehaviour {
 	}
 
 }
-

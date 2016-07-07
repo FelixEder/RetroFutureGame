@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\Enemies\SmallCritter.cs" />
      <Compile Include="Assets\Scripts\Interactables\Door.cs" />
      <Compile Include="Assets\Scripts\Interactables\PickUpableItem.cs" />
+     <Compile Include="Assets\Scripts\Interactables\SpecialDoor.cs" />
      <Compile Include="Assets\Scripts\PlatformLogic.cs" />
      <Compile Include="Assets\Scripts\UI\BootCompany.cs" />
      <Compile Include="Assets\Scripts\UI\MainMenu.cs" />

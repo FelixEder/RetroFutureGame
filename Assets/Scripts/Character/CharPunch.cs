@@ -4,6 +4,7 @@ using System.Collections;
 public class CharPunch : MonoBehaviour {
 	CharInventory charInventory;
 	bool holdPunch;
+	string attackType;
 
 	void Start() {
 		charInventory = transform.parent.GetComponent<CharInventory> ();
@@ -27,15 +28,16 @@ public class CharPunch : MonoBehaviour {
 
 			case "rock":
 				//Play correct animation
+				attackType = "rock";
 				return holdingItem.GetComponent<PickUpableItem>().damage;
 
 			case "branch":
 				//Play correct animation
+				attackType = "branch";
 				return holdingItem.GetComponent<PickUpableItem>().damage;
 
 			default:
 				return 1;
-				
 			}
 		}
 		else {
@@ -57,9 +59,14 @@ public class CharPunch : MonoBehaviour {
 			case "softEnemy":
 				victim.gameObject.GetComponent<SmallCritter>().getHurt(damage);
 				break;
+
+			case "specialDoor":
+				if (attackType.Equals(victim.gameObject.GetComponent<SpecialDoor>().getSpecial ())) {
+					victim.gameObject.GetComponent<SpecialDoor> ().getHurt ();
+				}
+				break;
 			}
 			Debug.Log (victim);
-			//Make it so that this boolean is set to false only when the punch animation is finished
 		}
 	}
 }

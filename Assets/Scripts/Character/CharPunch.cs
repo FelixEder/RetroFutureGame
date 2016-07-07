@@ -60,9 +60,9 @@ public class CharPunch : MonoBehaviour {
 				victim.gameObject.GetComponent<SmallCritter>().getHurt(damage);
 				break;
 
-			case "specialDoor":
-				if (attackType.Equals(victim.gameObject.GetComponent<SpecialDoor>().getSpecial ())) {
-					victim.gameObject.GetComponent<SpecialDoor> ().getHurt ();
+			case "barrier":
+				if (attackType.Equals(victim.gameObject.GetComponent<Barriers>().getSpecial ())) {
+					victim.gameObject.GetComponent<Barriers> ().getHurt ();
 				}
 				break;
 			}

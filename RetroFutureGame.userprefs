@@ -1,19 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Interactables\SpecialDoor.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Interactables\Barriers.cs">
     <Files>
-      <File FileName="Assets\Scripts\Interactables\SpecialDoor.cs" Line="26" Column="3" />
-      <File FileName="Assets\Scripts\Character\CharPickUp.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Interactables\PickUpableItem.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Interactables\Barriers.cs" Line="9" Column="24" />
+      <File FileName="Assets\Scripts\Interactables\Door.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Character\CharPunch.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Character\CharInventory.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharMirror.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharStatus.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharJump.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\Knockback.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Interactables\Door.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharTriggerDown.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Interactables\PickUpableItem.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\SmallCritter.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

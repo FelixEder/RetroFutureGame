@@ -4,7 +4,6 @@ using System.Collections;
 public class CharPunch : MonoBehaviour {
 	CharInventory charInventory;
 	bool isPunching, holdPunch;
-	int damage;
 
 	void Start() {
 		charInventory = GetComponent<CharInventory> ();
@@ -20,7 +19,7 @@ public class CharPunch : MonoBehaviour {
 	 * This method determines what kind of attack the player should do.
 	 * It then plays the correct animation and sets the right damage amount.
 	 */
-	void executePunch() {
+	int executePunch() {
 		if (charInventory.isHoldingItem ()) {
 			GameObject holdingItem = charInventory.getHoldingItem ();
 
@@ -28,18 +27,16 @@ public class CharPunch : MonoBehaviour {
 
 			case "rock":
 				//Play correct animation
-				damage = holdingItem.damage;
-				break;
+				return holdingItem.damage;
 
 			case "branch":
 				//Play correct animation
-				damage = holdingItem.damage;
-				break;
+				return holdingItem.damage;
 			}
 		}
 		else {
 			//Play the standard animation
-			damage = 1;
+			return 1;
 		}
 	}
 
@@ -48,7 +45,7 @@ public class CharPunch : MonoBehaviour {
 			if(!isPunching) {
 				isPunching = true;
 				holdPunch = true;
-				executePunch ();
+				int damage = executePunch ();
 				switch (victim.gameObject.tag) {
 
 				case "door":

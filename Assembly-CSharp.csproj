@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\Character\CharTriggerDown.cs" />
      <Compile Include="Assets\Scripts\Character\CharTriggerFront.cs" />
      <Compile Include="Assets\Scripts\Character\Knockback.cs" />
+     <Compile Include="Assets\Scripts\Character\Upgrades\CharFloat.cs" />
      <Compile Include="Assets\Scripts\Enemies\SmallCritter.cs" />
      <Compile Include="Assets\Scripts\Interactables\Barriers.cs" />
      <Compile Include="Assets\Scripts\Interactables\Door.cs" />

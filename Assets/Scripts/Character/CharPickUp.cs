@@ -20,8 +20,7 @@ public class CharPickUp : MonoBehaviour {
 			//Here the item should be dropped from the player
 		}
 	}
-
-
+		
 	void OnTriggerStay2D(Collider2D col) {
 		if(Input.GetButton ("Pickup") && !holdPickup && !charInventory.isHoldingItem()) {
 			Debug.Log (col.gameObject);

@@ -5,7 +5,7 @@ public class CharPickUp : MonoBehaviour {
 	CharInventory charInventory;
 
 	void Start() {
-		charInventory = GetComponent<CharInventory> ();
+		charInventory = transform.parent.GetComponent<CharInventory> ();
 	}
 
 	void FixedUpdate() {
@@ -16,7 +16,7 @@ public class CharPickUp : MonoBehaviour {
 	}
 
 
-	void OnCollisionStay2D(Collision2D col) {
+	void OnTriggerStay2D(Collider2D col) {
 		switch(col.gameObject.tag) {
 
 		case "rock" :

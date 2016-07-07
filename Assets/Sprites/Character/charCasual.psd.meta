@@ -71,10 +71,14 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -20, y: 26}
-        - {x: -20, y: -26}
-        - {x: 20, y: -26}
-        - {x: 20, y: 26}
+      - - {x: 7, y: 26}
+        - {x: -6, y: 26}
+        - {x: -12, y: 18}
+        - {x: -12, y: -25}
+        - {x: -11, y: -26}
+        - {x: 11, y: -26}
+        - {x: 11, y: 18}
+        - {x: 9, y: 25}
     - name: charCasual_1
       rect:
         serializedVersion: 2
@@ -86,10 +90,14 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -20, y: 26}
-        - {x: -20, y: -26}
-        - {x: 20, y: -26}
-        - {x: 20, y: 26}
+      - - {x: -8, y: 26}
+        - {x: -13, y: 14}
+        - {x: -13, y: -21}
+        - {x: -9, y: -26}
+        - {x: 11, y: -26}
+        - {x: 13, y: -20}
+        - {x: 13, y: 13}
+        - {x: 11, y: 26}
     - name: charCasual_2
       rect:
         serializedVersion: 2
@@ -101,10 +109,14 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -20, y: 26}
-        - {x: -20, y: -26}
-        - {x: 20, y: -26}
-        - {x: 20, y: 26}
+      - - {x: -13, y: 26}
+        - {x: -15, y: 20}
+        - {x: -15, y: -22}
+        - {x: -7, y: -26}
+        - {x: 11, y: -26}
+        - {x: 18, y: -10}
+        - {x: 18, y: 12}
+        - {x: 8, y: 26}
     - name: charCasual_3
       rect:
         serializedVersion: 2
@@ -116,10 +128,14 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -20, y: 26}
-        - {x: -20, y: -26}
-        - {x: 20, y: -26}
-        - {x: 20, y: 26}
+      - - {x: -5, y: 26}
+        - {x: -16, y: 9}
+        - {x: -16, y: -11}
+        - {x: -4, y: -26}
+        - {x: 10, y: -26}
+        - {x: 19, y: -14}
+        - {x: 19, y: 11}
+        - {x: 12, y: 26}
     - name: charCasual_4
       rect:
         serializedVersion: 2
@@ -131,10 +147,14 @@ TextureImporter:
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -20, y: 26}
-        - {x: -20, y: -26}
-        - {x: 20, y: -26}
-        - {x: 20, y: 26}
+      - - {x: -7, y: 26}
+        - {x: -16, y: 17}
+        - {x: -16, y: -16}
+        - {x: -13, y: -26}
+        - {x: 8, y: -26}
+        - {x: 19, y: -13}
+        - {x: 19, y: 10}
+        - {x: 12, y: 26}
     - name: charCasual_5
       rect:
         serializedVersion: 2
@@ -145,11 +165,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -20, y: 26}
-        - {x: -20, y: -26}
-        - {x: 20, y: -26}
-        - {x: 20, y: 26}
+      outline: []
     - name: charCasual_6
       rect:
         serializedVersion: 2
@@ -160,11 +176,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -20, y: 26}
-        - {x: -20, y: -26}
-        - {x: 20, y: -26}
-        - {x: 20, y: 26}
+      outline: []
     - name: charCasual_7
       rect:
         serializedVersion: 2
@@ -175,11 +187,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -20, y: 26}
-        - {x: -20, y: -26}
-        - {x: 20, y: -26}
-        - {x: 20, y: 26}
+      outline: []
     - name: charCasual_8
       rect:
         serializedVersion: 2
@@ -190,11 +198,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -20, y: 26}
-        - {x: -20, y: -26}
-        - {x: 20, y: -26}
-        - {x: 20, y: 26}
+      outline: []
     - name: charCasual_9
       rect:
         serializedVersion: 2
@@ -205,11 +209,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -20, y: 26}
-        - {x: -20, y: -26}
-        - {x: 20, y: -26}
-        - {x: 20, y: 26}
+      outline: []
     outline: []
   spritePackingTag: 
   userData: 

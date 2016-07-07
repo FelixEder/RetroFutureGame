@@ -3,9 +3,6 @@ using System.Collections;
 
 public class Door : MonoBehaviour {
 	public Sprite open, close;
-	void Start() {
-		
-	}
 
 	public void setInvisible() {
 		GetComponent<SpriteRenderer> ().sprite = open;

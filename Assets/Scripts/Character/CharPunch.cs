@@ -27,6 +27,7 @@ public class CharPunch : MonoBehaviour {
 					victim.gameObject.GetComponent<SmallCritter>().getHurt();
 					break;
 				}
+				Debug.Log (victim);
 				//Make it so that this boolean is set to false only when the punch animation is finished
 				isPunching = false;
 			}

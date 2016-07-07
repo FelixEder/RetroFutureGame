@@ -14,6 +14,7 @@ public class PickUpableItem : MonoBehaviour {
 
 	public void PickedUp(GameObject player) {
 		this.gameObject.transform.SetParent (player.transform);
+		this.gameObject.GetComponent<Rigidbody2D> ().isKinematic = true;
 		beingHeld = true;
 	}
 }

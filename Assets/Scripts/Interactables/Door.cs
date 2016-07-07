@@ -14,15 +14,4 @@ public class Door : MonoBehaviour {
 		GetComponent<SpriteRenderer> ().sprite = close;
 		GetComponent<Collider2D> ().isTrigger = false;
 	}
-
-
-
-
-
-
-
-
-
-
 }
-

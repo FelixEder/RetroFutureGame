@@ -10,8 +10,8 @@ public class CharPickUp : MonoBehaviour {
 
 	void FixedUpdate() {
 		if (Input.GetKey (KeyCode.L) && charInventory.isHoldingItem ()) {
-			transform.parent = null;
 			charInventory.setHoldingItem (null);
+			//Here the item should be dropped from the player
 		}
 	}
 
@@ -21,8 +21,8 @@ public class CharPickUp : MonoBehaviour {
 
 		case "rock" :
 			if(Input.GetKey(KeyCode.L) && !charInventory.isHoldingItem()) {
-				charInventory.setHoldingItem(col.gameObject); 
-				col.gameObject.transform.parent = transform;
+				charInventory.setHoldingItem(col.gameObject);
+				col.gameObject.GetComponent<PickUpableItem>().PickedUp (this.gameObject);
 			}
 			break;
 		}

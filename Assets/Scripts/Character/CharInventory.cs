@@ -28,5 +28,13 @@ public class CharInventory : MonoBehaviour {
 	public void setHoldingItem(GameObject itemToHold) {
 		pickUpableItem = itemToHold;
 	}
+
+	/**
+	 * Returns the object held by the player or null if it's not holding anything.
+	 */
+	public Gameobject getHoldingItem() {
+		return pickUpableItem;
+	}
+
 }
 

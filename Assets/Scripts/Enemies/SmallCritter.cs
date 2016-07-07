@@ -60,10 +60,10 @@ public class SmallCritter : MonoBehaviour {
 	/**
 	 * Method called when enemy is hit by the player
 	 */
-	public void getHurt() {
+	public void getHurt(int damage) {
 		//Play a sound and animation.
-		health--;
-		if(health == 0) {
+		health =- damage;
+		if(health <= 0) {
 			//Enemy is dead, play animation and sound.
 			Destroy(this.gameObject);
 		}

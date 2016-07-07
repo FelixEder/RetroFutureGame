@@ -2,11 +2,44 @@ using UnityEngine;
 using System.Collections;
 
 public class CharPunch : MonoBehaviour {
+	CharInventory charInventory;
 	bool isPunching, holdPunch;
+	int damage;
+
+	void Start() {
+		charInventory = GetComponent<CharInventory> ();
+	}
 
 	void Update() {
 		if (!Input.GetKey (KeyCode.K) && holdPunch) {
 			holdPunch = false;
+		}
+	}
+
+	/**
+	 * This method determines what kind of attack the player should do.
+	 * It then plays the correct animation and sets the right damage amount.
+	 */
+	void executePunch() {
+		if (charInventory.isHoldingItem ()) {
+			GameObject holdingItem = charInventory.getHoldingItem ();
+
+			switch (holdingItem.tag) {
+
+			case "rock":
+				//Play correct animation
+				damage = 2;
+				break;
+
+			case "branch":
+				//Play correct animation
+				damage = 1;
+				break;
+			}
+		}
+		else {
+			//Play the standard animation
+			damage = 1;
 		}
 	}
 
@@ -15,8 +48,7 @@ public class CharPunch : MonoBehaviour {
 			if(!isPunching) {
 				isPunching = true;
 				holdPunch = true;
-				//Here an animation and soundFX will be played
-
+				executePunch ();
 				switch (victim.gameObject.tag) {
 
 				case "door":
@@ -24,7 +56,7 @@ public class CharPunch : MonoBehaviour {
 					break;
 
 				case "softEnemy":
-					victim.gameObject.GetComponent<SmallCritter>().getHurt();
+					victim.gameObject.GetComponent<SmallCritter>().getHurt(damage);
 					break;
 				}
 				Debug.Log (victim);

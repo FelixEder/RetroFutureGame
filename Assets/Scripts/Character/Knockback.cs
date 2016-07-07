@@ -10,7 +10,7 @@ public class Knockback : MonoBehaviour {
 		else {
 			wayofKnock = 1;
 		}
-		this.gameObject.GetComponent<Rigidbody2D> ().AddForce (new Vector2 (force * wayofKnock, 0), ForceMode2D.Impulse);
+		this.gameObject.GetComponent<Rigidbody2D> ().AddForce (new Vector2 (force * wayofKnock, 2), ForceMode2D.Impulse);
 	}
 }
 

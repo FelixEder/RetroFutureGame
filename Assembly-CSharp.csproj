@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\Character\CharJump.cs" />
      <Compile Include="Assets\Scripts\Character\CharMirror.cs" />
      <Compile Include="Assets\Scripts\Character\CharMovement.cs" />
+     <Compile Include="Assets\Scripts\Character\CharPickUp.cs" />
      <Compile Include="Assets\Scripts\Character\CharPunch.cs" />
      <Compile Include="Assets\Scripts\Character\CharStatus.cs" />
      <Compile Include="Assets\Scripts\Character\CharTriggerBack.cs" />

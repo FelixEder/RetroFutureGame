@@ -6,11 +6,11 @@ public class CharInventory : MonoBehaviour {
 	public bool leaf, doubleJump, hat, shoes, laserCane;
 	int healthCollectables = 0;
 	//The item that can be picked up by the player
-	GameObject pickUpableItem;
+	public GameObject pickUpableItem;
 
 	void Update() {
 		if (healthCollectables == 4) {
-			//Put a method here that permanently increases the players health;
+			//Put a method here that permanently increases the players health
 			healthCollectables = 0;
 		}
 	}
@@ -20,6 +20,10 @@ public class CharInventory : MonoBehaviour {
 	 */
 	public bool isHoldingItem() {
 		return (pickUpableItem != null);
+	}
+
+	public void setHoldingItem(GameObject itemToHold) {
+		pickUpableItem = itemToHold;
 	}
 }
 

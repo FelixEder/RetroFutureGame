@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class SmallCritter : MonoBehaviour {
-	public float moveSpeed;
+	public float moveSpeed, knockForce;
 	bool isMirrored = false;
 	Rigidbody2D rb2D;
 	int health = 2;
@@ -25,7 +25,7 @@ public class SmallCritter : MonoBehaviour {
 
 		case "char":
 			//Here, the player will be hurt
-			//Add force on player
+			col.gameObject.GetComponent<Knockback>().Knock(this.gameObject, knockForce);
 			break;
 
 		case "softEnemy":

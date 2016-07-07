@@ -26,7 +26,7 @@ public class SpecialDoor : MonoBehaviour {
 	}
 	
 	void OnCollisionEnter2D(Collision2D col) {
-		if (col.gameObject.tag.equals (speciality) && col.gameObject.GetComponent<Rigidbody2D>.velocity.magnitude >= 3.0f) {
+		if (col.gameObject.tag.Equals (speciality) && col.gameObject.GetComponent<Rigidbody2D>.velocity.magnitude >= 3.0f) {
 			getHurt ();
 		}
 	}

@@ -4,6 +4,7 @@ using System.Collections;
 public class CharPunch : MonoBehaviour {
 	CharInventory charInventory;
 	bool isPunching, holdPunch;
+	string attackType;
 
 	void Start() {
 		charInventory = GetComponent<CharInventory> ();
@@ -27,10 +28,12 @@ public class CharPunch : MonoBehaviour {
 
 			case "rock":
 				//Play correct animation
+				attackType = "rock";
 				return holdingItem.damage;
 
 			case "branch":
 				//Play correct animation
+				attackType = "branch";
 				return holdingItem.damage;
 			}
 		}
@@ -57,7 +60,9 @@ public class CharPunch : MonoBehaviour {
 					break;
 
 				case "specialDoor":
-					victim.gameObject.GetComponent<SpecialDoor> ().getHurt ();
+					if (attackType.Equals.victim.gameObject.getSpecial ()) {
+						victim.gameObject.GetComponent<SpecialDoor> ().getHurt ();
+					}
 					break;
 				}
 				Debug.Log (victim);

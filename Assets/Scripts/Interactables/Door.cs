@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Door : MonoBehaviour {
 	public Sprite open, close;
+	public int health;
 
 	public void setInvisible() {
 		GetComponent<SpriteRenderer> ().sprite = open;
@@ -13,5 +14,15 @@ public class Door : MonoBehaviour {
 		GetComponent<SpriteRenderer> ().sprite = close;
 		GetComponent<Collider2D> ().isTrigger = false;
 	}
+
+
+
+
+
+
+
+
+
+
 }
 

@@ -23,12 +23,12 @@ public class SmallCritter : MonoBehaviour {
 
 		switch(col.gameObject.tag) {
 
-		case "char":
+		case "char" :
 			//Here, the player will be hurt
 			col.gameObject.GetComponent<Knockback>().Knock(this.gameObject, knockForce);
 			break;
 
-		case "softEnemy":
+		case "softEnemy" :
 			getMirrored();
 			break;
 		
@@ -40,6 +40,11 @@ public class SmallCritter : MonoBehaviour {
 			getMirrored();
 			break;
 
+		case "rock":
+			if (col.gameObject.GetComponent<Rigidbody2D>.velocity.magnitude > 3.0f) {
+				getHurt (2);
+			}
+			getMirrored ();
 		}
 	}
 

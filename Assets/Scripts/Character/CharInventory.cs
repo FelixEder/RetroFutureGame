@@ -22,6 +22,9 @@ public class CharInventory : MonoBehaviour {
 		return (pickUpableItem != null);
 	}
 
+	/**
+	 * Sets a gameobject to the pickUpableItem-field
+	 */
 	public void setHoldingItem(GameObject itemToHold) {
 		pickUpableItem = itemToHold;
 	}

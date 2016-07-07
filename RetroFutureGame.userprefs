@@ -2,42 +2,19 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Interactables\SpecialDoor.cs">
     <Files>
-      <File FileName="Assets\Scripts\Character\CharPickUp.cs" Line="26" Column="32" />
-      <File FileName="Assets\Scripts\Interactables\PickUpableItem.cs" Line="31" Column="66" />
-      <File FileName="Assets\Scripts\Character\CharPunch.cs" Line="64" Column="24" />
-      <File FileName="Assets\Scripts\Interactables\SpecialDoor.cs" Line="20" Column="25" />
-      <File FileName="Assets\Scripts\Character\CharInventory.cs" Line="35" Column="19" />
-      <File FileName="Assets\Scripts\Character\CharMirror.cs" Line="15" Column="9" />
-      <File FileName="Assets\Scripts\Character\CharStatus.cs" Line="10" Column="12" />
-      <File FileName="Assets\Scripts\Character\CharJump.cs" Line="25" Column="15" />
-      <File FileName="Assets\Scripts\Character\Knockback.cs" Line="13" Column="76" />
-      <File FileName="Assets\Scripts\Enemies\SmallCritter.cs" Line="48" Column="10" />
+      <File FileName="Assets\Scripts\Interactables\SpecialDoor.cs" Line="26" Column="3" />
+      <File FileName="Assets\Scripts\Character\CharPickUp.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Interactables\PickUpableItem.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\CharPunch.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\CharInventory.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\CharMirror.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\CharStatus.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\CharJump.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\Knockback.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Interactables\Door.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharMovement.cs" Line="55" Column="36" />
-      <File FileName="Assets\Scripts\Character\CharTriggerDown.cs" Line="14" Column="27" />
+      <File FileName="Assets\Scripts\Character\CharMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\CharTriggerDown.cs" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="RetroFutureGame" expanded="True">
-            <Node name="Assembly-CSharp" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="Character" expanded="True">
-                  <Node name="CharPickUp.cs" selected="True" />
-                </Node>
-                <Node name="Enemies" expanded="True" />
-                <Node name="Interactables" expanded="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.NUnit.TestPad">
-        <State name="__root__">
-          <Node name="RetroFutureGame" expanded="True" selected="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

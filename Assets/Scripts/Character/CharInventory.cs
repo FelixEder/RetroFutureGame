@@ -32,7 +32,7 @@ public class CharInventory : MonoBehaviour {
 	/**
 	 * Returns the object held by the player or null if it's not holding anything.
 	 */
-	public Gameobject getHoldingItem() {
+	public GameObject getHoldingItem() {
 		return pickUpableItem;
 	}
 

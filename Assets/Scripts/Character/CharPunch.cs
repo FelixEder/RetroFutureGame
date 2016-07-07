@@ -7,7 +7,7 @@ public class CharPunch : MonoBehaviour {
 	int damage;
 
 	void Start() {
-		charInventory = GetComponent<CharInventory> ();
+		charInventory = transform.parent.GetComponent<CharInventory> ();
 	}
 
 	void Update() {

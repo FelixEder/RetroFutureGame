@@ -10,6 +10,7 @@ public class CharPickUp : MonoBehaviour {
 
 	void FixedUpdate() {
 		if (Input.GetKey (KeyCode.L) && charInventory.isHoldingItem ()) {
+			charInventory.getHoldingItem ().GetComponent<PickUpableItem> ().Dropped ();
 			charInventory.setHoldingItem (null);
 			//Here the item should be dropped from the player
 		}

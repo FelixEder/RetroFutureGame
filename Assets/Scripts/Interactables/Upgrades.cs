@@ -11,7 +11,7 @@ public class Upgrades : MonoBehaviour {
 			switch (type) {
 
 			case "leaf":
-				col.gameObject.GetComponent<CharInventory>().leaf = true;
+				col.gameObject.GetComponent<CharFloat>().enabled = true;
 				break;
 			}
 			Destroy (gameObject);

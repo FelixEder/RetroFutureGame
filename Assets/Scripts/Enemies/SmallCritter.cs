@@ -5,7 +5,7 @@ public class SmallCritter : MonoBehaviour {
 	public float moveSpeed, knockForce;
 	bool isMirrored = false;
 	Rigidbody2D rb2D;
-	int health = 2;
+	public int health = 2;
 
 	void Start() {
 		rb2D = GetComponent<Rigidbody2D> ();
@@ -76,7 +76,7 @@ public class SmallCritter : MonoBehaviour {
 	 */
 	public void getHurt(int damage) {
 		//Play a sound and animation.
-		health =- damage;
+		health -= damage;
 		if(health <= 0) {
 			//Enemy is dead, play animation and sound.
 			Destroy(this.gameObject);

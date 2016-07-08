@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CharPunch : MonoBehaviour {
 	CharInventory charInventory;
-	bool holdPunch;
+	public bool holdPunch;
 	string attackType = "";
 
 	void Start() {
@@ -13,6 +13,9 @@ public class CharPunch : MonoBehaviour {
 	void Update() {
 		if (!Input.GetButton ("Attack") && holdPunch) {
 			holdPunch = false;
+		} else if (Input.GetButton ("Attack") && !holdPunch) {
+			Debug.Log ("Trigger free attack!");
+			ExecutePunch ();
 		}
 	}
 
@@ -21,6 +24,7 @@ public class CharPunch : MonoBehaviour {
 	 * It then plays the correct animation and sets the right damage amount.
 	 */
 	int ExecutePunch() {
+		holdPunch = true;
 		if (charInventory.isHoldingItem ()) {
 			GameObject holdingItem = charInventory.getHoldingItem ();
 
@@ -42,16 +46,17 @@ public class CharPunch : MonoBehaviour {
 		}
 		else {
 			//Play the standard animation
-			Debug.Log("Normal punch");
 			return 1;
 		}
 	}
 
+	/**
+	 * Triggered when player punches an object.
+	 */
 	void OnTriggerStay2D(Collider2D victim) {
 		if(Input.GetButton ("Attack") && !holdPunch) {
-			holdPunch = true;
+			Debug.Log ("Attack on Trigger!");
 			int damage = ExecutePunch ();
-			Debug.Log ("Am punching!");
 			switch (victim.gameObject.tag) {
 
 			case "door":

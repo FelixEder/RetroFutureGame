@@ -13,6 +13,10 @@ public class Upgrades : MonoBehaviour {
 			case "leaf":
 				col.gameObject.GetComponent<CharFloat>().enabled = true;
 				break;
+
+			case "highJump":
+				col.gameObject.GetComponent<CharJump> ().jumpSpeed = 15f;
+				break;
 			}
 			Destroy (gameObject);
 		}

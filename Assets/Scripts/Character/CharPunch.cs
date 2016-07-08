@@ -42,6 +42,7 @@ public class CharPunch : MonoBehaviour {
 		}
 		else {
 			//Play the standard animation
+			Debug.Log("Normal punch");
 			return 1;
 		}
 	}
@@ -50,6 +51,7 @@ public class CharPunch : MonoBehaviour {
 		if(Input.GetButton ("Attack") && !holdPunch) {
 			holdPunch = true;
 			int damage = ExecutePunch ();
+			Debug.Log ("Am punching!");
 			switch (victim.gameObject.tag) {
 
 			case "door":

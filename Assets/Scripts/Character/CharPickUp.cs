@@ -31,6 +31,11 @@ public class CharPickUp : MonoBehaviour {
 				charInventory.setHoldingItem(col.gameObject);
 				col.gameObject.GetComponent<PickUpableItem>().PickedUp (this.gameObject);
 				break;
+
+			case "branch" :
+			charInventory.setHoldingItem(col.gameObject);
+			col.gameObject.GetComponent<PickUpableItem>().PickedUp (this.gameObject);
+			break;
 			}
 		}
 	}

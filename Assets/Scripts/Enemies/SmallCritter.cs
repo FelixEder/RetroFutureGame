@@ -81,11 +81,11 @@ public class SmallCritter : MonoBehaviour {
 		health -= damage;
 		if (health <= 0) {
 			//Enemy is dead, play animation and sound.
-			/**if (random.Range (0, 50) < 25) {*/
+			if (random.Range (0, 50) < 25) {
 				Instantiate (healthDrop, transform.position, Quaternion.identity);
 				Destroy (this.gameObject);
-
-			getMirrored ();
+			}
 		}
+		getMirrored ();
 	}
 }

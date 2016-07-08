@@ -6,9 +6,11 @@ public class SmallCritter : MonoBehaviour {
 	bool isMirrored = false;
 	Rigidbody2D rb2D;
 	public int health = 2;
+	GameObject healthDrop;
 
 	void Start() {
 		rb2D = GetComponent<Rigidbody2D> ();
+		healthDrop = GameObject.FindGameObjectWithTag ("healthDrop");
 	}
 
 	void FixedUpdate() {
@@ -77,10 +79,13 @@ public class SmallCritter : MonoBehaviour {
 	public void getHurt(int damage) {
 		//Play a sound and animation.
 		health -= damage;
-		if(health <= 0) {
+		if (health <= 0) {
 			//Enemy is dead, play animation and sound.
-			Destroy(this.gameObject);
+			/**if (random.Range (0, 50) < 25) {*/
+				Instantiate (healthDrop, transform.position, Quaternion.identity);
+				Destroy (this.gameObject);
+
+			getMirrored ();
 		}
-		getMirrored();
 	}
 }

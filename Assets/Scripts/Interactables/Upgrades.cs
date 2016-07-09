@@ -7,7 +7,7 @@ public class Upgrades : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col) {
 		if (!col.isTrigger && col.gameObject.tag.Equals("char")) {
-			//Play correct music and animation depending on what switch-option is chosen, change player-image somewhat and display a tutorial for the item.
+			//Play correct music and animation depending on what switch-option is chosen
 			switch (type) {
 
 			case "leaf":
@@ -17,7 +17,12 @@ public class Upgrades : MonoBehaviour {
 			case "highJump":
 				col.gameObject.GetComponent<CharJump> ().jumpSpeed = 15f;
 				break;
+
+			case "healthIncrease":
+				col.gameObject.GetComponent<CharInventory> ().addHealthIncrease ();
+				break;
 			}
+
 			Destroy (gameObject);
 		}
 	}

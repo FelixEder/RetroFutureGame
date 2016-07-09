@@ -4,7 +4,7 @@ using System.Collections;
 public class CharInventory : MonoBehaviour {
 	//The upgrades-scripts, add more when more upgrades are included
 //	CharFloat charFloat;
-	int healthCollectables = 0;
+	int healthIncrease = 0;
 	//The item that can be picked up by the player
 	public GameObject pickUpableItem;
 
@@ -15,11 +15,15 @@ public class CharInventory : MonoBehaviour {
 	}
 		
 	void Update() {
-		if (healthCollectables == 4) {
+		if (healthIncrease == 4) {
 			//Put a method here that permanently increases the players health
 			//Also display some nice graphics
-			healthCollectables = 0;
+			healthIncrease = 0;
 		}
+	}
+
+	public void addHealthIncrease() {
+		healthIncrease++;
 	}
 
 	/**

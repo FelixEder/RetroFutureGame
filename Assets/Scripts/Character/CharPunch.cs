@@ -57,6 +57,9 @@ public class CharPunch : MonoBehaviour {
 		if(Input.GetButton ("Attack") && !holdPunch) {
 			Debug.Log ("Attack on Trigger!");
 			int damage = ExecutePunch ();
+			if(attackType.Equals("branch")) {
+				charInventory.getHoldingItem();
+			}
 			switch (victim.gameObject.tag) {
 
 			case "door":

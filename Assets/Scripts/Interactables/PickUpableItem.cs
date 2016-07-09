@@ -5,7 +5,7 @@ public class PickUpableItem : MonoBehaviour {
 	Rigidbody2D rigidBody2D;
 	public float HoldPositionX = 0.341f, HoldPositionY = -0.332f;
 	bool beingHeld;
-	public int damage;
+	public int damage, health;
 
 	void Start() {
 		rigidBody2D = GetComponent<Rigidbody2D> ();
@@ -36,5 +36,17 @@ public class PickUpableItem : MonoBehaviour {
 			rigidBody2D.AddForce (Vector2.right * 500 * Mathf.Sign (Input.GetAxis ("Horizontal")));
 		}
 		beingHeld = false;
+	}
+
+	/**
+	 * Breaks the item a bit when called.
+	 * When health is 0 or below, the item is broken.
+	 */
+	public void getBroken() {
+		health--;
+		if (health <= 0) {
+			destroy (gameObject);
+			//Play animation and such
+		}
 	}
 }

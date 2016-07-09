@@ -11,7 +11,7 @@ public class Upgrades : MonoBehaviour {
 			switch (type) {
 
 			case "leaf":
-				col.gameObject.GetComponent<CharFloat>().enabled = true;
+			//	col.gameObject.GetComponent<CharFloat>().enabled = true;
 				break;
 
 			case "highJump":

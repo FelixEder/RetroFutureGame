@@ -58,7 +58,7 @@ public class CharPunch : MonoBehaviour {
 			Debug.Log ("Attack on Trigger!");
 			int damage = ExecutePunch ();
 			if(attackType.Equals("branch")) {
-				charInventory.getHoldingItem();
+				charInventory.getHoldingItem().GetComponent<PickUpableItem>().getBroken();
 			}
 			switch (victim.gameObject.tag) {
 

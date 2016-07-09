@@ -45,7 +45,7 @@ public class PickUpableItem : MonoBehaviour {
 	public void getBroken() {
 		health--;
 		if (health <= 0) {
-			destroy (gameObject);
+			Destroy (gameObject);
 			//Play animation and such
 		}
 	}

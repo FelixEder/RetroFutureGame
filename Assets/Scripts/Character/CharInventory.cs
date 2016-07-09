@@ -3,15 +3,15 @@ using System.Collections;
 
 public class CharInventory : MonoBehaviour {
 	//The upgrades-scripts, add more when more upgrades are included
-	CharFloat charFloat;
+//	CharFloat charFloat;
 	int healthCollectables = 0;
 	//The item that can be picked up by the player
 	public GameObject pickUpableItem;
 
 	void Start() {
 		//As we implement more upgrades in the game, more scripts will be added in the fields and here and disabled.
-		charFloat = GetComponent<CharFloat> ();
-		charFloat.enabled = false;
+	//	charFloat = GetComponent<CharFloat> ();
+	//	charFloat.enabled = false;
 	}
 		
 	void Update() {

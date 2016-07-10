@@ -1,10 +1,23 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character\CharInventory.cs">
     <Files>
       <File FileName="Assets\Scripts\Interactables\Upgrades.cs" Line="15" Column="11" />
       <File FileName="Assets\Scripts\UI\MainMenu.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Character\CharInventory.cs" Line="1" Column="1" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\SmallCritter.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Enemies\SmallCritter.cs" Line="83" Column="68" />
+      <File FileName="Assets\Scripts\Interactables\EnemyDrops.cs" Line="13" Column="30" />
+      <File FileName="Assets\Scripts\Character\CharPunch.cs" Line="67" Column="34" />
+      <File FileName="Assets\Scripts\Character\CharPickUp.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\CharJump.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\Upgrades\CharFloat.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\CharInventory.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Interactables\Upgrades.cs" Line="1" Column="1" />
+>>>>>>> Enemy_Drops
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -1,6 +1,10 @@
 fileFormatVersion: 2
 guid: a033d4f7d1b2e744da123ffa91685b64
+<<<<<<< HEAD
 timeCreated: 1468106943
+=======
+timeCreated: 1467974185
+>>>>>>> Enemy_Drops
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}

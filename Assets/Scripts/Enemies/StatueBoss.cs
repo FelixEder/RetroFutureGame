@@ -5,10 +5,10 @@ using System.Collections;
 	GameObject LeftEye, RightEye, LeftBlock, RightBlock;
 
 		void Start() {
-		LeftEye = this.gameObject.transform.GetChild (0);
-		RightEye = this.gameObject.transform.GetChild (1);
-		LeftBlock = this.gameObject.transform.GetChild (2);
-		RightBlock = this.gameObject.transform.GetChild (3);
+		LeftEye = this.gameObject.transform.GetChild (0).gameObject;
+		RightEye = this.gameObject.transform.GetChild (1).gameObject;
+		LeftBlock = this.gameObject.transform.GetChild (2).gameObject;
+		RightBlock = this.gameObject.transform.GetChild (3).gameObject;
 		}
 
 		void Update() {

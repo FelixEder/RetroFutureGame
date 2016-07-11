@@ -13,17 +13,16 @@ public class CharJump : MonoBehaviour {
 	}
 		
 	void FixedUpdate () {
-		if (!Input.GetButton ("Jump") && holdJump) {
+		if (!Input.GetButton ("Jump") && holdJump && (status.onGround || status.onPlatform))
 			holdJump = false;
-		}
-		if (Input.GetButton ("Jump") && Input.GetAxis ("Vertical") < 0 && status.onPlatform) {
+		if (Input.GetButton ("Jump") && Input.GetAxis ("Vertical") < 0 && status.onPlatform)
 			jumpDown = true;
-		} else if (Input.GetButton ("Jump") && !holdJump && (status.onGround || status.onPlatform)) {
+		else if (Input.GetButton ("Jump") && !holdJump && (status.onGround || status.onPlatform)) {
 			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, jumpSpeed);
 			hasJumped = true;
 			holdJump = true;
-		} else if (!Input.GetButton ("Jump") && hasJumped && rigidBody2D.velocity.y > jumpSpeed / 3) {
-			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, jumpSpeed / 3);
 		}
+		else if (!Input.GetButton ("Jump") && hasJumped && rigidBody2D.velocity.y > jumpSpeed / 3)
+			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, jumpSpeed / 3);
 	}
 }

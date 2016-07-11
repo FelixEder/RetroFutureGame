@@ -13,7 +13,7 @@ public class CharFloat : MonoBehaviour {
 
 	void FixedUpdate () {
 		//This could later be changed to so that when an upgrade is obtained, this part of the script is enabled for the player.
-		if (charJump.hasJumped && rigidBody2D.velocity.y <= -1f && Input.GetButton ("Leaf")) {
+		if (charJump.hasJumped && rigidBody2D.velocity.y <= -1f && (Input.GetButton ("Leaf") || Input.GetAxis("Leaf") > 0)) {
 			Debug.Log ("Upgrade tried!");
 			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, -1f);
 		}

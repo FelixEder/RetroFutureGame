@@ -23,19 +23,21 @@ public class PickUpableItem : MonoBehaviour {
 	public void PickedUp(GameObject player) {
 		this.gameObject.transform.SetParent (player.transform);
 		this.gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeAll;
-		this.gameObject.GetComponent<Collider2D> ().enabled = false;
+		//this.gameObject.GetComponent<Collider2D> ().enabled = false;
 		beingHeld = true;
+		Debug.Log ("Pickup " + this.gameObject);
 	}
 
 	public void Dropped() {
 		this.gameObject.transform.localPosition = new Vector2 (0.5f, 0);
 		this.gameObject.transform.SetParent (GameObject.Find("Items").transform, true);
 		this.gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.None;
-		this.gameObject.GetComponent<Collider2D> ().enabled = true;
+		//this.gameObject.GetComponent<Collider2D> ().enabled = true;
 		if (Input.GetAxis ("Horizontal") > 0.2 || Input.GetAxis ("Horizontal") < -0.2) {
 			rigidBody2D.AddForce (Vector2.right * 500 * Mathf.Sign (Input.GetAxis ("Horizontal")));
 		}
 		beingHeld = false;
+		Debug.Log ("Drop " + this.gameObject);
 	}
 
 	/**

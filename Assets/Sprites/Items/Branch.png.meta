@@ -1,11 +1,5 @@
 fileFormatVersion: 2
 guid: 4509b95aff4d1b14f91273597a079e00
-<<<<<<< HEAD
-timeCreated: 1468106943
-=======
-timeCreated: 1467971399
->>>>>>> Enemy_Drops
-licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
@@ -33,8 +27,8 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0

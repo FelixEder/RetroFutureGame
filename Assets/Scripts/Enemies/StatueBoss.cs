@@ -15,8 +15,20 @@ using System.Collections;
 			if (LeftEye == null && RightEye == null) {
 				Defeated ();
 			}
+			Invoke ("ShootLasers", 3f);
 		}
 		
+		/**
+		 * Shoots lasers from the eyes of the statue
+		 */
+		void ShootLasers() {
+			if (LeftEye != null) {
+				LeftEye.GetComponent<LaserBeam> ().Shoot ();
+			}
+			if (RightEye != null) {
+				RightEye.GetComponent<LaserBeam> ().Shoot ();
+			}
+		}
 
 		/**
 		 * The boss is defeated

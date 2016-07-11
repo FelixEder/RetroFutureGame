@@ -21,8 +21,11 @@ public class Upgrades : MonoBehaviour {
 			case "healthIncrease":
 				col.gameObject.GetComponent<CharInventory> ().addHealthIncrease ();
 				break;
-			}
 
+			case "speedIncrease":
+				col.gameObject.GetComponent<CharMovement> ().moveSpeed++;
+				break;
+			}
 			Destroy (gameObject);
 		}
 	}

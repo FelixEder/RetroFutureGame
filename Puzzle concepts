@@ -1,0 +1,26 @@
+###Puzzle concepts
+
+There should be around 2-3 puzzle rooms in the game
+
+##Puzzle 1
+You walk into a dimly lit room. You can only see some kind of barrier, button and a power up on the other side of you. 
+As you active the button, the room lights up and you can see a big circuit board in the middle of the room. A bunch of cables
+go through it. You can then with a number of levers rotate the board in order to connect it to different platforms.
+After a cable is connected to a platform, the powerbutton can be used to activate and disable the platform.
+
+The puzzle is that you have to somewhat climb the different platforms and correctly turning the circuit and activating the
+correct platforms.
+
+##Puzzle 2
+This puzzle should feature the "simulation-exits" and movable blocks(in this case probably desks). This also shouldn't be a 
+terribly hard puzzle, as it introduces the player to a bunch of new things. 
+
+It goes like this: the player walks into a room finding themselves unable to get past this point. A chair acts as the conduit 
+between the simulation and the real world. The player needs to enter this world, push a bunch of desks in order to enter a 
+secret room. From there you should be able to use a console to drastically change something in the simulation. As you head back
+there, the change you made will have made it possible for you to continue.
+
+##Puzzle 3
+A combination of a bunch of things, but mostly using the twin-world mechanic in order to change the world somehow. 
+Create a real hard puzzle that uses everything you have in the game and gives you the final item of the game. 
+Now go to the last boss and use it on him!

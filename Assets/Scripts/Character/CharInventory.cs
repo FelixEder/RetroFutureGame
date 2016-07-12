@@ -46,5 +46,4 @@ public class CharInventory : MonoBehaviour {
 	public GameObject getHoldingItem() {
 		return pickUpableItem;
 	}
-
 }

@@ -18,18 +18,18 @@ public class Barriers : MonoBehaviour {
 	
 	void OnCollisionEnter2D(Collision2D col) {
 		if (col.gameObject.tag.Equals(speciality) && col.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude >= 2.0f) {
-			getHurt ();
+			GetHurt ();
 		}
 	}
 
-	public void getHurt() {
+	public void GetHurt() {
 		health--;
 		if (health <= 0) {
 			Broken();
 		}
 	}
 
-	public string getSpecial() {
+	public string GetSpecial() {
 		return speciality;
 	}
 }

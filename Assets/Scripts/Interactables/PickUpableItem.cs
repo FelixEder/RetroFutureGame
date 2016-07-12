@@ -44,7 +44,7 @@ public class PickUpableItem : MonoBehaviour {
 	 * Breaks the item a bit when called.
 	 * When health is 0 or below, the item is broken.
 	 */
-	public void getBroken() {
+	public void GetBroken() {
 		health--;
 		if (health <= 0) {
 			Destroy (gameObject);

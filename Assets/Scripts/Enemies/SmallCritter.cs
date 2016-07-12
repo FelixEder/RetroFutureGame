@@ -29,29 +29,29 @@ public class SmallCritter : MonoBehaviour {
 			break;
 
 		case "softEnemy" :
-			getMirrored();
+			GetMirrored();
 			break;
 		
 		case "wall" :
-			getMirrored();
+			GetMirrored();
 			break;
 		
 		case "door" :
-			getMirrored();
+			GetMirrored();
 			break;
 
 		case "rock":
 			if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f) {
-				getHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
+				GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
 			}
-			getMirrored ();
+			GetMirrored ();
 			break;
 
 		case "branch":
 			if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
-				getHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
+				GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
 			}
-			getMirrored ();
+			GetMirrored ();
 			break;
 
 		}
@@ -60,7 +60,7 @@ public class SmallCritter : MonoBehaviour {
 	/**
 	 * Mirrors the enemy and therefor makes it change direction.
 	 */
-	void getMirrored() {
+	void GetMirrored() {
 		if(!isMirrored) {
 			transform.rotation = Quaternion.Euler(0, 180, 0);
 			isMirrored = true;
@@ -74,7 +74,7 @@ public class SmallCritter : MonoBehaviour {
 	/**
 	 * Method called when enemy is hit by the player
 	 */
-	public void getHurt(int damage) {
+	public void GetHurt(int damage) {
 		//Play a sound and animation.
 		health -= damage;
 		if (health <= 0) {
@@ -84,6 +84,6 @@ public class SmallCritter : MonoBehaviour {
 			}
 			Destroy (this.gameObject);
 		}
-		getMirrored ();
+		GetMirrored ();
 	}
 }

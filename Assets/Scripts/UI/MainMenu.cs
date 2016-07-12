@@ -6,4 +6,7 @@ public class MainMenu : MonoBehaviour {
 	public void LoadLevel(string level) {
 		SceneManager.LoadScene (level);
 	}
+	public void ExitApplication() {
+		Application.Quit ();
+	}
 }

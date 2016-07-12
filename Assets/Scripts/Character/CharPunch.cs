@@ -58,21 +58,21 @@ public class CharPunch : MonoBehaviour {
 			Debug.Log ("Attack on Trigger!");
 			int damage = ExecutePunch ();
 			if(attackType.Equals("branch")) {
-				charInventory.getHoldingItem().GetComponent<PickUpableItem>().getBroken();
+				charInventory.getHoldingItem().GetComponent<PickUpableItem>().GetBroken();
 			}
 			switch (victim.gameObject.tag) {
 
 			case "door":
-				victim.gameObject.GetComponent<Door> ().setInvisible ();
+				victim.gameObject.GetComponent<Door> ().SetInvisible ();
 				break;
 
 			case "softEnemy":
-				victim.gameObject.GetComponent<SmallCritter>().getHurt(damage);
+				victim.gameObject.GetComponent<SmallCritter>().GetHurt(damage);
 				break;
 
 			case "barrier":
-				if (attackType.Equals(victim.gameObject.GetComponent<Barriers>().getSpecial ())) {
-					victim.gameObject.GetComponent<Barriers> ().getHurt ();
+				if (attackType.Equals(victim.gameObject.GetComponent<Barriers>().GetSpecial ())) {
+					victim.gameObject.GetComponent<Barriers> ().GetHurt ();
 				}
 				break;
 			}

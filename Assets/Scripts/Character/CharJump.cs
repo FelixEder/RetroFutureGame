@@ -22,7 +22,7 @@ public class CharJump : MonoBehaviour {
 			hasJumped = true;
 			holdJump = true;
 		}
-		else if (!Input.GetButton ("Jump") && hasJumped && rigidBody2D.velocity.y > jumpSpeed / 3)
-			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, jumpSpeed / 3);
+		else if (!Input.GetButton ("Jump") && hasJumped && rigidBody2D.velocity.y > jumpSpeed / 1.8f)
+			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, jumpSpeed / 1.8f);
 	}
 }

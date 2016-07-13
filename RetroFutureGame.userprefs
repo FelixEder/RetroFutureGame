@@ -1,19 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CameraMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\StatueBoss.cs">
     <Files>
-      <File FileName="Assets\Scripts\UI\UIManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Interactables\Upgrades.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\SmallCritter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\Upgrades\CharFloat.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharPickUp.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Interactables\PickUpableItem.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\StatueBoss.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\BossActivator.cs" Line="12" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\StatueBoss.cs" Line="38" Column="20" />
+      <File FileName="Assets\Scripts\Character\Knockback.cs" Line="21" Column="30" />
       <File FileName="Assets\Scripts\Interactables\LaserBeam.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharJump.cs" Line="26" Column="80" />
-      <File FileName="Assets\Scripts\UI\MainMenu.cs" Line="11" Column="3" />
-      <File FileName="Assets\Scripts\CameraMovement.cs" Line="13" Column="42" />
+      <File FileName="Assets\Scripts\Interactables\Upgrades.cs" Line="9" Column="59" />
+      <File FileName="Assets\Scripts\Character\CharPunch.cs" Line="14" Column="19" />
+      <File FileName="Assets\Scripts\Interactables\PickUpableItem.cs" Line="46" Column="76" />
+      <File FileName="Assets\Scripts\Character\CharInventory.cs" Line="9" Column="34" />
+      <File FileName="Assets\Scripts\Character\CharPickUp.cs" Line="21" Column="40" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

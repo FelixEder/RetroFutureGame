@@ -37,6 +37,6 @@ using System.Collections;
 		 */
 		void Defeated() {
 			//Play correct animation and such.
-			Destroy (this.gameObject);
+			Destroy(this.gameObject.transform.parent.gameObject);
 		}
 }

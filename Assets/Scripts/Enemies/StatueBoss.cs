@@ -9,6 +9,8 @@ using System.Collections;
 		RightEye = this.gameObject.transform.GetChild (1).gameObject;
 		LeftBlock = this.gameObject.transform.GetChild (2).gameObject;
 		RightBlock = this.gameObject.transform.GetChild (3).gameObject;
+
+		//Also start spawning enemies from mouth and play music and such
 		}
 
 		void Update() {

@@ -4,13 +4,14 @@ using System.Collections;
 public class CharPunch : MonoBehaviour {
 	CharInventory charInventory;
 	public bool holdPunch;
-	string attackType = "";
+	string attackType;
 
 	void Start() {
 		charInventory = transform.parent.GetComponent<CharInventory> ();
 	}
 
 	void Update() {
+		attackType = "";
 		if (!Input.GetButton ("Attack") && holdPunch) {
 			holdPunch = false;
 		} else if (Input.GetButton ("Attack") && !holdPunch) {
@@ -58,7 +59,10 @@ public class CharPunch : MonoBehaviour {
 			Debug.Log ("Attack on Trigger!");
 			int damage = ExecutePunch ();
 			if(attackType.Equals("branch")) {
-				charInventory.getHoldingItem().GetComponent<PickUpableItem>().GetBroken();
+				int lifeCheck =	charInventory.getHoldingItem().GetComponent<PickUpableItem>().GetBroken();
+				if (lifeCheck == 0) {
+					charInventory.setHoldingItem (null);
+				}
 			}
 			switch (victim.gameObject.tag) {
 

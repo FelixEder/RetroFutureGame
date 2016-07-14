@@ -8,7 +8,7 @@
 - A branch, can also be found laying around in the forests. Can be used as a weapon with longer range (replaces punches).
   Can be used to reach higher things as well as some puzzle usage (maybe building bridges somehow?)
   
-- Simple keys and keycards could be used when wanting to open certain doors and such.
+- Simple keys and keycards could be used when wanting to open certain doors and such. (will probably not be implemented)
 
 ##Power ups
 
@@ -17,12 +17,12 @@
  
 - An old piece of technology that introduces an interesting new mechanic to the game and puzzles. It could be something
  like creating a clone of yourself that stays in a certain spot for a number of seconds. (Maybe a bit to hard to simply implement in the game.)
+ (will probably not be implemented)
  
  - A cane that shoots a straight laser forwards, this could be used in puzzles where you need to hit certain targets through glass
-  or something (could also be used as a weapon, it does sound a bit OP however). Could be used when crawling in order to kill
-  enemies and open doors and so.
+  or something. Could be used when crawling in order to kill enemies and open doors and so. (Runs on energy.)
   
- - A simple double jump
+ - A simple double jump (will probably not be implemented)
  
  - A hat that hits everything above you, including certain blocks you need to hit
  
@@ -32,14 +32,16 @@
  
  - Some gizmo that makes you able to crawl through small spaces.
  
- - A mecha-hand that does heavy damage with punches, breaks certain shells and blocks and sofort.
-
+ - A mecha-hand that does heavy damage with punches, breaks certain shells and blocks and sofort. (runs on energy)
+ 
+ - Maybe make the high-jump require a bit of energy? It would act as a sort of introduction to the energy system in the game
 
 ##Collectibles
 
 - Something that will increase your health if you collected enough of them.
 
-- If your later futuristic items require some sort of ammo, an obvious choice could be to increase your ammo capacity.
+- The later items require energy, there should both be enemy drops that replaces lost energy and collectibles that
+  increases the maximum energy the player has.
   
 - A small speed-increase, each one you get increases your movement speed somewhat. Could create an interesting dynamic in
  as speedrun. Should you take the time to find all speed increase power-ups or should you just try to complete the game?

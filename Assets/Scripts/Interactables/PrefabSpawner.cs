@@ -15,6 +15,7 @@ public class PrefabSpawner : MonoBehaviour {
 	}
 
 	void Spawn() {
+		//Maybe figure out a way to randomize the exakt spawn-point?
 		Instantiate (Resources.Load (spawnType), transform.position, Quaternion.identity);
 	}
 }

@@ -15,9 +15,7 @@ using System.Collections;
 			if (LeftEye == null && RightEye == null) {
 				Defeated ();
 			}
-			while (true) {
 				Invoke ("ShootLasers", 3f);
-			}
 		}
 		
 		/**

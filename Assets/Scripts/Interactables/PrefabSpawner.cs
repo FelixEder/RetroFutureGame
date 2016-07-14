@@ -6,18 +6,15 @@ using System.Collections;
  */
 public class PrefabSpawner : MonoBehaviour {
 	//The amount of time in seconds between each spawn
-	public float spawnInterval;
+	public float spawnStart, spawnInterval;
 	//The name of the prefab to spawn
 	public string spawnType;
-	
-	// Update is called once per frame
-	void Update () {
-		while (true) {
-			Invoke ("spawn", spawnInterval);
-		}
+
+	void Start() {
+		InvokeRepeating ("Spawn", spawnStart, spawnInterval);
 	}
-		
-	void spawn() {
+
+	void Spawn() {
 		Instantiate (Resources.Load (spawnType), transform.position, Quaternion.identity);
 	}
 }

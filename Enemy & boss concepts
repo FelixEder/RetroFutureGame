@@ -13,6 +13,7 @@ to destroy shell and reveal the softer enemy on the inside. This can at first be
 
 
 ##Bosses
+(IDEA: Give each boss a name that is presented in a cool way)
 
 - The statue
 A giant statue in a huge room. It can't move, but when you enter the room and pass a certain spot, the music changes
@@ -23,15 +24,15 @@ You wake up in it's ruins and can continue your journey. The remains of the stat
 
 Would also be fun of regular enemies spawned around you in order to make it harder for you to reach the top.
 
-- The Burrower
+- The Burrower (i think this one will not be implemented since we don't have the time (or remade into a puzzle)).
 In the lowest place in the map, a sort of mole hides. By this point you have the crawl ability, so you enter a system of tunnels.
 In there, a little creature lurks. Since you cannot attack while crawling, it poses a serious danger. It has no real attacks,
 but walks a certain pattern in the tunnels. Your job is to surpass it and then somehow either punch it when you have an opening
 or drop something on it or something like that.
 
-- The Flying Thing
-A thing that flies around and spits things at you. The way you defeat him is to throw rocks (or equal) at his mouth.
-Do this enough times and he dies.
+- The Flying Thing ("Big Bad Bird")
+A thing that flies around and spits things at you. The way you defeat him is to shoot laser at his mouth. However, he only opens
+his mouth when he spits out an enemy, effectl
 
 - Final Boss
 Something that incorporates most of your mechanics in an epic boss fight. Should end with a timer which forces you to run all

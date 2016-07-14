@@ -2,13 +2,11 @@ using UnityEngine;
 using System.Collections;
 
 	public class StatueBoss : MonoBehaviour {
-	GameObject LeftEye, RightEye, LeftBlock, RightBlock;
+	GameObject LeftEye, RightEye;
 
 		void Start() {
-		LeftEye = this.gameObject.transform.GetChild (0).gameObject;
-		RightEye = this.gameObject.transform.GetChild (1).gameObject;
-		LeftBlock = this.gameObject.transform.GetChild (2).gameObject;
-		RightBlock = this.gameObject.transform.GetChild (3).gameObject;
+		LeftEye = this.gameObject.transform.GetChild (1).gameObject;
+		RightEye = this.gameObject.transform.GetChild (0).gameObject;
 
 		//Also start spawning enemies from mouth and play music and such
 		}
@@ -17,7 +15,9 @@ using System.Collections;
 			if (LeftEye == null && RightEye == null) {
 				Defeated ();
 			}
-			Invoke ("ShootLasers", 3f);
+			while (true) {
+				Invoke ("ShootLasers", 3f);
+			}
 		}
 		
 		/**
@@ -29,7 +29,7 @@ using System.Collections;
 			}
 			if (RightEye != null) {
 				RightEye.GetComponent<LaserBeam> ().Shoot ();
-			}
+			} 
 		}
 
 		/**

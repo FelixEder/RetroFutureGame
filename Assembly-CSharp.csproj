@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\Interactables\LaserBeam.cs" />
      <Compile Include="Assets\Scripts\Interactables\MapCover.cs" />
      <Compile Include="Assets\Scripts\Interactables\PickUpableItem.cs" />
+     <Compile Include="Assets\Scripts\Interactables\PrefabSpawner.cs" />
      <Compile Include="Assets\Scripts\Interactables\Upgrades.cs" />
      <Compile Include="Assets\Scripts\PlatformLogic.cs" />
      <Compile Include="Assets\Scripts\UI\BootCompany.cs" />

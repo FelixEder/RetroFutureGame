@@ -1,14 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Events\RedLightFlash.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character\Upgrades\CharStomp.cs">
     <Files>
-      <File FileName="Assets\Scripts\Events\EventFirstStart.cs" Line="31" Column="3" />
-      <File FileName="Assets\Scripts\Enemies\BossActivator.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Interactables\PrefabSpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\StatueBoss.cs" Line="28" Column="5" />
-      <File FileName="Assets\Scripts\Interactables\LaserBeam.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Interactables\EnemyDrops.cs" Line="36" Column="72" />
+      <File FileName="Assets\Scripts\Character\CharHealth.cs" Line="28" Column="21" />
+      <File FileName="Assets\Scripts\Interactables\Upgrades.cs" Line="22" Column="66" />
       <File FileName="Assets\Scripts\Character\Knockback.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Events\RedLightFlash.cs" Line="11" Column="2" />
+      <File FileName="Assets\Scripts\Character\CharInventory.cs" Line="14" Column="3" />
+      <File FileName="Assets\Scripts\Character\CharPunch.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\CharMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\SmallCritter.cs" Line="27" Column="64" />
+      <File FileName="Assets\Scripts\Character\CharJump.cs" Line="27" Column="3" />
+      <File FileName="Assets\Scripts\Character\Upgrades\CharStomp.cs" Line="32" Column="31" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

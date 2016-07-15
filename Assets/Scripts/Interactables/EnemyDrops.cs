@@ -2,6 +2,29 @@
 using System.Collections;
 
 public class EnemyDrops : MonoBehaviour {
+	int livedTime;
+
+	void Start() {
+		livedTime = (int) Time.time;
+	}
+
+	void Update() {
+		int controlTime = (int) Time.time - livedTime;
+		switch(controlTime) {
+			
+		case 15:
+			//Börja blinka rött lite lätt
+			break;
+
+		case 25:
+			//Blinka väldigt snabbt rött, upprepa förevigt
+			break;
+
+		case 30:
+			Destroy (gameObject);
+			break;
+		}
+	}
 
 	void OnTriggerEnter2D(Collider2D col) {
 		if (!col.isTrigger && col.gameObject.tag.Equals("char")) {

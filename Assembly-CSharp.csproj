@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Character\CharTriggerFront.cs" />
      <Compile Include="Assets\Scripts\Character\Knockback.cs" />
      <Compile Include="Assets\Scripts\Character\Upgrades\CharFloat.cs" />
+     <Compile Include="Assets\Scripts\Character\Upgrades\CharStomp.cs" />
      <Compile Include="Assets\Scripts\Enemies\BossActivator.cs" />
      <Compile Include="Assets\Scripts\Enemies\SmallCritter.cs" />
      <Compile Include="Assets\Scripts\Enemies\StatueBoss.cs" />

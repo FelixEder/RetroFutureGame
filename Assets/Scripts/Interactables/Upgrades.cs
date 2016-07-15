@@ -19,7 +19,7 @@ public class Upgrades : MonoBehaviour {
 				break;
 
 			case "healthIncrease":
-				col.gameObject.GetComponent<CharInventory> ().addHealthIncrease ();
+				col.gameObject.GetComponent<CharHealth> ().IncreaseMaxHealth ();
 				break;
 
 			case "speedIncrease":

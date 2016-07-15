@@ -5,7 +5,7 @@ public class SmallCritter : MonoBehaviour {
 	public float moveSpeed, knockForce;
 	bool isMirrored = false;
 	Rigidbody2D rb2D;
-	public int health = 2;
+	public int health = 2, damage = 1;
 
 	void Start() {
 		rb2D = GetComponent<Rigidbody2D> ();
@@ -23,8 +23,8 @@ public class SmallCritter : MonoBehaviour {
 
 		switch(col.gameObject.tag) {
 
-		case "char" :
-			//Here, the player will be hurt
+		case "char":
+			col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
 			col.gameObject.GetComponent<Knockback>().Knock(this.gameObject, knockForce);
 			break;
 

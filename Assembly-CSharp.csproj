@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraMovement.cs" />
+     <Compile Include="Assets\Scripts\Character\CharHealth.cs" />
      <Compile Include="Assets\Scripts\Character\CharInventory.cs" />
      <Compile Include="Assets\Scripts\Character\CharJump.cs" />
      <Compile Include="Assets\Scripts\Character\CharMirror.cs" />

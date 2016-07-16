@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class StompTrigger {
+public class StompTrigger : MonoBehaviour {
 	public float knockForce;
 	CharStomp charStomp;
 
@@ -15,7 +15,8 @@ public class StompTrigger {
 		
 		case "softEnemy":
 			col.gameObject.GetComponent<SmallCritter> ().GetHurt (3);
-			col.gameObject.GetComponent<EnemyKnockback> ().Knock (this.gameObject, knockForce);
+			col.gameObject.GetComponent<EnemyKnockback> ().Knock (GameObject.Find ("char"), knockForce);
+			break;
 		}
 	}
 }

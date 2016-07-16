@@ -4,26 +4,28 @@ using System.Collections;
 public class CharStomp : MonoBehaviour {	
 	Rigidbody2D rigidBody2D;
 	CharStatus charStatus;
+	GameObject triggerStomp;
+	StompTrigger stompTrigger;
 	public bool isStomping, groundStomping = false;
 	bool holdStomp;
-	StompTrigger stompTrigger;
 
 	// Use this for initialization
 	void Start () {
 		rigidBody2D = GetComponent<Rigidbody2D> ();
 		charStatus = GetComponent<CharStatus> ();
-		stompTrigger = GameObject.Find ("stompTrigger").GetComponent<StompTrigger> ();
+		triggerStomp = GameObject.Find ("triggerStomp");
+		stompTrigger = triggerStomp.GetComponent<StompTrigger> ();
 		//Change sprite, display correct tutorial and play theme.
 	}
 
 	void Update() {
 		if (!Input.GetButton ("Attack"))
 			holdStomp = false;
-		stompTrigger.enabled = groundStomping;
+		triggerStomp.SetActive(groundStomping);
 	}
 	
 	void FixedUpdate() {
-		if (charStatus.InAir () && !charStatus.IsFloating && Input.GetAxis ("Vertical") < -0.7 && Input.GetButton ("Attack") && !holdStomp) {
+		if (charStatus.InAir () && !charStatus.isFloating && Input.GetAxis ("Vertical") < -0.7 && Input.GetButton ("Attack") && !holdStomp) {
 			holdStomp = true;
 			isStomping = true;
 			rigidBody2D.velocity = new Vector2 (0, 0);

@@ -27,8 +27,8 @@ public class SmallCritter : MonoBehaviour {
 				if (!col.gameObject.GetComponent<CharStomp> ().groundStomping) {
 					col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
 					col.gameObject.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
-					break;
 				}
+				break;
 
 			case "softEnemy" :
 				GetMirrored();

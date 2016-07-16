@@ -33,6 +33,10 @@ public class EnemyDrops : MonoBehaviour {
 				case "healthDrop":
 					col.gameObject.GetComponent<CharHealth> ().IncreaseCurrentHealth (1);
 					break;
+
+				case "energyDrop":
+					col.gameObject.GetComponent<CharEnergy> ().IncreaseCurrentEnergy (1);
+					break;
 			}
 			Destroy (gameObject);
 		}

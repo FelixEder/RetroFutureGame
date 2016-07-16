@@ -17,7 +17,7 @@ public class LaserShooter : MonoBehaviour {
 	}
 
 	void Update() {
-		if (charEnergy.hasJuice (2) && Input.GetButton ("Shoot")) {
+		if (charEnergy.HasJuice (2) && Input.GetButton ("Shoot")) {
 			ShootGun ();
 			if (charStatus.isMirrored) {
 				wayOfTurn = -1;

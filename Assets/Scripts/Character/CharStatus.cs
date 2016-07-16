@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class CharStatus : MonoBehaviour {
-	public bool onGround, onLeftWall, onRightWall, onPlatform, isMirrored, isFloating, onSurface, inputEnabled = true;
+	public bool onGround, onLeftWall, onRightWall, onPlatform, isMirrored, isFloating, onSurface;
 	public float velocityX, velocityY;
 	public int health;
 

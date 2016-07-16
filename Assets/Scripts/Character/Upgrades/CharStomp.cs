@@ -20,7 +20,7 @@ public class CharStomp : MonoBehaviour {
 	}
 	
 	void FixedUpdate() {
-		if (charStatus.InAir () && Input.GetAxis ("Vertical") < -0.7 && Input.GetButton ("Attack") && !holdStomp) {
+		if (charStatus.InAir () && !charStatus.IsFloating && Input.GetAxis ("Vertical") < -0.7 && Input.GetButton ("Attack") && !holdStomp) {
 			holdStomp = true;
 			isStomping = true;
 			rigidBody2D.velocity = new Vector2 (0, 0);

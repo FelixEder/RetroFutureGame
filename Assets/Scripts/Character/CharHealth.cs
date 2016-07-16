@@ -5,6 +5,10 @@ using System.Collections;
 public class CharHealth : MonoBehaviour {
 	public int currentHealth, maxHealth;
 
+	void Start() {
+		SetHealthSlider ();
+	}
+
 	void Update() {
 		if (currentHealth <= 0)
 			Die ();

@@ -32,15 +32,17 @@ public class CharStomp : MonoBehaviour {
 			rigidBody2D.gravityScale = 0.0f;
 			//Play stomp-animation
 			Invoke ("Stomp", 0.5f);
-		} else if (charStatus.onSurface) {
+		} else if (charStatus.onSurface && isStomping) {
+			Debug.Log ("isStomping done");
 			groundStomping = true;
+			isStomping = false;
 			Invoke ("FinishedStomp", 1f);
 		}
 	}
 
 	void FinishedStomp() {
-		isStomping = false;
 		groundStomping = false;
+		Debug.Log ("FinishedStomp");
 	}
 
 	void Stomp() {

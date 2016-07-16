@@ -15,6 +15,6 @@ public class CharStatus : MonoBehaviour {
 	 * Returns true if the player is in the air.
 	 */
 	public bool InAir() {
-		return (!onGround && !onLeftWall && !onRightWall && !onPlatform && onSurface);
+		return (!onGround && !onLeftWall && !onRightWall && !onPlatform && !onSurface);
 	}
 }

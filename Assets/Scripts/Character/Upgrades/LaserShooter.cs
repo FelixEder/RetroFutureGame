@@ -7,17 +7,25 @@ public class LaserShooter : MonoBehaviour {
 	CharEnergy charEnergy;
 	CharStatus charStatus;
 	int wayOfTurn;
+	bool holdShoot;
 
 	void Start() {
 		//Change player sprite and display tutorial
 		lineRenderer = GetComponent<LineRenderer> ();
 		lineRenderer.useWorldSpace = true;
-		charEnergy = GetComponent<CharEnergy> ();
-		charStatus = GetComponent<CharStatus> ();
+		charEnergy = GameObject.Find("char").GetComponent<CharEnergy> ();
+		charStatus = GameObject.Find("char").GetComponent<CharStatus> ();
 	}
 
 	void Update() {
-		if (charEnergy.HasJuice (2) && Input.GetButton ("Shoot")) {
+		if (!Input.GetButton ("Shoot")) {
+			holdShoot = false;
+		}
+
+		if (charEnergy.HasJuice (2) && Input.GetButton ("Shoot") && !holdShoot) {
+			Debug.Log ("shoot");
+			holdShoot = true;
+			charEnergy.UseEnergy (2);
 			ShootGun ();
 			if (charStatus.isMirrored) {
 				wayOfTurn = -1;
@@ -30,12 +38,13 @@ public class LaserShooter : MonoBehaviour {
 	void ShootGun() {
 		//Should later on try to shoot the player instead of just downwards.
 		lineRenderer.enabled = true;
-		RaycastHit2D hit = Physics2D.Raycast (transform.position, wayOfTurn * transform.right);
-		Debug.DrawLine (transform.position, hit.point);
-		laserHit.position = hit.point;
+		//RaycastHit2D hit = Physics2D.Raycast (transform.position, wayOfTurn * transform.right);
+
+		//Debug.DrawLine (transform.position, hit.point);
+		//laserHit.position = hit.point;
 		lineRenderer.SetPosition (0, transform.position);
-		lineRenderer.SetPosition (1, laserHit.position);
-		HitByLaser (hit);
+		lineRenderer.SetPosition (1, laserHit.position * 10 * wayOfTurn);
+		//HitByLaser (hit);
 		Invoke ("KillLaser", 1f);
 	}
 

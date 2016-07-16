@@ -21,7 +21,7 @@ using System.Collections;
 			lineRenderer.SetPosition (0, transform.position);
 			lineRenderer.SetPosition (1, laserHit.position);
 			HitByLaser (hit);
-			Invoke ("KillLaser", 2f);
+			Invoke ("KillLaser", 0.2f);
 
 		}
 

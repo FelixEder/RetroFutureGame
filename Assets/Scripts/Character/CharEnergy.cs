@@ -4,7 +4,12 @@ using System.Collections;
 
 public class CharEnergy : MonoBehaviour {
 	public int currentEnergy, maxEnergy;
-	
+
+	void Start() {
+		SetEnergySlider ();
+		StartCoroutine (EnergyRecharge ());
+	}
+
 	public void UseEnergy(int amount) {
 		if (currentEnergy - amount < 0) {
 			OutOfEnergy ();
@@ -38,5 +43,12 @@ public class CharEnergy : MonoBehaviour {
 
 	void OutOfEnergy() {
 		//PLay some sound or animation since you are out of energy
+	}
+
+	IEnumerator EnergyRecharge() {
+		while (currentEnergy < maxEnergy) {
+			yield return new WaitForSeconds (5);
+			IncreaseCurrentEnergy (1);
+		}
 	}
 }

@@ -38,10 +38,10 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+      <HintPath>D:/Programmering/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>D:/Programmering/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -63,8 +63,9 @@
      <Compile Include="Assets\Scripts\Character\Upgrades\CharStomp.cs" />
      <Compile Include="Assets\Scripts\Character\Upgrades\LaserShooter.cs" />
      <Compile Include="Assets\Scripts\Character\Upgrades\StompTrigger.cs" />
+     <Compile Include="Assets\Scripts\Character\WallJump.cs" />
      <Compile Include="Assets\Scripts\Enemies\BossActivator.cs" />
-     <Compile Include="Assets\Scripts\Enemies\EnemyKnockBack.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemyKnockback.cs" />
      <Compile Include="Assets\Scripts\Enemies\JumpingCritter.cs" />
      <Compile Include="Assets\Scripts\Enemies\JumpingCritterTrigger.cs" />
      <Compile Include="Assets\Scripts\Enemies\SmallCritter.cs" />
@@ -84,10 +85,10 @@
      <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
      <Compile Include="Assets\Scripts\UI\UIManager.cs" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/Programmering/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ <HintPath>D:/Programmering/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

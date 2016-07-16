@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class CharStatus : MonoBehaviour {
-	public bool onGround, onLeftWall, onRightWall, onPlatform, isMirrored, isFloating inputEnabled = true;
+	public bool onGround, onLeftWall, onRightWall, onPlatform, isMirrored, isFloating, onSurface, inputEnabled = true;
 	public float velocityX, velocityY;
 	public int health;
 
@@ -15,6 +15,6 @@ public class CharStatus : MonoBehaviour {
 	 * Returns true if the player is in the air.
 	 */
 	public bool InAir() {
-		return (!onGround && !onLeftWall && !onRightWall && !onPlatform);
+		return (!onGround && !onLeftWall && !onRightWall && !onPlatform && onSurface);
 	}
 }

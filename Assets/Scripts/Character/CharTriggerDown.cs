@@ -10,20 +10,28 @@ public class CharTriggerDown : MonoBehaviour {
 	}
 
 	void OnTriggerStay2D(Collider2D col) {
-		if(col.gameObject.tag == "ground") {
-			status.onGround = true;
+		switch (col.gameObject.tag) {
+			case "ground":
+				status.onGround = true;
+				break;
+			
+			case "platform":
+				status.onPlatform = true;
+				break;
 		}
-		if(col.gameObject.tag == "platform") {
-			status.onPlatform = true;
-		}
+		status.onSurface = true;
 	}
 		
 	void OnTriggerExit2D(Collider2D col) {
-		if (col.gameObject.tag == "ground") {
+		switch (col.gameObject.tag) {
+			case "ground":
 			status.onGround = false;
-		}
-		if(col.gameObject.tag == "platform") {
+			break;
+
+			case "platform":
 			status.onPlatform = false;
+			break;
 		}
+		status.onSurface = false;
 	}
 }

@@ -28,7 +28,7 @@ public class Upgrades : MonoBehaviour {
 			
 			case "energyIncrease":
 				col.gameObject.GetComponent<CharEnergy> ().IncreaseMaxEnergy ();
-			
+				break;
 			}
 			Destroy (gameObject);
 		}

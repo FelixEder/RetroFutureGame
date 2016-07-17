@@ -36,7 +36,7 @@ public class CharStomp : MonoBehaviour {
 			Debug.Log ("isStomping done");
 			groundStomping = true;
 			isStomping = false;
-			Invoke ("FinishedStomp", 1f);
+			Invoke ("FinishedStomp", 0.5f);
 		}
 	}
 

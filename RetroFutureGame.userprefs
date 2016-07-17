@@ -1,30 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character\Upgrades\StompTrigger.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character\Upgrades\LaserShooter.cs">
     <Files>
-      <File FileName="Assets\Scripts\Character\Upgrades\StompTrigger.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\Upgrades\CharStomp.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\JumpingCritter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\JumpingCritterTrigger.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharStatus.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Interactables\EnemyDrops.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Interactables\Upgrades.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\Knockback.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharInventory.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharPunch.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\SmallCritter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharJump.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\UIManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Events\EventFirstStart.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\EnemyKnockBack.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharTriggerDown.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Interactables\LaserBeam.cs" Line="41" Column="4" />
-      <File FileName="Assets\Scripts\Character\Upgrades\LaserShooter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharEnergy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\WallJump.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\BootCompany.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Interactables\LaserBeam.cs" Line="25" Column="31" />
+      <File FileName="Assets\Scripts\Character\Upgrades\CharStomp.cs" Line="8" Column="28" NotebookId="1" />
+      <File FileName="Assets\Scripts\Character\Upgrades\StompTrigger.cs" Line="20" Column="2" NotebookId="1" />
+      <File FileName="Assets\Scripts\Character\CharPunch.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets\Scripts\Character\CharMovement.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets\Scripts\Enemies\SmallCritter.cs" Line="78" Column="1" NotebookId="1" />
+      <File FileName="Assets\Scripts\Interactables\Upgrades.cs" Line="29" Column="24" NotebookId="1" />
+      <File FileName="Assets\Scripts\Enemies\JumpingCritter.cs" Line="82" Column="38" NotebookId="1" />
+      <File FileName="Assets\Scripts\Character\Upgrades\LaserShooter.cs" Line="32" Column="9" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

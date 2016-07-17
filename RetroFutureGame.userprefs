@@ -1,7 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Interactables\LaserBeam.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character\Upgrades\StompTrigger.cs">
     <Files>
+      <File FileName="Assets\Scripts\Character\Upgrades\StompTrigger.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Character\Upgrades\CharStomp.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemies\JumpingCritter.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemies\JumpingCritterTrigger.cs" Line="1" Column="1" />
@@ -13,16 +14,15 @@
       <File FileName="Assets\Scripts\Character\CharInventory.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Character\CharPunch.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Character\CharMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\SmallCritter.cs" Line="28" Column="6" />
+      <File FileName="Assets\Scripts\Enemies\SmallCritter.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Character\CharJump.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\UI\UIManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Events\EventFirstStart.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\Upgrades\StompTrigger.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemies\EnemyKnockBack.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Character\CharTriggerDown.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Interactables\LaserBeam.cs" Line="41" Column="4" />
       <File FileName="Assets\Scripts\Character\Upgrades\LaserShooter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharEnergy.cs" Line="50" Column="22" />
+      <File FileName="Assets\Scripts\Character\CharEnergy.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Character\WallJump.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\UI\BootCompany.cs" Line="1" Column="1" />
     </Files>

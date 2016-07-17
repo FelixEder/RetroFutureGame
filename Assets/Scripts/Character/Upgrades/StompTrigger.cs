@@ -3,10 +3,8 @@ using System.Collections;
 
 public class StompTrigger : MonoBehaviour {
 	public float knockForce;
-	CharStomp charStomp;
 
 	void Start() {
-		charStomp = GameObject.Find ("char").GetComponent<CharStomp> ();
 		//Play stomp-animation and sound
 	}
 

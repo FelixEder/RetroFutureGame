@@ -80,8 +80,11 @@ public class SmallCritter : MonoBehaviour {
 		health -= damage;
 		if (health <= 0) {
 			//Enemy is dead, play animation and sound.
-			if (Random.Range (0, 50) < 25) {
+			int ranNumb = Random.Range(0, 60);
+			if (ranNumb < 20) {
 				Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
+			} else if (ranNumb < 40) {
+				Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
 			}
 			Destroy (this.gameObject);
 		}

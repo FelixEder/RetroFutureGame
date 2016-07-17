@@ -5,7 +5,6 @@ public class LaserShooter : MonoBehaviour {
 	private LineRenderer lineRenderer;
 	public Transform laserHit;
 	CharEnergy charEnergy;
-	CharStatus charStatus;
 	bool holdShoot;
 
 	void Start() {
@@ -13,7 +12,6 @@ public class LaserShooter : MonoBehaviour {
 		lineRenderer = GetComponent<LineRenderer> ();
 		//lineRenderer.useWorldSpace = true;
 		charEnergy = GameObject.Find("char").GetComponent<CharEnergy> ();
-		charStatus = GameObject.Find("char").GetComponent<CharStatus> ();
 	}
 
 	void Update() {

@@ -18,6 +18,18 @@ public class Upgrades : MonoBehaviour {
 				col.gameObject.GetComponent<CharJump> ().jumpSpeed = 15f;
 				break;
 
+			case "wallJump":
+				col.gameObject.GetComponent<WallJump> ().enabled = true;
+				break;
+
+			case "romp_Stomp":
+				col.gameObject.GetComponent<CharStomp> ().enabled = true;
+				break;
+			
+			case "laserGun":
+				col.gameObject.transform.GetChild (7).gameObject.SetActive (true);
+				break;
+
 			case "healthIncrease":
 				col.gameObject.GetComponent<CharHealth> ().IncreaseMaxHealth ();
 				break;

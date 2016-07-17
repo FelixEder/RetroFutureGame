@@ -63,7 +63,7 @@
      <Compile Include="Assets\Scripts\Character\Upgrades\CharStomp.cs" />
      <Compile Include="Assets\Scripts\Character\Upgrades\LaserShooter.cs" />
      <Compile Include="Assets\Scripts\Character\Upgrades\StompTrigger.cs" />
-     <Compile Include="Assets\Scripts\Character\WallJump.cs" />
+     <Compile Include="Assets\Scripts\Character\Upgrades\WallJump.cs" />
      <Compile Include="Assets\Scripts\Enemies\BossActivator.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyKnockBack.cs" />
      <Compile Include="Assets\Scripts\Enemies\JumpingCritter.cs" />

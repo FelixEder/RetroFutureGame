@@ -17,6 +17,7 @@ public class CharHealth : MonoBehaviour {
 	public void TakeDamage(int damage) {
 		currentHealth -= damage;
 		SetHealthSlider ();
+		//Maybe give a few seconds invincibility and make sprite blink or so?
 	}
 		
 	public void IncreaseCurrentHealth(int amount) {

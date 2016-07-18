@@ -24,8 +24,7 @@
   
  - A simple double jump (will probably not be implemented)
  
- - A hat that hits everything above you, including certain blocks you need to hit (will probably 
-not be implemented, the 
+ - A hat that hits everything above you, including certain blocks you need to hit
  
  - A wall-jump, adds an ability to perform wall-jumps when sliding down a ledge.
  

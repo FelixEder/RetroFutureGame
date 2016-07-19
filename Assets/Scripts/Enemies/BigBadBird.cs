@@ -37,13 +37,35 @@ public class BigBadBird : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col) {
 	}
 	
-	//Call this method when the boss get's mad and changes some things.
+	//Call this method when the boss gets mad and changes some things.
 	void GetAngry() {
 		//PLay fitting animation and sound
 		//Change color or entire sprite
 	}
 
+	void Update () {
+		//Rotate character model
+		if (Input.GetAxis("Horizontal") < 0) {
+			if (!status.isMirrored) {
+				transform.rotation = Quaternion.Euler(0, 180, 0);
+				status.isMirrored = true;
+			}
+		} else if (Input.GetAxis("Horizontal") > 0) {
+			if (status.isMirrored) {
+				transform.rotation = Quaternion.Euler(0, 0, 0);
+				status.isMirrored = false;
+			}
+		}
+	}
+	
 	void GetMirrored() {
+		if (!isMirrored) {
+			transform.rotation = Quaternion.Euler (0, 180, 0);
+			status.isMirrored = true;
+		} else {
+			transform.rotation = Quaternion.Euler (0, 0, 0);
+			status.isMirrored = false;
+		}
 	}
 
 	void WingAttack() {
@@ -62,6 +84,7 @@ public class BigBadBird : MonoBehaviour {
 
 	void Defeated() {
 		//PLay fitting animation and sound
+		//Spawn a bunch of drops
 		Destroy (gameObject);
 	}
 }

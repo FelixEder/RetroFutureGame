@@ -45,8 +45,7 @@ but walks a certain pattern in the tunnels. Your job is to surpass it and then s
 or drop something on it or something like that.
 
 - The Flying Thing ("Big Bad Bird")
-A thing that flies around and spits things at you. The way you defeat him is to shoot laser at his mouth. However, he only opens
-his mouth when he spits out an enemy.
+A thing that flies around and spits things at you. The way you defeat him is to shoot laser at his mouth. However, he only opens his mouth when he spits out an enemy. Should have at least a color-change. Once hurt enough, it should become a bit red-er. That means it should move faster, spit more enemies who sometimes are tougher enemies.
 
 - Final Boss
 Something that incorporates most of your mechanics in an epic boss fight. Should end with a timer which forces you to run all

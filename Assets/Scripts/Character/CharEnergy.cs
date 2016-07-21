@@ -13,7 +13,6 @@ public class CharEnergy : MonoBehaviour {
 	void Update() {
 		if (currentEnergy < maxEnergy && !recharging) {
 			StartCoroutine (EnergyRecharge ());
-			recharging = true;
 		}
 	}
 
@@ -52,7 +51,9 @@ public class CharEnergy : MonoBehaviour {
 	}
 
 	IEnumerator EnergyRecharge() {
-		while (currentEnergy < maxEnergy) {
+		recharging = true;
+		int startEnergy = currentEnergy;
+		while (currentEnergy < maxEnergy && startEnergy == currentEnergy) {
 			yield return new WaitForSeconds (5);
 			IncreaseCurrentEnergy (1);
 		}

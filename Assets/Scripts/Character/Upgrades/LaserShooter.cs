@@ -18,11 +18,13 @@ public class LaserShooter : MonoBehaviour {
 		if (!Input.GetButton ("Shoot")) {
 			holdShoot = false;
 		}
-		if (charEnergy.HasEnergy (2) && Input.GetButton ("Shoot") && !holdShoot && canShoot) {
-			canShoot = false;
+		if (Input.GetButton ("Shoot") && !holdShoot && canShoot) {
 			holdShoot = true;
-			charEnergy.UseEnergy (2);
-			ActivateLaser ();
+			if (charEnergy.UseEnergy (2)) {
+				canShoot = false;
+				//charEnergy.UseEnergy (2);
+				ActivateLaser ();
+			}
 		}
 	}
 

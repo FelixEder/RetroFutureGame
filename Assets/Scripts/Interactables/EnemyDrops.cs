@@ -31,7 +31,7 @@ public class EnemyDrops : MonoBehaviour {
 			switch (gameObject.tag) {
 			//Add more switch-statements as more drops are implemented in the game.
 				case "healthDrop":
-					col.gameObject.GetComponent<CharHealth> ().IncreaseCurrentHealth (1);
+					col.gameObject.GetComponent<CharHealth> ().IncreaseCurrentHealth (5);
 					break;
 
 				case "energyDrop":

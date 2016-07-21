@@ -93,6 +93,7 @@ public class BigBadBird : MonoBehaviour {
 
 	void FinishSpitAttack() {
 		this.gameObject.transform.GetChild (0).gameObject.SetActive (false);
+		//Play animation that closes mouth
 	}
 
 	public void GetHurt() {
@@ -105,7 +106,7 @@ public class BigBadBird : MonoBehaviour {
 
 	void Defeated() {
 		//PLay fitting animation and sound
-		Destroy (gameObject);
+		Destroy(this.gameObject.transform.parent.gameObject);
 		for(int i = 0; i < 5; i++) {
 			Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
 			Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);

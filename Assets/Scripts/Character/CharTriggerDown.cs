@@ -20,7 +20,6 @@ public class CharTriggerDown : MonoBehaviour {
 				break;
 		}
 		status.onSurface = true;
-		Debug.Log (status.onSurface);
 	}
 		
 	void OnTriggerExit2D(Collider2D col) {
@@ -34,6 +33,5 @@ public class CharTriggerDown : MonoBehaviour {
 			break;
 		}
 		status.onSurface = false;
-		Debug.Log ("left trigger /trigger down");
 	}
 }

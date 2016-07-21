@@ -17,7 +17,7 @@ public class CharPickUp : MonoBehaviour {
 		if (Input.GetButton ("Pickup") && !holdPickup && charInventory.isHoldingItem ()) { //calls on drop method.
 			Debug.Log ("Call on drop.\nButton = " + Input.GetButton ("Pickup") + ". holdPickup = " + holdPickup + ". isholding = " + charInventory.isHoldingItem());
 			holdPickup = true;
-			charInventory.getHoldingItem ().GetComponent<PickUpableItem> ().Dropped ();
+			charInventory.getHoldingItem ().GetComponent<PickUpableItem> ().Drop (true);
 			charInventory.setHoldingItem (null);
 		}
 	}
@@ -31,12 +31,12 @@ public class CharPickUp : MonoBehaviour {
 
 			case "rock":
 				charInventory.setHoldingItem (col.gameObject);
-				col.gameObject.GetComponent<PickUpableItem> ().PickedUp (this.gameObject);
+				col.gameObject.GetComponent<PickUpableItem> ().PickUp (this.gameObject);
 				break;
 
 			case "branch":
 				charInventory.setHoldingItem (col.gameObject);
-				col.gameObject.GetComponent<PickUpableItem> ().PickedUp (this.gameObject);
+				col.gameObject.GetComponent<PickUpableItem> ().PickUp (this.gameObject);
 				break;
 			}
 		}

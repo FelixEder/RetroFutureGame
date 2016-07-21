@@ -3,20 +3,28 @@ using System.Collections;
 
 public class SmallCritter : MonoBehaviour {
 	public float moveSpeed, knockForce;
+	float activeMoveSpeed = 0;
+	public bool canMoveInitially;
 	bool isMirrored = false;
 	Rigidbody2D rb2D;
 	public int health = 2, damage = 1;
 
 	void Start() {
 		rb2D = GetComponent<Rigidbody2D> ();
+		if(canMoveInitially)
+			activeMoveSpeed = moveSpeed;
 	}
 
 	void FixedUpdate() {
 		if (isMirrored) {
-			rb2D.velocity = new Vector2 (moveSpeed, rb2D.velocity.y);
+			rb2D.velocity = new Vector2 (activeMoveSpeed, rb2D.velocity.y);
 		} else {
-			rb2D.velocity = new Vector2 (-1 * moveSpeed, rb2D.velocity.y);
+			rb2D.velocity = new Vector2 (-1 * activeMoveSpeed, rb2D.velocity.y);
 		}
+	}
+
+	void OnBecameVisible() {
+		activeMoveSpeed = moveSpeed;
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
@@ -80,14 +88,19 @@ public class SmallCritter : MonoBehaviour {
 		health -= damage;
 		if (health <= 0) {
 			//Enemy is dead, play animation and sound.
-			int ranNumb = Random.Range(0, 60);
-			if (ranNumb < 20) {
-				Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
-			} else if (ranNumb < 40) {
-				Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
-			}
-			Destroy (this.gameObject);
+			gameObject.transform.GetChild(0).gameObject.SetActive(true);
+			Invoke ("Die", 0.2f);
 		}
 		GetMirrored ();
+	}
+
+	void Die() {
+		int ranNumb = Random.Range(0, 60);
+		if (ranNumb < 20) {
+			Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
+		} else if (ranNumb < 40) {
+			Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
+		}
+		Destroy (this.gameObject);
 	}
 }

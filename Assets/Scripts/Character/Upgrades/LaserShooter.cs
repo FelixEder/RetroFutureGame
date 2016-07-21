@@ -5,7 +5,7 @@ public class LaserShooter : MonoBehaviour {
 	private LineRenderer lineRenderer;
 	public Transform laserHit;
 	CharEnergy charEnergy;
-	bool holdShoot;
+	bool holdShoot, canShoot = true;
 
 	void Start() {
 		//Change player sprite and display tutorial
@@ -18,27 +18,23 @@ public class LaserShooter : MonoBehaviour {
 		if (!Input.GetButton ("Shoot")) {
 			holdShoot = false;
 		}
-		if (charEnergy.HasJuice (2) && Input.GetButton ("Shoot") && !holdShoot) {
-			Debug.Log ("shoot");
+		if (charEnergy.HasEnergy (2) && Input.GetButton ("Shoot") && !holdShoot && canShoot) {
+			canShoot = false;
 			holdShoot = true;
 			charEnergy.UseEnergy (2);
-			ShootGun ();
+			ActivateLaser ();
 		}
 	}
 
-	void ShootGun() {
+	void ActivateLaser() {
 		lineRenderer.enabled = true;
 		RaycastHit2D hit = Physics2D.Raycast (transform.position, transform.right);
 		Debug.DrawLine (transform.position, hit.point);
 		laserHit.position = hit.point;
 		lineRenderer.SetPosition (0, transform.position);
 		lineRenderer.SetPosition (1, laserHit.position);
+		StartCoroutine (ShrinkLaser ());
 		HitByLaser (hit);
-		Invoke ("KillLaser", 0.5f);
-	}
-
-	void  KillLaser() {
-		lineRenderer.enabled = false;
 	}
 
 	void HitByLaser(RaycastHit2D victim) {
@@ -50,5 +46,30 @@ public class LaserShooter : MonoBehaviour {
 			victim.transform.gameObject.GetComponent<Knockback>().Knock(this.gameObject, 3f);
 			break;
 		}
+	}
+
+	IEnumerator ShrinkLaser() {
+		Vector3 target = transform.position;
+		Invoke ("CanShoot", 1);
+		if (transform.parent.gameObject.GetComponent<CharStatus> ().isMirrored) {
+			while (lineRenderer.enabled && Mathf.Abs (target.x) > Mathf.Abs (laserHit.position.x)) {
+				lineRenderer.SetPosition (0, target);
+				target -= transform.right * -1;
+				yield return new WaitForSeconds (0.01f);
+			}
+		}
+		else {
+			while (lineRenderer.enabled && Mathf.Abs (target.x) < Mathf.Abs (laserHit.position.x)) {
+				lineRenderer.SetPosition (0, target);
+				target -= transform.right * -1;
+				yield return new WaitForSeconds (0.01f);
+			}
+		}
+		
+		lineRenderer.enabled = false;
+	}
+
+	void CanShoot() {
+		canShoot = true;
 	}
 }

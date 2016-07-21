@@ -18,7 +18,7 @@ public class Knockback : MonoBehaviour {
 		this.gameObject.GetComponent<Rigidbody2D> ().AddForce (new Vector2 (force * wayofKnock, 2), ForceMode2D.Impulse);
 		//Drops the item the player is holding.
 		if (charInventory.isHoldingItem ()) {
-			charInventory.getHoldingItem ().GetComponent<PickUpableItem> ().Dropped ();
+			charInventory.getHoldingItem ().GetComponent<PickUpableItem> ().Drop (false);
 			charInventory.setHoldingItem (null);
 		}
 	}

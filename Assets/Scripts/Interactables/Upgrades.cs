@@ -6,7 +6,7 @@ public class Upgrades : MonoBehaviour {
 	public string type;
 
 	void OnTriggerEnter2D(Collider2D col) {
-		if (!col.isTrigger && col.gameObject.tag.Equals("char")) {
+		if (col.gameObject.name == "char") {
 			//Play correct music and animation depending on what switch-option is chosen
 			switch (type) {
 
@@ -22,7 +22,7 @@ public class Upgrades : MonoBehaviour {
 				col.gameObject.GetComponent<WallJump> ().enabled = true;
 				break;
 
-			case "romp_Stomp":
+			case "stomp":
 				col.gameObject.GetComponent<CharStomp> ().enabled = true;
 				break;
 			

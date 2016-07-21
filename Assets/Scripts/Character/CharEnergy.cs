@@ -4,23 +4,29 @@ using System.Collections;
 
 public class CharEnergy : MonoBehaviour {
 	public int currentEnergy, maxEnergy;
+	bool recharging;
 
 	void Start() {
 		SetEnergySlider ();
-		StartCoroutine (EnergyRecharge ());
 	}
 
-	public void UseEnergy(int amount) {
-		if (currentEnergy - amount < 0) {
-			OutOfEnergy ();
-		} else {
-			currentEnergy -= amount;
-			SetEnergySlider ();
+	void Update() {
+		if (currentEnergy < maxEnergy && !recharging) {
+			StartCoroutine (EnergyRecharge ());
+			recharging = true;
 		}
 	}
 
-	public bool HasJuice(int glasses) {
-		return (currentEnergy - glasses >= 0);
+	public bool UseEnergy(int amount) {
+		if (currentEnergy - amount < 0) {
+			OutOfEnergy ();
+			return false;
+		}
+		else {
+			currentEnergy -= amount;
+			SetEnergySlider ();
+			return true;
+		}
 	}
 
 	public void IncreaseCurrentEnergy(int amount) {
@@ -50,5 +56,6 @@ public class CharEnergy : MonoBehaviour {
 			yield return new WaitForSeconds (5);
 			IncreaseCurrentEnergy (1);
 		}
+		recharging = false;
 	}
 }

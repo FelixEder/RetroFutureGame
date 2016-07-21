@@ -4,8 +4,7 @@ using System.Collections;
 public class CharStomp : MonoBehaviour {	
 	Rigidbody2D rigidBody2D;
 	CharStatus charStatus;
-	GameObject triggerStomp;
-	StompTrigger stompTrigger;
+	public GameObject triggerStomp;
 	public bool isStomping, groundStomping = false;
 	bool holdStomp;
 
@@ -13,19 +12,17 @@ public class CharStomp : MonoBehaviour {
 	void Start () {
 		rigidBody2D = GetComponent<Rigidbody2D> ();
 		charStatus = GetComponent<CharStatus> ();
-		triggerStomp = GameObject.Find ("triggerStomp");
-		stompTrigger = triggerStomp.GetComponent<StompTrigger> ();
 		//Change sprite, display correct tutorial and play theme.
 	}
 
 	void Update() {
 		if (!Input.GetButton ("Attack"))
 			holdStomp = false;
-		triggerStomp.SetActive(groundStomping);
+		//triggerStomp.SetActive(groundStomping);
 	}
 	
 	void FixedUpdate() {
-		if (charStatus.InAir () && !charStatus.isFloating && Input.GetAxis ("Vertical") < -0.7 && Input.GetButton ("Attack") && !holdStomp) {
+		if (charStatus.InAir () && !charStatus.isFloating && Input.GetAxis ("Vertical") < -0.3f && Input.GetButton ("Attack") && !holdStomp) {
 			holdStomp = true;
 			isStomping = true;
 			rigidBody2D.velocity = new Vector2 (0, 0);
@@ -33,7 +30,6 @@ public class CharStomp : MonoBehaviour {
 			//Play stomp-animation
 			Invoke ("Stomp", 0.5f);
 		} else if (charStatus.onSurface && isStomping) {
-			Debug.Log ("isStomping done");
 			groundStomping = true;
 			isStomping = false;
 			Invoke ("FinishedStomp", 0.25f);
@@ -42,11 +38,12 @@ public class CharStomp : MonoBehaviour {
 
 	void FinishedStomp() {
 		groundStomping = false;
-		Debug.Log ("FinishedStomp");
+		triggerStomp.SetActive (false);
 	}
 
 	void Stomp() {
 		rigidBody2D.gravityScale = 2.0f;
 		rigidBody2D.velocity = new Vector2 (0, -9f);
+		triggerStomp.SetActive (true);
 	}	
 }

@@ -20,7 +20,7 @@ public class PickUpableItem : MonoBehaviour {
 		}
 	}
 
-	public void PickedUp(GameObject player) {
+	public void PickUp(GameObject player) {
 		this.gameObject.transform.SetParent (player.transform);
 		this.gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeAll;
 		//this.gameObject.GetComponent<Collider2D> ().enabled = false;
@@ -28,12 +28,12 @@ public class PickUpableItem : MonoBehaviour {
 		Debug.Log ("Pickup " + this.gameObject);
 	}
 
-	public void Dropped() {
+	public void Drop(bool canThrow) {
 		this.gameObject.transform.localPosition = new Vector2 (0.5f, 0);
 		this.gameObject.transform.SetParent (GameObject.Find("Items").transform, true);
 		this.gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.None;
 		//this.gameObject.GetComponent<Collider2D> ().enabled = true;
-		if (Input.GetAxis ("Horizontal") > 0.2 || Input.GetAxis ("Horizontal") < -0.2) {
+		if (canThrow && (Input.GetAxis ("Horizontal") > 0.2 || Input.GetAxis ("Horizontal") < -0.2)) {
 			rigidBody2D.AddForce (Vector2.right * 500 * Mathf.Sign (Input.GetAxis ("Horizontal")));
 		}
 		beingHeld = false;

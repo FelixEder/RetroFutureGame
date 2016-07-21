@@ -15,7 +15,7 @@ public class CharPunch : MonoBehaviour {
 		if (!Input.GetButton ("Attack") && holdPunch) {
 			holdPunch = false;
 		} else if (Input.GetButton ("Attack") && !holdPunch) {
-			Debug.Log ("Trigger free attack!");
+			Debug.Log ("Punched nothing");
 			ExecutePunch ();
 		}
 	}
@@ -56,7 +56,6 @@ public class CharPunch : MonoBehaviour {
 	 */
 	void OnTriggerStay2D(Collider2D victim) {
 		if(Input.GetButton ("Attack") && !holdPunch) {
-			Debug.Log ("Attack on Trigger!");
 			int damage = ExecutePunch ();
 			if(attackType.Equals("branch")) {
 				int lifeCheck =	charInventory.getHoldingItem().GetComponent<PickUpableItem>().GetBroken();
@@ -80,7 +79,7 @@ public class CharPunch : MonoBehaviour {
 				}
 				break;
 			}
-			Debug.Log (victim);
+			Debug.Log ("Punched a " + victim);
 		}
 	}
 }

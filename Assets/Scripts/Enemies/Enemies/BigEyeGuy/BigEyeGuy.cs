@@ -5,7 +5,7 @@ public class BigEyeGuy : MonoBehaviour {
 	public float moveSpeed, knockForce, jumpSpeed;
 	bool isMirrored = false;
 	Rigidbody2D rb2D;
-	public int health = 2, damage = 1;
+	public int health = 3, damage = 1;
 
 	void Start() {
 		rb2D = GetComponent<Rigidbody2D> ();
@@ -47,9 +47,6 @@ public class BigEyeGuy : MonoBehaviour {
 			break;
 
 			case "rock":
-			if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f) {
-				GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
-			}
 			GetMirrored ();
 			break;
 

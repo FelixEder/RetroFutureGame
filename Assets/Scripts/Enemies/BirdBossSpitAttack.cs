@@ -24,4 +24,3 @@ public class BirdBossSpitAttack : MonoBehaviour {
 		Instantiate (Resources.Load (spawnType), transform.position, Quaternion.identity);
 	}
 }
-

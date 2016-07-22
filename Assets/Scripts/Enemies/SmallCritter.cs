@@ -33,7 +33,11 @@ public class SmallCritter : MonoBehaviour {
 			case "softEnemy" :
 				GetMirrored();
 				break;
-			
+
+			case "hardEnemy" :
+				GetMirrored();
+				break;
+
 			case "wall" :
 				GetMirrored();
 				break;

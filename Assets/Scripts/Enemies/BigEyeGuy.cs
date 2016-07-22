@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class JumpingCritter : MonoBehaviour {
+public class BigEyeGuy : MonoBehaviour {
 	public float moveSpeed, knockForce, jumpSpeed;
 	bool isMirrored = false;
 	Rigidbody2D rb2D;
@@ -24,41 +24,41 @@ public class JumpingCritter : MonoBehaviour {
 		switch(col.gameObject.tag) {
 
 			case "char":
-				if (!col.gameObject.GetComponent<CharStomp> ().groundStomping) {
-					col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
-					col.gameObject.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
-				}
-				break;
+			if (!col.gameObject.GetComponent<CharStomp> ().groundStomping) {
+				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
+				col.gameObject.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
+			}
+			break;
 
 			case "softEnemy" :
-				GetMirrored();
-				break;
+			GetMirrored();
+			break;
 
 			case "hardEnemy" :
-				GetMirrored();
-				break;
+			GetMirrored();
+			break;
 
 			case "wall" :
-				GetMirrored();
-				break;
+			GetMirrored();
+			break;
 
 			case "door" :
-				GetMirrored();
-				break;
+			GetMirrored();
+			break;
 
 			case "rock":
-				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f) {
-					GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
-				}
-				GetMirrored ();
-				break;
+			if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f) {
+				GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
+			}
+			GetMirrored ();
+			break;
 
 			case "branch":
-				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
-					GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
-				}
-				GetMirrored ();
-				break;
+			if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
+				GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
+			}
+			GetMirrored ();
+			break;
 		}
 	}
 

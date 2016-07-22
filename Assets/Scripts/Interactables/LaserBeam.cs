@@ -28,17 +28,17 @@ using System.Collections;
 
 		void  KillLaser() {
 			lineRenderer.enabled = false;
-	}
-
-	void HitByLaser(RaycastHit2D victim) {
-		switch(victim.transform.gameObject.tag) {
-
-		case "char":
-			Debug.Log ("Hit by laser!!");
-			player.GetComponent<Knockback>().Knock(this.gameObject, 3f);
-			player.GetComponent<CharHealth> ().TakeDamage (damage);
-			break;
 		}
-	}
+
+		void HitByLaser(RaycastHit2D victim) {
+			switch(victim.transform.gameObject.tag) {
+
+			case "char":
+				Debug.Log ("Hit by laser!!");
+				player.GetComponent<Knockback>().Knock(this.gameObject, 3f);
+				player.GetComponent<CharHealth> ().TakeDamage (damage);
+				break;
+			}
+		}
 }
 

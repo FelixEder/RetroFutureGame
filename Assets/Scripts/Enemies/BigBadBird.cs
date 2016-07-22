@@ -3,8 +3,9 @@ using System.Collections;
 
 public class BigBadBird : MonoBehaviour {
 	public float moveSpeed, knockForce;
-	bool isMirrored;
+	bool isMirrored, isSpitting;
 	public int health = 6, damage;
+	//Should it really use a rigidBody?
 	Rigidbody2D rb2D;
 	int spitChance = 10;
 
@@ -17,12 +18,12 @@ public class BigBadBird : MonoBehaviour {
 	void Update() {
 		if(health <= 0)
 			Defeated ();
-		if (Random.Range (0, spitChance) < 1)
+		if (Random.Range (0, spitChance) < 2 && !isSpitting)
 			SpitAttack ();
 	}
 
 	void FixedUpdate() {
-		int vertDir = Random.Range (-5, 5);
+		int vertDir = Random.Range (-5, 6);
 		if (isMirrored) {
 			rb2D.velocity = new Vector2 (moveSpeed, vertDir);
 		} else {
@@ -84,8 +85,7 @@ public class BigBadBird : MonoBehaviour {
 	}
 
 	void SpitAttack() {
-		//The child should only be able to spawn 1 prefab during its lifecycle.
-		//There should be a low chance that a stronger enemy is spawned
+		isSpitting = true;
 		this.gameObject.transform.GetChild (0).gameObject.SetActive (true);
 		//Is there a better way to disable a child after a certain time than a Invoke-call to an unneccecary method?
 		Invoke ("FinishSpitAttack", 1f);
@@ -93,6 +93,7 @@ public class BigBadBird : MonoBehaviour {
 
 	void FinishSpitAttack() {
 		this.gameObject.transform.GetChild (0).gameObject.SetActive (false);
+		isSpitting = false;
 		//Play animation that closes mouth
 	}
 

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CharStatus : MonoBehaviour {
 	public bool onGround, onLeftWall, onRightWall, onPlatform, isMirrored, isFloating, onSurface;
+	public bool megaPunch, chargedMegaPunch;
 	public float velocityX, velocityY;
 
 	void Update() {
@@ -15,5 +16,14 @@ public class CharStatus : MonoBehaviour {
 	 */
 	public bool InAir() {
 		return (!onGround && !onLeftWall && !onRightWall && !onPlatform && !onSurface);
+	}
+
+	public bool IsMegaPunching() {
+		return (megaPunch || chargedMegaPunch);
+	}
+
+	public void NoLongerMegaPunching() {
+		megaPunch = false;
+		chargedMegaPunch = false;
 	}
 }

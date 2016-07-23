@@ -4,19 +4,20 @@ using System.Collections;
 public class MegaPunch : MonoBehaviour {
 	CharInventory charInventory;
 	CharEnergy charEnergy;
+	CharStatus charStatus;
 	int chargeCounter, damage;
-	public int chargeLimit;
+	public int chargeLimit = 250;
 	public	bool holdPunch, megaPunch, chargedMegaPunch;
 
 	void Start() {
 		charInventory = transform.parent.GetComponent<CharInventory> ();
 		charEnergy = transform.parent.GetComponent<CharEnergy> ();
+		charStatus = transform.parent.GetComponent<CharStatus> ();
 	}
 
 	void Update() {
 		if (Input.GetButtonDown ("MegaAttack") && !holdPunch) {
-			chargedMegaPunch = false;
-			megaPunch = false;
+			charStatus.NoLongerMegaPunching ();
 			holdPunch = true;
 			if (chargeCounter < chargeLimit) {
 				chargeCounter++;
@@ -36,7 +37,7 @@ public class MegaPunch : MonoBehaviour {
 		if (chargeCounter >= chargeLimit) {
 			if (charEnergy.HasJuice (3)) {
 				//Play correct animation for charged Mega Punch
-				chargedMegaPunch = true;
+				charStatus.chargedMegaPunch = true;
 				charEnergy.UseEnergy (3);
 				damage = 5;
 				chargeCounter = 0;
@@ -47,7 +48,7 @@ public class MegaPunch : MonoBehaviour {
 				holdPunch = false;
 			}
 		} else if (charEnergy.HasJuice (1)) {
-			megaPunch = true;
+			charStatus.megaPunch = true;
 			charEnergy.UseEnergy (1);
 			damage = 3;
 			chargeCounter = 0;
@@ -63,7 +64,7 @@ public class MegaPunch : MonoBehaviour {
 	 * Triggered when player punches an object.
 	 */
 	void OnTriggerStay2D(Collider2D victim) {
-		if(megaPunch || chargedMegaPunch) {
+		if(charStatus.IsMegaPunching()) {
 			Debug.Log ("MegaPunch on Trigger!");
 			switch (victim.gameObject.tag) {
 
@@ -74,7 +75,6 @@ public class MegaPunch : MonoBehaviour {
 				case "softEnemy":
 				victim.gameObject.GetComponent<SmallCritter>().GetHurt(damage);
 				break;
-
 		}
 		Debug.Log (victim);
 	}

@@ -27,7 +27,7 @@ public class Upgrades : MonoBehaviour {
 				break;
 			
 			case "laserGun":
-				col.gameObject.transform.GetChild (7).gameObject.SetActive (true);
+				col.gameObject.transform.GetChild (8).gameObject.SetActive (true);
 				break;
 
 			case "healthIncrease":

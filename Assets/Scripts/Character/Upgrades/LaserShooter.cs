@@ -32,7 +32,7 @@ public class LaserShooter : MonoBehaviour {
 		lineRenderer.enabled = true;
 		RaycastHit2D hit = Physics2D.Raycast (transform.position, transform.right);
 		Debug.DrawLine (transform.position, hit.point);
-		laserHit.position = hit.point;
+		laserHit.position = new Vector3(hit.point.x, hit.point.y, -5);
 		lineRenderer.SetPosition (0, transform.position);
 		lineRenderer.SetPosition (1, laserHit.position);
 		StartCoroutine (ShrinkLaser ());
@@ -67,7 +67,6 @@ public class LaserShooter : MonoBehaviour {
 				yield return new WaitForSeconds (0.01f);
 			}
 		}
-		
 		lineRenderer.enabled = false;
 	}
 

@@ -41,7 +41,7 @@ public class Door : MonoBehaviour {
 	void CoverMap() {
 		if (cover1 != null && !cover1.GetComponent<MapCover> ().isInside)
 			cover1.GetComponent<SpriteRenderer> ().color = new Color (cover1Color.r, cover1Color.g, cover1Color.b, 1);
-		if (cover2 != null && !cover1.GetComponent<MapCover> ().isInside)
+		if (cover2 != null && !cover2.GetComponent<MapCover> ().isInside)
 			cover2.GetComponent<SpriteRenderer> ().color = new Color (cover2Color.r, cover2Color.g, cover2Color.b, 1);
 	}
 }

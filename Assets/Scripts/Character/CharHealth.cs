@@ -9,6 +9,7 @@ public class CharHealth : MonoBehaviour {
 
 	void Start() {
 		slider = GameObject.Find ("healthSlider").GetComponent<Slider> ();
+		SetHealthSliderSize ();
 		SetHealthSlider ();
 	}
 
@@ -32,12 +33,16 @@ public class CharHealth : MonoBehaviour {
 	public void IncreaseMaxHealth() {
 		maxHealth ++;
 		currentHealth = maxHealth;
+		SetHealthSliderSize ();
 		StartCoroutine(TransitionHealthSlider ());
 	}
 
 	void SetHealthSlider() {
 		slider.value = (float) currentHealth / maxHealth;
-		GameObject.Find ("healthSlider").GetComponent<RectTransform> ().sizeDelta = new Vector2 (8 + 32 *  (float) maxHealth, 32);
+	}
+
+	void SetHealthSliderSize() {
+		GameObject.Find ("healthSlider").GetComponent<RectTransform> ().sizeDelta = new Vector2 (8 + 32 * (float)maxHealth, 32);
 	}
 
 	IEnumerator TransitionHealthSlider() {
@@ -51,6 +56,6 @@ public class CharHealth : MonoBehaviour {
 
 	void Die() {
 		dead = true;
-		Debug.Log ("YOU DIED\n");
+		Debug.Log ("YOU DIED\n------------");
 	}
 }

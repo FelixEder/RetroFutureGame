@@ -65,7 +65,7 @@
      <Compile Include="Assets\Scripts\Character\Upgrades\StompTrigger.cs" />
      <Compile Include="Assets\Scripts\Character\Upgrades\WallJump.cs" />
      <Compile Include="Assets\Scripts\Enemies\BossActivator.cs" />
-     <Compile Include="Assets\Scripts\Enemies\EnemyKnockBack.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemyKnockback.cs" />
      <Compile Include="Assets\Scripts\Enemies\JumpingCritter.cs" />
      <Compile Include="Assets\Scripts\Enemies\JumpingCritterTrigger.cs" />
      <Compile Include="Assets\Scripts\Enemies\SmallCritter.cs" />

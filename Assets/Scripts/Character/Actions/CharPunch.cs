@@ -74,6 +74,10 @@ public class CharPunch : MonoBehaviour {
 				victim.gameObject.GetComponent<SmallCritter>().GetHurt(damage);
 				break;
 
+			case "stompEnemy":
+				GetComponent<Knockback> ().knock (victim.gameObject, 2f);
+				break;
+
 			case "bigEyeBuyWeakSpot":
 				if (attackType.Equals ("branch")) {
 					victim.gameObject.transform.parent.GetComponent<BigEyeGuy> ().GetHurt (1);

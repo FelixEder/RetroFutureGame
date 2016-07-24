@@ -36,6 +36,11 @@ public class CharEnergy : MonoBehaviour {
 		SetEnergySlider ();
 	}
 
+	void MaximizeEnergy() {
+		currentEnergy += (maxEnergy - currentEnergy);
+	}
+
+
 	void SetEnergySlider() {
 		GameObject.Find ("energySlider").GetComponent<Slider>().value = (float) currentEnergy / maxEnergy;
 		GameObject.Find ("energySlider").GetComponent<RectTransform> ().sizeDelta = new Vector2 (8 + 32 *  (float) maxEnergy, 32);

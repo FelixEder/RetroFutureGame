@@ -5,9 +5,9 @@ using System.Collections;
 
 public class BootCompany : MonoBehaviour {
 	void Start() {
-		StartCoroutine (Wait ());
+		StartCoroutine (TransitionImage ());
 	}
-	IEnumerator Wait() {
+	IEnumerator TransitionImage() {
 		GetComponent<Image>().CrossFadeAlpha(0, 0, false);
 		yield return new WaitForSeconds(1);
 		GetComponent<Image>().CrossFadeAlpha(1, 2, false);

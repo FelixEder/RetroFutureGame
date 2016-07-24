@@ -20,7 +20,6 @@ public class ForegroundCover : MonoBehaviour {
 	}
 
 	IEnumerator Hide() {
-		Debug.Log ("Hiding cover " + spriteColor.a);
 		for (float a = 1; a > 0; a -= 0.05f) {
 			GetComponent<SpriteRenderer> ().color = new Color (spriteColor.r, spriteColor.g, spriteColor.b, a);
 			yield return new WaitForSeconds (0.01f);
@@ -29,7 +28,6 @@ public class ForegroundCover : MonoBehaviour {
 	}
 
 	IEnumerator Show() {
-		Debug.Log ("Showing cover " + spriteColor.a);
 		for (float a = 0; a < 1; a += 0.05f) {
 			GetComponent<SpriteRenderer> ().color = new Color (spriteColor.r, spriteColor.g, spriteColor.b, a);
 			yield return new WaitForSeconds (0.01f);

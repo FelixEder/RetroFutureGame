@@ -23,12 +23,7 @@ public class ShellMan : MonoBehaviour {
 		switch(col.gameObject.tag) {
 
 		case "char":
-			if (col.gameObject.GetComponent<CharStomp> ().groundStomping && !deShelled) {
-				GetHurt (1);
-			} else if (col.gameObject.GetComponent<CharStomp> ().groundStomping && deShelled) {
-				GetHurt (2);
-			}
-			else {
+			if (!col.gameObject.GetComponent<CharStomp> ().groundStomping) {
 				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
 				col.gameObject.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
 			}

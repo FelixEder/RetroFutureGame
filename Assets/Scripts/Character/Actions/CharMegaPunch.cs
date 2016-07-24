@@ -67,7 +67,7 @@ public class MegaPunch : MonoBehaviour {
 		if(charStatus.IsMegaPunching()) {
 			Debug.Log ("MegaPunch on Trigger!");
 			switch (victim.gameObject.tag) {
-
+				//Update this list with correct reactions to the mega-punch
 				case "door":
 				victim.gameObject.GetComponent<Door> ().SetInvisible ();
 				break;
@@ -75,6 +75,17 @@ public class MegaPunch : MonoBehaviour {
 				case "softEnemy":
 				victim.gameObject.GetComponent<SmallCritter>().GetHurt(damage);
 				break;
+
+				case "eyeEnemy":
+				//Can't be hurt with mega-punch, play relevant things
+				break;
+
+				case "stompEnemy":
+				break;
+
+				case "hardEnemy":
+				break;
+			}
 		}
 		Debug.Log (victim);
 	}

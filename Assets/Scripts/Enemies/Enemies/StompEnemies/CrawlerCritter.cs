@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CrawlerCritter : MonoBehaviour {
 	public float moveSpeed, knockForce;
-	bool isMirrored = false;
+	bool isMirrored = false, deShelled;
 	Rigidbody2D rb2D;
 	public int health = 2, damage = 2;
 
@@ -76,13 +76,25 @@ public class CrawlerCritter : MonoBehaviour {
 		}
 	}
 
+	void BreakShell() {
+		//Change sprite into the DeShelled one and play relevant things.
+		deShelled = true;
+		damage = 5;
+		moveSpeed += 3;
+		knockForce += 3;
+		jumpSpeed += 3;
+	}
+
 	/**
 	 * Method called when enemy is hit by the player
 	 */
 	public void GetHurt(int damage) {
 		//Play a sound and animation.
 		health -= damage;
-		if (health <= 0) {
+		if (health == 1) {
+			BreakShell ();
+		}
+		else if (health <= 0) {
 			//Enemy is dead, play animation and sound.
 			int ranNumb = Random.Range(0, 60);
 			if (ranNumb < 20) {

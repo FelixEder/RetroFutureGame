@@ -1,6 +1,6 @@
 ###Enemy & boss concepts
 
-##Enemies
+##Enemy ideas
 
 1- A quadratic Goomba-like creature that simply walks left and changes to right if it hits a wall or equal.
 
@@ -20,7 +20,13 @@ After the armour is crushed, can be hurt anywhere in any way you want, but it be
 does a lot of damage and is very fast.
 
 7- A small creature similar in style to the Romp-stomp-blocks. Kan be killed with a singled stomp,
-but that is the only way to hurt it. 
+but that is the only way to hurt it. Simply walks back and forth otherwise. 
+
+
+##Enemy types
+
+Type: | Soft | Stomp       | Mega       | Eye            |      Hard      |
+Weak: | All  | Romp- Stomp | Mega-punch | Laser or stick | Rock or harder |
 
 
 ##Lethalities

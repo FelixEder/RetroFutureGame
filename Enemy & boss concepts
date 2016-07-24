@@ -1,26 +1,32 @@
 ###Enemy & boss concepts
 
-##Enemies
+##Enemy ideas
 
-1- A quadratic Goomba-like creature that simply walks left and changes to right if it hits a wall or equal.
+1- A quadratic Goomba-like creature that simply walks left and changes to right if it hits a wall or equal. SOFT
 
 2- An similiar enemy but twice as big and has a really thich shell. This requires the player to use a stone or mecha-hand
-to destroy shell and reveal the softer enemy on the inside. This can at first be a mini-boss which then becomes a regular enemy.
+to destroy shell and reveal the softer enemy on the inside. This can at first be a mini-boss which then becomes a regular enemy. HARD
 
-3- An enemy with a impenetrable skin, it's only weak spot is an eye that can be poked at with a stick or the ray gun.
+3- An enemy with a impenetrable skin, it's only weak spot is an eye that can be poked at with a stick or the ray gun. EYE
 
-4- A jumping version of number 1, jumps back and forth, making your life miserable.
+4- A jumping version of number 1, jumps back and forth, making your life miserable. SOFT
 
 5- A medium sized enemy that mostly stands still and jumps once in a while. Shoots lasers and can only
-be hurt on his back.
+be hurt on his back. UNKNOWN
 
 6- Make some sort of miniboss which later on becomes a standard enemy. Has a thick armour that shares
 visual resemblance to the Romp-stomp blocks, as the armour is crushed by stomping a few times.
 After the armour is crushed, can be hurt anywhere in any way you want, but it becomes enraged and
-does a lot of damage and is very fast.
+does a lot of damage and is very fast. HARD
 
 7- A small creature similar in style to the Romp-stomp-blocks. Kan be killed with a singled stomp,
-but that is the only way to hurt it. Simply walks back and forth otherwise. 
+but that is the only way to hurt it. Simply walks back and forth otherwise. STOMP
+
+
+##Enemy types
+
+Type: | Soft | Stomp       | Mega       | Eye            |      Hard      |
+Weak: | All  | Romp- Stomp | Mega-punch | Laser or stick | Rock or harder |
 
 
 ##Lethalities

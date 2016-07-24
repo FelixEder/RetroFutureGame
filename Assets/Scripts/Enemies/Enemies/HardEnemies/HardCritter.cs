@@ -1,11 +1,11 @@
 using UnityEngine;
 using System.Collections;
 
-public class CrawlerCritter : MonoBehaviour {
+public class HardCritter : MonoBehaviour {
 	public float moveSpeed, knockForce;
 	bool isMirrored = false;
 	Rigidbody2D rb2D;
-	public int health = 2, damage = 2;
+	public int health = 5, damage = 3;
 
 	void Start() {
 		rb2D = GetComponent<Rigidbody2D> ();
@@ -27,6 +27,7 @@ public class CrawlerCritter : MonoBehaviour {
 			if (!col.gameObject.GetComponent<CharStomp> ().groundStomping) {
 				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
 				col.gameObject.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
+				Rush ();
 			}
 			break;
 
@@ -35,6 +36,10 @@ public class CrawlerCritter : MonoBehaviour {
 			break;
 
 			case "hardEnemy" :
+			GetMirrored();
+			break;
+
+			case "eyeEnemy" :
 			GetMirrored();
 			break;
 
@@ -49,17 +54,29 @@ public class CrawlerCritter : MonoBehaviour {
 			case "rock":
 			if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f) {
 				GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
+			} else {
+				Rush ();
 			}
 			GetMirrored ();
 			break;
 
 			case "branch":
-			if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
-				GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
-			}
-			GetMirrored ();
+			Rush ();
 			break;
 		}
+	}
+
+	void Rush() {
+		//Enemy is rushing, play relevant things
+		damage += 2;
+		moveSpeed += 5;
+		Invoke ("StopRush", 1f);
+	}
+
+	void StopRush() {
+		//Enemy stops rushing, play relevant things
+		damage -= 2;
+		moveSpeed -= 5;
 	}
 
 	/**

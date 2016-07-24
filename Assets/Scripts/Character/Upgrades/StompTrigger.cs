@@ -15,6 +15,17 @@ public class StompTrigger : MonoBehaviour {
 			col.gameObject.GetComponent<SmallCritter> ().GetHurt (3);
 			col.gameObject.GetComponent<EnemyKnockback> ().Knock (GameObject.Find ("char"), knockForce);
 			break;
+
+		case "eyeEnemy":
+			//Can't be hurt with stomp, play relevant things
+			break;
+
+		case "stompEnemy":
+
+		case "hardEnemy":
+			col.gameObject.GetComponent<SmallCritter> ().GetHurt (2);
+			col.gameObject.GetComponent<EnemyKnockback> ().Knock (GameObject.Find ("char"), knockForce);
+			break;
 		}
 	}
 }

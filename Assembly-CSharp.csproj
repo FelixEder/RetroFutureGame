@@ -45,7 +45,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ColorSwap.cs" />
      <Compile Include="Assets\Scripts\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\Character\CharEnergy.cs" />
      <Compile Include="Assets\Scripts\Character\CharHealth.cs" />
@@ -83,7 +82,7 @@
      <Compile Include="Assets\Scripts\Interactables\PrefabSpawner.cs" />
      <Compile Include="Assets\Scripts\Interactables\Upgrades.cs" />
      <Compile Include="Assets\Scripts\PlatformLogic.cs" />
-     <Compile Include="Assets\Scripts\UI\BootCompany.cs" />
+     <Compile Include="Assets\Scripts\UI\BootLogo.cs" />
      <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
      <Compile Include="Assets\Scripts\UI\PauseMenu.cs" />
      <None Include="Assets\Materials\Solid Color.shader" />

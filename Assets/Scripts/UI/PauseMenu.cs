@@ -5,8 +5,9 @@ using System.Collections;
 
 public class PauseMenu : MonoBehaviour {
 	GameObject[] pauseObjects, hideOnPlay;
+	GameObject lastSelected;
 	EventSystem eventSystem;
-	bool cursorVisible = true;
+//	bool cursorVisible = true;
 
 	void Start() {
 		Time.timeScale = 1;
@@ -19,6 +20,7 @@ public class PauseMenu : MonoBehaviour {
 		//uses the Escape button to pause and unpause the game
 		if (Input.GetButtonDown("Pause"))
 			PauseControl ();
+/*
 		if ((Input.GetAxis ("Mouse X") != 0 || Input.GetAxis ("Mouse Y") != 0) && !cursorVisible) {
 			Cursor.visible = true;
 			cursorVisible = true;
@@ -27,6 +29,10 @@ public class PauseMenu : MonoBehaviour {
 			Cursor.visible = false;
 			cursorVisible = false;
 		}
+*/
+		//Detects if none of the buttons are selected and selects the last selected
+		if (GameObject.Find ("EventSystem").GetComponent<EventSystem> ().currentSelectedGameObject == null)
+			SetSelected (lastSelected);
 	}
 
 	//Reloads the Level
@@ -63,6 +69,7 @@ public class PauseMenu : MonoBehaviour {
 		}
 	}
 
+	//hides objects with HideOnPlay tag
 	public void HideOnPlay() {
 		if (hideOnPlay != null) {
 			foreach (GameObject g in hideOnPlay) {
@@ -73,26 +80,32 @@ public class PauseMenu : MonoBehaviour {
 
 	//loads inputted level
 	public void LoadLevel(string level) {
+		Time.timeScale = 1;
 		SceneManager.LoadScene(level);
 	}
 
+	//resumes the game
 	public void Resume() {
 		GameObject.Find ("char").GetComponent<CharJump> ().holdJump = true; //prevent jumping when resuming
 		Time.timeScale = 1;
 		HidePaused ();
 	}
 
+	//shows a gameobject and updates the hideOnPlay array
 	public void ShowDialog(GameObject dialog) {
 		dialog.SetActive (true);
 		hideOnPlay = GameObject.FindGameObjectsWithTag ("HideOnPlay");
 	}
 
+	//hides a gameobject and updates the hideOnPlay array
 	public void HideDialog(GameObject dialog) {
 		dialog.SetActive (false);
 		hideOnPlay = GameObject.FindGameObjectsWithTag ("HideOnPlay");
 	}
 
+	//sets a gameobject as selected and updates lastSelected
 	public void SetSelected(GameObject selected) {
 		eventSystem.SetSelectedGameObject (selected);
+		lastSelected = selected;
 	}
 }

@@ -1,15 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\BootLogo.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\MainMenu.cs">
     <Files>
+      <File FileName="Assets\Scripts\Enemies\SmallCritter.cs" Line="93" Column="22" />
+      <File FileName="Assets\Materials\spriteGlitch.shader" Line="1" Column="1" />
       <File FileName="Assets\Scripts\UI\BootLogo.cs" Line="6" Column="22" />
-      <File FileName="Assets\Scripts\UI\PauseMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\MainMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharHealth.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\PauseMenu.cs" Line="83" Column="3" />
+      <File FileName="Assets\Scripts\UI\MainMenu.cs" Line="31" Column="41" />
+      <File FileName="Assets\Scripts\Character\CharHealth.cs" Line="1" Column="19" />
       <File FileName="Assets\Scripts\Character\CharEnergy.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Character\Upgrades\LaserShooter.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Character\Upgrades\CharStomp.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\SmallCritter.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemies\JumpingCritter.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Interactables\Upgrades.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Character\Knockback.cs" Line="1" Column="1" />
@@ -20,6 +21,7 @@
       <File FileName="Assets\Scripts\Events\RedLightFlash.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Interactables\MapCover.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Interactables\Door.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\MainMenuLogo.cs" Line="23" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

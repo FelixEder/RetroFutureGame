@@ -89,7 +89,8 @@ public class SmallCritter : MonoBehaviour {
 		if (health <= 0) {
 			//Enemy is dead, play animation and sound.
 			gameObject.transform.GetChild(0).gameObject.SetActive(true);
-			Invoke ("Die", 0.2f);
+			rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
+			Invoke ("Die", 0.5f);
 		}
 		GetMirrored ();
 	}

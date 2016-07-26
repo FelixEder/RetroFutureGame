@@ -2,12 +2,12 @@ using UnityEngine;
 using System.Collections;
 
 public class CharPunch : MonoBehaviour {
-	CharInventory charInventory;
+	CharInventory CharInventory;
 	public bool holdPunch;
 	string attackType;
 
 	void Start() {
-		charInventory = transform.parent.GetComponent<CharInventory> ();
+		CharInventory = transform.parent.GetComponent<CharInventory> ();
 	}
 
 	void Update() {
@@ -26,19 +26,19 @@ public class CharPunch : MonoBehaviour {
 	 */
 	int ExecutePunch() {
 		holdPunch = true;
-		if (charInventory.isHoldingItem ()) {
-			GameObject holdingItem = charInventory.getHoldingItem ();
+		if (CharInventory.isHoldingItem ()) {
+			GameObject holdingItem = CharInventory.getHoldingItem ();
 
-			switch (holdingItem.tag) {
+			switch (holdingItem.GetComponent<PickUpableItem>().GetItemType()) {
 
-			case "rock":
+			case "Rock":
 				//Play correct animation
-				attackType = "rock";
+				attackType = "Rock";
 				return holdingItem.GetComponent<PickUpableItem>().damage;
 
-			case "branch":
+			case "Branch":
 				//Play correct animation
-				attackType = "branch";
+				attackType = "Branch";
 				return holdingItem.GetComponent<PickUpableItem>().damage;
 
 			default:
@@ -50,36 +50,35 @@ public class CharPunch : MonoBehaviour {
 			return 1;
 		}
 	}
-
-	/**
-	 * Triggered when player punches an object.
-	 */
+		
+	//Triggered when player punches an object.
 	void OnTriggerStay2D(Collider2D victim) {
 		if(Input.GetButton ("Attack") && !holdPunch) {
 			int damage = ExecutePunch ();
 			if(attackType.Equals("branch")) {
-				int lifeCheck =	charInventory.getHoldingItem().GetComponent<PickUpableItem>().GetBroken();
+				int lifeCheck =	CharInventory.getHoldingItem().GetComponent<PickUpableItem>().Break();
 				if (lifeCheck == 0) {
-					charInventory.setHoldingItem (null);
+					CharInventory.setHoldingItem (null);
 				}
 			}
 			switch (victim.gameObject.tag) {
 
-			case "door":
+			case "Door":
 				victim.gameObject.GetComponent<Door> ().SetInvisible ();
 				break;
 
-			case "softEnemy":
-				victim.gameObject.GetComponent<SmallCritter>().GetHurt(damage);
+			case "SoftEnemy":
+				victim.gameObject.GetComponent<SmallCritter>().TakeDamage(damage);
 				break;
 
-			case "barrier":
-				if (attackType.Equals(victim.gameObject.GetComponent<Barriers>().GetSpecial ())) {
-					victim.gameObject.GetComponent<Barriers> ().GetHurt ();
+			case "Barrier":
+				Debug.Log ("BarrierType: " + victim.gameObject.GetComponent<Barriers> ().GetBarrierType () );
+				if (attackType.Equals(victim.gameObject.GetComponent<Barriers>().GetBarrierType ())) {
+					victim.gameObject.GetComponent<Barriers> ().TakeDamage ();
 				}
 				break;
 			}
-			Debug.Log ("Punched a " + victim);
+			Debug.Log ("Punched a " + victim + " with tag: " + victim.gameObject.tag + "\nAttackType: " + attackType);
 		}
 	}
 }

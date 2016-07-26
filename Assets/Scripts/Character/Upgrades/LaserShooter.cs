@@ -4,14 +4,14 @@ using System.Collections;
 public class LaserShooter : MonoBehaviour {
 	private LineRenderer lineRenderer;
 	public Transform laserHit;
-	CharEnergy charEnergy;
+	CharEnergy CharEnergy;
 	bool holdShoot, canShoot = true;
 
 	void Start() {
 		//Change player sprite and display tutorial
 		lineRenderer = GetComponent<LineRenderer> ();
 		//lineRenderer.useWorldSpace = true;
-		charEnergy = GameObject.Find("char").GetComponent<CharEnergy> ();
+		CharEnergy = GameObject.Find("Char").GetComponent<CharEnergy> ();
 	}
 
 	void Update() {
@@ -20,9 +20,9 @@ public class LaserShooter : MonoBehaviour {
 		}
 		if (Input.GetButton ("Shoot") && !holdShoot && canShoot) {
 			holdShoot = true;
-			if (charEnergy.UseEnergy (2)) {
+			if (CharEnergy.UseEnergy (2)) {
 				canShoot = false;
-				//charEnergy.UseEnergy (2);
+				//CharEnergy.UseEnergy (2);
 				ActivateLaser ();
 			}
 		}
@@ -42,9 +42,9 @@ public class LaserShooter : MonoBehaviour {
 	void HitByLaser(RaycastHit2D victim) {
 		switch(victim.transform.gameObject.tag) {
 			//Add more cases as more types of enemies are added to the game
-		case "softEnemy":
+		case "SoftEnemy":
 			Debug.Log ("Enemy hit by laser!!");
-			victim.transform.gameObject.GetComponent<SmallCritter> ().GetHurt (3);
+			victim.transform.gameObject.GetComponent<SmallCritter> ().TakeDamage (3);
 			victim.transform.gameObject.GetComponent<Knockback>().Knock(this.gameObject, 3f);
 			break;
 		}

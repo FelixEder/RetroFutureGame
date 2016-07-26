@@ -4,9 +4,12 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class BootLogo : MonoBehaviour {
+	
 	void Start() {
 		StartCoroutine (TransitionImage ());
 	}
+
+	/** Fades image component's alpha color on and off.*/
 	IEnumerator TransitionImage() {
 		GetComponent<Image>().CrossFadeAlpha(0, 0, false);
 		yield return new WaitForSeconds(1);

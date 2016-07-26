@@ -4,19 +4,19 @@ using System.Collections;
 
 public class CharEnergy : MonoBehaviour {
 	public int currentEnergy, maxEnergy, rechargeTime;
-	bool recharging;
+	bool reCharging;
 	Slider slider, rechargeSlider;
 
 	void Start() {
 		slider = GameObject.Find ("energySlider").GetComponent<Slider> ();
-		rechargeSlider = GameObject.Find ("energyRechargeSlider").GetComponent<Slider> ();
+		rechargeSlider = GameObject.Find ("energyReChargeSlider").GetComponent<Slider> ();
 		SetEnergySliderSize ();
 		SetEnergySlider ();
 	}
 
 	void Update() {
-		if (currentEnergy < maxEnergy && !recharging) {
-			StartCoroutine (EnergyRecharge ());
+		if (currentEnergy < maxEnergy && !reCharging) {
+			StartCoroutine (EnergyReCharge ());
 		}
 	}
 
@@ -52,15 +52,15 @@ public class CharEnergy : MonoBehaviour {
 
 	void SetEnergySliderSize() {
 		GameObject.Find ("energySlider").GetComponent<RectTransform> ().sizeDelta = new Vector2 (8 + 32 * (float)maxEnergy, 32);
-		GameObject.Find ("energyRechargeSlider").GetComponent<RectTransform> ().sizeDelta = new Vector2 (8 + 32 * (float)maxEnergy, 32);
+		GameObject.Find ("energyReChargeSlider").GetComponent<RectTransform> ().sizeDelta = new Vector2 (8 + 32 * (float)maxEnergy, 32);
 	}
 
 	void OutOfEnergy() {
 		//PLay some sound or animation since you are out of energy
 	}
 
-	IEnumerator EnergyRecharge() {
-		recharging = true;
+	IEnumerator EnergyReCharge() {
+		reCharging = true;
 		int startEnergy = currentEnergy;
 		while (currentEnergy < maxEnergy && startEnergy == currentEnergy) {
 			rechargeSlider.value = (float) startEnergy / maxEnergy;
@@ -72,7 +72,7 @@ public class CharEnergy : MonoBehaviour {
 		}
 		yield return new WaitForSeconds (1.0f);
 		rechargeSlider.value = 0.0f;
-		recharging = false;
+		reCharging = false;
 	}
 
 	IEnumerator TransitionEnergySlider() {

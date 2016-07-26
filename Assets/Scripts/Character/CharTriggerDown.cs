@@ -2,20 +2,20 @@
 using System.Collections;
 
 public class CharTriggerDown : MonoBehaviour {
-	//Down facing character collission trigger
+	//Down facing Character collission trigger
 	CharStatus status;
 
 	void Start () {
-		status = GameObject.Find ("char").GetComponent<CharStatus> ();
+		status = GameObject.Find ("Char").GetComponent<CharStatus> ();
 	}
 
 	void OnTriggerStay2D(Collider2D col) {
 		switch (col.gameObject.tag) {
-			case "ground":
+			case "Ground":
 				status.onGround = true;
 				break;
 			
-			case "platform":
+			case "Platform":
 				status.onPlatform = true;
 				break;
 		}
@@ -24,11 +24,11 @@ public class CharTriggerDown : MonoBehaviour {
 		
 	void OnTriggerExit2D(Collider2D col) {
 		switch (col.gameObject.tag) {
-			case "ground":
+			case "Ground":
 			status.onGround = false;
 			break;
 
-			case "platform":
+			case "Platform":
 			status.onPlatform = false;
 			break;
 		}

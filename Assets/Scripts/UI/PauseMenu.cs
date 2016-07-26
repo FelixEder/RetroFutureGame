@@ -86,7 +86,7 @@ public class PauseMenu : MonoBehaviour {
 
 	//resumes the game
 	public void Resume() {
-		GameObject.Find ("char").GetComponent<CharJump> ().holdJump = true; //prevent jumping when resuming
+		GameObject.Find ("Char").GetComponent<CharJump> ().holdJump = true; //prevent jumping when resuming
 		Time.timeScale = 1;
 		HidePaused ();
 	}

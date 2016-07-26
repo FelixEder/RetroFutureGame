@@ -6,8 +6,8 @@ public class SmallCritter : MonoBehaviour {
 	float activeMoveSpeed = 0;
 	public bool canMoveInitially;
 	bool isMirrored = false;
-	Rigidbody2D rb2D;
 	public int health = 2, damage = 1;
+	Rigidbody2D rb2D;
 
 	void Start() {
 		rb2D = GetComponent<Rigidbody2D> ();
@@ -31,35 +31,35 @@ public class SmallCritter : MonoBehaviour {
 
 		switch(col.gameObject.tag) {
 
-			case "char":
+			case "Char":
 				if (!col.gameObject.GetComponent<CharStomp> ().groundStomping) {
 					col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
 					col.gameObject.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
 				}
 				break;
 
-			case "softEnemy" :
+			case "SoftEnemy" :
 				GetMirrored();
 				break;
 			
-			case "wall" :
+			case "Wall" :
 				GetMirrored();
 				break;
 			
-			case "door" :
+			case "Door" :
 				GetMirrored();
 				break;
 
-			case "rock":
+			case "Rock":
 				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f) {
-					GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
+					TakeDamage (col.gameObject.GetComponent<PickUpableItem> ().damage);
 				}
 				GetMirrored ();
 				break;
 
-			case "branch":
+			case "Branch":
 				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
-					GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
+					TakeDamage (col.gameObject.GetComponent<PickUpableItem> ().damage);
 				}
 				GetMirrored ();
 				break;
@@ -83,7 +83,7 @@ public class SmallCritter : MonoBehaviour {
 	/**
 	 * Method called when enemy is hit by the player
 	 */
-	public void GetHurt(int damage) {
+	public void TakeDamage(int damage) {
 		//Play a sound and animation.
 		health -= damage;
 		if (health <= 0) {

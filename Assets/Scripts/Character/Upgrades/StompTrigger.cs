@@ -11,9 +11,9 @@ public class StompTrigger : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D col) {
 		switch (col.gameObject.tag) {
 		
-		case "softEnemy":
-			col.gameObject.GetComponent<SmallCritter> ().GetHurt (3);
-			col.gameObject.GetComponent<EnemyKnockback> ().Knock (GameObject.Find ("char"), knockForce);
+		case "SoftEnemy":
+			col.gameObject.GetComponent<SmallCritter> ().TakeDamage (3);
+			col.gameObject.GetComponent<EnemyKnockback> ().Knock (GameObject.Find ("Char"), knockForce);
 			break;
 		}
 	}

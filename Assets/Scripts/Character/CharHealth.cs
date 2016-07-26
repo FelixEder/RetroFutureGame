@@ -56,6 +56,6 @@ public class CharHealth : MonoBehaviour {
 
 	void Die() {
 		dead = true;
-		Debug.Log ("YOU DIED\n------------");
+		Debug.Log ("<strong>YOU DIED</strong>");
 	}
 }

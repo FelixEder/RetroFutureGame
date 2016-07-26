@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CharStomp : MonoBehaviour {	
 	Rigidbody2D rigidBody2D;
-	CharStatus charStatus;
+	CharStatus CharStatus;
 	public GameObject triggerStomp;
 	public bool isStomping, groundStomping = false;
 	bool holdStomp;
@@ -11,7 +11,7 @@ public class CharStomp : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rigidBody2D = GetComponent<Rigidbody2D> ();
-		charStatus = GetComponent<CharStatus> ();
+		CharStatus = GetComponent<CharStatus> ();
 		//Change sprite, display correct tutorial and play theme.
 	}
 
@@ -22,14 +22,14 @@ public class CharStomp : MonoBehaviour {
 	}
 	
 	void FixedUpdate() {
-		if (charStatus.InAir () && !charStatus.isFloating && Input.GetAxis ("Vertical") < -0.3f && Input.GetButton ("Attack") && !holdStomp) {
+		if (CharStatus.InAir () && !CharStatus.isFloating && Input.GetAxis ("Vertical") < -0.3f && Input.GetButton ("Attack") && !holdStomp) {
 			holdStomp = true;
 			isStomping = true;
 			rigidBody2D.velocity = new Vector2 (0, 0);
 			rigidBody2D.gravityScale = 0.0f;
 			//Play stomp-animation
 			Invoke ("Stomp", 0.5f);
-		} else if (charStatus.onSurface && isStomping) {
+		} else if (CharStatus.onSurface && isStomping) {
 			groundStomping = true;
 			isStomping = false;
 			Invoke ("FinishedStomp", 0.25f);

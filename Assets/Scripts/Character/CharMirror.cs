@@ -9,7 +9,7 @@ public class CharMirror : MonoBehaviour {
 	}
 
 	void Update () {
-		//Rotate character model
+		//Rotate Character model
 		if (Input.GetAxis("Horizontal") < 0) {
 			if (!status.isMirrored) {
 				transform.rotation = Quaternion.Euler(0, 180, 0);

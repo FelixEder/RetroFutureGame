@@ -2,39 +2,32 @@
 using System.Collections;
 
 public class EnemyDrops : MonoBehaviour {
-	int livedTime;
-
-	void Start() {
-		livedTime = (int) Time.time;
-	}
+	public string dropType;
+	float livedTime;
 
 	void Update() {
-		int controlTime = (int) Time.time - livedTime;
-		switch(controlTime) {
+		livedTime += Time.deltaTime;
+		switch((int) livedTime) {
 			case 15:
 				//Börja blinka rött lite lätt
 				break;
 
-			case 25:
-				//Blinka väldigt snabbt rött, upprepa förevigt
-				break;
-
-			case 30:
+			case 20:
 				Destroy (gameObject);
 				break;
 		}
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
-		if (!col.isTrigger && col.gameObject.tag.Equals("char")) {
+		if (!col.isTrigger && col.gameObject.tag.Equals("Char")) {
 			//Play correct music and animation depending on what upgrade is choosen
-			switch (gameObject.tag) {
+			switch (dropType) {
 			//Add more switch-statements as more drops are implemented in the game.
-				case "healthDrop":
+				case "Health":
 					col.gameObject.GetComponent<CharHealth> ().IncreaseCurrentHealth (5);
 					break;
 
-				case "energyDrop":
+				case "Energy":
 					col.gameObject.GetComponent<CharEnergy> ().IncreaseCurrentEnergy (1);
 					break;
 			}

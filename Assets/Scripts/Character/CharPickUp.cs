@@ -27,17 +27,17 @@ public class CharPickUp : MonoBehaviour {
 			holdPickup = true;
 			Debug.Log ("Tried to pick up " + col.gameObject);
 			Debug.Log ("holdPickup = " + holdPickup);
-			switch (col.gameObject.tag) {
+			switch (col.gameObject.GetComponent<PickUpableItem>().GetItemType()) {
 
-			case "rock":
-				charInventory.setHoldingItem (col.gameObject);
-				col.gameObject.GetComponent<PickUpableItem> ().PickUp (this.gameObject);
-				break;
+				case "Rock":
+					charInventory.setHoldingItem (col.gameObject);
+					col.gameObject.GetComponent<PickUpableItem> ().PickUp (this.gameObject);
+					break;
 
-			case "branch":
-				charInventory.setHoldingItem (col.gameObject);
-				col.gameObject.GetComponent<PickUpableItem> ().PickUp (this.gameObject);
-				break;
+				case "Branch":
+					charInventory.setHoldingItem (col.gameObject);
+					col.gameObject.GetComponent<PickUpableItem> ().PickUp (this.gameObject);
+					break;
 			}
 		}
 	}

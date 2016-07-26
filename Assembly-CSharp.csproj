@@ -86,8 +86,8 @@
      <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
      <Compile Include="Assets\Scripts\UI\MainMenuLogo.cs" />
      <Compile Include="Assets\Scripts\UI\PauseMenu.cs" />
-     <None Include="Assets\Materials\spriteGlitch.shader" />
-     <None Include="Assets\Materials\Solid Color.shader" />
+     <None Include="Assets\Materials\Shaders\Sprite Glitch.shader" />
+     <None Include="Assets\Materials\Shaders\Solid Color.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -4,6 +4,8 @@ using System.Collections;
 public class PickUpableItem : MonoBehaviour {
 	Rigidbody2D rigidBody2D;
 	public float HoldPositionX = 0.341f, HoldPositionY = -0.332f;
+	/**the type*/
+	public string itemType;
 	bool beingHeld;
 	public int damage, health;
 
@@ -20,19 +22,22 @@ public class PickUpableItem : MonoBehaviour {
 		}
 	}
 
+	/**Sets the gameobject as child of "player" and freezes all it's movement.*/
 	public void PickUp(GameObject player) {
 		this.gameObject.transform.SetParent (player.transform);
 		this.gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeAll;
-		//this.gameObject.GetComponent<Collider2D> ().enabled = false;
 		beingHeld = true;
 		Debug.Log ("Pickup " + this.gameObject);
 	}
 
+	/**
+	 * Sets the gamobject as child of Items gameobject and allows all movement.
+	 * If canThrow; adds a force to gamobject relative to input if player has horizontal input.
+	 */
 	public void Drop(bool canThrow) {
 		this.gameObject.transform.localPosition = new Vector2 (0.5f, 0);
 		this.gameObject.transform.SetParent (GameObject.Find("Items").transform, true);
 		this.gameObject.GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.None;
-		//this.gameObject.GetComponent<Collider2D> ().enabled = true;
 		if (canThrow && (Input.GetAxis ("Horizontal") > 0.2 || Input.GetAxis ("Horizontal") < -0.2)) {
 			rigidBody2D.AddForce (Vector2.right * 500 * Mathf.Sign (Input.GetAxis ("Horizontal")));
 		}
@@ -45,7 +50,7 @@ public class PickUpableItem : MonoBehaviour {
 	 * When health is 0 or below, the item is broken.
 	 * Returns 1 if it still has health, returns 0 when it has been destroyed.
 	 */
-	public int GetBroken() {
+	public int Break() {
 		health--;
 		if (health <= 0) {
 			Destroy (gameObject);
@@ -53,5 +58,10 @@ public class PickUpableItem : MonoBehaviour {
 			//Play animation and such
 		}
 		return 1;
+	}
+
+	/**Returns the item type.*/
+	public string GetItemType() {
+		return itemType;
 	}
 }

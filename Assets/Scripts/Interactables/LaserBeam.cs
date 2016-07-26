@@ -10,7 +10,7 @@ using System.Collections;
 		void Start() {
 			lineRenderer = GetComponent<LineRenderer> ();
 			lineRenderer.useWorldSpace = true;
-			player = GameObject.Find("char");
+			player = GameObject.Find("Char");
 		}
 
 		public void Shoot() {
@@ -33,7 +33,7 @@ using System.Collections;
 	void HitByLaser(RaycastHit2D victim) {
 		switch(victim.transform.gameObject.tag) {
 
-		case "char":
+		case "Char":
 			Debug.Log ("Hit by laser!!");
 			player.GetComponent<Knockback>().Knock(this.gameObject, 3f);
 			player.GetComponent<CharHealth> ().TakeDamage (damage);

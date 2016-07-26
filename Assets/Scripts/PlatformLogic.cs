@@ -5,11 +5,11 @@ public class PlatformLogic : MonoBehaviour {
 	CharJump jump;
 
 	void Start() {
-		jump = GameObject.Find ("char").GetComponent<CharJump> ();
+		jump = GameObject.Find ("Char").GetComponent<CharJump> ();
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
-		if (col.gameObject.name == "char")
+		if (col.gameObject.name == "Char")
 			ignoreCollision (true);
 		if (col.gameObject.name == "triggerPlatform" && jump.jumpDown) {
 			ignoreCollision (true);
@@ -24,11 +24,11 @@ public class PlatformLogic : MonoBehaviour {
 		}
 	}
 	void OnTriggerExit2D(Collider2D col) {
-		if (col.gameObject.name == "char")
+		if (col.gameObject.name == "Char")
 			ignoreCollision (false);
 	}
 	public void ignoreCollision(bool input) {
-		Physics2D.IgnoreCollision (GameObject.Find ("char").GetComponent<Collider2D> (), transform.parent.GetComponent<Collider2D> (), input);
+		Physics2D.IgnoreCollision (GameObject.Find ("Char").GetComponent<Collider2D> (), transform.parent.GetComponent<Collider2D> (), input);
 	}
 }
 

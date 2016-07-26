@@ -16,39 +16,39 @@ public class MainMenu : MonoBehaviour {
 			SetSelected (lastSelected);
 	}
 
-	//loads inputted level
+	/**Loads scene "level".*/
 	public void LoadLevel(string level) {
 		loadingImage.SetActive (true);
 		SceneManager.LoadScene (level);
 	}
 
-	//Quits the application
+	/**Quits the application.*/
 	public void ExitApplication() {
 		Application.Quit ();
 	}
 
-	//sets a gameobject as selected and updates lastSelected
+	/**Sets "selected" gameobject as selected and updates lastSelected.*/
 	public void SetSelected(GameObject selected) {
 		GameObject.Find ("EventSystem").GetComponent<EventSystem> ().SetSelectedGameObject (selected);
 		lastSelected = selected;
 	}
 
-	//Sets the color of the gameobjects text component to specified color
+	/**Sets the color of the gameobject's text component to specified color.*/
 	public void HoverTextColor(GameObject text) {
 		text.GetComponent<Text> ().color = highlightedTextColor;
 	}
 
-	//Sets the color of the gameobjects text component to specified color
+	/**Sets the color of the gameobject's text component to specified color.*/
 	public void NormalTextColor(GameObject text) {
 		text.GetComponent<Text> ().color = standardTextColor;
 	}
 
-	//Sets the material of the gameobjects text component to specified material
+	/**Sets the material of the gameobject's text component to specified material.*/
 	public void HoverMaterial(GameObject text) {
 		text.GetComponent<Text> ().material = glitchMaterial;
 	}
 
-	//Sets the material of the gameobjects text component to specified material
+	/**Sets the material of the gameobject's text component to specified material.*/
 	public void NormalMaterial(GameObject text) {
 		text.GetComponent<Text> ().material = standardMaterial;
 	}

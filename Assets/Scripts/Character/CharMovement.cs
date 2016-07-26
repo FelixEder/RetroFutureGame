@@ -6,7 +6,7 @@ public class CharMovement : MonoBehaviour {
 	//Fields
 	CharStatus status;
 	Rigidbody2D rigidBody2D;
-	public float moveSpeed, airSpeed, maxMoveSpeed, moveForce, maxFallSpeed;
+	public float moveSpeed, airSpeed, maxMoveSpeed, maxFallSpeed;
 	float axisH;
 
 	//Start is called once on initialization

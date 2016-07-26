@@ -10,12 +10,12 @@ public class ForegroundCover : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
-		if (col.gameObject.name == "char")
+		if (col.gameObject.name == "Char")
 			StartCoroutine (Hide ());
 	}
 
 	void OnTriggerExit2D(Collider2D col) {
-		if (col.gameObject.name == "char") 
+		if (col.gameObject.name == "Char") 
 			StartCoroutine (Show ());
 	}
 

@@ -2,15 +2,15 @@
 using System.Collections;
 
 public class CharTriggerBack : MonoBehaviour {
-	//Left side character collission trigger
+	//Left side Character collission trigger
 	CharStatus status;
 
 	void Start () {
-		status = GameObject.Find ("char").GetComponent<CharStatus> ();
+		status = GameObject.Find ("Char").GetComponent<CharStatus> ();
 	}
 
 	void OnTriggerStay2D(Collider2D col) {
-		if(col.gameObject.tag == "wall") {
+		if (col.gameObject.tag == "Wall") {
 			if (status.isMirrored) {
 				status.onRightWall = true;
 			} else {
@@ -20,7 +20,7 @@ public class CharTriggerBack : MonoBehaviour {
 	}
 
 	void OnTriggerExit2D(Collider2D col) {
-		if (col.gameObject.tag == "wall") {
+		if (col.gameObject.tag == "Wall") {
 			status.onLeftWall = false;
 			status.onRightWall = false;
 		}

@@ -46,8 +46,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\HiddenObjectExplorer.cs" />
-     <None Include="Assets\Materials\spriteGlitch.shader" />
-     <None Include="Assets\Materials\Solid Color.shader" />
+     <None Include="Assets\Materials\Shaders\Sprite Glitch.shader" />
+     <None Include="Assets\Materials\Shaders\Solid Color.shader" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>

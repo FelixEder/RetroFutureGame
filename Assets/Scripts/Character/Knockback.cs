@@ -3,10 +3,10 @@ using System.Collections;
 
 public class Knockback : MonoBehaviour {
 	float wayofKnock;
-	CharInventory charInventory;
+	CharInventory CharInventory;
 
 	void Start() {
-		charInventory = GetComponent<CharInventory> ();
+		CharInventory = GetComponent<CharInventory> ();
 	}
 		
 	public void Knock(GameObject attacker, float force) {
@@ -17,9 +17,9 @@ public class Knockback : MonoBehaviour {
 		}
 		this.gameObject.GetComponent<Rigidbody2D> ().AddForce (new Vector2 (force * wayofKnock, 2), ForceMode2D.Impulse);
 		//Drops the item the player is holding.
-		if (charInventory.isHoldingItem ()) {
-			charInventory.getHoldingItem ().GetComponent<PickUpableItem> ().Drop (false);
-			charInventory.setHoldingItem (null);
+		if (CharInventory.isHoldingItem ()) {
+			CharInventory.getHoldingItem ().GetComponent<PickUpableItem> ().Drop (false);
+			CharInventory.setHoldingItem (null);
 		}
 	}
 }

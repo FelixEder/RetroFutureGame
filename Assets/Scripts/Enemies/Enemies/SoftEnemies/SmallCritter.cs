@@ -7,6 +7,7 @@ public class SmallCritter : MonoBehaviour {
 	public bool canMoveInitially;
 	bool isMirrored = false;
 	public int health = 2, damage = 1;
+	public Material glitchMaterial;
 	Rigidbody2D rb2D;
 
 	void Start() {
@@ -92,15 +93,16 @@ public class SmallCritter : MonoBehaviour {
 		health -= damage;
 		if (health <= 0) {
 			//Enemy is dead, play animation and sound.
-			gameObject.transform.GetChild(0).gameObject.SetActive(true);
+			gameObject.GetComponent<SpriteRenderer>().material = glitchMaterial;
 			rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
+			gameObject.GetComponent<Collider2D> ().enabled = false;
 			Invoke ("Die", 0.5f);
 		}
 		GetMirrored ();
 	}
 
 	void Die() {
-		int ranNumb = Random.Range(0, 60);
+		int ranNumb = Random.Range(0, 80);
 		if (ranNumb < 20) {
 			Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
 		} else if (ranNumb < 40) {

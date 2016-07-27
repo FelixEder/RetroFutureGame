@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ShellMan : MonoBehaviour {
 	public float moveSpeed, knockForce, jumpSpeed;
-	bool isMirrored = false, deShelled;
+	public bool isMirrored = false, deShelled;
 	Rigidbody2D rb2D;
 	public int health = 6, damage = 3;
 

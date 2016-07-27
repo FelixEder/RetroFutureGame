@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class BirdBossSpitAttack : MonoBehaviour {
+	string spawnType;
 
 	void Start() {
 		//Here start the mouth-opening animation
@@ -13,13 +14,13 @@ public class BirdBossSpitAttack : MonoBehaviour {
 		//Play spit SoundFX
 		int critterChoice = Random.Range (0, 12);
 		if (critterChoice < 5) {
-			string spawnType = "SmallCritter";
+			spawnType = "SmallCritter";
 		} else if (critterChoice < 9) {
-			string spawnType = "JumpingCritter";
+			spawnType = "JumpingCritter";
 		} else if (critterChoice < 11) {
-			string spawnType = "PrettyStrongCritter";
+			spawnType = "PrettyStrongCritter";
 		} else {
-			string spawnType = "BigBadCritter";
+			spawnType = "BigBadCritter";
 		}
 		Instantiate (Resources.Load (spawnType), transform.position, Quaternion.identity);
 	}

@@ -75,7 +75,7 @@ public class CharPunch : MonoBehaviour {
 				break;
 
 			case "stompEnemy":
-				GetComponent<Knockback> ().knock (victim.gameObject, 2f);
+				GetComponent<Knockback> ().Knock (victim.gameObject, 2f);
 				break;
 
 			case "hardEnemy":

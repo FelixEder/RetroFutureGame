@@ -1,16 +1,19 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Interactables\Upgrades.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character\Actions\CharMegaPunch.cs">
     <Files>
-      <File FileName="Assets\Scripts\Character\Upgrades\CharStomp.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\Upgrades\StompTrigger.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharPunch.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CharMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\SmallCritter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\JumpingCritter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\Upgrades\LaserShooter.cs" Line="18" Column="36" />
-      <File FileName="Assets\Scripts\Interactables\Upgrades.cs" Line="27" Column="11" />
-      <File FileName="Assets\Scripts\Enemies\BossActivator.cs" Line="8" Column="19" />
+      <File FileName="Assets\Scripts\Enemies\Bosses\BigBadBird\BigBadBird.cs" Line="112" Column="19" />
+      <File FileName="Assets\Scripts\Enemies\Bosses\BigBadBird\BirdBossWingAttack.cs" Line="12" Column="45" />
+      <File FileName="Assets\Scripts\Enemies\Bosses\BigBadBird\BirdBossSpitAttack.cs" Line="12" Column="2" />
+      <File FileName="Assets\Scripts\Character\Actions\CharPunch.cs" Line="70" Column="61" />
+      <File FileName="Assets\Scripts\Character\Upgrades\LaserShooter.cs" Line="62" Column="4" />
+      <File FileName="Assets\Scripts\Character\Upgrades\StompTrigger.cs" Line="37" Column="43" />
+      <File FileName="Assets\Scripts\Enemies\Enemies\StompEnemies\ShellMan.cs" Line="6" Column="9" />
+      <File FileName="Assets\Scripts\Enemies\Enemies\StompEnemies\CrawlerCritter.cs" Line="84" Column="19" />
+      <File FileName="Assets\Scripts\Interactables\Items\ChargeStation.cs" Line="16" Column="54" />
+      <File FileName="Assets\Scripts\Character\Status\CharHealth.cs" Line="41" Column="9" />
+      <File FileName="Assets\Scripts\Character\Status\CharEnergy.cs" Line="39" Column="9" />
+      <File FileName="Assets\Scripts\Character\Actions\CharMegaPunch.cs" Line="22" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

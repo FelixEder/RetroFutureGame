@@ -21,13 +21,14 @@ public class StompTrigger : MonoBehaviour {
 			break;
 
 		case "stompEnemy":
-			if (GameObject.Find ("char").GetComponent<CharStomp> ().groundStomping && !deShelled) {
-				GetHurt (1);
-			} else if (col.gameObject.GetComponent<CharStomp> ().groundStomping && deShelled) {
-				GetHurt (2);
+			ShellMan shellMan = col.gameObject.GetComponent<ShellMan> ();
+			if (GameObject.Find ("char").GetComponent<CharStomp> ().groundStomping && !shellMan.deShelled) {
+				shellMan.GetHurt (1);
+			} else if (col.gameObject.GetComponent<CharStomp> ().groundStomping && shellMan.deShelled) {
+				shellMan.GetHurt (2);
 			}
 			else {
-				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
+				col.gameObject.GetComponent<CharHealth> ().TakeDamage (shellMan.damage);
 				col.gameObject.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
 			}
 			break;

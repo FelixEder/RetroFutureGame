@@ -64,10 +64,10 @@ public class BigBadBird : MonoBehaviour {
 	void GetMirrored() {
 		if (!isMirrored) {
 			transform.rotation = Quaternion.Euler (0, 180, 0);
-			status.isMirrored = true;
+			isMirrored = true;
 		} else {
 			transform.rotation = Quaternion.Euler (0, 0, 0);
-			status.isMirrored = false;
+			isMirrored = false;
 		}
 	}
 
@@ -108,8 +108,9 @@ public class BigBadBird : MonoBehaviour {
 	void Defeated() {
 		//PLay fitting animation and sound
 		Destroy(this.gameObject.transform.parent.gameObject);
-		for(int i = 0; i < 5; i++) {
+		for (int i = 0; i < 5; i++) {
 			Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
 			Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
+		}
 	}
 }

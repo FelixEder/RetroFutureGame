@@ -55,9 +55,10 @@ public class LaserShooter : MonoBehaviour {
 			victim.transform.parent.gameObject.GetComponent<BigBadBird> ().GetHurt ();
 			break;
 
-		case "bigEyeBuyWeakSpot":
+		case "bigEyeGuyWeakSpot":
 			Debug.Log ("Hit EyeGuy in the Eye!");
-			victim.transform.parent.gameObject.GetComponent<BigBadBird> ().GetHurt (2);
+			victim.transform.parent.gameObject.GetComponent<BigEyeGuy> ().GetHurt (2);
+			break;
 		}
 	}
 }

@@ -82,7 +82,6 @@ public class CrawlerCritter : MonoBehaviour {
 		damage = 5;
 		moveSpeed += 3;
 		knockForce += 3;
-		jumpSpeed += 3;
 	}
 
 	/**

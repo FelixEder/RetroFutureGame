@@ -36,7 +36,7 @@ public class CharEnergy : MonoBehaviour {
 		SetEnergySlider ();
 	}
 
-	void MaximizeEnergy() {
+	public void MaximizeEnergy() {
 		currentEnergy += (maxEnergy - currentEnergy);
 	}
 

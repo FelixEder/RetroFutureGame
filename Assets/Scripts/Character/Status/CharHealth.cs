@@ -38,7 +38,7 @@ public class CharHealth : MonoBehaviour {
 		GameObject.Find ("healthSlider").GetComponent<RectTransform> ().sizeDelta = new Vector2 (8 + 32 *  (float) maxHealth, 32);
 	}
 
-	void MaximizeHealth() {
+	public void MaximizeHealth() {
 		currentHealth += (maxHealth - currentHealth);
 	}
 

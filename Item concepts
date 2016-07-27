@@ -1,5 +1,7 @@
 ###Item concepts
 
+Punch < Rock < Romp-Stomp < Mega-Punch
+
 ##Items to pick up
 
 - A stone, can be found around the different areas of the game. You can hold one at a time. You can use it as a weapon 
@@ -24,7 +26,8 @@
   
  - A simple double jump (will probably not be implemented)
  
- - A hat that hits everything above you, including certain blocks you need to hit
+ - A hat that hits everything above you, including certain blocks you need to hit (will probably 
+not be implemented, the 
  
  - A wall-jump, adds an ability to perform wall-jumps when sliding down a ledge.
  

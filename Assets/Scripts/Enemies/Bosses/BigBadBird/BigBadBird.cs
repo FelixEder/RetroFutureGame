@@ -23,30 +23,36 @@ public class BigBadBird : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		int vertDir = Random.Range (-5, 6);
+		if (gameObject.transform.position.x < GameObject.Find ("Char").transform.position.x - 2)
+			GetMirrored (false);
+		else if (gameObject.transform.position.x > GameObject.Find ("Char").transform.position.x + 2)
+			GetMirrored (true);
+
+		int vertDir = 0;
+			//Random.Range (-20, 20);
 		if (isMirrored) {
-			rb2D.velocity = new Vector2 (moveSpeed, vertDir);
-		} else {
 			rb2D.velocity = new Vector2 (-1 * moveSpeed, vertDir);
+		} else {
+			rb2D.velocity = new Vector2 (moveSpeed, vertDir);
 		}
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
 		switch (col.gameObject.tag) {
-			case "wall":
-				GetMirrored ();
+			case "Wall":
+				//GetMirrored ();
 				WingAttack ();
 				break;
 
-			case "char":
+			case "Char":
 				WingAttack ();
 				break;
 
-			case "branch":
+			case "Branch":
 				WingAttack ();
 				break;
 
-			case "rock":
+			case "Rock":
 				SpitAttack ();
 				break;
 		}
@@ -61,11 +67,11 @@ public class BigBadBird : MonoBehaviour {
 		spitChance = 5;
 	}
 
-	void GetMirrored() {
-		if (!isMirrored) {
+	void GetMirrored(bool mirror) {
+		if (!isMirrored && mirror) {
 			transform.rotation = Quaternion.Euler (0, 180, 0);
 			isMirrored = true;
-		} else {
+			} else if (!mirror) {
 			transform.rotation = Quaternion.Euler (0, 0, 0);
 			isMirrored = false;
 		}

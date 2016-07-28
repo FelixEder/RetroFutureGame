@@ -2,8 +2,9 @@ using UnityEngine;
 using System.Collections;
 
 public class CrawlerCritter : MonoBehaviour {
+	public Sprite deCrawled;
 	public float moveSpeed, knockForce;
-	bool isMirrored = false, deShelled;
+	public bool isMirrored = false, deShelled;
 	Rigidbody2D rb2D;
 	public int health = 2, damage = 2;
 
@@ -13,9 +14,9 @@ public class CrawlerCritter : MonoBehaviour {
 
 	void FixedUpdate() {
 		if (isMirrored) {
-			rb2D.velocity = new Vector2 (moveSpeed, rb2D.velocity.y);
-		} else {
 			rb2D.velocity = new Vector2 (-1 * moveSpeed, rb2D.velocity.y);
+		} else {
+			rb2D.velocity = new Vector2 (moveSpeed, rb2D.velocity.y);
 		}
 	}
 
@@ -23,40 +24,48 @@ public class CrawlerCritter : MonoBehaviour {
 
 		switch(col.gameObject.tag) {
 
-			case "char":
-			if (!col.gameObject.GetComponent<CharStomp> ().groundStomping) {
+			case "Char":
+			if (!col.gameObject.GetComponent<CharStomp> ().isStomping) {
 				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
-				col.gameObject.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
 			}
+			col.gameObject.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
 			break;
 
-			case "softEnemy" :
+			case "SoftEnemy" :
 			GetMirrored();
 			break;
 
-			case "hardEnemy" :
+			case "HardEnemy" :
 			GetMirrored();
 			break;
 
-			case "wall" :
+			case "StompEnemy" :
 			GetMirrored();
 			break;
 
-			case "door" :
+			case "Wall" :
 			GetMirrored();
 			break;
 
-			case "rock":
+			case "Door" :
+			GetMirrored();
+			break;
+
+			case "Rock":
 			if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f) {
 				GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
 			}
 			GetMirrored ();
 			break;
 
-			case "branch":
+			case "Branch":
 			if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
 				GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
 			}
+			GetMirrored ();
+			break;
+
+			case "Barrier":
 			GetMirrored ();
 			break;
 		}
@@ -78,6 +87,7 @@ public class CrawlerCritter : MonoBehaviour {
 
 	void BreakShell() {
 		//Change sprite into the DeShelled one and play relevant things.
+		GetComponent<SpriteRenderer>().sprite = deCrawled;
 		deShelled = true;
 		damage = 5;
 		moveSpeed += 3;

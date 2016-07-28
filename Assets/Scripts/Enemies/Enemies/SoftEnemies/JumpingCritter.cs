@@ -59,6 +59,10 @@ public class JumpingCritter : MonoBehaviour {
 				}
 				GetMirrored ();
 				break;
+
+			case "Barrier":
+			GetMirrored ();
+			break;
 		}
 	}
 

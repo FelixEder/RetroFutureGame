@@ -68,6 +68,10 @@ public class SmallCritter : MonoBehaviour {
 				}
 				GetMirrored ();
 				break;
+
+			case "Barrier":
+			GetMirrored ();
+			break;
 		}
 	}
 

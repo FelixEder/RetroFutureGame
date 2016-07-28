@@ -23,37 +23,41 @@ public class BigEyeGuy : MonoBehaviour {
 
 		switch(col.gameObject.tag) {
 
-			case "char":
+			case "Char":
 			if (!col.gameObject.GetComponent<CharStomp> ().groundStomping) {
 				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
 				col.gameObject.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
 			}
 			break;
 
-			case "softEnemy" :
+			case "SoftEnemy" :
 			GetMirrored();
 			break;
 
-			case "hardEnemy" :
+			case "HardEnemy" :
 			GetMirrored();
 			break;
 
-			case "wall" :
+			case "Wall" :
 			GetMirrored();
 			break;
 
-			case "door" :
+			case "Door" :
 			GetMirrored();
 			break;
 
-			case "rock":
+			case "Rock":
 			GetMirrored ();
 			break;
 
-			case "branch":
+			case "Branch":
 			if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
 				GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
 			}
+			GetMirrored ();
+			break;
+
+			case "Barrier":
 			GetMirrored ();
 			break;
 		}

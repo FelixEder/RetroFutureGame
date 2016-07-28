@@ -69,6 +69,10 @@ public class HardCritter : MonoBehaviour {
 			case "Branch":
 			Rush ();
 			break;
+
+			case "Barrier":
+			GetMirrored ();
+			break;
 		}
 	}
 

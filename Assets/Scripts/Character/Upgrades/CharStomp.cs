@@ -5,7 +5,7 @@ public class CharStomp : MonoBehaviour {
 	Rigidbody2D rigidBody2D;
 	CharStatus CharStatus;
 	public GameObject triggerStomp;
-	public bool isStomping, groundStomping = false;
+	public bool isStomping, groundStomping;
 	bool holdStomp;
 
 	// Use this for initialization
@@ -30,6 +30,7 @@ public class CharStomp : MonoBehaviour {
 			//Play stomp-animation
 			Invoke ("Stomp", 0.5f);
 		} else if (CharStatus.onSurface && isStomping) {
+			//Play stomp-on-ground animation
 			groundStomping = true;
 			isStomping = false;
 			Invoke ("FinishedStomp", 0.25f);

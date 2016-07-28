@@ -22,41 +22,45 @@ public class ShellMan : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col) {
 		switch(col.gameObject.tag) {
 
-		case "char":
+		case "Char":
 			if (!col.gameObject.GetComponent<CharStomp> ().groundStomping) {
 				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
 				col.gameObject.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
 			}
 			break;
 
-			case "softEnemy" :
+			case "SoftEnemy" :
 			GetMirrored();
 			break;
 
-			case "hardEnemy" :
+			case "HardEnemy" :
 			GetMirrored();
 			break;
 
-			case "stompEnemy" :
+			case "StompEnemy" :
 			GetMirrored();
 			break;
 
-			case "wall" :
+			case "Wall" :
 			GetMirrored();
 			break;
 
-			case "door" :
+			case "Door" :
 			GetMirrored();
 			break;
 
-			case "rock":
+			case "Rock":
 			if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f && deShelled) {
 				GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
 			}
 			GetMirrored ();
 			break;
 
-			case "branch":
+			case "Branch":
+			GetMirrored ();
+			break;
+
+			case "Barrier":
 			GetMirrored ();
 			break;
 		}

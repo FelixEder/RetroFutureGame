@@ -48,12 +48,12 @@ public class LaserShooter : MonoBehaviour {
 			victim.transform.gameObject.GetComponent<Knockback>().Knock(this.gameObject, 3f);
 			break;
 
-		case "birdBossWeakSpot":
+		case "BirdBossWeakSpot":
 			Debug.Log ("Hit Bird in the Mouth!");
 			victim.transform.parent.gameObject.GetComponent<BigBadBird> ().GetHurt ();
 			break;
 
-		case "bigEyeGuyWeakSpot":
+		case "BigEyeGuyWeakSpot":
 			Debug.Log ("Hit EyeGuy in the Eye!");
 			victim.transform.parent.gameObject.GetComponent<BigEyeGuy> ().GetHurt (2);
 			break;

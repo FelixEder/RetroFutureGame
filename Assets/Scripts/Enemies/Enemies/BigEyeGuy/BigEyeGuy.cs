@@ -13,9 +13,9 @@ public class BigEyeGuy : MonoBehaviour {
 
 	void FixedUpdate() {
 		if (isMirrored) {
-			rb2D.velocity = new Vector2 (moveSpeed, rb2D.velocity.y);
-		} else {
 			rb2D.velocity = new Vector2 (-1 * moveSpeed, rb2D.velocity.y);
+		} else {
+			rb2D.velocity = new Vector2 (moveSpeed, rb2D.velocity.y);
 		}
 	}
 
@@ -98,7 +98,7 @@ public class BigEyeGuy : MonoBehaviour {
 	}
 
 	public void Jump () {
-		if (Random.Range (0, 100) < 5) {
+		if (Random.Range (0, 200) < 5) {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, jumpSpeed);
 		}
 	}

@@ -9,7 +9,7 @@ public class BigEyeGuyLaser : MonoBehaviour {
 	void Start() {
 		lineRenderer = GetComponent<LineRenderer> ();
 		lineRenderer.useWorldSpace = true;
-		Invoke ("Shoot", 3f);
+		InvokeRepeating ("Shoot", 2f, 2f);
 	}
 
 	public void Shoot() {
@@ -29,7 +29,7 @@ public class BigEyeGuyLaser : MonoBehaviour {
 
 	void HitByLaser(RaycastHit2D victim) {
 		switch(victim.transform.gameObject.tag) {
-			case "char":
+			case "Char":
 			Debug.Log ("Hit by laser!!");
 			victim.transform.gameObject.GetComponent<Knockback>().Knock(this.gameObject, 3f);
 			victim.transform.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);

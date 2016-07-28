@@ -5,7 +5,7 @@ public class BirdBossSpitAttack : MonoBehaviour {
 	string spawnType;
 
 	void Start() {
-		//Here start the mouth-opening animation
+		Debug.Log ("Spit-Script!");
 		//Also play relevant soundFX
 		Invoke ("Spit", 0.5f);
 	}
@@ -13,7 +13,7 @@ public class BirdBossSpitAttack : MonoBehaviour {
 	void Spit() {
 		//Play spit SoundFX
 		int critterChoice = Random.Range (0, 12);
-		if (critterChoice < 5) {
+	/*	if (critterChoice < 5) {
 			spawnType = "SmallCritter";
 		} else if (critterChoice < 9) {
 			spawnType = "JumpingCritter";
@@ -22,6 +22,7 @@ public class BirdBossSpitAttack : MonoBehaviour {
 		} else {
 			spawnType = "BigBadCritter";
 		}
-		Instantiate (Resources.Load (spawnType), transform.position, Quaternion.identity);
+*/
+		Instantiate (Resources.Load ("SmallCritter"), transform.position, Quaternion.identity);
 	}
 }

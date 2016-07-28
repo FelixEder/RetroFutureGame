@@ -57,6 +57,30 @@ or drop something on it or something like that.
 A thing that flies around and spits things at you. The way you defeat him is to shoot laser at his mouth. However, he only opens his mouth when he spits out an enemy. Should have at least a color-change. Once hurt enough, it should become a bit red-er. That means it should move faster, spit more enemies who sometimes are tougher enemies.
 
 - Final Boss
-Something that incorporates most of your mechanics in an epic boss fight. Should end with a timer which forces you to run all
-the way back to your entry point on the chair.
-Add a second form!
+First form
+Is a huge character in full armour. It stands to the left of the screen and takes up much of the screen. It moves a bit to the right
+and then back, but never mirrors. It throws rocks at you with its hands. If you get to close,
+it will laugh at you and punch and kick you. The way to hurt it is to jump up the platforms and hit it's helmet with your laser.
+This will cause it to collapse, enabling you to mega-punch it's helmet. Do this enough times and the helmet breaks, round 2. 
+If you shoot laser anywhere else, it will simply become stunned for a few seconds. It will also drop a few pick-ups from its hands.
+
+Second form
+Is similar to it's first form, but it's head is now revealed. It's mouth is a prefab spawner which opens sometimes.
+It still punches and kicks, but it can also charge forward sometimes, especially if you get to close. It still throws rocks.
+If you mega-punch it's legs, it will charge and punch/kick you.
+If you shoot laser on head, it will simply laugh and charge, if you shoot the body the same thing happens as before.
+This time, you need to throw down a rock in it's mouth when it is opened. The head will then become blue and it will choke a bit.
+During this time you need to Mega-punch the legs, as this will hurt the armour. Do this enough times and all the armour breaks.
+
+Third form
+From the broken armour, only the the head now remains. This form is a little different, as the head is a smaller square which
+now jumps around the playing field. It still spawns enemies out of it's mouth, but also shoots laser from it's eyes.
+If you throw a rock in it's mouth when opened (if there still are any around), it will simply spit it back at you.
+If you mega-punch (or regular punch), it will bite you. If you simply touch it, it will bite you.
+You have to stomp it's head in order to hurt it. With each stomp, the fight becomes harder. It does attacks often, spawns 
+harder enemies and it moves quicker. After enough hits, it will explode in a satisfying fashion. A timer is now starting, ordering
+you to head back to the chair and exit the simulation.
+
+
+
+

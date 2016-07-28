@@ -23,35 +23,41 @@ public class HardCritter : MonoBehaviour {
 
 		switch(col.gameObject.tag) {
 
-			case "char":
-			if (!col.gameObject.GetComponent<CharStomp> ().groundStomping) {
+		case "Char":
+			if (col.gameObject.GetComponent<CharStomp> ().groundStomping) {
+
+			} else if (col.gameObject.GetComponent<CharStatus> ().megaPunch) {
+				GetHurt (2);
+			} else if (col.gameObject.GetComponent<CharStatus> ().chargedMegaPunch) {
+				GetHurt (4);
+			} else {
 				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
 				col.gameObject.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
 				Rush ();
 			}
 			break;
 
-			case "softEnemy" :
+			case "SoftEnemy" :
 			GetMirrored();
 			break;
 
-			case "hardEnemy" :
+			case "HardEnemy" :
 			GetMirrored();
 			break;
 
-			case "eyeEnemy" :
+			case "EyeEnemy" :
 			GetMirrored();
 			break;
 
-			case "wall" :
+			case "Wall" :
 			GetMirrored();
 			break;
 
-			case "door" :
+			case "Door" :
 			GetMirrored();
 			break;
 
-			case "rock":
+			case "Rock":
 			if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f) {
 				GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
 			} else {
@@ -60,7 +66,7 @@ public class HardCritter : MonoBehaviour {
 			GetMirrored ();
 			break;
 
-			case "branch":
+			case "Branch":
 			Rush ();
 			break;
 		}

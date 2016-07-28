@@ -5,6 +5,7 @@ public class CharStomp : MonoBehaviour {
 	Rigidbody2D rigidBody2D;
 	CharStatus CharStatus;
 	public GameObject triggerStomp;
+	//I think groundStomping is unneccecary
 	public bool isStomping, groundStomping;
 	bool holdStomp;
 

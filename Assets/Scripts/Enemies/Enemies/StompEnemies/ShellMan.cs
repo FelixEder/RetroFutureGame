@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class ShellMan : MonoBehaviour {
+	public Sprite withoutShell;
 	public float moveSpeed, knockForce, jumpSpeed;
 	public bool isMirrored = false, deShelled;
 	Rigidbody2D rb2D;
@@ -13,9 +14,9 @@ public class ShellMan : MonoBehaviour {
 
 	void FixedUpdate() {
 		if (isMirrored) {
-			rb2D.velocity = new Vector2 (moveSpeed, rb2D.velocity.y);
-		} else {
 			rb2D.velocity = new Vector2 (-1 * moveSpeed, rb2D.velocity.y);
+		} else {
+			rb2D.velocity = new Vector2 (moveSpeed, rb2D.velocity.y);
 		}
 	}
 
@@ -23,7 +24,7 @@ public class ShellMan : MonoBehaviour {
 		switch(col.gameObject.tag) {
 
 		case "Char":
-			if (!col.gameObject.GetComponent<CharStomp> ().groundStomping) {
+			if (!col.gameObject.GetComponent<CharStomp> ().isStomping) {
 				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
 				col.gameObject.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
 			}
@@ -82,6 +83,7 @@ public class ShellMan : MonoBehaviour {
 
 	void BreakShell() {
 		//Change sprite into the DeShelled one and play relevant things.
+		GetComponent<SpriteRenderer>().sprite = withoutShell;
 		deShelled = true;
 		damage = 5;
 		moveSpeed += 3;
@@ -109,7 +111,7 @@ public class ShellMan : MonoBehaviour {
 	}
 
 	public void Jump () {
-		if (Random.Range (0, 100) < 5) {
+		if (Random.Range (0, 250) < 5) {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, jumpSpeed);
 		}
 	}

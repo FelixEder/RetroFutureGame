@@ -33,7 +33,7 @@ public class SmallCritter : MonoBehaviour {
 		switch(col.gameObject.tag) {
 
 			case "Char":
-				if (!col.gameObject.GetComponent<CharStomp> ().groundStomping) {
+				if (!col.gameObject.GetComponent<CharStomp> ().isStomping) {
 					col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
 					col.gameObject.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
 				}

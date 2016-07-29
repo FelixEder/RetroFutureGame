@@ -4,7 +4,7 @@ using System.Collections;
 public class BigBadBird : MonoBehaviour {
 	public Sprite regular, spitting, winging;
 	public float moveSpeed, knockForce;
-	bool isMirrored, isSpitting;
+	public bool isMirrored, isSpitting;
 	public int health = 6, damage;
 	//Should it really use a rigidBody?
 	Rigidbody2D rb2D;
@@ -37,6 +37,11 @@ public class BigBadBird : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col) {
 		switch (col.gameObject.tag) {
 			case "Wall":
+				GetMirrored ();
+				WingAttack ();
+				break;
+
+			case "Platform":
 				GetMirrored ();
 				WingAttack ();
 				break;

@@ -11,7 +11,7 @@ public class BirdBossSpitAttack : MonoBehaviour {
 	}
 
 	void Spit() {
-		if (transform.parent.childCount < spitLimit) {
+		if (transform.parent.parent.childCount < spitLimit) {
 			//Play spit SoundFX
 			string spawnType = "";
 			int critterChoice = Random.Range (0, 12);
@@ -22,10 +22,11 @@ public class BirdBossSpitAttack : MonoBehaviour {
 			} else if (critterChoice < 11) {
 				spawnType = "CrawlerCritter";
 			} else {
-				spawnType = "ShellMan";
+				spawnType = "BigEyeGuy";
 			}
 			GameObject instance = Instantiate (Resources.Load (spawnType), transform.position, Quaternion.identity) as GameObject;
-			instance.transform.parent = transform.parent;
+			instance.transform.parent = transform.parent.parent;
+			instance.layer = 16;
 		}
 	}
 }

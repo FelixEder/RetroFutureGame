@@ -40,12 +40,12 @@ public class LaserShooter : MonoBehaviour {
 	}
 
 	void HitByLaser(RaycastHit2D victim) {
-		switch(victim.transform.gameObject.tag) {
+		Debug.Log ("Player shot: " + victim.transform.gameObject.tag);
+		switch(victim.collider.transform.gameObject.tag) {
 			//Add more cases as more types of enemies are added to the game
 		case "SoftEnemy":
 			Debug.Log ("Enemy hit by laser!!");
 			victim.transform.gameObject.GetComponent<SmallCritter> ().TakeDamage (3);
-			victim.transform.gameObject.GetComponent<Knockback>().Knock(this.gameObject, 3f);
 			break;
 
 		case "BirdBossWeakSpot":
@@ -55,7 +55,7 @@ public class LaserShooter : MonoBehaviour {
 
 		case "BigEyeGuyWeakSpot":
 			Debug.Log ("Hit EyeGuy in the Eye!");
-			victim.transform.parent.gameObject.GetComponent<BigEyeGuy> ().GetHurt (2);
+			victim.transform.gameObject.GetComponent<BigEyeGuy> ().GetHurt (2);
 			break;
 		}
 	}

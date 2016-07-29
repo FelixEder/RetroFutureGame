@@ -25,11 +25,6 @@ public class BigBadBird : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-	/*	if (gameObject.transform.position.x < GameObject.Find ("Char").transform.position.x - 2)
-			GetMirrored (false);
-		else if (gameObject.transform.position.x > GameObject.Find ("Char").transform.position.x + 2)
-			GetMirrored (true);
-*/
 		int vertDir = 0;
 			//Random.Range (-20, 20);
 		if (isMirrored) {
@@ -42,7 +37,7 @@ public class BigBadBird : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col) {
 		switch (col.gameObject.tag) {
 			case "Wall":
-				GetMirrored (true);
+				GetMirrored ();
 				WingAttack ();
 				break;
 
@@ -69,12 +64,16 @@ public class BigBadBird : MonoBehaviour {
 		spitChance = 50;
 	}
 
-	void GetMirrored(bool mirror) {
-		if (!isMirrored && mirror) {
-			transform.rotation = Quaternion.Euler (0, 180, 0);
+	/**
+	 * Mirrors the enemy and therefor makes it change direction.
+	 */
+	void GetMirrored() {
+		if(!isMirrored) {
+			transform.rotation = Quaternion.Euler(0, 180, 0);
 			isMirrored = true;
-			} else if (!mirror) {
-			transform.rotation = Quaternion.Euler (0, 0, 0);
+		}
+		else {
+			transform.rotation = Quaternion.Euler(0, 0, 0);
 			isMirrored = false;
 		}
 	}

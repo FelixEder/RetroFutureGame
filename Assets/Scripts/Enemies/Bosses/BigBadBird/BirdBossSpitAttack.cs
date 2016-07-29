@@ -4,14 +4,14 @@ using System.Collections;
 public class BirdBossSpitAttack : MonoBehaviour {
 	public int spitLimit;
 
-	void Start() {
+	void OnEnable() {
 		Debug.Log ("Spit-Script!");
 		//Also play relevant soundFX
 		Invoke ("Spit", 0.5f);
 	}
 
 	void Spit() {
-		if (transform.childCount < spitLimit) {
+		if (transform.parent.childCount < spitLimit) {
 			//Play spit SoundFX
 			string spawnType = "";
 			int critterChoice = Random.Range (0, 12);
@@ -22,10 +22,10 @@ public class BirdBossSpitAttack : MonoBehaviour {
 			} else if (critterChoice < 11) {
 				spawnType = "CrawlerCritter";
 			} else {
-		//		spawnType = "BigEyeGuy";
+				spawnType = "ShellMan";
 			}
 			GameObject instance = Instantiate (Resources.Load (spawnType), transform.position, Quaternion.identity) as GameObject;
-			instance.transform.parent = transform;
+			instance.transform.parent = transform.parent;
 		}
 	}
 }

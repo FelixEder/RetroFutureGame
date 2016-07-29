@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class BirdBossSpitAttack : MonoBehaviour {
-	string spawnType;
+	public int spitLimit;
 
 	void Start() {
 		Debug.Log ("Spit-Script!");
@@ -11,18 +11,21 @@ public class BirdBossSpitAttack : MonoBehaviour {
 	}
 
 	void Spit() {
-		//Play spit SoundFX
-		int critterChoice = Random.Range (0, 12);
-	/*	if (critterChoice < 5) {
-			spawnType = "SmallCritter";
-		} else if (critterChoice < 9) {
-			spawnType = "JumpingCritter";
-		} else if (critterChoice < 11) {
-			spawnType = "PrettyStrongCritter";
-		} else {
-			spawnType = "BigBadCritter";
+		if (transform.childCount < spitLimit) {
+			//Play spit SoundFX
+			string spawnType = "";
+			int critterChoice = Random.Range (0, 12);
+			if (critterChoice < 5) {
+				spawnType = "SmallCritter";
+			} else if (critterChoice < 9) {
+				spawnType = "JumpingCritter";
+			} else if (critterChoice < 11) {
+				spawnType = "CrawlerCritter";
+			} else {
+		//		spawnType = "BigEyeGuy";
+			}
+			GameObject instance = Instantiate (Resources.Load (spawnType), transform.position, Quaternion.identity) as GameObject;
+			instance.transform.parent = transform;
 		}
-*/
-		Instantiate (Resources.Load ("SmallCritter"), transform.position, Quaternion.identity);
 	}
 }

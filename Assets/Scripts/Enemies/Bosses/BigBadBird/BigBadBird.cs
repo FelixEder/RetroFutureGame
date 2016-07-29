@@ -8,7 +8,7 @@ public class BigBadBird : MonoBehaviour {
 	public int health = 6, damage;
 	//Should it really use a rigidBody?
 	Rigidbody2D rb2D;
-	int spitChance = 10;
+	int spitChance = 100;
 
 	void Start() {
 		rb2D = GetComponent<Rigidbody2D> ();
@@ -25,11 +25,11 @@ public class BigBadBird : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		if (gameObject.transform.position.x < GameObject.Find ("Char").transform.position.x - 2)
+	/*	if (gameObject.transform.position.x < GameObject.Find ("Char").transform.position.x - 2)
 			GetMirrored (false);
 		else if (gameObject.transform.position.x > GameObject.Find ("Char").transform.position.x + 2)
 			GetMirrored (true);
-
+*/
 		int vertDir = 0;
 			//Random.Range (-20, 20);
 		if (isMirrored) {
@@ -42,7 +42,7 @@ public class BigBadBird : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col) {
 		switch (col.gameObject.tag) {
 			case "Wall":
-				//GetMirrored ();
+				GetMirrored (true);
 				WingAttack ();
 				break;
 
@@ -66,7 +66,7 @@ public class BigBadBird : MonoBehaviour {
 		//Change color or entire sprite
 		moveSpeed += 3;
 		knockForce += 3;
-		spitChance = 5;
+		spitChance = 50;
 	}
 
 	void GetMirrored(bool mirror) {

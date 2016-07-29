@@ -1,14 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\Bosses\BossActivator.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Interactables\Map\Door.cs">
     <Files>
-      <File FileName="Assets\Scripts\Enemies\Bosses\BigBadBird\BirdBossSpitAttack.cs" Line="31" Column="2" />
-      <File FileName="Assets\Scripts\Enemies\Bosses\BigBadBird\BigBadBird.cs" Line="86" Column="52" />
-      <File FileName="Assets\Scripts\Enemies\Bosses\BigBadBird\BirdBossWingAttack.cs" Line="6" Column="16" />
-      <File FileName="Assets\Scripts\Enemies\Enemies\SoftEnemies\SmallCritter.cs" Line="90" Column="3" />
-      <File FileName="Assets\Scripts\Character\Upgrades\CharStomp.cs" Line="29" Column="4" />
-      <File FileName="Assets\Scripts\Character\Upgrades\LaserShooter.cs" Line="43" Column="30" />
-      <File FileName="Assets\Scripts\Enemies\Bosses\BossActivator.cs" Line="9" Column="52" />
+      <File FileName="Assets\Scripts\Other\CameraAdjuster.cs" Line="12" Column="16" />
+      <File FileName="Assets\Scripts\Other\CameraMovement.cs" Line="12" Column="152" />
+      <File FileName="Assets\Scripts\Other\CameraTrigger.cs" Line="10" Column="97" />
+      <File FileName="Assets\Scripts\Enemies\Bosses\BossActivator.cs" Line="6" Column="23" />
+      <File FileName="Assets\Scripts\Interactables\Map\Door.cs" Line="34" Column="3" />
+      <File FileName="Assets\Scripts\Character\Upgrades\LaserShooter.cs" Line="16" Column="2" />
+      <File FileName="Assets\Scripts\Interactables\Items\PickUpableItem.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\Enemies\SoftEnemies\SmallCritter.cs" Line="74" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

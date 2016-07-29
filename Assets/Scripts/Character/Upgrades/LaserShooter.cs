@@ -4,14 +4,14 @@ using System.Collections;
 public class LaserShooter : MonoBehaviour {
 	private LineRenderer lineRenderer;
 	public Transform laserHit;
-	CharEnergy CharEnergy;
+	CharEnergy charEnergy;
 	bool holdShoot, canShoot = true;
 
 	void Start() {
 		//Change player sprite and display tutorial
 		lineRenderer = GetComponent<LineRenderer> ();
-		//lineRenderer.useWorldSpace = true;
-		CharEnergy = GameObject.Find("Char").GetComponent<CharEnergy> ();
+		lineRenderer.useWorldSpace = true;
+		charEnergy = GameObject.Find("Char").GetComponent<CharEnergy> ();
 	}
 
 	void Update() {
@@ -20,9 +20,9 @@ public class LaserShooter : MonoBehaviour {
 		}
 		if (Input.GetButton ("Shoot") && !holdShoot && canShoot) {
 			holdShoot = true;
-			if (CharEnergy.UseEnergy (2)) {
+			if (charEnergy.UseEnergy (2)) {
 				canShoot = false;
-				//CharEnergy.UseEnergy (2);
+				//charEnergy.UseEnergy (2);
 				ActivateLaser ();
 			}
 		}

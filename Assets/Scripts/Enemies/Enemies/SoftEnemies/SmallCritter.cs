@@ -55,23 +55,23 @@ public class SmallCritter : MonoBehaviour {
 				GetMirrored();
 				break;
 
-			case "Rock":
-				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f) {
-					TakeDamage (col.gameObject.GetComponent<PickUpableItem> ().damage);
-				}
-				GetMirrored ();
-				break;
-
-			case "Branch":
+			case "Rock" :
 				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
 					TakeDamage (col.gameObject.GetComponent<PickUpableItem> ().damage);
 				}
 				GetMirrored ();
 				break;
 
-			case "Barrier":
-			GetMirrored ();
-			break;
+			case "Branch" :
+				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
+					TakeDamage (col.gameObject.GetComponent<PickUpableItem> ().damage);
+				}
+				GetMirrored ();
+				break;
+
+			case "Barrier" :
+				GetMirrored ();
+				break;
 		}
 	}
 

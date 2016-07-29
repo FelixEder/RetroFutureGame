@@ -6,6 +6,7 @@ public class Door : MonoBehaviour {
 //	public GameObject cover1, cover2;
 	Color cover1Color, cover2Color;
 	public int health;
+	bool becoming;
 
 	void Start() {
 //		cover1Color = cover1.GetComponent<SpriteRenderer> ().color;
@@ -18,10 +19,18 @@ public class Door : MonoBehaviour {
 //		StartCoroutine(UncoverMap ());
 	}
 
-	void OnBecameInvisible() {
+	void SetVisible() {
 		GetComponent<SpriteRenderer> ().sprite = close;
 		GetComponent<Collider2D> ().isTrigger = false;
+	}
+
+	void OnBecameInvisible() {
+		Invoke ("SetVisible", 20);
 //		CoverMap ();
+	}
+
+	void OnBecameVisible() {
+		CancelInvoke ("SetVisible");
 	}
 
 /*	IEnumerator UncoverMap() {

@@ -3,14 +3,12 @@ using System.Collections;
 
 public class StompTrigger : MonoBehaviour {
 	public float knockForce;
-	CharStomp charStomp;
 	GameObject player;
 
 	void Start() {
 		//Play stomp-animation and sound
 	//	player = GameObject.Find("Char");
 		player = gameObject.transform.parent.gameObject;
-		charStomp = player.GetComponent<CharStomp>();
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
@@ -26,27 +24,22 @@ public class StompTrigger : MonoBehaviour {
 			break;
 
 		case "CrawlerCritter":
+			Debug.Log ("Hit crawler!");
 			//Really bad code, should be re-written
 			CrawlerCritter crawlerCritter = col.gameObject.GetComponent<CrawlerCritter> ();
-			if (charStomp.isStomping && !crawlerCritter.deShelled) {
+			if (!crawlerCritter.deShelled) {
 				crawlerCritter.GetHurt (1);
-			} else if (charStomp.isStomping && crawlerCritter.deShelled) {
+			} else if (crawlerCritter.deShelled) {
 				crawlerCritter.GetHurt (2);
-			} else {
-				player.GetComponent<CharHealth> ().TakeDamage (crawlerCritter.damage);
-				player.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
-			}
+			} 
 			break;
 
 		case "ShellMan":
 			ShellMan shellMan = col.gameObject.GetComponent<ShellMan> ();
-			if (charStomp.isStomping && !shellMan.deShelled) {
+			if (!shellMan.deShelled) {
 				shellMan.GetHurt (1);
-			} else if (charStomp.isStomping && shellMan.deShelled) {
+			} else if (shellMan.deShelled) {
 				shellMan.GetHurt (2);
-			} else {
-				player.GetComponent<CharHealth> ().TakeDamage (shellMan.damage);
-				player.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
 			}
 			break;
 

@@ -32,6 +32,7 @@ public class CharStomp : MonoBehaviour {
 			Invoke ("Stomp", 0.5f);
 		} else if (CharStatus.onSurface && isStomping) {
 			//Play stomp-on-ground animation
+			Debug.Log("You are stomping something!");
 			groundStomping = true;
 			isStomping = false;
 			Invoke ("FinishedStomp", 0.25f);

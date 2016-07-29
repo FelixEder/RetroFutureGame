@@ -44,13 +44,13 @@ public class LaserShooter : MonoBehaviour {
 		switch(victim.collider.transform.gameObject.tag) {
 			//Add more cases as more types of enemies are added to the game
 		case "SoftEnemy":
-			Debug.Log ("Enemy hit by laser!!");
+			Debug.Log ("SoftEnemy hit by laser!!");
 			victim.transform.gameObject.GetComponent<SmallCritter> ().TakeDamage (3);
 			break;
 
 		case "BirdBossWeakSpot":
 			Debug.Log ("Hit Bird in the Mouth!");
-			victim.transform.parent.gameObject.GetComponent<BigBadBird> ().GetHurt ();
+			victim.transform.gameObject.GetComponent<BigBadBird> ().GetHurt ();
 			break;
 
 		case "BigEyeGuyWeakSpot":

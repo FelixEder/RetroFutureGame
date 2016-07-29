@@ -3,12 +3,9 @@ using System.Collections;
 
 public class StompTrigger : MonoBehaviour {
 	public float knockForce;
-	GameObject player;
 
 	void Start() {
 		//Play stomp-animation and sound
-	//	player = GameObject.Find("Char");
-		player = gameObject.transform.parent.gameObject;
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {

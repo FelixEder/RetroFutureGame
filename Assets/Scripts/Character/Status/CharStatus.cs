@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CharStatus : MonoBehaviour {
 	public bool onGround, onLeftWall, onRightWall, onPlatform, isMirrored, isFloating, onSurface;
-	public bool megaPunch, chargedMegaPunch;
+	public bool megaPunch, chargedMegaPunch, isSmall;
 	public float velocityX, velocityY;
 
 	void Update() {
@@ -26,4 +26,9 @@ public class CharStatus : MonoBehaviour {
 		megaPunch = false;
 		chargedMegaPunch = false;
 	}
+
+	/*public void changeSize() {
+		isSmall = !isSmall;
+	}
+	*/
 }

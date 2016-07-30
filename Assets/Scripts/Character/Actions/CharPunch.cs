@@ -3,18 +3,20 @@ using System.Collections;
 
 public class CharPunch : MonoBehaviour {
 	CharInventory CharInventory;
+	CharStatus charStatus;
 	public bool holdPunch;
 	string attackType;
 
 	void Start() {
 		CharInventory = transform.parent.GetComponent<CharInventory> ();
+		charStatus = transform.parent.GetComponent<CharStatus> ();
 	}
 
 	void Update() {
 		attackType = "";
 		if (!Input.GetButton ("Attack") && holdPunch) {
 			holdPunch = false;
-		} else if (Input.GetButton ("Attack") && !holdPunch) {
+		} else if (Input.GetButton ("Attack") && !holdPunch && !charStatus.isSmall) {
 			Debug.Log ("Punched nothing");
 			ExecutePunch ();
 		}
@@ -53,7 +55,7 @@ public class CharPunch : MonoBehaviour {
 		
 	//Triggered when player punches an object.
 	void OnTriggerStay2D(Collider2D victim) {
-		if(Input.GetButton ("Attack") && !holdPunch) {
+		if(Input.GetButton ("Attack") && !holdPunch && !charStatus.isSmall) {
 			int damage = ExecutePunch ();
 			if(attackType.Equals("branch")) {
 				int lifeCheck =	CharInventory.getHoldingItem().GetComponent<PickUpableItem>().Break();

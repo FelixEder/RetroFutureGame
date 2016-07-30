@@ -14,7 +14,7 @@ public class CharMegaPunch : MonoBehaviour {
 	}
 
 	void Update() {
-		if (Input.GetButton ("MegaAttack")) {
+		if (Input.GetButton ("MegaAttack") && !charStatus.isSmall) {
 			charStatus.NoLongerMegaPunching ();
 	//		holdPunch = true;
 			if (chargeCounter < chargeLimit) {

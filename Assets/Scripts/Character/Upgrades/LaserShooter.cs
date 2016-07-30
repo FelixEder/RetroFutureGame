@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class LaserShooter : MonoBehaviour {
+	CharStatus charStatus;
 	private LineRenderer lineRenderer;
 	public Transform laserHit;
 	CharEnergy charEnergy;
@@ -12,6 +13,7 @@ public class LaserShooter : MonoBehaviour {
 		//Change player sprite and display tutorial
 		lineRenderer = GetComponent<LineRenderer> ();
 		lineRenderer.useWorldSpace = true;
+		charStatus = transform.parent.GetComponent<CharStatus> ();
 		charEnergy = GameObject.Find("Char").GetComponent<CharEnergy> ();
 	}
 
@@ -19,7 +21,7 @@ public class LaserShooter : MonoBehaviour {
 		if (!Input.GetButton ("Shoot")) {
 			holdShoot = false;
 		}
-		if (Input.GetButton ("Shoot") && !holdShoot && canShoot) {
+		if (Input.GetButton ("Shoot") && !holdShoot && canShoot && !charStatus.isSmall) {
 			holdShoot = true;
 			if (charEnergy.UseEnergy (2)) {
 				canShoot = false;

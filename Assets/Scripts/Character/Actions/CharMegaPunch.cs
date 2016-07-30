@@ -14,8 +14,7 @@ public class CharMegaPunch : MonoBehaviour {
 	}
 
 	void Update() {
-		if (Input.GetButton ("MegaAttack")) {
-	//		holdPunch = true;
+		if (Input.GetButton ("MegaAttack") && !charStatus.isSmall) {
 			if (chargeCounter < chargeLimit) {
 				chargeCounter++;
 				Debug.Log (chargeCounter);
@@ -46,24 +45,20 @@ public class CharMegaPunch : MonoBehaviour {
 				charStatus.chargedMegaPunch = true;
 				damage = 5;
 				chargeCounter = 0;
-			//	holdPunch = false;
 			} else {
 				Debug.Log ("Not enough energy for MegaPunch");
 				//No energy, play correct things
 				chargeCounter = 0;
-			//	holdPunch = false;
 			}
 		} else if (charEnergy.UseEnergy (1)) {
 			Debug.Log ("Did regular MegaPunch!");
 			charStatus.megaPunch = true;
 			damage = 3;
 			chargeCounter = 0;
-		//	holdPunch = false;
 		} else {
 			Debug.Log ("Not enough energy for MegaPunch");
 			//No energy, play correct things
 			chargeCounter = 0;
-		//	holdPunch = false;
 		}
 	}
 

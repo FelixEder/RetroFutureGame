@@ -7,6 +7,6 @@ public class CameraTrigger : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col) {
 		Debug.Log ("Adjusting Camera  | " + col.gameObject.name);
 		CameraAdjuster adjust = col.gameObject.GetComponent<CameraAdjuster> ();
-		cameraGameobject.GetComponent<CameraMovement>().AdjustPosition(adjust.GetX (), adjust.GetY (), adjust.GetSize ());
+		cameraGameobject.GetComponent<CameraMovement>().AdjustPosition(adjust.GetX (), adjust.GetY (), adjust.GetSize (), adjust.GetSpeed ());
 	}
 }

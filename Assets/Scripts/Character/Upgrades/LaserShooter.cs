@@ -93,6 +93,7 @@ public class LaserShooter : MonoBehaviour {
 	IEnumerator ShrinkLaser() {
 		Vector3 target = transform.position;
 		Invoke ("CanShoot", 1);
+		yield return new WaitForSeconds (0.1f);
 		if (transform.parent.gameObject.GetComponent<CharStatus> ().isMirrored) {
 			while (lineRenderer.enabled && Mathf.Abs (target.x) > Mathf.Abs (laserHit.position.x)) {
 				lineRenderer.SetPosition (0, target);

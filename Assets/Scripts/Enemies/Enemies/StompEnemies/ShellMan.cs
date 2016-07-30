@@ -28,6 +28,7 @@ public class ShellMan : MonoBehaviour {
 				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
 				col.gameObject.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
 			}
+			GetMirrored();
 			break;
 
 			case "SmallCritter" :

@@ -66,10 +66,6 @@ public class CharPunch : MonoBehaviour {
 			case "Door":
 				victim.gameObject.GetComponent<Door> ().SetInvisible ();
 				break;
-
-			case "SoftEnemy":
-				victim.gameObject.GetComponent<SmallCritter>().TakeDamage(damage);
-				break;
 			
 			case "Barrier":
 				Debug.Log ("BarrierType: " + victim.gameObject.GetComponent<Barriers> ().GetBarrierType ());
@@ -78,8 +74,24 @@ public class CharPunch : MonoBehaviour {
 				}
 				break;
 
-			case "StompEnemy":
-				GetComponent<Knockback> ().Knock (victim.gameObject, 2f);
+			case "SmallCritter" :
+				victim.gameObject.GetComponent<SmallCritter>().TakeDamage(damage);
+				break;
+
+			case "JumpingCritter":
+				victim.gameObject.GetComponent<JumpingCritter>().TakeDamage(damage);
+				break;
+
+			case "CrawlerCritter":
+				CrawlerCritter crawlerCritter = victim.gameObject.GetComponent<CrawlerCritter> ();
+				if (crawlerCritter.deShelled)
+					crawlerCritter.GetHurt (damage);
+				break;
+
+			case "ShellMan":
+				ShellMan shellMan = victim.gameObject.GetComponent<ShellMan> ();
+				if (shellMan.deShelled)
+					shellMan.GetHurt (damage);
 				break;
 
 			case "HardEnemy":

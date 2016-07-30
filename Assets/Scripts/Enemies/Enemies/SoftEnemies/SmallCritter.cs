@@ -39,13 +39,29 @@ public class SmallCritter : MonoBehaviour {
 				}
 				break;
 
-			case "SoftEnemy" :
-				GetMirrored();
-				break;
+			case "SmallCritter" :
+			GetMirrored();
+			break;
+
+			case "JumpingCritter":
+			GetMirrored();
+			break;
 
 			case "HardEnemy" :
-				GetMirrored();
-				break;
+			GetMirrored();
+			break;
+
+			case "BigEyeGuy" :
+			GetMirrored();
+			break;
+
+			case "CrawlerCritter":
+			GetMirrored();
+			break;
+
+			case "ShellMan":
+			GetMirrored();
+			break;
 
 			case "Wall" :
 				GetMirrored();

@@ -24,17 +24,33 @@ public class BigEyeGuy : MonoBehaviour {
 		switch(col.gameObject.tag) {
 
 			case "Char":
-			if (!col.gameObject.GetComponent<CharStomp> ().isStomping) {
+			if (!col.gameObject.GetComponent<CharStomp> ().groundStomping) {
 				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
 				col.gameObject.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
 			}
 			break;
 
-			case "SoftEnemy" :
+			case "SmallCritter" :
+			GetMirrored();
+			break;
+
+			case "JumpingCritter":
 			GetMirrored();
 			break;
 
 			case "HardEnemy" :
+			GetMirrored();
+			break;
+
+			case "BigEyeGuy" :
+			GetMirrored();
+			break;
+
+			case "CrawlerCritter":
+			GetMirrored();
+			break;
+
+			case "ShellMan":
 			GetMirrored();
 			break;
 

@@ -13,9 +13,9 @@ public class HardCritter : MonoBehaviour {
 
 	void FixedUpdate() {
 		if (isMirrored) {
-			rb2D.velocity = new Vector2 (moveSpeed, rb2D.velocity.y);
-		} else {
 			rb2D.velocity = new Vector2 (-1 * moveSpeed, rb2D.velocity.y);
+		} else {
+			rb2D.velocity = new Vector2 (moveSpeed, rb2D.velocity.y);
 		}
 	}
 
@@ -23,13 +23,9 @@ public class HardCritter : MonoBehaviour {
 
 		switch(col.gameObject.tag) {
 
-		case "Char":
-			if (col.gameObject.GetComponent<CharStomp> ().groundStomping) {
-
-			} else if (col.gameObject.GetComponent<CharStatus> ().megaPunch) {
-				GetHurt (2);
-			} else if (col.gameObject.GetComponent<CharStatus> ().chargedMegaPunch) {
-				GetHurt (4);
+			case "Char":
+			if (col.gameObject.GetComponent<CharStatus> ().IsMegaPunching()) {
+				GetMirrored ();
 			} else {
 				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
 				col.gameObject.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
@@ -37,7 +33,11 @@ public class HardCritter : MonoBehaviour {
 			}
 			break;
 
-			case "SoftEnemy" :
+			case "SmallCritter" :
+			GetMirrored();
+			break;
+
+			case "JumpingCritter":
 			GetMirrored();
 			break;
 
@@ -45,16 +45,26 @@ public class HardCritter : MonoBehaviour {
 			GetMirrored();
 			break;
 
-			case "EyeEnemy" :
+			case "BigEyeGuy" :
 			GetMirrored();
 			break;
 
-			case "Wall" :
+			case "CrawlerCritter":
 			GetMirrored();
+			break;
+
+			case "ShellMan":
+			GetMirrored();
+			break;
+
+			case "Wall":
+			GetMirrored ();
+			Rush ();
 			break;
 
 			case "Door" :
 			GetMirrored();
+			Rush();
 			break;
 
 			case "Rock":
@@ -76,14 +86,16 @@ public class HardCritter : MonoBehaviour {
 		}
 	}
 
-	void Rush() {
+	public void Rush() {
 		//Enemy is rushing, play relevant things
+		Debug.Log("Enemy is rushing");
 		damage += 2;
 		moveSpeed += 5;
 		Invoke ("StopRush", 1f);
 	}
 
 	void StopRush() {
+		Debug.Log ("Enemy stopped rushing");
 		//Enemy stops rushing, play relevant things
 		damage -= 2;
 		moveSpeed -= 5;

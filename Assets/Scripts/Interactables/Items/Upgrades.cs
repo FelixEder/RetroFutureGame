@@ -41,6 +41,10 @@ public class Upgrades : MonoBehaviour {
 			case "Energy":
 				col.gameObject.GetComponent<CharEnergy> ().IncreaseMaxEnergy ();
 				break;
+
+			case "MegaPunch":
+				col.gameObject.transform.GetChild (4).GetComponent<CharMegaPunch> ().enabled = true;
+				break;
 			}
 			Destroy (gameObject);
 		}

@@ -29,7 +29,11 @@ public class CrawlerCritter : MonoBehaviour {
 			col.gameObject.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
 			break;
 
-			case "SoftEnemy" :
+			case "SmallCritter" :
+			GetMirrored();
+			break;
+
+			case "JumpingCritter":
 			GetMirrored();
 			break;
 
@@ -37,8 +41,16 @@ public class CrawlerCritter : MonoBehaviour {
 			GetMirrored();
 			break;
 
-			case "StompEnemy" :
+			case "BigEyeGuy" :
 			GetMirrored();
+			break;
+
+			case "CrawlerCritter":
+			GetMirrored();
+			break;
+
+			case "ShellMan":
+			GetMirrored ();
 			break;
 
 			case "Wall" :

@@ -11,13 +11,14 @@ public class StompTrigger : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col) {
 		switch (col.gameObject.tag) {
 		
-		case "SoftEnemy":
+		case "SmallCritter":
 			col.gameObject.GetComponent<SmallCritter> ().TakeDamage (3);
 			col.gameObject.GetComponent<EnemyKnockback> ().Knock (GameObject.Find ("Char"), knockForce);
 			break;
 
-		case "EyeEnemy":
-			//Can't be hurt with stomp, play relevant things
+		case "JumpingCritter":
+			col.gameObject.GetComponent<JumpingCritter> ().TakeDamage (3);
+			col.gameObject.GetComponent<EnemyKnockback> ().Knock (GameObject.Find ("Char"), knockForce);
 			break;
 
 		case "CrawlerCritter":
@@ -38,11 +39,6 @@ public class StompTrigger : MonoBehaviour {
 			} else if (shellMan.deShelled) {
 				shellMan.GetHurt (2);
 			}
-			break;
-
-		case "HardEnemy":
-			col.gameObject.GetComponent<SmallCritter> ().TakeDamage (2);
-			col.gameObject.GetComponent<EnemyKnockback> ().Knock (gameObject.transform.parent.gameObject, knockForce);
 			break;
 		}
 	}

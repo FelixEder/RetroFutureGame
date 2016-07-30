@@ -6,6 +6,7 @@ public class LaserShooter : MonoBehaviour {
 	public Transform laserHit;
 	CharEnergy charEnergy;
 	bool holdShoot, canShoot = true;
+	public int damage = 2;
 
 	void Start() {
 		//Change player sprite and display tutorial
@@ -43,9 +44,38 @@ public class LaserShooter : MonoBehaviour {
 		Debug.Log ("Player shot: " + victim.transform.gameObject.tag);
 		switch(victim.collider.transform.gameObject.tag) {
 			//Add more cases as more types of enemies are added to the game
-		case "SoftEnemy":
-			Debug.Log ("SoftEnemy hit by laser!!");
-			victim.transform.gameObject.GetComponent<SmallCritter> ().TakeDamage (3);
+		case "SmallCritter":
+			victim.transform.gameObject.GetComponent<SmallCritter> ().TakeDamage (damage);
+			break;
+
+		case "JumpingCritter":
+			victim.transform.gameObject.GetComponent<JumpingCritter> ().TakeDamage (damage);
+			break;
+
+		case "HardEnemy":
+			victim.transform.gameObject.GetComponent<HardCritter> ().Rush ();
+			break;
+
+		case "BigEyeGuy" :
+			//Can't be hurt by laser, play relevant things
+			break;
+
+		case "CrawlerCritter":
+			CrawlerCritter crawlercritter = victim.transform.gameObject.GetComponent<CrawlerCritter> ();
+			if (crawlercritter.deShelled) {
+				crawlercritter.GetHurt (damage);
+			} else {
+				//Can't be hurt by laser, play relevant things
+			}
+			break;
+
+		case "ShellMan":
+			ShellMan shellMan = victim.transform.gameObject.GetComponent<ShellMan> ();
+			if (shellMan.deShelled) {
+				shellMan.GetHurt (damage);
+			} else {
+				//Can't be hurt by laser, play relevant things
+			}
 			break;
 
 		case "BirdBossWeakSpot":
@@ -55,7 +85,7 @@ public class LaserShooter : MonoBehaviour {
 
 		case "BigEyeGuyWeakSpot":
 			Debug.Log ("Hit EyeGuy in the Eye!");
-			victim.transform.gameObject.GetComponent<BigEyeGuy> ().GetHurt (2);
+			victim.transform.gameObject.GetComponent<BigEyeGuy> ().GetHurt (damage);
 			break;
 		}
 	}

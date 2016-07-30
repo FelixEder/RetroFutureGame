@@ -102,6 +102,12 @@ public class CharMegaPunch : MonoBehaviour {
 				case "HardEnemy":
 				victim.gameObject.GetComponent<HardCritter>().GetHurt(damage);
 				break;
+
+				case "Barrier":
+				if (victim.gameObject.GetComponent<Barriers> ().GetBarrierType ().Equals ("MegaPunch")) {
+					victim.gameObject.GetComponent<Barriers> ().TakeDamage ();
+				}
+				break;
 			}
 			Debug.Log (victim);
 		}

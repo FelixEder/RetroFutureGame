@@ -15,8 +15,6 @@ public class CharMegaPunch : MonoBehaviour {
 
 	void Update() {
 		if (Input.GetButton ("MegaAttack") && !charStatus.isSmall) {
-			charStatus.NoLongerMegaPunching ();
-	//		holdPunch = true;
 			if (chargeCounter < chargeLimit) {
 				chargeCounter++;
 				Debug.Log (chargeCounter);
@@ -31,7 +29,12 @@ public class CharMegaPunch : MonoBehaviour {
 		} else if (Input.GetButtonUp ("MegaAttack")) {
 			Debug.Log ("Doing Mega-punch!");
 			ExecuteMegaPunch ();
+			Invoke ("SetNoLongerMegaPunch", 1);
 		}
+	}
+
+	void SetNoLongerMegaPunch() {
+		charStatus.NoLongerMegaPunching ();
 	}
 
 	void ExecuteMegaPunch() {
@@ -42,24 +45,20 @@ public class CharMegaPunch : MonoBehaviour {
 				charStatus.chargedMegaPunch = true;
 				damage = 5;
 				chargeCounter = 0;
-			//	holdPunch = false;
 			} else {
 				Debug.Log ("Not enough energy for MegaPunch");
 				//No energy, play correct things
 				chargeCounter = 0;
-			//	holdPunch = false;
 			}
 		} else if (charEnergy.UseEnergy (1)) {
 			Debug.Log ("Did regular MegaPunch!");
 			charStatus.megaPunch = true;
 			damage = 3;
 			chargeCounter = 0;
-		//	holdPunch = false;
 		} else {
 			Debug.Log ("Not enough energy for MegaPunch");
 			//No energy, play correct things
 			chargeCounter = 0;
-		//	holdPunch = false;
 		}
 	}
 
@@ -67,6 +66,8 @@ public class CharMegaPunch : MonoBehaviour {
 	 * Triggered when player punches an object.
 	 */
 	void OnTriggerStay2D(Collider2D victim) {
+		if (!GetComponent<CharMegaPunch> ().enabled)
+			return;
 		if(charStatus.IsMegaPunching()) {
 			Debug.Log ("MegaPunch on Trigger!");
 			switch (victim.gameObject.tag) {

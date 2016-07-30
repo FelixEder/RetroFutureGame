@@ -1,15 +1,26 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character\Actions\CharMegaPunch.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character\Upgrades\SmallFry.cs">
     <Files>
+      <File FileName="Assets\Scripts\Enemies\Bosses\BigBadBird\BirdBossSpitAttack.cs" Line="27" Column="59" />
       <File FileName="Assets\Scripts\Character\Actions\CharPickUp.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\Enemies\HardEnemies\HardCritter.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\Enemies\HardEnemies\HardCritter.cs" Line="17" Column="11" />
       <File FileName="Assets\Scripts\Character\Upgrades\StompTrigger.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Character\Upgrades\LaserShooter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\Actions\CharMegaPunch.cs" Line="33" Column="33" />
-      <File FileName="Assets\Scripts\Character\Status\CharStatus.cs" Line="28" Column="3" />
-      <File FileName="Assets\Scripts\Interactables\Items\Upgrades.cs" Line="46" Column="41" />
-      <File FileName="Assets\Scripts\Character\Actions\CharPunch.cs" Line="82" Column="35" />
+      <File FileName="Assets\Scripts\Character\Actions\CharMegaPunch.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\Status\CharStatus.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Interactables\Items\Upgrades.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\Actions\CharPunch.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\Enemies\SoftEnemies\SmallCritter.cs" Line="40" Column="5" />
+      <File FileName="Assets\Scripts\Enemies\Enemies\SoftEnemies\JumpingCritter.cs" Line="31" Column="5" />
+      <File FileName="Assets\Scripts\Enemies\Enemies\BigEyeGuy\BigEyeGuy.cs" Line="31" Column="18" />
+      <File FileName="Assets\Scripts\Enemies\Enemies\StompEnemies\CrawlerCritter.cs" Line="30" Column="18" />
+      <File FileName="Assets\Scripts\Enemies\Enemies\StompEnemies\ShellMan.cs" Line="31" Column="18" />
+      <File FileName="Assets\Scripts\Enemies\Enemies\StompEnemies\ShellManJumpingTrigger.cs" Line="9" Column="2" />
+      <File FileName="Assets\Scripts\Other\CameraMovement.cs" Line="21" Column="78" />
+      <File FileName="Assets\Scripts\Other\CameraAdjuster.cs" Line="20" Column="26" />
+      <File FileName="Assets\Scripts\Other\CameraTrigger.cs" Line="10" Column="133" />
+      <File FileName="Assets\Scripts\Character\Upgrades\SmallFry.cs" Line="7" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

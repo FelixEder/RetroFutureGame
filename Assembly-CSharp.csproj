@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\Character\Upgrades\CharFloat.cs" />
      <Compile Include="Assets\Scripts\Character\Upgrades\CharStomp.cs" />
      <Compile Include="Assets\Scripts\Character\Upgrades\LaserShooter.cs" />
+     <Compile Include="Assets\Scripts\Character\Upgrades\SmallFry.cs" />
      <Compile Include="Assets\Scripts\Character\Upgrades\StompTrigger.cs" />
      <Compile Include="Assets\Scripts\Character\Upgrades\WallJump.cs" />
      <Compile Include="Assets\Scripts\Enemies\Bosses\BigBadBird\BigBadBird.cs" />

@@ -1,14 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\Bosses\BossActivator.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\Enemies\HardEnemies\HardCritter.cs">
     <Files>
-      <File FileName="Assets\Scripts\Enemies\Bosses\BigBadBird\BirdBossSpitAttack.cs" Line="31" Column="2" />
-      <File FileName="Assets\Scripts\Enemies\Bosses\BigBadBird\BigBadBird.cs" Line="86" Column="52" />
-      <File FileName="Assets\Scripts\Enemies\Bosses\BigBadBird\BirdBossWingAttack.cs" Line="6" Column="16" />
-      <File FileName="Assets\Scripts\Enemies\Enemies\SoftEnemies\SmallCritter.cs" Line="90" Column="3" />
-      <File FileName="Assets\Scripts\Character\Upgrades\CharStomp.cs" Line="29" Column="4" />
-      <File FileName="Assets\Scripts\Character\Upgrades\LaserShooter.cs" Line="43" Column="30" />
-      <File FileName="Assets\Scripts\Enemies\Bosses\BossActivator.cs" Line="9" Column="52" />
+      <File FileName="Assets\Scripts\Enemies\Bosses\BigBadBird\BigBadBird.cs" Line="94" Column="3" />
+      <File FileName="Assets\Scripts\Enemies\Bosses\BigBadBird\BirdBossSpitAttack.cs" Line="32" Column="2" />
+      <File FileName="Assets\Scripts\Enemies\Bosses\BigBadBird\BirdBossWingAttack.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\Enemies\BigEyeGuy\BigEyeGuy.cs" Line="54" Column="37" />
+      <File FileName="Assets\Scripts\Enemies\Enemies\HardEnemies\HardCritter.cs" Line="28" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

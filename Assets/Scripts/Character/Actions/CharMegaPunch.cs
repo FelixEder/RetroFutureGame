@@ -1,34 +1,35 @@
 using UnityEngine;
 using System.Collections;
 
-public class MegaPunch : MonoBehaviour {
-	CharInventory charInventory;
+public class CharMegaPunch : MonoBehaviour {
 	CharEnergy charEnergy;
 	CharStatus charStatus;
 	int chargeCounter, damage;
-	public int chargeLimit = 250;
-	public	bool holdPunch, megaPunch, chargedMegaPunch;
+	int chargeLimit = 200;
 
 	void Start() {
-		charInventory = transform.parent.GetComponent<CharInventory> ();
+		chargeCounter = 0;
 		charEnergy = transform.parent.GetComponent<CharEnergy> ();
 		charStatus = transform.parent.GetComponent<CharStatus> ();
 	}
 
 	void Update() {
-		if (Input.GetButtonDown ("MegaAttack") && !holdPunch) {
+		if (Input.GetButton ("MegaAttack")) {
 			charStatus.NoLongerMegaPunching ();
-			holdPunch = true;
+	//		holdPunch = true;
 			if (chargeCounter < chargeLimit) {
 				chargeCounter++;
+				Debug.Log (chargeCounter);
 				if (chargeCounter >= 50) {
 					Debug.Log ("Charging weapon");
 					//Play charging weapon soundFX and animation
 				}
 			} else {
+				Debug.Log ("Finished charging");
 				//SoundFX and animation should reflect that punch has been fully charged
 			}
-		} else if (Input.GetButtonUp ("MegaAttack") && holdPunch) {
+		} else if (Input.GetButtonUp ("MegaAttack")) {
+			Debug.Log ("Doing Mega-punch!");
 			ExecuteMegaPunch ();
 		}
 	}
@@ -37,24 +38,28 @@ public class MegaPunch : MonoBehaviour {
 		if (chargeCounter >= chargeLimit) {
 			if (charEnergy.UseEnergy (3)) {
 				//Play correct animation for charged Mega Punch
+				Debug.Log("Did charged MegaPunch!");
 				charStatus.chargedMegaPunch = true;
 				damage = 5;
 				chargeCounter = 0;
-				holdPunch = false;
+			//	holdPunch = false;
 			} else {
+				Debug.Log ("Not enough energy for MegaPunch");
 				//No energy, play correct things
 				chargeCounter = 0;
-				holdPunch = false;
+			//	holdPunch = false;
 			}
 		} else if (charEnergy.UseEnergy (1)) {
+			Debug.Log ("Did regular MegaPunch!");
 			charStatus.megaPunch = true;
 			damage = 3;
 			chargeCounter = 0;
-			holdPunch = false;
+		//	holdPunch = false;
 		} else {
+			Debug.Log ("Not enough energy for MegaPunch");
 			//No energy, play correct things
 			chargeCounter = 0;
-			holdPunch = false;
+		//	holdPunch = false;
 		}
 	}
 
@@ -66,25 +71,39 @@ public class MegaPunch : MonoBehaviour {
 			Debug.Log ("MegaPunch on Trigger!");
 			switch (victim.gameObject.tag) {
 				//Update this list with correct reactions to the mega-punch
-				case "door":
+				case "Door":
 				victim.gameObject.GetComponent<Door> ().SetInvisible ();
 				break;
 
-				case "softEnemy":
+				case "SmallCritter":
 				victim.gameObject.GetComponent<SmallCritter>().TakeDamage(damage);
 				break;
 
-				case "eyeEnemy":
-				//Can't be hurt with mega-punch, play relevant things
+				case "JumpingCritter":
+				victim.gameObject.GetComponent<JumpingCritter>().TakeDamage(damage);
 				break;
 
-				case "stompEnemy":
+				case "BigEyeGuy":
+				victim.gameObject.GetComponent<BigEyeGuy>().GetHurt(damage);
 				break;
 
-				case "hardEnemy":
+				case "CrawlerCritter":
+				CrawlerCritter crawlerCritter = victim.gameObject.GetComponent<CrawlerCritter>();
+				if(crawlerCritter.deShelled)
+					crawlerCritter.GetHurt(damage);
+				break;
+
+				case "ShellMan":
+				ShellMan shellMan = victim.gameObject.GetComponent<ShellMan>();
+				if(shellMan.deShelled)
+					shellMan.GetHurt(damage);
+				break;
+
+				case "HardEnemy":
+				victim.gameObject.GetComponent<HardCritter>().GetHurt(damage);
 				break;
 			}
+			Debug.Log (victim);
 		}
-		Debug.Log (victim);
 	}
 }

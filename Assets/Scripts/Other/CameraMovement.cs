@@ -13,7 +13,18 @@ public class CameraMovement : MonoBehaviour {
 		GetComponent<Camera> ().orthographicSize = Mathf.Lerp(GetComponent<Camera> ().orthographicSize, size, Time.deltaTime);
 	}
 
-	public void AdjustPosition(float x, float y, float newSize) {
+	public void AdjustPosition(float x, float y, float newSize, float speed) {
+		StopAllCoroutines ();
+		StartCoroutine (AdjustTransition (x, y, newSize, speed));
+	}
+
+	IEnumerator AdjustTransition(float x, float y, float newSize, float speed) {
+		while (adjustX < x - 0.1f || adjustY < y - 0.1f || size < newSize - 0.1f || adjustX > x + 0.1f || adjustY > y + 0.1f || size > newSize + 0.1f) {
+			adjustX = Mathf.Lerp (adjustX, x, Time.deltaTime * speed);
+			adjustY = Mathf.Lerp (adjustY, y, Time.deltaTime * speed);
+			size = Mathf.Lerp (size, newSize, Time.deltaTime * speed);
+			yield return new WaitForSeconds (0.01f);
+		}
 		adjustX = x;
 		adjustY = y;
 		size = newSize;

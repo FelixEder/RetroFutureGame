@@ -31,6 +31,7 @@ public class HardCritter : MonoBehaviour {
 				col.gameObject.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
 				Rush ();
 			}
+			GetMirrored();
 			break;
 
 			case "SmallCritter" :

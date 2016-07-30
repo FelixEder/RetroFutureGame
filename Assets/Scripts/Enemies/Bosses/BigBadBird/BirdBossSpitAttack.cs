@@ -26,7 +26,6 @@ public class BirdBossSpitAttack : MonoBehaviour {
 			}
 			GameObject instance = Instantiate (Resources.Load (spawnType), transform.position, Quaternion.identity) as GameObject;
 			instance.transform.parent = transform.parent.parent;
-			instance.layer = 16;
 		}
 	}
 }

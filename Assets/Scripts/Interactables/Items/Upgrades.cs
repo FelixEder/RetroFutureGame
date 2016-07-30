@@ -43,7 +43,7 @@ public class Upgrades : MonoBehaviour {
 				break;
 
 			case "MegaPunch":
-				col.gameObject.transform.GetChild (4).GetComponent<CharMegaPunch> ().enabled = true;
+				col.gameObject.transform.GetChild (5).GetComponent<CharMegaPunch> ().enabled = true;
 				break;
 			}
 			Destroy (gameObject);

@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Down facing Character collission trigger
 public class CharTriggerDown : MonoBehaviour {
-	//Down facing Character collission trigger
 	CharStatus status;
 
 	void Start () {

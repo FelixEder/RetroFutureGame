@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Left facing Character collission trigger
 public class CharTriggerBack : MonoBehaviour {
-	//Left side Character collission trigger
 	CharStatus status;
 
 	void Start () {

@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Right facing Character collission trigger
 public class CharTriggerFront : MonoBehaviour {
-	//Right side Character collission trigger
 	CharStatus status;
 
 	void Start () {
@@ -11,7 +11,6 @@ public class CharTriggerFront : MonoBehaviour {
 		
 	void OnTriggerStay2D(Collider2D col) {
 		if(col.gameObject.tag == "Wall") {
-			Debug.Log ("Colliding with " + col);
 			if (status.isMirrored) {
 				status.onLeftWall = true;
 			} else {

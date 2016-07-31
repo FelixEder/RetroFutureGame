@@ -52,7 +52,7 @@ public class CharEnergy : MonoBehaviour {
 	}
 
 
-	void SetEnergySlider() {
+	public void SetEnergySlider() {
 		slider.value = (float) currentEnergy / maxEnergy;
 	}
 

@@ -15,16 +15,16 @@ public class CharHealth : MonoBehaviour {
 		SetHealthSlider ();
 	}
 
-	void Update() {
-		if (currentHealth <= 0 && !dead)
-			Die ();
-	}
-
 	public void TakeDamage(int damage) {
 		//Maybe give a few seconds invincibility and make sprite blink or so?
 		if (!status.Invulnerable ()) {
-			currentHealth -= damage;
-			status.Invulnerable (3.0f);
+			if (currentHealth - damage < 0) {
+				currentHealth = 0;
+				Die ();
+			}
+			else
+				currentHealth -= damage;
+			status.Invulnerable (1.0f);
 			StartCoroutine (TransitionHealthSlider ());
 		}
 	}
@@ -43,7 +43,7 @@ public class CharHealth : MonoBehaviour {
 		StartCoroutine(TransitionHealthSlider ());
 	}
 
-	void SetHealthSlider() {
+	public void SetHealthSlider() {
 		slider.value = (float) currentHealth / maxHealth;
 	}
 

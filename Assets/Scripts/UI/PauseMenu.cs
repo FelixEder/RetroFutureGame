@@ -94,12 +94,16 @@ public class PauseMenu : MonoBehaviour {
 	//shows a gameobject and updates the hideOnPlay array
 	public void ShowDialog(GameObject dialog) {
 		dialog.SetActive (true);
-		hideOnPlay = GameObject.FindGameObjectsWithTag ("HideOnPlay");
+		UpdateHideOnPlay ();
 	}
 
 	//hides a gameobject and updates the hideOnPlay array
 	public void HideDialog(GameObject dialog) {
 		dialog.SetActive (false);
+		UpdateHideOnPlay ();
+	}
+
+	public void UpdateHideOnPlay() {
 		hideOnPlay = GameObject.FindGameObjectsWithTag ("HideOnPlay");
 	}
 

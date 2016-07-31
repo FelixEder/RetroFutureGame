@@ -14,8 +14,8 @@ public class Upgrades : MonoBehaviour {
 				col.gameObject.GetComponent<CharFloat>().enabled = true;
 				break;
 
-			case "HighJump":
-				col.gameObject.GetComponent<CharJump> ().jumpSpeed = 15f;
+			case "SecondJump":
+				col.gameObject.GetComponent<CharJump> ().gotSecondJump = true;
 				break;
 
 			case "WallJump":

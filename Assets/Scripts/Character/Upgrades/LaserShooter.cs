@@ -89,6 +89,11 @@ public class LaserShooter : MonoBehaviour {
 			Debug.Log ("Hit EyeGuy in the Eye!");
 			victim.transform.gameObject.GetComponent<BigEyeGuy> ().GetHurt (damage);
 			break;
+
+		case "FinalBossArmor":
+			Debug.Log ("Hit the boss in the armor!");
+			victim.transform.gameObject.GetComponent<Phase1> ().Stunned ();
+			break;
 		}
 	}
 

@@ -6,9 +6,11 @@ public class CharHealth : MonoBehaviour {
 	public int currentHealth, maxHealth;
 	bool dead;
 	Slider slider;
+	CharStatus status;
 
 	void Start() {
 		slider = GameObject.Find ("healthSlider").GetComponent<Slider> ();
+		status = GameObject.Find ("Char").GetComponent<CharStatus> ();
 		SetHealthSliderSize ();
 		SetHealthSlider ();
 	}
@@ -20,8 +22,11 @@ public class CharHealth : MonoBehaviour {
 
 	public void TakeDamage(int damage) {
 		//Maybe give a few seconds invincibility and make sprite blink or so?
-		currentHealth -= damage;
-		StartCoroutine(TransitionHealthSlider ());
+		if (!status.Invulnerable ()) {
+			currentHealth -= damage;
+			status.Invulnerable (3.0f);
+			StartCoroutine (TransitionHealthSlider ());
+		}
 	}
 		
 	public void IncreaseCurrentHealth(int amount) {

@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class CharStatus : MonoBehaviour {
-	public bool onGround, onLeftWall, onRightWall, onPlatform, isMirrored, isFloating, onSurface;
+	public bool onGround, onLeftWall, onRightWall, onPlatform, isMirrored, isFloating, onSurface, invulnerable;
 	public bool megaPunch, chargedMegaPunch, isSmall;
 	public float velocityX, velocityY;
 
@@ -25,6 +25,19 @@ public class CharStatus : MonoBehaviour {
 	public void NoLongerMegaPunching() {
 		megaPunch = false;
 		chargedMegaPunch = false;
+	}
+
+	public void Invulnerable(float time) {
+		invulnerable = true;
+		Invoke ("SetVulnerable", time);
+	}
+
+	void SetVulnerable() {
+		invulnerable = false;
+	}
+
+	public bool Invulnerable() {
+		return invulnerable;
 	}
 
 	/*public void changeSize() {

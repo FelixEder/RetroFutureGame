@@ -32,10 +32,6 @@ public class CharPickUp : MonoBehaviour {
 			switch (col.gameObject.GetComponent<PickUpableItem>().GetItemType()) {
 
 				case "Rock":
-					charInventory.setHoldingItem (col.gameObject);
-					col.gameObject.GetComponent<PickUpableItem> ().PickUp (this.gameObject);
-					break;
-
 				case "Branch":
 					charInventory.setHoldingItem (col.gameObject);
 					col.gameObject.GetComponent<PickUpableItem> ().PickUp (this.gameObject);

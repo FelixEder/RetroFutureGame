@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class PickUpableItem : MonoBehaviour {
-	Rigidbody2D rigidBody2D;
+	public Rigidbody2D rigidBody2D;
 	public float HoldPositionX = 0.341f, HoldPositionY = -0.332f;
 	/**the type*/
 	public string itemType;

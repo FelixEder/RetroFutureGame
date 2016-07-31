@@ -3,14 +3,14 @@ using System.Collections;
 
 public class WallJump : MonoBehaviour {
 	CharStatus status;
-	CharJump CharJump;
+	CharJump charJump;
 	Rigidbody2D rigidBody2D;
 	public float WallJumpSpeed;
 	bool holdJump;
 
 	void Start () {
 		status = GetComponent<CharStatus> ();
-		CharJump = GetComponent<CharJump> ();
+		charJump = GetComponent<CharJump> ();
 		rigidBody2D = GetComponent<Rigidbody2D> ();
 	}
 
@@ -20,12 +20,13 @@ public class WallJump : MonoBehaviour {
 		}
 		if(Input.GetButton("Jump") && (status.onLeftWall || status.onRightWall) && !holdJump && !status.onGround) {
 			holdJump = true;
+			charJump.hasSecondJumped = false;
 			float axisH = Input.GetAxis("Horizontal");
 			if(axisH > 0 && status.onLeftWall) {
-				rigidBody2D.velocity = new Vector2 (WallJumpSpeed, CharJump.jumpSpeed / 1.2f);
+				rigidBody2D.velocity = new Vector2 (WallJumpSpeed, charJump.jumpSpeed / 1.2f);
 			}
 			else if(axisH < 0 && status.onRightWall) {
-				rigidBody2D.velocity = new Vector2 (-1 * WallJumpSpeed, CharJump.jumpSpeed / 1.2f);
+				rigidBody2D.velocity = new Vector2 (-1 * WallJumpSpeed, charJump.jumpSpeed / 1.2f);
 			}
 		}
 	}

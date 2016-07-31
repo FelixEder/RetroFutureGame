@@ -12,9 +12,11 @@ public class CharMovement : MonoBehaviour {
 		status = GetComponent<CharStatus> ();
 		rigidBody2D = GetComponent<Rigidbody2D> ();
 	}
-
+		
 	void FixedUpdate() {
 		axisH = Input.GetAxis("Horizontal");
+		transform.GetChild (0).gameObject.GetComponent<Animator> ().SetFloat ("Speed", Mathf.Abs(axisH));
+		transform.GetChild (0).gameObject.GetComponent<Animator> ().SetFloat ("WalkSpeed", Mathf.Abs(rigidBody2D.velocity.x * axisH));
 		//Test if trying to move towards left wall and stop movement as well as decrease negative y velocity.
 		if (status.onLeftWall && axisH < 0) {
 			if (rigidBody2D.velocity.y < -2)

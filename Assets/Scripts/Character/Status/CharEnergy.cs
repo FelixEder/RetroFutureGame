@@ -74,7 +74,8 @@ public class CharEnergy : MonoBehaviour {
 				rechargeSlider.value += Time.deltaTime / (rechargeTime * 5);
 				yield return new WaitForSeconds (0.01f);
 			}
-			IncreaseCurrentEnergy (1);
+			if (startEnergy == currentEnergy)
+				IncreaseCurrentEnergy (1);
 		}
 		yield return new WaitForSeconds (1.0f);
 		rechargeSlider.value = 0.0f;

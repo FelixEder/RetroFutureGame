@@ -4,8 +4,9 @@ using System.Collections;
 public class CharJump : MonoBehaviour {
 	CharStatus status;
 	Rigidbody2D rigidBody2D;
-	public float jumpSpeed;
-	public bool jumpDown, hasJumped, holdJump;
+	public float jumpSpeed, secondJumpSpeed;
+	public bool jumpDown, holdJump, gotSecondJump;
+	bool hasJumped, hasSecondJumped;
 
 	void Start () {
 		status = GetComponent<CharStatus> ();
@@ -14,7 +15,12 @@ public class CharJump : MonoBehaviour {
 		
 	void FixedUpdate () {
 		//enable jump button when not holding button and on surface
-		if (!Input.GetButton ("Jump") && holdJump && status.onSurface)
+		if (!Input.GetButton ("Jump") && holdJump && status.onSurface) {
+			holdJump = false;
+			hasJumped = false;
+			hasSecondJumped = false;
+		}
+		else if (!Input.GetButton ("Jump") && holdJump && gotSecondJump && !hasSecondJumped)
 			holdJump = false;
 		//jump down through platform when holding down and pressing jump
 		if (Input.GetButton ("Jump") && Input.GetAxis ("Vertical") < -0.3f && status.onPlatform)
@@ -23,6 +29,12 @@ public class CharJump : MonoBehaviour {
 		else if (Input.GetButton ("Jump") && !holdJump && status.onSurface) {
 			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, jumpSpeed);
 			hasJumped = true;
+			holdJump = true;
+		}
+		//jump in air when have secondjump and has not secondjumped.
+		else if (Input.GetButton ("Jump") && gotSecondJump && !holdJump) {
+			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, secondJumpSpeed);
+			hasSecondJumped = true;
 			holdJump = true;
 		}
 		//decrease vertical velocity if let go of jump early

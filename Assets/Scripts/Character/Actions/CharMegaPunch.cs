@@ -109,6 +109,16 @@ public class CharMegaPunch : MonoBehaviour {
 					victim.gameObject.GetComponent<Barriers> ().TakeDamage ();
 				}
 				break;
+
+				case "FinalBossWeakSpot":
+				if (charStatus.chargedMegaPunch) {
+					Debug.Log ("Charge Mega-Punched the boss!"); 
+					victim.gameObject.GetComponent<Phase1> ().GetHurt (3);
+				} else {
+					Debug.Log ("Mega-Punched the boss!"); 
+					victim.gameObject.GetComponent<Phase1> ().GetHurt (1);
+				}
+				break;
 			}
 			Debug.Log (victim);
 		}

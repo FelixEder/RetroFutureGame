@@ -6,6 +6,7 @@ public class LaserShooter : MonoBehaviour {
 	private LineRenderer lineRenderer;
 	public Transform laserHit;
 	CharEnergy charEnergy;
+	InputManager input;
 	bool holdShoot, canShoot = true;
 	public int damage = 2;
 
@@ -15,17 +16,17 @@ public class LaserShooter : MonoBehaviour {
 		lineRenderer.useWorldSpace = true;
 		charStatus = transform.parent.GetComponent<CharStatus> ();
 		charEnergy = GameObject.Find("Char").GetComponent<CharEnergy> ();
+		input = GameObject.Find ("InputManager").GetComponent<InputManager> ();
 	}
 
 	void Update() {
-		if (!Input.GetButton ("Shoot")) {
+		if (!input.GetKey("shoot")) {
 			holdShoot = false;
 		}
-		if (Input.GetButton ("Shoot") && !holdShoot && canShoot && !charStatus.isSmall) {
+		if (input.GetKey("shoot") && !holdShoot && canShoot && !charStatus.isSmall) {
 			holdShoot = true;
 			if (charEnergy.UseEnergy (2)) {
 				canShoot = false;
-				//charEnergy.UseEnergy (2);
 				ActivateLaser ();
 			}
 		}
@@ -37,6 +38,7 @@ public class LaserShooter : MonoBehaviour {
 		Debug.DrawLine (transform.position, hit.point);
 		laserHit.position = new Vector3(hit.point.x, hit.point.y, -5);
 		lineRenderer.SetPosition (0, transform.position);
+		//TODO lerp or close in on target over time instead of setting it directly.
 		lineRenderer.SetPosition (1, laserHit.position);
 		StartCoroutine (ShrinkLaser ());
 		HitByLaser (hit);

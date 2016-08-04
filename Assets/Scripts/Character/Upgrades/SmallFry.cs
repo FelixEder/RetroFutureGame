@@ -2,18 +2,24 @@ using UnityEngine;
 using System.Collections;
 
 public class SmallFry : MonoBehaviour {
-	CharStatus charStatus;
-	CharInventory charInventory;
+	CharStatus status;
+	CharInventory inventory;
+	InputManager input;
+	bool holdSmall;
 //	public Sprite normal, smallFry;
 
 	void Start() {
-		charStatus = transform.parent.GetComponent<CharStatus> ();
-		charInventory = transform.parent.GetComponent<CharInventory> ();
+		status = transform.parent.GetComponent<CharStatus> ();
+		inventory = transform.parent.GetComponent<CharInventory> ();
+		input = GameObject.Find ("InputManager").GetComponent<InputManager> ();
 	}
 	
 	void Update() {
-		if (Input.GetButtonDown ("SmallButton")) {
-			if (charStatus.isSmall) {
+		if (!input.GetKey ("small") && holdSmall)
+			holdSmall = false;
+		if (input.GetKey ("small") && !holdSmall) {
+			holdSmall = true;
+			if (status.isSmall) {
 				GrowBig ();
 			} else {
 				GrowSmall ();
@@ -24,14 +30,14 @@ public class SmallFry : MonoBehaviour {
 	void GrowSmall() {
 		transform.parent.GetComponent<PolygonCollider2D> ().enabled = false;
 		transform.parent.GetComponent<CircleCollider2D> ().enabled = true;
-		charStatus.isSmall = true; 
-		if(charInventory.isHoldingItem())
-			charInventory.setHoldingItem (null);
+		status.isSmall = true; 
+		if(inventory.isHoldingItem())
+			inventory.setHoldingItem (null);
 	}
 
 	void GrowBig() {
 		transform.parent.GetComponent<PolygonCollider2D> ().enabled = true;
 		transform.parent.GetComponent<CircleCollider2D> ().enabled = false;
-		charStatus.isSmall = false;
+		status.isSmall = false;
 	}
 }

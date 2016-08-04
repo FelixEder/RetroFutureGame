@@ -3,7 +3,8 @@ using System.Collections;
 
 public class CharStomp : MonoBehaviour {	
 	Rigidbody2D rigidBody2D;
-	CharStatus CharStatus;
+	CharStatus status;
+	InputManager input;
 	public GameObject triggerStomp;
 	//I think groundStomping is unneccecary
 	public bool isStomping, groundStomping;
@@ -12,25 +13,23 @@ public class CharStomp : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rigidBody2D = GetComponent<Rigidbody2D> ();
-		CharStatus = GetComponent<CharStatus> ();
+		status = GetComponent<CharStatus> ();
+		input = GameObject.Find ("InputManager").GetComponent<InputManager> ();
 		//Change sprite, display correct tutorial and play theme.
 	}
 
-	void Update() {
-		if (!Input.GetButton ("Attack"))
-			holdStomp = false;
-		//triggerStomp.SetActive(groundStomping);
-	}
-	
 	void FixedUpdate() {
-		if (CharStatus.InAir () && !CharStatus.isSmall && !CharStatus.isFloating && Input.GetAxis ("Vertical") < -0.3f && Input.GetButton ("Attack") && !holdStomp) {
+		if (!input.GetKey ("attack"))
+			holdStomp = false;
+		if (status.InAir () && !status.isSmall && !status.isFloating && input.GetAxis ("Y") < -0.3f && input.GetKey ("attack") && !holdStomp) {
 			holdStomp = true;
 			isStomping = true;
 			rigidBody2D.velocity = new Vector2 (0, 0);
 			rigidBody2D.gravityScale = 0.0f;
 			//Play stomp-animation
 			Invoke ("Stomp", 0.5f);
-		} else if (CharStatus.onSurface && isStomping) {
+		}
+		else if (status.onSurface && isStomping) {
 			//Play stomp-on-ground animation
 			Debug.Log("You are stomping something!");
 			groundStomping = true;

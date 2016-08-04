@@ -3,18 +3,21 @@ using System.Collections;
 
 public class CharMegaPunch : MonoBehaviour {
 	CharEnergy charEnergy;
-	CharStatus charStatus;
-	int chargeCounter, damage;
-	int chargeLimit = 200;
+	CharStatus status;
+	InputManager input;
+	int chargeCounter, damage, chargeLimit = 200;
+	bool charging;
 
 	void Start() {
 		chargeCounter = 0;
 		charEnergy = transform.parent.GetComponent<CharEnergy> ();
-		charStatus = transform.parent.GetComponent<CharStatus> ();
+		status = transform.parent.GetComponent<CharStatus> ();
+		input = GameObject.Find ("InputManager").GetComponent<InputManager> ();
 	}
 
 	void Update() {
-		if (Input.GetButton ("MegaAttack") && !charStatus.isSmall) {
+		if (input.GetKey ("mega") && !status.isSmall) {
+			charging = true;
 			if (chargeCounter < chargeLimit) {
 				chargeCounter++;
 				Debug.Log (chargeCounter);
@@ -26,15 +29,16 @@ public class CharMegaPunch : MonoBehaviour {
 				Debug.Log ("Finished charging");
 				//SoundFX and animation should reflect that punch has been fully charged
 			}
-		} else if (Input.GetButtonUp ("MegaAttack")) {
+		} else if (!input.GetKey("mega") && charging) {
 			Debug.Log ("Doing Mega-punch!");
+			charging = false;
 			ExecuteMegaPunch ();
 			Invoke ("SetNoLongerMegaPunch", 1);
 		}
 	}
 
 	void SetNoLongerMegaPunch() {
-		charStatus.NoLongerMegaPunching ();
+		status.NoLongerMegaPunching ();
 	}
 
 	void ExecuteMegaPunch() {
@@ -42,7 +46,7 @@ public class CharMegaPunch : MonoBehaviour {
 			if (charEnergy.UseEnergy (3)) {
 				//Play correct animation for charged Mega Punch
 				Debug.Log("Did charged MegaPunch!");
-				charStatus.chargedMegaPunch = true;
+				status.chargedMegaPunch = true;
 				damage = 5;
 				chargeCounter = 0;
 			} else {
@@ -52,7 +56,7 @@ public class CharMegaPunch : MonoBehaviour {
 			}
 		} else if (charEnergy.UseEnergy (1)) {
 			Debug.Log ("Did regular MegaPunch!");
-			charStatus.megaPunch = true;
+			status.megaPunch = true;
 			damage = 3;
 			chargeCounter = 0;
 		} else {
@@ -68,7 +72,7 @@ public class CharMegaPunch : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D victim) {
 		if (!GetComponent<CharMegaPunch> ().enabled)
 			return;
-		if(charStatus.IsMegaPunching()) {
+		if(status.IsMegaPunching()) {
 			Debug.Log ("MegaPunch on Trigger!");
 			switch (victim.gameObject.tag) {
 				//Update this list with correct reactions to the mega-punch
@@ -111,7 +115,7 @@ public class CharMegaPunch : MonoBehaviour {
 				break;
 
 				case "FinalBossWeakSpot":
-				if (charStatus.chargedMegaPunch) {
+				if (status.chargedMegaPunch) {
 					Debug.Log ("Charge Mega-Punched the boss!"); 
 					victim.gameObject.GetComponent<Phase1> ().GetHurt (3);
 				} else {

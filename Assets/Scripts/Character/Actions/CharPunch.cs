@@ -4,19 +4,21 @@ using System.Collections;
 public class CharPunch : MonoBehaviour {
 	CharInventory CharInventory;
 	CharStatus charStatus;
+	InputManager input;
 	public bool holdPunch;
 	string attackType;
 
 	void Start() {
 		CharInventory = transform.parent.GetComponent<CharInventory> ();
 		charStatus = transform.parent.GetComponent<CharStatus> ();
+		input = GameObject.Find ("InputManager").GetComponent<InputManager> ();
 	}
 
 	void Update() {
 		attackType = "";
-		if (!Input.GetButton ("Attack") && holdPunch) {
+		if (!input.GetKey ("attack") && holdPunch) {
 			holdPunch = false;
-		} else if (Input.GetButton ("Attack") && !holdPunch && !charStatus.isSmall) {
+		} else if (input.GetKey ("attack") && !holdPunch && !charStatus.isSmall) {
 			Debug.Log ("Punched nothing");
 			ExecutePunch ();
 		}

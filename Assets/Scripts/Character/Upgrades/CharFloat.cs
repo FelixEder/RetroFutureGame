@@ -3,21 +3,23 @@ using System.Collections;
 
 public class CharFloat : MonoBehaviour {
 	Rigidbody2D rigidBody2D;
-	CharStatus CharStatus;
+	CharStatus status;
+	InputManager input;
 
 	// Use this for initialization
 	void Start () {
 		rigidBody2D = GetComponent<Rigidbody2D> ();
-		CharStatus = GetComponent<CharStatus> ();
+		status = GetComponent<CharStatus> ();
+		input = GameObject.Find ("InputManager").GetComponent<InputManager> ();
 	}
 
 	void FixedUpdate () {
 		//This could later be changed to so that when an upgrade is obtained, this part of the script is enabled for the player.
-		if (CharStatus.InAir () && !CharStatus.isSmall && rigidBody2D.velocity.y <= -1f && (Input.GetButton ("Leaf") || Input.GetAxis ("Leaf") > 0)) {
+		if (status.InAir () && !status.isSmall && rigidBody2D.velocity.y <= -1f && input.GetKey("float")) {
 			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, -1f);
-			CharStatus.isFloating = true;
-		} else {
-			CharStatus.isFloating = false;
+			status.isFloating = true;
 		}
+		else
+			status.isFloating = false;
 	}
 }

@@ -7,12 +7,15 @@ public class PauseMenu : MonoBehaviour {
 	GameObject[] pauseObjects, hideOnPlay;
 	GameObject lastSelected;
 	EventSystem eventSystem;
+	InputManager input;
+	bool inputWasDisabled;
 //	bool cursorVisible = true;
 
 	void Start() {
 		Time.timeScale = 1;
 		pauseObjects = GameObject.FindGameObjectsWithTag("ShowOnPause");
 		eventSystem = GameObject.Find ("EventSystem").GetComponent<EventSystem> ();
+		input = GameObject.Find ("InputManager").GetComponent<InputManager> ();
 		HidePaused();
 	}
 		
@@ -44,11 +47,17 @@ public class PauseMenu : MonoBehaviour {
 	public void PauseControl() {
 		if (Time.timeScale == 1) {
 			Time.timeScale = 0;
+			if (!input.Enabled ())
+				inputWasDisabled = true;
+			input.Disable ();
 			ShowPaused();
 			SetSelected (GameObject.Find("ResumeButton"));
 		}
 		else if (Time.timeScale == 0) {
 			Time.timeScale = 1;
+			if (!inputWasDisabled)
+				input.Disable (0.2f);
+			inputWasDisabled = false;
 			SetSelected (null);
 			HideOnPlay ();
 			HidePaused();

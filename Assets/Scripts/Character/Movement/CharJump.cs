@@ -4,6 +4,7 @@ using System.Collections;
 public class CharJump : MonoBehaviour {
 	CharStatus status;
 	Rigidbody2D rigidBody2D;
+	InputManager input;
 	public float jumpSpeed, secondJumpSpeed;
 	public bool jumpDown, holdJump, gotSecondJump, hasSecondJumped;
 	bool hasJumped;
@@ -11,6 +12,7 @@ public class CharJump : MonoBehaviour {
 	void Start () {
 		status = GetComponent<CharStatus> ();
 		rigidBody2D = GetComponent<Rigidbody2D> ();
+		input = GameObject.Find ("InputManager").GetComponent<InputManager> ();
 	}
 		
 	void FixedUpdate () {
@@ -20,29 +22,29 @@ public class CharJump : MonoBehaviour {
 			hasSecondJumped = false;
 		}
 		//enable jump button when not holding button and on surface
-		if (!Input.GetButton ("Jump") && holdJump && status.onSurface) {
+		if (!input.GetKey ("jump") && holdJump && status.onSurface) {
 			holdJump = false;
 		}
-		else if (!Input.GetButton ("Jump") && holdJump && gotSecondJump && !hasSecondJumped)
+		else if (!input.GetKey ("jump") && holdJump && gotSecondJump && !hasSecondJumped)
 			holdJump = false;
 		//jump down through platform when holding down and pressing jump
-		if (Input.GetButton ("Jump") && Input.GetAxis ("Vertical") < -0.3f && status.onPlatform)
+		if (input.GetKey ("jump") && input.GetAxis ("Y") < -0.3f && status.onPlatform)
 			jumpDown = true;
 		//jump when on surface and pressing jump
-		else if (Input.GetButton ("Jump") && !holdJump && status.onSurface) {
+		else if (input.GetKey ("jump") && !holdJump && status.onSurface) {
 			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, jumpSpeed);
 			transform.GetChild (0).gameObject.GetComponent<Animator> ().SetBool ("Jumping", true);
 			hasJumped = true;
 			holdJump = true;
 		}
 		//jump in air when have secondjump and has not secondjumped.
-		else if (Input.GetButton ("Jump") && gotSecondJump && !holdJump) {
+		else if (input.GetKey ("jump") && gotSecondJump && !holdJump) {
 			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, secondJumpSpeed);
 			hasSecondJumped = true;
 			holdJump = true;
 		}
 		//decrease vertical velocity if let go of jump early
-		else if (!Input.GetButton ("Jump") && hasJumped && rigidBody2D.velocity.y > jumpSpeed / 1.8f)
+		else if (!input.GetKey ("jump") && hasJumped && rigidBody2D.velocity.y > jumpSpeed / 1.8f)
 			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, jumpSpeed / 1.8f);
 	}
 }

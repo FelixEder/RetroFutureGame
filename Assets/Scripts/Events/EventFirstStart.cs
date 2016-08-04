@@ -5,6 +5,7 @@ public class EventFirstStart : MonoBehaviour {
 	public GameObject lightF, lightB, daylightF, daylightB;
 
 	void Start () {
+		GameObject.Find ("InputManager").GetComponent<InputManager> ().Disable (5);
 		StartCoroutine (LightStartup ());
 	}
 

@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\Enemies\Bosses\FinalBoss\Phase1\Throw.cs" />
      <Compile Include="Assets\Scripts\Enemies\Bosses\FinalBoss\Phase2\Phase2.cs" />
      <Compile Include="Assets\Scripts\Enemies\Bosses\StatueBoss\StatueBoss.cs" />
+     <Compile Include="Assets\Scripts\Enemies\Bosses\StatueBoss\StatueBossLaser.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemies\BigEyeGuy\BigEyeGuy.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemies\BigEyeGuy\BigEyeGuyJumpingTrigger.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemies\BigEyeGuy\BigEyeGuyLaser.cs" />
@@ -96,11 +97,11 @@
      <Compile Include="Assets\Scripts\Interactables\Map\Barriers.cs" />
      <Compile Include="Assets\Scripts\Interactables\Map\Door.cs" />
      <Compile Include="Assets\Scripts\Interactables\Map\MapCover.cs" />
-     <Compile Include="Assets\Scripts\Interactables\Misc\LaserBeam.cs" />
      <Compile Include="Assets\Scripts\Interactables\Misc\PrefabSpawner.cs" />
      <Compile Include="Assets\Scripts\Other\CameraAdjuster.cs" />
      <Compile Include="Assets\Scripts\Other\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\Other\CameraTrigger.cs" />
+     <Compile Include="Assets\Scripts\Other\InputManager.cs" />
      <Compile Include="Assets\Scripts\Other\PlatformLogic.cs" />
      <Compile Include="Assets\Scripts\UI\BootLogo.cs" />
      <Compile Include="Assets\Scripts\UI\DebugMenu.cs" />

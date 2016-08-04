@@ -13,12 +13,12 @@ public class StompTrigger : MonoBehaviour {
 		
 		case "SmallCritter":
 			col.gameObject.GetComponent<SmallCritter> ().TakeDamage (3);
-			col.gameObject.GetComponent<EnemyKnockback> ().Knock (GameObject.Find ("Char"), knockForce);
+			col.gameObject.GetComponent<EnemyKnockback> ().Knockback (GameObject.Find ("Char"), knockForce);
 			break;
 
 		case "JumpingCritter":
 			col.gameObject.GetComponent<JumpingCritter> ().TakeDamage (3);
-			col.gameObject.GetComponent<EnemyKnockback> ().Knock (GameObject.Find ("Char"), knockForce);
+			col.gameObject.GetComponent<EnemyKnockback> ().Knockback (GameObject.Find ("Char"), knockForce);
 			break;
 
 		case "CrawlerCritter":

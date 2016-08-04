@@ -64,3 +64,24 @@ F:\Unity Projects\RetroFutureGame\Temp\bin\Debug\UnityEngine.Networking.xml
 F:\Unity Projects\RetroFutureGame\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 F:\Unity Projects\RetroFutureGame\obj\Debug\Assembly-CSharp.dll
 F:\Unity Projects\RetroFutureGame\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Wahrberg-Stankov\Documents\GitHub\RetroFutureGame\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Wahrberg-Stankov\Documents\GitHub\RetroFutureGame\obj\Debug\Assembly-CSharp.dll
+C:\Users\Wahrberg-Stankov\Documents\GitHub\RetroFutureGame\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\Wahrberg-Stankov\Documents\GitHub\RetroFutureGame\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\Wahrberg-Stankov\Documents\GitHub\RetroFutureGame\Temp\bin\Debug\UnityEditor.dll
+C:\Users\Wahrberg-Stankov\Documents\GitHub\RetroFutureGame\Temp\bin\Debug\UnityEngine.dll
+C:\Users\Wahrberg-Stankov\Documents\GitHub\RetroFutureGame\Temp\bin\Debug\UnityEngine.Networking.dll
+C:\Users\Wahrberg-Stankov\Documents\GitHub\RetroFutureGame\Temp\bin\Debug\UnityEngine.UI.dll
+C:\Users\Wahrberg-Stankov\Documents\GitHub\RetroFutureGame\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\Wahrberg-Stankov\Documents\GitHub\RetroFutureGame\Temp\bin\Debug\Unity.SerializationLogic.dll
+C:\Users\Wahrberg-Stankov\Documents\GitHub\RetroFutureGame\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\Wahrberg-Stankov\Documents\GitHub\RetroFutureGame\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\Wahrberg-Stankov\Documents\GitHub\RetroFutureGame\Temp\bin\Debug\Unity.UNetWeaver.dll
+C:\Users\Wahrberg-Stankov\Documents\GitHub\RetroFutureGame\Temp\bin\Debug\Unity.CecilTools.dll
+C:\Users\Wahrberg-Stankov\Documents\GitHub\RetroFutureGame\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+C:\Users\Wahrberg-Stankov\Documents\GitHub\RetroFutureGame\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\Wahrberg-Stankov\Documents\GitHub\RetroFutureGame\Temp\bin\Debug\UnityEngine.xml
+C:\Users\Wahrberg-Stankov\Documents\GitHub\RetroFutureGame\Temp\bin\Debug\UnityEditor.xml
+C:\Users\Wahrberg-Stankov\Documents\GitHub\RetroFutureGame\Temp\bin\Debug\UnityEngine.UI.xml
+C:\Users\Wahrberg-Stankov\Documents\GitHub\RetroFutureGame\Temp\bin\Debug\UnityEngine.Networking.xml
+C:\Users\Wahrberg-Stankov\Documents\GitHub\RetroFutureGame\obj\Debug\Assembly-CSharp.pdb

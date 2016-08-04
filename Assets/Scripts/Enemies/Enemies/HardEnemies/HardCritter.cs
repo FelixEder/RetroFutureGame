@@ -23,65 +23,38 @@ public class HardCritter : MonoBehaviour {
 
 		switch(col.gameObject.tag) {
 
-			case "Char":
-			if (col.gameObject.GetComponent<CharStatus> ().IsMegaPunching()) {
+		case "Char":
+			if (col.gameObject.GetComponent<CharStatus> ().IsMegaPunching())
 				GetMirrored ();
-			} else {
-				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
-				col.gameObject.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
+			else {
+				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage, gameObject, knockForce);
 				Rush ();
 			}
 			GetMirrored();
 			break;
 
-			case "SmallCritter" :
-			GetMirrored();
+		case "SmallCritter":
+		case "JumpingCritter":
+		case "HardEnemy":
+		case "BigEyeGuy":
+		case "CrawlerCritter":
+		case "ShellMan":
+		case "Barrier":
+			GetMirrored ();
 			break;
 
-			case "JumpingCritter":
-			GetMirrored();
-			break;
-
-			case "HardEnemy" :
-			GetMirrored();
-			break;
-
-			case "BigEyeGuy" :
-			GetMirrored();
-			break;
-
-			case "CrawlerCritter":
-			GetMirrored();
-			break;
-
-			case "ShellMan":
-			GetMirrored();
-			break;
-
-			case "Wall":
+		case "Wall":
+		case "Door" :
+		case "Branch":
 			GetMirrored ();
 			Rush ();
 			break;
 
-			case "Door" :
-			GetMirrored();
-			Rush();
-			break;
-
-			case "Rock":
-			if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f) {
+		case "Rock":
+			if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f)
 				GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
-			} else {
+			else
 				Rush ();
-			}
-			GetMirrored ();
-			break;
-
-			case "Branch":
-			Rush ();
-			break;
-
-			case "Barrier":
 			GetMirrored ();
 			break;
 		}

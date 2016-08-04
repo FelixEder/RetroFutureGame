@@ -23,58 +23,30 @@ public class BigEyeGuy : MonoBehaviour {
 
 		switch(col.gameObject.tag) {
 
-			case "Char":
+		case "Char":
 			if (!col.gameObject.GetComponent<CharStomp> ().groundStomping) {
-				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
-				col.gameObject.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
+				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage, gameObject, knockForce);
 			}
 			GetMirrored();
 			break;
 
-			case "SmallCritter" :
-			GetMirrored();
-			break;
-
-			case "JumpingCritter":
-			GetMirrored();
-			break;
-
-			case "HardEnemy" :
-			GetMirrored();
-			break;
-
-			case "BigEyeGuy" :
-			GetMirrored();
-			break;
-
-			case "CrawlerCritter":
-			GetMirrored();
-			break;
-
-			case "ShellMan":
-			GetMirrored();
-			break;
-
-			case "Wall" :
-			GetMirrored();
-			break;
-
-			case "Door" :
-			GetMirrored();
-			break;
-
-			case "Rock":
+		case "SmallCritter":
+		case "JumpingCritter":
+		case "HardEnemy":
+		case "BigEyeGuy":
+		case "CrawlerCritter":
+		case "ShellMan":
+		case "Wall":
+		case "Door":
+		case "Barrier":
+		case "Rock":
 			GetMirrored ();
 			break;
 
-			case "Branch":
+		case "Branch":
 			if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
 				GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
 			}
-			GetMirrored ();
-			break;
-
-			case "Barrier":
 			GetMirrored ();
 			break;
 		}

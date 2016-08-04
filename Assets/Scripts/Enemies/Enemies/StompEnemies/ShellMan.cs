@@ -23,58 +23,33 @@ public class ShellMan : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col) {
 		switch(col.gameObject.tag) {
 
-			case "Char":
+		case "Char":
 			if (!col.gameObject.GetComponent<CharStomp> ().groundStomping) {
-				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
-				col.gameObject.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
+				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage, gameObject, knockForce);
 			}
 			GetMirrored();
 			break;
 
-			case "SmallCritter" :
-			GetMirrored();
+		case "SmallCritter":
+		case "JumpingCritter":
+		case "HardEnemy":
+		case "BigEyeGuy":
+		case "CrawlerCritter":
+		case "ShellMan":
+		case "Wall":
+		case "Door":
+		case "Barrier":
+			GetMirrored ();
 			break;
 
-			case "JumpingCritter":
-			GetMirrored();
-			break;
-
-			case "HardEnemy" :
-			GetMirrored();
-			break;
-
-			case "BigEyeGuy" :
-			GetMirrored();
-			break;
-
-			case "CrawlerCritter":
-			GetMirrored();
-			break;
-
-			case "ShellMan":
-			GetMirrored();
-			break;
-
-			case "Wall" :
-			GetMirrored();
-			break;
-
-			case "Door" :
-			GetMirrored();
-			break;
-
-			case "Rock":
+		case "Rock":
 			if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f && deShelled) {
 				GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
 			}
 			GetMirrored ();
 			break;
 
-			case "Branch":
-			GetMirrored ();
-			break;
-
-			case "Barrier":
+		case "Branch":
 			GetMirrored ();
 			break;
 		}

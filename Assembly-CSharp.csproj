@@ -49,9 +49,9 @@
      <Compile Include="Assets\Scripts\Character\Actions\CharPickUp.cs" />
      <Compile Include="Assets\Scripts\Character\Actions\CharPunch.cs" />
      <Compile Include="Assets\Scripts\Character\Movement\CharJump.cs" />
+     <Compile Include="Assets\Scripts\Character\Movement\CharKnockback.cs" />
      <Compile Include="Assets\Scripts\Character\Movement\CharMirror.cs" />
      <Compile Include="Assets\Scripts\Character\Movement\CharMovement.cs" />
-     <Compile Include="Assets\Scripts\Character\Movement\Knockback.cs" />
      <Compile Include="Assets\Scripts\Character\Status\CharEnergy.cs" />
      <Compile Include="Assets\Scripts\Character\Status\CharHealth.cs" />
      <Compile Include="Assets\Scripts\Character\Status\CharInventory.cs" />

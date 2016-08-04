@@ -22,12 +22,10 @@ public class Phase1 : MonoBehaviour {
 		case "Char":
 			if (!stunned) {
 				KickPunching ();
-				col.gameObject.GetComponent<CharHealth> ().TakeDamage (5);
-				col.gameObject.GetComponent<Knockback> ().Knock (gameObject, 5f);
-			} else if (rb2D.velocity.y > 5f) {
-				col.gameObject.GetComponent<CharHealth> ().TakeDamage (5);
-				col.gameObject.GetComponent<Knockback> ().Knock (gameObject, 5f);
+				col.gameObject.GetComponent<CharHealth> ().TakeDamage (5, gameObject, 5f);
 			}
+			else if (rb2D.velocity.y > 5f)
+				col.gameObject.GetComponent<CharHealth> ().TakeDamage (5, gameObject, 5f);
 			break;
 
 		case "Rock":

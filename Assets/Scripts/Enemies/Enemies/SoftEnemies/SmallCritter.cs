@@ -4,7 +4,7 @@ using System.Collections;
 public class SmallCritter : MonoBehaviour {
 	public float moveSpeed, knockForce;
 	float activeMoveSpeed = 0;
-	public bool canMoveInitially;
+	public float initialFreezeTime;
 	bool isMirrored = false;
 	public int health = 2, damage = 1;
 	public Material glitchMaterial;
@@ -12,8 +12,8 @@ public class SmallCritter : MonoBehaviour {
 
 	void Start() {
 		rb2D = GetComponent<Rigidbody2D> ();
-		if(canMoveInitially)
-			activeMoveSpeed = moveSpeed;
+		if (initialFreezeTime > 0)
+			Invoke ("InitializeMoveSpeed", initialFreezeTime);
 	}
 
 	void FixedUpdate() {
@@ -25,70 +25,46 @@ public class SmallCritter : MonoBehaviour {
 	}
 
 	void OnBecameVisible() {
-		activeMoveSpeed = moveSpeed;
+		if (initialFreezeTime == 0)
+			InitializeMoveSpeed ();
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
 
 		switch(col.gameObject.tag) {
 
-			case "Char":
-				if (!col.gameObject.GetComponent<CharStomp> ().groundStomping) {
-					col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
-					col.gameObject.GetComponent<Knockback> ().Knock (this.gameObject, knockForce);
-				}
-				GetMirrored();
-				break;
-
-			case "SmallCritter" :
+		case "Char":
+			if (!col.gameObject.GetComponent<CharStomp> ().groundStomping) {
+				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage, gameObject, knockForce);
+			}
 			GetMirrored();
 			break;
 
-			case "JumpingCritter":
-			GetMirrored();
+		case "SmallCritter":
+		case "JumpingCritter":
+		case "HardEnemy":
+		case "BigEyeGuy":
+		case "CrawlerCritter":
+		case "ShellMan":
+		case "Wall":
+		case "Door":
+		case "Barrier":
+			GetMirrored ();
 			break;
 
-			case "HardEnemy" :
-			GetMirrored();
+		case "Rock" :
+			if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
+				TakeDamage (col.gameObject.GetComponent<PickUpableItem> ().damage);
+			}
+			GetMirrored ();
 			break;
 
-			case "BigEyeGuy" :
-			GetMirrored();
+		case "Branch" :
+			if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
+				TakeDamage (col.gameObject.GetComponent<PickUpableItem> ().damage);
+			}
+			GetMirrored ();
 			break;
-
-			case "CrawlerCritter":
-			GetMirrored();
-			break;
-
-			case "ShellMan":
-			GetMirrored();
-			break;
-
-			case "Wall" :
-				GetMirrored();
-				break;
-			
-			case "Door" :
-				GetMirrored();
-				break;
-
-			case "Rock" :
-				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
-					TakeDamage (col.gameObject.GetComponent<PickUpableItem> ().damage);
-				}
-				GetMirrored ();
-				break;
-
-			case "Branch" :
-				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
-					TakeDamage (col.gameObject.GetComponent<PickUpableItem> ().damage);
-				}
-				GetMirrored ();
-				break;
-
-			case "Barrier" :
-				GetMirrored ();
-				break;
 		}
 	}
 
@@ -130,5 +106,9 @@ public class SmallCritter : MonoBehaviour {
 			Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
 		}
 		Destroy (this.gameObject);
+	}
+
+	void InitializeMoveSpeed() {
+		activeMoveSpeed = moveSpeed;
 	}
 }

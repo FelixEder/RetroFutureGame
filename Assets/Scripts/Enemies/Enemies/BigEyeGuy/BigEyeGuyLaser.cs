@@ -31,8 +31,7 @@ public class BigEyeGuyLaser : MonoBehaviour {
 		switch(victim.transform.gameObject.tag) {
 			case "Char":
 			Debug.Log ("Hit by laser!!");
-			victim.transform.gameObject.GetComponent<Knockback>().Knock(this.gameObject, 3f);
-			victim.transform.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
+			victim.transform.gameObject.GetComponent<CharHealth> ().TakeDamage (damage, gameObject, 3f);
 			break;
 		}
 	}

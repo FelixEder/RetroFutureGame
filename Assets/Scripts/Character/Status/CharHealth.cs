@@ -3,8 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class CharHealth : MonoBehaviour {
-	public int currentHealth, maxHealth;
-	bool dead;
+	public int currentHealth, maxHealth, invulnerabilityTime;
 	Slider slider;
 	CharStatus status;
 
@@ -24,9 +23,18 @@ public class CharHealth : MonoBehaviour {
 			}
 			else
 				currentHealth -= damage;
-			status.Invulnerable (1.0f);
+			status.Invulnerable (invulnerabilityTime);
 			StartCoroutine (TransitionHealthSlider ());
 		}
+	}
+
+	public void TakeDamage(int damage, GameObject attacker, float knockbackForce) {
+		GetComponent<CharKnockback> ().Knockback (attacker, knockbackForce);
+		TakeDamage (damage);
+	}
+
+	public void Knockback(GameObject attacker, float knockbackForce) {
+
 	}
 		
 	public void IncreaseCurrentHealth(int amount) {
@@ -66,7 +74,6 @@ public class CharHealth : MonoBehaviour {
 	}
 
 	void Die() {
-		dead = true;
 		Debug.Log ("YOU DIED");
 	}
 }

@@ -1,26 +1,22 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\PauseMenu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\DebugMenu.cs">
     <Files>
-      <File FileName="Assets\Scripts\Other\InputManager.cs" Line="23" Column="3" />
-      <File FileName="Assets\Scripts\Character\Actions\CharMegaPunch.cs" Line="32" Column="15" />
-      <File FileName="Assets\Scripts\Character\Actions\CharPickUp.cs" Line="17" Column="45" />
-      <File FileName="Assets\Scripts\Character\Movement\CharJump.cs" Line="47" Column="29" />
-      <File FileName="Assets\Scripts\Character\Upgrades\CharFloat.cs" Line="12" Column="4" />
-      <File FileName="Assets\Scripts\Character\Upgrades\CharStomp.cs" Line="24" Column="28" />
-      <File FileName="Assets\Scripts\Character\Upgrades\SmallFry.cs" Line="21" Column="21" />
-      <File FileName="Assets\Scripts\Character\Movement\CharMovement.cs" Line="40" Column="114" />
-      <File FileName="Assets\Scripts\Character\Upgrades\WallJump.cs" Line="32" Column="43" />
-      <File FileName="Assets\Scripts\Character\Status\CharStatus.cs" Line="6" Column="50" />
-      <File FileName="Assets\Scripts\Events\EventFirstStart.cs" Line="8" Column="73" />
-      <File FileName="Assets\Scripts\Character\Movement\CharMirror.cs" Line="21" Column="3" />
-      <File FileName="Assets\Scripts\UI\PauseMenu.cs" Line="60" Column="29" />
+      <File FileName="Assets\Scripts\Other\InputManager.cs" Line="5" Column="19" />
+      <File FileName="Assets\Scripts\Character\Status\CharStatus.cs" Line="7" Column="18" />
+      <File FileName="Assets\Scripts\Character\Movement\CharKnockback.cs" Line="13" Column="82" />
+      <File FileName="Assets\Scripts\Character\Movement\CharMovement.cs" Line="9" Column="28" />
+      <File FileName="Assets\Scripts\Character\Upgrades\WallJump.cs" Line="10" Column="16" />
+      <File FileName="Assets\Scripts\Interactables\Items\Upgrades.cs" Line="38" Column="1" />
+      <File FileName="Assets\Scripts\Interactables\Map\Barriers.cs" Line="20" Column="1" />
+      <File FileName="Assets\Scripts\Interactables\Items\PickUpableItem.cs" Line="58" Column="3" />
+      <File FileName="Assets\Scripts\Character\Actions\CharPunch.cs" Line="77" Column="65" />
+      <File FileName="Assets\Scripts\Character\Actions\CharMegaPunch.cs" Line="113" Column="65" />
+      <File FileName="Assets\Scripts\UI\DebugMenu.cs" Line="60" Column="31" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <RunToCursorBreakpoint file="C:\Users\Wahrberg-Stankov\Documents\GitHub\RetroFutureGame\Assets\Scripts\Character\Upgrades\CharStomp.cs" line="24" column="2" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class InputManager : MonoBehaviour {
-	bool inputEnabled = true;
+	[SerializeField] bool inputEnabled = true;
 	//jump, attack, grab, leaf, pause, shoot, mega, small;
 
 	public void Disable(float time) {

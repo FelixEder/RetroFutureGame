@@ -59,9 +59,9 @@ public class CharPunch : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D victim) {
 		if(Input.GetButton ("Attack") && !holdPunch && !charStatus.isSmall) {
 			int damage = ExecutePunch ();
-			if(attackType.Equals("branch")) {
+			if(attackType == "Branch") {
 				int lifeCheck =	CharInventory.getHoldingItem().GetComponent<PickUpableItem>().Break();
-				if (lifeCheck == 0) {
+				if (lifeCheck <= 0) {
 					CharInventory.setHoldingItem (null);
 				}
 			}
@@ -73,8 +73,8 @@ public class CharPunch : MonoBehaviour {
 			
 			case "Barrier":
 				Debug.Log ("BarrierType: " + victim.gameObject.GetComponent<Barriers> ().GetBarrierType ());
-				if (attackType.Equals (victim.gameObject.GetComponent<Barriers> ().GetBarrierType ())) {
-					victim.gameObject.GetComponent<Barriers> ().TakeDamage ();
+				if (attackType == victim.gameObject.GetComponent<Barriers> ().GetBarrierType ()) {
+					victim.gameObject.GetComponent<Barriers> ().TakeDamage (1);
 				}
 				break;
 

@@ -52,12 +52,10 @@ public class PickUpableItem : MonoBehaviour {
 	 */
 	public int Break() {
 		health--;
-		if (health <= 0) {
+		if (health <= 0)
 			Destroy (gameObject);
-			return 0;
-			//Play animation and such
-		}
-		return 1;
+		//Play animation and such
+		return health;
 	}
 
 	/**Returns the item type.*/

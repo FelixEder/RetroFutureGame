@@ -109,9 +109,8 @@ public class CharMegaPunch : MonoBehaviour {
 				break;
 
 				case "Barrier":
-				if (victim.gameObject.GetComponent<Barriers> ().GetBarrierType ().Equals ("MegaPunch")) {
-					victim.gameObject.GetComponent<Barriers> ().TakeDamage ();
-				}
+				if (victim.gameObject.GetComponent<Barriers> ().GetBarrierType () == "MegaPunch")
+					victim.gameObject.GetComponent<Barriers> ().TakeDamage (2);
 				break;
 
 				case "FinalBossWeakSpot":

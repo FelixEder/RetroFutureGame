@@ -17,13 +17,13 @@ public class Barriers : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
-		if (col.gameObject.tag.Equals(barrierType) && col.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude >= 2.0f) {
-			TakeDamage ();
+		if (col.gameObject.GetComponent<PickUpableItem>().GetItemType() == barrierType && col.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude >= 1.0f) {
+			TakeDamage (2);
 		}
 	}
 
-	public void TakeDamage() {
-		health--;
+	public void TakeDamage(int damage) {
+		health -= damage;
 		if (health <= 0) {
 			Broken();
 		}

@@ -4,7 +4,6 @@ using System.Collections;
 public class WallJump : MonoBehaviour {
 	CharStatus status;
 	CharJump jump;
-	CharMovement movement;
 	Rigidbody2D rigidBody2D;
 	InputManager input;
 	public float WallJumpSpeed;
@@ -13,7 +12,6 @@ public class WallJump : MonoBehaviour {
 	void Start () {
 		status = GetComponent<CharStatus> ();
 		jump = GetComponent<CharJump> ();
-		movement = GetComponent<CharMovement> ();
 		rigidBody2D = GetComponent<Rigidbody2D> ();
 		input = GameObject.Find ("InputManager").GetComponent<InputManager> ();
 	}

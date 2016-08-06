@@ -23,7 +23,7 @@ public class StatueBoss : MonoBehaviour {
 	 */
 	void ShootLasers() {
 		if (LeftEye != null) {
-			LeftEye.transform.GetChild(0).gameObject.GetComponent<StatueBossLaser> ().Shoot ();
+			LeftEye.GetComponent<StatueBossLaser> ().Shoot ();
 		}
 		if (RightEye != null) {
 			RightEye.GetComponent<StatueBossLaser> ().Shoot ();

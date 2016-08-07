@@ -42,14 +42,12 @@ public class ShellMan : MonoBehaviour {
 			GetMirrored ();
 			break;
 
-		case "Rock":
-			if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f && deShelled) {
-				GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
+		case "PickupableItem":
+			if (col.gameObject.GetComponent<PickUpableItem> ().GetItemType () == "Rock") {
+				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f && deShelled) {
+					GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
+				}
 			}
-			GetMirrored ();
-			break;
-
-		case "Branch":
 			GetMirrored ();
 			break;
 		}

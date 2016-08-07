@@ -16,21 +16,21 @@ public class CharInventory : MonoBehaviour {
 	/**
 	 * Checks whether the player is holding an item or not.
 	 */
-	public bool isHoldingItem() {
+	public bool IsHoldingItem() {
 		return (pickupableItem != null);
 	}
 
 	/**
 	 * Sets a gameobject to the pickUpableItem-field
 	 */
-	public void setHoldingItem(GameObject itemToHold) {
+	public void SetHoldingItem(GameObject itemToHold) {
 		pickupableItem = itemToHold;
 	}
 
 	/**
 	 * Returns the object held by the player or null if it's not holding anything.
 	 */
-	public GameObject getHoldingItem() {
+	public GameObject GetHoldingItem() {
 		return pickupableItem;
 	}
 

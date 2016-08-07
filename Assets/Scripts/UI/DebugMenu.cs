@@ -85,7 +85,7 @@ public class DebugMenu : MonoBehaviour {
 
 	public void ToggleDebugMenu() {
 		if (shown)
-			GetComponent<RectTransform> ().position = new Vector3 (-230, Screen.height, 0);
+			GetComponent<RectTransform> ().position = new Vector3 (-300, Screen.height, 0);
 		else
 			GetComponent<RectTransform> ().position = new Vector3 (0, Screen.height, 0);
 		shown = !shown;

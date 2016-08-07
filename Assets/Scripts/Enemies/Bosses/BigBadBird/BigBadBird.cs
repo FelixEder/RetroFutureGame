@@ -36,19 +36,22 @@ public class BigBadBird : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col) {
 		switch (col.gameObject.tag) {
-			case "Wall":
-				GetMirrored ();
-				WingAttack ();
-				break;
+		case "Wall":
+			GetMirrored ();
+			WingAttack ();
+			break;
 
-			case "Platform":
-				GetMirrored ();
-				WingAttack ();
-				break;
+		case "Platform":
+			GetMirrored ();
+			WingAttack ();
+			break;
 
-			case "Char":
-				WingAttack ();
-				break;
+		case "Char":
+			WingAttack ();
+			break;
+
+		case "PickupableItem":
+			switch (col.gameObject.GetComponent<PickUpableItem> ().GetItemType ()) {
 
 			case "Branch":
 				WingAttack ();
@@ -57,6 +60,8 @@ public class BigBadBird : MonoBehaviour {
 			case "Rock":
 				SpitAttack ();
 				break;
+			}
+			break;
 		}
 	}
 	

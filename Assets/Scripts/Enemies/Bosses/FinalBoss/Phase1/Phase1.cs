@@ -28,16 +28,17 @@ public class Phase1 : MonoBehaviour {
 				col.gameObject.GetComponent<CharHealth> ().TakeDamage (5, gameObject, 5f);
 			break;
 
-		case "Rock":
-			//Maybe play grunt
-			Debug.Log("Threw rock at boss!");
-			if (Random.Range (0, 2) == 0) {
-				Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
-			} else {
-				Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
+		case "PickupableItem":
+			if (col.gameObject.GetComponent<PickUpableItem> ().GetItemType () == "Rock") {
+				//Maybe play grunt
+				Debug.Log ("Threw rock at boss!");
+				if (Random.Range (0, 2) == 0) 
+					Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
+				else
+					Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
+				Destroy (col.gameObject);
+				KickPunching ();
 			}
-			Destroy (col.gameObject);
-			KickPunching ();
 			break;
 		}
 	}

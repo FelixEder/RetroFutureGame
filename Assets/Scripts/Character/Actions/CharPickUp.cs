@@ -17,22 +17,22 @@ public class CharPickUp : MonoBehaviour {
 		if (!input.GetKey("grab") && holdPickup) {
 			holdPickup = false;
 		}
-		if (input.GetKey ("grab") && !holdPickup && inventory.isHoldingItem () && !status.isSmall) { //calls on drop method.
+		if (input.GetKey ("grab") && !holdPickup && inventory.IsHoldingItem () && !status.isSmall) { //calls on drop method.
 			holdPickup = true;
-			inventory.getHoldingItem ().GetComponent<PickUpableItem> ().Drop (true);
-			inventory.setHoldingItem (null);
+			inventory.GetHoldingItem ().GetComponent<PickUpableItem> ().Drop (true);
+			inventory.SetHoldingItem (null);
 		}
 	}
 		
 	void OnTriggerStay2D(Collider2D col) {
-		if (input.GetKey ("grab") && !holdPickup && !inventory.isHoldingItem () && !status.isSmall) {
+		if (input.GetKey ("grab") && !holdPickup && !inventory.IsHoldingItem () && !status.isSmall) {
 			holdPickup = true;
 			Debug.Log ("Tried to pick up " + col.gameObject);
 			switch (col.gameObject.GetComponent<PickUpableItem>().GetItemType()) {
 
 				case "Rock":
 				case "Branch":
-					inventory.setHoldingItem (col.gameObject);
+					inventory.SetHoldingItem (col.gameObject);
 					col.gameObject.GetComponent<PickUpableItem> ().PickUp (this.gameObject);
 					break;
 			}

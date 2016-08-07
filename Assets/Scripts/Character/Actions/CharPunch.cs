@@ -30,8 +30,8 @@ public class CharPunch : MonoBehaviour {
 	 */
 	int ExecutePunch() {
 		holdPunch = true;
-		if (CharInventory.isHoldingItem ()) {
-			GameObject holdingItem = CharInventory.getHoldingItem ();
+		if (CharInventory.IsHoldingItem ()) {
+			GameObject holdingItem = CharInventory.GetHoldingItem ();
 
 			switch (holdingItem.GetComponent<PickUpableItem>().GetItemType()) {
 
@@ -60,9 +60,9 @@ public class CharPunch : MonoBehaviour {
 		if(Input.GetButton ("Attack") && !holdPunch && !charStatus.isSmall) {
 			int damage = ExecutePunch ();
 			if(attackType == "Branch") {
-				int lifeCheck =	CharInventory.getHoldingItem().GetComponent<PickUpableItem>().Break();
+				int lifeCheck =	CharInventory.GetHoldingItem().GetComponent<PickUpableItem>().Break();
 				if (lifeCheck <= 0) {
-					CharInventory.setHoldingItem (null);
+					CharInventory.SetHoldingItem (null);
 				}
 			}
 			switch (victim.gameObject.tag) {
@@ -99,13 +99,13 @@ public class CharPunch : MonoBehaviour {
 				break;
 
 			case "HardEnemy":
-				if (attackType.Equals ("Rock")) {
+				if (attackType == "Rock") {
 					victim.gameObject.transform.parent.GetComponent<BigEyeGuy> ().GetHurt (1);
 				}
 				break;
 
 			case "BigEyeBuyWeakSpot":
-				if (attackType.Equals ("Branch")) {
+				if (attackType == "Branch") {
 					victim.gameObject.transform.parent.GetComponent<BigEyeGuy> ().GetHurt (1);
 				}
 				break;

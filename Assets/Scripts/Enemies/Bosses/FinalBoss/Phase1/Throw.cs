@@ -19,7 +19,7 @@ public class Throw : MonoBehaviour {
 			spawnType = "EnergyDrop";
 		}
 		GameObject instance = Instantiate (Resources.Load (spawnType), transform.position, Quaternion.identity) as GameObject;
-		if(spawnType.Equals("Rock")) {
+		if(spawnType == "Rock") {
 			instance.GetComponent<Rigidbody2D>().AddForce(new Vector2(8f, 3f), ForceMode2D.Impulse);
 		}
 	}

@@ -31,8 +31,8 @@ public class SmallFry : MonoBehaviour {
 		transform.parent.GetComponent<PolygonCollider2D> ().enabled = false;
 		transform.parent.GetComponent<CircleCollider2D> ().enabled = true;
 		status.isSmall = true; 
-		if(inventory.isHoldingItem())
-			inventory.setHoldingItem (null);
+		if(inventory.IsHoldingItem())
+			inventory.SetHoldingItem (null);
 	}
 
 	void GrowBig() {

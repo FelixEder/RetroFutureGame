@@ -16,9 +16,9 @@ public class CharKnockback : MonoBehaviour {
 			else
 				GetComponent<Rigidbody2D> ().velocity = new Vector2 (force, 2);
 			//Drops the item the player is holding.
-			if (charInventory.isHoldingItem ()) {
-				charInventory.getHoldingItem ().GetComponent<PickUpableItem> ().Drop (false);
-				charInventory.setHoldingItem (null);
+			if (charInventory.IsHoldingItem ()) {
+				charInventory.GetHoldingItem ().GetComponent<PickUpableItem> ().Drop (false);
+				charInventory.SetHoldingItem (null);
 			}
 		}
 	}

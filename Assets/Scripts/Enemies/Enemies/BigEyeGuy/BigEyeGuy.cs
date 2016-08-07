@@ -39,13 +39,14 @@ public class BigEyeGuy : MonoBehaviour {
 		case "Wall":
 		case "Door":
 		case "Barrier":
-		case "Rock":
 			GetMirrored ();
 			break;
 
-		case "Branch":
-			if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
-				GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
+		case "PickupableItem":
+			if (col.gameObject.GetComponent<PickUpableItem> ().GetItemType () == "Branch") {
+				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
+					GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
+				}
 			}
 			GetMirrored ();
 			break;

@@ -41,20 +41,22 @@ public class CrawlerCritter : MonoBehaviour {
 			GetMirrored ();
 			break;
 
-		case "Rock":
-			if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f) {
-				GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
+		case "PickupableItem":
+			switch (col.gameObject.GetComponent<PickUpableItem> ().GetItemType ()) {
+			case "Rock":
+				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f) {
+					GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
+				}
+				break;
+
+			case "Branch":
+				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
+					GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
+				}
+				break;
 			}
 			GetMirrored ();
 			break;
-
-		case "Branch":
-			if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
-				GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
-			}
-			GetMirrored ();
-			break;
-
 		}
 	}
 

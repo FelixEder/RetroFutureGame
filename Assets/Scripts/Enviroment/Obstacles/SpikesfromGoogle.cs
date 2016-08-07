@@ -20,8 +20,7 @@ public class SpikesfromGoogle : MonoBehaviour {
 		case "ShellMan":
 		case "Wall" :
 		case "Door" :
-		case "Rock":
-		case "Branch":
+		case "PickupableItem":
 			break;
 
 		}

@@ -44,18 +44,20 @@ public class HardCritter : MonoBehaviour {
 			break;
 
 		case "Wall":
-		case "Door" :
-		case "Branch":
+		case "Door":
 			GetMirrored ();
 			Rush ();
 			break;
 
-		case "Rock":
-			if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f)
-				GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
-			else
-				Rush ();
+		case "PickupableItem":
+			if (col.gameObject.GetComponent<PickUpableItem> ().GetItemType () == "Rock") {
+				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f) {
+					GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
+					break;
+				}
+			}
 			GetMirrored ();
+			Rush ();
 			break;
 		}
 	}

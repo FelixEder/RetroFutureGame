@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\Character\Triggers\CharTriggerBack.cs" />
      <Compile Include="Assets\Scripts\Character\Triggers\CharTriggerDown.cs" />
      <Compile Include="Assets\Scripts\Character\Triggers\CharTriggerFront.cs" />
+     <Compile Include="Assets\Scripts\Character\Triggers\CharTriggerPlatform.cs" />
      <Compile Include="Assets\Scripts\Character\Upgrades\CharFloat.cs" />
      <Compile Include="Assets\Scripts\Character\Upgrades\CharStomp.cs" />
      <Compile Include="Assets\Scripts\Character\Upgrades\LaserShooter.cs" />

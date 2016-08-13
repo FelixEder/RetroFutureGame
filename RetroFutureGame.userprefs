@@ -1,33 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Other\CameraTrigger.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SimpleCCD.cs">
     <Files>
-      <File FileName="Assets\Scripts\Other\AudioManager.cs" Line="46" Column="35" />
+      <File FileName="Assets\Scripts\SimpleCCD.cs" Line="114" Column="3" />
+      <File FileName="Assets\Scripts\Interactables\Items\Upgrades.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\Upgrades\LaserShooter.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\UI\DebugMenu.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Interactables\Misc\PrefabSpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Interactables\Items\PickUpableItem.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\Actions\CharPunch.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\Actions\CharMegaPunch.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\Bosses\StatueBoss\StatueBossLaser.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\Movement\CharJump.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\Movement\CharMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\Triggers\CharTriggerPlatform.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Interactables\Map\Barriers.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\Actions\CharPickUp.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\Status\CharInventory.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\Movement\CharKnockback.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\Upgrades\SmallFry.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\Bosses\BigBadBird\BigBadBird.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\Bosses\FinalBoss\Phase1\Phase1.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\Bosses\FinalBoss\Phase1\Throw.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\Enemies\BigEyeGuy\BigEyeGuy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\Enemies\HardEnemies\HardCritter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\Enemies\SoftEnemies\JumpingCritter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\Enemies\SoftEnemies\SmallCritter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\Enemies\StompEnemies\CrawlerCritter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\Enemies\StompEnemies\ShellMan.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enviroment\Obstacles\SpikesfromGoogle.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Other\CameraTrigger.cs" Line="10" Column="1" />
+      <File FileName="Assets\Scripts\Character\Movement\CharMirror.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

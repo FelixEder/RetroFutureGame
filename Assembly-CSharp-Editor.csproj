@@ -46,12 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\HiddenObjectExplorer.cs" />
-     <Compile Include="Assets\Spriter2UnityDX\Editor\AnimationBuilder.cs" />
-     <Compile Include="Assets\Spriter2UnityDX\Editor\CustomEditors.cs" />
-     <Compile Include="Assets\Spriter2UnityDX\Editor\PrefabBuilder.cs" />
-     <Compile Include="Assets\Spriter2UnityDX\Editor\S2USettings.cs" />
-     <Compile Include="Assets\Spriter2UnityDX\Editor\ScmlPostProcessor.cs" />
-     <Compile Include="Assets\Spriter2UnityDX\Editor\ScmlSupport.cs" />
+     <Compile Include="Assets\Editor\SimpleCCDEditor.cs" />
      <None Include="Assets\Materials\Shaders\Sprite Glitch.shader" />
      <None Include="Assets\Materials\Shaders\Solid Color.shader" />
  <Reference Include="UnityEditor.Advertisements">

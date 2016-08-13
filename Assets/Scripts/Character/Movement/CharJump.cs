@@ -17,7 +17,7 @@ public class CharJump : MonoBehaviour {
 		
 	void FixedUpdate () {
 		if ((hasJumped || hasSecondJumped) && status.onSurface) {
-			transform.GetChild (0).gameObject.GetComponent<Animator> ().SetBool ("Jumping", false);
+			GetComponent<Animator> ().SetBool ("Jumping", false);
 			hasJumped = false;
 			hasSecondJumped = false;
 		}
@@ -36,7 +36,7 @@ public class CharJump : MonoBehaviour {
 		//jump when on surface and pressing jump
 		else if (input.GetKey ("jump") && !holdJump && status.onSurface) {
 			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, jumpSpeed);
-			transform.GetChild (0).gameObject.GetComponent<Animator> ().SetBool ("Jumping", true);
+			GetComponent<Animator> ().SetBool ("Jumping", true);
 			hasJumped = true;
 			holdJump = true;
 		}

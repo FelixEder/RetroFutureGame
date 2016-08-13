@@ -27,7 +27,7 @@ public class Upgrades : MonoBehaviour {
 				break;
 			
 			case "Laser":
-				col.gameObject.transform.GetChild (8).gameObject.SetActive (true);
+				col.gameObject.transform.GetChild (9).gameObject.SetActive (true);
 				break;
 
 			case "Health":

@@ -17,8 +17,8 @@ public class CharMovement : MonoBehaviour {
 		
 	void FixedUpdate() {
 		axisH = input.GetAxis("X");
-		transform.GetChild (0).gameObject.GetComponent<Animator> ().SetFloat ("Speed", Mathf.Abs(axisH));
-		transform.GetChild (0).gameObject.GetComponent<Animator> ().SetFloat ("WalkSpeed", Mathf.Abs(rigidBody2D.velocity.x * axisH));
+		GetComponent<Animator> ().SetFloat ("Speed", Mathf.Abs(axisH));
+		GetComponent<Animator> ().SetFloat ("WalkSpeed", Mathf.Abs(rigidBody2D.velocity.x * axisH));
 		if (axisH != 0) {
 			//Test if trying to move towards left wall and stop movement as well as decrease negative y velocity.
 			if (status.onLeftWall && axisH < 0) {

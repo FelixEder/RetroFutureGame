@@ -16,9 +16,9 @@ public class CharPunch : MonoBehaviour {
 
 	void Update() {
 		attackType = "";
-		if (!input.GetKey ("attack") && holdPunch) {
+		if (!input.GetKey ("attack") && holdPunch)
 			holdPunch = false;
-		} else if (input.GetKey ("attack") && !holdPunch && !charStatus.isSmall) {
+		else if (input.GetKey ("attack") && !holdPunch && !charStatus.isSmall) {
 			Debug.Log ("Punched nothing");
 			ExecutePunch ();
 		}
@@ -30,6 +30,7 @@ public class CharPunch : MonoBehaviour {
 	 */
 	int ExecutePunch() {
 		holdPunch = true;
+		transform.parent.gameObject.GetComponent<Animator> ().SetTrigger ("Punching");
 		if (CharInventory.IsHoldingItem ()) {
 			GameObject holdingItem = CharInventory.GetHoldingItem ();
 
@@ -55,6 +56,10 @@ public class CharPunch : MonoBehaviour {
 		}
 	}
 		
+	void PunchFalse() {
+		transform.parent.gameObject.GetComponent<Animator> ().SetBool ("Punching", false);
+	}
+
 	//Triggered when player punches an object.
 	void OnTriggerStay2D(Collider2D victim) {
 		if(Input.GetButton ("Attack") && !holdPunch && !charStatus.isSmall) {

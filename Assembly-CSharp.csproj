@@ -105,14 +105,12 @@
      <Compile Include="Assets\Scripts\Other\CameraTrigger.cs" />
      <Compile Include="Assets\Scripts\Other\InputManager.cs" />
      <Compile Include="Assets\Scripts\Other\PlatformLogic.cs" />
+     <Compile Include="Assets\Scripts\SimpleCCD.cs" />
      <Compile Include="Assets\Scripts\UI\BootLogo.cs" />
      <Compile Include="Assets\Scripts\UI\DebugMenu.cs" />
      <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
      <Compile Include="Assets\Scripts\UI\MainMenuLogo.cs" />
      <Compile Include="Assets\Scripts\UI\PauseMenu.cs" />
-     <Compile Include="Assets\Spriter2UnityDX\Runtime\EntityRenderer.cs" />
-     <Compile Include="Assets\Spriter2UnityDX\Runtime\SortingOrderUpdater.cs" />
-     <Compile Include="Assets\Spriter2UnityDX\Runtime\TextureController.cs" />
      <None Include="Assets\Materials\Shaders\Sprite Glitch.shader" />
      <None Include="Assets\Materials\Shaders\Solid Color.shader" />
  <Reference Include="UnityEngine.UI">

@@ -8,7 +8,13 @@ public class DebugMenu : MonoBehaviour {
 
 	void Start () {
 		character = GameObject.Find ("Char");
+		GetComponent<RectTransform> ().position = new Vector3 (-Screen.width, Screen.height, 0);
+		transform.GetChild(11).gameObject.GetComponent<RectTransform> ().position = new Vector3 (0, Screen.height, 0);
 		InvokeRepeating ("UpdateToggles", 1, 5);
+	}
+
+	void Update() {
+		transform.GetChild (11).gameObject.GetComponent<RectTransform> ().position = new Vector3 (0, Screen.height, 0);
 	}
 
 	public void ToggleUpgradeState(string upgradeType) {
@@ -31,7 +37,7 @@ public class DebugMenu : MonoBehaviour {
 			break;
 
 		case "Laser":
-			character.transform.GetChild (8).gameObject.SetActive (!character.transform.GetChild (8).gameObject.activeInHierarchy);
+			character.transform.GetChild (9).gameObject.SetActive (!character.transform.GetChild (9).gameObject.activeInHierarchy);
 			break;
 
 		case "MegaPunch":
@@ -67,7 +73,7 @@ public class DebugMenu : MonoBehaviour {
 		//Stomp
 		transform.GetChild(4).GetComponent<Toggle>().isOn = character.GetComponent<CharStomp> ().enabled;
 		//Laser
-		transform.GetChild(5).GetComponent<Toggle>().isOn = character.transform.GetChild (8).gameObject.activeInHierarchy;
+		transform.GetChild(5).GetComponent<Toggle>().isOn = character.transform.GetChild (9).gameObject.activeInHierarchy;
 		//MegaPunch
 		transform.GetChild(6).GetComponent<Toggle>().isOn = character.transform.GetChild (5).GetComponent<CharMegaPunch> ().enabled;
 		//Health
@@ -85,7 +91,7 @@ public class DebugMenu : MonoBehaviour {
 
 	public void ToggleDebugMenu() {
 		if (shown)
-			GetComponent<RectTransform> ().position = new Vector3 (-300, Screen.height, 0);
+			GetComponent<RectTransform> ().position = new Vector3 (-Screen.width, Screen.height, 0);
 		else
 			GetComponent<RectTransform> ().position = new Vector3 (0, Screen.height, 0);
 		shown = !shown;

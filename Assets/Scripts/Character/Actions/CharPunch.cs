@@ -15,6 +15,8 @@ public class CharPunch : MonoBehaviour {
 	}
 
 	void Update() {
+		transform.localPosition = new Vector2 (0.1f, 0);
+		transform.localPosition = new Vector2 (0, 0);
 		attackType = "";
 		if (!input.GetKey ("attack") && holdPunch)
 			holdPunch = false;
@@ -33,7 +35,6 @@ public class CharPunch : MonoBehaviour {
 		transform.parent.gameObject.GetComponent<Animator> ().SetTrigger ("Punching");
 		if (CharInventory.IsHoldingItem ()) {
 			GameObject holdingItem = CharInventory.GetHoldingItem ();
-
 			switch (holdingItem.GetComponent<PickUpableItem>().GetItemType()) {
 
 			case "Rock":
@@ -54,10 +55,6 @@ public class CharPunch : MonoBehaviour {
 			//Play the standard animation
 			return 1;
 		}
-	}
-		
-	void PunchFalse() {
-		transform.parent.gameObject.GetComponent<Animator> ().SetBool ("Punching", false);
 	}
 
 	//Triggered when player punches an object.

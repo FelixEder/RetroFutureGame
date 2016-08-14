@@ -41,7 +41,7 @@ public class DebugMenu : MonoBehaviour {
 			break;
 
 		case "MegaPunch":
-			character.transform.GetChild (5).GetComponent<CharMegaPunch> ().enabled = !character.transform.GetChild (5).GetComponent<CharMegaPunch> ().enabled;
+			character.transform.GetChild (6).GetComponent<CharMegaPunch> ().enabled = !character.transform.GetChild (6).GetComponent<CharMegaPunch> ().enabled;
 			break;
 
 		case "Health":
@@ -75,7 +75,7 @@ public class DebugMenu : MonoBehaviour {
 		//Laser
 		transform.GetChild(5).GetComponent<Toggle>().isOn = character.transform.GetChild (9).gameObject.activeInHierarchy;
 		//MegaPunch
-		transform.GetChild(6).GetComponent<Toggle>().isOn = character.transform.GetChild (5).GetComponent<CharMegaPunch> ().enabled;
+		transform.GetChild(6).GetComponent<Toggle>().isOn = character.transform.GetChild (6).GetComponent<CharMegaPunch> ().enabled;
 		//Health
 		transform.GetChild (8).GetComponent<Slider> ().value = (float)character.GetComponent<CharHealth> ().currentHealth;
 		transform.GetChild (8).GetComponent<Slider> ().maxValue = (float)character.GetComponent<CharHealth> ().maxHealth;

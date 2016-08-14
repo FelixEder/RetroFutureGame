@@ -45,9 +45,12 @@ public class LaserShooter : MonoBehaviour {
 	}
 
 	void HitByLaser(RaycastHit2D victim) {
-		Debug.Log ("Player shot: " + victim.transform.gameObject.tag);
-		switch(victim.collider.transform.gameObject.tag) {
-			//Add more cases as more types of enemies are added to the game
+		Debug.Log ("Player shot: " + victim.collider.gameObject.tag);
+
+		//victim.transform returns parent transform, victim.collider returns the hit collider.
+		switch(victim.collider.gameObject.tag) {
+
+		//Add more cases as more types of enemies are added to the game
 		case "SmallCritter":
 			victim.transform.gameObject.GetComponent<SmallCritter> ().TakeDamage (damage);
 			break;

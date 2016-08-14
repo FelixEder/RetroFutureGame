@@ -38,7 +38,7 @@ public class StatueBossLaser : MonoBehaviour {
 	}
 
 	void HitByLaser(RaycastHit2D victim) {
-		switch(victim.transform.gameObject.tag) {
+		switch(victim.collider.gameObject.tag) {
 
 		case "Char":
 			Debug.Log ("Hit by laser!!");
@@ -48,6 +48,9 @@ public class StatueBossLaser : MonoBehaviour {
 		case "SmallCritter":
 			victim.transform.gameObject.GetComponent<SmallCritter> ().TakeDamage (damage);
 			break;
+
+		default:
+			break;	
 		}
 	}
 }

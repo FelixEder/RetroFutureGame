@@ -18,7 +18,7 @@ public class Barriers : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col) {
 		
-		if (col.gameObject.GetComponent<PickUpableItem>().GetItemType() == barrierType && col.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude >= 1.0f) {
+		if (col.gameObject.tag == "PickupableItem" && col.gameObject.GetComponent<PickUpableItem>().GetItemType() == barrierType && col.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude >= 1.0f) {
 			TakeDamage (2);
 		}
 	}

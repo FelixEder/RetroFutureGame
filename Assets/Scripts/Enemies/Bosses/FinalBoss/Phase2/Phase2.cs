@@ -5,8 +5,8 @@ public class Phase2 : MonoBehaviour {
 	public float knockForce;
 	float moveSpeed = 5;
 	public int health;
-	public Sprite normal, kickPunching, blueFace;
-	bool stunned, blued, walksRight = true;
+	public Sprite normal, kickPunching;
+	public bool stunned, blued, walksRight = true;
 	Rigidbody2D rb2D;
 	public int deltaX, damage;
 
@@ -38,7 +38,7 @@ public class Phase2 : MonoBehaviour {
 		}
 	}
 
-	void ResetDeltaX() {
+	public void ResetDeltaX() {
 		deltaX = (int) transform.position.x;
 	}
 
@@ -48,6 +48,7 @@ public class Phase2 : MonoBehaviour {
 			if (!stunned) {
 				KickPunching ();
 				col.gameObject.GetComponent<CharHealth> ().TakeDamage (5, gameObject, 5f);
+				//Should also knock the player away
 				walksRight = false;
 				ResetDeltaX ();
 			}
@@ -92,19 +93,6 @@ public class Phase2 : MonoBehaviour {
 	void UnStunned() {
 		Debug.Log ("Boss is UnStunned");
 		stunned = false;
-	}
-
-	void Blued() {
-		//This should only change the head-sprite, so maybe this should affect a child somehow?
-		GetComponent<SpriteRenderer>().sprite = blueFace;
-		blued = true;
-		Stunned (5f);
-		Invoke ("Unblued", 5f);
-	}
-
-	void Unblued() {
-		blued = false;
-	
 	}
 
 	void Charge() {

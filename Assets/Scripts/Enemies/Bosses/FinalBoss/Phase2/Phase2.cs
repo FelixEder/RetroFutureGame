@@ -3,32 +3,54 @@ using System.Collections;
 
 public class Phase2 : MonoBehaviour {
 	public float knockForce;
+	float moveSpeed = 5;
 	public int health;
 	public Sprite normal, kickPunching, blueFace;
-	bool stunned, blued;
+	bool stunned, blued, walksRight = true;
 	Rigidbody2D rb2D;
+	public int deltaX, damage;
 
 	// Use this for initialization
 	void Start () {
 		rb2D = GetComponent<Rigidbody2D> ();
 		InvokeRepeating ("KickPunching", 3f, 5f);
+		ResetDeltaX ();
 	}
 
-	void Fixed
+	void Update() {
+		if(Mathf.Abs(deltaX - transform.position.x) >= 20) {
+			if(Random.Range(0,2) == 0) {
+				walksRight = true;
+				ResetDeltaX ();
+			}
+			else {
+				walksRight = false;
+				ResetDeltaX ();
+			}
+		}
+	}
+
+	void FixedUpdate() {
+		if (walksRight) {
+			rb2D.velocity = new Vector2 (moveSpeed, rb2D.velocity.y);
+		} else {
+			rb2D.velocity = new Vector2 (-1 * moveSpeed, rb2D.velocity.y);
+		}
+	}
+
+	void ResetDeltaX() {
+		deltaX = transform.position.x;
+	}
 
 	void OnCollisionEnter2D(Collision2D col) {
 		switch (col.gameObject.tag) {
-		case "Wall":
-			//Here the enemy should start moving towards the player instead
-			break;
-
 		case "Char":
 			if (!stunned) {
 				KickPunching ();
 				col.gameObject.GetComponent<CharHealth> ().TakeDamage (5, gameObject, 5f);
+				walksRight = false;
+				ResetDeltaX ();
 			}
-			else if (rb2D.velocity.y > 5f)
-				col.gameObject.GetComponent<CharHealth> ().TakeDamage (5, gameObject, 5f);
 			break;
 
 		case "PickupableItem":
@@ -42,6 +64,16 @@ public class Phase2 : MonoBehaviour {
 				Destroy (col.gameObject);
 				KickPunching ();
 			}
+			break;
+
+		case "Wall":
+			walksRight = true;
+			ResetDeltaX ();
+			break;
+
+		case "SecretTrigger":
+			walksRight = false;
+			ResetDeltaX ();
 			break;
 		}
 	}
@@ -63,7 +95,8 @@ public class Phase2 : MonoBehaviour {
 	}
 
 	void Blued() {
-		GetComponent<SpriteRenderer>.sprite = blueFace;
+		//This should only do 
+		GetComponent<SpriteRenderer>.Sprite = blueFace;
 		blued = true;
 		Stunned (5f);
 		Invoke ("Unblued", 5f);
@@ -71,13 +104,13 @@ public class Phase2 : MonoBehaviour {
 
 	void Unblued() {
 		blued = false;
-
+	
 	}
 
 	void Charge() {
 		//FinalBoss is charging, play relevant things
 		Debug.Log("FinalBoss is charging");
-		rb2D.AddForce
+		moveSpeed += 5;
 		Invoke ("StopCharge", 1f);
 	}
 

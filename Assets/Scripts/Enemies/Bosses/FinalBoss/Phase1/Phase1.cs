@@ -10,7 +10,7 @@ public class Phase1 : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb2D = GetComponent<Rigidbody2D> ();
-		InvokeRepeating ("KickPunching", 3f, 5f);
+		InvokeRepeating ("KickPunching", 0, 5f);
 	}
 		
 	void OnCollisionEnter2D(Collision2D col) {

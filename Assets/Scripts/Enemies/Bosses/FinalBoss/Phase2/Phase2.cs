@@ -39,7 +39,7 @@ public class Phase2 : MonoBehaviour {
 	}
 
 	void ResetDeltaX() {
-		deltaX = transform.position.x;
+		deltaX = (int) transform.position.x;
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
@@ -95,8 +95,8 @@ public class Phase2 : MonoBehaviour {
 	}
 
 	void Blued() {
-		//This should only do 
-		GetComponent<SpriteRenderer>.Sprite = blueFace;
+		//This should only change the head-sprite, so maybe this should affect a child somehow?
+		GetComponent<SpriteRenderer>().sprite = blueFace;
 		blued = true;
 		Stunned (5f);
 		Invoke ("Unblued", 5f);

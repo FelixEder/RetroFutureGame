@@ -7,6 +7,7 @@ public class Phase1 : MonoBehaviour {
 	public Sprite normal, kickPunching;
 	bool stunned;
 	Rigidbody2D rb2D;
+
 	// Use this for initialization
 	void Start () {
 		rb2D = GetComponent<Rigidbody2D> ();

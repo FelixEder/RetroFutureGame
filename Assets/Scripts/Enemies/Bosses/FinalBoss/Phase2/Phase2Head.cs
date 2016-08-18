@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Phase2Head : MonoBehaviour {
 	public Sprite normalHead, blueFace, biteFace;
-	bool isSpitting, blued;
+	bool isSpitting;
 	Phase2 actualBoss;
 
 	void Start() {
@@ -13,18 +13,18 @@ public class Phase2Head : MonoBehaviour {
 	void Blued() {
 		//This should only change the head-sprite, so maybe this should affect a child somehow?
 		GetComponent<SpriteRenderer>().sprite = blueFace;
-		blued = true;
+		actualBoss.blued = true;
 		actualBoss.Stunned(5f);
 		Invoke ("Unblued", 5f);
 	}
 
 	void Unblued() {
 		GetComponent<SpriteRenderer>().sprite = normalHead;
-		blued = false;
+		actualBoss.blued = false;
 	}
 
 	void Spit() {
-		if(!blued) {
+		if(!actualBoss.blued) {
 			GetComponent<SpriteRenderer> ().sprite = biteFace;
 			//Call PrefabSpawner somehow
 			Invoke ("StopSpit", 3f);
@@ -52,7 +52,7 @@ public class Phase2Head : MonoBehaviour {
 			break;
 
 		case "Char":
-			if (!actualBoss.stunned && !blued) {
+			if (!actualBoss.stunned && !actualBoss.blued) {
 				//Find a way to get KickPunching ();
 				col.gameObject.GetComponent<CharHealth> ().TakeDamage (5, gameObject, 5f);
 				//Should also knock the player away

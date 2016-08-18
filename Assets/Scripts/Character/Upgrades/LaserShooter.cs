@@ -104,6 +104,11 @@ public class LaserShooter : MonoBehaviour {
 			Debug.Log ("Hit the boss in the weak spot!");
 			victim.transform.gameObject.GetComponent<Phase1> ().Fall ();
 			break;
+
+		case "FinalBossHead":
+			Debug.Log ("Hit the boss in the head!");
+			//Boss should be laughing, nothing else happens
+			break;
 		}
 	}
 

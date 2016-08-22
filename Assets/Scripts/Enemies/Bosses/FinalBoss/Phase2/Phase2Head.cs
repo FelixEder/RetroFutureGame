@@ -35,6 +35,15 @@ public class Phase2Head : MonoBehaviour {
 		GetComponent<SpriteRenderer> ().sprite = normalHead;
 	}
 
+	public void OpenMouth(float time) {
+		GetComponent<SpriteRenderer> ().sprite = biteFace;
+		Invoke ("CloseMouth", time);
+	}
+
+	void CloseMouth() {
+		GetComponent<SpriteRenderer> ().sprite = normalHead;
+	}
+
 	void OnCollisionEnter2D(Collision2D col) {
 		switch (col.gameObject.tag) {
 

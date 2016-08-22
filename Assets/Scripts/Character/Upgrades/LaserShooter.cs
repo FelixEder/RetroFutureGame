@@ -98,6 +98,7 @@ public class LaserShooter : MonoBehaviour {
 		case "FinalBossArmor":
 			Debug.Log ("Hit the boss in the armor!");
 			victim.transform.gameObject.GetComponent<Phase1> ().Stunned (3f);
+			victim.transform.gameObject.GetComponent<Phase2> ().Stunned (3f);
 			break;
 
 		case "FinalBossWeakSpot":

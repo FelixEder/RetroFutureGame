@@ -88,6 +88,7 @@ public class Phase2 : MonoBehaviour {
 			Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
 			Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
 		}
+		transform.GetChild (0).GetComponent<Phase2Head> ().OpenMouth (3f);
 		Invoke ("UnStunned", time);
 	}
 

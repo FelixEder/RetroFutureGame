@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Phase2 : MonoBehaviour {
 	public float knockForce;
-	float moveSpeed = 5;
+	float moveSpeed = 3;
 	public int health;
 	public Sprite normal, kickPunching;
 	public bool stunned, blued, walksRight = true;
@@ -14,11 +14,12 @@ public class Phase2 : MonoBehaviour {
 	void Start () {
 		rb2D = GetComponent<Rigidbody2D> ();
 		InvokeRepeating ("KickPunching", 3f, 5f);
+		InvokeRepeating ("Charge", 5f, 20f);
 		ResetDeltaX ();
 	}
 
 	void Update() {
-		if(Mathf.Abs(deltaX - transform.position.x) >= 20) {
+		if(Mathf.Abs(deltaX - (int) transform.position.x) >= 10) {
 			if(Random.Range(0,2) == 0) {
 				walksRight = true;
 				ResetDeltaX ();
@@ -63,7 +64,7 @@ public class Phase2 : MonoBehaviour {
 				else
 					Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
 				Destroy (col.gameObject);
-				KickPunching ();
+				Charge ();
 			}
 			break;
 
@@ -93,12 +94,16 @@ public class Phase2 : MonoBehaviour {
 	void UnStunned() {
 		Debug.Log ("Boss is UnStunned");
 		stunned = false;
+		Charge ();
 	}
 
 	void Charge() {
+		if (!walksRight)
+			walksRight = true;
 		//FinalBoss is charging, play relevant things
 		Debug.Log("FinalBoss is charging");
 		moveSpeed += 5;
+		damage += 2;
 		Invoke ("StopCharge", 1f);
 	}
 

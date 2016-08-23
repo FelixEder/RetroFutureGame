@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Phase1 : MonoBehaviour {
 	public float knockForce;
-	public int health;
+	public int health = 3;
 	public Sprite normal, kickPunching;
 	bool stunned;
 	Rigidbody2D rb2D;
@@ -94,6 +94,7 @@ public class Phase1 : MonoBehaviour {
 
 	public void GetHurt(int damage) {
 		health -= damage;
+		//Would be nice if the armour could look a bit more broken after each punch.
 		if (health <= 0) {
 			Defeated ();
 		}

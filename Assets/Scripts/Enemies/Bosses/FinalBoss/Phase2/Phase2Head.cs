@@ -11,7 +11,7 @@ public class Phase2Head : MonoBehaviour {
 		InvokeRepeating ("Spit", 5f, 10f);
 	}
 
-	void Blued() {
+	public void Blued() {
 		//This should only change the head-sprite, so maybe this should affect a child somehow?
 		GetComponent<SpriteRenderer>().sprite = blueFace;
 		actualBoss.blued = true;
@@ -29,6 +29,7 @@ public class Phase2Head : MonoBehaviour {
 			Debug.Log ("Boss is spitting");
 			GetComponent<SpriteRenderer> ().sprite = biteFace;
 			transform.GetChild (0).GetComponent<FinalBossSpitAttack> ().enabled = true;
+			transform.GetChild (0).GetComponent<CircleCollider2D> ().enabled = true;
 			Invoke ("StopSpit", 3f);
 		}
 	}
@@ -36,6 +37,7 @@ public class Phase2Head : MonoBehaviour {
 	void StopSpit() {
 		GetComponent<SpriteRenderer> ().sprite = normalHead;
 		transform.GetChild (0).GetComponent<FinalBossSpitAttack> ().enabled = false;
+		transform.GetChild (0).GetComponent<CircleCollider2D> ().enabled = false;
 	}
 		
 	public void OpenMouth(float time) {

@@ -28,4 +28,11 @@ public class FinalBossSpitAttack : MonoBehaviour {
 			instance.transform.parent = transform.parent.parent;
 		}
 	}
+
+	void OnTriggerEnter2D(Collider2D item) {
+		if (item.gameObject.GetComponent<PickUpableItem> ().GetItemType () == "Rock") {
+			Debug.Log ("You blued the boss!");
+			transform.parent.GetComponent<Phase2Head> ().Blued ();
+		}
+	}
 }

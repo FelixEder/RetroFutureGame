@@ -122,6 +122,18 @@ public class CharMegaPunch : MonoBehaviour {
 					victim.gameObject.GetComponent<Phase1> ().GetHurt (1);
 				}
 				break;
+
+			case "FinalBossArmor":
+				if (victim.gameObject.GetComponent<Phase2> ().blued) {
+					if (status.chargedMegaPunch) {
+						Debug.Log ("Charge Mega-Punched the boss phase 2!"); 
+						victim.gameObject.GetComponent<Phase2> ().GetHurt (3);
+					} else {
+						Debug.Log ("Mega-Punched the boss phase 2!"); 
+						victim.gameObject.GetComponent<Phase2> ().GetHurt (1);
+					}
+				}
+				break;
 			}
 			Debug.Log (victim);
 		}

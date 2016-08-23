@@ -98,7 +98,6 @@ public class Phase2 : MonoBehaviour {
 		Debug.Log ("Boss is UnStunned");
 		moveSpeed = 3;
 		stunned = false;
-		Charge ();
 	}
 
 	public void LaserShot() {

@@ -16,6 +16,7 @@ public class Phase2 : MonoBehaviour {
 		InvokeRepeating ("KickPunching", 3f, 5f);
 		InvokeRepeating ("Charge", 5f, 20f);
 		ResetDeltaX ();
+		transform.GetChild (0).GetComponent<Phase2Head> ().enabled = true;
 	}
 
 	void Update() {
@@ -103,6 +104,7 @@ public class Phase2 : MonoBehaviour {
 			walksRight = true;
 		//FinalBoss is charging, play relevant things
 		Debug.Log("FinalBoss is charging");
+		transform.GetChild (0).GetComponent<Phase2Head> ().OpenMouth (3f);
 		moveSpeed += 5;
 		damage += 2;
 		Invoke ("StopCharge", 1f);

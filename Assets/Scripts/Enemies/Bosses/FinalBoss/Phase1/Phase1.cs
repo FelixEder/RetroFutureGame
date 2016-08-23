@@ -12,6 +12,7 @@ public class Phase1 : MonoBehaviour {
 	void Start () {
 		rb2D = GetComponent<Rigidbody2D> ();
 		InvokeRepeating ("KickPunching", 0, 5f);
+		transform.parent.GetComponent<EdgeCollider2D> ().enabled = false;
 	}
 		
 	void OnCollisionEnter2D(Collision2D col) {

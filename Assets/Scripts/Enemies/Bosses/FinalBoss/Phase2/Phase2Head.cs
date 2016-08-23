@@ -8,6 +8,7 @@ public class Phase2Head : MonoBehaviour {
 
 	void Start() {
 		actualBoss = transform.parent.gameObject.GetComponent<Phase2> ();
+		InvokeRepeating ("Spit", 5f, 10f);
 	}
 
 	void Blued() {
@@ -25,14 +26,16 @@ public class Phase2Head : MonoBehaviour {
 
 	void Spit() {
 		if(!actualBoss.blued) {
+			Debug.Log ("Boss is spitting");
 			GetComponent<SpriteRenderer> ().sprite = biteFace;
-			//Call PrefabSpawner somehow
+			transform.GetChild (0).GetComponent<FinalBossSpitAttack> ().enabled = true;
 			Invoke ("StopSpit", 3f);
 		}
 	}
 
 	void StopSpit() {
 		GetComponent<SpriteRenderer> ().sprite = normalHead;
+		transform.GetChild (0).GetComponent<FinalBossSpitAttack> ().enabled = false;
 	}
 
 	public void OpenMouth(float time) {

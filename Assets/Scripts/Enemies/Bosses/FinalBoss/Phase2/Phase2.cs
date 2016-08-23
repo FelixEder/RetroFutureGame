@@ -85,6 +85,7 @@ public class Phase2 : MonoBehaviour {
 		Debug.Log ("Boss is stunned!");
 		//Stuns the boss a few seconds and makes it drop a few pick-Ups
 		stunned = true;
+		moveSpeed = 0;
 		for (int i = 0; i < 3; i++) {
 			Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
 			Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
@@ -95,8 +96,15 @@ public class Phase2 : MonoBehaviour {
 
 	void UnStunned() {
 		Debug.Log ("Boss is UnStunned");
+		moveSpeed = 3;
 		stunned = false;
 		Charge ();
+	}
+
+	public void LaserShot() {
+		if(!blued && !stunned)
+			//Play some kind of laughing animation
+			Charge ();
 	}
 
 	void Charge() {

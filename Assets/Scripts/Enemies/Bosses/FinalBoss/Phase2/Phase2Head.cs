@@ -37,7 +37,7 @@ public class Phase2Head : MonoBehaviour {
 		GetComponent<SpriteRenderer> ().sprite = normalHead;
 		transform.GetChild (0).GetComponent<FinalBossSpitAttack> ().enabled = false;
 	}
-
+		
 	public void OpenMouth(float time) {
 		GetComponent<SpriteRenderer> ().sprite = biteFace;
 		Invoke ("CloseMouth", time);

@@ -85,6 +85,12 @@ public class Phase3Head : MonoBehaviour {
 
 	public void Spit() {
 		Bite ();
+		transform.GetChild (0).GetComponent<FinalBossSpitAttack> ().enabled = true;
+		Invoke ("DoneSpit", 4f);
+	}
+
+	void DoneSpit()  {
+		transform.GetChild (0).GetComponent<FinalBossSpitAttack> ().enabled = false;
 	}
 
 	public void Jump () {
@@ -127,6 +133,7 @@ public class Phase3Head : MonoBehaviour {
 	}
 
 	public void GetHurt() {
+		Debug.Log ("Hurt final boss");
 		health -= damage;
 		Charge ();
 		moveSpeed++;

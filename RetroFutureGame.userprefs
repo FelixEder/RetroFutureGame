@@ -1,5 +1,6 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Interactables\Items\PickUpableItem.cs">
     <Files>
       <File FileName="Assets\Scripts\Interactables\Items\PickUpableItem.cs" Line="22" Column="6" />
@@ -7,6 +8,25 @@
       <File FileName="Assets\Scripts\Character\Triggers\CharTriggerDown.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemies\Bosses\FinalBoss\Phase3\Phase3Head.cs" Line="88" Column="3" />
     </Files>
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\Bosses\FinalBoss\Phase3\Phase3Head.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Enemies\Bosses\FinalBoss\Phase3\Phase3Head.cs" Line="85" Column="2" NotebookId="1" />
+      <File FileName="Assets\Scripts\Character\Upgrades\StompTrigger.cs" Line="46" Column="10" NotebookId="1" />
+      <File FileName="Assets\Scripts\Character\Upgrades\CharStomp.cs" Line="31" Column="4" NotebookId="1" />
+      <File FileName="Assets\Scripts\Character\Upgrades\LaserShooter.cs" Line="111" Column="4" NotebookId="1" />
+      <File FileName="Assets\Scripts\Enemies\Bosses\FinalBoss\Phase2\Phase2Head.cs" Line="29" Column="35" NotebookId="1" />
+    </Files>
+    <FloatingWindows>
+      <FloatingWindow WindowId="1" X="-32000" Y="-32000" Width="958" Height="1008">
+        <Files>
+          <File FileName="Assets\Scripts\Enemies\Enemies\BigEyeGuy\BigEyeGuyLaser.cs" Line="30" Column="2" />
+          <File FileName="Assets\Scripts\Character\Actions\CharMegaPunch.cs" Line="76" Column="40" />
+          <File FileName="Assets\Scripts\Enemies\Bosses\FinalBoss\Phase2\FinalBossSpitAttack.cs" Line="30" Column="3" />
+        </Files>
+      </FloatingWindow>
+    </FloatingWindows>
+>>>>>>> 8406a132f68281f9392a33352199e0472ce59231
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

@@ -85,7 +85,13 @@ public class Phase3Head : MonoBehaviour {
 
 	public void Spit() {
 		Bite ();
-		transform.GetChild(0).
+		transform.GetChild (0).GetComponent<FinalBossSpitAttack> ().enabled = true;
+		Invoke ("DoneSpit", 4f);
+	}
+
+	void DoneSpit()  {
+		transform.GetChild (0).GetComponent<FinalBossSpitAttack> ().enabled = false;
+	}
 
 	public void Jump () {
 		if (Random.Range (0, 100) < 1) {

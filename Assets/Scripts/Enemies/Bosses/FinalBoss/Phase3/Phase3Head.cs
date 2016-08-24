@@ -85,7 +85,7 @@ public class Phase3Head : MonoBehaviour {
 
 	public void Spit() {
 		Bite ();
-		transform.GetChild(0).
+	}
 
 	public void Jump () {
 		if (Random.Range (0, 100) < 1) {

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PickUpableItem : MonoBehaviour {
 	public Rigidbody2D rigidBody2D;
-	Transform originalParent;
+	Transform originalParent, holdPosition;
 	public float HoldPositionX = 0.341f, HoldPositionY = -0.332f;
 	/**the type*/
 	public string itemType;
@@ -13,11 +13,13 @@ public class PickUpableItem : MonoBehaviour {
 	void Start() {
 		rigidBody2D = GetComponent<Rigidbody2D> ();
 		originalParent = transform.parent;
+		holdPosition = GameObject.Find ("holdPosition").transform;
 	}
 
 	void FixedUpdate() {
 		if (beingHeld) {
-			transform.localPosition = new Vector2 (HoldPositionX, HoldPositionY);
+			transform.position = holdPosition.position;
+			//transform.localPosition += new Vector3 (0.1f, -0.1f, 0);
 		}
 		if (rigidBody2D.velocity.y < -8) {
 			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, -8);

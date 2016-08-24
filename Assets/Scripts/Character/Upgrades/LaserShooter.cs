@@ -113,6 +113,12 @@ public class LaserShooter : MonoBehaviour {
 			Debug.Log ("Hit the boss in the head!");
 			victim.transform.gameObject.GetComponent<Phase2> ().LaserShot ();
 			break;
+
+		case "FinalBossLastForm":
+			Debug.Log ("Shot last boss form");
+			//Check so that it goes after the correct child
+			victim.transform.gameObject.transform.GetChild (0).GetComponent<BigEyeGuyLaser> ().Shoot ();
+			break;
 		}
 	}
 

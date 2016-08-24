@@ -40,6 +40,10 @@ public class StompTrigger : MonoBehaviour {
 				shellMan.GetHurt (2);
 			}
 			break;
+
+		case "FinalBossLastForm":
+			col.gameObject.GetComponent<Phase3Head> ().GetHurt ();
+			break;
 		}
 	}
 }

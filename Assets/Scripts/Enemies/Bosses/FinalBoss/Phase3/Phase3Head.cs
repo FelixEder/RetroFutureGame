@@ -4,7 +4,7 @@ using System.Collections;
 public class Phase3Head : MonoBehaviour {
 	public float knockForce, jumpSpeed;
 	float moveSpeed = 4;
-	public int health;
+	public int health = 3;
 	public Sprite normal, biting;
 	public bool isMirrored = false;
 	Rigidbody2D rb2D;
@@ -14,6 +14,7 @@ public class Phase3Head : MonoBehaviour {
 	void Start () {
 		rb2D = GetComponent<Rigidbody2D> ();
 		InvokeRepeating ("Charge", 5f, 5f);
+		InvokeRepeating ("Spit", 3f, 10f);
 	}
 
 	void FixedUpdate() {
@@ -82,6 +83,10 @@ public class Phase3Head : MonoBehaviour {
 		}
 	}
 
+	public void Spit() {
+		Bite ();
+		transform.GetChild(0).
+
 	public void Jump () {
 		if (Random.Range (0, 100) < 1) {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, jumpSpeed);
@@ -121,17 +126,20 @@ public class Phase3Head : MonoBehaviour {
 		GetMirrored ();
 	}
 
-	public void GetHurt(int damage) {
+	public void GetHurt() {
 		health -= damage;
-		//Increase all stats here
+		Charge ();
+		moveSpeed++;
+		knockForce++;
+		jumpSpeed++;
 		if (health <= 0) {
 			Defeated ();
 		}
 	}
 
 	void Defeated() {
-		//Now phase 3 starts
-		for (int i = 0; i < 5; i++) {
+		//Blow up the face and start the count-down
+		for (int i = 0; i < 10; i++) {
 			Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
 			Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
 		}

@@ -47,8 +47,7 @@ public class Phase3Head : MonoBehaviour {
 			//Does the speed need to be higher or lower?
 			if (rb2D.velocity.y > 5f) {
 				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
-			}
-			else {
+			} else {
 				Bite ();
 			}
 			col.gameObject.GetComponent<CharKnockback> ().Knockback (gameObject, knockForce);
@@ -119,6 +118,7 @@ public class Phase3Head : MonoBehaviour {
 	void CloseBite() {
 		GetComponent<SpriteRenderer> ().sprite = normal;
 		GetComponent<CircleCollider2D> ().enabled = false;
+		GetMirrored ();
 	}
 
 	public void GetHurt(int damage) {

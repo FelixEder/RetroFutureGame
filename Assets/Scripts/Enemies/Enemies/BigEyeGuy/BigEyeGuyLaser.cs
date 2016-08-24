@@ -13,6 +13,7 @@ public class BigEyeGuyLaser : MonoBehaviour {
 	}
 
 	public void Shoot() {
+		Debug.Log ("Is shooting laser!");
 		lineRenderer.enabled = true;
 		RaycastHit2D hit = Physics2D.Raycast (transform.position, transform.right);
 		Debug.DrawLine (transform.position, hit.point);
@@ -36,4 +37,3 @@ public class BigEyeGuyLaser : MonoBehaviour {
 		}
 	}
 }
-

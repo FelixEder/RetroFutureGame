@@ -133,6 +133,7 @@ public class Phase3Head : MonoBehaviour {
 	}
 
 	public void GetHurt() {
+		Debug.Log ("Hurt final boss");
 		health -= damage;
 		Charge ();
 		moveSpeed++;

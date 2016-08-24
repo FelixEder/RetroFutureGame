@@ -13,6 +13,7 @@ public class Phase3Head : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rb2D = GetComponent<Rigidbody2D> ();
+		InvokeRepeating ("Charge", 5f, 5f);
 	}
 
 	void FixedUpdate() {
@@ -26,12 +27,11 @@ public class Phase3Head : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Mathf.Abs(deltaX - (int) transform.position.x) >= 10) {
-			if(Random.Range(0,2) == 0) {
+			if(Random.Range(0,5) == 0) {
 				GetMirrored ();
 				ResetDeltaX ();
 			}
 			else {
-				GetMirrored ();
 				ResetDeltaX ();
 			}
 		}
@@ -44,31 +44,25 @@ public class Phase3Head : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col) {
 		switch (col.gameObject.tag) {
 		case "Char":
-			//If jumpspeed is high enough, do damage and knock.
-			//Otherwise do a bite attack
-				//Should also knock the player away
-				//Should do bite attack here
+			//Does the speed need to be higher or lower?
+			if (rb2D.velocity.y > 5f) {
+				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
+			}
+			else {
+				Bite ();
+			}
+			col.gameObject.GetComponent<CharKnockback> ().Knockback (gameObject, knockForce);
 			break;
 
 		case "PickupableItem":
 			if (col.gameObject.GetComponent<PickUpableItem> ().GetItemType () == "Rock") {
 				//Maybe play grunt
 				Debug.Log ("Threw rock at boss!");
-				if (Random.Range (0, 2) == 0) 
-					Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
-				else
-					Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
-				Destroy (col.gameObject);
 				Charge ();
 			}
 			break;
 
 		case "Wall":
-			GetMirrored ();
-			ResetDeltaX ();
-			break;
-
-		case "SecretTrigger":
 			GetMirrored ();
 			ResetDeltaX ();
 			break;
@@ -89,20 +83,42 @@ public class Phase3Head : MonoBehaviour {
 		}
 	}
 
+	public void Jump () {
+		if (Random.Range (0, 100) < 1) {
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, jumpSpeed);
+		}
+	}
+
 	void Charge() {
 		//FinalBoss is charging, play relevant things
-		Debug.Log("FinalBoss is charging");
+		Debug.Log("FinalBossHead is charging");
 		transform.GetChild (0).GetComponent<Phase2Head> ().OpenMouth (3f);
 		moveSpeed += 5;
-		damage += 2;
+		Bite ();
 		Invoke ("StopCharge", 1f);
 	}
 
 	void StopCharge() {
 		Debug.Log ("FinalBoss stopped rushing");
 		//FinalBoss stops charging, play relevant things
-		damage -= 2;
 		moveSpeed -= 5;
+	}
+
+	void OnTriggerEnter2D(Collider2D snack) {
+		if (snack.gameObject.tag.Equals ("Char"))
+			snack.gameObject.GetComponent<CharHealth> ().TakeDamage (damage + 2);
+			snack.gameObject.GetComponent<CharKnockback> ().Knockback (gameObject, knockForce);
+	}
+
+	void Bite() {
+		GetComponent<SpriteRenderer> ().sprite = biting;
+		GetComponent<CircleCollider2D> ().enabled = true;
+		Invoke ("CloseBite", 3f);
+	}
+
+	void CloseBite() {
+		GetComponent<SpriteRenderer> ().sprite = normal;
+		GetComponent<CircleCollider2D> ().enabled = false;
 	}
 
 	public void GetHurt(int damage) {

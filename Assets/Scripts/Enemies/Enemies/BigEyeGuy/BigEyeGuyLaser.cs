@@ -17,6 +17,7 @@ public class BigEyeGuyLaser : MonoBehaviour {
 		lineRenderer.enabled = true;
 		RaycastHit2D hit = Physics2D.Raycast (transform.position, transform.right);
 		Debug.DrawLine (transform.position, hit.point);
+		Debug.Log (hit.collider.gameObject);
 		laserHit.position = hit.point;
 		lineRenderer.SetPosition (0, transform.position);
 		lineRenderer.SetPosition (1, laserHit.position);
@@ -29,10 +30,10 @@ public class BigEyeGuyLaser : MonoBehaviour {
 	}
 
 	void HitByLaser(RaycastHit2D victim) {
-		switch(victim.transform.gameObject.tag) {
+		switch(victim.collider.gameObject.tag) {
 			case "Char":
 			Debug.Log ("Hit by laser!!");
-			victim.transform.gameObject.GetComponent<CharHealth> ().TakeDamage (damage, gameObject, 3f);
+			victim.collider.gameObject.GetComponent<CharHealth> ().TakeDamage (damage, gameObject, 3f);
 			break;
 		}
 	}

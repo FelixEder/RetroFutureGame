@@ -77,6 +77,7 @@
      <Compile Include="Assets\Scripts\Enemies\Bosses\FinalBoss\Phase2\Phase2.cs" />
      <Compile Include="Assets\Scripts\Enemies\Bosses\FinalBoss\Phase2\Phase2Head.cs" />
      <Compile Include="Assets\Scripts\Enemies\Bosses\FinalBoss\Phase3\FinalBossJump.cs" />
+     <Compile Include="Assets\Scripts\Enemies\Bosses\FinalBoss\Phase3\FinalBossShooter.cs" />
      <Compile Include="Assets\Scripts\Enemies\Bosses\FinalBoss\Phase3\Phase3Head.cs" />
      <Compile Include="Assets\Scripts\Enemies\Bosses\StatueBoss\StatueBoss.cs" />
      <Compile Include="Assets\Scripts\Enemies\Bosses\StatueBoss\StatueBossLaser.cs" />

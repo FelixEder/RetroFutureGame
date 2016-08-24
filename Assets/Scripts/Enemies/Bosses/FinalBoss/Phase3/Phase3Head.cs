@@ -92,9 +92,8 @@ public class Phase3Head : MonoBehaviour {
 	void Charge() {
 		//FinalBoss is charging, play relevant things
 		Debug.Log("FinalBossHead is charging");
-		transform.GetChild (0).GetComponent<Phase2Head> ().OpenMouth (3f);
-		moveSpeed += 5;
 		Bite ();
+		moveSpeed += 5;
 		Invoke ("StopCharge", 1f);
 	}
 
@@ -105,9 +104,10 @@ public class Phase3Head : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D snack) {
-		if (snack.gameObject.tag.Equals ("Char"))
+		if (snack.gameObject.tag.Equals ("Char")) {
 			snack.gameObject.GetComponent<CharHealth> ().TakeDamage (damage + 2);
 			snack.gameObject.GetComponent<CharKnockback> ().Knockback (gameObject, knockForce);
+		}
 	}
 
 	void Bite() {

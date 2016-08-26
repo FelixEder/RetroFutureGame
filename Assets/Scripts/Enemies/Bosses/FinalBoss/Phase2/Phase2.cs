@@ -57,13 +57,13 @@ public class Phase2 : MonoBehaviour {
 			break;
 
 		case "PickupableItem":
-			if (col.gameObject.GetComponent<PickUpableItem> ().GetItemType () == "Rock") {
+			if (col.gameObject.GetComponent<PickUpableItem> ().GetItemType ().Equals( "Rock")) {
 				//Maybe play grunt
 				Debug.Log ("Threw rock at boss!");
 				if (Random.Range (0, 2) == 0) 
-					Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
+					Instantiate (Resources.Load ("HealthDrop"), col.gameObject.transform.position, Quaternion.identity);
 				else
-					Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
+					Instantiate (Resources.Load ("EnergyDrop"), col.gameObject.transform.position, Quaternion.identity);
 				Destroy (col.gameObject);
 				Charge ();
 			}
@@ -130,11 +130,13 @@ public class Phase2 : MonoBehaviour {
 			this.gameObject.transform.GetChild (1).gameObject.SetActive (true);
 			Invoke ("FinishKickPunching", 1f);
 		}
+		moveSpeed = 0;
 	}
 
 	void FinishKickPunching() {
 		GetComponent<SpriteRenderer> ().sprite = normal;
 		this.gameObject.transform.GetChild (1).gameObject.SetActive (false);	
+		moveSpeed = 3;
 	}
 
 	public void GetHurt(int damage) {

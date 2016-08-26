@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class Throw : MonoBehaviour {
+	int maxRocks;
 
 	void OnEnable() {
 		Debug.Log ("Boss throws things");
@@ -11,7 +12,7 @@ public class Throw : MonoBehaviour {
 	void Throwing() {
 		string spawnType = "";
 		int item = Random.Range (0, 10);
-		if (item < 8) {
+		if (item < 8 && transform.childCount < maxRocks) {
 			spawnType = "Rock";
 		} else if (item < 9) {
 			spawnType = "HealthDrop";

@@ -150,5 +150,7 @@ public class Phase2 : MonoBehaviour {
 			Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
 			Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
 		}
+		Instantiate (Resources.Load("FBP3"), transform.position, Quaternion.identity);
+		Destroy (gameObject);
 	}
 }

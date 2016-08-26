@@ -150,5 +150,7 @@ public class Phase3Head : MonoBehaviour {
 			Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
 			Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
 		}
+		Destroy (gameObject);
+		//Start the countdown somehow
 	}
 }

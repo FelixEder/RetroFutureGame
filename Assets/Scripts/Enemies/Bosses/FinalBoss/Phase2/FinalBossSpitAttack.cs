@@ -30,7 +30,7 @@ public class FinalBossSpitAttack : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D item) {
-		if (item.gameObject.GetComponent<PickUpableItem> ().GetItemType () == "Rock") {
+		if (item.gameObject.tag.Equals("PickupableItem") && item.gameObject.GetComponent<PickUpableItem> ().GetItemType ().Equals("Rock")) {
 			Debug.Log ("You blued the boss!");
 			transform.parent.GetComponent<Phase2Head> ().Blued ();
 		}

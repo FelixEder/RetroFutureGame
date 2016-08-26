@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/EarlyGame.unity
+- path: Assets/Scenes/Personal scenes/EarlyGame - checkpoints - Emil.unity
   isLoaded: 1
   isActive: 1

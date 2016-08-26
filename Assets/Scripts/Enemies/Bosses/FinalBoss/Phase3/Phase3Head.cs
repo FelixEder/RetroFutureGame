@@ -9,6 +9,7 @@ public class Phase3Head : MonoBehaviour {
 	public bool isMirrored = false;
 	Rigidbody2D rb2D;
 	public int deltaX, damage;
+	bool invulnerable;
 
 	// Use this for initialization
 	void Start () {
@@ -133,15 +134,19 @@ public class Phase3Head : MonoBehaviour {
 	}
 
 	public void GetHurt() {
-		Debug.Log ("Hurt final boss");
-		health -= damage;
-		Charge ();
-		moveSpeed++;
-		knockForce++;
-		jumpSpeed++;
-		if (health <= 0) {
-			Defeated ();
-		}
+		if (!invulnerable) {
+			Debug.Log ("Hurt final boss");
+			health--;
+			Charge ();
+			moveSpeed++;
+			knockForce++;
+			jumpSpeed++;
+			if (health <= 0) {
+				Defeated ();
+			}
+			StartCoroutine (Invulnerable ());
+		} else
+			Debug.Log ("Boss is invulnerable");
 	}
 
 	void Defeated() {
@@ -152,5 +157,11 @@ public class Phase3Head : MonoBehaviour {
 		}
 		Destroy (gameObject);
 		//Start the countdown somehow
+	}
+
+	IEnumerator Invulnerable() {
+		invulnerable = true;
+		yield return new WaitForSeconds (1f);
+		invulnerable = false;
 	}
 }

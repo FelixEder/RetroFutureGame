@@ -117,6 +117,8 @@
      <Compile Include="Assets\Scripts\UI\MainMenuLogo.cs" />
      <Compile Include="Assets\Scripts\UI\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\UI\PauseStatistics.cs" />
+     <Compile Include="Assets\Scripts\UI\TutorialManager.cs" />
+     <Compile Include="Assets\Scripts\UI\TutorialTrigger.cs" />
      <None Include="Assets\Materials\Shaders\Sprite Glitch.shader" />
      <None Include="Assets\Materials\Shaders\Solid Color.shader" />
  <Reference Include="UnityEngine.UI">

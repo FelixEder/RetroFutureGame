@@ -39,11 +39,13 @@ public class CharStomp : MonoBehaviour {
 	}
 
 	void FinishedStomp() {
+		status.invulnerable = false;
 		groundStomping = false;
 		triggerStomp.SetActive (false);
 	}
 
 	void Stomp() {
+		status.invulnerable = true;
 		rigidBody2D.gravityScale = 2.0f;
 		rigidBody2D.velocity = new Vector2 (0, -9f);
 		triggerStomp.SetActive (true);

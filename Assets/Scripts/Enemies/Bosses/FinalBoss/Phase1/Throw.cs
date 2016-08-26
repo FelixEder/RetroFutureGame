@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Throw : MonoBehaviour {
-	int maxRocks;
+	public int maxRocks;
 	GameObject FBIM;
 
 	void Start() {
@@ -25,9 +25,9 @@ public class Throw : MonoBehaviour {
 			spawnType = "EnergyDrop";
 		}
 		GameObject instance = Instantiate (Resources.Load (spawnType), transform.position, Quaternion.identity) as GameObject;
-		instance.transform.SetParent (FBIM);
 		if(spawnType.Equals( "Rock")) {
 			instance.GetComponent<Rigidbody2D>().AddForce(new Vector2(8f, 3f), ForceMode2D.Impulse);
+			instance.transform.SetParent (FBIM.transform);
 		}
 	}
 }

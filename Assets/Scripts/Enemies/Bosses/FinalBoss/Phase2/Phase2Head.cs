@@ -15,8 +15,8 @@ public class Phase2Head : MonoBehaviour {
 		//This should only change the head-sprite, so maybe this should affect a child somehow?
 		GetComponent<SpriteRenderer>().sprite = blueFace;
 		actualBoss.blued = true;
-		actualBoss.Stunned(5f);
-		Invoke ("Unblued", 5f);
+		actualBoss.Stunned(10f);
+		Invoke ("Unblued", 10f);
 	}
 
 	void Unblued() {

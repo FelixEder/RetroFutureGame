@@ -9,11 +9,13 @@ public class PickUpableItem : MonoBehaviour {
 	public string itemType;
 	bool beingHeld;
 	public int damage, health;
+	public PickupableItemSpawner PIS;
 
 	void Start() {
 		rigidBody2D = GetComponent<Rigidbody2D> ();
 		originalParent = transform.parent;
 		holdPosition = GameObject.Find ("holdPosition").transform;
+		InvokeRepeating ("QuestionExistance", 20f, 15f);
 	}
 
 	void FixedUpdate() {
@@ -58,13 +60,25 @@ public class PickUpableItem : MonoBehaviour {
 	public int Break() {
 		health--;
 		if (health <= 0)
-			Destroy (gameObject);
+			Kill ();
 		//Play animation and such
 		return health;
+	}
+
+	public void Kill() {
+		PIS.DecreaseCurrent ();
+		Destroy (gameObject);
 	}
 
 	/**Returns the item type.*/
 	public string GetItemType() {
 		return itemType;
+	}
+
+	void QuestionExistance() {
+		if (Mathf.Abs (Vector3.Distance (gameObject.transform.position, PIS.transform.position)) > 40f &&
+		    !transform.parent.parent.gameObject.Equals (GameObject.FindGameObjectWithTag ("Char"))) {
+			Kill ();
+		}
 	}
 }

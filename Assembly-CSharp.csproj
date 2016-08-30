@@ -103,6 +103,7 @@
      <Compile Include="Assets\Scripts\Interactables\Map\Barriers.cs" />
      <Compile Include="Assets\Scripts\Interactables\Map\Door.cs" />
      <Compile Include="Assets\Scripts\Interactables\Map\MapCover.cs" />
+     <Compile Include="Assets\Scripts\Interactables\Misc\PickupableItemSpawner.cs" />
      <Compile Include="Assets\Scripts\Interactables\Misc\PrefabSpawner.cs" />
      <Compile Include="Assets\Scripts\Other\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Other\CameraAdjuster.cs" />

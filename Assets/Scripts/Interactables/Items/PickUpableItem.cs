@@ -15,6 +15,7 @@ public class PickUpableItem : MonoBehaviour {
 		rigidBody2D = GetComponent<Rigidbody2D> ();
 		originalParent = transform.parent;
 		holdPosition = GameObject.Find ("holdPosition").transform;
+		InvokeRepeating ("QuestionExistance", 20f, 15f);
 	}
 
 	void FixedUpdate() {
@@ -73,18 +74,9 @@ public class PickUpableItem : MonoBehaviour {
 	public string GetItemType() {
 		return itemType;
 	}
-		
-	void OnBecameInvisible() {
-		InvokeRepeating ("QuestionExistance", 20f, 15f);
-		Debug.Log ("Has become invisble!");
-	}
 
-	void OnBecameVisible() {
-		CancelInvoke ("QuestionExistance");
-	}
-		
 	void QuestionExistance() {
-		if (Mathf.Abs (Vector3.Distance (gameObject.transform.position, PIS.transform.position)) > 30f) {
+		if (Mathf.Abs (Vector3.Distance (gameObject.transform.position, PIS.transform.position)) > 40f) {
 			Debug.Log ("Removed illegal item!");
 			PIS.DecreaseCurrent ();
 			Kill ();

@@ -10,12 +10,12 @@ public class PickUpableItem : MonoBehaviour {
 	bool beingHeld;
 	public int damage, health;
 	public PickupableItemSpawner PIS;
+	GameObject father = null;
 
 	void Start() {
 		rigidBody2D = GetComponent<Rigidbody2D> ();
 		originalParent = transform.parent;
 		holdPosition = GameObject.Find ("holdPosition").transform;
-		InvokeRepeating ("QuestionExistance", 20f, 15f);
 	}
 
 	void FixedUpdate() {
@@ -31,10 +31,12 @@ public class PickUpableItem : MonoBehaviour {
 	/**Sets the gameobject as child of "player" and freezes all it's movement.*/
 	public void PickUp(GameObject player) {
 		transform.SetParent (player.transform);
+		father = player.transform.parent.gameObject;
 		GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeAll;
 		transform.localRotation = Quaternion.Euler (new Vector3 (0, 0, 0));
 		beingHeld = true;
 		Debug.Log ("Pickup " + gameObject);
+		InvokeRepeating ("QuestionExistance", 20f, 15f);
 	}
 
 	/**
@@ -76,7 +78,11 @@ public class PickUpableItem : MonoBehaviour {
 	}
 
 	void QuestionExistance() {
-		if (Mathf.Abs (Vector3.Distance (gameObject.transform.position, PIS.transform.position)) > 40f) {
+		float Spawndist = Mathf.Abs (Vector3.Distance (gameObject.transform.position, PIS.transform.position));
+		float PlayDist = Mathf.Abs (Vector3.Distance (gameObject.transform.position, father.transform.position));
+		Debug.Log ("SpawnDist: " + Spawndist);
+		Debug.Log ("PlayDist: " + PlayDist);
+		if (Spawndist > 20f && PlayDist > 20f) {
 			Debug.Log ("Removed illegal item!");
 			PIS.DecreaseCurrent ();
 			Kill ();

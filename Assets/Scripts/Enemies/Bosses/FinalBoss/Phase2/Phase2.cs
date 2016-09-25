@@ -4,7 +4,7 @@ using System.Collections;
 public class Phase2 : MonoBehaviour {
 	public float knockForce;
 	float moveSpeed = 3;
-	public int health;
+	public int health, spawnLoc = 2;
 	public Sprite normal, kickPunching;
 	public bool stunned, blued, walksRight = true;
 	Rigidbody2D rb2D;
@@ -87,8 +87,8 @@ public class Phase2 : MonoBehaviour {
 		stunned = true;
 		moveSpeed = 0;
 		for (int i = 0; i < 3; i++) {
-			Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
-			Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
+			DropSpawner ("HealthDrop", transform.position);
+			DropSpawner ("EnergyDrop", transform.position);
 		}
 		transform.GetChild (0).GetComponent<Phase2Head> ().OpenMouth (3f);
 		Invoke ("UnStunned", time);
@@ -149,10 +149,15 @@ public class Phase2 : MonoBehaviour {
 	void Defeated() {
 		//Now phase 3 starts
 		for (int i = 0; i < 5; i++) {
-			Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
-			Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
+			DropSpawner ("HealthDrop", transform.position);
+			DropSpawner ("EnergyDrop", transform.position);
 		}
 		Instantiate (Resources.Load("FBP3"), transform.position, Quaternion.identity);
 		Destroy (gameObject);
+	}
+
+	void DropSpawner(string type, Vector3 pos) {
+		Vector3 dropLoc = new Vector3 (pos.x + Random.Range (-spawnLoc, spawnLoc), pos.y + Random.Range (-spawnLoc, spawnLoc), pos.z);
+		Instantiate (Resources.Load (type), dropLoc, Quaternion.identity);
 	}
 }

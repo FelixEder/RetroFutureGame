@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Phase1 : MonoBehaviour {
 	public float knockForce;
-	public int health = 3;
+	public int health = 3, spawnLoc = 2;
 	public Sprite normal, kickPunching;
 	bool stunned;
 	Rigidbody2D rb2D;
@@ -27,14 +27,15 @@ public class Phase1 : MonoBehaviour {
 			break;
 
 		case "Rock":
-				//Maybe play grunt
-				Debug.Log ("Threw rock at boss!");
-				if (Random.Range (0, 2) == 0) 
-				Instantiate (Resources.Load ("HealthDrop"), col.gameObject.transform.position, Quaternion.identity);
-				else
-				Instantiate (Resources.Load ("EnergyDrop"), col.gameObject.transform.position, Quaternion.identity);
-				Destroy (col.gameObject);
-				KickPunching ();
+			//Maybe play grunt
+			Debug.Log ("Threw rock at boss!");
+			Vector3 rockLoc = col.gameObject.transform.position;
+			if (Random.Range (0, 2) == 0) 
+				Instantiate (Resources.Load ("HealthDrop"), rockLoc, Quaternion.identity);
+			else
+				Instantiate (Resources.Load ("EnergyDrop"), rockLoc, Quaternion.identity);
+			Destroy (col.gameObject);
+			KickPunching ();
 			break;
 		}
 	}
@@ -44,8 +45,8 @@ public class Phase1 : MonoBehaviour {
 		//Stuns the boss a few seconds and makes it drop a few pick-Ups
 		stunned = true;
 		for (int i = 0; i < 3; i++) {
-			Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
-			Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
+			DropSpawner ("HealthDrop", transform.position);
+			DropSpawner ("EnergyDrop", transform.position);
 		}
 		Invoke ("UnStunned", time);
 	}
@@ -97,10 +98,15 @@ public class Phase1 : MonoBehaviour {
 	void Defeated() {
 		//Now phase 2 starts
 		for (int i = 0; i < 5; i++) {
-			Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
-			Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
+			DropSpawner ("HealthDrop", transform.position);
+			DropSpawner ("EnergyDrop", transform.position);
 		}
 		Instantiate (Resources.Load("FBP2"), new Vector3(87.76018f, -91.5612f, 0f),  Quaternion.Euler(0, 0, 0));
 		Destroy (gameObject);
+	}
+
+	void DropSpawner(string type, Vector3 pos) {
+		Vector3 dropLoc = new Vector3 (pos.x + Random.Range (-spawnLoc, spawnLoc), pos.y + Random.Range (-spawnLoc, spawnLoc), pos.z);
+		Instantiate (Resources.Load (type), dropLoc, Quaternion.identity);
 	}
 }

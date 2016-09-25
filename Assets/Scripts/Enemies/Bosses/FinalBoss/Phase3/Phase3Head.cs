@@ -4,7 +4,7 @@ using System.Collections;
 public class Phase3Head : MonoBehaviour {
 	public float knockForce, jumpSpeed;
 	float moveSpeed = 4;
-	public int health = 3;
+	public int health = 3, spawnLoc = 2;
 	public Sprite normal, biting;
 	public bool isMirrored = false;
 	Rigidbody2D rb2D;
@@ -152,8 +152,8 @@ public class Phase3Head : MonoBehaviour {
 	void Defeated() {
 		//Blow up the face and start the count-down
 		for (int i = 0; i < 10; i++) {
-			Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
-			Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
+			DropSpawner ("HealthDrop", transform.position);
+			DropSpawner ("EnergyDrop", transform.position);
 		}
 		Destroy (gameObject);
 		//Start the countdown somehow
@@ -163,5 +163,10 @@ public class Phase3Head : MonoBehaviour {
 		invulnerable = true;
 		yield return new WaitForSeconds (1f);
 		invulnerable = false;
+	}
+
+	void DropSpawner(string type, Vector3 pos) {
+		Vector3 dropLoc = new Vector3 (pos.x + Random.Range (-spawnLoc, spawnLoc), pos.y + Random.Range (-spawnLoc, spawnLoc), pos.z);
+		Instantiate (Resources.Load (type), dropLoc, Quaternion.identity);
 	}
 }

@@ -97,6 +97,7 @@
      <Compile Include="Assets\Scripts\Events\CountDown.cs" />
      <Compile Include="Assets\Scripts\Events\EventFirstStart.cs" />
      <Compile Include="Assets\Scripts\Events\RedLightFlash.cs" />
+     <Compile Include="Assets\Scripts\Interactables\Checkpoint.cs" />
      <Compile Include="Assets\Scripts\Interactables\Items\ChargeStation.cs" />
      <Compile Include="Assets\Scripts\Interactables\Items\EnemyDrops.cs" />
      <Compile Include="Assets\Scripts\Interactables\Items\PickUpableItem.cs" />

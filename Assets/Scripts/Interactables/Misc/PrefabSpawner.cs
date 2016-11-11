@@ -23,4 +23,11 @@ public class PrefabSpawner : MonoBehaviour {
 			instance.transform.parent = transform;
 		}
 	}
+
+	public void KillChildren() {
+		foreach (Transform child in transform) {
+			GameObject.Destroy (child.gameObject);
+		}
+		Debug.Log ("Prefab spawner:\nKilled all children.");
+	}
 }

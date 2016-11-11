@@ -6,7 +6,7 @@ public class Checkpoint : MonoBehaviour {
 	public Transform activeCheckpoint;
 
 	void Start () {
-		//Set the starting location of the game to current checkpoint here.
+		activeCheckpoint = GameObject.Find("CheckPoint (1)").transform;
 	}
 	
 	void OnTriggerEnter2D(Collider2D col) {

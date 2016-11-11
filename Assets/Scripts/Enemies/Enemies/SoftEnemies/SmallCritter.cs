@@ -11,6 +11,7 @@ public class SmallCritter : MonoBehaviour {
 	Rigidbody2D rb2D;
 
 	void Start() {
+		initialFreezeTime = gameObject.GetComponent<SpawnProperties> ().initialFreezeTime;
 		rb2D = GetComponent<Rigidbody2D> ();
 		if (initialFreezeTime > 0)
 			Invoke ("InitializeMoveSpeed", initialFreezeTime);

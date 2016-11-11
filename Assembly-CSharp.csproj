@@ -92,6 +92,7 @@
      <Compile Include="Assets\Scripts\Enemies\Enemies\StompEnemies\ShellMan.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemies\StompEnemies\ShellManJumpingTrigger.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemyKnockback.cs" />
+     <Compile Include="Assets\Scripts\Enemies\SpawnProperties.cs" />
      <Compile Include="Assets\Scripts\Enviroment\ForegroundCover.cs" />
      <Compile Include="Assets\Scripts\Enviroment\Obstacles\SpikesfromGoogle.cs" />
      <Compile Include="Assets\Scripts\Events\CountDown.cs" />

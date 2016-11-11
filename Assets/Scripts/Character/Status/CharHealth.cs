@@ -17,7 +17,7 @@ public class CharHealth : MonoBehaviour {
 	public void TakeDamage(int damage) {
 		//Maybe give a few seconds invincibility and make sprite blink or so?
 		if (!status.Invulnerable ()) {
-			if (currentHealth - damage < 0) {
+			if (currentHealth - damage <= 0) {
 				currentHealth = 0;
 				Die ();
 			}
@@ -75,5 +75,6 @@ public class CharHealth : MonoBehaviour {
 
 	void Die() {
 		Debug.Log ("YOU DIED");
+		GameObject.Find ("GameOverScreen").GetComponent<GameOverScreen>().ShowGameover();
 	}
 }

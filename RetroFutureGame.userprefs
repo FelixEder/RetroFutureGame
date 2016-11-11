@@ -1,12 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Interactables\Items\PickUpableItem.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Interactables\Checkpoint.cs">
     <Files>
       <File FileName="Assets\Scripts\Interactables\Checkpoint.cs" Line="23" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\Bosses\StatueBoss\StatueBoss.cs" Line="37" Column="37" />
-      <File FileName="Assets\Scripts\Enemies\Bosses\BigBadBird\BigBadBird.cs" Line="118" Column="37" />
-      <File FileName="Assets\Scripts\Enemies\Bosses\FinalBoss\Phase3\Phase3Head.cs" Line="14" Column="32" />
-      <File FileName="Assets\Scripts\Interactables\Items\PickUpableItem.cs" Line="71" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\Bosses\StatueBoss\StatueBoss.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\Bosses\BigBadBird\BigBadBird.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\Bosses\FinalBoss\Phase3\Phase3Head.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Interactables\Items\PickUpableItem.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

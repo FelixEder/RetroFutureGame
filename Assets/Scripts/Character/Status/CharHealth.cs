@@ -19,7 +19,7 @@ public class CharHealth : MonoBehaviour {
 		if (!status.Invulnerable ()) {
 			if (currentHealth - damage <= 0) {
 				currentHealth = 0;
-				Die ();
+				Invoke ("Die", 1);
 			}
 			else
 				currentHealth -= damage;
@@ -75,6 +75,7 @@ public class CharHealth : MonoBehaviour {
 
 	void Die() {
 		Debug.Log ("YOU DIED");
+		gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);
 		GameObject.Find ("GameOverScreen").GetComponent<GameOverScreen>().ShowGameover();
 	}
 }

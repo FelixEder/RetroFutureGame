@@ -32,6 +32,7 @@ public class Upgrades : MonoBehaviour {
 
 			case "Health":
 				col.gameObject.GetComponent<CharHealth> ().IncreaseMaxHealth ();
+				col.gameObject.GetComponent<CharInventory> ().collectItem ();
 				break;
 
 			case "Speed":
@@ -40,6 +41,7 @@ public class Upgrades : MonoBehaviour {
 			
 			case "Energy":
 				col.gameObject.GetComponent<CharEnergy> ().IncreaseMaxEnergy ();
+				col.gameObject.GetComponent<CharInventory> ().collectItem ();
 				break;
 
 			case "MegaPunch":

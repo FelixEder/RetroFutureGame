@@ -1,12 +1,19 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Interactables\Checkpoint.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character\Status\CharStatus.cs">
     <Files>
-      <File FileName="Assets\Scripts\Interactables\Checkpoint.cs" Line="23" Column="1" />
+      <File FileName="Assets\Scripts\Interactables\Checkpoint.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemies\Bosses\StatueBoss\StatueBoss.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemies\Bosses\BigBadBird\BigBadBird.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemies\Bosses\FinalBoss\Phase3\Phase3Head.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Interactables\Items\PickUpableItem.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\PauseMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\GameOverScreen.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\Enemies\SoftEnemies\SmallCritter.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Interactables\Misc\PrefabSpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\SpawnProperties.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\Movement\CharMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\Status\CharStatus.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

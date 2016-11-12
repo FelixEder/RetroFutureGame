@@ -6,6 +6,7 @@ public class CharInventory : MonoBehaviour {
 //	CharFloat CharFloat;
 	//The item that can be picked up by the player
 	public GameObject pickupableItem;
+	int collectedItems;
 
 	void Start() {
 		//As we implement more upgrades in the game, more scripts will be added in the fields and here and disabled.
@@ -34,4 +35,7 @@ public class CharInventory : MonoBehaviour {
 		return pickupableItem;
 	}
 
+	public void collectItem() {
+		collectedItems++;
+	}
 }

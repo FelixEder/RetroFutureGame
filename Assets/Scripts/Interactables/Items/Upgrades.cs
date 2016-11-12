@@ -37,6 +37,7 @@ public class Upgrades : MonoBehaviour {
 
 			case "Speed":
 				col.gameObject.GetComponent<CharMovement> ().moveSpeed++;
+				col.gameObject.GetComponent<CharInventory> ().collectItem ();
 				break;
 			
 			case "Energy":

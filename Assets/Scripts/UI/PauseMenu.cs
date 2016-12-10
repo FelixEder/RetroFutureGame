@@ -8,7 +8,9 @@ public class PauseMenu : MonoBehaviour {
 	GameObject lastSelected;
 	EventSystem eventSystem;
 	InputManager input;
+	AudioControl control;
 	bool inputWasDisabled;
+
 //	bool cursorVisible = true;
 
 	void Start() {
@@ -16,6 +18,7 @@ public class PauseMenu : MonoBehaviour {
 		pauseObjects = GameObject.FindGameObjectsWithTag("ShowOnPause");
 		eventSystem = GameObject.Find ("EventSystem").GetComponent<EventSystem> ();
 		input = GameObject.Find ("InputManager").GetComponent<InputManager> ();
+		control = GameObject.Find ("Audio").GetComponent<AudioControl>();
 		HidePaused();
 	}
 		
@@ -52,6 +55,8 @@ public class PauseMenu : MonoBehaviour {
 			input.Disable ();
 			ShowPaused();
 			SetSelected (GameObject.Find("ResumeButton"));
+			control.SetMaster (20);
+
 		}
 		else if (Time.timeScale == 0) {
 			Time.timeScale = 1;
@@ -61,6 +66,7 @@ public class PauseMenu : MonoBehaviour {
 			SetSelected (null);
 			HideOnPlay ();
 			HidePaused();
+			control.SetMaster (100);
 		}
 	}
 

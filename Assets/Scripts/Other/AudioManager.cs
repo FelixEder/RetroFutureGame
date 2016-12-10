@@ -4,12 +4,25 @@ using System.Collections;
 public class AudioManager : MonoBehaviour {
 	public bool playOnEnter, stopOnExit, fadeIn, fadeOut;
 	public float fadeInSpeed, fadeOutSpeed;
-	float targetVolume;
+	float targetVolume, controlVolume;
 	AudioSource audio;
+	AudioControl control;
 
 	void Start() {
 		audio = GetComponent<AudioSource> ();
+		control = GameObject.Find ("Audio").GetComponent<AudioControl>();
 		targetVolume = audio.volume;
+		controlVolume = 100;
+	}
+
+	void Update() {
+		if (controlVolume != control.GetMaster ()) {
+			controlVolume = control.GetMaster ();
+			if (controlVolume == 100)
+				ResetVolume ();
+			else
+				SetVolume (controlVolume);
+		}
 	}
 
 	void OnTriggerEnter2D() {
@@ -48,5 +61,14 @@ public class AudioManager : MonoBehaviour {
 			yield return new WaitForSeconds (0.1f);
 		}
 		audio.Stop ();
+	}
+
+	/**Control the volume of the audio track in percent.*/
+	void SetVolume(float volume) {
+		audio.volume = targetVolume * volume * 0.01f;
+	}
+
+	void ResetVolume() {
+		audio.volume = targetVolume;
 	}
 }

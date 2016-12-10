@@ -109,6 +109,7 @@
      <Compile Include="Assets\Scripts\Interactables\Map\MapCover.cs" />
      <Compile Include="Assets\Scripts\Interactables\Misc\PickupableItemSpawner.cs" />
      <Compile Include="Assets\Scripts\Interactables\Misc\PrefabSpawner.cs" />
+     <Compile Include="Assets\Scripts\Other\AudioControl.cs" />
      <Compile Include="Assets\Scripts\Other\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Other\CameraAdjuster.cs" />
      <Compile Include="Assets\Scripts\Other\CameraMovement.cs" />
@@ -127,9 +128,6 @@
      <Compile Include="Assets\Scripts\UI\TutorialTrigger.cs" />
      <None Include="Assets\Materials\Shaders\Sprite Glitch.shader" />
      <None Include="Assets\Materials\Shaders\Solid Color.shader" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -144,9 +142,6 @@
  </Reference>
  <Reference Include="UnityEngine.HoloLens">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Purchasing">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityPurchasing/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>

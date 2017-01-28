@@ -19,7 +19,7 @@ public class CharHealth : MonoBehaviour {
 		if (!status.Invulnerable ()) {
 			if (currentHealth - damage <= 0) {
 				currentHealth = 0;
-				Invoke ("Die", 1);
+				Die();
 			}
 			else
 				currentHealth -= damage;

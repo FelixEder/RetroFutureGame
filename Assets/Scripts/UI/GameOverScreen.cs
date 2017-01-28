@@ -4,12 +4,10 @@ using System.Collections;
 public class GameOverScreen : MonoBehaviour {
 	GameObject[] gameoverObjects, prefabspawners;
 	GameObject player;
-	InputManager input;
 
 	void Start() {
 		gameoverObjects = GameObject.FindGameObjectsWithTag("ShowOnDeath");
 		prefabspawners = GameObject.FindGameObjectsWithTag("PrefabSpawner");
-		input = GameObject.Find ("InputManager").GetComponent<InputManager> ();
 		player = GameObject.Find ("Char");
 		HideGameover ();
 	}

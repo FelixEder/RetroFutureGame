@@ -7,36 +7,36 @@ public class Electrohaz : MonoBehaviour {
 	SpriteRenderer sr;
 	public int damage = 99;
 
-	void start() {
+	void Start() {
 		sr = GetComponent<SpriteRenderer>();
-		sr = inactive;
+		sr.sprite = inactive;
 		InvokeRepeating("EspisMetod", 0, 2);
+		Debug.Log (sr.sprite + " has started");
 	}
 
 	void EspisMetod() {
-
-		SpriteRenderer  sr;
- 		if(sr.sprite.equals(inactive) {
+		Debug.Log (sr.sprite + " " + inactive + charging + active);
+		if(sr.sprite == inactive) {
  			sr.sprite = charging;
 
- 			}
- 		else if(sr.sprite.equals(charging) {
+ 		}
+		else if(sr.sprite == charging) {
  			sr.sprite = active;
  			isActive = true;
- 			}
-		else if(sr.sprite.equals(active) {
+ 		}
+		else if(sr.sprite == active) {
 			sr.sprite = inactive;
 			isActive = false;
-			}
+		}
 	}
-
-
-	void OnTriggerEnter2D(Collision2D col) {
+	void OnTriggerStay2D(Collider2D col) {
 		switch(col.gameObject.tag) {
 
 		case "Char":
-				if(isActive) 
-					col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
+			if (isActive) {
+				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
+				Debug.Log ("player is not happy");
+			}
 			break;
 
 		case "SmallCritter" :

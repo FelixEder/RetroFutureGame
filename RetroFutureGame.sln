@@ -1,9 +1,9 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{6DE2215B-FC3C-2AD1-62E3-89376D365F0D}") = "RetroFutureGame", "Assembly-CSharp.csproj", "{3CBFC496-3BD9-0ED6-922C-A02C97138AD6}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetroFutureGame", "Assembly-CSharp.csproj", "{3CBFC496-3BD9-0ED6-922C-A02C97138AD6}"
 EndProject
-Project("{6DE2215B-FC3C-2AD1-62E3-89376D365F0D}") = "RetroFutureGame", "Assembly-CSharp-Editor.csproj", "{70AFECE5-41DD-9F6A-0985-8C2281DA0E8D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetroFutureGame", "Assembly-CSharp-Editor.csproj", "{70AFECE5-41DD-9F6A-0985-8C2281DA0E8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

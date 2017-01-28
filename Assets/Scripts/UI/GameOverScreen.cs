@@ -33,8 +33,10 @@ public class GameOverScreen : MonoBehaviour {
 	public void Respawn() {
 		player.GetComponent<CharHealth> ().MaximizeHealth ();
 		player.GetComponent<CharEnergy> ().MaximizeEnergy ();
-		foreach (GameObject g in prefabspawners)
+		foreach (GameObject g in prefabspawners) {
 			g.GetComponent<PrefabSpawner> ().KillChildren ();
+			g.GetComponent<PrefabSpawner> ().SetToRespawn ();
+		}
 		player.transform.position = player.GetComponent<Checkpoint> ().activeCheckpoint.position;
 		HideGameover ();
 	}

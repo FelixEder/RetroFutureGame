@@ -8,7 +8,7 @@ public class PickupableItemSpawner : MonoBehaviour {
 	/**The amount of time in seconds between each spawn*/
 	public float spawnStart, spawnInterval;
 	/**The max amount of simultaneously spawned prefabs.*/
-	public int maxSimultaneous, spawnArea;
+	public int maxSimultaneous, spawnAreaX, spawnAreaY;
 	//The current number of spawned prefabs.
 	int current;
 	/**The name of the prefab to spawn*/
@@ -23,7 +23,7 @@ public class PickupableItemSpawner : MonoBehaviour {
 	/**Instantiates "type" prefab as gameobject and sets this gameobject as parent if the parent's childcount is less than maxSimultaneous.*/
 	void Spawn() {
 		if (current < maxSimultaneous) {
-			Vector3 babyBoom = new Vector3 (spawnLoc.x + Random.Range (-spawnArea, spawnArea), spawnLoc.y + Random.Range (-spawnArea, spawnArea), spawnLoc.z);
+			Vector3 babyBoom = new Vector3 (spawnLoc.x + Random.Range (-spawnAreaX, spawnAreaX), spawnLoc.y + Random.Range (-spawnAreaY, spawnAreaY), spawnLoc.z);
 			GameObject instance = Instantiate (Resources.Load (prefab), babyBoom, Quaternion.identity) as GameObject;
 			instance.GetComponent<PickUpableItem> ().PIS = GetComponent<PickupableItemSpawner> ();
 			IncreaseCurrent ();

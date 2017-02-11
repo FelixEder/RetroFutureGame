@@ -2,12 +2,13 @@
 using System.Collections;
 
 public class GameOverScreen : MonoBehaviour {
-	GameObject[] gameoverObjects, prefabspawners;
+	GameObject[] gameoverObjects, prefabspawners, bossSpawners;
 	GameObject player;
 
 	void Start() {
 		gameoverObjects = GameObject.FindGameObjectsWithTag("ShowOnDeath");
 		prefabspawners = GameObject.FindGameObjectsWithTag("PrefabSpawner");
+		bossSpawners = GameObject.FindGameObjectsWithTag("BossActivator");
 		player = GameObject.Find ("Char");
 		HideGameover ();
 	}
@@ -35,6 +36,8 @@ public class GameOverScreen : MonoBehaviour {
 			g.GetComponent<PrefabSpawner> ().KillChildren ();
 			g.GetComponent<PrefabSpawner> ().SetToRespawn ();
 		}
+		foreach (GameObject g in bossSpawners) 
+			g.GetComponent<BossActivator> ().KillExtraChild ();
 		player.transform.position = player.GetComponent<Checkpoint> ().activeCheckpoint.transform.position;
 		HideGameover ();
 	}

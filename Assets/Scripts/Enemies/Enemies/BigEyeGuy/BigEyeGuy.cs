@@ -3,9 +3,9 @@ using System.Collections;
 
 public class BigEyeGuy : MonoBehaviour {
 	public float moveSpeed, knockForce, jumpSpeed;
-	bool isMirrored = false;
+	bool isMirrored = false, invulnerable;
 	Rigidbody2D rb2D;
-	public int health = 3, damage = 1;
+	public int health = 3, damage = 1, invulnerabilityTime;
 
 	void Start() {
 		rb2D = GetComponent<Rigidbody2D> ();
@@ -71,22 +71,28 @@ public class BigEyeGuy : MonoBehaviour {
 	 * Method called when enemy is hit by the player
 	 */
 	public void GetHurt(int damage) {
-		//Play a sound and animation.
-		health -= damage;
-		if (health <= 0) {
-			//Enemy is dead, play animation and sound.
-			int ranNumb = Random.Range(0, 60);
-			//If there are more healthdrops to add later, simply change the random-range and add more if-statements
-			if (ranNumb < 20) {
-				Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
-			} else if (ranNumb < 40) {
-				Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
+		if (!invulnerable) {
+			//Play a sound and animation.
+			health -= damage;
+			invulnerable = true;
+			Invoke ("SetVulnerable", invulnerabilityTime);
+			if (health <= 0) {
+				//Enemy is dead, play animation and sound.
+				int ranNumb = Random.Range (0, 60);
+				if (ranNumb < 20) {
+					Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
+				} else if (ranNumb < 40) {
+					Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
+				}
+				Destroy (this.gameObject);
 			}
-			Destroy (this.gameObject);
+			GetMirrored ();
 		}
-		GetMirrored ();
 	}
 
+	void SetVulnerable() {
+		invulnerable = false;
+	}
 	public void Jump () {
 		if (Random.Range (0, 200) < 5) {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, jumpSpeed);

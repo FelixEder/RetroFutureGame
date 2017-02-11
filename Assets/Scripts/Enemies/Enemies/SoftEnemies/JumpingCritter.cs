@@ -3,9 +3,9 @@ using System.Collections;
 
 public class JumpingCritter : MonoBehaviour {
 	public float moveSpeed, knockForce, jumpSpeed;
-	bool isMirrored = false;
+	bool isMirrored = false, invulnerable;
 	Rigidbody2D rb2D;
-	public int health = 2, damage = 1;
+	public int health = 2, damage = 1,  invulnerabilityTime;
 
 	void Start() {
 		rb2D = GetComponent<Rigidbody2D> ();
@@ -79,20 +79,27 @@ public class JumpingCritter : MonoBehaviour {
 	 * Method called when enemy is hit by the player
 	 */
 	public void TakeDamage(int damage) {
-		//Play a sound and animation.
-		health -= damage;
-		if (health <= 0) {
-			//Enemy is dead, play animation and sound.
-			int ranNumb = Random.Range(0, 60);
-			//If there are more healthdrops to add later, simply change the random-range and add more if-statements
-			if (ranNumb < 20) {
-				Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
-			} else if (ranNumb < 40) {
-				Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
+		if (!invulnerable) {
+			//Play a sound and animation.
+			health -= damage;
+			invulnerable = true;
+			Invoke ("SetVulnerable", invulnerabilityTime);
+			if (health <= 0) {
+				//Enemy is dead, play animation and sound.
+				int ranNumb = Random.Range (0, 60);
+				if (ranNumb < 20) {
+					Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
+				} else if (ranNumb < 40) {
+					Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
+				}
+				Destroy (this.gameObject);
 			}
-			Destroy (this.gameObject);
+			GetMirrored ();
 		}
-		GetMirrored ();
+	}
+
+	void SetVulnerable() {
+		invulnerable = false;
 	}
 
 	public void Jump () {

@@ -11,11 +11,10 @@ public class Electrohaz : MonoBehaviour {
 		sr = GetComponent<SpriteRenderer>();
 		sr.sprite = inactive;
 		InvokeRepeating("EspisMetod", 0, 2);
-		Debug.Log (sr.sprite + " has started");
 	}
 
 	void EspisMetod() {
-		Debug.Log (sr.sprite + " " + inactive + charging + active);
+		//Debug.Log (sr.sprite + " " + inactive + charging + active);
 		if(sr.sprite == inactive) {
  			sr.sprite = charging;
 

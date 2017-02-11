@@ -30,10 +30,16 @@ public class CharMegaPunch : MonoBehaviour {
 				//SoundFX and animation should reflect that punch has been fully charged
 			}
 		} else if (!input.GetKey("mega") && charging) {
-			Debug.Log ("Doing Mega-punch!");
-			charging = false;
-			ExecuteMegaPunch ();
-			Invoke ("SetNoLongerMegaPunch", 1);
+			if (!input.Enabled ()) {
+				status.NoLongerMegaPunching ();
+				chargeCounter = 0;
+				charging = false;
+			} else {
+				Debug.Log ("Doing Mega-punch!");
+				charging = false;
+				ExecuteMegaPunch ();
+				Invoke ("SetNoLongerMegaPunch", 1);
+			}
 		}
 	}
 
@@ -45,7 +51,7 @@ public class CharMegaPunch : MonoBehaviour {
 		if (chargeCounter >= chargeLimit) {
 			if (charEnergy.UseEnergy (3)) {
 				//Play correct animation for charged Mega Punch
-				Debug.Log("Did charged MegaPunch!");
+				Debug.Log ("Did charged MegaPunch!");
 				status.chargedMegaPunch = true;
 				damage = 5;
 				chargeCounter = 0;
@@ -54,14 +60,20 @@ public class CharMegaPunch : MonoBehaviour {
 				//No energy, play correct things
 				chargeCounter = 0;
 			}
-		} else if (charEnergy.UseEnergy (1)) {
-			Debug.Log ("Did regular MegaPunch!");
-			status.megaPunch = true;
-			damage = 3;
-			chargeCounter = 0;
+		} else if (chargeCounter >= 50) {
+			if (charEnergy.UseEnergy (1)) {
+				Debug.Log ("Did regular MegaPunch!");
+				status.megaPunch = true;
+				damage = 3;
+				chargeCounter = 0;
+			} else {
+				Debug.Log ("Not enough energy for MegaPunch");
+				//No energy, play correct things
+				chargeCounter = 0;
+			}
 		} else {
-			Debug.Log ("Not enough energy for MegaPunch");
-			//No energy, play correct things
+			Debug.Log ("Too low chargecounter!");
+			//Too low chargecounter, play correct things
 			chargeCounter = 0;
 		}
 	}

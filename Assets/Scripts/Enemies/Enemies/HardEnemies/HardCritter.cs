@@ -3,9 +3,9 @@ using System.Collections;
 
 public class HardCritter : MonoBehaviour {
 	public float moveSpeed, knockForce;
-	bool isMirrored = false, rushing;
+	bool isMirrored = false, rushing, invulnerable;
 	Rigidbody2D rb2D;
-	public int health = 5, damage = 3;
+	public int health = 5, damage = 3, invulnerabilityTime;
 
 	void Start() {
 		rb2D = GetComponent<Rigidbody2D> ();
@@ -64,7 +64,7 @@ public class HardCritter : MonoBehaviour {
 
 	public void Rush() {
 		//Enemy is rushing, play relevant things
-		if (!rushing) {
+		if (!rushing && Random.Range(0, 4) == 0) {
 			Debug.Log ("Enemy is rushing");
 			damage += 2;
 			moveSpeed += 5;
@@ -99,18 +99,26 @@ public class HardCritter : MonoBehaviour {
 	 * Method called when enemy is hit by the player
 	 */
 	public void GetHurt(int damage) {
-		//Play a sound and animation.
-		health -= damage;
-		if (health <= 0) {
-			//Enemy is dead, play animation and sound.
-			int ranNumb = Random.Range(0, 60);
-			if (ranNumb < 20) {
-				Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
-			} else if (ranNumb < 40) {
-				Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
+		if (!invulnerable) {
+			//Play a sound and animation.
+			health -= damage;
+			invulnerable = true;
+			Invoke ("SetVulnerable", invulnerabilityTime);
+			if (health <= 0) {
+				//Enemy is dead, play animation and sound.
+				int ranNumb = Random.Range (0, 60);
+				if (ranNumb < 20) {
+					Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
+				} else if (ranNumb < 40) {
+					Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
+				}
+				Destroy (this.gameObject);
 			}
-			Destroy (this.gameObject);
+			GetMirrored ();
 		}
-		GetMirrored ();
+	}
+
+	void SetVulnerable() {
+		invulnerable = false;
 	}
 }

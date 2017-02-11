@@ -3,7 +3,7 @@ using System.Collections;
 
 public class HardCritter : MonoBehaviour {
 	public float moveSpeed, knockForce;
-	bool isMirrored = false;
+	bool isMirrored = false, rushing;
 	Rigidbody2D rb2D;
 	public int health = 5, damage = 3;
 
@@ -64,10 +64,13 @@ public class HardCritter : MonoBehaviour {
 
 	public void Rush() {
 		//Enemy is rushing, play relevant things
-		Debug.Log("Enemy is rushing");
-		damage += 2;
-		moveSpeed += 5;
-		Invoke ("StopRush", 1f);
+		if (!rushing) {
+			Debug.Log ("Enemy is rushing");
+			damage += 2;
+			moveSpeed += 5;
+			rushing = true;
+			Invoke ("StopRush", 1f);
+		}
 	}
 
 	void StopRush() {
@@ -75,6 +78,7 @@ public class HardCritter : MonoBehaviour {
 		//Enemy stops rushing, play relevant things
 		damage -= 2;
 		moveSpeed -= 5;
+		rushing = false;
 	}
 
 	/**

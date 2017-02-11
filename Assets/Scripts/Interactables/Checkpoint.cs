@@ -3,21 +3,22 @@ using System.Collections;
 
 public class Checkpoint : MonoBehaviour {
 	//public GameObject checkpoint;
-	public Transform activeCheckpoint;
+	public GameObject activeCheckpoint;
 
 	void Start () {
-		activeCheckpoint = GameObject.Find("CheckPoint (1)").transform;
+		activeCheckpoint = GameObject.Find("CheckPoint (1)");
 	}
 	
 	void OnTriggerEnter2D(Collider2D col) {
 		if(col.gameObject.tag.Equals("CheckPoint")) {
-			SetCheckpoint(col.gameObject.transform);
+			if(!col.gameObject.Equals(activeCheckpoint))
+				SetCheckpoint(col.gameObject);
 		}
 	}
 
-	void SetCheckpoint(Transform location) {
-		activeCheckpoint = location;
+	void SetCheckpoint(GameObject checkpoint) {
+		activeCheckpoint = checkpoint;
 		//Maybe do some nice animation and add sound.
-		Debug.Log("Checkpoint activated.\nLocation has been set to: " + location.position);
+		Debug.Log("Checkpoint activated.\nLocation has been set to: " + checkpoint.transform.position);
 	}
 }

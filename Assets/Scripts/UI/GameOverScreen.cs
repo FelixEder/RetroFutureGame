@@ -35,7 +35,7 @@ public class GameOverScreen : MonoBehaviour {
 			g.GetComponent<PrefabSpawner> ().KillChildren ();
 			g.GetComponent<PrefabSpawner> ().SetToRespawn ();
 		}
-		player.transform.position = player.GetComponent<Checkpoint> ().activeCheckpoint.position;
+		player.transform.position = player.GetComponent<Checkpoint> ().activeCheckpoint.transform.position;
 		HideGameover ();
 	}
 }

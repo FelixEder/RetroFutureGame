@@ -1,21 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enviroment\Obstacles\Electrohaz.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\Enemies\SoftEnemies\SmallCritter.cs">
     <Files>
-      <File FileName="Assets\Scripts\Interactables\Checkpoint.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\GameOverScreen.cs" Line="10" Column="71" />
-      <File FileName="Assets\Scripts\Interactables\Misc\PrefabSpawner.cs" Line="38" Column="88" />
-      <File FileName="Assets\Scripts\Enemies\SpawnProperties.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\Status\CharHealth.cs" Line="22" Column="10" />
-      <File FileName="Assets\Scripts\Character\Status\CharEnergy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\PauseMenu.cs" Line="58" Column="27" />
-      <File FileName="Assets\Scripts\Enemies\Enemies\SoftEnemies\SmallCritter.cs" Line="33" Column="16" />
-      <File FileName="Assets\Scripts\Character\Status\CharStatus.cs" Line="21" Column="32" />
-      <File FileName="Assets\Scripts\UI\VictoryScreen.cs" Line="32" Column="35" />
-      <File FileName="Assets\Scripts\UI\MainMenu.cs" Line="3" Column="1" />
-      <File FileName="Assets\Scripts\UI\CallOnVictory.cs" Line="19" Column="3" />
-      <File FileName="Assets\Scripts\UI\CreditsManager.cs" Line="16" Column="1" />
-      <File FileName="Assets\Scripts\Enviroment\Obstacles\Electrohaz.cs" Line="32" Column="17" />
+      <File FileName="Assets\Scripts\Interactables\Checkpoint.cs" Line="7" Column="2" />
+      <File FileName="Assets\Scripts\UI\GameOverScreen.cs" Line="42" Column="16" />
+      <File FileName="Assets\Scripts\Enemies\Bosses\BossActivator.cs" Line="21" Column="67" />
+      <File FileName="Assets\Scripts\Interactables\Misc\PickupableItemSpawner.cs" Line="27" Column="42" />
+      <File FileName="Assets\Scripts\Interactables\Items\EnemyDrops.cs" Line="31" Column="72" />
+      <File FileName="Assets\Scripts\Enemies\Enemies\SoftEnemies\SmallCritter.cs" Line="67" Column="6" />
+      <File FileName="Assets\Scripts\Interactables\Misc\PrefabSpawner.cs" Line="36" Column="21" NotebookId="1" />
+      <File FileName="Assets\Scripts\Interactables\Items\PickUpableItem.cs" Line="13" Column="3" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

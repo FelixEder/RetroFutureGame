@@ -10,7 +10,7 @@ public class PickUpableItem : MonoBehaviour {
 	bool beingHeld;
 	public int damage, health;
 	GameObject chara;
-
+		
 	void Start() {
 		rigidBody2D = GetComponent<Rigidbody2D> ();
 		originalParent = transform.parent;

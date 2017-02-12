@@ -2,13 +2,13 @@
 using System.Collections;
 
 public class GameOverScreen : MonoBehaviour {
-	GameObject[] gameoverObjects, prefabspawners, bossSpawners;
+	GameObject[] gameoverObjects, prefabspawners, itemspawners;
 	GameObject player;
 
 	void Start() {
 		gameoverObjects = GameObject.FindGameObjectsWithTag("ShowOnDeath");
 		prefabspawners = GameObject.FindGameObjectsWithTag("PrefabSpawner");
-		bossSpawners = GameObject.FindGameObjectsWithTag("BossActivator");
+		itemspawners = GameObject.FindGameObjectsWithTag("PIS");
 		player = GameObject.Find ("Char");
 		HideGameover ();
 	}
@@ -32,12 +32,23 @@ public class GameOverScreen : MonoBehaviour {
 	public void Respawn() {
 		player.GetComponent<CharHealth> ().MaximizeHealth ();
 		player.GetComponent<CharEnergy> ().MaximizeEnergy ();
+
 		foreach (GameObject g in prefabspawners) {
 			g.GetComponent<PrefabSpawner> ().KillChildren ();
 			g.GetComponent<PrefabSpawner> ().SetToRespawn ();
 		}
+
+
+		GameObject[] bossSpawners = GameObject.FindGameObjectsWithTag("BossActivator");
 		foreach (GameObject g in bossSpawners) 
 			g.GetComponent<BossActivator> ().KillExtraChild ();
+		
+		foreach (GameObject g in itemspawners)
+			g.GetComponent<PickupableItemSpawner> ().KillChildren ();
+		
+		GameObject[] drops = GameObject.FindGameObjectsWithTag("Drops");
+		foreach(GameObject g in drops)
+			Destroy (g);
 		player.transform.position = player.GetComponent<Checkpoint> ().activeCheckpoint.transform.position;
 		HideGameover ();
 	}

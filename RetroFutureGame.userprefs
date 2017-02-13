@@ -1,15 +1,18 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\Enemies\SoftEnemies\SmallCritter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\Bosses\BossActivator.cs">
     <Files>
-      <File FileName="Assets\Scripts\Interactables\Checkpoint.cs" Line="7" Column="2" />
-      <File FileName="Assets\Scripts\UI\GameOverScreen.cs" Line="42" Column="16" />
-      <File FileName="Assets\Scripts\Enemies\Bosses\BossActivator.cs" Line="21" Column="67" />
-      <File FileName="Assets\Scripts\Interactables\Misc\PickupableItemSpawner.cs" Line="27" Column="42" />
-      <File FileName="Assets\Scripts\Interactables\Items\EnemyDrops.cs" Line="31" Column="72" />
-      <File FileName="Assets\Scripts\Enemies\Enemies\SoftEnemies\SmallCritter.cs" Line="67" Column="6" />
+      <File FileName="Assets\Scripts\Interactables\Checkpoint.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\GameOverScreen.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\Bosses\BossActivator.cs" Line="21" Column="1" />
+      <File FileName="Assets\Scripts\Interactables\Misc\PickupableItemSpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Interactables\Items\EnemyDrops.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\Enemies\SoftEnemies\SmallCritter.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\EnemyKnockback.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Interactables\Misc\PrefabSpawner.cs" Line="36" Column="21" NotebookId="1" />
       <File FileName="Assets\Scripts\Interactables\Items\PickUpableItem.cs" Line="13" Column="3" NotebookId="1" />
+      <File FileName="Assets\Scripts\Character\Actions\CharPunch.cs" Line="56" Column="32" NotebookId="1" />
+      <File FileName="Assets\Scripts\UI\MainMenuLogo.cs" Line="1" Column="1" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

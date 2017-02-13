@@ -18,8 +18,10 @@ public class BossActivator : MonoBehaviour {
 	}
 
 	public void KillExtraChild() {
-		GameObject.Destroy (transform.GetChild(startChildren).gameObject);
-		Debug.Log ("Prefab spawner:\nKilled the extra child.");
+		if (transform.childCount > startChildren) {
+			GameObject.Destroy (transform.GetChild (startChildren).gameObject);
+			Debug.Log ("Prefab spawner:\nKilled the extra child.");
+		}
 	}
 		
 	void OnTriggerEnter2D(Collider2D col) {

@@ -2,56 +2,60 @@ using UnityEngine;
 using System.Collections;
 
 public class CharPunch : MonoBehaviour {
-	CharInventory CharInventory;
+	CharEnergy charEnergy;
+	CharInventory charInventory;
 	CharStatus charStatus;
 	InputManager input;
-	public bool holdPunch, holdMega, onCooldown, branchInv;
+	public bool holdPunch, holdMega, onCooldown, branchInv, megaAquired;
 	string attackType;
-	int damage;
-	float cooldownTime;
+	int damage, charge, limit = 200;
 
 	void Start() {
-		CharInventory = transform.parent.GetComponent<CharInventory> ();
+		charEnergy = transform.parent.GetComponent<CharEnergy> ();
+		charInventory = transform.parent.GetComponent<CharInventory> ();
 		charStatus = transform.parent.GetComponent<CharStatus> ();
 		input = GameObject.Find ("InputManager").GetComponent<InputManager> ();
 	}
 
 	void Update() {
-		transform.localPosition = new Vector2 (0.1f, 0);
-		transform.localPosition = new Vector2 (0, 0);
+		//PUNCH
 		if (!input.GetKey ("attack") && holdPunch)
 			holdPunch = false;
-		else if (input.GetKey ("attack") && !holdPunch && !charStatus.isSmall && !onCooldown)
-			damage = ExecutePunch ();
-		else if (!input.GetKey ("mega") && holdMega)
-			holdMega = false;
-		else if (input.GetKey ("mega") && !holdMega && !charStatus.isSmall && !onCooldown)
-			damage = 0; //MEGAPUNCH EXECUTE HERE!
+		else if (input.GetKey ("attack") && !holdPunch && !charStatus.isSmall) {
+			holdPunch = true;
+			if (!onCooldown)
+				damage = ExecutePunch ();
+		}
+
+		//MEGA
+		if (input.GetKey ("mega") && !charStatus.isSmall && !holdMega && megaAquired) {
+			holdMega = true;
+			StartCoroutine (ChargeMega ());
+		}
+
+		//TRIGGER
+		transform.localPosition = new Vector2 (0.1f, 0);
+		transform.localPosition = new Vector2 (0, 0);
 	}
 
-	/**
-	 * This method determines what kind of attack the player should do.
-	 * It then plays the correct animation and sets the right damage amount.
-	 */
+	//PUNCH
 	int ExecutePunch() {
-		holdPunch = true;
 		onCooldown = true;
-		cooldownTime = 0.1f;
 		transform.parent.gameObject.GetComponent<Animator> ().SetTrigger ("Punching");
-		if (CharInventory.IsHoldingItem ()) {
-			GameObject holdingItem = CharInventory.GetHoldingItem ();
+		if (charInventory.IsHoldingItem ()) {
+			GameObject holdingItem = charInventory.GetHoldingItem ();
 			switch (holdingItem.GetComponent<PickUpableItem>().GetItemType()) {
 
 			case "Rock":
 				//Play correct animation
 				attackType = "Rock";
-				StartCoroutine (TriggerPunch (1f, 0.5f));
+				StartCoroutine (ExecuteTrigger (1f, 0.5f));
 				return holdingItem.GetComponent<PickUpableItem>().damage;
 
 			case "Branch":
 				//Play correct animation
 				attackType = "Branch";
-				StartCoroutine (TriggerPunch (1.5f, 0.75f));
+				StartCoroutine (ExecuteTrigger (1.5f, 0.75f));
 				return holdingItem.GetComponent<PickUpableItem>().damage;
 
 			default:
@@ -62,13 +66,59 @@ public class CharPunch : MonoBehaviour {
 		else {
 			//Play the standard animation
 			attackType = "Punch";
-			StartCoroutine (TriggerPunch (1f, 0.5f));
+			StartCoroutine (ExecuteTrigger (1f, 0.5f));
 			return 1;
 		}
-//		attackType = "";
+	}
+		
+	//MEGA
+	IEnumerator ChargeMega() {
+		while (input.GetKey ("mega")) {
+			while (charge < limit && input.GetKey("mega")) {
+				charge++;
+				if(charge == 50 || charge == limit)
+					Debug.Log ("MegaPunch charge [ " + charge + " ]");
+				yield return 0;
+			}
+			yield return 0;
+		}
+		damage = ExecuteMega ();
+		charge = 0;
+		holdMega = false;
 	}
 
-	IEnumerator TriggerPunch(float sizeX, float posX) {
+	int ExecuteMega() {
+		if (charge == limit) {
+			if (charEnergy.UseEnergy (3)) {
+				Debug.Log ("Full MegaPunch");
+				attackType = "FullMega";
+				StartCoroutine (ExecuteTrigger (2f, 1f));
+				return 5;
+			} else {
+				Debug.Log ("Not enough energy for Full MegaPunch");
+				//No energy, play correct things
+			}
+		}
+		else if (charge >= 50) {
+			if (charEnergy.UseEnergy (1)) {
+				Debug.Log ("Regular MegaPunch");
+				attackType = "Mega";
+				StartCoroutine (ExecuteTrigger (2f, 1f));
+				return 3;
+			} else {
+				Debug.Log ("Not enough energy for Regular MegaPunch");
+				//No energy, play correct things
+			}
+		}
+		else {
+			Debug.Log ("MegaPunch canceled");
+			//Too low chargecounter, play correct things
+		}
+		return 1;
+	}
+
+	//TRIGGER
+	IEnumerator ExecuteTrigger(float sizeX, float posX) {
 		GetComponent<BoxCollider2D> ().enabled = true;
 		GetComponent<BoxCollider2D> ().size = new Vector2 (sizeX, 2f /*1.849279f*/);
 		GetComponent<BoxCollider2D> ().offset = new Vector2 (posX, -0.2f /*-0.2104849f*/);
@@ -78,16 +128,15 @@ public class CharPunch : MonoBehaviour {
 
 		yield return new WaitForSeconds (0.1f);
 		GetComponent<BoxCollider2D> ().enabled = false;
-		yield return new WaitForSeconds (cooldownTime);
+		yield return new WaitForSeconds (0.1f);
 		onCooldown = false;
 		branchInv = false;
 	}
 
-	//Triggered when player punches an object.
 	void OnTriggerEnter2D(Collider2D victim) {
 		if(attackType == "Branch" && !branchInv) {
-			if (CharInventory.GetHoldingItem ().GetComponent<PickUpableItem> ().Break () <= 0) {
-				CharInventory.SetHoldingItem (null);
+			if (charInventory.GetHoldingItem ().GetComponent<PickUpableItem> ().Break () <= 0) {
+				charInventory.SetHoldingItem (null);
 				attackType = "";
 			}
 			branchInv = true;
@@ -101,7 +150,7 @@ public class CharPunch : MonoBehaviour {
 		case "Barrier":
 			Debug.Log ("BarrierType: " + victim.gameObject.GetComponent<Barriers> ().GetBarrierType ());
 			if (attackType == victim.gameObject.GetComponent<Barriers> ().GetBarrierType ()) {
-				victim.gameObject.GetComponent<Barriers> ().TakeDamage (1);
+				victim.gameObject.GetComponent<Barriers> ().TakeDamage (damage);
 			}
 			break;
 
@@ -127,7 +176,10 @@ public class CharPunch : MonoBehaviour {
 
 		case "HardEnemy":
 			if (attackType == "Rock") {
-				victim.gameObject.transform.parent.GetComponent<BigEyeGuy> ().GetHurt (1);
+				victim.gameObject.transform.parent.GetComponent<HardCritter> ().GetHurt (1);
+			}
+			if (attackType == "Mega" || attackType == "FullMega") {
+				victim.gameObject.GetComponent<HardCritter>().GetHurt(damage);
 			}
 			break;
 
@@ -136,7 +188,33 @@ public class CharPunch : MonoBehaviour {
 				victim.gameObject.transform.parent.GetComponent<BigEyeGuy> ().GetHurt (1);
 			}
 			break;
+
+		case "FinalBossWeakSpot":
+			if (attackType == "FullMega") {
+				Debug.Log ("Full MegaPunched the boss!"); 
+				victim.gameObject.GetComponent<Phase1> ().GetHurt (3);
+			} else if (attackType == "Mega") {
+				Debug.Log ("Regular MegaPunched the boss!"); 
+				victim.gameObject.GetComponent<Phase1> ().GetHurt (1);
+			} else {
+				Debug.Log ("Invulnerable to AttackType [ " + attackType + " ]");
+			}
+			break;
+
+		case "FinalBossArmor":
+			if (victim.gameObject.GetComponent<Phase2> ().blued) {
+				if (attackType == "FullMega") {
+					Debug.Log ("Full MegaPunched the boss phase 2!"); 
+					victim.gameObject.GetComponent<Phase2> ().GetHurt (3);
+				} else if (attackType == "Mega"){
+					Debug.Log ("Regular MegaPunched the boss phase 2!"); 
+					victim.gameObject.GetComponent<Phase2> ().GetHurt (1);
+				} else {
+					Debug.Log ("Invulnerable to AttackType [ " + attackType + " ]");
+				}
+			}
+			break;
 		}
-		Debug.Log ("Punched [ " + victim + " ] with tag [ " + victim.gameObject.tag + " ] and attackType [ " + attackType + " ]");
+		Debug.Log ("Punched [ " + victim + " ] - tag [ " + victim.gameObject.tag + " ] - attackType [ " + attackType + " ] - damage [ " + damage + " ]");
 	}
 }

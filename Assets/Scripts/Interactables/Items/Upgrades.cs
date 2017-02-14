@@ -46,7 +46,7 @@ public class Upgrades : MonoBehaviour {
 				break;
 
 			case "MegaPunch":
-				col.gameObject.transform.GetChild (5).GetComponent<CharMegaPunch> ().enabled = true;
+				col.gameObject.transform.GetChild (5).GetComponent<CharPunch> ().megaAquired = true;
 				break;
 			}
 			GameObject.Find ("tutorialPanel").GetComponent<TutorialManager> ().DisplayTutorial (upgradeType);

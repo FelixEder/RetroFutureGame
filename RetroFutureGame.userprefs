@@ -1,18 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\Bosses\BossActivator.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character\Actions\CharPickUp.cs">
     <Files>
-      <File FileName="Assets\Scripts\Interactables\Checkpoint.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\GameOverScreen.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\Bosses\BossActivator.cs" Line="21" Column="1" />
-      <File FileName="Assets\Scripts\Interactables\Misc\PickupableItemSpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Interactables\Items\EnemyDrops.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\Actions\CharPunch.cs" Line="134" Column="120" />
+      <File FileName="Assets\Scripts\Enemies\Bosses\BossActivator.cs" Line="24" Column="4" />
       <File FileName="Assets\Scripts\Enemies\Enemies\SoftEnemies\SmallCritter.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\EnemyKnockback.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Interactables\Misc\PrefabSpawner.cs" Line="36" Column="21" NotebookId="1" />
-      <File FileName="Assets\Scripts\Interactables\Items\PickUpableItem.cs" Line="13" Column="3" NotebookId="1" />
-      <File FileName="Assets\Scripts\Character\Actions\CharPunch.cs" Line="56" Column="32" NotebookId="1" />
-      <File FileName="Assets\Scripts\UI\MainMenuLogo.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets\Scripts\Interactables\Items\PickUpableItem.cs" Line="13" Column="3" />
+      <File FileName="Assets\Scripts\Character\Actions\CharPickUp.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\Status\CharInventory.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

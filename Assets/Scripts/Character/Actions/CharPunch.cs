@@ -5,9 +5,10 @@ public class CharPunch : MonoBehaviour {
 	CharInventory CharInventory;
 	CharStatus charStatus;
 	InputManager input;
-	public bool holdPunch, onCooldown, branchInv;
+	public bool holdPunch, holdMega, onCooldown, branchInv;
 	string attackType;
 	int damage;
+	float cooldownTime;
 
 	void Start() {
 		CharInventory = transform.parent.GetComponent<CharInventory> ();
@@ -20,10 +21,12 @@ public class CharPunch : MonoBehaviour {
 		transform.localPosition = new Vector2 (0, 0);
 		if (!input.GetKey ("attack") && holdPunch)
 			holdPunch = false;
-		else if (input.GetKey ("attack") && !holdPunch && !charStatus.isSmall && !onCooldown) {
-			Debug.Log ("onCooldown = " + onCooldown);
+		else if (input.GetKey ("attack") && !holdPunch && !charStatus.isSmall && !onCooldown)
 			damage = ExecutePunch ();
-		}
+		else if (!input.GetKey ("mega") && holdMega)
+			holdMega = false;
+		else if (input.GetKey ("mega") && !holdMega && !charStatus.isSmall && !onCooldown)
+			damage = 0; //MEGAPUNCH EXECUTE HERE!
 	}
 
 	/**
@@ -33,6 +36,7 @@ public class CharPunch : MonoBehaviour {
 	int ExecutePunch() {
 		holdPunch = true;
 		onCooldown = true;
+		cooldownTime = 0.1f;
 		transform.parent.gameObject.GetComponent<Animator> ().SetTrigger ("Punching");
 		if (CharInventory.IsHoldingItem ()) {
 			GameObject holdingItem = CharInventory.GetHoldingItem ();
@@ -51,34 +55,36 @@ public class CharPunch : MonoBehaviour {
 				return holdingItem.GetComponent<PickUpableItem>().damage;
 
 			default:
+				attackType = "ItemError";
 				return 1;
 			}
 		}
 		else {
 			//Play the standard animation
+			attackType = "Punch";
 			StartCoroutine (TriggerPunch (1f, 0.5f));
 			return 1;
 		}
-		attackType = "";
+//		attackType = "";
 	}
 
 	IEnumerator TriggerPunch(float sizeX, float posX) {
 		GetComponent<BoxCollider2D> ().enabled = true;
-		GetComponent<BoxCollider2D> ().size = new Vector2 (sizeX, 1.849279f);
-		GetComponent<BoxCollider2D> ().offset = new Vector2 (posX, -0.2104849f);
+		GetComponent<BoxCollider2D> ().size = new Vector2 (sizeX, 2f /*1.849279f*/);
+		GetComponent<BoxCollider2D> ().offset = new Vector2 (posX, -0.2f /*-0.2104849f*/);
 		//visualization
 		transform.GetChild(0).GetComponent<Transform>().localScale = new Vector3 (sizeX, 1.849279f, 1f);
 		transform.GetChild(0).GetComponent<Transform>().localPosition = new Vector3 (posX, -0.2104849f, -1f);
 
 		yield return new WaitForSeconds (0.1f);
 		GetComponent<BoxCollider2D> ().enabled = false;
-		yield return new WaitForSeconds (0.2f);
+		yield return new WaitForSeconds (cooldownTime);
 		onCooldown = false;
 		branchInv = false;
 	}
 
 	//Triggered when player punches an object.
-	void OnTriggerStay2D(Collider2D victim) {
+	void OnTriggerEnter2D(Collider2D victim) {
 		if(attackType == "Branch" && !branchInv) {
 			if (CharInventory.GetHoldingItem ().GetComponent<PickUpableItem> ().Break () <= 0) {
 				CharInventory.SetHoldingItem (null);
@@ -131,6 +137,6 @@ public class CharPunch : MonoBehaviour {
 			}
 			break;
 		}
-		Debug.Log ("Punched [ " + victim + " ] with tag [ " + victim.gameObject.tag + " ]\nAttackType [ " + attackType + " ]");
+		Debug.Log ("Punched [ " + victim + " ] with tag [ " + victim.gameObject.tag + " ] and attackType [ " + attackType + " ]");
 	}
 }

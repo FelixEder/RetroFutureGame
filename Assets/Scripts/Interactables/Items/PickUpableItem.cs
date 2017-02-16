@@ -4,12 +4,13 @@ using System.Collections;
 public class PickUpableItem : MonoBehaviour {
 	public Rigidbody2D rigidBody2D;
 	public Transform originalParent, holdPosition;
+	public Sprite branchFull, branchSemi, branchBroken;
+	GameObject chara;
 	public float HoldPositionX = 0.341f, HoldPositionY = -0.332f;
 	/**the type*/
 	public string itemType;
 	bool beingHeld;
 	public int damage, health;
-	GameObject chara;
 		
 	void Start() {
 		rigidBody2D = GetComponent<Rigidbody2D> ();
@@ -63,10 +64,16 @@ public class PickUpableItem : MonoBehaviour {
 		if (health <= 0)
 			Kill ();
 		//Play animation and such
+		SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+		if (sprite.sprite == branchFull)
+			sprite.sprite = branchSemi;
+		else if (sprite.sprite == branchSemi)
+			sprite.sprite = branchBroken;
 		return health;
 	}
 
 	public void Kill() {
+		CancelInvoke ();
 		Destroy (gameObject);
 	}
 

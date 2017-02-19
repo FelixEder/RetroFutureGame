@@ -55,24 +55,28 @@ public class Electrohaz : MonoBehaviour {
 	*/
 
 	void OnTriggerStay2D(Collider2D col) {
-		switch(col.gameObject.tag) {
-		case "Char":
-			if (isActive) {
+		if (isActive) {
+			switch (col.gameObject.tag) {
+			case "Char":
 				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
 				Debug.Log ("player is not happy");
-			}
-			break;
+			
+				break;
 
-		case "SmallCritter" :
-		case "JumpingCritter":
-		case "HardEnemy" :
-		case "BigEyeGuy" :
-		case "CrawlerCritter":
-		case "ShellMan":
-		case "Wall" :
-		case "Door" :
-		case "PickupableItem":
-			break;
+			case "SmallCritter":
+			case "JumpingCritter":
+			case "HardEnemy":
+			case "BigEyeGuy":
+			case "CrawlerCritter":
+			case "ShellMan":
+			case "Wall":
+			case "Door":
+				break;
+
+			case "PickupableItem":
+				col.gameObject.GetComponent<PickUpableItem> ().Break ();
+				break;
+			}
 		}
 	}
 }

@@ -25,6 +25,7 @@ public class PickupableItemSpawner : MonoBehaviour {
 			Vector3 babyBoom = new Vector3 (spawnLoc.x + Random.Range (-spawnAreaX, spawnAreaX), spawnLoc.y + Random.Range (-spawnAreaY, spawnAreaY), spawnLoc.z);
 			GameObject instance = Instantiate (Resources.Load (prefab), babyBoom, Quaternion.identity) as GameObject;
 			instance.transform.parent = transform;
+			Debug.Log ("Child count [ " + transform.childCount + " ]");
 		}
 	}
 

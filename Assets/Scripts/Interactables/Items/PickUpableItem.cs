@@ -45,6 +45,7 @@ public class PickUpableItem : MonoBehaviour {
 	 */
 	public void Drop(bool canThrow) {
 		transform.localPosition = new Vector2 (0.5f, 0);
+		gameObject.layer = LayerMask.NameToLayer ("CPickupableItem");
 		transform.SetParent (originalParent);
 		GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.None;
 		if (canThrow && (Input.GetAxis ("Horizontal") > 0.2 || Input.GetAxis ("Horizontal") < -0.2)) {
@@ -91,5 +92,10 @@ public class PickUpableItem : MonoBehaviour {
 			Debug.Log ("Removed illegal item!");
 			Kill ();
 		}
+	}
+
+	void OnCollisionEnter2D(Collision2D col) {
+		if (gameObject.layer == LayerMask.NameToLayer ("CPickupableItem"))
+			gameObject.layer = LayerMask.NameToLayer ("PickupableItem");
 	}
 }

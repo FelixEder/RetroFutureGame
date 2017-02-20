@@ -134,10 +134,10 @@ public class CharPunch : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D victim) {
-		if(attackType == "Branch" && !branchInv) {
+		if(attackType == "Branch" && !branchInv && victim.gameObject.tag != "Door") {
 			if (charInventory.GetHoldingItem ().GetComponent<PickUpableItem> ().Break () <= 0) {
 				charInventory.SetHoldingItem (null);
-				attackType = "";
+//				attackType = "";
 			}
 			branchInv = true;
 		}

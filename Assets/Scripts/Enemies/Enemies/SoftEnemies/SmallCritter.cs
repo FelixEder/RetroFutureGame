@@ -31,7 +31,6 @@ public class SmallCritter : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
-
 		switch(col.gameObject.tag) {
 
 		case "Char":
@@ -64,6 +63,7 @@ public class SmallCritter : MonoBehaviour {
 			case "Branch":
 				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
 					TakeDamage (col.gameObject.GetComponent<PickUpableItem> ().damage);
+					col.gameObject.GetComponent<PickUpableItem> ().Break ();
 				}
 				break;
 			}

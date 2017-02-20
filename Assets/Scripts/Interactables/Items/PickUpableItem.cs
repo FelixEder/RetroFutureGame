@@ -4,7 +4,7 @@ using System.Collections;
 public class PickUpableItem : MonoBehaviour {
 	public Rigidbody2D rigidBody2D;
 	public Transform originalParent, holdPosition;
-	public Sprite branchFull, branchSemi, branchBroken;
+	public Sprite[] branchSprites;
 	GameObject chara;
 	public float HoldPositionX = 0.341f, HoldPositionY = -0.332f;
 	/**the type*/
@@ -24,9 +24,11 @@ public class PickUpableItem : MonoBehaviour {
 			transform.position = holdPosition.position;
 			//transform.localPosition += new Vector3 (0.1f, -0.1f, 0);
 		}
+		/*
 		if (rigidBody2D.velocity.y < -8) {
 			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, -8);
 		}
+		*/
 	}
 
 	/**Sets the gameobject as child of "player" and freezes all it's movement.*/
@@ -65,11 +67,8 @@ public class PickUpableItem : MonoBehaviour {
 		if (health <= 0)
 			Kill ();
 		//Play animation and such
-		SpriteRenderer sprite = GetComponent<SpriteRenderer>();
-		if (sprite.sprite == branchFull)
-			sprite.sprite = branchSemi;
-		else if (sprite.sprite == branchSemi)
-			sprite.sprite = branchBroken;
+		if(health > 0)
+			GetComponent<SpriteRenderer>().sprite = branchSprites[health - 1];
 		return health;
 	}
 
@@ -96,6 +95,10 @@ public class PickUpableItem : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col) {
 		if (gameObject.layer == LayerMask.NameToLayer ("CPickupableItem"))
-			gameObject.layer = LayerMask.NameToLayer ("PickupableItem");
+			Invoke ("ResetLayer", 0.1f);
+	}
+
+	void ResetLayer() {
+		gameObject.layer = LayerMask.NameToLayer ("PickupableItem");
 	}
 }

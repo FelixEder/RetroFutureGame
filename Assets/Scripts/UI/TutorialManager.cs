@@ -29,7 +29,7 @@ public class TutorialManager : MonoBehaviour {
 	}
 
 	public void DisplayTutorial(string tutorial) {
-		Debug.Log ("Tutorial called");
+		Debug.Log ("Display tutorial [ " + tutorial + " ]");
 		switch (tutorial.ToLower()) {
 
 		case "jump":

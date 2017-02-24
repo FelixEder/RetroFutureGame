@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using System.Collections;
 
 public class PauseMenu : MonoBehaviour {
+	public GameObject firstSelected;
 	GameObject[] pauseObjects, hideOnPlay;
 	GameObject lastSelected;
 	EventSystem eventSystem;
@@ -54,7 +55,7 @@ public class PauseMenu : MonoBehaviour {
 				inputWasDisabled = true;
 			input.Disable ();
 			ShowPaused();
-			SetSelected (GameObject.Find("ResumeButton"));
+			SetSelected (firstSelected);
 			control.SetMaster (20);
 
 		}

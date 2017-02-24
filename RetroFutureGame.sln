@@ -1,9 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetroFutureGame", "Assembly-CSharp.csproj", "{3CBFC496-3BD9-0ED6-922C-A02C97138AD6}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetroFutureGame", "RetroFutureGame.csproj", "{3AD2D19B-0F25-9752-B587-447F67DB0CFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetroFutureGame", "Assembly-CSharp-Editor.csproj", "{70AFECE5-41DD-9F6A-0985-8C2281DA0E8D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetroFutureGame.Editor", "RetroFutureGame.Editor.csproj", "{391573D8-7D43-B836-1C89-38EE31DDCBDA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,29 +11,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3CBFC496-3BD9-0ED6-922C-A02C97138AD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3CBFC496-3BD9-0ED6-922C-A02C97138AD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3CBFC496-3BD9-0ED6-922C-A02C97138AD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3CBFC496-3BD9-0ED6-922C-A02C97138AD6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{70AFECE5-41DD-9F6A-0985-8C2281DA0E8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70AFECE5-41DD-9F6A-0985-8C2281DA0E8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{70AFECE5-41DD-9F6A-0985-8C2281DA0E8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70AFECE5-41DD-9F6A-0985-8C2281DA0E8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AD2D19B-0F25-9752-B587-447F67DB0CFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AD2D19B-0F25-9752-B587-447F67DB0CFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AD2D19B-0F25-9752-B587-447F67DB0CFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AD2D19B-0F25-9752-B587-447F67DB0CFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{391573D8-7D43-B836-1C89-38EE31DDCBDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{391573D8-7D43-B836-1C89-38EE31DDCBDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{391573D8-7D43-B836-1C89-38EE31DDCBDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{391573D8-7D43-B836-1C89-38EE31DDCBDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		Policies = $0
-		$0.TextStylePolicy = $1
-		$1.TabsToSpaces = False
-		$1.inheritsSet = VisualStudio
-		$1.inheritsScope = text/plain
-		$1.scope = text/x-csharp
-		$0.CSharpFormattingPolicy = $2
-		$2.BeforeMethodDeclarationParentheses = False
-		$2.inheritsSet = Mono
-		$2.inheritsScope = text/x-csharp
-		$2.scope = text/x-csharp
 	EndGlobalSection
 EndGlobal

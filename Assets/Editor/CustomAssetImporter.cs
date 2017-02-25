@@ -16,8 +16,9 @@ internal sealed class CustomAssetImporter : AssetPostprocessor {
 	// This event is raised when a texture asset is imported
 	private void OnPreprocessTexture() {
 		// I prefix my texture asset's file names with tex, following 3 lines say "if tex is not in the asset file name, do nothing"
-		var fileName = assetPath.Substring(0);
-		if(!fileName.Contains("Sprites")) return;
+		var fileNameIndex = assetPath.LastIndexOf('/');
+		var fileName = assetPath.Substring(fileNameIndex + 1);
+		if(!fileName.Contains("sprite")) return;
 
 		// Get the reference to the assetImporter (From the AssetPostProcessor class) and unbox it to a TextureImporter (Which is inherited and extends the AssetImporter with texture specific utilities)
 		var importer = assetImporter as TextureImporter;
@@ -27,11 +28,9 @@ internal sealed class CustomAssetImporter : AssetPostprocessor {
 		// Unity API provides neat single function settings for the most import settings as SetPlatformTextureSettings
 		// Parameters are: platform, maxTextureSize, textureFormat, compressionQuality
 		// I also change the format based on if the texture has an alpha channel or not because not all formats support an alpha channel
-		importer.SetPlatformTextureSettings("Web", webTextureSize,
-			importer.DoesSourceTextureHaveAlpha() ? TextureImporterFormat.DXT5 : TextureImporterFormat.DXT1, 100, false);
+		importer.SetPlatformTextureSettings("Web", webTextureSize, TextureImporterFormat.RGBA32, 100, false);
 
-		importer.SetPlatformTextureSettings("Standalone", standaloneTextureSize,
-			importer.DoesSourceTextureHaveAlpha() ? TextureImporterFormat.DXT5 : TextureImporterFormat.DXT1, 100, false);
+		importer.SetPlatformTextureSettings("Standalone", standaloneTextureSize, TextureImporterFormat.RGBA32, 100, false);
 
 		importer.SetPlatformTextureSettings("iPhone", iosTextureSize,
 			importer.DoesSourceTextureHaveAlpha() ? TextureImporterFormat.PVRTC_RGBA4 : TextureImporterFormat.PVRTC_RGB4, 100, false);

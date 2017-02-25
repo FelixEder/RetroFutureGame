@@ -5,13 +5,13 @@ public class AudioManager : MonoBehaviour {
 	public bool playOnEnter, stopOnExit, fadeIn, fadeOut;
 	public float fadeInSpeed, fadeOutSpeed;
 	float targetVolume, controlVolume;
-	AudioSource audio;
+	AudioSource audioSource;
 	AudioControl control;
 
 	void Start() {
-		audio = GetComponent<AudioSource> ();
+		audioSource = GetComponent<AudioSource> ();
 		control = GameObject.Find ("Audio").GetComponent<AudioControl>();
-		targetVolume = audio.volume;
+		targetVolume = audioSource.volume;
 		controlVolume = 100;
 	}
 
@@ -32,14 +32,14 @@ public class AudioManager : MonoBehaviour {
 				StartCoroutine (FadeIn ());
 			}
 			else
-				audio.Play ();
+				audioSource.Play ();
 		}
 	}
 
 	IEnumerator FadeIn() {
-		audio.Play ();
+		audioSource.Play ();
 		for (float volume = 0; volume < targetVolume; volume += fadeInSpeed) {
-			audio.volume = volume;
+			audioSource.volume = volume;
 			yield return new WaitForSeconds (0.1f);
 		}
 	}
@@ -51,24 +51,24 @@ public class AudioManager : MonoBehaviour {
 				StartCoroutine (FadeOut ());
 			}
 			else
-				audio.Stop ();
+				audioSource.Stop ();
 		}
 	}
 
 	IEnumerator FadeOut() {
-		for (float volume = audio.volume; volume > 0; volume -= fadeOutSpeed) {
-			audio.volume = volume;
+		for (float volume = audioSource.volume; volume > 0; volume -= fadeOutSpeed) {
+			audioSource.volume = volume;
 			yield return new WaitForSeconds (0.1f);
 		}
-		audio.Stop ();
+		audioSource.Stop ();
 	}
 
 	/**Control the volume of the audio track in percent.*/
 	void SetVolume(float volume) {
-		audio.volume = targetVolume * volume * 0.01f;
+		audioSource.volume = targetVolume * volume * 0.01f;
 	}
 
 	void ResetVolume() {
-		audio.volume = targetVolume;
+		audioSource.volume = targetVolume;
 	}
 }

@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\HierarchySelectObject.js" />
-     <Compile Include="Assets\Editor\LoadSceneAdditive.js" />
      <None Include="Assets\Materials\Shaders\Sprite Glitch.shader" />
      <None Include="Assets\Materials\Shaders\Solid Color.shader" />
  <Reference Include="UnityEditor.Advertisements">

@@ -33,13 +33,22 @@ public class TutorialManager : MonoBehaviour {
 		switch (tutorial.ToLower()) {
 
 		case "jump":
-			text.text = "Tutorial\n\nPress SPACE to jump.\nHold SPACE to jump higher";
+			text.text = "Tutorial\n\nPress SPACE to jump.\nHold SPACE to jump higher.";
+			break;
+		case "punch":
+			text.text = "Tutorial\n\nPress K to punch.\nPunch doors to open them.";
 			break;
 		case "health":
 			text.text = "You just picked up extra health.";
 			break;
+		case "float":
+			text.text = "You just got the leaf.\nUse SHIFT to float in the air.";
+			break;
+		case "secondjump":
+			text.text = "You just got doublejump.\nPress SPACE in the air to jump even higher.";
+			break;
 		default:
-			text.text = "ERROR";
+			text.text = "undefined";
 			break;
 		}
 		currentTutorial = tutorial;

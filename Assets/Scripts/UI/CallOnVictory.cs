@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CallOnVictory : MonoBehaviour {
-	public bool enabled;
+	public bool active;
 	// Use this for initialization
 	void Start () {
 		
@@ -15,7 +15,7 @@ public class CallOnVictory : MonoBehaviour {
 	}
 		
 	void OnCollisionEnter2D(Collision2D col) {
-		if(enabled)
+		if(active)
 			GameObject.Find ("VictoryScreen").GetComponent<VictoryScreen> ().ShowVictory ();
 	}
 }

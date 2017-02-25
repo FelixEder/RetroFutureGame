@@ -6,10 +6,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{70AFECE5-41DD-9F6A-0985-8C2281DA0E8D}</ProjectGuid>
+    <ProjectGuid>{F529F29E-33D4-5D3B-E2C8-EB85387B2E38}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+    <AssemblyName>Assembly-UnityScript-Editor</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>Assets</BaseDirectory>
@@ -46,11 +46,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Editor\CustomAssetImporter.cs" />
-     <Compile Include="Assets\Editor\FindSceneObjectsWithTag.cs" />
-     <Compile Include="Assets\Editor\HiddenObjectExplorer.cs" />
-     <Compile Include="Assets\Editor\SceneViewWindow.cs" />
-     <Compile Include="Assets\Editor\SimpleCCDEditor.cs" />
+     <Compile Include="Assets\Editor\HierarchySelectObject.js" />
+     <Compile Include="Assets\Editor\LoadSceneAdditive.js" />
      <None Include="Assets\Materials\Shaders\Sprite Glitch.shader" />
      <None Include="Assets\Materials\Shaders\Solid Color.shader" />
  <Reference Include="UnityEditor.Advertisements">

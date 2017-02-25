@@ -1,14 +1,20 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\GameOverScreen.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Editor\CustomAssetImporter.cs">
     <Files>
       <File FileName="Assets\Scripts\Character\Actions\CharPunch.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Character\Actions\CharPickUp.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Interactables\Items\PickUpableItem.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enviroment\Obstacles\Electrohaz.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Character\Movement\CharMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\GameOverScreen.cs" Line="30" Column="49" />
-      <File FileName="Assets\Scripts\UI\PauseMenu.cs" Line="105" Column="102" />
+      <File FileName="Assets\Scripts\UI\GameOverScreen.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\PauseMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\Editor\FindSceneObjectsWithTag.cs" Line="70" Column="18" />
+      <File FileName="Assets\Editor\HiddenObjectExplorer.cs" Line="8" Column="42" />
+      <File FileName="Assets\Editor\HierarchySelectObject.js" Line="6" Column="2" />
+      <File FileName="Assets\Editor\LoadSceneAdditive.js" Line="15" Column="2" />
+      <File FileName="Assets\Editor\SceneViewWindow.cs" Line="18" Column="32" />
+      <File FileName="Assets\Editor\CustomAssetImporter.cs" Line="27" Column="38" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

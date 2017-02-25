@@ -35,13 +35,16 @@ public class LaserShooter : MonoBehaviour {
 	void ActivateLaser() {
 		lineRenderer.enabled = true;
 		RaycastHit2D hit = Physics2D.Raycast (transform.position, transform.right);
-		Debug.DrawLine (transform.position, hit.point);
-		laserHit.position = new Vector3(hit.point.x, hit.point.y, -5);
-		lineRenderer.SetPosition (0, transform.position);
-		//TODO lerp or close in on target over time instead of setting it directly.
-		lineRenderer.SetPosition (1, laserHit.position);
-		StartCoroutine (ShrinkLaser ());
-		HitByLaser (hit);
+		if (hit.point != new Vector2(0, 0)) {
+			Debug.DrawRay (transform.position, hit.point);
+			laserHit.position = new Vector3 (hit.point.x, hit.point.y, -5);
+			lineRenderer.SetPosition (0, transform.position);
+			//TODO lerp or close in on target over time instead of setting it directly.
+			lineRenderer.SetPosition (1, laserHit.position);
+			StartCoroutine (ShrinkLaser ());
+			HitByLaser (hit);
+		} else
+			canShoot = true;
 	}
 
 	void HitByLaser(RaycastHit2D victim) {

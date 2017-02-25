@@ -23,9 +23,14 @@ public class BossActivator : MonoBehaviour {
 			Debug.Log ("Prefab spawner:\nKilled the extra child.");
 		}
 	}
+
+	public void Trigger (bool state) {
+		GetComponent<EdgeCollider2D> ().enabled = state;
+	}
 		
 	void OnTriggerEnter2D(Collider2D col) {
 		if (!col.isTrigger && col.gameObject.tag.Equals("Char")) {
+			Trigger (false);
 			Spawn ();
 		}
 	}

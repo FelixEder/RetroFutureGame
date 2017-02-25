@@ -42,8 +42,10 @@ public class GameOverScreen : MonoBehaviour {
 
 
 		GameObject[] bossSpawners = GameObject.FindGameObjectsWithTag("BossActivator");
-		foreach (GameObject g in bossSpawners) 
+		foreach (GameObject g in bossSpawners) {
 			g.GetComponent<BossActivator> ().KillExtraChild ();
+			g.GetComponent<BossActivator> ().Trigger (true);
+		}
 		
 		foreach (GameObject g in itemspawners)
 			g.GetComponent<PickupableItemSpawner> ().KillChildren ();

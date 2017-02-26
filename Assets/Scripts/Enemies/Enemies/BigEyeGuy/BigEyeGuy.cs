@@ -2,20 +2,25 @@ using UnityEngine;
 using System.Collections;
 
 public class BigEyeGuy : MonoBehaviour {
-	public float moveSpeed, knockForce, jumpSpeed;
+	public float moveSpeed, knockForce, jumpSpeed, initialFreezeTime, activeMoveSpeed;
 	bool isMirrored = false, invulnerable;
 	Rigidbody2D rb2D;
 	public int health = 3, damage = 1, invulnerabilityTime;
 
 	void Start() {
 		rb2D = GetComponent<Rigidbody2D> ();
+		initialFreezeTime = gameObject.GetComponent<SpawnProperties> ().initialFreezeTime;
+		if (initialFreezeTime > 0)
+			Invoke ("InitializeMoveSpeed", initialFreezeTime);
 	}
 
 	void FixedUpdate() {
-		if (isMirrored) {
-			rb2D.velocity = new Vector2 (-1 * moveSpeed, rb2D.velocity.y);
-		} else {
-			rb2D.velocity = new Vector2 (moveSpeed, rb2D.velocity.y);
+		if (activeMoveSpeed > 0) {
+			if (isMirrored) {
+				rb2D.velocity = new Vector2 (-1 * moveSpeed, rb2D.velocity.y);
+			} else {
+				rb2D.velocity = new Vector2 (moveSpeed, rb2D.velocity.y);
+			}
 		}
 	}
 
@@ -97,5 +102,9 @@ public class BigEyeGuy : MonoBehaviour {
 		if (Random.Range (0, 200) < 5) {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, jumpSpeed);
 		}
+	}
+
+	void InitializeMoveSpeed() {
+		activeMoveSpeed = moveSpeed;
 	}
 }

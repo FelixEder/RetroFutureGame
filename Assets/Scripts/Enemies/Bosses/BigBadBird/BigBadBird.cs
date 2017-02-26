@@ -4,14 +4,16 @@ using System.Collections;
 public class BigBadBird : MonoBehaviour {
 	public Sprite regular, spitting, winging;
 	public float moveSpeed, knockForce;
-	public bool isMirrored, isSpitting;
+	public bool isMirrored, isSpitting, mirrorCooldown;
 	public int health = 6, damage;
 	//Should it really use a rigidBody?
 	Rigidbody2D rb2D;
+	GameObject player;
 	int spitChance = 100;
 
 	void Start() {
 		rb2D = GetComponent<Rigidbody2D> ();
+		player = GameObject.Find ("Char");
 		GetComponent<SpriteRenderer> ().sprite = regular;
 		//Set the start values here
 		//Also set the standard sprite.
@@ -25,12 +27,17 @@ public class BigBadBird : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		int vertDir = 0;
+		float vertDir = 0;
+		if (isMirrored && transform.position.x - player.transform.position.x > 0 || !isMirrored && transform.position.x - player.transform.position.x < 0)
+			vertDir = (transform.position.y - player.transform.position.y) * -1;
+		else
+			vertDir = 5;
+			
 			//Random.Range (-20, 20);
 		if (isMirrored) {
-			rb2D.velocity = new Vector2 (-1 * moveSpeed, vertDir);
+			rb2D.velocity = new Vector2 (-1 * moveSpeed, vertDir * 0.2f);
 		} else {
-			rb2D.velocity = new Vector2 (moveSpeed, vertDir);
+			rb2D.velocity = new Vector2 (moveSpeed, vertDir * 0.2f);
 		}
 	}
 
@@ -47,9 +54,9 @@ public class BigBadBird : MonoBehaviour {
 			break;
 
 		case "Char":
+			col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage, gameObject, knockForce);
 			GetMirrored ();
 			WingAttack ();
-			col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
 			break;
 
 		case "PickupableItem":
@@ -80,6 +87,9 @@ public class BigBadBird : MonoBehaviour {
 	 * Mirrors the enemy and therefor makes it change direction.
 	 */
 	void GetMirrored() {
+		if (mirrorCooldown)
+			return;
+		mirrorCooldown = true;
 		if(!isMirrored) {
 			isMirrored = true;
 			StartCoroutine (Rotate (180));
@@ -95,6 +105,7 @@ public class BigBadBird : MonoBehaviour {
 		yield return new WaitForSeconds (1);
 		transform.rotation = Quaternion.Euler(0, rotation, 0);
 		moveSpeed = 5;
+		mirrorCooldown = false;
 	}
 
 	void WingAttack() {

@@ -122,9 +122,10 @@ public class BigBadBird : MonoBehaviour {
 
 	IEnumerator Rotate(int rotation) {
 		moveSpeed = 1;
-		yield return new WaitForSeconds (1);
+		yield return new WaitForSeconds (1f);
 		transform.rotation = Quaternion.Euler(0, rotation, 0);
 		moveSpeed = 5;
+		yield return new WaitForSeconds (1f);
 		mirrorCooldown = false;
 	}
 

@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class LaserShooter : MonoBehaviour {
+	public LayerMask hitLayers;
 	CharStatus charStatus;
 	private LineRenderer lineRenderer;
 	public Transform laserHit;
@@ -34,7 +35,7 @@ public class LaserShooter : MonoBehaviour {
 
 	void ActivateLaser() {
 		lineRenderer.enabled = true;
-		RaycastHit2D hit = Physics2D.Raycast (transform.position, transform.right);
+		RaycastHit2D hit = Physics2D.Raycast (transform.position, transform.right, Mathf.Infinity, hitLayers);
 		if (hit.point != new Vector2(0, 0)) {
 			Debug.DrawRay (transform.position, hit.point);
 			laserHit.position = new Vector3 (hit.point.x, hit.point.y, -5);

@@ -7,7 +7,8 @@ public class BirdBossSpitAttack : MonoBehaviour {
 	void OnEnable() {
 		Debug.Log ("Spit-Script!");
 		//Also play relevant soundFX
-		Invoke ("Spit", 0.5f);
+		Spit ();
+		//Invoke ("Spit", 0.5f);
 	}
 
 	void Spit() {
@@ -28,7 +29,7 @@ public class BirdBossSpitAttack : MonoBehaviour {
 			GameObject instance = Instantiate (Resources.Load (spawnType), transform.position, Quaternion.identity) as GameObject;
 			instance.transform.parent = transform.parent.parent;
 			instance.GetComponent<SpawnProperties> ().initialFreezeTime = 1;
-			instance.GetComponent<Rigidbody2D> ().velocity = new Vector2 (transform.parent.gameObject.GetComponent<Rigidbody2D> ().velocity.x * 3f, 0);
+			instance.GetComponent<Rigidbody2D> ().velocity = new Vector2 (transform.parent.gameObject.GetComponent<Rigidbody2D> ().velocity.x * 1.5f, 0);
 		}
 	}
 }

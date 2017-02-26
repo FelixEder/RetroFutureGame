@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b1eeaf5cb0d837e49903d37a5c107c07
-timeCreated: 1487285860
+timeCreated: 1488118505
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,6 +11,8 @@ TextureImporter:
     21300008: charging_4
     21300010: charging_5
     21300012: charging_6
+    21300014: charging_7
+    21300016: charging_8
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -66,13 +68,13 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Standalone
-    maxTextureSize: 2048
-    textureFormat: -1
+    maxTextureSize: 4096
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -83,7 +85,7 @@ TextureImporter:
         x: 0
         y: 0
         width: 35
-        height: 220
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -96,7 +98,7 @@ TextureImporter:
         x: 35
         y: 0
         width: 35
-        height: 220
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -109,7 +111,7 @@ TextureImporter:
         x: 70
         y: 0
         width: 35
-        height: 220
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -122,7 +124,7 @@ TextureImporter:
         x: 105
         y: 0
         width: 35
-        height: 220
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,7 +137,7 @@ TextureImporter:
         x: 140
         y: 0
         width: 35
-        height: 220
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,7 +150,7 @@ TextureImporter:
         x: 175
         y: 0
         width: 35
-        height: 220
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,9 +163,35 @@ TextureImporter:
         x: 210
         y: 0
         width: 35
-        height: 220
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: charging_7
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 0
+        width: 35
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: charging_8
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 0
+        width: 35
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

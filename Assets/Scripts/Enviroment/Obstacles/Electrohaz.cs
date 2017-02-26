@@ -25,13 +25,18 @@ public class Electrohaz : MonoBehaviour {
 
 	IEnumerator GustavsMetod() {
 		while (true) {
-			yield return new WaitForSeconds (2f);
-			GetComponent<Animator> ().SetInteger ("state", 1);
-			yield return new WaitForSeconds (GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).length * 2);
-			GetComponent<Animator> ().SetInteger ("state", 2);
+			yield return new WaitForSeconds (3f);
+			Debug.Log ("Start charge");
+			GetComponent<Animator> ().SetTrigger ("Start");
+			while (GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName ("lightning_charge")) {
+				yield return 0;
+			}
+			Debug.Log ("Start active");
 			isActive = true;
-			yield return new WaitForSeconds (GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).length * 2);
-			GetComponent<Animator> ().SetInteger ("state", 0);
+			while (GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName ("lightning_active")) {
+				yield return 0;
+			}
+			Debug.Log ("Start idle");
 			isActive = false;
 		}
 	}
@@ -59,8 +64,6 @@ public class Electrohaz : MonoBehaviour {
 			switch (col.gameObject.tag) {
 			case "Char":
 				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
-				Debug.Log ("player is not happy");
-			
 				break;
 
 			case "SmallCritter":

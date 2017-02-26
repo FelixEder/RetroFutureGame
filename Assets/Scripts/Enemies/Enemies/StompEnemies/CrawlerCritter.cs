@@ -3,7 +3,8 @@ using System.Collections;
 
 public class CrawlerCritter : MonoBehaviour {
 	public Sprite deCrawled;
-	public float moveSpeed, knockForce, initialFreezeTime, activeMoveSpeed;
+	public float moveSpeed, knockForce;
+	float activeMoveSpeed, initialFreezeTime;
 	public bool isMirrored = false, deShelled, invulnerable;
 	Rigidbody2D rb2D;
 	public int health = 2, damage = 2, invulnerabilityTime;
@@ -18,11 +19,16 @@ public class CrawlerCritter : MonoBehaviour {
 	void FixedUpdate() {
 		if (activeMoveSpeed > 0) {
 			if (isMirrored) {
-				rb2D.velocity = new Vector2 (-1 * moveSpeed, rb2D.velocity.y);
+				rb2D.velocity = new Vector2 (-1 * activeMoveSpeed, rb2D.velocity.y);
 			} else {
-				rb2D.velocity = new Vector2 (moveSpeed, rb2D.velocity.y);
+				rb2D.velocity = new Vector2 (activeMoveSpeed, rb2D.velocity.y);
 			}
 		}
+	}
+
+	void OnBecameVisible() {
+		if (initialFreezeTime == 0)
+			InitializeMoveSpeed ();
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {

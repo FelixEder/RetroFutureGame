@@ -3,8 +3,7 @@ using System.Collections;
 
 public class SmallCritter : MonoBehaviour {
 	public float moveSpeed, knockForce;
-	float activeMoveSpeed = 0;
-	public float initialFreezeTime;
+	float activeMoveSpeed,initialFreezeTime;
 	bool isMirrored = false, invulnerable;
 	public int health = 2, damage = 1, invulnerabilityTime;
 	public Material glitchMaterial;

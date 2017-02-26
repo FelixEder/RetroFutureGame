@@ -1,0 +1,2321 @@
+[33mcommit cb8eab0f001683fa1d39b9628f1d50e23228b665[m
+Merge: f380892 878a7fd
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sun Feb 26 02:18:50 2017 +0100
+
+    Resolved merge issue.
+
+[33mcommit f380892ffd98ece9665db0676729860caef70811[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sun Feb 26 02:16:40 2017 +0100
+
+    Added vertical behaivior for bigbadbird to pursue player.
+
+[33mcommit 878a7fd791f7fea543d3f7371356512daf7f0df7[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Feb 26 02:07:19 2017 +0100
+
+    Added some initialfreeze timing for enemies
+
+[33mcommit d5e354a3a9acdafaf18d090b35ca24f722286cc4[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sun Feb 26 01:38:52 2017 +0100
+
+    Fixed a bunch of issues with bigbadbird.
+
+[33mcommit 4654c854b56da1141f7c211cf8cb5477509a6c81[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sun Feb 26 00:01:05 2017 +0100
+
+    Fixed issue with lasershooter when not hitting anything. Fixed bossactivator trigger.
+
+[33mcommit 9d09e40b15ed7d81764bcafd0d6987b716df9381[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sat Feb 25 23:11:51 2017 +0100
+
+    Added improved sprites for nature enviroment and added to test scene.
+
+[33mcommit b255ecd8a6b18251edab73de7e7be5e7127541d6[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sat Feb 25 20:57:13 2017 +0100
+
+    Added a few tool scripts in editor to simplify some tasks
+
+[33mcommit 200b77c6a9ef891ce6a52890aa88b82c8dae68a7[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sat Feb 25 00:41:02 2017 +0100
+
+    Fixed some minor issues with gameover and victory screen controls. Made birdboss into prefab and added a camera adjust to the battle.
+
+[33mcommit e40f7bda55741415d7dedd0c60be1f65060ebea7[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Fri Feb 24 23:59:19 2017 +0100
+
+    Updated with success
+
+[33mcommit 06804a422b60458614f1c46b52a9f119954d243b[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Fri Feb 24 23:57:20 2017 +0100
+
+    Updated again.
+
+[33mcommit ed321428e5f56cd12c3ff8d112a98b29a4d3e58d[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Fri Feb 24 23:54:54 2017 +0100
+
+    Updated to unity 5.5.2 again after small issue with layers.
+
+[33mcommit 2c46b2d02656a7b7f8ef650d99f9d5886156c9ae[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Fri Feb 24 23:47:04 2017 +0100
+
+    Revert "UPDATED TO NEW UNITY VERSION"
+    
+    This reverts commit d6ff9e5c7cbcb9fcc43f47a0eaff21bd72abedb8.
+
+[33mcommit d6ff9e5c7cbcb9fcc43f47a0eaff21bd72abedb8[m
+Author: Sendan <king-viktor@hotmail.com>
+Date:   Fri Feb 24 21:22:07 2017 +0100
+
+    UPDATED TO NEW UNITY VERSION
+
+[33mcommit a1756bd9be9bf5aa73e018b094afa2d8e39d9279[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Mon Feb 20 16:46:30 2017 +0100
+
+    Added new temp background for courtyard. Added new focus feature for camera to focus towards a chosen gameobject. Also changed branch sprites to array in script.
+
+[33mcommit f7bfbcebca3420920cb7286a489da6bddecc2bad[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Feb 20 12:32:02 2017 +0100
+
+    Update Lore corner.md
+
+[33mcommit 9cdf65662bb81d548c5cfb55c6349105d9c84fd4[m
+Merge: 6f6b526 bc038ec
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Feb 20 00:54:21 2017 +0100
+
+    Merge branch 'master' of https://github.com/FelixEder/RetroFutureGame
+
+[33mcommit 6f6b526b0d7b0f6ae2acbf036c11fd8d47f75fb4[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Feb 20 00:52:33 2017 +0100
+
+    Added background parallax script and a temp background.
+
+[33mcommit bc038eccfed57858c2f712be2f99dfae9bc13f5a[m
+Author: felixed <felixed@kth.se>
+Date:   Mon Feb 20 00:36:02 2017 +0100
+
+    Added a new lore corner text where I wrote some lore
+
+[33mcommit 1f7b0a93eb0cd8b97be7dc4207202baafcb478fb[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Feb 19 23:09:49 2017 +0100
+
+    Added some new sprites for enviroment. Made items not collide with enemies unless trown.
+
+[33mcommit 6e483406fd4f37b86eadf2d454f432d335071d68[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Fri Feb 17 00:44:09 2017 +0100
+
+    Added new spritesheet for electrohaz and converted script to use animation instead of sprites. Added new sprite for spikesfromGoogle.
+
+[33mcommit 6bc473edba75898916e72b429e8bfb98e580a613[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Thu Feb 16 21:39:54 2017 +0100
+
+    Made pickup trigger function primarily the same way as punch trigger but is only enabled for one frame and can only pickup one item.
+
+[33mcommit 9935443587d715f083f294d0401d3a28a35e2876[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Thu Feb 16 18:37:15 2017 +0100
+
+    Added degrading sprite for branch and implemented code to swap sprite when damaged.
+
+[33mcommit 39414ae63769c6717a91aed2bbd4ce1ebe0c9cad[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Tue Feb 14 20:20:38 2017 +0100
+
+    Added animation to blob/smallcritter and jumpingcritter. Changed sprite for rock to match pixel/unit ratio and updated its hitbox. Added ability to increase max health and energy via debug script and fixed debug script to work with new megapunch. Also fixed said issue for upgrade script.
+
+[33mcommit 0d0f5d7444e38296675ef640fd7129f1f873f8e1[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Tue Feb 14 18:00:32 2017 +0100
+
+    Converted megapunch to use same logics as regular punch and implemented it into punch script.
+
+[33mcommit 5ead8bbd9694a3d231517ac78cdc34481f6335be[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Tue Feb 14 15:45:32 2017 +0100
+
+    Improved punch script even more, works better than ever. Fixed a few bugs with pickupable items and punching.
+
+[33mcommit e1ab02f67c5adda883544334406544ee15558be3[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Mon Feb 13 01:35:57 2017 +0100
+
+    Reworked punch logic/script to make it more reliable. Changed how game calculates damage on branch to not break instantly with new logic. Added function to change punch trigger size/offset when punching with different item. Added a visual presentation to punch area.
+
+[33mcommit dd849fc51e723dd1ae406c5fecd5140fecd1b90d[m
+Merge: aedb662 2920f76
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sun Feb 12 22:52:41 2017 +0100
+
+    Merge branch 'master' of https://github.com/FelixEder/RetroFutureGame
+
+[33mcommit aedb662f32f1efd9a8dc3b1987f984374e151c59[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sun Feb 12 22:52:35 2017 +0100
+
+    Some very minor changes to a few prefabs
+
+[33mcommit 2920f7608f6994da70d05020b10e62acb57f09f1[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Feb 12 22:51:54 2017 +0100
+
+    Missed to add the statue boss prefab, will be done now
+
+[33mcommit e93e54dd45dcab0e9f18ca75d7ba4521db4015a3[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Feb 12 01:58:05 2017 +0100
+
+    Missed a save from a code
+
+[33mcommit 42f2754b07e091c5f33b30eabbab8b821ef1ad52[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Feb 12 01:17:06 2017 +0100
+
+    Fixed the prefab spawners for drops and items
+
+[33mcommit dd23e3d113b1ce93ef288ac3eb2a55004c1d1986[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Feb 12 00:33:15 2017 +0100
+
+    Fixed how the bosses are supposed to respawn
+
+[33mcommit dba2831291ebcfe4a4318a3c7cea558ffe8020d0[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Feb 11 23:42:38 2017 +0100
+
+    Checkpoints now only activate one time
+
+[33mcommit c23107574f30fee042803476c1293d5b1e0cbac5[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Feb 11 23:25:12 2017 +0100
+
+    Fixed invulnerablility for all enemies
+
+[33mcommit 009ef48c679b5fa092cd21cef07db10950954c4b[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Feb 11 23:16:46 2017 +0100
+
+    Fixed mega punch ability, it now works as intended
+
+[33mcommit 7183669ab76434f4b08ed13624405f5b8b966214[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Feb 11 22:23:49 2017 +0100
+
+    Fixed hard enemy rush bug
+
+[33mcommit d8c77d9ebc591fb2aa19e1f37fd3f264ec17de14[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Feb 11 22:05:13 2017 +0100
+
+    Fixed PIS and changed items in game to only be spawned by PIS
+
+[33mcommit 93c5f99762975875794be5ac7c7578c42736a4d7[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jan 29 00:14:03 2017 +0100
+
+    Adding missed files
+
+[33mcommit ecba4a053c655ac1f859eccd7eb744a1cf1e5ebd[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jan 29 00:13:32 2017 +0100
+
+    Implemented the electric hazard, work well
+
+[33mcommit af9bccf29aff9cfb3f7b6c3b0d99f21816983458[m
+Merge: abbf4e5 a2cda0e
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Jan 28 23:23:30 2017 +0100
+
+    Merge branch 'master' of https://github.com/FelixEder/RetroFutureGame
+
+[33mcommit abbf4e5632b7924cd13f5d6dd4ae2d3972359cc2[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Jan 28 23:23:25 2017 +0100
+
+    Added a very basic victoryscreen and a way to activate it as well as a temporary credit scene.
+
+[33mcommit a2cda0ea8c49755c6077ee4481e5245ad7b12ce3[m
+Merge: f569252 04d0e0d
+Author: felixed <felixed@kth.se>
+Date:   Sat Jan 28 23:15:34 2017 +0100
+
+    ggit Merge branch 'master' of github.com:FelixEder/RetroFutureGame
+
+[33mcommit f56925219a7b37064af5693c1cd49a1e5a285722[m
+Author: felixed <felixed@kth.se>
+Date:   Sat Jan 28 23:14:26 2017 +0100
+
+    Added script for electrohazard
+
+[33mcommit 04d0e0d1560e521505a5290d3f9fa6baff674e3d[m
+Merge: e00937b 686ea29
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Jan 28 22:16:40 2017 +0100
+
+    Merge branch 'master' of https://github.com/FelixEder/RetroFutureGame
+
+[33mcommit e00937bf51a5b0f90c9100dd7c1acc4523b74131[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Jan 28 22:15:19 2017 +0100
+
+    Added a new mode for prefabspawners to only respawn enemies after game over. Fixed a small visual bug where enemies z-collided and looked transparent.
+
+[33mcommit 686ea29a6be5408267b40a143ad8d79b160b9da2[m
+Author: felixed <felixed@kth.se>
+Date:   Sat Jan 28 21:42:00 2017 +0100
+
+    Added initial ElectroHaz code
+
+[33mcommit fba6e9f7667ed8e0d740f78d2da7628f2e7dae38[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sat Dec 10 18:38:52 2016 +0100
+
+    Added some sound event changes, maximize energy after respawn.
+
+[33mcommit 6810374f8478165c61883dafa6610c240796d09b[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sat Dec 10 16:28:39 2016 +0100
+
+    update to unity 5.5.0 again since last time did not work
+
+[33mcommit d79ec371a2c8a0675747457906b6e4b398cb2c2d[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sat Dec 10 15:52:41 2016 +0100
+
+    Pulled latest repository and updated to unity 5.5.0
+
+[33mcommit 9d65355e8dab758b745cd8a737dd8fb87e678112[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Nov 12 13:45:22 2016 +0100
+
+    Added the same thang for Speed upgrades
+
+[33mcommit bcb19d4df4266c9457664671f2abd99f425a0bea[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Nov 12 13:34:41 2016 +0100
+
+    Added a counter for upgrades
+
+[33mcommit d71dcc343205c29c5904fe9a37993d4a8f9eca5e[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Nov 12 01:37:22 2016 +0100
+
+    Added Spikes from Google to the game
+
+[33mcommit 8a873766b971948f48e65086b32db79fabea5704[m
+Author: Viktor <king-viktor@hotmail.com>
+Date:   Sat Nov 12 00:27:37 2016 +0100
+
+    Added knockback to SpikesFromGoogle
+
+[33mcommit 1e6acdbd286ca06bc225c4fe70693f6d87f50ee6[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Nov 12 00:29:32 2016 +0100
+
+    Wrote script that determines how the enemies should act during their childlike experiences
+
+[33mcommit d79cc58e2971b44f6ad7cec9a72f55fe1e0dcfd9[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Nov 12 00:04:04 2016 +0100
+
+    Added kill script for prefabspawner to kill all children on command, ex. on game reset after death.
+
+[33mcommit 56ac1c6ed77302a5c14893f4f3eaf80f84c08874[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Nov 11 23:21:38 2016 +0100
+
+    Added game over screen UI and resume+main menu buttons to screen. Added scripts for respawn to checkpoint position and assigned to button.
+
+[33mcommit 28c3efa784b48e90ac0d24542bd6533943944068[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Oct 24 16:37:26 2016 +0200
+
+    Started work on the game over screen
+
+[33mcommit 14c52f9aee42af0d8ac6fa3f4e95976904993fe6[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Wed Oct 19 15:57:51 2016 +0200
+
+    Reformed the checkpoints into prefabs in unity and placed out two of them
+
+[33mcommit 9cc6a0f6b3fa8058a5f6d6dbf0bfe19e719952e3[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Wed Oct 19 15:51:41 2016 +0200
+
+    Created the basic checkpoint script as well as unity object
+
+[33mcommit b8f33af78f4f1011415429ffc2dfb241cf68cc13[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Tue Oct 18 17:40:15 2016 +0200
+
+    Wrote the script and implemented the countdown in unity, works as it should
+
+[33mcommit 9e768892df89db8ea56e0b6507be1c752991bd0c[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Sep 25 15:19:55 2016 +0200
+
+    Final boss drops are now also placed a bit more randomly
+
+[33mcommit 24b069d7ff5592dd6efb3706442bd454b8d58861[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Sep 25 14:19:34 2016 +0200
+
+    The Itemprefabspawner now spawns items randomly within a set area
+
+[33mcommit 0614bd379563dc17ac8fc0746aca970d829354b8[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Sep 25 13:38:39 2016 +0200
+
+    Solved the issue with the itemspawner, it now works as planned
+
+[33mcommit 8caf17d38a87a44ca6b133457084db03eb5bb122[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Sep 24 18:24:49 2016 +0200
+
+    Removed the Invisible-system for PIS, replaced by a distance system that doesn't work at the moment
+
+[33mcommit 9726b45000940ed7fae7b85412562b963db68c3d[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Sep 24 18:06:02 2016 +0200
+
+    Rewrote the spawner somewhat and does spawn as it should, the items don't self-destruct as planned however
+
+[33mcommit 1c92956c9598246ea3488c4a4246e30bc6870bd5[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Tue Aug 30 19:50:39 2016 +0200
+
+    Started work on the prefabspawner and it works pretty well, however, lost items need to be removed somehow
+
+[33mcommit 9107df91c1a1c60df0b8d1d9159c52576b4c39da[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Aug 26 20:13:12 2016 +0200
+
+    Added dupe of earlygame for Emil to use for checkpoints.
+
+[33mcommit 3f461211b6ed5c3d9a1209e5a899ecc77a6eba52[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Aug 26 20:06:55 2016 +0200
+
+    Added new tutorial/tooltip message system that works with most pickups and also with a trigger script. Assigned a case for jump and health.
+
+[33mcommit 3e7241751b33f0bd7f4d9dbfa434f1eee5f8179d[m
+Merge: de65e25 fd6db3e
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Aug 26 16:57:27 2016 +0200
+
+    reselved conflict in throw
+
+[33mcommit de65e2545287452b811480bab447bf4b479e9d4e[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Aug 26 16:55:21 2016 +0200
+
+    Fixed final boss trow rocks on himself with new layers. Implemented deafeating boss stage spawns next stage.
+
+[33mcommit fd6db3e041e44f961adbf0c4d5aed95e85373ad0[m
+Author: felixed <felixed@kth.se>
+Date:   Fri Aug 26 16:54:03 2016 +0200
+
+    Added limit for rocks and FB stands still while kickpunching
+
+[33mcommit bb657ee875aedc5a04445dc4a09f5cca277b74b0[m
+Author: felixed <felixed@kth.se>
+Date:   Fri Aug 26 16:37:05 2016 +0200
+
+    Added a max number of spawned rocks for the final boss
+
+[33mcommit 9bdc8da325ec76c891132f73055fe444f284cdd9[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Wed Aug 24 18:59:09 2016 +0200
+
+    Changed pivot of branch to make player hold it by the end.
+
+[33mcommit 4567acda8134342941f1e6941a7f6958d5861292[m
+Merge: 57d2007 8406a13
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Wed Aug 24 18:43:06 2016 +0200
+
+    resolved merge issue
+
+[33mcommit 57d200742f8aaa0f433d8bbdb93c9dea40e1f139[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Wed Aug 24 18:41:28 2016 +0200
+
+    Made held items sync position to the right hand (holdPosition gameobject).
+
+[33mcommit 8406a132f68281f9392a33352199e0472ce59231[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Wed Aug 24 18:36:00 2016 +0200
+
+    Completed work on stage 3, mostly
+
+[33mcommit 1c44108516a138c08a2f78a58db59ef4f692f68f[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Wed Aug 24 18:08:00 2016 +0200
+
+    Fixed issues with the final boss spitting
+
+[33mcommit 60af87aa25f9775a68d6597a36a38ef0437eb3bd[m
+Merge: 1367212 febdebb
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Wed Aug 24 18:02:17 2016 +0200
+
+    Merge branch 'master' of https://github.com/FelixEder/RetroFutureGame
+
+[33mcommit 1367212edce173b1cfad8fe2f5d02d0ef511ac60[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Wed Aug 24 18:02:12 2016 +0200
+
+    Started boss spit work
+
+[33mcommit febdebbcccc9ea5f6083e373dbca532a1fc7b649[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Wed Aug 24 18:01:08 2016 +0200
+
+    Moved finalboss stage 3 eye outside the head collission. Changed victim.transform to collider since we dont want the parent gameobject but the gameobject itself. Added layer to platformcollission detection to remove surface detection from platform under-collider.
+
+[33mcommit d14113a7f67d6b4a1ef649fa3e00f5d2bf94c92a[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Wed Aug 24 17:29:20 2016 +0200
+
+    Started work on the laser shooter for the last boss
+
+[33mcommit 5f635d8eb94d008d1820e12e39aaad78d60ac832[m
+Merge: c14cb9c e1571c0
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Wed Aug 24 16:44:58 2016 +0200
+
+    Fixed merge issuen
+
+[33mcommit c14cb9c6f66915c0be1ffae46fe6ccb0fa6123d4[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Wed Aug 24 16:43:43 2016 +0200
+
+    Started work on finalboss laser
+
+[33mcommit e1571c00ae8c66fe7845fa370ceb22955ba962ae[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Wed Aug 24 16:42:13 2016 +0200
+
+    Changed char sprites and animations, fixed timings of animations.
+
+[33mcommit e8f12b21422a113ab3ce5c3e0954b1454a54526e[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Wed Aug 24 16:17:51 2016 +0200
+
+    Head can now jump around
+
+[33mcommit 0304c63c6edf124360fb65da60d5dcd8086bdd51[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Wed Aug 24 14:34:42 2016 +0200
+
+    Started work on phase 3 of the boss, can now walk around and get mirrored
+
+[33mcommit db14910d8eb54d9ad76b504557d7af67cb30082d[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Tue Aug 23 20:35:10 2016 +0200
+
+    Completed first draft of code for phase2 of final boss
+
+[33mcommit 774554725f05a7e1e7deef0500b3cb8ec0cfa7a3[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Tue Aug 23 18:59:05 2016 +0200
+
+    Boss now charges you when you shoot the head
+
+[33mcommit d156e2a0091b2936a84e81e5f2074bd0f76e2c11[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Tue Aug 23 18:21:33 2016 +0200
+
+    Boss can now spit out enemies and open mouth on correct times
+
+[33mcommit a49b79e8a8d6935f90e66554bd228a11ff6fc181[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Aug 22 21:02:51 2016 +0200
+
+    Continued work on phase 2, will now open mouth when being stunned
+
+[33mcommit 898a5b99764bc281af0bc36c25a71946bac75384[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Aug 22 18:23:22 2016 +0200
+
+    Fixed the script for phase two so that it now moves and charges as wanted
+
+[33mcommit fb470fb2582ebef91a9676316bb1a3ed9af672e7[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Sat Aug 20 14:33:47 2016 +0200
+
+    Added a time stat to pause menu and a ugly clock symbol, also fixed a strange issue to pause menu buttons.
+
+[33mcommit b44a1fe58e32d8242a2c39edba32c2205b861fad[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Aug 18 17:41:34 2016 +0200
+
+    Added the prefab spawner to the mouth
+
+[33mcommit c1181bab20b5e2dcce6de4f5b6b1c596a1d3df12[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Wed Aug 17 21:22:57 2016 +0200
+
+    Wrote the script for the head of phase 2
+
+[33mcommit af9391670b6e8cb466943aa9bb2e0a9f0aeef482[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Wed Aug 17 19:21:17 2016 +0200
+
+    Started some of the work in the FinalBoss hierarchy, but that could take some work
+
+[33mcommit 7955b607a10dfad691eeb32ac6f54861ff6da723[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Wed Aug 17 18:24:29 2016 +0200
+
+    Added movement to the second phase of the battle
+
+[33mcommit 2cee3dbc62dc90e4d6f97b158f8fa25153f7fa17[m
+Author: felixed <felixed@kth.se>
+Date:   Sun Aug 14 18:49:18 2016 +0200
+
+    Continued work on Phase 2 of the final boss fight
+
+[33mcommit 23b4afc53b1be196e8098db87c3e336e1288f9a9[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sun Aug 14 14:08:12 2016 +0200
+
+    Fixed character getting hit by laser if punchtrigger was hit. Fixed an issue with punch not hitting objects if standing still. Squashed a few other minor bugs.
+
+[33mcommit d7058adcb71b40f9776aeb0fd8cd35238b91a126[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sun Aug 14 01:55:45 2016 +0200
+
+    Removed all spriter related scripts and sprites/animations. Drew a new temp character sprite collection and made animations in Unity. Added IK script and changed some lines to work when character is mirrored. Some small corrections to Debug menu.
+
+[33mcommit cd5c7e92fb330297035e554a0b377c139b64afb1[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sun Aug 7 22:56:00 2016 +0200
+
+    removed ostereich-todo files
+
+[33mcommit 90efd3d1e970f555e7e6cf3cbb725cf561991957[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sun Aug 7 22:52:44 2016 +0200
+
+    renamed music folder
+
+[33mcommit 3e758f1edcc93923bfc07058f1262edd4c1ccbba[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sun Aug 7 22:49:00 2016 +0200
+
+    Added some music/sound and created a script for handling audio playing in certain locations with optional fade.
+
+[33mcommit ac8cdfdf4956d53680ec8e72c5ae705f2af531b3[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sun Aug 7 14:48:40 2016 +0200
+
+    added a check for platforms to reduce fall speed when above a platform to stop player from falling through them. Changed rock and branch tag to unified pickupableitem tag and rewrote code to work around it.
+
+[33mcommit 71207c815792a09889c5b518dfeda535cfb3d339[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sat Aug 6 19:33:10 2016 +0200
+
+    small changes to statueboss script and gameobjects. made pickupable items always return to orig rotation on pickup, set their orig parent to a var and sets their parent to the orig parent on drop. some stuff with camera
+
+[33mcommit 0e0e7bab2d6a0ec4beb010e2ee64a1fedf5084e4[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Fri Aug 5 20:13:12 2016 +0200
+
+    Fixed debugmenu to not change upgradestate on toggle update causing it to swap back and forth. Also added a small input disable for knockback to make sure the player gets knocked back.
+
+[33mcommit 70f9e1439b56729da9b5760ee9b4a47742ce04bc[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Fri Aug 5 00:39:11 2016 +0200
+
+    Converted all inputs to go through a universal input manager therefore adding the ability to disable ingame user inputs. Minor changes to the wall jump script
+
+[33mcommit d6ea1769e80f62cf7529d4129c999776bf81951b[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Thu Aug 4 20:10:12 2016 +0200
+
+    Fixed char knockback and renamed the cript, works if player is not moving as of yet since player movement will cancel it out. Added some art, not done yet. Cleaned up some scripts and fixed minor issues. Rewrote laser (boss) script a bit to calculate the laser on every frame, also now kills enemies (smallcritter only).
+
+[33mcommit 919f91a82e88e85406907cb81daac2269f4d923d[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Thu Aug 4 15:17:58 2016 +0200
+
+    Fixed some minor issues with positioning of the debug menu, also swapped typestring for highjump to secondjump.
+
+[33mcommit c5b1d43da5b774065842257d06a85664431f82d7[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Mon Aug 1 01:06:52 2016 +0200
+
+    Added a useful ingame debug menu for toggling abilities. Other minor changes
+
+[33mcommit 3404947aeb5c75af62ced6275996cb113360e8f0[m
+Merge: 308d5ac e7b0a13
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sun Jul 31 20:55:17 2016 +0200
+
+    solved merge issues
+
+[33mcommit 308d5acf6a68285ff663de582cfb4e658c42fcdd[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sun Jul 31 20:53:19 2016 +0200
+
+    Added new character sprite/animation and configured to work with movement/jump scripts, also integraded wall jump to replenish second jump after. Some minor other changes
+
+[33mcommit e7b0a13ecac7ac8fe8d56097a1a78b9b1447d3b2[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 31 19:43:45 2016 +0200
+
+    Started work on the second phase of the game
+
+[33mcommit d43d7f3c6a1f7b0078b35ba6d46f9bf6bb9c242a[m
+Merge: 292cc03 8d0df3a
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 31 19:24:00 2016 +0200
+
+    Merge branch 'master' of https://github.com/FelixEder/RetroFutureGame
+
+[33mcommit 292cc03671ad1fcbc52c8455f98ee3aa536f748e[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 31 19:23:41 2016 +0200
+
+    Drew the first sprites for the second and third state of the finla boss
+
+[33mcommit 8d0df3a67a22dcde9645ff1aaa9b958b5a22e968[m
+Author: Sendan <king-viktor@hotmail.com>
+Date:   Sun Jul 31 18:30:34 2016 +0200
+
+    Added spikes from google
+
+[33mcommit 32cf3e67ee374da2a8132e8fd0ef831325133840[m
+Merge: 871eea2 8a82841
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 31 18:19:40 2016 +0200
+
+    Fixed particulary vile merge conflict
+
+[33mcommit 871eea294c04cb1844e3141c19e17fbd9110ddc4[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 31 18:17:22 2016 +0200
+
+    First phase of the final boss is almost finished, a small snag needs to be fixed
+
+[33mcommit 8a82841b817f2ea7c5aa74af1b6df6609b262930[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sun Jul 31 16:51:31 2016 +0200
+
+    changed highJump to secondJump for when in air.
+
+[33mcommit 7d5d7c8a59c748a653603fbddf2c2016a6ec45b8[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sun Jul 31 16:20:22 2016 +0200
+
+    Fixed wall slide issue, added new air move calculation.
+
+[33mcommit 7498c9a1dd233a29923598d57dc1cfa545973818[m
+Merge: 9e974ac d86b392
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sun Jul 31 15:00:33 2016 +0200
+
+    commit merge confilc
+
+[33mcommit 9e974ac44f645a481a3330040f92742a0d7ec1b1[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sun Jul 31 14:59:23 2016 +0200
+
+    added invulnerability method and state in charStatus, began conversion to or in switch statements
+
+[33mcommit d86b392798366175fc67330a9a00c2043f7e8085[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 31 14:30:22 2016 +0200
+
+    Started work on the last boss of the game
+
+[33mcommit a79e1b56e4a20e746f02c141c112bcdd142c43ba[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 31 00:59:31 2016 +0200
+
+    readded assets folder.
+
+[33mcommit 397cd36d67359d34811a873c6eb93e6df5d989b7[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 31 00:57:21 2016 +0200
+
+    removed assets folder dues to naming errors
+
+[33mcommit d8f7f91336f38a9a8002e930de755a0b13834800[m
+Merge: 28d8c9c 7f99489
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 31 00:19:26 2016 +0200
+
+    Merge branch 'master' of https://github.com/FelixEder/RetroFutureGame
+
+[33mcommit 28d8c9c993e8b033fee14b357fde602124a1ef51[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 31 00:19:04 2016 +0200
+
+    fixed smallfry script and gameobject stuff.
+
+[33mcommit 7f99489f246a70bcd4d0ffec33b80331ac3f74ab[m
+Merge: fb4059c 169d9c6
+Author: felixed <felixed@kth.se>
+Date:   Sat Jul 30 23:32:56 2016 +0200
+
+    Merge branch 'master' of github.com:FelixEder/RetroFutureGame
+
+[33mcommit fb4059c45d971a9b8f9b512d8b49077154c8d318[m
+Author: felixed <felixed@kth.se>
+Date:   Sat Jul 30 23:31:56 2016 +0200
+
+    Drew sprite for SmallFry upgrade
+
+[33mcommit 169d9c6062088017f58a2104b0625f37baced0cb[m
+Merge: 5352613 108045c
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Jul 30 23:19:25 2016 +0200
+
+    Merge branch 'master' of https://github.com/FelixEder/RetroFutureGame
+
+[33mcommit 5352613a5102f91588030048bda95d73b3e13924[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Jul 30 23:19:06 2016 +0200
+
+    Added smooth transition to cameraAdjuster and respective variable. Did stuff.
+
+[33mcommit 108045c28cf1d776d1bf5e52b1868db572f4cf43[m
+Merge: 23e873b a31a499
+Author: felixed <felixed@kth.se>
+Date:   Sat Jul 30 23:13:13 2016 +0200
+
+    Fixed small MergeIssue in CharMegaPunch.cs
+
+[33mcommit 23e873b3b0a432f12ff78b860e962582fa23d949[m
+Author: felixed <felixed@kth.se>
+Date:   Sat Jul 30 23:10:24 2016 +0200
+
+    Wrote the script for SmallFry powerup
+
+[33mcommit a31a499b4506aaa4e12fba30d504c0633f81042a[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Jul 30 21:30:09 2016 +0200
+
+    Fixed issue with megaPunch while script deactivated, also fixed the reset of megapunch after a succesful punch.
+
+[33mcommit 2ea3e56172314f55a860869dbf87017c8d0ca538[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Jul 30 18:33:29 2016 +0200
+
+    Worked on smaller things in the scene
+
+[33mcommit b8149223b3ef3eaacffa40a974ad69682bc657ca[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Jul 30 17:32:08 2016 +0200
+
+    MegaPunchBarrier added to game
+
+[33mcommit 024b1b72dc7469322e1d28988809cf4d5f86bf15[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Jul 30 17:10:54 2016 +0200
+
+    The HardCritter now works, also edited a lot of scripts so that they go by the correct tags
+
+[33mcommit f17c64709fdbfed9da427956d5d85cd1f6ad48e1[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Jul 30 16:07:07 2016 +0200
+
+    The Mega Punch now works, as well as added a few new enemies
+
+[33mcommit c861e05e070440303cb7a7ae5853d57d0786273b[m
+Merge: f68e050 88c63e6
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Jul 30 14:32:34 2016 +0200
+
+    Fixed merge isseu
+
+[33mcommit f68e050bd32c8fff62d7f745f6b8eb831bc7eadb[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sat Jul 30 14:25:09 2016 +0200
+
+    Small fixes
+
+[33mcommit 88c63e67bb5c526bc95ac861ae481efc76417d27[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sat Jul 30 00:30:52 2016 +0200
+
+    Added plugin files for importing asset animations from Spriter. Implemented new camera features into earlygame. Added a timer after doors leaving view until they close again.
+
+[33mcommit 4f211567e46e674e1881e00bbc19b56399f78e96[m
+Merge: a7652d7 77f0d7a
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Fri Jul 29 23:45:37 2016 +0200
+
+    Resolved merge issues
+
+[33mcommit a7652d7d86348370f9e35935b4e566a6a79eb456[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Fri Jul 29 23:16:24 2016 +0200
+
+    Added new smooth camera movement and dynamic positioning of the camera view, temporarily removed door-cover code
+
+[33mcommit 77f0d7ae9a7e52651197e54a0eb1db5f6a5f0c9f[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 29 17:42:55 2016 +0200
+
+    BirdBoss now works and spawns enemies correctly
+
+[33mcommit edff17aa326e73b14837b29d70d36b4d84b579ed[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 29 16:42:56 2016 +0200
+
+    The stomping enemies now work correctly
+
+[33mcommit d2bae10e9bccc0acf7f099a49768f9fe83216bc5[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 29 16:04:51 2016 +0200
+
+    BigEyeGuy now works and can be defeated
+
+[33mcommit 9afc83bc963d168a438b90b95e0b61bd107e62cf[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 29 13:23:32 2016 +0200
+
+    Continued work on BirdBoss, we need to decide on a movement system
+
+[33mcommit cf60c62c3c16c4d497b7de910053d7c65650bc29[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jul 28 18:39:25 2016 +0200
+
+    Started work on the EyeGuy, and everything mostly works, but you can't hit it right now
+
+[33mcommit 692fb8c0c1ef2723c237d57b09f76d90985ae0cf[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jul 28 17:59:29 2016 +0200
+
+    The ShellMan enemy now works
+
+[33mcommit a23eb415b89b6a917b9a5977efe9b61ea37cf0c4[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jul 28 17:38:22 2016 +0200
+
+    CrawlerCritter now works as an enemy
+
+[33mcommit 5a0b7f939eee4122a2f9dac5ba43a7d46d755896[m
+Merge: 1e72ad5 0d5055c
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jul 28 15:29:21 2016 +0200
+
+    Merge branch 'AustrianBranch'
+
+[33mcommit 1e72ad500bc37afb25fbcd85086e46d77c275418[m
+Merge: f7fb2bf 37cb123
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jul 28 15:25:37 2016 +0200
+
+    Merge branch 'master' of https://github.com/FelixEder/RetroFutureGame
+
+[33mcommit f7fb2bf6784e0d32d19f545ee2a2714674d1ae24[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jul 28 15:25:30 2016 +0200
+
+    Continued work on Bird Boss, still not so very fun
+
+[33mcommit 0d5055c2117c17a72cd8ef0d487e2249ddbb15d5[m
+Author: felixed <felixed@kth.se>
+Date:   Thu Jul 28 14:50:04 2016 +0200
+
+    Hard enemies can now be hurt by megapunching
+
+[33mcommit 37cb12314d503b5113b1d57ef5d9f8e28cc4b0ff[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jul 28 14:39:48 2016 +0200
+
+    Update Enemy & boss concepts
+
+[33mcommit c8b972e8200b06b739541c3b08491d8ae8aa3121[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Wed Jul 27 23:08:37 2016 +0200
+
+    Fixed a bunch of errors with wrong capitalization and some layers.
+
+[33mcommit ad51385b60b9d9c0c40459700af7f8b1ebb7e4a3[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Wed Jul 27 18:05:33 2016 +0200
+
+    Started work on the bigBadBirdBoss, still not so very fun to play
+
+[33mcommit 5065d988daa2835a40f5f7c5ca4a41fc0883b7fe[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Wed Jul 27 17:23:26 2016 +0200
+
+    Rewrote some of the smallCritter script. Removed child of smallCritter.
+
+[33mcommit b9c5f1e76eff041a941200133bbb5865fc606cd8[m
+Merge: 9008cf0 860c898
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Wed Jul 27 17:03:55 2016 +0200
+
+    Solved all merge issues and converted most of the new scripts to new naming conventions.
+
+[33mcommit 860c898ae323f175d2342c6df503bc9939d62d6d[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Wed Jul 27 16:14:31 2016 +0200
+
+    Fixed Syntax errors with Unitys help
+
+[33mcommit 9008cf0048711624973de4729063fef4c2fc9c6e[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Wed Jul 27 15:50:07 2016 +0200
+
+    Fixed minor issues with tags and names
+
+[33mcommit 9b073113f2670326376b9d7d48c6d2f244a85d0b[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Wed Jul 27 01:12:21 2016 +0200
+
+    Converted all namingconventions of prefabs, tags, layers, sort layer to begin with uppercase letter. Rewrote some of the 'type' detecting systems for barriers, items to not use tags but public strings instead. Made some new prefabs of items and changed platform prefab to use polygon collider instead of line. Cleaned up timing system for enemydrops decay timer. (Not done with all convertions, som pickups do not react to player anymore)
+
+[33mcommit 1ac7c04bcebee36e3c97d505d383f615868d6e4e[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Tue Jul 26 01:06:48 2016 +0200
+
+    Added improved glitch death effect to small critter prefab
+
+[33mcommit 423988982d4ada0a5328a9935f23cc2f6adf2ffb[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Tue Jul 26 01:05:07 2016 +0200
+
+    New additions to main menu, made sure a button is always selected in menus, added improved death glitch effect to temp enemy, set timescale to 1 when loading other level from pause menu, small tweaks to stage.
+
+[33mcommit 9247d0275652cc27f1c0dbe107243a40f71d43b0[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sun Jul 24 23:47:01 2016 +0200
+
+    Made boot functionable again, recentered main menu buttons, added earlygame load button to main menu.
+
+[33mcommit 8ee9fce4537c91baca5bfe572c06eae17aafbc2f[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sun Jul 24 23:26:41 2016 +0200
+
+    Redesigned main menu and partially pausmenu, added submenu in pause menu for confirmation and streamlined both menu scripts.
+
+[33mcommit 94950d0c79135d3d44bd767192a50de7a19dc89d[m
+Author: felixed <felixed@kth.se>
+Date:   Sun Jul 24 21:41:05 2016 +0200
+
+    Wrote script for the chargeStations
+
+[33mcommit d04ec4909521c3580bee4a37398780b15558789a[m
+Author: felixed <felixed@kth.se>
+Date:   Sun Jul 24 10:55:49 2016 +0200
+
+    Fixed misc things but some things probably wont work
+
+[33mcommit f5cb0883204c9cdbbb201d27a1997cc6837bb7d1[m
+Author: felixed <felixed@kth.se>
+Date:   Sun Jul 24 10:44:47 2016 +0200
+
+    Wrote script for first hard enemy
+
+[33mcommit 10c80b800d7fc24e22ce845bba123a8c356b7a78[m
+Author: felixed <felixed@kth.se>
+Date:   Sun Jul 24 10:12:53 2016 +0200
+
+    Wrote script for ShellMan and changed the scipt sorting
+
+[33mcommit b92582ae6fd4a2ebf5fa36fae02907f855180949[m
+Author: felixed <felixed@kth.se>
+Date:   Sun Jul 24 09:53:26 2016 +0200
+
+    Wrote the script for CrawlerCritter
+
+[33mcommit c1e1fbfef3744f2b92201d8d3975a1bfa7000182[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sun Jul 24 01:38:48 2016 +0200
+
+    removed and readded enemy knockback to fix an issue where file was being renamed with a big B for knockback
+
+[33mcommit fcf1fa552f065971193b3e58d315cfde749b3d1f[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sun Jul 24 01:37:10 2016 +0200
+
+    Moved everything in scene to positive side of X, polished the energy/health transitions and added a energy recharge animation. Organized sortign layers in stage
+
+[33mcommit 5b9e25cc4b725b9c85c92230c14f0ef448001f71[m
+Author: felixed <felixed@kth.se>
+Date:   Sat Jul 23 12:33:24 2016 +0200
+
+    Drawed more crude sprites for new enemies
+
+[33mcommit 87d5b3b134fa344489f6ee9fa6bc62087dd2e491[m
+Author: felixed <felixed@kth.se>
+Date:   Sat Jul 23 12:24:02 2016 +0200
+
+    Drew first sprite for new CrawlingCritter
+
+[33mcommit e562008d19db1d320668613d4a3ef53e6f83bb40[m
+Author: felixed <felixed@kth.se>
+Date:   Sat Jul 23 11:30:13 2016 +0200
+
+    Drew the first sprite for BigEyeGuy
+
+[33mcommit 71be8addec00b1ac9d4f91c3c3280a4cdac60bf7[m
+Author: felixed <felixed@kth.se>
+Date:   Sat Jul 23 11:19:00 2016 +0200
+
+    Implemented CharStatus in the MegaPunch-script
+
+[33mcommit 856ecf227c5cc560838ed1aa8862d012bc22eb8c[m
+Author: felixed <felixed@kth.se>
+Date:   Sat Jul 23 11:13:37 2016 +0200
+
+    Wrote the script for the Mega-Punch powerUp
+
+[33mcommit e0d2190d168c271ca755967f117f5460f11e108f[m
+Author: felixed <felixed@kth.se>
+Date:   Fri Jul 22 19:08:01 2016 +0200
+
+    Finished work on the BigEyeGuy scripts
+
+[33mcommit bf145c461829e9c9e3e93b7678390aa38b4c8bd3[m
+Author: felixed <felixed@kth.se>
+Date:   Fri Jul 22 18:26:32 2016 +0200
+
+    Sorted the scripts into a more complicated storage system
+
+[33mcommit 477a7f2be0079cb9d65d73be1a4e1a0ef5e69f78[m
+Author: felixed <felixed@kth.se>
+Date:   Fri Jul 22 11:30:19 2016 +0200
+
+    Made a jumping enemy that shoots lasers and can only be killed with lasers
+
+[33mcommit 51d90fe363a04519dcac7ca4a2bb97e187373833[m
+Author: felixed <felixed@kth.se>
+Date:   Fri Jul 22 10:47:29 2016 +0200
+
+    Finished writing all code for the Bird-boss
+
+[33mcommit 168f6bd85e521358e1702ba2f397b12320532bb1[m
+Author: felixed <felixed@kth.se>
+Date:   Thu Jul 21 19:23:40 2016 +0200
+
+    Further Tinkering with the Bird-children
+
+[33mcommit 6a1677f39e323b855764b21243e4f63277cd21a4[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Thu Jul 21 17:51:21 2016 +0200
+
+    Added transition animation for health slider
+
+[33mcommit f5e992c9e7f5553a7fd102193fe7e139cc37aa78[m
+Author: felixed <felixed@kth.se>
+Date:   Thu Jul 21 13:57:52 2016 +0200
+
+    Started work on the children of the bird-boss
+
+[33mcommit 1ca4cdd0835aec61a3161bc14656ff028eb06ea3[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Thu Jul 21 05:01:01 2016 +0200
+
+    Added new enviroment art, temp enemy deth glitch effect, laser cooldown, laser decay animation, maximum simultaneous spawns form prefab spawner and secret walls that reaveal when player enters collider. Also partially fixed an issue with stomp being irresponsive when using keyboard controls, some rewrites to energy usage/checks.
+
+[33mcommit e7151ff43e44e976eff42b377e8ec6d77e706126[m
+Author: felixed <felixed@kth.se>
+Date:   Tue Jul 19 23:06:57 2016 +0200
+
+    Added movement for the bird boss as well as other smaller methods
+
+[33mcommit 10341781155c63aef9a5eee8547e791eff99ceca[m
+Author: felixed <felixed@kth.se>
+Date:   Tue Jul 19 17:52:29 2016 +0200
+
+    Implemented the Mirror method
+
+[33mcommit 801305d3dc732d16609bc4f1d434ba2ea93e15c8[m
+Author: felixed <felixed@kth.se>
+Date:   Tue Jul 19 17:47:54 2016 +0200
+
+    Started work on the Bird-boss, most method signatures written, most implementations still missing
+
+[33mcommit d73a9308593f9994e8875afeb7835a3995d6acc2[m
+Author: felixed <felixed@kth.se>
+Date:   Mon Jul 18 22:21:33 2016 +0200
+
+    Wrote down some more ideas regarding enemies, bosses and stage hazards
+
+[33mcommit f650d10a1d9385d38c5d2e44a776103869d6a37c[m
+Author: felixed <felixed@kth.se>
+Date:   Mon Jul 18 22:03:53 2016 +0200
+
+    Drew the simple sprite for the barriers opened with romp-stomp
+
+[33mcommit f5a1265ad6ab7b694a15f9a6c30211291d0ea68f[m
+Author: felixed <felixed@kth.se>
+Date:   Mon Jul 18 21:55:37 2016 +0200
+
+    Started to plan what should be done during vacation in Austria
+
+[33mcommit 450092bff5870ad32c51c24b24ea5dc43aabb9d7[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 17 17:17:38 2016 +0200
+
+    Scanned and added important pictures
+
+[33mcommit dc21b083b60d1de8ed07e92dd3803f40a0735209[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 17 16:42:34 2016 +0200
+
+    Draw new sprites for the upgrades and implemented them in the game, correct power-up is now unlocked
+
+[33mcommit e9764928617321bbafa457e6beaa1a5f0107b2c2[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 17 16:19:31 2016 +0200
+
+    Made the player-controlled laser-gun function well
+
+[33mcommit e77ad50eec4fe7598df7ab876174a8afa84e8ea9[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 17 15:30:55 2016 +0200
+
+    Added sprites for energy drop and increase and both work
+
+[33mcommit 32908028e7114ba739aa256640ff9e5195e052f0[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 17 10:34:50 2016 +0200
+
+    Boss laser beam now does damage
+
+[33mcommit a26d330e4bc551fc072b28891c6dd94b78e24a4a[m
+Author: Sendan <king-viktor@hotmail.com>
+Date:   Sun Jul 17 00:40:52 2016 +0200
+
+    Added a lot of stuff with energy and laser and wall jumping.
+
+[33mcommit 3388876d56b5bc4da7fcf31a786d9f1f4efb3f07[m
+Author: felixed <felixed@kth.se>
+Date:   Sat Jul 16 23:44:19 2016 +0200
+
+    WallJump now theoretically works
+
+[33mcommit 72f27267a5ae6d4383562ccddbb8422f896725de[m
+Merge: 620859f cb658d6
+Author: felixed <felixed@kth.se>
+Date:   Sat Jul 16 22:56:58 2016 +0200
+
+    Merge branch 'master' of github.com:FelixEder/RetroFutureGame
+
+[33mcommit 620859f66ad54a29d181205160421e7a57bb4682[m
+Author: felixed <felixed@kth.se>
+Date:   Sat Jul 16 22:54:17 2016 +0200
+
+    Started work on the wall-jump scriptQ
+
+[33mcommit cb658d68d963883c390871b69539cd0b1682f5f5[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Sat Jul 16 22:18:50 2016 +0200
+
+    Fixed errors in stomp relative scripts and added stomp trigger.
+
+[33mcommit 481eb987a74e365ddc88d7a8c7b866bc923eb11a[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Sat Jul 16 21:53:07 2016 +0200
+
+    Added untracked files.
+
+[33mcommit 883bafc8ebda8d4bbe4c95b9c0a823a8a539f807[m
+Merge: 37b26cc ae8fb07
+Author: Sendan <king-viktor@hotmail.com>
+Date:   Sat Jul 16 21:50:59 2016 +0200
+
+    fixed merge issue
+
+[33mcommit 37b26cceb64b641bb9bac792614e0641b8ecf24f[m
+Author: felixed <felixed@kth.se>
+Date:   Sat Jul 16 21:45:03 2016 +0200
+
+    Wrote the code for the energy concept in the game
+
+[33mcommit ae8fb0709d5fdee2cf9eb062c4c7f639e6b7bb6f[m
+Author: Sendan <king-viktor@hotmail.com>
+Date:   Sat Jul 16 19:45:22 2016 +0200
+
+    Added dangerous blue jumping critter
+
+[33mcommit 75da92f06180c515444372e62fb15871a4fb7e59[m
+Author: felixed <felixed@kth.se>
+Date:   Sat Jul 16 19:41:21 2016 +0200
+
+    LaserShooter script added for the player
+
+[33mcommit e75f476820b844115de1b9505d6eb3f3477f57a8[m
+Author: felixed <felixed@kth.se>
+Date:   Sat Jul 16 18:49:43 2016 +0200
+
+    New StompTrigger script started, the CharStomp should now work theoretically
+
+[33mcommit 49277283b82a07352a6dc7e3cb5cbce8d726ea72[m
+Author: felixed <felixed@kth.se>
+Date:   Sat Jul 16 17:04:31 2016 +0200
+
+    CharStomp now cannot be executed while floating
+
+[33mcommit 692d8b3e480331f07d14b9c44c76e712a27281aa[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Sat Jul 16 16:17:21 2016 +0200
+
+    Added new boot animation but is not done yet.
+
+[33mcommit 4476b71e32622513d3a5b4c65df0b792265bccb3[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 15 19:47:37 2016 +0200
+
+    Continued work on the CharStomp
+
+[33mcommit ec5b4166bf62bd7a8190346ee2f1895fea2a60a5[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 15 19:14:45 2016 +0200
+
+    Added untracked files
+
+[33mcommit 47288aa7178df4967e4c7a4b0359e2cf14ac2ac4[m
+Merge: 842367d d95ff69
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 15 19:13:37 2016 +0200
+
+    Merge branch 'master' of https://github.com/FelixEder/RetroFutureGame
+
+[33mcommit 842367d3d9718f9b7160cade3f57a21f54487636[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 15 19:13:24 2016 +0200
+
+    Added increase health/maxhealth, take damage and die methods.
+
+[33mcommit d95ff699a94bc7cafa88d536e2b9c1347d384099[m
+Merge: 42fcaf4 742d682
+Author: felixed <felixed@kth.se>
+Date:   Fri Jul 15 19:08:05 2016 +0200
+
+    Merge branch 'master' of github.com:FelixEder/RetroFutureGame
+
+[33mcommit 742d6820f50ff839327b422db0c2b385bf050fa5[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 15 18:23:32 2016 +0200
+
+    Fixed healthslider script and gameobject, adaptive to max health and current health.
+
+[33mcommit 42fcaf41cc0eb23f2ecb40ebef7d4e48b489a732[m
+Author: felixed <felixed@kth.se>
+Date:   Fri Jul 15 18:20:55 2016 +0200
+
+    Started work on the CharStomp.cs script
+
+[33mcommit 5e8b1afb2011e168e391d4237126b7de673b93d5[m
+Merge: 90f9362 0d3a2d2
+Author: felixed <felixed@kth.se>
+Date:   Fri Jul 15 17:23:25 2016 +0200
+
+    Merge branch 'master' of github.com:FelixEder/RetroFutureGame
+
+[33mcommit 90f9362d8894ddfffdeab746091d68b0728a13ff[m
+Author: felixed <felixed@kth.se>
+Date:   Fri Jul 15 17:22:43 2016 +0200
+
+    Added CharHealth script and function to set health slidier to current health.
+
+[33mcommit 0d3a2d2d3d3515521d72a5f3b00887c86834087e[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 15 17:10:33 2016 +0200
+
+    Finished the first version of the map
+
+[33mcommit 35cd598775acb891178dfd5f4edf38feccd1f977[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 15 15:07:00 2016 +0200
+
+    Continued work on the map
+
+[33mcommit 4bd699e61270d529457ea768d0928f10a8b54708[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 15 13:51:10 2016 +0200
+
+    Continued work with the map, added more blocks
+
+[33mcommit 91cf276865a85e0b15142ff8110cd4fe2b4801e5[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 15 13:20:38 2016 +0200
+
+    Enemy drops now dissapear after 30 seconds
+
+[33mcommit da6ec7e264a4f3c459f971ed65deb1a48367a010[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Fri Jul 15 03:38:03 2016 +0200
+
+    Added untracked files
+
+[33mcommit d7b29286f0ba3bc4f0f8e19aa1de6f3773c39a79[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Fri Jul 15 03:35:19 2016 +0200
+
+    Added missing event folder and corresponding game objects. Added more level art and hitboxes.
+
+[33mcommit ec64d4448cd7e688cba7bcdb43e3e526bf85d213[m
+Merge: 5ea1d8e f44bb93
+Author: felixed <felixed@kth.se>
+Date:   Thu Jul 14 17:20:01 2016 +0200
+
+    Merge branch 'master' of github.com:FelixEder/RetroFutureGame
+
+[33mcommit 5ea1d8e2bfde3ce4938f3ce35e4550c83fd68785[m
+Author: felixed <felixed@kth.se>
+Date:   Thu Jul 14 17:19:30 2016 +0200
+
+    Added a fitting image the bird boss can be based on
+
+[33mcommit f44bb939387a7d62124bdf754a6aefb5270e709c[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jul 14 17:18:12 2016 +0200
+
+    Update Item concepts
+
+[33mcommit b9d34e2cf1a50ba223a101b08de6fb7552fdde3a[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jul 14 17:05:34 2016 +0200
+
+    Update Enemy & boss concepts
+
+[33mcommit 016cbaa4c6f3067537cbc99ba97cd6800291dff4[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jul 14 13:53:27 2016 +0200
+
+    StatueBoss now fixed, is totally playable with laser beams, needs polish though
+
+[33mcommit 461789f894ff14f29dcdd9aad1ac9e6ff438512c[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jul 14 12:39:27 2016 +0200
+
+    The PrefabSpawner now works correctly
+
+[33mcommit 77ba8347d7938fe39bd809634bb189b1cabc8da0[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jul 14 12:17:31 2016 +0200
+
+    Continued work on boss, not finished. Prefab spawner added, but not yet tried
+
+[33mcommit 5625ac251b6e0dfa6d4dab380d16289e6d633a7d[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Wed Jul 13 14:51:31 2016 +0200
+
+    Statue boss can now be activated and defeated correctly, it still cannot attack and has a bunch of errors still
+
+[33mcommit 5d9a180b0075ca48b634d5772530bdb6535f4375[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Wed Jul 13 14:37:24 2016 +0200
+
+    Fixed a few Null-bugs regarding punching and items, as well as added triggers for statue boss
+
+[33mcommit 020e5cd5f72cc0e24c87d8235e0a2c697e0880bd[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Tue Jul 12 20:25:37 2016 +0200
+
+    Added new sprites for level, changed a few error declerations in methods, added cover map feature and merged pause menu to master.
+
+[33mcommit 9478dc010bef8a355f78e8d4bbd21fde67db3a9a[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Tue Jul 12 19:06:56 2016 +0200
+
+    Makes it so the player drops the items when getting knocked back by an enemy
+
+[33mcommit 6a413c1b55a2a599f5840b72ecd4e14e65f704dd[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Jul 11 19:02:04 2016 +0200
+
+    Tried to implement the boss, has some issues however
+
+[33mcommit d8e0f56d360ce6279870472ed6fc3f391229e0be[m
+Merge: a194032 76d324a
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Jul 11 18:47:22 2016 +0200
+
+    Merge branch 'master' of https://github.com/FelixEder/RetroFutureGame
+
+[33mcommit a1940325ab9e732d9db9d8923a77bd505e1ec79f[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Jul 11 18:47:17 2016 +0200
+
+    Added statue to game with eyes
+
+[33mcommit 76d324a0620a8d320464b168e5dc9a9b02ab9c4e[m
+Author: felixed <felixed@kth.se>
+Date:   Mon Jul 11 18:11:00 2016 +0200
+
+    Completeted work on first boss, also implemented early version of Laserbeams
+
+[33mcommit b04fe547ba5834771bacdf36310ebdb2219d8fca[m
+Merge: c29b16f 626a53b
+Author: felixed <felixed@kth.se>
+Date:   Mon Jul 11 17:46:06 2016 +0200
+
+    Merge branch 'master' of github.com:FelixEder/RetroFutureGame
+
+[33mcommit c29b16f44de042eebc9bfffbdb79d4917614f127[m
+Author: felixed <felixed@kth.se>
+Date:   Mon Jul 11 17:45:36 2016 +0200
+
+    Starteed work on the first boss of the game
+
+[33mcommit 626a53bf2c786fdc9f311d74f96f5f61ad2ef187[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Jul 11 17:03:51 2016 +0200
+
+    Update Enemy & boss concepts
+
+[33mcommit 2e3c78daa6009faede0136192af22d354199e558[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Jul 11 16:12:50 2016 +0200
+
+    Update Enemy & boss concepts
+
+[33mcommit 9b21f4822c781761a0f103d002a9f1e83059a87a[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Jul 11 16:06:16 2016 +0200
+
+    Create Puzzle concepts
+
+[33mcommit 834b4b953178e74574d29d030a8ffcbc1adcd0d5[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Jul 11 12:37:06 2016 +0200
+
+    Added a few more rooms with sprites and colliders to the map
+
+[33mcommit 4cfddc33f1e4aa57fc1f454a5dc3b4e211f29bf7[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Jul 11 11:51:24 2016 +0200
+
+    Added the new speed-upgrade to the game
+
+[33mcommit a7688aa4c6958b20f386051ec30c95499da9fdd0[m
+Merge: c038921 2bc2ec1
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 10 11:02:43 2016 +0200
+
+    Merge branch 'master' of https://github.com/FelixEder/RetroFutureGame
+
+[33mcommit c03892145a29db61d4b8538b97fafc2bcf4bda5b[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 10 11:01:56 2016 +0200
+
+    Implemented the health-increases, the sprites for the upgrades wont load now however
+
+[33mcommit 2bc2ec14de6e4c5ab67f8d9515c08c9cbc4c7b98[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 10 10:59:28 2016 +0200
+
+    Update Item concepts
+
+[33mcommit fa9390fad169b37713d58ff881b67b8acf834833[m
+Merge: 6a8f1d8 07ad61c
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 10 10:41:35 2016 +0200
+
+    Tried to fix merge issue
+
+[33mcommit 07ad61c382fd0b52cf71e58cfd6f1853ba49a76a[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 10 10:32:13 2016 +0200
+
+    Enemy Drops now works as planned, branch mission has been fulfilled!
+
+[33mcommit 6a8f1d84778375d3a279e9e810d183768c1feab0[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 10 09:57:40 2016 +0200
+
+    Added missing files
+
+[33mcommit 8bc09d28afa3458d4df41e7f7e379d92ccdfff7c[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 10 09:57:08 2016 +0200
+
+    Added missing CharFloat.cs to git
+
+[33mcommit 1267ad2330f79f9470a5c3ebbda45e11e55ab332[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 10 09:47:47 2016 +0200
+
+    Added untracked files to branch in order to checkout master
+
+[33mcommit 8103a4dcf91318403c9f71d0f89f71527cf848e7[m
+Author: Sendan <king-viktor@hotmail.com>
+Date:   Sun Jul 10 01:50:08 2016 +0200
+
+    added animation to char object
+
+[33mcommit f660a3ac22a2249d7e82fb56cedcd83225d5fde2[m
+Author: felixed <felixed@kth.se>
+Date:   Sun Jul 10 01:24:42 2016 +0200
+
+    Added code for HealthIncrease items in Upgrades.cs
+
+[33mcommit c1e6a957e051034ad3abc18b77fe1727b883d68a[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Sun Jul 10 01:12:58 2016 +0200
+
+    Drawed crude healthIncrease-sprite
+
+[33mcommit 979d7d36460ad2823cad9bb6924d342dfc2cabb1[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Sun Jul 10 00:13:49 2016 +0200
+
+    Adding missing animations and new character spritesheet
+
+[33mcommit f8fd630bfa1e61eb63de765eb84b51225eba8fe7[m
+Author: Sendan <king-viktor@hotmail.com>
+Date:   Sat Jul 9 22:48:05 2016 +0200
+
+    Fixed minor-float issue
+
+[33mcommit 9c144e16c24f5900442e63105226a75da50dc263[m
+Author: felixed <felixed@kth.se>
+Date:   Sat Jul 9 22:17:45 2016 +0200
+
+    Added optional health to items, such as branches
+
+[33mcommit 0f2b1b53aaa474fdcc781aa4aa143186ed9e4460[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 8 15:40:03 2016 +0200
+
+    Missplaced a curly-bracket, now fixed
+
+[33mcommit 63c913cbab5a6312ad19f3ed9651e09a6d6dd8ea[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 8 15:37:53 2016 +0200
+
+    Started work on enemy drops, which probably will use Prefabs
+
+[33mcommit 386307ff6f9cee24a0ebc102b58691443e14f083[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 8 13:58:43 2016 +0200
+
+    Missed adding damage to branch, now fixed
+
+[33mcommit f80c269825c56fa0e064b96484c352446de88731[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 8 13:48:24 2016 +0200
+
+    Fixed bug with enemies dying with one punch, now it works as planned. The issue was I used =- in the critter GetHurt, not -= which is the correct way of writing the operator
+
+[33mcommit 07742f3a10a35de693104e879bbd90023a7d4550[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 8 12:42:07 2016 +0200
+
+    Added the highJump upgrade to the game
+
+[33mcommit 2955b28ee74f134dea0566aa2a27d49154ba1358[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 8 12:18:32 2016 +0200
+
+    Changed upgrade system so that it enables scripts instead of using bools
+
+[33mcommit 3e04bfd60a1b9ec1af94e155c7feb5d4e8298ce2[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 8 12:05:16 2016 +0200
+
+    Readded moved sprites
+
+[33mcommit 7f6d07bced0951e6382b36e2d0dde5f9069b584d[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 8 12:04:21 2016 +0200
+
+    Added branches and pokeBarriers to the game, works in similar ways to rocks
+
+[33mcommit c99afe02a63e0aeea8999fa1891f70fec92f9594[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Fri Jul 8 02:03:48 2016 +0200
+
+    Added missing assets
+
+[33mcommit 935dcb56ae9fe639b945278084cb302936d60d5d[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Fri Jul 8 01:58:56 2016 +0200
+
+[33mcommit 0893772cf54af4e192f802316bf528dbb4b94238[m
+Merge: dc84102 eb058d8
+Author: root <root@localhost>
+Date:   Fri Jul 8 01:58:08 2016 +0200
+
+    Merge branch 'master' of https://github.com/FelixEder/RetroFutureGame.git
+
+[33mcommit dc84102ba8c2f0734dfa2684982f5d272092263b[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Fri Jul 8 01:57:45 2016 +0200
+
+    Added missing assets
+
+[33mcommit eb058d87b9f5a8dc6e1610ffce8580bf6f1feffc[m
+Merge: 0089935 08ad4ed
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 8 01:56:42 2016 +0200
+
+    Merge branch 'master' of https://github.com/FelixEder/RetroFutureGame
+
+[33mcommit 00899356e9fed26660aa40b5994c55c0c1d3cde2[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 8 01:56:27 2016 +0200
+
+    Leaf-upgrade now works really well
+
+[33mcommit 08ad4edd2e8160e6d6aca477ecc6915d7a17c67d[m
+Merge: 59397d7 e52700b
+Author: root <root@localhost>
+Date:   Fri Jul 8 01:49:45 2016 +0200
+
+    Merge branch 'master' of https://github.com/FelixEder/RetroFutureGame.git
+
+[33mcommit 59397d7ab25166dac6ac5835a9fd4cbdf50df248[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Fri Jul 8 01:49:29 2016 +0200
+
+    Added Idle animation and updated character sprite.
+
+[33mcommit e52700bfa1552b34e0ef2cefef5ada845d6d4063[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 8 00:52:49 2016 +0200
+
+    Started work on new Leaf-upgrade
+
+[33mcommit e9a711a848b26937f8ff5467a1fd94711d5bda39[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 8 00:04:16 2016 +0200
+
+    Removed the UIManager from the master branch
+
+[33mcommit e739c1347da33dceef15acae26d924a6752c9e7e[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jul 7 23:59:42 2016 +0200
+
+    Fixed issue when getting a NullPointer when punching wood barrier
+
+[33mcommit e5b3eaa3a074bdf0eb2d4080062159c13012e077[m
+Author: Sendan <king-viktor@hotmail.com>
+Date:   Thu Jul 7 23:42:55 2016 +0200
+
+    Add files via upload
+    
+    blub
+
+[33mcommit b75fed676f07aa30fc12a0156cdbb842134a23b3[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jul 7 23:16:08 2016 +0200
+
+    Added woodbarriers in front of some doors which can be destroyed by rocks
+
+[33mcommit dedcfb38c77356c787726c8b1b7e3a444a6927dd[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Thu Jul 7 22:12:55 2016 +0200
+
+    Added missing files.
+
+[33mcommit 1667b9b5b026b6d1d499b3386c81d9d02a2f6a61[m
+Merge: 4260880 700c13c
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Thu Jul 7 20:31:24 2016 +0200
+
+    Tried to fix special doors, fixed merge issues.
+
+[33mcommit 4260880f83136c1f0789b8ddc215fcfb5ca6d0e3[m
+Merge: c60b4f1 5ee03d9
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Thu Jul 7 20:05:00 2016 +0200
+
+    converted to button controls and added throwing.
+
+[33mcommit 700c13c871e5e79d2dec9aebf17e29ab04297a1e[m
+Author: felixed <felixed@kth.se>
+Date:   Thu Jul 7 19:54:39 2016 +0200
+
+    Fixed a small issue regarding smashing doors with tools
+
+[33mcommit 684e57d8297c383162055e3c1eac83fdef80d5e6[m
+Author: felixed <felixed@kth.se>
+Date:   Thu Jul 7 19:47:00 2016 +0200
+
+    COmpleted script for the special doors, should be working
+
+[33mcommit 245105f6e5a5f310bd4c66e3a8ecce757129dfa2[m
+Author: felixed <felixed@kth.se>
+Date:   Thu Jul 7 19:26:42 2016 +0200
+
+    A new special door added that can only be destroyed with certain items
+
+[33mcommit c60b4f13954322230001ce9e69a9acc755198dfd[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Thu Jul 7 18:31:24 2016 +0200
+
+    Started converting keys to button configs
+
+[33mcommit 5ee03d90afad21e4f6f71b9d06af7798fd3cb1be[m
+Author: felixed <felixed@kth.se>
+Date:   Thu Jul 7 18:30:25 2016 +0200
+
+    CharPunch changed so it uses a local damage variable
+
+[33mcommit f887dc10198ef903024be7c0b95bd440717d3a6d[m
+Author: felixed <felixed@kth.se>
+Date:   Thu Jul 7 18:16:42 2016 +0200
+
+    PickUpableItem-class now remembers the damage for each seperate object instead of forcing the player to so
+
+[33mcommit 8dbbedb6add879686094e484d938637e6f8c58c4[m
+Author: felixed <felixed@kth.se>
+Date:   Thu Jul 7 18:12:36 2016 +0200
+
+    Enemies will now get hurt if hit by an rock with high enough speed
+
+[33mcommit a7a002e20c457929ba3b73bd0b4eee26f25dd4ea[m
+Author: felixed <felixed@kth.se>
+Date:   Thu Jul 7 17:41:42 2016 +0200
+
+    Added code to drop items
+
+[33mcommit eeb7c19b07c9762547015412d1b411823806ab66[m
+Merge: 1757b96 cf7323f
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Thu Jul 7 17:27:17 2016 +0200
+
+    Merge branch 'master' of https://github.com/FelixEder/RetroFutureGame
+
+[33mcommit 1757b96a712fd26cf789659ce236eed25f10e185[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Thu Jul 7 17:26:59 2016 +0200
+
+    Fixed holding item and added new scharacter sprites and animations
+
+[33mcommit cf7323fbc22f410e5e8d08d82a29f633585d3e4f[m
+Author: felixed <felixed@kth.se>
+Date:   Thu Jul 7 17:21:47 2016 +0200
+
+    Added multiple punches on CharPunch.cs based on the different items the player can carry
+
+[33mcommit 3ed2556c5657edc2c7d9d01db9581caf03efb4e0[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jul 7 15:56:38 2016 +0200
+
+    Small fixes on the rock
+
+[33mcommit f36fcfa5b6c872ccda5fdddfe6b98bd585a32451[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jul 7 15:47:32 2016 +0200
+
+    Added new scripts
+
+[33mcommit 78ebc538986f3a32bad641c49f5c0ec2ff78ae05[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jul 7 15:45:31 2016 +0200
+
+    Rock can now be held, but still poses an issue
+
+[33mcommit 267b78c97e9a172c517142dbff7753c7e075e8e6[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jul 7 13:27:29 2016 +0200
+
+    Added missing scripts
+
+[33mcommit e75128b49f256a53c9146746544acb50fe004e83[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jul 7 13:26:27 2016 +0200
+
+    Small changes on the pickUpAble code
+
+[33mcommit 0de1667a52ba234157124b05472b46dac04e4d2b[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jul 7 13:00:22 2016 +0200
+
+    Player can now pick up an item and then drop it. The actual attachment of the object is yet to be fixed though.
+
+[33mcommit 16270792b2d722f154c18b0d9d4c23d0d71f007c[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jul 7 12:18:41 2016 +0200
+
+    Knockback now works sometimes, however, at other times it doesn't, will need to figure that out
+
+[33mcommit 2e557d00bb8141a6e312f84584fc7803148dcc46[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jul 7 12:01:13 2016 +0200
+
+    Started work on the Knock-back mechanic on the player
+
+[33mcommit 2303a1b4f6581d6a03c2af6b41b550c21d7ed749[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jul 7 11:18:31 2016 +0200
+
+    Fixed issue with NullReferenceExcpetion for the SmallCritter object, solution was to change start-method to upper-case
+
+[33mcommit 848eca8e50457745f55c200571c57d16f711ff71[m
+Merge: 81a803c 4681d7d
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Wed Jul 6 16:55:32 2016 +0200
+
+    Merge branch 'master' of https://github.com/FelixEder/RetroFutureGame
+
+[33mcommit 81a803c5d605a508b4145546026e6c55acadb0fd[m
+Merge: 5c098cc f2c9a35
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Wed Jul 6 16:55:24 2016 +0200
+
+    Fixed merge issues and added punch cooldown.
+
+[33mcommit 4681d7d9d7136a7bf9533a33e2f9c9aec770116c[m
+Author: felixed <felixed@kth.se>
+Date:   Wed Jul 6 16:51:42 2016 +0200
+
+    Started work on the playerInventory class
+
+[33mcommit 5c098ccf62e341ae9d3cbd4b7b3cf39373e9dc3a[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Wed Jul 6 16:38:33 2016 +0200
+
+    Rewrote critter movement code because of unknown error.
+
+[33mcommit f2c9a3583b642094acfa2e9739a996beba1bd213[m
+Author: felixed <felixed@kth.se>
+Date:   Wed Jul 6 16:02:22 2016 +0200
+
+    Made sure that you can only punch again when the animation is over
+
+[33mcommit 31bdc635c266e47ab071647d1b8e259672a101d7[m
+Merge: dab19cf aa6c20e
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Wed Jul 6 15:21:45 2016 +0200
+
+    Merge branch 'master' of https://github.com/FelixEder/RetroFutureGame
+
+[33mcommit dab19cf52e160414ffb2579dff86885896a583dd[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Wed Jul 6 15:21:37 2016 +0200
+
+    Added blob enemy sprite and fixed max fall speed.
+
+[33mcommit aa6c20eea83285a154aabad8958c5f051f62b1af[m
+Author: felixed <felixed@kth.se>
+Date:   Wed Jul 6 15:19:36 2016 +0200
+
+    Code written for the most basic enemy
+
+[33mcommit b38590d3d8d898b7b0d47f8c8ab4ca7bb118df7e[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Wed Jul 6 14:34:58 2016 +0200
+
+    Added missing assets
+
+[33mcommit 5f1cdc00c513f6792b603a1c8d0b7410a74ac2cf[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Wed Jul 6 14:34:05 2016 +0200
+
+    Fixed issue with the doors not returning when invisible for the camera
+
+[33mcommit 0259e89d94faa62a1b5b948171131f0711235752[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Wed Jul 6 05:56:23 2016 +0200
+
+    Added intro logo and main menu with level select. Added attributes to doors in unity editor.
+
+[33mcommit c97dbdbf84a3111ab43c83e185e6883e8bb4d050[m
+Merge: 06e3be8 3ed4d8f
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Wed Jul 6 00:31:59 2016 +0200
+
+    fixed punch/door interaction, fixed platform script and changed platforms in Unity.
+
+[33mcommit 06e3be858f1208dd8000da1f26ede0e4957c030f[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Wed Jul 6 00:30:29 2016 +0200
+
+    fixed punch/door interaction, fixed platform script and changed platforms in Unity.
+
+[33mcommit c54ce1b6e173a90fe76eab8ccd3f7e4d20345d99[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Wed Jul 6 00:29:11 2016 +0200
+
+    fixed punch/door interaction, fixed platform script and changed platforms in Unity.
+
+[33mcommit 3ed4d8f50089038431217d8cfc96ed4b9fafb2b9[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Tue Jul 5 23:21:40 2016 +0200
+
+    Adding missing files
+
+[33mcommit 73e7946c81b41d9d476d403a8c2e6ffc3db7e148[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Tue Jul 5 18:23:01 2016 +0200
+
+    Continued work on the punching mechanic, but still facing some issues
+
+[33mcommit 23b4ed461e89499ff3d4722ea546874a906c0a7d[m
+Merge: 61edf2f dd43df6
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Tue Jul 5 17:55:37 2016 +0200
+
+    resolved merge issue
+
+[33mcommit 61edf2f201d62e8a6be80d600b8325759095cd64[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Tue Jul 5 17:51:46 2016 +0200
+
+    destroyed platform script
+
+[33mcommit dd43df62f4daec51b896d2b964256366ffd76368[m
+Author: felixed <felixed@kth.se>
+Date:   Tue Jul 5 17:38:42 2016 +0200
+
+    Added new Door-script, should be invisible when the door is punched
+
+[33mcommit e1e788e7266bd301db22a4c97c70b17e6ce05eb8[m
+Author: felixed <felixed@kth.se>
+Date:   Tue Jul 5 17:14:16 2016 +0200
+
+    Started work on the punching of the character, basic script now in place
+
+[33mcommit c3d7a6458559d6363ef9d0e8fc152d0078f5cdf2[m
+Merge: 47257ee 7f26890
+Author: felixed <felixed@kth.se>
+Date:   Tue Jul 5 16:12:34 2016 +0200
+
+    Merge branch 'master' of github.com:FelixEder/RetroFutureGame
+
+[33mcommit 47257eea5095d7df65a8500f2a3a3ac0849a3a88[m
+Author: felixed <felixed@kth.se>
+Date:   Tue Jul 5 16:11:47 2016 +0200
+
+    Rewrote platform log for jumping down through platforms.
+
+[33mcommit 7f2689022bb619891125a6c5c4bdd2d8d854b2a3[m
+Merge: b857700 3d6a86b
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Tue Jul 5 15:50:15 2016 +0200
+
+    Merge branch 'master' of https://github.com/FelixEder/RetroFutureGame
+
+[33mcommit b8577002dfadd8f6fa32ff378d3021379f2f76ac[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Tue Jul 5 15:50:10 2016 +0200
+
+    Started work with hitboxes on the lower levels
+
+[33mcommit 3d6a86be9e7e7567b900e501717e0195a58c5eff[m
+Author: felixed <felixed@kth.se>
+Date:   Tue Jul 5 15:48:48 2016 +0200
+
+    Added ability to Jump down through platforms in charJump and rewrote platformLogic to use a method.
+
+[33mcommit 98f03d8dc41e90960af6d3a4571df0a83282bda4[m
+Merge: fb8d8be e918d12
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Tue Jul 5 14:47:37 2016 +0200
+
+    Further work on the hitboxes in the first level
+
+[33mcommit fb8d8bec3671fae1021b8d287384fe02bcd08e03[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Tue Jul 5 14:09:13 2016 +0200
+
+    Work begun on hitboxes for in room3
+
+[33mcommit e918d12d8934604f4525354d5006fc3b6935bb5a[m
+Author: Gustav <aktersnurra95@gmail.com>
+Date:   Tue Jul 5 14:05:38 2016 +0200
+
+    Revised movement script, fixed platform logic and fixed unresponsive jumps
+
+[33mcommit 28184f4060083bb3a7e0109d1e989a96a31bcc7d[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Tue Jul 5 13:50:28 2016 +0200
+
+    Continued work on the world, now the lower level has begun construction
+
+[33mcommit f4e535717b6df664ed35df81ac6a56a3be23486e[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Jul 4 21:25:41 2016 +0200
+
+    Final touches for the day, worked on the platform script and continued to create the world
+
+[33mcommit fc3b9ca65221ceed1dbab7de48fd17b2c0aada7c[m
+Merge: 96e6229 fbd4719
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Jul 4 20:42:59 2016 +0200
+
+    Merge branch 'master' of https://github.com/FelixEder/RetroFutureGame
+
+[33mcommit 96e622965589072c8ef096f5592d525d5145a767[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Jul 4 20:42:53 2016 +0200
+
+    Remade room 1 and added all hitboxes
+
+[33mcommit fbd47199c8eb84fd9b1b0809f2d89faa9d5a3a0a[m
+Author: felixed <felixed@kth.se>
+Date:   Mon Jul 4 20:39:24 2016 +0200
+
+    Added logic to platforms.
+
+[33mcommit 40070d91705daabf4a28780591b61d89ebc17e1d[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Jul 4 19:22:33 2016 +0200
+
+    Further work on the game map
+
+[33mcommit 452f1d890059d3d058ad8dfb8bd862a58c9f15ca[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Jul 4 18:37:53 2016 +0200
+
+    Added missing assets
+
+[33mcommit 03affe1ad55d4a76c17ad01b8c6660b3d01fbb65[m
+Merge: 5f0e5da 052fd0b
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Jul 4 18:36:36 2016 +0200
+
+    Merge branch 'master' of https://github.com/FelixEder/RetroFutureGame
+
+[33mcommit 5f0e5da3e768572acdde2c78db061febca9813b7[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Jul 4 18:36:14 2016 +0200
+
+    Started work on the first few rooms in the game in unity
+
+[33mcommit 052fd0bf1f87f2815ec0d1213c711288dfa647a7[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Jul 4 17:07:51 2016 +0200
+
+    Create Enemy & boss concepts
+
+[33mcommit b7c6e698cf6c690a8d0cbd095add702aa5a7053b[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Jul 4 17:03:48 2016 +0200
+
+    Update Item concepts
+
+[33mcommit c1d8d2e4b0a884fcdb639b11f2ce914ee3baa5ee[m
+Merge: 37ae687 5752a73
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Jul 4 17:01:52 2016 +0200
+
+    Merge branch 'master' of https://github.com/FelixEder/RetroFutureGame
+
+[33mcommit 37ae6878a393352739e81d921103fbe09de05033[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Jul 4 17:00:47 2016 +0200
+
+    Reworked movement script
+
+[33mcommit 5752a7333d1d961bee29962730b7411e746c7d57[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Jul 4 16:37:32 2016 +0200
+
+    Update Item concepts
+
+[33mcommit 54347694229a482aa337e615c13eaac597bd3f24[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Jul 4 16:22:24 2016 +0200
+
+    Update Item concepts
+
+[33mcommit c34841176b8d315102972b8179bbae64936fee97[m
+Author: felixed <felixed@kth.se>
+Date:   Mon Jul 4 14:56:41 2016 +0200
+
+    A Physics script added in order to manipulate the gravity of the scene
+
+[33mcommit 05a7f2e2168669634328876c8ff88fdc05b96234[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Mon Jul 4 14:06:31 2016 +0200
+
+    reworked entire script system and separated different key features into different scripts.
+
+[33mcommit 81380a237775f74edd60988634458b44a90d0b70[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Sun Jul 3 14:18:53 2016 +0200
+
+    Update Item concepts
+
+[33mcommit e4ede17afbab4df8ebe3fab02872ee4fb14e8766[m
+Merge: b077b3b 3899501
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sat Jul 2 17:44:59 2016 +0200
+
+    resolved merge conflicts.
+
+[33mcommit 389950115489cc11c7d4e810141d669e6ae86bde[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sat Jul 2 17:21:03 2016 +0200
+
+    added charmovement.meta
+
+[33mcommit 0245d5714d5f6856984f12cfa7e180cd2774a2e5[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sat Jul 2 17:19:32 2016 +0200
+
+    Re-added no air turning asset and updated unity scene.
+
+[33mcommit b077b3b676ca6da4b5573c0890e7c4cba75a9b95[m
+Author: felixed <felixed@kth.se>
+Date:   Sat Jul 2 17:00:22 2016 +0200
+
+    CharMovement.cs should now not allow player to walk against a wall and should instead slide down it
+
+[33mcommit 071c11145b394ec03541727d50e3bc7c7b0f094c[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sat Jul 2 16:53:20 2016 +0200
+
+    Fixed asset mirror in movement script.
+
+[33mcommit 6467c767d3381f3b7e92029381ee724dd836716a[m
+Author: felixed <felixed@kth.se>
+Date:   Sat Jul 2 16:29:10 2016 +0200
+
+    New bool added to CharMovement, onWall, game now recognizes when player is on a wall and changes the fall speed
+
+[33mcommit 1489003f4a6395f236eb7028ed3fbc6f9e6e7f91[m
+Author: felixed <felixed@kth.se>
+Date:   Sat Jul 2 16:04:02 2016 +0200
+
+    Reworked the CharMovement.cs so that player recognizes when on the ground or not
+
+[33mcommit 643f768169a40e556418759c75c46a396dc0ecbc[m
+Author: aktersnurra95 <aktersnurra95@gmail.com>
+Date:   Sat Jul 2 13:02:13 2016 +0200
+
+    reworked movement script to add acceleration and asset-turning as well as changed assets from png to psd and edited character asset.
+
+[33mcommit bc08bde3d51fe813cc869d7b8de6532ea656cc58[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 1 16:52:01 2016 +0200
+
+    Update Item concepts
+
+[33mcommit 13943b3c41befb7e5796e90bdaf06353add862de[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 1 16:25:54 2016 +0200
+
+    CharMovement.cs reworked so that you can only jump when on the ground
+
+[33mcommit 8545878869d44614bca052642c2db3ebaafa46e8[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 1 01:18:18 2016 +0200
+
+    Update Item concepts
+
+[33mcommit b3b6ef69ef62d154dba0aa5e8d42e44919121495[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Fri Jul 1 00:32:39 2016 +0200
+
+    Create Item concepts
+
+[33mcommit 22212486837d368085a5556724a5351a75659ee7[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jun 30 22:48:09 2016 +0200
+
+    Saved mvp scene, char and ground
+
+[33mcommit 62859e4412c7292b0c77d7a8497333ea3f45e7b8[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jun 30 22:38:05 2016 +0200
+
+    Reverted raycast to old jump method
+
+[33mcommit d7be65fbc62c94a9e3a8926ff0e4b0260b2b7e13[m
+Author: felixed <felixed@kth.se>
+Date:   Thu Jun 30 22:14:54 2016 +0200
+
+    Added RayCast to CharMovement
+
+[33mcommit 2c7c51fd3826928e7df11eaf1652b3b8b148cc1f[m
+Author: felixed <felixed@kth.se>
+Date:   Thu Jun 30 21:49:19 2016 +0200
+
+    Documentation added for CharMovement.cs
+
+[33mcommit ac086b65fd055981a0d34879aef1132da498266c[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jun 30 21:37:16 2016 +0200
+
+    Fixed rigidbody move and jump controlls
+
+[33mcommit 3043fcf185a78698a87339305db60bdfd3d1b2ab[m
+Author: felixed <felixed@kth.se>
+Date:   Thu Jun 30 19:24:14 2016 +0200
+
+    Reworked the jump and movement code
+
+[33mcommit 829f638ec75a73dd29e3be281710ead9b066c79d[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jun 30 19:07:37 2016 +0200
+
+    vector2 > vector3
+
+[33mcommit 4d99db5e0d8bdcfcdfe7d55e7537965fb6acfa64[m
+Merge: ce20dab 0682e31
+Author: felixed <felixed@kth.se>
+Date:   Thu Jun 30 18:59:50 2016 +0200
+
+    Merge branch 'master' of github.com:FelixEder/RetroFutureGame
+
+[33mcommit ce20dabb7e4ed265724238afe83b1342665cd0bd[m
+Author: felixed <felixed@kth.se>
+Date:   Thu Jun 30 18:59:13 2016 +0200
+
+    Added simple jumping mechanics for player
+
+[33mcommit 0682e31366812cea179619322ac82d0ae1a2367b[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jun 30 18:53:16 2016 +0200
+
+    Added assets for player/ground and scenes
+
+[33mcommit 3c8a15873291c15fccf823487f46f6831554f01c[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jun 30 18:41:39 2016 +0200
+
+    charMove.cs, var move = new
+
+[33mcommit 187dd4dbd7d22c82f32c2f6d92c1dea187328f10[m
+Author: felixed <felixed@kth.se>
+Date:   Thu Jun 30 18:29:57 2016 +0200
+
+    Added walking code for player object
+
+[33mcommit e798622c183c2a1dae3a99129e20dfdf7bc3cdb4[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jun 30 17:53:40 2016 +0200
+
+    Unity project added
+
+[33mcommit 3db104256cc804a65d0f671915673327a64bf8de[m
+Author: Josh Abernathy <joshaber@gmail.com>
+Date:   Tue Mar 10 16:09:04 2015 -0400
+
+    :tada: Added .gitattributes & .gitignore files
+
+[33mcommit 2691328d077c1e5e4404f508a9dd38a39a330740[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jun 30 15:51:44 2016 +0200
+
+    Update README.md
+
+[33mcommit be93c9f68a4900ac2e6c0ffb39915ef1d8a02c64[m
+Author: Felix Eder <felix.eder@mail.com>
+Date:   Thu Jun 30 15:17:17 2016 +0200
+
+    Initial commit

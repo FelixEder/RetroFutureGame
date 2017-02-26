@@ -3,8 +3,8 @@ using System.Collections;
 
 public class BigBadBird : MonoBehaviour {
 	public Sprite regular, spitting, winging;
-	public float moveSpeed, knockForce;
-	public bool isMirrored, isSpitting, mirrorCooldown;
+	public float moveSpeed, knockForce, vertDir;
+	public bool isMirrored, isSpitting, mirrorCooldown, forceY;
 	public int health = 6, damage;
 	//Should it really use a rigidBody?
 	Rigidbody2D rb2D;
@@ -27,13 +27,13 @@ public class BigBadBird : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		float vertDir = 0;
-		if (isMirrored && transform.position.x - player.transform.position.x > 0 || !isMirrored && transform.position.x - player.transform.position.x < 0)
-			vertDir = (transform.position.y - player.transform.position.y) * -1;
-		else
-			vertDir = 5;
-			
-			//Random.Range (-20, 20);
+		if (!forceY) {
+			vertDir = 0;
+			if (isMirrored && transform.position.x - player.transform.position.x > 0 || !isMirrored && transform.position.x - player.transform.position.x < 0)
+				vertDir = (transform.position.y - player.transform.position.y) * -1;
+			else
+				vertDir = 5;
+		}
 		if (isMirrored) {
 			rb2D.velocity = new Vector2 (-1 * moveSpeed, vertDir * 0.2f);
 		} else {
@@ -71,6 +71,26 @@ public class BigBadBird : MonoBehaviour {
 				break;
 			}
 			break;
+
+		case "BirdBossUp":
+			StopCoroutine ("OverrideY");
+			StartCoroutine (OverrideY (10f));
+			break;
+
+		case "BirdBossDown":
+			StopCoroutine ("OverrideY");
+			StartCoroutine (OverrideY (-10f));
+			break;
+		}
+	}
+
+	void OnTriggerEnter2D (Collider2D col) {
+		if (col.gameObject.CompareTag ("BirdBossUp")) {
+			StopCoroutine ("OverrideY");
+			StartCoroutine (OverrideY (10f));
+		} else if (col.gameObject.CompareTag ("BirdBossDown")) {
+			StopCoroutine ("OverrideY");
+			StartCoroutine (OverrideY (-10f));
 		}
 	}
 	
@@ -154,5 +174,12 @@ public class BigBadBird : MonoBehaviour {
 			Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
 			Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
 		}
+	}
+
+	IEnumerator OverrideY(float y) {
+		forceY = true;
+		vertDir = y;
+		yield return new WaitForSeconds (1f);
+		forceY = false;
 	}
 }

@@ -17,9 +17,9 @@ public class HardCritter : MonoBehaviour {
 	void FixedUpdate() {
 		if (activeMoveSpeed > 0) {
 			if (isMirrored) {
-				rb2D.velocity = new Vector2 (-1 * moveSpeed, rb2D.velocity.y);
+				rb2D.velocity = new Vector2 (-1 * activeMoveSpeed, rb2D.velocity.y);
 			} else {
-				rb2D.velocity = new Vector2 (moveSpeed, rb2D.velocity.y);
+				rb2D.velocity = new Vector2 (activeMoveSpeed, rb2D.velocity.y);
 			}
 		}
 	}
@@ -65,6 +65,11 @@ public class HardCritter : MonoBehaviour {
 			Rush ();
 			break;
 		}
+	}
+
+	void OnBecameVisible() {
+		if (initialFreezeTime == 0)
+			InitializeMoveSpeed ();
 	}
 
 	public void Rush() {

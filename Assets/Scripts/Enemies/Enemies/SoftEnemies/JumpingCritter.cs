@@ -17,11 +17,16 @@ public class JumpingCritter : MonoBehaviour {
 	void FixedUpdate() {
 		if (activeMoveSpeed > 0) {
 			if (isMirrored) {
-				rb2D.velocity = new Vector2 (moveSpeed, rb2D.velocity.y);
+				rb2D.velocity = new Vector2 (activeMoveSpeed, rb2D.velocity.y);
 			} else {
-				rb2D.velocity = new Vector2 (-1 * moveSpeed, rb2D.velocity.y);
+				rb2D.velocity = new Vector2 (-1 * activeMoveSpeed, rb2D.velocity.y);
 			}
 		}
+	}
+
+	void OnBecameVisible() {
+		if (initialFreezeTime == 0)
+			InitializeMoveSpeed ();
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {

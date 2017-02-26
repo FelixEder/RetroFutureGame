@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: c91b48152a2a7e04cbd020b3267db910
-timeCreated: 1488117546
+timeCreated: 1488124523
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -11,6 +11,7 @@ TextureImporter:
     21300008: active_4
     21300010: active_5
     21300012: active_6
+    21300014: active_7
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -109,7 +110,7 @@ TextureImporter:
         width: 35
         height: 240
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -122,7 +123,7 @@ TextureImporter:
         width: 35
         height: 240
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -135,7 +136,7 @@ TextureImporter:
         width: 35
         height: 240
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -148,7 +149,7 @@ TextureImporter:
         width: 35
         height: 240
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -161,7 +162,7 @@ TextureImporter:
         width: 35
         height: 240
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -174,7 +175,7 @@ TextureImporter:
         width: 35
         height: 240
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -183,6 +184,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 210
+        y: 0
+        width: 35
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: active_7
+      rect:
+        serializedVersion: 2
+        x: 245
         y: 0
         width: 35
         height: 240

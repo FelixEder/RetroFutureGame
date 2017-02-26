@@ -20,7 +20,7 @@ public class BigBadBird : MonoBehaviour {
 	void Update() {
 		if(health <= 0)
 			Defeated ();
-		if (Random.Range (0, spitChance) < 2 && !isSpitting)
+		if (Random.Range (0, spitChance) < 1 && !isSpitting)
 			SpitAttack ();
 	}
 
@@ -47,7 +47,9 @@ public class BigBadBird : MonoBehaviour {
 			break;
 
 		case "Char":
+			GetMirrored ();
 			WingAttack ();
+			col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
 			break;
 
 		case "PickupableItem":
@@ -79,40 +81,48 @@ public class BigBadBird : MonoBehaviour {
 	 */
 	void GetMirrored() {
 		if(!isMirrored) {
-			transform.rotation = Quaternion.Euler(0, 180, 0);
 			isMirrored = true;
+			StartCoroutine (Rotate (180));
 		}
 		else {
-			transform.rotation = Quaternion.Euler(0, 0, 0);
 			isMirrored = false;
+			StartCoroutine (Rotate (0));
 		}
 	}
 
+	IEnumerator Rotate(int rotation) {
+		moveSpeed = 1;
+		yield return new WaitForSeconds (1);
+		transform.rotation = Quaternion.Euler(0, rotation, 0);
+		moveSpeed = 5;
+	}
+
 	void WingAttack() {
+		CancelInvoke ("FinishWingAttack");
 		//Make some swooshing animation with feather
 		//If player is hit by the hitbox, he will get hurt
 		//Will probably activate some child-trigger that roughly encapsulates the wing being slapped.
 		this.gameObject.transform.GetChild (1).gameObject.SetActive (true);
 		GetComponent<SpriteRenderer> ().sprite = winging;
 		//Is there a better way to disable a child after a certain time than a Invoke-call to an unneccecary method?
-		Invoke ("FinishWingAttack", 1f);
+		Invoke ("FinishWingAttack", 0.6f);
 	}
 
 	void FinishWingAttack() {
-		GetComponent<SpriteRenderer> ().sprite = regular;
 		this.gameObject.transform.GetChild (1).gameObject.SetActive (false);
+		GetComponent<SpriteRenderer> ().sprite = regular;
 	}
 
 	void SpitAttack() {
 		isSpitting = true;
+		CancelInvoke ("FinishSpitAttack");
 		this.gameObject.transform.GetChild (0).gameObject.SetActive (true);
-		GetComponent<SpriteRenderer> ().sprite = spitting;
-		//Is there a better way to disable a child after a certain time than a Invoke-call to an unneccecary method?
+//		GetComponent<SpriteRenderer> ().sprite = spitting;
 		Invoke ("FinishSpitAttack", 1f);
 	}
 
 	void FinishSpitAttack() {
-		GetComponent<SpriteRenderer> ().sprite = regular;
+//		GetComponent<SpriteRenderer> ().sprite = regular;
 		this.gameObject.transform.GetChild (0).gameObject.SetActive (false);
 		isSpitting = false;
 		//Play animation that closes mouth

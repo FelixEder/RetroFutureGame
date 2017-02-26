@@ -18,10 +18,12 @@ public class SmallCritter : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		if (isMirrored) {
-			rb2D.velocity = new Vector2 (activeMoveSpeed, rb2D.velocity.y);
-		} else {
-			rb2D.velocity = new Vector2 (-1 * activeMoveSpeed, rb2D.velocity.y);
+		if (activeMoveSpeed > 0) {
+			if (isMirrored) {
+				rb2D.velocity = new Vector2 (activeMoveSpeed, rb2D.velocity.y);
+			} else {
+				rb2D.velocity = new Vector2 (-1 * activeMoveSpeed, rb2D.velocity.y);
+			}
 		}
 	}
 

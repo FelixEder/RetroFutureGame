@@ -48,7 +48,7 @@ public class LaserShooter : MonoBehaviour {
 	}
 
 	void HitByLaser(RaycastHit2D victim) {
-		Debug.Log ("Player shot: " + victim.collider.gameObject.tag);
+		Debug.Log ("Player shot: " + victim.collider.gameObject.name + " with tag: " + victim.collider.gameObject.tag);
 
 		//victim.transform returns parent transform, victim.collider returns the hit collider.
 		switch(victim.collider.gameObject.tag) {

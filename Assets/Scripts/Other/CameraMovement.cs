@@ -7,7 +7,7 @@ public class CameraMovement : MonoBehaviour {
 	Vector3 target, position, followPos;
 
 	void Start() {
-		target = followTarget.transform.position;
+		transform.position = followTarget.transform.position;
 		StartCoroutine (AdjustFocus (5));
 	}
 

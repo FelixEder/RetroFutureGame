@@ -3,7 +3,8 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class CharHealth : MonoBehaviour {
-	public int currentHealth, maxHealth, invulnerabilityTime;
+	public int currentHealth, maxHealth;
+	public float invulnerabilityTime;
 	Slider slider;
 	CharStatus status;
 

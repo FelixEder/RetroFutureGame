@@ -25,7 +25,7 @@ public class Electrohaz : MonoBehaviour {
 
 	IEnumerator GustavsMetod() {
 		while (true) {
-			yield return new WaitForSeconds (3f);
+			yield return new WaitForSeconds (5f);
 			Debug.Log ("Start charge");
 			GetComponent<Animator> ().SetTrigger ("Start");
 			while (GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName ("lightning_charge")) {

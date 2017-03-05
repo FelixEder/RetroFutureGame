@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class StatueBossLaser : MonoBehaviour {
+	public LayerMask hitLayers;
 	private LineRenderer lineRenderer;
 	Vector2 laserHit;
 	RaycastHit2D hit;
@@ -15,7 +16,7 @@ public class StatueBossLaser : MonoBehaviour {
 
 	void Update() {
 		if (shooting) {
-			hit = Physics2D.Raycast (transform.position, -transform.up);
+			hit = Physics2D.Raycast (transform.position, -transform.up, Mathf.Infinity, hitLayers);
 			laserHit = hit.point;
 			lineRenderer.SetPosition (0, transform.position);
 			lineRenderer.SetPosition (1, laserHit);

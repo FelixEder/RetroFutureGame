@@ -21,6 +21,18 @@ public class TutorialManager : MonoBehaviour {
 				if(input.GetKey("Jump"))
 					HideTutorial(4);
 				break;
+			case "punch":
+				if (input.GetKey ("Attack"))
+					HideTutorial (10);
+				break;
+			case "float":
+				if (input.GetKey ("Float"))
+					HideTutorial (4);
+				break;
+			case "secondjump":
+				if (GameObject.Find ("Char").GetComponent<CharJump> ().hasSecondJumped)
+					HideTutorial (4);
+				break;
 			default:
 				HideTutorial (5);
 				break;

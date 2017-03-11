@@ -30,16 +30,13 @@ public class Electrohaz : MonoBehaviour {
 			while (GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName ("idle")) {
 				yield return 0;
 			}
-			Debug.Log ("Start charge");
 			while (GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName ("lightning_charge")) {
 				yield return 0;
 			}
-			Debug.Log ("Start active");
 			isActive = true;
 			while (GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName ("lightning_active")) {
 				yield return 0;
 			}
-			Debug.Log ("Start idle");
 			isActive = false;
 		}
 	}

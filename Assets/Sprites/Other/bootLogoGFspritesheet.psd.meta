@@ -44,12 +44,12 @@ TextureImporter:
     21300074: bootLogoGFspritesheet_37
     21300076: bootLogoGFspritesheet_38
     21300078: bootLogoGFspritesheet_39
-  serializedVersion: 2
+  serializedVersion: 4
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
+    sRGBTexture: 1
     linearTexture: 0
-    correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
     mipMapFadeDistanceStart: 1
@@ -61,36 +61,80 @@ TextureImporter:
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
-  generateCubemap: 0
+  generateCubemap: 6
   cubemapConvolution: 0
-  cubemapConvolutionSteps: 7
-  cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -3
   maxTextureSize: 8192
   textureSettings:
-    filterMode: 1
+    filterMode: 0
     aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
-  rGBM: 0
   compressionQuality: 50
-  allowsAlphaSplitting: 0
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 20
+  alphaUsage: 1
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
-  buildTargetSettings: []
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Web
+    maxTextureSize: 2048
+    textureFormat: 4
+    textureCompression: 0
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  - buildTarget: Standalone
+    maxTextureSize: 4096
+    textureFormat: 4
+    textureCompression: 0
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: 33
+    textureCompression: 0
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+  - buildTarget: Android
+    maxTextureSize: 1024
+    textureFormat: 34
+    textureCompression: 0
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: bootLogoGFspritesheet_0
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -100,12 +144,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_1
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_1
       rect:
         serializedVersion: 2
         x: 600
@@ -115,12 +157,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_2
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_2
       rect:
         serializedVersion: 2
         x: 1200
@@ -130,12 +170,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_3
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_3
       rect:
         serializedVersion: 2
         x: 1800
@@ -145,12 +183,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_4
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_4
       rect:
         serializedVersion: 2
         x: 2400
@@ -160,12 +196,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_5
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_5
       rect:
         serializedVersion: 2
         x: 3000
@@ -175,12 +209,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_6
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_6
       rect:
         serializedVersion: 2
         x: 3600
@@ -190,12 +222,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_7
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_7
       rect:
         serializedVersion: 2
         x: 4200
@@ -205,12 +235,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_8
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_8
       rect:
         serializedVersion: 2
         x: 0
@@ -220,12 +248,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_9
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_9
       rect:
         serializedVersion: 2
         x: 600
@@ -235,12 +261,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_10
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_10
       rect:
         serializedVersion: 2
         x: 1200
@@ -250,12 +274,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_11
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_11
       rect:
         serializedVersion: 2
         x: 1800
@@ -265,12 +287,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_12
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_12
       rect:
         serializedVersion: 2
         x: 2400
@@ -280,12 +300,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_13
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_13
       rect:
         serializedVersion: 2
         x: 3000
@@ -295,12 +313,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_14
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_14
       rect:
         serializedVersion: 2
         x: 3600
@@ -310,12 +326,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_15
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_15
       rect:
         serializedVersion: 2
         x: 4200
@@ -325,12 +339,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_16
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_16
       rect:
         serializedVersion: 2
         x: 0
@@ -340,12 +352,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_17
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_17
       rect:
         serializedVersion: 2
         x: 600
@@ -355,12 +365,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_18
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_18
       rect:
         serializedVersion: 2
         x: 1200
@@ -370,12 +378,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_19
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_19
       rect:
         serializedVersion: 2
         x: 1800
@@ -385,12 +391,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_20
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_20
       rect:
         serializedVersion: 2
         x: 2400
@@ -400,12 +404,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_21
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_21
       rect:
         serializedVersion: 2
         x: 3000
@@ -415,12 +417,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_22
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_22
       rect:
         serializedVersion: 2
         x: 3600
@@ -430,12 +430,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_23
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_23
       rect:
         serializedVersion: 2
         x: 4200
@@ -445,12 +443,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_24
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_24
       rect:
         serializedVersion: 2
         x: 0
@@ -460,12 +456,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_25
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_25
       rect:
         serializedVersion: 2
         x: 600
@@ -475,12 +469,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_26
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_26
       rect:
         serializedVersion: 2
         x: 1200
@@ -490,12 +482,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_27
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_27
       rect:
         serializedVersion: 2
         x: 1800
@@ -505,12 +495,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_28
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_28
       rect:
         serializedVersion: 2
         x: 2400
@@ -520,12 +508,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_29
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_29
       rect:
         serializedVersion: 2
         x: 3000
@@ -535,12 +521,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_30
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_30
       rect:
         serializedVersion: 2
         x: 3600
@@ -550,12 +534,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_31
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_31
       rect:
         serializedVersion: 2
         x: 4200
@@ -565,12 +547,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_32
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_32
       rect:
         serializedVersion: 2
         x: 0
@@ -580,12 +560,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_33
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_33
       rect:
         serializedVersion: 2
         x: 600
@@ -595,12 +573,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_34
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_34
       rect:
         serializedVersion: 2
         x: 1200
@@ -610,12 +586,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_35
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_35
       rect:
         serializedVersion: 2
         x: 1800
@@ -625,12 +599,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_36
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_36
       rect:
         serializedVersion: 2
         x: 2400
@@ -640,12 +612,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_37
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_37
       rect:
         serializedVersion: 2
         x: 3000
@@ -655,12 +625,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_38
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_38
       rect:
         serializedVersion: 2
         x: 3600
@@ -670,12 +638,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
-    - name: bootLogoGFspritesheet_39
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bootLogoGFspritesheet_39
       rect:
         serializedVersion: 2
         x: 4200
@@ -685,11 +651,8 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -300, y: 300}
-        - {x: -300, y: -300}
-        - {x: 300, y: -300}
-        - {x: 300, y: 300}
+      outline: []
+      tessellationDetail: -1
     outline: []
   spritePackingTag: 
   userData: 

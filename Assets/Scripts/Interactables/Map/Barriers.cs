@@ -13,7 +13,9 @@ public class Barriers : MonoBehaviour {
 	 */
 	void Broken() {
 		//Play animation and 
-		Destroy(gameObject);
+		GetComponent<SpriteRenderer>().sprite = sprite;
+		StartCoroutine (Lower ());
+//		Destroy(gameObject);
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
@@ -34,5 +36,13 @@ public class Barriers : MonoBehaviour {
 	/**Returns the barrier type.*/
 	public string GetBarrierType() {
 		return barrierType;
+	}
+
+	IEnumerator Lower() {
+		yield return new WaitForSeconds (2);
+		for (int i = 0; i < 50; i++) {
+			transform.position = new Vector2 (transform.position.x, transform.position.y - 0.05f);
+			yield return 0;
+		}
 	}
 }

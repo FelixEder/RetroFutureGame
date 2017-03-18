@@ -1,2 +1,9 @@
-Base path: C:/Program Files/Unity/Editor/Data
+Base path: D:/Spelprojekt/NewUnity/Editor/Data
 Cmd: getPlatforms
+<<<<<<< HEAD
+=======
+Cmd: preprocess
+  insize=9503 outsize=2577 ok=1
+Cmd: preprocess
+  insize=142 outsize=139 ok=1
+>>>>>>> 7d02144fcd1bf5090c5770260e2e995f27c46638

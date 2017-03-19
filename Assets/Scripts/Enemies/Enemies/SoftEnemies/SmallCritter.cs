@@ -2,14 +2,19 @@ using UnityEngine;
 using System.Collections;
 
 public class SmallCritter : MonoBehaviour {
-	public float moveSpeed, knockForce;
+	public float moveSpeed, knockForce, followDistance;
 	float activeMoveSpeed,initialFreezeTime;
 	bool isMirrored = false, invulnerable;
 	public int health = 2, damage = 1, invulnerabilityTime;
 	public Material glitchMaterial;
 	Rigidbody2D rb2D;
+	GameObject player;
+	float startPos;
 
 	void Start() {
+		player = GameObject.Find ("Char");
+		startPos = transform.position.x;
+
 		initialFreezeTime = gameObject.GetComponent<SpawnProperties> ().initialFreezeTime;
 		rb2D = GetComponent<Rigidbody2D> ();
 		if (initialFreezeTime > 0)
@@ -17,13 +22,16 @@ public class SmallCritter : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		if (activeMoveSpeed > 0) {
+		if (activeMoveSpeed > 0 && Mathf.Abs (player.transform.position.x - transform.position.x) < followDistance && Mathf.Abs (player.transform.position.x - transform.position.x) > 1) {
+			rb2D.velocity = new Vector2 (activeMoveSpeed * Mathf.Sign (player.transform.position.x - transform.position.x), rb2D.velocity.y);
 			if (isMirrored) {
-				rb2D.velocity = new Vector2 (activeMoveSpeed, rb2D.velocity.y);
+//				rb2D.velocity = new Vector2 (activeMoveSpeed, rb2D.velocity.y);
 			} else {
-				rb2D.velocity = new Vector2 (-1 * activeMoveSpeed, rb2D.velocity.y);
+//				rb2D.velocity = new Vector2 (-1 * activeMoveSpeed, rb2D.velocity.y);
 			}
 		}
+		else if (Mathf.Abs (startPos - transform.position.x) > 1 && Mathf.Abs (player.transform.position.x - transform.position.x) > 1)
+			rb2D.velocity = new Vector2 (activeMoveSpeed * Mathf.Sign (startPos - transform.position.x), rb2D.velocity.y);
 	}
 
 	void OnBecameVisible() {

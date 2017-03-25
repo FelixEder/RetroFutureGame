@@ -6,7 +6,7 @@ public class StatueBossLaser : MonoBehaviour {
 	private LineRenderer lineRenderer;
 	Vector2 laserHit;
 	RaycastHit2D hit;
-	public int damage = 1;
+	public int damage = 1, health;
 	bool shooting;
 	
 	void Start() {
@@ -52,6 +52,22 @@ public class StatueBossLaser : MonoBehaviour {
 
 		default:
 			break;	
+		}
+	}
+
+
+	/**
+	 * The barrier of the door has been broken, it is now destroyed.
+	 */
+	void Broken() {
+		//Play animation and 
+		Destroy(gameObject);
+	}
+
+	public void TakeDamage(int damage) {
+		health -= damage;
+		if (health <= 0) {
+			Broken();
 		}
 	}
 }

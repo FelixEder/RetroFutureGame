@@ -189,6 +189,12 @@ public class CharPunch : MonoBehaviour {
 			}
 			break;
 
+		case "StatueBossEye":
+			if (attackType == "Branch") {
+				victim.gameObject.GetComponent<StatueBossLaser> ().TakeDamage (1);
+			}
+			break;
+
 		case "FinalBossWeakSpot":
 			if (attackType == "FullMega") {
 				Debug.Log ("Full MegaPunched the boss!"); 

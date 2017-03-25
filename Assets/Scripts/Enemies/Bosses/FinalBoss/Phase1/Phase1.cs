@@ -4,7 +4,7 @@ using System.Collections;
 public class Phase1 : MonoBehaviour {
 	public float knockForce;
 	public int health = 3, spawnLoc = 2;
-	public Sprite normal, kickPunching;
+	public Sprite normal, kickPunching, fallen;
 	bool stunned;
 	Rigidbody2D rb2D;
 
@@ -12,7 +12,6 @@ public class Phase1 : MonoBehaviour {
 	void Start () {
 		rb2D = GetComponent<Rigidbody2D> ();
 		InvokeRepeating ("KickPunching", 1f, 5f);
-		transform.parent.GetComponent<EdgeCollider2D> ().enabled = false;
 	}
 		
 	void OnCollisionEnter2D(Collision2D col) {
@@ -26,7 +25,7 @@ public class Phase1 : MonoBehaviour {
 				col.gameObject.GetComponent<CharHealth> ().TakeDamage (5, gameObject, 5f);
 			break;
 
-		case "Rock":
+		case "PickupableItem":
 			//Maybe play grunt
 			Debug.Log ("Threw rock at boss!");
 			Vector3 rockLoc = col.gameObject.transform.position;
@@ -60,6 +59,7 @@ public class Phase1 : MonoBehaviour {
 		//Makes the boss fall down
 		GetComponent<PolygonCollider2D>().tag = "FinalBossWeakSpot";
 		transform.GetChild(0).gameObject.GetComponent<EdgeCollider2D> ().enabled = false;
+		GetComponent<SpriteRenderer> ().sprite = fallen;
 		transform.position = new Vector2(92.9f, -88.2f);
 		transform.rotation = Quaternion.Euler(0, 0, -96.89f);
 		Stunned (7f);
@@ -67,6 +67,7 @@ public class Phase1 : MonoBehaviour {
 	}
 
 	void Rise() {
+		GetComponent<SpriteRenderer> ().sprite = normal;
 		transform.position = new Vector2(89.3f, -90.67f);
 		transform.rotation = Quaternion.Euler(0, 0, 0);
 		GetComponent<PolygonCollider2D>().tag = "FinalBossArmor";

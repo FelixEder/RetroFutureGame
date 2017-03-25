@@ -13,9 +13,12 @@ public class Barriers : MonoBehaviour {
 	 */
 	void Broken() {
 		//Play animation and 
-		GetComponent<SpriteRenderer>().sprite = sprite;
-		StartCoroutine (Lower ());
-//		Destroy(gameObject);
+		if (barrierType == "Branch") {
+			GetComponent<SpriteRenderer> ().sprite = sprite;
+			StartCoroutine (Lower ());
+		}
+		else
+			Destroy(gameObject);
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {

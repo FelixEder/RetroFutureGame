@@ -2,5 +2,5 @@
 using System.Collections;
 
 public class SpawnProperties : MonoBehaviour {
-	public float initialFreezeTime;
+	public float initialFreezeTime, wanderDistance;
 }

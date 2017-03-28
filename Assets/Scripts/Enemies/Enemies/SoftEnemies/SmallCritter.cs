@@ -2,9 +2,9 @@ using UnityEngine;
 using System.Collections;
 
 public class SmallCritter : MonoBehaviour {
-	public float moveSpeed, knockForce, followDistance, invulnerabilityTime;
+	public float moveSpeed, knockForce, followDistance, followDistanceUP, followDistanceDown, wanderDistance, invulnerabilityTime;
 	float activeMoveSpeed, initialFreezeTime;
-	bool isMirrored = false, invulnerable;
+	bool invulnerable, touchingSomething, hasSeenPlayer, wanderLeft;
 	public int health = 2, damage = 1;
 	public Material glitchMaterial;
 	Rigidbody2D rb2D;
@@ -14,30 +14,46 @@ public class SmallCritter : MonoBehaviour {
 	void Start() {
 		player = GameObject.Find ("Char");
 		startPos = transform.position.x;
-
-		initialFreezeTime = gameObject.GetComponent<SpawnProperties> ().initialFreezeTime;
+		if (Random.Range (0, 2) == 0)
+			wanderLeft = true;
+		initialFreezeTime = GetComponent<SpawnProperties> ().initialFreezeTime;
+		wanderDistance = GetComponent<SpawnProperties> ().wanderDistance;
 		rb2D = GetComponent<Rigidbody2D> ();
 		if (initialFreezeTime > 0)
 			Invoke ("InitializeMoveSpeed", initialFreezeTime);
 	}
 
 	void FixedUpdate() {
-		if (activeMoveSpeed > 0) {
-			if (Mathf.Abs (player.transform.position.x - transform.position.x) < followDistance && Mathf.Abs (player.transform.position.x - transform.position.x) > 1) {
+		calculateMirror ();
+		if (activeMoveSpeed > 0 && touchingSomething) {
+			if (PlayerInRange () && DistanceFromPlayer() > 1) { //follow player if player is in range
 				rb2D.velocity = new Vector2 (activeMoveSpeed * Mathf.Sign (player.transform.position.x - transform.position.x), rb2D.velocity.y);
-				if (isMirrored) {
-//				rb2D.velocity = new Vector2 (activeMoveSpeed, rb2D.velocity.y);
-				} else {
-//				rb2D.velocity = new Vector2 (-1 * activeMoveSpeed, rb2D.velocity.y);
-				}
-			} else if (Mathf.Abs (startPos - transform.position.x) > 1 && Mathf.Abs (player.transform.position.x - transform.position.x) > 1)
-				rb2D.velocity = new Vector2 (activeMoveSpeed * Mathf.Sign (startPos - transform.position.x), rb2D.velocity.y);
+			}
+			else if (!PlayerInRange()) { //wander within start pos if outside followdistance.
+				if (transform.position.x - startPos > wanderDistance)
+					wanderLeft = true;
+				else if (startPos - transform.position.x > wanderDistance)
+					wanderLeft = false;
+				
+				if (wanderLeft)
+					rb2D.velocity = new Vector2 (activeMoveSpeed * -0.7f, rb2D.velocity.y);
+				else
+					rb2D.velocity = new Vector2 (activeMoveSpeed * 0.7f, rb2D.velocity.y);
+			}
 		}
 	}
 
 	void OnBecameVisible() {
 		if (initialFreezeTime == 0)
 			InitializeMoveSpeed ();
+	}
+
+	void OnCollisionStay2D() {
+		touchingSomething = true;
+	}
+
+	void OnCollisionExit2D() {
+		touchingSomething = false;
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
@@ -47,7 +63,6 @@ public class SmallCritter : MonoBehaviour {
 			if (!col.gameObject.GetComponent<CharStomp> ().groundStomping) {
 				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage, gameObject, knockForce);
 			}
-			GetMirrored();
 			break;
 
 		case "SmallCritter":
@@ -59,7 +74,7 @@ public class SmallCritter : MonoBehaviour {
 		case "Wall":
 		case "Door":
 		case "Barrier":
-			GetMirrored ();
+			wanderLeft = !wanderLeft;
 			break;
 
 		case "PickupableItem":
@@ -77,7 +92,6 @@ public class SmallCritter : MonoBehaviour {
 				}
 				break;
 			}
-			GetMirrored ();
 			break;
 		}
 	}
@@ -85,15 +99,27 @@ public class SmallCritter : MonoBehaviour {
 	/**
 	 * Mirrors the enemy and therefor makes it change direction.
 	 */
-	void GetMirrored() {
-		if(!isMirrored) {
+	void calculateMirror() {
+		if(rb2D.velocity.x > 1) {
 			transform.rotation = Quaternion.Euler(0, 180, 0);
-			isMirrored = true;
 		}
-		else {
+		else if(rb2D.velocity.x < -1) {
 			transform.rotation = Quaternion.Euler(0, 0, 0);
-			isMirrored = false;
 		}
+	}
+
+	float DistanceFromPlayer() {
+		return Mathf.Abs (player.transform.position.x - transform.position.x);
+	}
+
+	bool PlayerInRange() {
+		Vector2 pPos = player.transform.position, pos = transform.position;
+		if (Mathf.Abs (pPos.x - pos.x) < followDistance//player within follow distance in X;
+			&& pos.y - pPos.y < followDistanceDown//player less than 2u below;
+			&& pPos.y - pos.y < followDistanceUP)//player less than 6u above;
+			return true;
+		else
+			return false;
 	}
 
 	/**
@@ -107,7 +133,6 @@ public class SmallCritter : MonoBehaviour {
 			Invoke ("SetVulnerable", invulnerabilityTime);
 			if (health <= 0)
 				StartCoroutine(Die ());
-			GetMirrored ();
 		}
 	}
 

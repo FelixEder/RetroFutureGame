@@ -2,10 +2,10 @@ using UnityEngine;
 using System.Collections;
 
 public class SmallCritter : MonoBehaviour {
-	public float moveSpeed, knockForce, followDistance;
-	float activeMoveSpeed,initialFreezeTime;
+	public float moveSpeed, knockForce, followDistance, invulnerabilityTime;
+	float activeMoveSpeed, initialFreezeTime;
 	bool isMirrored = false, invulnerable;
-	public int health = 2, damage = 1, invulnerabilityTime;
+	public int health = 2, damage = 1;
 	public Material glitchMaterial;
 	Rigidbody2D rb2D;
 	GameObject player;
@@ -22,16 +22,17 @@ public class SmallCritter : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		if (activeMoveSpeed > 0 && Mathf.Abs (player.transform.position.x - transform.position.x) < followDistance && Mathf.Abs (player.transform.position.x - transform.position.x) > 1) {
-			rb2D.velocity = new Vector2 (activeMoveSpeed * Mathf.Sign (player.transform.position.x - transform.position.x), rb2D.velocity.y);
-			if (isMirrored) {
+		if (activeMoveSpeed > 0) {
+			if (Mathf.Abs (player.transform.position.x - transform.position.x) < followDistance && Mathf.Abs (player.transform.position.x - transform.position.x) > 1) {
+				rb2D.velocity = new Vector2 (activeMoveSpeed * Mathf.Sign (player.transform.position.x - transform.position.x), rb2D.velocity.y);
+				if (isMirrored) {
 //				rb2D.velocity = new Vector2 (activeMoveSpeed, rb2D.velocity.y);
-			} else {
+				} else {
 //				rb2D.velocity = new Vector2 (-1 * activeMoveSpeed, rb2D.velocity.y);
-			}
+				}
+			} else if (Mathf.Abs (startPos - transform.position.x) > 1 && Mathf.Abs (player.transform.position.x - transform.position.x) > 1)
+				rb2D.velocity = new Vector2 (activeMoveSpeed * Mathf.Sign (startPos - transform.position.x), rb2D.velocity.y);
 		}
-		else if (Mathf.Abs (startPos - transform.position.x) > 1 && Mathf.Abs (player.transform.position.x - transform.position.x) > 1)
-			rb2D.velocity = new Vector2 (activeMoveSpeed * Mathf.Sign (startPos - transform.position.x), rb2D.velocity.y);
 	}
 
 	void OnBecameVisible() {
@@ -104,16 +105,8 @@ public class SmallCritter : MonoBehaviour {
 			health -= damage;
 			invulnerable = true;
 			Invoke ("SetVulnerable", invulnerabilityTime);
-			if (health <= 0) {
-				//Enemy is dead, play animation and sound.
-				int ranNumb = Random.Range (0, 60);
-				if (ranNumb < 20) {
-					Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
-				} else if (ranNumb < 40) {
-					Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
-				}
-				Destroy (this.gameObject);
-			}
+			if (health <= 0)
+				StartCoroutine(Die ());
 			GetMirrored ();
 		}
 	}
@@ -122,8 +115,21 @@ public class SmallCritter : MonoBehaviour {
 		invulnerable = false;
 	}
 
-	void Die() {
-		int ranNumb = Random.Range(0, 80);
+	public void Knockback(GameObject attacker, float force) {
+		if (!invulnerable) {
+			activeMoveSpeed = 0;
+			if (transform.position.x < attacker.transform.position.x)
+				GetComponent<Rigidbody2D> ().velocity = new Vector2 (-force, 2);
+			else
+				GetComponent<Rigidbody2D> ().velocity = new Vector2 (force, 2);
+			Invoke ("InitializeMoveSpeed", invulnerabilityTime);
+		}
+	}
+
+	IEnumerator Die() {
+		GetComponent<SpriteRenderer> ().material = glitchMaterial;
+		yield return new WaitForSeconds (0.2f);
+		int ranNumb = Random.Range(0, 60);
 		if (ranNumb < 20) {
 			Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
 		} else if (ranNumb < 40) {

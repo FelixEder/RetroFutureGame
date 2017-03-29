@@ -1,6 +1,6 @@
-Base path: D:/Spelprojekt/NewUnity/Editor/Data
+Base path: C:/Program Files/Unity/Editor/Data
 Cmd: getPlatforms
 Cmd: preprocess
-  insize=9503 outsize=2577 ok=1
+  insize=9235 outsize=2496 ok=1
 Cmd: preprocess
-  insize=142 outsize=139 ok=1
+  insize=132 outsize=129 ok=1

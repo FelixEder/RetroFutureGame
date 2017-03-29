@@ -26,10 +26,15 @@ public class StatueBossLaser : MonoBehaviour {
 
 	public void Shoot() {
 		//Should later on try to shoot the player instead of just downwards.
-		shooting = true;
-		lineRenderer.enabled = true;
+		hit = Physics2D.Raycast (transform.position, -transform.up, Mathf.Infinity, hitLayers);
+		laserHit = hit.point;
+		lineRenderer.SetPosition (0, transform.position);
+		lineRenderer.SetPosition (1, laserHit);
+
 		Debug.DrawLine (transform.position, hit.point);
-		Invoke ("KillLaser", 1.2f);
+		lineRenderer.enabled = true;
+		shooting = true;
+		Invoke ("KillLaser", 2f);
 
 	}
 
@@ -47,6 +52,7 @@ public class StatueBossLaser : MonoBehaviour {
 			break;
 
 		case "SmallCritter":
+			victim.transform.gameObject.GetComponent<SmallCritter> ().Knockback (gameObject, 5);
 			victim.transform.gameObject.GetComponent<SmallCritter> ().TakeDamage (damage);
 			break;
 
@@ -62,6 +68,7 @@ public class StatueBossLaser : MonoBehaviour {
 	void Broken() {
 		//Play animation and 
 		Destroy(gameObject);
+		Destroy (transform.parent.gameObject);
 	}
 
 	public void TakeDamage(int damage) {

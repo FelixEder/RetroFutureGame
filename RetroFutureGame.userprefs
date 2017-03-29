@@ -3,10 +3,13 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\Enemies\SoftEnemies\SmallCritter.cs">
     <Files>
       <File FileName="Assets\Scripts\Character\Actions\CharPunch.cs" Line="158" Column="76" />
-      <File FileName="Assets\Scripts\Enemies\Enemies\SoftEnemies\SmallCritter.cs" Line="80" Column="25" />
-      <File FileName="Assets\Scripts\Character\Movement\CharKnockback.cs" Line="19" Column="41" />
-      <File FileName="Assets\Scripts\Enemies\SpawnProperties.cs" Line="5" Column="48" />
-      <File FileName="Assets\Scripts\Interactables\Misc\PrefabSpawner.cs" Line="41" Column="2" />
+      <File FileName="Assets\Scripts\Enemies\Enemies\SoftEnemies\SmallCritter.cs" Line="31" Column="5" />
+      <File FileName="Assets\Scripts\Character\Movement\CharKnockback.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\SpawnProperties.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Interactables\Misc\PrefabSpawner.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemies\Bosses\StatueBoss\StatueBoss.cs" Line="8" Column="38" />
+      <File FileName="Assets\Scripts\Enemies\Bosses\StatueBoss\StatueBossLaser.cs" Line="37" Column="25" />
+      <File FileName="Assets\Scripts\Interactables\Map\Barriers.cs" Line="46" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -2,12 +2,10 @@ using UnityEngine;
 using System.Collections;
 
 public class StatueBoss : MonoBehaviour {
-	GameObject LeftEye, RightEye;
+	public GameObject LeftEye, RightEye;
 
 	void Start() {
-	LeftEye = this.gameObject.transform.GetChild (1).gameObject;
-	RightEye = this.gameObject.transform.GetChild (0).gameObject;
-	InvokeRepeating("ShootLasers", 5f, 3f);
+	InvokeRepeating("ShootLasers", 5f, 6f);
 
 	//Also start spawning enemies from mouth and play music and such
 	}

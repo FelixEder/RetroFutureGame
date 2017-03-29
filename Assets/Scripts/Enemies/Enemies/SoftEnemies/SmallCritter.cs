@@ -100,11 +100,16 @@ public class SmallCritter : MonoBehaviour {
 	 * Mirrors the enemy and therefor makes it change direction.
 	 */
 	void calculateMirror() {
-		if(rb2D.velocity.x > 1) {
-			transform.rotation = Quaternion.Euler(0, 180, 0);
-		}
-		else if(rb2D.velocity.x < -1) {
-			transform.rotation = Quaternion.Euler(0, 0, 0);
+		if (!invulnerable) {
+			if (rb2D.velocity.x > 1) {
+				transform.rotation = Quaternion.Euler (0, 180, 0);
+				GetComponent<Animator> ().enabled = true;
+			} else if (rb2D.velocity.x < -1) {
+				transform.rotation = Quaternion.Euler (0, 0, 0);
+				GetComponent<Animator> ().enabled = true;
+			} else {
+				GetComponent<Animator> ().enabled = false;
+			}
 		}
 	}
 

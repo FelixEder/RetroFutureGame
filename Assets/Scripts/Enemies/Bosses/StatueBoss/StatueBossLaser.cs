@@ -3,7 +3,8 @@ using System.Collections;
 
 public class StatueBossLaser : MonoBehaviour {
 	public LayerMask hitLayers;
-	private LineRenderer lineRenderer;
+	public GameObject aimTarget;
+	private LineRenderer lineRenderer, childLineRenderer;
 	Vector2 laserHit;
 	RaycastHit2D hit;
 	public int damage = 1, health;
@@ -11,27 +12,38 @@ public class StatueBossLaser : MonoBehaviour {
 	
 	void Start() {
 		lineRenderer = GetComponent<LineRenderer> ();
+		childLineRenderer = transform.GetChild (0).GetComponent<LineRenderer> ();
 		lineRenderer.useWorldSpace = true;
 	}
 
 	void Update() {
+		//keep eye sprite upright.
+		transform.rotation = Quaternion.identity;
+
+		hit = Physics2D.Raycast (transform.position, -aimTarget.transform.InverseTransformPoint(transform.position), Mathf.Infinity, hitLayers);
+		laserHit = hit.point;
+
 		if (shooting) {
-			hit = Physics2D.Raycast (transform.position, -transform.up, Mathf.Infinity, hitLayers);
-			laserHit = hit.point;
 			lineRenderer.SetPosition (0, transform.position);
 			lineRenderer.SetPosition (1, laserHit);
 			HitByLaser (hit);
 		}
+
+		childLineRenderer.SetPosition (0, transform.position);
+		childLineRenderer.SetPosition (1, laserHit);
 	}
 
 	public void Shoot() {
-		//Should later on try to shoot the player instead of just downwards.
-		hit = Physics2D.Raycast (transform.position, -transform.up, Mathf.Infinity, hitLayers);
+		//disable aimObject animation.
+		aimTarget.GetComponent<Animator>().enabled = false;
+
+		//avoid graphical issue by setting positions before enabling line.
+		hit = Physics2D.Raycast (transform.position, -aimTarget.transform.InverseTransformPoint(transform.position), Mathf.Infinity, hitLayers);
 		laserHit = hit.point;
 		lineRenderer.SetPosition (0, transform.position);
 		lineRenderer.SetPosition (1, laserHit);
 
-		Debug.DrawLine (transform.position, hit.point);
+		childLineRenderer.enabled = false;
 		lineRenderer.enabled = true;
 		shooting = true;
 		Invoke ("KillLaser", 2f);
@@ -39,6 +51,8 @@ public class StatueBossLaser : MonoBehaviour {
 	}
 
 	void  KillLaser() {
+		aimTarget.GetComponent<Animator>().enabled = true;
+		childLineRenderer.enabled = true;
 		lineRenderer.enabled = false;
 		shooting = false;
 	}

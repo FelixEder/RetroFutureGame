@@ -56,13 +56,13 @@ public class CrawlerCritter : MonoBehaviour {
 			switch (col.gameObject.GetComponent<PickUpableItem> ().GetItemType ()) {
 			case "Rock":
 				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f) {
-					GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
+					TakeDamage (col.gameObject.GetComponent<PickUpableItem> ().damage);
 				}
 				break;
 
 			case "Branch":
 				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
-					GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
+					TakeDamage (col.gameObject.GetComponent<PickUpableItem> ().damage);
 				}
 				break;
 			}
@@ -97,7 +97,7 @@ public class CrawlerCritter : MonoBehaviour {
 	/**
 	 * Method called when enemy is hit by the player
 	 */
-	public void GetHurt(int damage) {
+	public void TakeDamage(int damage) {
 		if (!invulnerable) {
 			//Play a sound and animation.
 			health -= damage;

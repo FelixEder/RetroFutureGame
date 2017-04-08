@@ -13,15 +13,22 @@ public class SpikesfromGoogle : MonoBehaviour {
 				col.gameObject.GetComponent<Rigidbody2D> ().AddForce (new Vector2(0, knockForce),ForceMode2D.Impulse);
 			break;
 
-		case "SmallCritter" :
+		case "SmallCritter":
+			col.gameObject.GetComponent<SmallCritter>().Knockback(gameObject, 4);
+			col.gameObject.GetComponent<SmallCritter> ().TakeDamage (damage);
+			break;
+
 		case "JumpingCritter":
-		case "HardEnemy" :
-		case "BigEyeGuy" :
+		case "HardEnemy":
+		case "BigEyeGuy":
 		case "CrawlerCritter":
 		case "ShellMan":
-		case "Wall" :
-		case "Door" :
+		case "Wall":
+		case "Door":
+			break;
+
 		case "PickupableItem":
+			col.gameObject.GetComponent<PickUpableItem> ().Break ();
 			break;
 
 		}

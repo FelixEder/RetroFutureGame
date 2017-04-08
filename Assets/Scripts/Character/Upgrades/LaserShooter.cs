@@ -74,7 +74,7 @@ public class LaserShooter : MonoBehaviour {
 		case "CrawlerCritter":
 			CrawlerCritter crawlercritter = victim.transform.gameObject.GetComponent<CrawlerCritter> ();
 			if (crawlercritter.deShelled) {
-				crawlercritter.GetHurt (damage);
+				crawlercritter.TakeDamage (damage);
 			} else {
 				//Can't be hurt by laser, play relevant things
 			}
@@ -83,7 +83,7 @@ public class LaserShooter : MonoBehaviour {
 		case "ShellMan":
 			ShellMan shellMan = victim.transform.gameObject.GetComponent<ShellMan> ();
 			if (shellMan.deShelled) {
-				shellMan.GetHurt (damage);
+				shellMan.TakeDamage (damage);
 			} else {
 				//Can't be hurt by laser, play relevant things
 			}
@@ -91,12 +91,12 @@ public class LaserShooter : MonoBehaviour {
 
 		case "BirdBossWeakSpot":
 			Debug.Log ("Hit Bird in the Mouth!");
-			victim.transform.gameObject.GetComponent<BigBadBird> ().GetHurt ();
+			victim.transform.gameObject.GetComponent<BigBadBird> ().TakeDamage ();
 			break;
 
 		case "BigEyeGuyWeakSpot":
 			Debug.Log ("Hit EyeGuy in the Eye!");
-			victim.transform.gameObject.GetComponent<BigEyeGuy> ().GetHurt (damage);
+			victim.transform.gameObject.GetComponent<BigEyeGuy> ().TakeDamage (damage);
 			break;
 
 		case "FinalBossArmor":

@@ -55,7 +55,7 @@ public class ShellMan : MonoBehaviour {
 		case "PickupableItem":
 			if (col.gameObject.GetComponent<PickUpableItem> ().GetItemType () == "Rock") {
 				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f && deShelled) {
-					GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
+					TakeDamage (col.gameObject.GetComponent<PickUpableItem> ().damage);
 				}
 			}
 			GetMirrored ();
@@ -90,7 +90,7 @@ public class ShellMan : MonoBehaviour {
 	/**
 	 * Method called when enemy is hit by the player
 	 */
-	public void GetHurt(int damage) {
+	public void TakeDamage(int damage) {
 		if (!invulnerable) {
 			//Play a sound and animation.
 			health -= damage;

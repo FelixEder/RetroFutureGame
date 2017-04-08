@@ -15,13 +15,13 @@ public class PickUpableItem : MonoBehaviour {
 	void Start() {
 		rigidBody2D = GetComponent<Rigidbody2D> ();
 		originalParent = transform.parent;
-		holdPosition = GameObject.Find ("holdPosition").transform;
+		//holdPosition = GameObject.Find ("holdPosition").transform;
 		chara = GameObject.Find ("Char");
 	}
 
 	void FixedUpdate() {
 		if (beingHeld) {
-			transform.position = holdPosition.position;
+			transform.localPosition = new Vector2 (HoldPositionX, HoldPositionY);
 			//transform.localPosition += new Vector3 (0.1f, -0.1f, 0);
 		}
 		/*
@@ -64,11 +64,14 @@ public class PickUpableItem : MonoBehaviour {
 	 */
 	public int Break() {
 		health--;
-		if (health <= 0)
-			Kill ();
+		if (health <= 0) {
+			if (!transform.GetChild (0).GetComponent<ParticleSystem> ().isPlaying)
+				transform.GetChild (0).GetComponent<ParticleSystem> ().Play();
+			Invoke("Kill", 0.5f);
+		}
 		//Play animation and such
-		if(health > 0)
-			GetComponent<SpriteRenderer>().sprite = branchSprites[health - 1];
+		if(health >= 0)
+			GetComponent<SpriteRenderer>().sprite = branchSprites[health];
 		return health;
 	}
 

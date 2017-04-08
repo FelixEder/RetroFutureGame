@@ -139,7 +139,7 @@ public class Phase2 : MonoBehaviour {
 		moveSpeed = 3;
 	}
 
-	public void GetHurt(int damage) {
+	public void TakeDamage (int damage) {
 		health -= damage;
 		if (health <= 0) {
 			Defeated ();

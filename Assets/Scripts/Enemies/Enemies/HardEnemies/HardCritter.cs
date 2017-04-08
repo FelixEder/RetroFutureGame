@@ -57,7 +57,7 @@ public class HardCritter : MonoBehaviour {
 		case "PickupableItem":
 			if (col.gameObject.GetComponent<PickUpableItem> ().GetItemType () == "Rock") {
 				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f) {
-					GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
+					TakeDamage (col.gameObject.GetComponent<PickUpableItem> ().damage);
 					break;
 				}
 			}
@@ -108,7 +108,7 @@ public class HardCritter : MonoBehaviour {
 	/**
 	 * Method called when enemy is hit by the player
 	 */
-	public void GetHurt(int damage) {
+	public void TakeDamage(int damage) {
 		if (!invulnerable) {
 			//Play a sound and animation.
 			health -= damage;

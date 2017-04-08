@@ -88,7 +88,7 @@ public class Phase1 : MonoBehaviour {
 		this.gameObject.transform.GetChild (1).gameObject.SetActive (false);	
 	}
 
-	public void GetHurt(int damage) {
+	public void TakeDamage (int damage) {
 		health -= damage;
 		//Would be nice if the armour could look a bit more broken after each punch.
 		if (health <= 0) {

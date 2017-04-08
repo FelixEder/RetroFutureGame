@@ -137,7 +137,6 @@ public class CharPunch : MonoBehaviour {
 		if(attackType == "Branch" && !branchInv && victim.gameObject.tag != "Door") {
 			if (charInventory.GetHoldingItem ().GetComponent<PickUpableItem> ().Break () <= 0) {
 				charInventory.SetHoldingItem (null);
-//				attackType = "";
 			}
 			branchInv = true;
 		}
@@ -166,43 +165,45 @@ public class CharPunch : MonoBehaviour {
 		case "CrawlerCritter":
 			CrawlerCritter crawlerCritter = victim.gameObject.GetComponent<CrawlerCritter> ();
 			if (crawlerCritter.deShelled)
-				crawlerCritter.GetHurt (damage);
+				crawlerCritter.TakeDamage (damage);
 			break;
 
 		case "ShellMan":
 			ShellMan shellMan = victim.gameObject.GetComponent<ShellMan> ();
 			if (shellMan.deShelled)
-				shellMan.GetHurt (damage);
+				shellMan.TakeDamage (damage);
 			break;
 
 		case "HardEnemy":
 			if (attackType == "Rock") {
-				victim.gameObject.transform.parent.GetComponent<HardCritter> ().GetHurt (1);
+				victim.gameObject.transform.parent.GetComponent<HardCritter> ().TakeDamage (1);
 			}
 			if (attackType == "Mega" || attackType == "FullMega") {
-				victim.gameObject.GetComponent<HardCritter>().GetHurt(damage);
+				victim.gameObject.GetComponent<HardCritter>().TakeDamage(damage);
 			}
 			break;
 
 		case "BigEyeBuyWeakSpot":
 			if (attackType == "Branch") {
-				victim.gameObject.transform.parent.GetComponent<BigEyeGuy> ().GetHurt (1);
+				victim.gameObject.transform.parent.GetComponent<BigEyeGuy> ().TakeDamage (1);
 			}
 			break;
 
 		case "StatueBossEye":
 			if (attackType == "Branch") {
 				victim.gameObject.GetComponent<StatueBossLaser> ().TakeDamage (1);
+				charInventory.GetHoldingItem ().GetComponent<PickUpableItem> ().Kill ();
+				charInventory.SetHoldingItem (null);
 			}
 			break;
 
 		case "FinalBossWeakSpot":
 			if (attackType == "FullMega") {
 				Debug.Log ("Full MegaPunched the boss!"); 
-				victim.gameObject.GetComponent<Phase1> ().GetHurt (3);
+				victim.gameObject.GetComponent<Phase1> ().TakeDamage (3);
 			} else if (attackType == "Mega") {
 				Debug.Log ("Regular MegaPunched the boss!"); 
-				victim.gameObject.GetComponent<Phase1> ().GetHurt (1);
+				victim.gameObject.GetComponent<Phase1> ().TakeDamage (1);
 			} else {
 				Debug.Log ("Invulnerable to AttackType [ " + attackType + " ]");
 			}
@@ -212,10 +213,10 @@ public class CharPunch : MonoBehaviour {
 			if (victim.gameObject.GetComponent<Phase2> ().blued) {
 				if (attackType == "FullMega") {
 					Debug.Log ("Full MegaPunched the boss phase 2!"); 
-					victim.gameObject.GetComponent<Phase2> ().GetHurt (3);
+					victim.gameObject.GetComponent<Phase2> ().TakeDamage (3);
 				} else if (attackType == "Mega"){
 					Debug.Log ("Regular MegaPunched the boss phase 2!"); 
-					victim.gameObject.GetComponent<Phase2> ().GetHurt (1);
+					victim.gameObject.GetComponent<Phase2> ().TakeDamage (1);
 				} else {
 					Debug.Log ("Invulnerable to AttackType [ " + attackType + " ]");
 				}

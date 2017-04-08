@@ -160,7 +160,7 @@ public class BigBadBird : MonoBehaviour {
 		//Play animation that closes mouth
 	}
 
-	public void GetHurt() {
+	public void TakeDamage() {
 		health--;
 		if (health == 3)
 			GetAngry ();

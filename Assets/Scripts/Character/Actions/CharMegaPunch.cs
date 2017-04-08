@@ -81,23 +81,23 @@ public class CharMegaPunch : MonoBehaviour {
 				break;
 
 				case "BigEyeGuy":
-				victim.gameObject.GetComponent<BigEyeGuy>().GetHurt(damage);
+				victim.gameObject.GetComponent<BigEyeGuy>().TakeDamage(damage);
 				break;
 
 				case "CrawlerCritter":
 				CrawlerCritter crawlerCritter = victim.gameObject.GetComponent<CrawlerCritter>();
 				if(crawlerCritter.deShelled)
-					crawlerCritter.GetHurt(damage);
+					crawlerCritter.TakeDamage(damage);
 				break;
 
 				case "ShellMan":
 				ShellMan shellMan = victim.gameObject.GetComponent<ShellMan>();
 				if(shellMan.deShelled)
-					shellMan.GetHurt(damage);
+					shellMan.TakeDamage(damage);
 				break;
 
 				case "HardEnemy":
-				victim.gameObject.GetComponent<HardCritter>().GetHurt(damage);
+				victim.gameObject.GetComponent<HardCritter>().TakeDamage(damage);
 				break;
 
 				case "Barrier":
@@ -108,10 +108,10 @@ public class CharMegaPunch : MonoBehaviour {
 				case "FinalBossWeakSpot":
 				if (charStatus.chargedMegaPunch) {
 					Debug.Log ("Charge Mega-Punched the boss!"); 
-					victim.gameObject.GetComponent<Phase1> ().GetHurt (3);
+					victim.gameObject.GetComponent<Phase1> ().TakeDamage (3);
 				} else {
 					Debug.Log ("Mega-Punched the boss!"); 
-					victim.gameObject.GetComponent<Phase1> ().GetHurt (1);
+					victim.gameObject.GetComponent<Phase1> ().TakeDamage (1);
 				}
 				break;
 
@@ -119,10 +119,10 @@ public class CharMegaPunch : MonoBehaviour {
 				if (victim.gameObject.GetComponent<Phase2> ().blued) {
 					if (charStatus.chargedMegaPunch) {
 						Debug.Log ("Charge Mega-Punched the boss phase 2!"); 
-						victim.gameObject.GetComponent<Phase2> ().GetHurt (3);
+						victim.gameObject.GetComponent<Phase2> ().TakeDamage (3);
 					} else {
 						Debug.Log ("Mega-Punched the boss phase 2!"); 
-						victim.gameObject.GetComponent<Phase2> ().GetHurt (1);
+						victim.gameObject.GetComponent<Phase2> ().TakeDamage (1);
 					}
 				}
 				break;

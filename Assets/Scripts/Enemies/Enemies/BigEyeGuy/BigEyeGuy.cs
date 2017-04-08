@@ -55,7 +55,7 @@ public class BigEyeGuy : MonoBehaviour {
 		case "PickupableItem":
 			if (col.gameObject.GetComponent<PickUpableItem> ().GetItemType () == "Branch") {
 				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
-					GetHurt (col.gameObject.GetComponent<PickUpableItem> ().damage);
+					TakeDamage (col.gameObject.GetComponent<PickUpableItem> ().damage);
 				}
 			}
 			GetMirrored ();
@@ -80,7 +80,7 @@ public class BigEyeGuy : MonoBehaviour {
 	/**
 	 * Method called when enemy is hit by the player
 	 */
-	public void GetHurt(int damage) {
+	public void TakeDamage(int damage) {
 		if (!invulnerable) {
 			//Play a sound and animation.
 			health -= damage;

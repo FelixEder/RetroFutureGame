@@ -42,7 +42,7 @@ public class Barriers : MonoBehaviour {
 	}
 
 	IEnumerator Lower() {
-		yield return new WaitForSeconds (1);
+		yield return new WaitForSeconds (0.5f);
 		for (int i = 0; i < 50; i++) {
 			transform.position = new Vector2 (transform.position.x, transform.position.y - 0.05f);
 			yield return 0;

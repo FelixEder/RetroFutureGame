@@ -26,23 +26,23 @@ public class StompTrigger : MonoBehaviour {
 			//Really bad code, should be re-written
 			CrawlerCritter crawlerCritter = col.gameObject.GetComponent<CrawlerCritter> ();
 			if (!crawlerCritter.deShelled) {
-				crawlerCritter.GetHurt (1);
+				crawlerCritter.TakeDamage (1);
 			} else if (crawlerCritter.deShelled) {
-				crawlerCritter.GetHurt (2);
+				crawlerCritter.TakeDamage (2);
 			} 
 			break;
 
 		case "ShellMan":
 			ShellMan shellMan = col.gameObject.GetComponent<ShellMan> ();
 			if (!shellMan.deShelled) {
-				shellMan.GetHurt (1);
+				shellMan.TakeDamage (1);
 			} else if (shellMan.deShelled) {
-				shellMan.GetHurt (2);
+				shellMan.TakeDamage (2);
 			}
 			break;
 
 		case "FinalBossLastForm":
-			col.gameObject.GetComponent<Phase3Head> ().GetHurt ();
+			col.gameObject.GetComponent<Phase3Head> ().TakeDamage ();
 			break;
 		}
 	}

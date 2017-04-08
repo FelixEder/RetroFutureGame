@@ -133,7 +133,7 @@ public class Phase3Head : MonoBehaviour {
 		GetMirrored ();
 	}
 
-	public void GetHurt() {
+	public void TakeDamage () {
 		if (!invulnerable) {
 			Debug.Log ("Hurt final boss");
 			health--;

@@ -1,15 +1,18 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\Bosses\StatueBoss\StatueBossLaser.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\UniversalDamage.cs">
     <Files>
-      <File FileName="Assets\Scripts\Character\Actions\CharPunch.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\Enemies\SoftEnemies\SmallCritter.cs" Line="31" Column="5" />
-      <File FileName="Assets\Scripts\Character\Movement\CharKnockback.cs" Line="19" Column="41" />
-      <File FileName="Assets\Scripts\Enemies\SpawnProperties.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Interactables\Misc\PrefabSpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\Bosses\StatueBoss\StatueBoss.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\Bosses\StatueBoss\StatueBossLaser.cs" Line="33" Column="47" />
-      <File FileName="Assets\Scripts\Enemies\Bosses\FinalBoss\Phase1\Phase1.cs" Line="17" Column="44" />
+      <File FileName="Assets\Scripts\Character\Status\CharStatus.cs" Line="20" Column="2" />
+      <File FileName="Assets\Scripts\Other\PlatformLogic.cs" Line="9" Column="3" />
+      <File FileName="Assets\Scripts\Character\Movement\CharJump.cs" Line="10" Column="17" />
+      <File FileName="Assets\Scripts\Character\Triggers\CharTriggerPlatform.cs" Line="19" Column="4" />
+      <File FileName="Assets\Scripts\Character\Triggers\CharTriggerDown.cs" Line="28" Column="30" />
+      <File FileName="Assets\Scripts\Other\InputManager.cs" Line="69" Column="4" />
+      <File FileName="Assets\Scripts\Enviroment\ForegroundCover.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Interactables\Items\PickUpableItem.cs" Line="86" Column="1" />
+      <File FileName="Assets\Scripts\Enviroment\Obstacles\SpikesfromGoogle.cs" Line="25" Column="4" />
+      <File FileName="Assets\Scripts\Enemies\UniversalDamage.cs" Line="28" Column="10" />
+      <File FileName="Assets\Scripts\Enemies\Enemies\SoftEnemies\SmallCritter.cs" Line="133" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

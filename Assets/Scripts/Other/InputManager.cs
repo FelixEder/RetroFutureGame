@@ -64,6 +64,9 @@ public class InputManager : MonoBehaviour {
 		case "y":
 			return Input.GetAxis ("Vertical");
 
+		case "ybool":
+			return Input.GetAxis ("VerticalBool");
+
 		default:
 			return 0;
 		}

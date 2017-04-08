@@ -28,10 +28,10 @@ public class CharJump : MonoBehaviour {
 		else if (!input.GetKey ("jump") && holdJump && gotSecondJump && !hasSecondJumped)
 			holdJump = false;
 		//jump down through platform when holding down and pressing jump
-		if (input.GetKey ("jump") && input.GetAxis ("Y") < -0.3f && status.onPlatform) {
+		if (input.GetKey ("jump") && input.GetAxis ("Y") < -0.3f && input.GetAxis ("Ybool") < 0f && !jumpDown && !holdJump && status.onPlatform) {
 			holdJump = true;
 			jumpDown = true;
-			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, -0.1f);
+			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, -1f);
 		}
 		//jump when on surface and pressing jump
 		else if (input.GetKey ("jump") && !holdJump && status.onSurface) {

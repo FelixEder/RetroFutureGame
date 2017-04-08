@@ -9,6 +9,7 @@ public class CountDown : MonoBehaviour {
 	void Start () {
 		text.enabled = true;
 		InvokeRepeating ("Counting", 5, 1);
+
 	}
 
 	void Counting() {

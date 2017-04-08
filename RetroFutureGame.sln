@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetroFutureGame", "Assembly
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetroFutureGame", "Assembly-CSharp-Editor.csproj", "{70AFECE5-41DD-9F6A-0985-8C2281DA0E8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetroFutureGame", "Assembly-UnityScript-Editor.unityproj", "{F529F29E-33D4-5D3B-E2C8-EB85387B2E38}"
+Project("{6DE2215B-FC3C-2AD1-62E3-89376D365F0D}") = "RetroFutureGame", "Assembly-UnityScript-Editor.unityproj", "{F529F29E-33D4-5D3B-E2C8-EB85387B2E38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

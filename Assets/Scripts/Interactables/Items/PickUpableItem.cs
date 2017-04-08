@@ -4,7 +4,7 @@ using System.Collections;
 public class PickUpableItem : MonoBehaviour {
 	public Rigidbody2D rigidBody2D;
 	public Transform originalParent, holdPosition;
-	public Sprite[] branchSprites;
+	public Sprite[] sprites;
 	GameObject chara;
 	public float HoldPositionX = 0.341f, HoldPositionY = -0.332f;
 	/**the type*/
@@ -64,14 +64,15 @@ public class PickUpableItem : MonoBehaviour {
 	 */
 	public int Break() {
 		health--;
+		//Play animation and such
+		if(health >= 0)
+			GetComponent<SpriteRenderer>().sprite = sprites[health];
+		//Kill if health is 0 or less
 		if (health <= 0) {
 			if (!transform.GetChild (0).GetComponent<ParticleSystem> ().isPlaying)
 				transform.GetChild (0).GetComponent<ParticleSystem> ().Play();
 			Invoke("Kill", 0.5f);
 		}
-		//Play animation and such
-		if(health >= 0)
-			GetComponent<SpriteRenderer>().sprite = branchSprites[health];
 		return health;
 	}
 

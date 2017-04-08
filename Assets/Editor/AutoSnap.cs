@@ -6,12 +6,14 @@ public class AutoSnap : EditorWindow
 	private Vector3 prevPosition;
 	private Vector3 prevScale;
 	private Vector3 prevRotation;
+	private Vector2 prevSize;
 
 	// These need to be static because the auto snap window is
 	// recreated when opened from the menu
 	private static bool doSnap = false;
 	private static bool doScaleSnap = false;
 	private static bool doRotateSnap = false;
+	private static bool doSizeSnap = false;
 	private static float snapValueX = 1;
 	private static float snapValueY = 1;
 	private static float snapValueZ = 1;
@@ -22,12 +24,13 @@ public class AutoSnap : EditorWindow
 	private static AutoSnap updateWindow = null;
 
 	private const string doSnapKey            = "AutoSnap_doSnapKey";
-	private const string doScaleSnapKey        = "AutoSmap_doScaleSnapKey";
+	private const string doScaleSnapKey       = "AutoSmap_doScaleSnapKey";
 	private const string doRotateSnapKey      = "AutoSnap_doRotateSnapKey";
+	private const string doSizeSnapKey        = "AutoSnap_doSizeSnapKey";
 	private const string snapValueXKey        = "AutoSnap_snapValueXKey";
 	private const string snapValueYKey        = "AutoSnap_snapValueYKey";
 	private const string snapValueZKey        = "AutoSnap_snapValueZKey";
-	private const string snapRotateValueKey = "AutoSnap_snapRotateValueKey";
+	private const string snapRotateValueKey   = "AutoSnap_snapRotateValueKey";
 
 	[MenuItem( "Tools/Auto Snap %_l" )]
 
@@ -47,6 +50,7 @@ public class AutoSnap : EditorWindow
 		doSnap = EditorGUILayout.Toggle( "Auto Snap", doSnap );
 		doScaleSnap = EditorGUILayout.Toggle( "Auto Snap Scale", doScaleSnap);
 		doRotateSnap = EditorGUILayout.Toggle ("Auto Snap Rotation", doRotateSnap);
+		doSizeSnap = EditorGUILayout.Toggle ("Auto Snap Tile-size", doSizeSnap);
 
 		snapValueX = EditorGUILayout.FloatField( "Snap X Value", snapValueX );
 		snapValueY = EditorGUILayout.FloatField( "Snap Y Value", snapValueY );
@@ -80,6 +84,12 @@ public class AutoSnap : EditorWindow
 			{
 				RotateSnap();
 				prevRotation = Selection.transforms[0].eulerAngles;
+			}
+
+			if (doSizeSnap
+			    && Selection.transforms [0].gameObject.GetComponent<SpriteRenderer> ().size != prevSize) {
+				SizeSnap ();
+				prevSize = Selection.transforms [0].gameObject.GetComponent<SpriteRenderer> ().size;
 			}
 		}
 	}
@@ -123,6 +133,19 @@ public class AutoSnap : EditorWindow
 			r.y = RotateRound (r.y);
 			r.z = RotateRound (r.z);
 			transform.transform.eulerAngles = r;
+		}
+	}
+
+	private void SizeSnap()
+	{
+		//Debug.Log("AutoSnap: SizeSnap");
+
+		foreach (var transform in Selection.transforms)
+		{
+			var sz = transform.gameObject.GetComponent<SpriteRenderer> ().size;
+			sz.x = RoundX (sz.x);
+			sz.y = RoundY (sz.y);
+			transform.gameObject.GetComponent<SpriteRenderer>().size = sz;
 		}
 	}
 
@@ -180,6 +203,11 @@ public class AutoSnap : EditorWindow
 			doRotateSnap = EditorPrefs.GetBool(doRotateSnapKey);
 		}
 
+		if (EditorPrefs.HasKey (doSizeSnapKey))
+		{
+			doSizeSnap = EditorPrefs.GetBool (doSizeSnapKey);
+		}
+
 		if (EditorPrefs.HasKey(snapValueXKey)) 
 		{
 			snapValueX = EditorPrefs.GetFloat(snapValueXKey);
@@ -218,6 +246,7 @@ public class AutoSnap : EditorWindow
 		EditorPrefs.SetBool(doSnapKey, doSnap);
 		EditorPrefs.SetBool(doScaleSnapKey, doScaleSnap);
 		EditorPrefs.SetBool(doRotateSnapKey, doRotateSnap);
+		EditorPrefs.SetBool (doSizeSnapKey, doSizeSnap);
 		EditorPrefs.SetFloat(snapValueXKey, snapValueX);
 		EditorPrefs.SetFloat(snapValueYKey, snapValueY);
 		EditorPrefs.SetFloat(snapValueZKey, snapValueZ);

@@ -1,6 +1,5 @@
 Base path: D:/Spelprojekt/NewUnity/Editor/Data
 Cmd: initializeCompiler
-Cmd: preprocess
-  insize=9587 outsize=2663 ok=1
-Cmd: preprocess
-  insize=142 outsize=139 ok=1
+Unhandled exception: Protocol error - failed to read correct magic number
+
+Quitting shader compiler process

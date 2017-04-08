@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Editor\AutoSnap.cs" />
      <Compile Include="Assets\Editor\CustomAssetImporter.cs" />
      <Compile Include="Assets\Editor\FindSceneObjectsWithTag.cs" />
      <Compile Include="Assets\Editor\HiddenObjectExplorer.cs" />

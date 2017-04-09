@@ -7,6 +7,7 @@ public class CharPunch : MonoBehaviour {
 	CharStatus charStatus;
 	InputManager input;
 	public bool holdPunch, holdMega, onCooldown, branchInv, megaAquired;
+	bool animationCooldown;
 	string attackType;
 	int damage, charge, limit = 200;
 
@@ -122,13 +123,20 @@ public class CharPunch : MonoBehaviour {
 		GetComponent<BoxCollider2D> ().enabled = true;
 		GetComponent<BoxCollider2D> ().size = new Vector2 (sizeX, 2f /*1.849279f*/);
 		GetComponent<BoxCollider2D> ().offset = new Vector2 (posX, -0.2f /*-0.2104849f*/);
+
 		//visualization
 		transform.GetChild(0).GetComponent<Transform>().localScale = new Vector3 (sizeX, 1.849279f, 1f);
-		transform.GetChild(0).GetComponent<Transform>().localPosition = new Vector3 (posX, -0.2104849f, -1f);
+		transform.GetChild(0).GetComponent<Transform>().localPosition = new Vector3 (posX + 0.2f, -0.2104849f, -1f);
+		//Animation
+		if (!animationCooldown) {
+			transform.GetChild (0).GetComponent<Animator> ().SetTrigger (attackType);
+			animationCooldown = true;
+		}
 
 		yield return new WaitForSeconds (0.1f);
 		GetComponent<BoxCollider2D> ().enabled = false;
 		yield return new WaitForSeconds (0.1f);
+		animationCooldown = false;
 		onCooldown = false;
 		branchInv = false;
 	}

@@ -86,7 +86,8 @@ public class AutoSnap : EditorWindow
 				prevRotation = Selection.transforms[0].eulerAngles;
 			}
 
-			if (doSizeSnap
+			if (Selection.transforms [0].gameObject.GetComponent<SpriteRenderer> ().Equals (null)) {}
+			else if (doSizeSnap
 			    && Selection.transforms [0].gameObject.GetComponent<SpriteRenderer> ().size != prevSize) {
 				SizeSnap ();
 				prevSize = Selection.transforms [0].gameObject.GetComponent<SpriteRenderer> ().size;

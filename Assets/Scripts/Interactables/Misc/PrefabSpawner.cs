@@ -6,13 +6,16 @@ using System.Collections;
  */
 public class PrefabSpawner : MonoBehaviour {
 	/**The amount of time in seconds between each spawn*/
-	public float spawnStart, spawnInterval, prefabInitialFreezeTime, prefabWanderDistance;
+	public float spawnStart, spawnInterval;
 	/**The max amount of simultaneously spawned prefabs.*/
 	public int maxSimultaneous;
 	/**The name of the prefab to spawn*/
 	public string prefab;
 
-	public bool continuousRespawn;
+	public bool continuousRespawn, setExtraOptions;
+	public float prefabInitialFreezeTime, prefabWanderDistance;
+
+
 	bool willRespawn;
 
 	void Start() {
@@ -34,8 +37,10 @@ public class PrefabSpawner : MonoBehaviour {
 	void Spawn() {
 		GameObject instance = Instantiate (Resources.Load (prefab), transform.position, Quaternion.identity) as GameObject;
 		instance.transform.parent = transform;
-		instance.GetComponent<SpawnProperties> ().initialFreezeTime = prefabInitialFreezeTime;
-		instance.GetComponent<SpawnProperties> ().wanderDistance = prefabWanderDistance;
+		if (setExtraOptions) {
+			instance.GetComponent<SpawnProperties> ().initialFreezeTime = prefabInitialFreezeTime;
+			instance.GetComponent<SpawnProperties> ().wanderDistance = prefabWanderDistance;
+		}
 		instance.GetComponent<SpriteRenderer> ().sortingOrder = (int)Time.timeSinceLevelLoad;
 	}
 

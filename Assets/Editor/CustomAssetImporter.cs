@@ -6,8 +6,6 @@ internal sealed class CustomAssetImporter : AssetPostprocessor {
 	// Couple of constants used below to be able to change from a single point, you may use direct literals instead of these consts to if you please
 	private const int webTextureSize = 2048;
 	private const int standaloneTextureSize = 4096;
-	private const int iosTextureSize = 1024;
-	private const int androidTextureSize = 1024;
 
 	#region Methods
 
@@ -23,19 +21,20 @@ internal sealed class CustomAssetImporter : AssetPostprocessor {
 		// Get the reference to the assetImporter (From the AssetPostProcessor class) and unbox it to a TextureImporter (Which is inherited and extends the AssetImporter with texture specific utilities)
 		var importer = assetImporter as TextureImporter;
 
+		TextureImporterPlatformSettings platformSettings = new TextureImporterPlatformSettings();
+		platformSettings.maxTextureSize = standaloneTextureSize;
+		platformSettings.format = TextureImporterFormat.RGBA32;
+		platformSettings.compressionQuality = 100;
+//		platformSettings.overridden = true;
 
 		// The options for the platform string are "Web", "Standalone", "iPhone", "Android"
 		// Unity API provides neat single function settings for the most import settings as SetPlatformTextureSettings
 		// Parameters are: platform, maxTextureSize, textureFormat, compressionQuality
 		// I also change the format based on if the texture has an alpha channel or not because not all formats support an alpha channel
-		importer.SetPlatformTextureSettings("Web", webTextureSize, TextureImporterFormat.RGBA32, 100, false);
+//		importer.SetPlatformTextureSettings("Web", webTextureSize, TextureImporterFormat.RGBA32, 100, false);
+//		importer.SetPlatformTextureSettings("Standalone", standaloneTextureSize, TextureImporterFormat.RGBA32, 100, false);
 
-		importer.SetPlatformTextureSettings("Standalone", standaloneTextureSize, TextureImporterFormat.RGBA32, 100, false);
-
-		importer.SetPlatformTextureSettings("iPhone", iosTextureSize,
-			importer.DoesSourceTextureHaveAlpha() ? TextureImporterFormat.PVRTC_RGBA4 : TextureImporterFormat.PVRTC_RGB4, 100, false);
-
-		importer.SetPlatformTextureSettings("Android", androidTextureSize, TextureImporterFormat.ETC_RGB4, 100, false);
+		importer.SetPlatformTextureSettings (platformSettings);
 
 		// Set the texture import type drop-down to advanced so our changes reflect in the import settings inspector
 		importer.textureType = TextureImporterType.Sprite;

@@ -2,7 +2,7 @@
 <doc>
   <members>
     <assembly>
-      <name>UnityEngine.PlaymodeTestsRunner</name>
+      <name>UnityEditor.TestRunner</name>
     </assembly>
   </members>
 </doc>

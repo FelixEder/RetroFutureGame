@@ -339,6 +339,11 @@
         <para>Show log messages with priority Info and higher. This is the default setting.</para>
       </summary>
     </member>
+    <member name="F:UnityEngine.Networking.LogFilter.FilterLevel.SetInScripting">
+      <summary>
+        <para>Tells the NetworkManager to not set the filter level on startup.</para>
+      </summary>
+    </member>
     <member name="F:UnityEngine.Networking.LogFilter.FilterLevel.Warn">
       <summary>
         <para>Show log messages with priority Warning and higher.</para>
@@ -1328,7 +1333,7 @@
         <para>Returns a string representation of the NetworkConnection object state.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.Networking.NetworkConnection.TransportRecieve(System.Byte[],System.Int32,System.Int32)">
+    <member name="M:UnityEngine.Networking.NetworkConnection.TransportReceive(System.Byte[],System.Int32,System.Int32)">
       <summary>
         <para>This virtual function allows custom network connection classes to process data from the network before it is passed to the application.</para>
       </summary>
@@ -4163,6 +4168,11 @@ All of the player objects in the game are disabled when the host is lost. Then, 
     <member name="P:UnityEngine.Networking.NetworkTransform.transformSyncMode">
       <summary>
         <para>What method to use to sync the object's position.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Networking.NetworkTransform.velocityThreshold">
+      <summary>
+        <para>The minimum velocity difference that will be synchronized over the network.</para>
       </summary>
     </member>
     <member name="T:UnityEngine.Networking.NetworkTransform.AxisSyncMode">

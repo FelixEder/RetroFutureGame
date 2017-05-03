@@ -7,11 +7,13 @@ public class Barriers : MonoBehaviour {
 	public string barrierType;
 	public int health;
 	public Sprite sprite;
+	bool broken;
 
 	/**
 	 * The barrier of the door has been broken, it is now destroyed.
 	 */
 	void Broken() {
+		broken = true;
 		//Play animation and 
 		if (barrierType == "Branch") {
 			GetComponent<SpriteRenderer> ().sprite = sprite;
@@ -30,6 +32,8 @@ public class Barriers : MonoBehaviour {
 	}
 
 	public void TakeDamage(int damage) {
+		if (broken)
+			return;
 		health -= damage;
 		if (health <= 0) {
 			Broken();

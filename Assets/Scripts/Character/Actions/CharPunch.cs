@@ -200,7 +200,7 @@ public class CharPunch : MonoBehaviour {
 		case "StatueBossEye":
 			if (attackType == "Branch") {
 				victim.gameObject.GetComponent<StatueBossLaser> ().TakeDamage (1);
-				charInventory.GetHoldingItem ().GetComponent<PickUpableItem> ().Kill ();
+				charInventory.GetHoldingItem ().GetComponent<PickUpableItem> ().Break (3);
 				charInventory.SetHoldingItem (null);
 			}
 			break;

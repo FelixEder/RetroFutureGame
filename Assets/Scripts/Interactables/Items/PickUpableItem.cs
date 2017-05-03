@@ -65,15 +65,20 @@ public class PickUpableItem : MonoBehaviour {
 	public int Break() {
 		health--;
 		//Play animation and such
-		if(health >= 0)
-			GetComponent<SpriteRenderer>().sprite = sprites[health];
+		GetComponent<SpriteRenderer>().sprite = sprites[Mathf.Max (0, health)];
 		//Kill if health is 0 or less
 		if (health <= 0) {
 			if (!transform.GetChild (0).GetComponent<ParticleSystem> ().isPlaying)
 				transform.GetChild (0).GetComponent<ParticleSystem> ().Play();
+			GetComponent<Collider2D> ().enabled = false;
 			Invoke("Kill", 0.5f);
 		}
 		return health;
+	}
+
+	public int Break(int damage) {
+		health -= damage - 1;
+		return Break ();
 	}
 
 	public void Kill() {

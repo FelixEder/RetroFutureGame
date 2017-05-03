@@ -9,6 +9,9 @@ public class StatueBossLaser : MonoBehaviour {
 	RaycastHit2D hit;
 	public int damage = 1, health;
 	bool shooting;
+	public GameObject playerAim;
+
+	public float laserChargeTime = 1f, laserActiveTime = 2f;
 	
 	void Start() {
 		lineRenderer = GetComponent<LineRenderer> ();
@@ -20,41 +23,58 @@ public class StatueBossLaser : MonoBehaviour {
 		//keep eye sprite upright.
 		transform.rotation = Quaternion.identity;
 
-		hit = Physics2D.Raycast (transform.position, -aimTarget.transform.InverseTransformPoint(transform.position), Mathf.Infinity, hitLayers);
+		//Calculate laser trajectory with raycast.
+		if (transform.parent.parent.GetComponent<StatueBoss> ().raging)
+			hit = Physics2D.Raycast (transform.position, -playerAim.transform.InverseTransformPoint(transform.position), Mathf.Infinity, hitLayers);
+		else
+			hit = Physics2D.Raycast (transform.position, -aimTarget.transform.InverseTransformPoint(transform.position), Mathf.Infinity, hitLayers);
 		laserHit = hit.point;
 
-		if (shooting) {
-			lineRenderer.SetPosition (0, transform.position);
-			lineRenderer.SetPosition (1, laserHit);
-			HitByLaser (hit);
-		}
-
-		childLineRenderer.SetPosition (0, transform.position);
-		childLineRenderer.SetPosition (1, laserHit);
-	}
-
-	public void Shoot() {
-		//disable aimObject animation.
-		aimTarget.GetComponent<Animator>().enabled = false;
-
-		//avoid graphical issue by setting positions before enabling line.
-		hit = Physics2D.Raycast (transform.position, -aimTarget.transform.InverseTransformPoint(transform.position), Mathf.Infinity, hitLayers);
-		laserHit = hit.point;
+		//Set linerenderer positions.
 		lineRenderer.SetPosition (0, transform.position);
 		lineRenderer.SetPosition (1, laserHit);
 
+		childLineRenderer.SetPosition (0, transform.position);
+		if (transform.parent.parent.GetComponent<StatueBoss> ().raging)
+			childLineRenderer.SetPosition (1, laserHit);
+		else
+			childLineRenderer.SetPosition (1, aimTarget.transform.position);
+
+		if (shooting)
+			HitByLaser (hit);
+	}
+
+	public void Shoot() {
+		StartCoroutine (ShootLaser ());
+	}
+
+	IEnumerator ShootLaser() {
+		yield return new WaitForSeconds(Random.Range(0, 1));
+
+		//disable aimObject animation.
+		aimTarget.GetComponent<Animator>().enabled = false;
+		playerAim.GetComponent<StatueBossPlayerAim> ().aim = false;
+
+		yield return new WaitForSeconds (laserChargeTime);
+
+
+		//enable line and set shooting.
 		childLineRenderer.enabled = false;
 		lineRenderer.enabled = true;
 		shooting = true;
-		Invoke ("KillLaser", 2f);
 
-	}
+		yield return new WaitForSeconds (Random.Range(laserActiveTime - 0.2f, laserActiveTime + 0.2f));
 
-	void  KillLaser() {
-		aimTarget.GetComponent<Animator>().enabled = true;
+		//disable line and set not shooting.
 		childLineRenderer.enabled = true;
 		lineRenderer.enabled = false;
 		shooting = false;
+
+		yield return new WaitForSeconds (0.2f);
+
+		//enable aimObject animation.
+		aimTarget.GetComponent<Animator>().enabled = true;
+		playerAim.GetComponent<StatueBossPlayerAim> ().aim = true;
 	}
 
 	void HitByLaser(RaycastHit2D victim) {
@@ -68,6 +88,10 @@ public class StatueBossLaser : MonoBehaviour {
 		case "SmallCritter":
 			victim.transform.gameObject.GetComponent<SmallCritter> ().Knockback (gameObject, 5);
 			victim.transform.gameObject.GetComponent<SmallCritter> ().TakeDamage (damage);
+			break;
+
+		case "PickupableItem":
+			victim.transform.gameObject.GetComponent<PickUpableItem> ().Break ();
 			break;
 
 		default:

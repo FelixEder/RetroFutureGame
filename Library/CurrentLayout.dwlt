@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -106,10 +106,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 679, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MinSize: {x: 683, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 10
+  controlID: 38
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,10 +130,10 @@ MonoBehaviour:
     y: 0
     width: 1351
     height: 947
-  m_MinSize: {x: 404, y: 492}
+  m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 11
+  controlID: 39
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,10 +154,10 @@ MonoBehaviour:
     y: 0
     width: 1351
     height: 670
-  m_MinSize: {x: 404, y: 221}
-  m_MaxSize: {x: 8004, y: 4021}
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 12
+  controlID: 98
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -176,8 +176,8 @@ MonoBehaviour:
     y: 0
     width: 204
     height: 670
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -256,8 +256,8 @@ MonoBehaviour:
     y: 0
     width: 569
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -440,10 +440,10 @@ MonoBehaviour:
     width: 202
     height: 649
   m_TreeViewState:
-    scrollPos: {x: 0, y: 2584}
-    m_SelectedIDs: 6220f2ff
-    m_LastClickedID: -909214
-    m_ExpandedIDs: d420f2ffbe33f2ff2c3bf2ffcc4df2ff1484f2ff7cccf2ff7eccf2ff0ad5f2ff3640f3ff9460f3ff9a94f3ff9c94f3ff9e94f3fff2a6f3ff54c1f3ff44cff3ff5aecf5ff8cecf5ff3241f7ff3441f7ffd8aaf8ff0aabf8ff4ebdf8ff50bdf8ff1628f9ff1a28f9ff1c28f9ff0e78fbff94ecfcff96ecfcff98ecfcff9850fdffe450fdff28e6ffffeee7ffff000000005a37000078370000ea370000443800000a3a00004c3f0000
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 16270000
+    m_LastClickedID: 0
+    m_ExpandedIDs: e4fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -603,19 +603,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Sprites/Enviroment
   m_ViewMode: 1
-  m_StartGridSize: 64
+  m_StartGridSize: 69
   m_LastFolders:
-  - Assets
+  - Assets/Sprites/Enviroment
   m_LastFoldersGridSize: 69
   m_LastProjectPath: F:\Unity Projects\RetroFutureGame
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ac310000
-    m_LastClickedID: 12716
-    m_ExpandedIDs: 00000000ac310000d2310000d4310000d8310000163200004a3200009432000096320000c0320000083300000c330000263300007e330000923300009e330000ca330000d833000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 805}
+    m_SelectedIDs: 22260000
+    m_LastClickedID: 9762
+    m_ExpandedIDs: 000000008c250000b8250000ba250000c225000022260000ba2600005427000056270000c22700008c28000094280000c228000088290000aa290000be2900001a2a0000302a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -643,7 +643,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ac310000d2310000d4310000d8310000163200004a3200009432000096320000c0320000083300000c330000263300007e330000923300009e330000ca330000d8330000
+    m_ExpandedIDs: 000000008c250000b8250000ba250000c225000022260000ba2600005427000056270000c22700008c28000094280000c228000088290000aa290000be2900001a2a0000302a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -696,7 +696,7 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 64
+    m_GridSize: 69
   m_DirectoriesAreaWidth: 222
 --- !u!114 &19
 MonoBehaviour:

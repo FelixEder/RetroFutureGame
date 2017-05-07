@@ -46,6 +46,7 @@ public class Barriers : MonoBehaviour {
 	}
 
 	IEnumerator Lower() {
+		GetComponent<AudioPlayer> ().PlayClip (0, 0.6f);
 		yield return new WaitForSeconds (0.5f);
 		for (int i = 0; i < GetComponent<SpriteRenderer>().size.y / 0.05f + 2; i++) {
 			transform.position = new Vector2 (transform.position.x, transform.position.y - 0.05f);

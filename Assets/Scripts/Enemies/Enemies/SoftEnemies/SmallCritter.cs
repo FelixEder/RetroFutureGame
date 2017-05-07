@@ -136,12 +136,12 @@ public class SmallCritter : MonoBehaviour {
 		if (!invulnerable) {
 			//Play a sound and animation.
 			audioplay.PlayClip (0, 1, 0.5f, 1.5f);
-
 			health -= damage;
 			invulnerable = true;
 			Invoke ("SetVulnerable", invulnerabilityTime);
 			if (health <= 0)
 				StartCoroutine(Die ());
+				
 		}
 	}
 
@@ -161,7 +161,7 @@ public class SmallCritter : MonoBehaviour {
 	}
 
 	IEnumerator Die() {
-		audioplay.PlayClip (1, 1, 0.5f, 1.5f);
+		audioplay.PlayDetached (1, 1, 0.5f, 1.5f);
 		GetComponent<SpriteRenderer> ().material = glitchMaterial;
 		yield return new WaitForSeconds (0.2f);
 		int ranNumb = Random.Range(0, 60);

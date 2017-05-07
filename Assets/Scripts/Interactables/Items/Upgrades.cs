@@ -49,6 +49,8 @@ public class Upgrades : MonoBehaviour {
 				col.gameObject.transform.GetChild (5).GetComponent<CharPunch> ().megaAquired = true;
 				break;
 			}
+			if (GetComponent<AudioPlayer>().audioClips.Length > 0)
+				GetComponent<AudioPlayer> ().PlayDetached (0, 1, 1, 1);
 			GameObject.Find ("tutorialPanel").GetComponent<TutorialManager> ().DisplayTutorial (upgradeType);
 			Destroy (gameObject);
 		}

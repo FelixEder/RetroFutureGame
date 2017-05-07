@@ -8,6 +8,7 @@ public class Electrohaz : MonoBehaviour {
 	*/
 	bool isActive;
 	public int damage;
+	AudioPlayer audioplay;
 
 	void Start() {
 		/* NOT USED
@@ -15,6 +16,7 @@ public class Electrohaz : MonoBehaviour {
 		sr.sprite = inactive;
 		InvokeRepeating("EspisMetod", 0, 2);
 		*/
+		audioplay = GetComponent<AudioPlayer> ();
 		StartCoroutine (GustavsMetod ());
 	}
 
@@ -25,19 +27,31 @@ public class Electrohaz : MonoBehaviour {
 
 	IEnumerator GustavsMetod() {
 		while (true) {
+			//Idle
 			yield return new WaitForSeconds (5f);
+
 			GetComponent<Animator> ().SetTrigger ("Start");
 			while (GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName ("idle")) {
 				yield return 0;
 			}
+			//Charging
+			audioplay.PlayClip (2, 1);
+
 			while (GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName ("lightning_charge")) {
 				yield return 0;
 			}
+			//Active
 			isActive = true;
+			audioplay.StopPlaying();
+			audioplay.PlayClip (1, 1);
+			audioplay.PlayClip (0, 1);
+
 			while (GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName ("lightning_active")) {
 				yield return 0;
 			}
+			//Idle
 			isActive = false;
+			audioplay.StopPlaying();
 		}
 	}
 

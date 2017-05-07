@@ -5,17 +5,22 @@ using System.Collections;
 public class CharHealth : MonoBehaviour {
 	public int currentHealth, maxHealth;
 	public float invulnerabilityTime;
+	bool dead;
+
 	Slider slider;
 	CharStatus status;
+	Rigidbody2D rb2D;
 	AudioPlayer audioplay;
 
 	void Start() {
+		status = GameObject.Find ("Char").GetComponent<CharStatus> ();
+		rb2D = GetComponent<Rigidbody2D> ();
+
 		audioplay = GetComponent<AudioPlayer> ();
 		slider = GameObject.Find ("healthSlider").GetComponent<Slider> ();
-		status = GameObject.Find ("Char").GetComponent<CharStatus> ();
 		SetHealthSliderSize ();
 		SetHealthSlider ();
-	}
+	}		
 
 	public void TakeDamage(int damage) {
 		//Maybe give a few seconds invincibility and make sprite blink or so?
@@ -24,7 +29,8 @@ public class CharHealth : MonoBehaviour {
 
 			if (currentHealth - damage <= 0) {
 				currentHealth = 0;
-				Die();
+				if (!dead)
+					Die();
 			}
 			else
 				currentHealth -= damage;
@@ -74,13 +80,31 @@ public class CharHealth : MonoBehaviour {
 	}
 
 	public void MaximizeHealth() {
-		currentHealth += (maxHealth - currentHealth);
+		SetHealthSlider ();
+		currentHealth = maxHealth;
 		StartCoroutine(TransitionHealthSlider ());
 	}
 
 	void Die() {
 		Debug.Log ("YOU DIED");
-		gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);
+		dead = true;
+		audioplay.Mute (true);
+		rb2D.constraints = RigidbodyConstraints2D.None;
+		rb2D.AddForce (Vector2.up * 300);
+		rb2D.angularVelocity = 90;
+		SetHealthSlider ();
 		GameObject.Find ("GameOverScreen").GetComponent<GameOverScreen>().ShowGameover();
+	}
+
+	public void Revive() {
+		Debug.Log ("The angels have granted your wish");
+		dead = false;
+		audioplay.Mute (false);
+		rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+		rb2D.velocity = new Vector2 (0, 0);
+		transform.rotation = Quaternion.Euler (0, 0, 0);
+		currentHealth = maxHealth;
+		SetHealthSlider ();
+		GetComponent<CharEnergy> ().MaximizeEnergy ();
 	}
 }

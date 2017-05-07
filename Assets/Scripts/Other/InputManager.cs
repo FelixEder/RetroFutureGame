@@ -2,24 +2,38 @@
 using System.Collections;
 
 public class InputManager : MonoBehaviour {
-	[SerializeField] bool inputEnabled = true;
+	[SerializeField] bool inputEnabled = true, force;
 	//jump, attack, grab, leaf, pause, shoot, mega, small;
 
 	public void Disable(float time) {
+		if (force)
+			return;
 		Disable ();
+		CancelInvoke ("Enable");
 		Invoke ("Enable", time);
 	}
 
 	public void Disable() {
+		if (force)
+			return;
+		CancelInvoke ("Enable");
 		inputEnabled = false;
 	}
 
 	public void Enable() {
+		if (force)
+			return;
+		CancelInvoke ("Enable");
 		inputEnabled = true;
 	}
 
 	public bool Enabled() {
 		return inputEnabled;
+	}
+
+	public void Force(bool input, bool force1) {
+		inputEnabled = input;
+		force = force1;
 	}
 
 	public bool GetKey(string key) {

@@ -36,6 +36,10 @@ public class AudioPlayer : MonoBehaviour {
 
 	}
 
+	public void Mute (bool mute) {
+		audioSource.volume = mute ? 0 : 1;
+	}
+
 	public void PlayingDetached (AudioClip clip, float volumeScale, float minPitch, float maxPitch, float forTime) {
 		GetComponent<AudioSource> ().PlayOneShot (clip, volumeScale);
 		GetComponent<AudioSource> ().pitch = Random.Range (minPitch, maxPitch);

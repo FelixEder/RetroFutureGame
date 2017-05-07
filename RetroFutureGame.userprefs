@@ -1,20 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\Enemies\SoftEnemies\SmallCritter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\GameOverScreen.cs">
     <Files>
-      <File FileName="Assets\Scripts\Character\Movement\CharMirror.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Interactables\Map\Barriers.cs" Line="54" Column="4" />
-      <File FileName="Assets\Scripts\Enemies\Bosses\StatueBoss\StatueBossLaser.cs" Line="64" Column="3" />
-      <File FileName="Assets\Scripts\Enemies\Bosses\StatueBoss\StatueBoss.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemies\Bosses\StatueBoss\StatueBossPlayerAim.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Other\Audio\AudioPlayer.cs" Line="23" Column="33" />
-      <File FileName="Assets\Scripts\Enemies\Enemies\SoftEnemies\SmallCritter.cs" Line="138" Column="42" />
-      <File FileName="Assets\Scripts\Character\Status\CharHealth.cs" Line="23" Column="51" />
-      <File FileName="Assets\Scripts\UI\GameOverScreen.cs" Line="52" Column="3" />
-      <File FileName="Assets\Scripts\Character\Actions\CharPunch.cs" Line="45" Column="59" />
-      <File FileName="Assets\Scripts\Interactables\Items\PickUpableItem.cs" Line="71" Column="61" />
-      <File FileName="Assets\Scripts\Interactables\Items\EnemyDrops.cs" Line="29" Column="68" />
-      <File FileName="Assets\Scripts\Interactables\Misc\PrefabSpawner.cs" Line="44" Column="88" />
+      <File FileName="Assets\Scripts\Enemies\Bosses\StatueBoss\StatueBossLaser.cs" Line="42" Column="68" />
+      <File FileName="Assets\Scripts\Enemies\Bosses\StatueBoss\StatueBoss.cs" Line="15" Column="17" />
+      <File FileName="Assets\Scripts\Enemies\Bosses\StatueBoss\StatueBossPlayerAim.cs" Line="16" Column="88" />
+      <File FileName="Assets\Scripts\Character\Status\CharHealth.cs" Line="102" Column="24" />
+      <File FileName="Assets\Scripts\Character\Status\CharEnergy.cs" Line="51" Column="29" />
+      <File FileName="Assets\Scripts\UI\GameOverScreen.cs" Line="69" Column="58" />
+      <File FileName="Assets\Scripts\Other\InputManager.cs" Line="36" Column="18" />
+      <File FileName="Assets\Scripts\Enviroment\Obstacles\SpikesfromGoogle.cs" Line="13" Column="110" />
+      <File FileName="Assets\Scripts\Other\Audio\AudioPlayer.cs" Line="40" Column="37" />
+      <File FileName="Assets\Scripts\Enviroment\Obstacles\Electrohaz.cs" Line="45" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

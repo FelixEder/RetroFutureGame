@@ -39,7 +39,7 @@ public class StatueBossLaser : MonoBehaviour {
 
 		childLineRenderer.SetPosition (0, transform.position);
 		if (transform.parent.parent.GetComponent<StatueBoss> ().raging)
-			childLineRenderer.SetPosition (1, laserHit);
+			childLineRenderer.SetPosition (1, playerAim.transform.position);
 		else
 			childLineRenderer.SetPosition (1, aimTarget.transform.position);
 
@@ -81,6 +81,16 @@ public class StatueBossLaser : MonoBehaviour {
 		yield return new WaitForSeconds (0.2f);
 
 		//enable aimObject animation.
+		aimTarget.GetComponent<Animator>().enabled = true;
+		playerAim.GetComponent<StatueBossPlayerAim> ().aim = true;
+	}
+
+	public void CancelLaser() {
+		CancelInvoke ();
+
+		childLineRenderer.enabled = true;
+		lineRenderer.enabled = false;
+		shooting = false;
 		aimTarget.GetComponent<Animator>().enabled = true;
 		playerAim.GetComponent<StatueBossPlayerAim> ().aim = true;
 	}

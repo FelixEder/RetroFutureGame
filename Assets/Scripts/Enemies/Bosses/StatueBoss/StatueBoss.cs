@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class StatueBoss : MonoBehaviour {
-	public GameObject LeftEye, RightEye, playerAim;
+	public GameObject leftEye, rightEye, playerAim;
 	public float shootRepeatRate;
 	public bool raging;
 
@@ -13,10 +13,10 @@ public class StatueBoss : MonoBehaviour {
 	}
 
 	void Update() {
-		if (LeftEye == null && RightEye == null) {
+		if (leftEye == null && rightEye == null) {
 			Defeated ();
 		}
-		if (!raging && (LeftEye == null || RightEye == null)) {
+		if (!raging && (leftEye == null || rightEye == null)) {
 				Rage ();
 		}
 	}
@@ -25,11 +25,11 @@ public class StatueBoss : MonoBehaviour {
 	 * Shoots lasers from the eyes of the statue
 	 */
 	void ShootLasers() {
-		if (LeftEye != null) {
-			LeftEye.GetComponent<StatueBossLaser> ().Shoot ();
+		if (leftEye != null) {
+			leftEye.GetComponent<StatueBossLaser> ().Shoot ();
 		}
-		if (RightEye != null) {
-			RightEye.GetComponent<StatueBossLaser> ().Shoot ();
+		if (rightEye != null) {
+			rightEye.GetComponent<StatueBossLaser> ().Shoot ();
 		} 
 	}
 
@@ -40,15 +40,19 @@ public class StatueBoss : MonoBehaviour {
 		CancelInvoke ();
 		InvokeRepeating("ShootLasers", shootRepeatRate / 2, shootRepeatRate / 2);
 
-		if (LeftEye != null) {
-			LeftEye.GetComponent<SpriteRenderer> ().color = new Color (1, 0.5f, 0.5f);
-			LeftEye.GetComponent<StatueBossLaser> ().laserChargeTime = 0.7f;
-			LeftEye.GetComponent<StatueBossLaser> ().laserActiveTime = 1f;
+		if (leftEye != null) {
+			leftEye.GetComponent<SpriteRenderer> ().color = new Color (1, 0.5f, 0.5f);
+			StatueBossLaser leftLaser = leftEye.GetComponent<StatueBossLaser> ();
+			leftLaser.laserChargeTime = 0.7f;
+			leftLaser.laserActiveTime = 1f;
+			leftLaser.CancelLaser ();
 		}
-		else if (RightEye != null) {
-			RightEye.GetComponent<SpriteRenderer> ().color = new Color (1, 0.5f, 0.5f);
-			RightEye.GetComponent<StatueBossLaser> ().laserChargeTime = 0.7f;
-			RightEye.GetComponent<StatueBossLaser> ().laserActiveTime = 1f;
+		else if (rightEye != null) {
+			rightEye.GetComponent<SpriteRenderer> ().color = new Color (1, 0.5f, 0.5f);
+			StatueBossLaser rightLaser = rightEye.GetComponent<StatueBossLaser> ();
+			rightLaser.laserChargeTime = 0.7f;
+			rightLaser.laserActiveTime = 1f;
+			rightLaser.CancelLaser ();
 		}
 	}
 		

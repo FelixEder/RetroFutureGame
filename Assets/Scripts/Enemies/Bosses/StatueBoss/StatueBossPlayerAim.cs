@@ -13,7 +13,7 @@ public class StatueBossPlayerAim : MonoBehaviour {
 	void Update () {
 		if (raging && aim)
 			transform.position = new Vector2 (
-				Mathf.Lerp (transform.position.x, player.transform.position.x, Time.deltaTime),
+				Mathf.Lerp (transform.position.x, player.transform.position.x, Time.deltaTime * 2),
 				Mathf.Lerp (transform.position.y, player.transform.position.y, Time.deltaTime)
 			);
 	}

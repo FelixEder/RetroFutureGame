@@ -33,6 +33,10 @@ public class TutorialManager : MonoBehaviour {
 				if (GameObject.Find ("Char").GetComponent<CharJump> ().hasSecondJumped)
 					HideTutorial (4);
 				break;
+			case "checkpoint":
+				HideTutorial (1.5f);
+				break;
+
 			default:
 				HideTutorial (5);
 				break;
@@ -41,6 +45,8 @@ public class TutorialManager : MonoBehaviour {
 	}
 
 	public void DisplayTutorial(string tutorial) {
+		StopAllCoroutines ();
+
 		Debug.Log ("Display tutorial [ " + tutorial + " ]");
 		switch (tutorial.ToLower()) {
 
@@ -54,11 +60,15 @@ public class TutorialManager : MonoBehaviour {
 			text.text = "You just picked up extra health.";
 			break;
 		case "float":
-			text.text = "You just got the leaf.\nUse SHIFT to float in the air.";
+			text.text = "Leaf.\n\nUse SHIFT to float in the air.";
 			break;
 		case "secondjump":
-			text.text = "You just got doublejump.\nPress SPACE in the air to jump even higher.";
+			text.text = "Doublejump.\n\nPress SPACE in the air to jump even higher.";
 			break;
+		case "checkpoint":
+			text.text = "Checkpoint reached";
+			break;
+
 		default:
 			text.text = "undefined";
 			break;

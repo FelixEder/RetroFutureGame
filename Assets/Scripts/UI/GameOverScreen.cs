@@ -21,14 +21,14 @@ public class GameOverScreen : MonoBehaviour {
 		foreach (GameObject g in gameoverObjects)
 			g.SetActive(true);
 		GetComponent<PauseMenu> ().SetSelected (GetComponent<PauseMenu> ().firstSelected);
-		Time.timeScale = 0;
+//		Time.timeScale = 0;
 	}
 
 	public void HideGameover() {
 		foreach (GameObject g in gameoverObjects)
 			g.SetActive(false);
 		GetComponent<PauseMenu> ().SetSelected (null);
-		Time.timeScale = 1;
+//		Time.timeScale = 1;
 	}
 
 	public void Respawn() {

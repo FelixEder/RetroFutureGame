@@ -3,15 +3,17 @@ using System.Collections;
 
 public class SmallCritter : MonoBehaviour {
 	public float moveSpeed, knockForce, followDistance, followDistanceUP, followDistanceDown, wanderDistance, invulnerabilityTime;
-	float activeMoveSpeed, initialFreezeTime;
-	bool invulnerable, touchingSomething, hasSeenPlayer, wanderLeft;
 	public int health = 2, damage = 1;
 	public Material glitchMaterial;
+
+	AudioPlayer audioplay;
 	Rigidbody2D rb2D;
 	GameObject player;
-	float startPos;
+	float activeMoveSpeed, initialFreezeTime, startPos;
+	bool invulnerable, touchingSomething, hasSeenPlayer, wanderLeft;
 
 	void Start() {
+		audioplay = GetComponent<AudioPlayer> ();
 		player = GameObject.Find ("Char");
 		startPos = transform.position.x;
 		if (Random.Range (0, 2) == 0)
@@ -133,6 +135,8 @@ public class SmallCritter : MonoBehaviour {
 	public void TakeDamage(int damage) {
 		if (!invulnerable) {
 			//Play a sound and animation.
+			audioplay.PlayClip (0, 1, 0.5f, 1.5f);
+
 			health -= damage;
 			invulnerable = true;
 			Invoke ("SetVulnerable", invulnerabilityTime);
@@ -157,6 +161,7 @@ public class SmallCritter : MonoBehaviour {
 	}
 
 	IEnumerator Die() {
+		audioplay.PlayClip (1, 1, 0.5f, 1.5f);
 		GetComponent<SpriteRenderer> ().material = glitchMaterial;
 		yield return new WaitForSeconds (0.2f);
 		int ranNumb = Random.Range(0, 60);

@@ -68,6 +68,7 @@ public class PickUpableItem : MonoBehaviour {
 		GetComponent<SpriteRenderer>().sprite = sprites[Mathf.Max (0, health)];
 		//Kill if health is 0 or less
 		if (health <= 0) {
+			GetComponent<AudioPlayer> ().PlayClip (0, 1, 0.7f, 0.7f);
 			if (!transform.GetChild (0).GetComponent<ParticleSystem> ().isPlaying)
 				transform.GetChild (0).GetComponent<ParticleSystem> ().Play();
 			GetComponent<Collider2D> ().enabled = false;

@@ -42,6 +42,7 @@ public class CharPunch : MonoBehaviour {
 	//PUNCH
 	int ExecutePunch() {
 		onCooldown = true;
+		GetComponent<AudioPlayer> ().PlayClip (0, 1, 0.7f,1.3f);
 		transform.parent.gameObject.GetComponent<Animator> ().SetTrigger ("Punching");
 		if (charInventory.IsHoldingItem ()) {
 			GameObject holdingItem = charInventory.GetHoldingItem ();

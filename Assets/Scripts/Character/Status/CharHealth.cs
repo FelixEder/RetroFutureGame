@@ -7,8 +7,10 @@ public class CharHealth : MonoBehaviour {
 	public float invulnerabilityTime;
 	Slider slider;
 	CharStatus status;
+	AudioPlayer audioplay;
 
 	void Start() {
+		audioplay = GetComponent<AudioPlayer> ();
 		slider = GameObject.Find ("healthSlider").GetComponent<Slider> ();
 		status = GameObject.Find ("Char").GetComponent<CharStatus> ();
 		SetHealthSliderSize ();
@@ -18,6 +20,8 @@ public class CharHealth : MonoBehaviour {
 	public void TakeDamage(int damage) {
 		//Maybe give a few seconds invincibility and make sprite blink or so?
 		if (!status.Invulnerable ()) {
+			audioplay.PlayClip (Random.Range (0, 5), 0.2f);
+
 			if (currentHealth - damage <= 0) {
 				currentHealth = 0;
 				Die();

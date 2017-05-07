@@ -4,16 +4,19 @@ using System.Collections;
 public class StatueBossLaser : MonoBehaviour {
 	public LayerMask hitLayers;
 	public GameObject aimTarget;
+	public GameObject playerAim;
+	public int damage = 1, health;
+
+	AudioPlayer audioplay;
 	private LineRenderer lineRenderer, childLineRenderer;
 	Vector2 laserHit;
 	RaycastHit2D hit;
-	public int damage = 1, health;
 	bool shooting;
-	public GameObject playerAim;
 
 	public float laserChargeTime = 1f, laserActiveTime = 2f;
 	
 	void Start() {
+		audioplay = GetComponent<AudioPlayer> ();
 		lineRenderer = GetComponent<LineRenderer> ();
 		childLineRenderer = transform.GetChild (0).GetComponent<LineRenderer> ();
 		lineRenderer.useWorldSpace = true;
@@ -55,8 +58,11 @@ public class StatueBossLaser : MonoBehaviour {
 		aimTarget.GetComponent<Animator>().enabled = false;
 		playerAim.GetComponent<StatueBossPlayerAim> ().aim = false;
 
+		audioplay.PlayClip (0, 0.7f);
+
 		yield return new WaitForSeconds (laserChargeTime);
 
+		audioplay.PlayClip (1, 0.7f);
 
 		//enable line and set shooting.
 		childLineRenderer.enabled = false;
@@ -69,6 +75,8 @@ public class StatueBossLaser : MonoBehaviour {
 		childLineRenderer.enabled = true;
 		lineRenderer.enabled = false;
 		shooting = false;
+
+		audioplay.StopPlaying ();
 
 		yield return new WaitForSeconds (0.2f);
 
@@ -87,7 +95,7 @@ public class StatueBossLaser : MonoBehaviour {
 
 		case "SmallCritter":
 			victim.transform.gameObject.GetComponent<SmallCritter> ().Knockback (gameObject, 5);
-			victim.transform.gameObject.GetComponent<SmallCritter> ().TakeDamage (damage);
+			victim.transform.gameObject.GetComponent<SmallCritter> ().TakeDamage (5);
 			break;
 
 		case "PickupableItem":

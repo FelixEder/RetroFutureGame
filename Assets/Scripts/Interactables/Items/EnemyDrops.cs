@@ -26,6 +26,7 @@ public class EnemyDrops : MonoBehaviour {
 					col.gameObject.GetComponent<CharEnergy> ().IncreaseCurrentEnergy (1);
 					break;
 			}
+			GetComponent<AudioPlayer> ().PlayDetached (0, 0.7f, 0.7f, 1.3f);
 			Destroy (gameObject);
 		}
 	}

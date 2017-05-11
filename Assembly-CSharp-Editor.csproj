@@ -49,6 +49,7 @@
      <Compile Include="Assets\Editor\AutoSnap.cs" />
      <Compile Include="Assets\Editor\CustomAssetImporter.cs" />
      <Compile Include="Assets\Editor\FindSceneObjectsWithTag.cs" />
+     <Compile Include="Assets\Editor\GroupCommand.cs" />
      <Compile Include="Assets\Editor\HiddenObjectExplorer.cs" />
      <Compile Include="Assets\Editor\SceneViewWindow.cs" />
      <Compile Include="Assets\Editor\SimpleCCDEditor.cs" />

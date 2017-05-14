@@ -42,6 +42,7 @@ public class GroupCommand : EditorWindow {
 		go.transform.SetParent (Selection.activeTransform.parent, false);
 		foreach (var transform in Selection.transforms) Undo.SetTransformParent (transform, go.transform, "Group Selected");
 		Selection.activeGameObject = go;
+		Debug.Log ("Grouped selected GameObjects in " + groupName);
 	}
 }
 

@@ -6,6 +6,7 @@ public class CharMovement : MonoBehaviour {
 	CharStatus status;
 	Rigidbody2D rigidBody2D;
 	InputManager input;
+	Animator childAnim;
 	public float moveSpeed, airSpeed, maxMoveSpeed, maxFallSpeed;
 	float axisH;
 
@@ -13,12 +14,11 @@ public class CharMovement : MonoBehaviour {
 		status = GetComponent<CharStatus> ();
 		rigidBody2D = GetComponent<Rigidbody2D> ();
 		input = GameObject.Find ("InputManager").GetComponent<InputManager> ();
+		childAnim = transform.GetChild (0).GetComponent<Animator> ();
 	}
 		
 	void FixedUpdate() {
 		axisH = input.GetAxis("X");
-		GetComponent<Animator> ().SetFloat ("Speed", Mathf.Abs(axisH));
-		GetComponent<Animator> ().SetFloat ("WalkSpeed", Mathf.Abs(rigidBody2D.velocity.x * axisH));
 		if (axisH != 0) {
 			//Test if trying to move towards left wall and stop movement as well as decrease negative y velocity.
 			if (status.onLeftWall && axisH < 0) {
@@ -50,6 +50,12 @@ public class CharMovement : MonoBehaviour {
 			if (rigidBody2D.velocity.y < -maxFallSpeed)
 				rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, -maxFallSpeed);
 			*/
+			if (Mathf.Abs (rigidBody2D.velocity.x) > 3f && status.onSurface)
+				childAnim.SetTrigger ("run");
+			else if (Mathf.Abs (rigidBody2D.velocity.x) > 0.5f && status.onSurface)
+				childAnim.SetTrigger ("walk");
 		}
+		if (Mathf.Abs (rigidBody2D.velocity.x) < 0.5f && status.onSurface)
+			childAnim.SetTrigger ("idle");
 	}
 }

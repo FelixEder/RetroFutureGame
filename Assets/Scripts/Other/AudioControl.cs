@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioControl : MonoBehaviour {
-	float masterVolume;
+	[SerializeField] float masterVolume;
 
 	void Start() {
 		masterVolume = 100;

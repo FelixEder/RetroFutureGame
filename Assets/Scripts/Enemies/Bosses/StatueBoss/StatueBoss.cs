@@ -6,10 +6,14 @@ public class StatueBoss : MonoBehaviour {
 	public float shootRepeatRate;
 	public bool raging;
 
-	void Start() {
-		InvokeRepeating("ShootLasers", shootRepeatRate, shootRepeatRate);
+	MusicPlayer musicplay;
 
-	//Also start spawning enemies from mouth and play music and such
+	void Start() {
+		musicplay = GameObject.Find ("Music").GetComponent<MusicPlayer> ();
+
+		InvokeRepeating("ShootLasers", shootRepeatRate, shootRepeatRate);
+		musicplay.Play (1, 1, true);
+		//Also start spawning enemies from mouth and play music and such
 	}
 
 	void Update() {
@@ -44,14 +48,14 @@ public class StatueBoss : MonoBehaviour {
 			leftEye.GetComponent<SpriteRenderer> ().color = new Color (1, 0.5f, 0.5f);
 			StatueBossLaser leftLaser = leftEye.GetComponent<StatueBossLaser> ();
 			leftLaser.laserChargeTime = 0.7f;
-			leftLaser.laserActiveTime = 1f;
+			leftLaser.laserActiveTime = 0.7f;
 			leftLaser.CancelLaser ();
 		}
 		else if (rightEye != null) {
 			rightEye.GetComponent<SpriteRenderer> ().color = new Color (1, 0.5f, 0.5f);
 			StatueBossLaser rightLaser = rightEye.GetComponent<StatueBossLaser> ();
 			rightLaser.laserChargeTime = 0.7f;
-			rightLaser.laserActiveTime = 1f;
+			rightLaser.laserActiveTime = 0.7f;
 			rightLaser.CancelLaser ();
 		}
 	}
@@ -61,6 +65,7 @@ public class StatueBoss : MonoBehaviour {
 	 */
 	void Defeated() {
 		//Play correct animation and such.
+		musicplay.StopPlaying (true);
 		Destroy(this.gameObject.transform.parent.gameObject);
 	}
 }

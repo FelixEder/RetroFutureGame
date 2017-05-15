@@ -81,6 +81,10 @@ public class Electrohaz : MonoBehaviour {
 				break;
 
 			case "SmallCritter":
+				col.gameObject.GetComponent<SmallCritter>().Knockback(gameObject, 0);
+				col.gameObject.GetComponent<SmallCritter> ().TakeDamage (99);
+				break;
+
 			case "JumpingCritter":
 			case "HardEnemy":
 			case "BigEyeGuy":

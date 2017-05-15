@@ -12,7 +12,7 @@ public class AudioPlayer : MonoBehaviour {
 	}
 
 	public void PlayClip (int index, float volumeScale) {
-		if (index < audioClips.Length)
+		if (index < audioClips.Length && index >= 0)
 			audioSource.PlayOneShot (audioClips [index], volumeScale);
 		else
 			Debug.Log ("AudioPlayer: index out of range");
@@ -37,7 +37,7 @@ public class AudioPlayer : MonoBehaviour {
 	}
 
 	public void Mute (bool mute) {
-		audioSource.volume = mute ? 0 : 1;
+		audioSource.mute = mute;
 	}
 
 	public void PlayingDetached (AudioClip clip, float volumeScale, float minPitch, float maxPitch, float forTime) {

@@ -14,8 +14,8 @@ public class SpikesfromGoogle : MonoBehaviour {
 			break;
 
 		case "SmallCritter":
-			col.gameObject.GetComponent<SmallCritter>().Knockback(gameObject, 4);
-			col.gameObject.GetComponent<SmallCritter> ().TakeDamage (damage);
+			col.gameObject.GetComponent<SmallCritter>().Knockback(gameObject, 0);
+			col.gameObject.GetComponent<SmallCritter> ().TakeDamage (99);
 			break;
 
 		case "JumpingCritter":

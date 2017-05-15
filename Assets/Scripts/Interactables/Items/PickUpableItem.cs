@@ -5,7 +5,7 @@ public class PickUpableItem : MonoBehaviour {
 	public Rigidbody2D rb2D;
 	public Transform originalParent, holdPosition;
 	public Sprite[] sprites;
-	GameObject chara;
+	GameObject player;
 	public float HoldPositionX = 0.341f, HoldPositionY = -0.332f;
 	/**the type*/
 	public string itemType;
@@ -15,13 +15,15 @@ public class PickUpableItem : MonoBehaviour {
 	void Start() {
 		rb2D = GetComponent<Rigidbody2D> ();
 		originalParent = transform.parent;
-		//holdPosition = GameObject.Find ("holdPosition").transform;
-		chara = GameObject.Find ("Char");
+		holdPosition = GameObject.Find ("holdPosition").transform;
+		player = GameObject.Find ("Char");
 	}
 
 	void FixedUpdate() {
 		if (beingHeld) {
-			transform.localPosition = new Vector2 (HoldPositionX, HoldPositionY);
+			transform.position = holdPosition.position;
+			transform.rotation = holdPosition.rotation;
+			//transform.localPosition = new Vector2 (HoldPositionX, HoldPositionY);
 			//transform.localPosition += new Vector3 (0.1f, -0.1f, 0);
 		}
 		/*
@@ -94,9 +96,8 @@ public class PickUpableItem : MonoBehaviour {
 
 	void QuestionExistance() {
 		float Spawndist = Mathf.Abs (Vector3.Distance (gameObject.transform.position, transform.parent.position));
-		float PlayDist = Mathf.Abs (Vector3.Distance (gameObject.transform.position, chara.transform.position));
-		Debug.Log ("SpawnDist: " + Spawndist);
-		Debug.Log ("PlayDist: " + PlayDist);
+		float PlayDist = Mathf.Abs (Vector3.Distance (gameObject.transform.position, player.transform.position));
+//		Debug.Log ("SpawnDist: " + Spawndist + "\nPlayDist: " + PlayDist);
 		if (Spawndist > 20f && PlayDist > 20f) {
 			Debug.Log ("Removed illegal item!");
 			Kill ();

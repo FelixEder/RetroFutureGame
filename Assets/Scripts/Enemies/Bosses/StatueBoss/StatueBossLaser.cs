@@ -52,7 +52,8 @@ public class StatueBossLaser : MonoBehaviour {
 	}
 
 	IEnumerator ShootLaser() {
-		yield return new WaitForSeconds(Random.Range(0, 1));
+		if (!transform.parent.parent.GetComponent<StatueBoss> ().raging)
+			yield return new WaitForSeconds(Random.Range(0, 5));
 
 		//disable aimObject animation.
 		aimTarget.GetComponent<Animator>().enabled = false;
@@ -104,8 +105,8 @@ public class StatueBossLaser : MonoBehaviour {
 			break;
 
 		case "SmallCritter":
-			victim.transform.gameObject.GetComponent<SmallCritter> ().Knockback (gameObject, 5);
-			victim.transform.gameObject.GetComponent<SmallCritter> ().TakeDamage (5);
+			victim.transform.gameObject.GetComponent<SmallCritter> ().Knockback (gameObject, 0);
+			victim.transform.gameObject.GetComponent<SmallCritter> ().TakeDamage (99);
 			break;
 
 		case "PickupableItem":

@@ -4,7 +4,7 @@ using System.Collections;
 public class CharStatus : MonoBehaviour {
 	public bool onGround, onLeftWall, onRightWall, onPlatform, isMirrored, isFloating, onSurface, invulnerable;
 	public bool megaPunch, chargedMegaPunch, isSmall;
-	[SerializeField] float velocityX, velocityY;
+	public float velocityX, velocityY;
 
 	void Update() {
 		velocityX = GetComponent<Rigidbody2D> ().velocity.x;

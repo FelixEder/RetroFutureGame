@@ -77,7 +77,7 @@ public class Electrohaz : MonoBehaviour {
 		if (isActive) {
 			switch (col.gameObject.tag) {
 			case "Char":
-				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage);
+				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage, gameObject, 5f);
 				break;
 
 			case "SmallCritter":

@@ -26,13 +26,15 @@ public class CharMirror : MonoBehaviour {
 				status.isMirrored = false;
 			}
 		}
-		else if (input.GetAxis("X") < 0 && rb2D.velocity.x < -1 && !(status.onSurface || status.onLeftWall || status.onRightWall)) {
+
+		//Rotate when in air if veliocity > 1 in opposite direction
+		else if (input.GetAxis("X") < 0 && rb2D.velocity.x < -3 && !(status.onSurface || status.onLeftWall || status.onRightWall)) {
 			if (!status.isMirrored) {
 				transform.rotation = Quaternion.Euler(0, 180, 0);
 				status.isMirrored = true;
 			}
 		}
-		else if (input.GetAxis("X") > 0 && rb2D.velocity.x > 1 && !(status.onSurface || status.onLeftWall || status.onRightWall)) {
+		else if (input.GetAxis("X") > 0 && rb2D.velocity.x > 3 && !(status.onSurface || status.onLeftWall || status.onRightWall)) {
 			if (status.isMirrored) {
 				transform.rotation = Quaternion.Euler(0, 0, 0);
 				status.isMirrored = false;

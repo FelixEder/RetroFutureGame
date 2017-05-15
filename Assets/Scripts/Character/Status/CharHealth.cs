@@ -93,6 +93,7 @@ public class CharHealth : MonoBehaviour {
 		rb2D.AddForce (Vector2.up * 300);
 		rb2D.angularVelocity = 90;
 		SetHealthSlider ();
+		transform.GetChild (0).GetComponent<Animator> ().SetBool ("dead", true);
 		GameObject.Find ("GameOverScreen").GetComponent<GameOverScreen>().ShowGameover();
 	}
 
@@ -105,6 +106,8 @@ public class CharHealth : MonoBehaviour {
 		transform.rotation = Quaternion.Euler (0, 0, 0);
 		currentHealth = maxHealth;
 		SetHealthSlider ();
+		transform.GetChild (0).GetComponent<Animator> ().SetBool ("dead", false);
 		GetComponent<CharEnergy> ().MaximizeEnergy ();
+		status.isMirrored = false;
 	}
 }

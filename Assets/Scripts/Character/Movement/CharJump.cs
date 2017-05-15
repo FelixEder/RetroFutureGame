@@ -3,21 +3,22 @@ using System.Collections;
 
 public class CharJump : MonoBehaviour {
 	CharStatus status;
-	Rigidbody2D rigidBody2D;
+	Rigidbody2D rb2D;
 	InputManager input;
+	Animator childAnim;
 	public float jumpSpeed, secondJumpSpeed;
 	public bool jumpDown, holdJump, gotSecondJump, hasSecondJumped;
-	bool hasJumped;
+	[SerializeField] bool hasJumped, jumpingBackward;
 
 	void Start () {
 		status = GetComponent<CharStatus> ();
-		rigidBody2D = GetComponent<Rigidbody2D> ();
+		rb2D = GetComponent<Rigidbody2D> ();
 		input = GameObject.Find ("InputManager").GetComponent<InputManager> ();
+		childAnim = transform.GetChild (0).GetComponent<Animator> ();
 	}
 		
 	void FixedUpdate () {
 		if ((hasJumped || hasSecondJumped) && status.onSurface) {
-			GetComponent<Animator> ().SetBool ("Jumping", false);
 			hasJumped = false;
 			hasSecondJumped = false;
 		}
@@ -31,23 +32,40 @@ public class CharJump : MonoBehaviour {
 		if (input.GetKey ("jump") && input.GetAxis ("Y") < -0.3f && input.GetAxis ("Ybool") < 0f && !jumpDown && !holdJump && status.onPlatform) {
 			holdJump = true;
 			jumpDown = true;
-			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, -1f);
+			rb2D.velocity = new Vector2 (rb2D.velocity.x, -1f);
 		}
 		//jump when on surface and pressing jump
 		else if (input.GetKey ("jump") && !holdJump && status.onSurface) {
-			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, jumpSpeed);
-			GetComponent<Animator> ().SetBool ("Jumping", true);
+			rb2D.velocity = new Vector2 (rb2D.velocity.x, jumpSpeed);
 			hasJumped = true;
 			holdJump = true;
 		}
 		//jump in air when have secondjump and has not secondjumped.
 		else if (input.GetKey ("jump") && gotSecondJump && !holdJump) {
-			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, secondJumpSpeed);
+			rb2D.velocity = new Vector2 (rb2D.velocity.x, secondJumpSpeed);
 			hasSecondJumped = true;
 			holdJump = true;
 		}
 		//decrease vertical velocity if let go of jump early
-		else if (!input.GetKey ("jump") && hasJumped && rigidBody2D.velocity.y > jumpSpeed / 1.8f)
-			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, jumpSpeed / 1.8f);
+		else if (!input.GetKey ("jump") && hasJumped && rb2D.velocity.y > jumpSpeed / 1.8f)
+			rb2D.velocity = new Vector2 (rb2D.velocity.x, jumpSpeed / 1.8f);
+
+		//Animations
+		if ((hasJumped || hasSecondJumped || status.InAir()) && !status.onSurface) {
+			if (Mathf.Sign (input.GetAxis ("X")) == -Mathf.Sign (rb2D.velocity.x) && Mathf.Abs (rb2D.velocity.x) > 0.1f) {
+				jumpingBackward = true;
+				childAnim.SetTrigger ("jump_backward");
+			}
+			else if (jumpingBackward) {
+				if (Mathf.Abs (rb2D.velocity.x) > 3) {
+					childAnim.SetTrigger ("jump_forward");
+					jumpingBackward = false;
+				}
+			}
+			else if (rb2D.velocity.y > 0.1f)
+				childAnim.SetTrigger ("jump_forward");
+		}
+		if (jumpingBackward && status.onSurface)
+			jumpingBackward = false;
 	}
 }

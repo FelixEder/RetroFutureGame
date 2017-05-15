@@ -6,16 +6,18 @@ public class CharTriggerDown : MonoBehaviour {
 	public CharStatus status;
 
 	void OnTriggerStay2D(Collider2D col) {
-		switch (col.gameObject.tag) {
-		case "Ground":
-			status.onGround = true;
-			break;
+		if (transform.parent.GetComponent<Rigidbody2D> ().velocity.y <= 0.1) {
+			switch (col.gameObject.tag) {
+			case "Ground":
+				status.onGround = true;
+				break;
 
-		case "Platform":
-			status.onPlatform = true;
-			break;
+			case "Platform":
+				status.onPlatform = true;
+				break;
+			}
+			status.onSurface = true;
 		}
-		status.onSurface = true;
 	}
 		
 	void OnTriggerExit2D(Collider2D col) {

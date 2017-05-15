@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class PickUpableItem : MonoBehaviour {
-	public Rigidbody2D rigidBody2D;
+	public Rigidbody2D rb2D;
 	public Transform originalParent, holdPosition;
 	public Sprite[] sprites;
 	GameObject chara;
@@ -13,7 +13,7 @@ public class PickUpableItem : MonoBehaviour {
 	public int damage, health;
 		
 	void Start() {
-		rigidBody2D = GetComponent<Rigidbody2D> ();
+		rb2D = GetComponent<Rigidbody2D> ();
 		originalParent = transform.parent;
 		//holdPosition = GameObject.Find ("holdPosition").transform;
 		chara = GameObject.Find ("Char");
@@ -51,7 +51,7 @@ public class PickUpableItem : MonoBehaviour {
 		transform.SetParent (originalParent);
 		GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.None;
 		if (canThrow && (Input.GetAxis ("Horizontal") > 0.2 || Input.GetAxis ("Horizontal") < -0.2)) {
-			rigidBody2D.AddForce (Vector2.right * 500 * Mathf.Sign (Input.GetAxis ("Horizontal")));
+			rb2D.AddForce (Vector2.right * 500 * Mathf.Sign (Input.GetAxis ("Horizontal")));
 		}
 		beingHeld = false;
 		Debug.Log ("Drop " + gameObject);

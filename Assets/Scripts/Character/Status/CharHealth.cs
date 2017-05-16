@@ -94,7 +94,7 @@ public class CharHealth : MonoBehaviour {
 		rb2D.angularVelocity = 90;
 		SetHealthSlider ();
 		transform.GetChild (0).GetComponent<Animator> ().SetBool ("dead", true);
-		GameObject.Find ("GameOverScreen").GetComponent<GameOverScreen>().ShowGameover();
+		GameObject.Find ("GameOverScreen").GetComponent<GameOverScreen> ().Gameover ();
 	}
 
 	public void Revive() {

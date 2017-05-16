@@ -21,14 +21,14 @@ public class CharMovement : MonoBehaviour {
 		axisH = input.GetAxis("X");
 		if (axisH != 0) {
 			//Test if trying to move towards left wall and stop movement as well as decrease negative y velocity.
-			if (status.onLeftWall && axisH < 0) {
+			if (status.againstLeft && axisH < 0) {
 				if (rb2D.velocity.y < -2)
 					rb2D.velocity = new Vector2 (0, -2);
 				else
 					rb2D.velocity = new Vector2 (0, rb2D.velocity.y);
 			}
 			//Test if trying to move towards right wall and stop movement as well as decrease negative y velocity.
-			else if (status.onRightWall && axisH > 0) {
+			else if (status.againstRight && axisH > 0) {
 				if (rb2D.velocity.y < -2)
 					rb2D.velocity = new Vector2 (0, -2);
 				else

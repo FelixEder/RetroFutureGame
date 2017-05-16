@@ -2,41 +2,25 @@
 using System.Collections;
 
 public class GameOverScreen : MonoBehaviour {
-	GameObject[] gameoverObjects, prefabspawners, itemspawners;
+	GameObject[] prefabspawners, itemspawners;
 	GameObject player;
-	InputManager input;
+	MenuControl menu;
 
-	void Start() {
-		input = GameObject.Find ("InputManager").GetComponent<InputManager>();
+	void Start () {
+		menu = GetComponent<MenuControl> ();
+		player = GameObject.Find ("Char");
 
-		gameoverObjects = GameObject.FindGameObjectsWithTag("ShowOnDeath");
 		prefabspawners = GameObject.FindGameObjectsWithTag("PrefabSpawner");
 		itemspawners = GameObject.FindGameObjectsWithTag("PIS");
 		player = GameObject.Find ("Char");
-		HideGameover ();
+		menu.HideOverlay ();
 	}
 
-	void Update () {
-	
+	public void Gameover () {
+		menu.ShowOverlay ();
 	}
 
-	public void ShowGameover() {
-		foreach (GameObject g in gameoverObjects)
-			g.SetActive(true);
-		GetComponent<PauseMenu> ().SetSelected (GetComponent<PauseMenu> ().firstSelected);
-		input.Force (false, true);
-//		Time.timeScale = 0;
-	}
-
-	public void HideGameover() {
-		foreach (GameObject g in gameoverObjects)
-			g.SetActive(false);
-		GetComponent<PauseMenu> ().SetSelected (null);
-		input.Force (true, false);
-//		Time.timeScale = 1;
-	}
-
-	public void Respawn() {
+	public void Respawn () {
 		//Revive player.
 		player.GetComponent<CharHealth> ().Revive ();
 
@@ -62,11 +46,12 @@ public class GameOverScreen : MonoBehaviour {
 		foreach(GameObject g in drops)
 			Destroy (g);
 
-		//Place player at last checkpoint and hide gameover overlay.
+		//Place player at last checkpoint, reset camera and hide gameover overlay.
 		player.transform.position = player.GetComponent<Checkpoint> ().activeCheckpoint.transform.position;
+		player.transform.position += new Vector3 (0, 1, 0);
 		GameObject camera = GameObject.Find ("Main Camera");
 		camera.transform.position = player.transform.position;
 		camera.GetComponent<CameraMovement> ().followSpeed = 5;
-		HideGameover ();
+		menu.HideOverlay ();
 	}
 }

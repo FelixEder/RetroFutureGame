@@ -17,9 +17,9 @@ public class CountDown : MonoBehaviour {
 	void Counting() {
 		if (timeLeft > 0) {
 			text.text = (timeLeft / 60).ToString ("D1") + ":" + (timeLeft % 60).ToString ("D2");
-		} else if (timeLeft == -5) {
+		} else if (timeLeft == -3) {
 			text.enabled = false;
-			gamover.GetComponent<GameOverScreen> ().ShowGameover ();
+			gamover.GetComponent<GameOverScreen> ().Gameover ();
 		}
 		else {
 			text.text = "KABOOM";

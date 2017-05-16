@@ -1,14 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character\Status\CharStatus.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\CallOnVictory.cs">
     <Files>
-      <File FileName="Assets\Scripts\Character\Status\CharStatus.cs" Line="11" Column="31" />
-      <File FileName="Assets\Scripts\Character\Movement\CharMovement.cs" Line="59" Column="35" />
-      <File FileName="Assets\Scripts\Character\Movement\CharJump.cs" Line="20" Column="7" />
-      <File FileName="Assets\Scripts\Character\Movement\CharMirror.cs" Line="37" Column="78" />
-      <File FileName="Assets\Scripts\Other\CameraTrigger.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\Upgrades\LaserShooter.cs" Line="147" Column="4" />
-      <File FileName="Assets\Scripts\Character\Triggers\CharTriggerBack.cs" Line="15" Column="31" />
+      <File FileName="Assets\Scripts\Character\Status\CharStatus.cs" Line="27" Column="57" />
+      <File FileName="Assets\Scripts\UI\DebugMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\GameOverScreen.cs" Line="9" Column="17" />
+      <File FileName="Assets\Scripts\UI\PauseMenu.cs" Line="65" Column="33" />
+      <File FileName="Assets\Scripts\UI\VictoryScreen.cs" Line="16" Column="23" />
+      <File FileName="Assets\Scripts\UI\CallOnVictory.cs" Line="19" Column="1" />
+      <File FileName="Assets\Scripts\UI\MenuControl.cs" Line="15" Column="22" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

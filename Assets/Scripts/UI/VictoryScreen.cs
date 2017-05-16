@@ -3,28 +3,17 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class VictoryScreen : MonoBehaviour {
-	GameObject[] victoryObjects;
+	MenuControl menu;
 	GameObject player;
-	InputManager input;
 
 	void Start() {
-		victoryObjects = GameObject.FindGameObjectsWithTag("ShowOnVictory");
-		HideVictory ();
+		menu = GetComponent<MenuControl> ();
+		menu.HideOverlay ();
 	}
 
-	void Update () {
-		
-	}
-
-	public void ShowVictory() {
-		foreach (GameObject g in victoryObjects)
-			g.SetActive(true);
+	public void Victory () {
 		Time.timeScale = 0;
-	}
-
-	public void HideVictory() {
-		foreach (GameObject g in victoryObjects)
-			g.SetActive(false);
+		menu.ShowOverlay ();
 	}
 
 	public void Continue() {

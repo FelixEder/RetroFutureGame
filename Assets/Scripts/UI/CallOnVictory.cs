@@ -16,6 +16,6 @@ public class CallOnVictory : MonoBehaviour {
 		
 	void OnCollisionEnter2D(Collision2D col) {
 		if(active)
-			GameObject.Find ("VictoryScreen").GetComponent<VictoryScreen> ().ShowVictory ();
+			GameObject.Find ("VictoryScreen").GetComponent<VictoryScreen> ().Victory ();
 	}
 }

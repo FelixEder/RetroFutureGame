@@ -3,11 +3,11 @@ using System.Collections;
 
 public class LaserShooter : MonoBehaviour {
 	public LayerMask hitLayers;
-	CharStatus charStatus;
 	private LineRenderer lineRenderer;
-	public Transform laserHit;
+	CharStatus charStatus;
 	CharEnergy charEnergy;
 	InputManager input;
+
 	bool holdShoot, canShoot = true;
 	public int damage = 2;
 
@@ -28,22 +28,22 @@ public class LaserShooter : MonoBehaviour {
 			holdShoot = true;
 			if (charEnergy.UseEnergy (2)) {
 				canShoot = false;
-				ActivateLaser ();
+				StartCoroutine (ActivateLaser ());
 			}
 		}
 	}
 
-	void ActivateLaser() {
-		lineRenderer.enabled = true;
+	IEnumerator ActivateLaser() {
 		RaycastHit2D hit = Physics2D.Raycast (transform.position, transform.right, Mathf.Infinity, hitLayers);
 		if (hit.point != new Vector2(0, 0)) {
-			Debug.DrawRay (transform.position, hit.point);
-			laserHit.position = new Vector3 (hit.point.x, hit.point.y, -5);
-			lineRenderer.SetPosition (0, transform.position);
-			//TODO lerp or close in on target over time instead of setting it directly.
-			lineRenderer.SetPosition (1, laserHit.position);
-			StartCoroutine (ShrinkLaser ());
+			lineRenderer.SetPosition (0, new Vector3 (transform.position.x + 0.5f, transform.position.y, -5));
+			lineRenderer.SetPosition (1, new Vector3 (hit.point.x, hit.point.y, -5));
+			lineRenderer.enabled = true;
 			HitByLaser (hit);
+			yield return new WaitForSeconds (0.1f);
+			lineRenderer.enabled = false;
+			yield return new WaitForSeconds (1f);
+			canShoot = true;
 		} else
 			canShoot = true;
 	}
@@ -126,7 +126,8 @@ public class LaserShooter : MonoBehaviour {
 		}
 	}
 
-	IEnumerator ShrinkLaser() {
+	//Probably wont use this.
+/*	IEnumerator ShrinkLaser() {
 		Vector3 target = transform.position;
 		Invoke ("CanShoot", 1);
 		yield return new WaitForSeconds (0.1f);
@@ -145,9 +146,5 @@ public class LaserShooter : MonoBehaviour {
 			}
 		}
 		lineRenderer.enabled = false;
-	}
-
-	void CanShoot() {
-		canShoot = true;
-	}
+	}*/
 }

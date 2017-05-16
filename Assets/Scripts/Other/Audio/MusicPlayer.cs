@@ -4,25 +4,20 @@ using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour {
 	public AudioClip[] audioClips;
-	float targetVolume, controlVolume, fadeSpeed = 10;
+	float masterVolume, fadeSpeed = 10;
 	AudioSource audioSource;
 	AudioControl control;
 
-	void Start() {
+	void Start () {
 		audioSource = GetComponent<AudioSource> ();
 		control = GameObject.Find ("Audio").GetComponent<AudioControl>();
-		targetVolume = audioSource.volume * 100;
-		controlVolume = 100;
 		Play (0, 1, false);
 	}
 
-	void Update() {
-		if (controlVolume != control.GetMaster ()) {
-			controlVolume = control.GetMaster ();
-			if (controlVolume == 100)
-				ResetVolume ();
-			else
-				SetVolume (controlVolume);
+	void Update () {
+		if (masterVolume != control.GetMaster ()) {
+			masterVolume = control.GetMaster ();
+			audioSource.volume = masterVolume / 100;
 		}
 	}
 
@@ -69,11 +64,11 @@ public class MusicPlayer : MonoBehaviour {
 
 	IEnumerator FadeIn () {
 		Debug.Log ("[MUSIC] Fading in for " + 10 / fadeSpeed + " second(s)");
-		for (float volume = 0; volume < targetVolume; volume += fadeSpeed) {
+		for (float volume = 0; volume < masterVolume; volume += fadeSpeed) {
 			audioSource.volume = volume / 100;
 			yield return new WaitForSeconds (0.1f);
 		}
-		audioSource.volume = targetVolume / 100;
+		audioSource.volume = masterVolume / 100;
 		Debug.Log ("[MUSIC] Fade in complete");
 	}
 
@@ -95,14 +90,5 @@ public class MusicPlayer : MonoBehaviour {
 		while (audioSource.isPlaying)
 			yield return 0;
 		Play (index, volumeScale, fadeIn);
-	}
-
-	/**Control the volume of the audio track in percent.*/
-	void SetVolume (float volume) {
-		audioSource.volume = targetVolume * volume * 0.01f;
-	}
-
-	void ResetVolume () {
-		audioSource.volume = targetVolume;
 	}
 }

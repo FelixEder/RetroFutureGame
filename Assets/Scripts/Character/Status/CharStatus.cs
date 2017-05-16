@@ -6,9 +6,17 @@ public class CharStatus : MonoBehaviour {
 	public bool megaPunch, chargedMegaPunch, isSmall;
 	public float velocityX, velocityY;
 
+	public bool grounded;
+	public LayerMask whatIsGround;
+	public Transform groundCheck;
+
 	void Update() {
 		velocityX = GetComponent<Rigidbody2D> ().velocity.x;
 		velocityY = GetComponent<Rigidbody2D>().velocity.y;
+	}
+
+	void FixedUpdate() {
+		grounded = GetComponent<Rigidbody2D>().velocity.y < 1f ? Physics2D.OverlapBox (groundCheck.position, new Vector2 (0.6f, 0.1f), 0.2f, whatIsGround) : false;
 	}
 
 	/**

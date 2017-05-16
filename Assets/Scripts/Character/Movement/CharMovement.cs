@@ -19,7 +19,6 @@ public class CharMovement : MonoBehaviour {
 		
 	void FixedUpdate() {
 		axisH = input.GetAxis("X");
-		childAnim.SetFloat ("velocity", Mathf.Abs (rb2D.velocity.x));
 		if (axisH != 0) {
 			//Test if trying to move towards left wall and stop movement as well as decrease negative y velocity.
 			if (status.onLeftWall && axisH < 0) {
@@ -36,7 +35,7 @@ public class CharMovement : MonoBehaviour {
 					rb2D.velocity = new Vector2 (0, rb2D.velocity.y);
 			}
 			//Movement for when in air.
-			else if (!status.onSurface) {
+			else if (!status.grounded) {
 				if (Mathf.Sign (axisH) != Mathf.Sign (rb2D.velocity.x))
 					rb2D.velocity += new Vector2 (axisH * airSpeed / 2, 0);
 				else if (Mathf.Abs (rb2D.velocity.x) < maxMoveSpeed)
@@ -51,12 +50,25 @@ public class CharMovement : MonoBehaviour {
 			if (rigidBody2D.velocity.y < -maxFallSpeed)
 				rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, -maxFallSpeed);
 			*/
-			if (Mathf.Abs (rb2D.velocity.x) > 3f && status.onSurface)
+		}
+	}
+
+	void Update () {
+		bool movingAxisH = Mathf.Abs (input.GetAxis ("X")) > 0 ? true : false;
+		childAnim.SetBool ("axisX", movingAxisH);
+		childAnim.SetFloat ("axisXvalue", input.GetAxis ("X"));
+		childAnim.SetFloat ("velocityX", Mathf.Abs (rb2D.velocity.x));
+		childAnim.SetBool ("grounded", status.grounded);
+		childAnim.SetBool ("mirrored", status.isMirrored);
+		/*
+		if (axisH != 0) {
+			if (Mathf.Abs (rb2D.velocity.x) > 3f && status.grounded)
 				childAnim.SetTrigger ("run");
-			else if (Mathf.Abs (rb2D.velocity.x) > 0.2f && status.onSurface)
+			else if (Mathf.Abs (rb2D.velocity.x) > 0.2f && status.grounded)
 				childAnim.SetTrigger ("walk");
 		}
-		if (Mathf.Abs (rb2D.velocity.x) < 0.2f && status.onSurface)
+		if (Mathf.Abs (rb2D.velocity.x) < 0.2f && status.grounded)
 			childAnim.SetTrigger ("idle");
+		*/
 	}
 }

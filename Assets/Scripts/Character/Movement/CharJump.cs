@@ -17,13 +17,13 @@ public class CharJump : MonoBehaviour {
 		childAnim = transform.GetChild (0).GetComponent<Animator> ();
 	}
 		
-	void FixedUpdate () {
-		if ((hasJumped || hasSecondJumped) && status.onSurface) {
+	void Update () {
+		if ((hasJumped || hasSecondJumped) && status.grounded) {
 			hasJumped = false;
 			hasSecondJumped = false;
 		}
 		//enable jump button when not holding button and on surface
-		if (!input.GetKey ("jump") && holdJump && status.onSurface) {
+		if (!input.GetKey ("jump") && holdJump && status.grounded) {
 			holdJump = false;
 		}
 		else if (!input.GetKey ("jump") && holdJump && gotSecondJump && !hasSecondJumped)
@@ -35,7 +35,7 @@ public class CharJump : MonoBehaviour {
 			rb2D.velocity = new Vector2 (rb2D.velocity.x, -1f);
 		}
 		//jump when on surface and pressing jump
-		else if (input.GetKey ("jump") && !holdJump && status.onSurface) {
+		else if (input.GetKey ("jump") && !holdJump && status.grounded) {
 			rb2D.velocity = new Vector2 (rb2D.velocity.x, jumpSpeed);
 			hasJumped = true;
 			holdJump = true;
@@ -51,7 +51,7 @@ public class CharJump : MonoBehaviour {
 			rb2D.velocity = new Vector2 (rb2D.velocity.x, jumpSpeed / 1.8f);
 
 		//Animations
-		if ((hasJumped || hasSecondJumped || status.InAir()) && !status.onSurface) {
+		if ((hasJumped || hasSecondJumped || status.InAir()) && !status.grounded) {
 			if (Mathf.Sign (input.GetAxis ("X")) == -Mathf.Sign (rb2D.velocity.x) && Mathf.Abs (rb2D.velocity.x) > 0.1f) {
 				jumpingBackward = true;
 				childAnim.SetTrigger ("jump_backward");
@@ -65,7 +65,7 @@ public class CharJump : MonoBehaviour {
 			else if (rb2D.velocity.y > 0.1f)
 				childAnim.SetTrigger ("jump_forward");
 		}
-		if (jumpingBackward && status.onSurface)
+		if (jumpingBackward && status.grounded)
 			jumpingBackward = false;
 	}
 }

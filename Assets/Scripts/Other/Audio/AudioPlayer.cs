@@ -4,11 +4,21 @@ using UnityEngine;
 
 public class AudioPlayer : MonoBehaviour {
 	public AudioClip[] audioClips;
-
+	float masterVolume;
 	AudioSource audioSource;
+	AudioControl control;
 
 	void Start () {
 		audioSource = GetComponent<AudioSource> ();
+		control = GameObject.Find ("Audio").GetComponent<AudioControl>();
+	}
+
+	void Update () {
+		if (masterVolume != control.GetMaster ()) {
+			masterVolume = control.GetMaster ();
+			if (audioSource != null)
+				audioSource.volume = masterVolume / 100;
+		}
 	}
 
 	public void PlayClip (int index, float volumeScale) {
@@ -43,6 +53,7 @@ public class AudioPlayer : MonoBehaviour {
 	public void PlayingDetached (AudioClip clip, float volumeScale, float minPitch, float maxPitch, float forTime) {
 		GetComponent<AudioSource> ().PlayOneShot (clip, volumeScale);
 		GetComponent<AudioSource> ().pitch = Random.Range (minPitch, maxPitch);
+		GetComponent<AudioSource> ().volume = GameObject.Find ("Audio").GetComponent<AudioControl> ().GetMaster ();
 		Invoke("Kill", forTime);
 	}
 

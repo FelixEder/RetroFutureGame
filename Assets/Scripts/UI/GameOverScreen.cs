@@ -5,9 +5,11 @@ public class GameOverScreen : MonoBehaviour {
 	GameObject[] prefabspawners, itemspawners;
 	GameObject player;
 	MenuControl menu;
+	InputManager input;
 
 	void Start () {
 		menu = GetComponent<MenuControl> ();
+		input = GameObject.Find ("InputManager").GetComponent<InputManager> ();
 		player = GameObject.Find ("Char");
 
 		prefabspawners = GameObject.FindGameObjectsWithTag("PrefabSpawner");
@@ -17,6 +19,7 @@ public class GameOverScreen : MonoBehaviour {
 	}
 
 	public void Gameover () {
+		input.Force (false, true);
 		menu.ShowOverlay ();
 	}
 
@@ -52,6 +55,8 @@ public class GameOverScreen : MonoBehaviour {
 		GameObject camera = GameObject.Find ("Main Camera");
 		camera.transform.position = player.transform.position;
 		camera.GetComponent<CameraMovement> ().followSpeed = 5;
+
+		input.Force (true, false);
 		menu.HideOverlay ();
 	}
 }

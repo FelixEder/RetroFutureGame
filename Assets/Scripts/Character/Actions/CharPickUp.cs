@@ -5,7 +5,14 @@ public class CharPickUp : MonoBehaviour {
 	CharStatus status;
 	CharInventory inventory;
 	InputManager input;
-	bool holdPickup, cooldown;
+	bool holdPickup;
+
+	public LayerMask whatIsItem;
+
+	void OnDrawGizmosSelected() {
+		Gizmos.color = new Color (1, 0, 0, 0.5f);
+		Gizmos.DrawCube (transform.position, new Vector2 (1.2f, 2f));
+	}
 
 	void Start() {
 		inventory = transform.parent.GetComponent<CharInventory> ();
@@ -14,11 +21,6 @@ public class CharPickUp : MonoBehaviour {
 	}
 
 	void Update() {
-		if (GetComponent<BoxCollider2D> ().enabled)
-			GetComponent<BoxCollider2D> ().enabled = false;
-		if (cooldown)
-			cooldown = false;
-		
 		if (!input.GetKey("grab") && holdPickup) {
 			holdPickup = false;
 		}
@@ -29,21 +31,21 @@ public class CharPickUp : MonoBehaviour {
 		}
 		else if(input.GetKey ("grab") && !holdPickup && !inventory.IsHoldingItem () && !status.isSmall) {
 			holdPickup = true;
-			GetComponent<BoxCollider2D> ().enabled = true;
+			PickupArea ();
 		}
 	}
-		
-	void OnTriggerEnter2D(Collider2D col) {
-		if (!cooldown) {
-			Debug.Log ("Tried to pick up " + col.gameObject);
-			switch (col.gameObject.GetComponent<PickUpableItem> ().GetItemType ()) {
+
+	void PickupArea () {
+		Collider2D item = Physics2D.OverlapBox (transform.position, new Vector2 (1.2f, 2f), 0, whatIsItem);
+		if (item != null) {
+			Debug.Log ("Tried to pick up " + item);
+			switch (item.gameObject.GetComponent<PickUpableItem> ().GetItemType ()) {
 			case "Rock":
 			case "Branch":
-				inventory.SetHoldingItem (col.gameObject);
-				col.gameObject.GetComponent<PickUpableItem> ().PickUp (this.gameObject);
+				inventory.SetHoldingItem (item.gameObject);
+				item.gameObject.GetComponent<PickUpableItem> ().PickUp (this.gameObject);
 				break;
 			}
 		}
-		cooldown = true;
 	}
 }

@@ -10,10 +10,11 @@ public class MusicTrigger : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.gameObject.tag.Equals ("Char")) {
-			Debug.Log ("Playing music from index " + playMusicFromIndex);
 			MusicPlayer musicPlay = musicObject.GetComponent<MusicPlayer> ();
-			if (musicPlay.currentAudio != playMusicFromIndex)
+			if (musicPlay.currentAudio != playMusicFromIndex) {
+				Debug.Log ("Playing music from index " + playMusicFromIndex);
 				musicPlay.Play (playMusicFromIndex, withWolumeScale, andFade);
+			}
 		}
 	}
 }

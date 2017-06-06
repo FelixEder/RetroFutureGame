@@ -53,8 +53,12 @@
      <Compile Include="Assets\Editor\HiddenObjectExplorer.cs" />
      <Compile Include="Assets\Editor\SceneViewWindow.cs" />
      <Compile Include="Assets\Editor\SimpleCCDEditor.cs" />
+     <None Include="Assets\Materials\Shaders\Stencil Mask 1.shader" />
+     <None Include="Assets\Materials\Shaders\Stencil Object 1.shader" />
+     <None Include="Assets\Materials\Shaders\Stencil Mask 2.shader" />
      <None Include="Assets\Materials\Shaders\Sprite Glitch.shader" />
      <None Include="Assets\Materials\Shaders\Solid Color.shader" />
+     <None Include="Assets\Materials\Shaders\Stencil Object 2.shader" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>

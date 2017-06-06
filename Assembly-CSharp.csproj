@@ -136,8 +136,12 @@
      <Compile Include="Assets\Scripts\UI\TutorialManager.cs" />
      <Compile Include="Assets\Scripts\UI\TutorialTrigger.cs" />
      <Compile Include="Assets\Scripts\UI\VictoryScreen.cs" />
+     <None Include="Assets\Materials\Shaders\Stencil Mask 1.shader" />
+     <None Include="Assets\Materials\Shaders\Stencil Object 1.shader" />
+     <None Include="Assets\Materials\Shaders\Stencil Mask 2.shader" />
      <None Include="Assets\Materials\Shaders\Sprite Glitch.shader" />
      <None Include="Assets\Materials\Shaders\Solid Color.shader" />
+     <None Include="Assets\Materials\Shaders\Stencil Object 2.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

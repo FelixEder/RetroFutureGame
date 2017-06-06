@@ -78,6 +78,7 @@ public class MusicPlayer : MonoBehaviour {
 			audioSource.volume = volume / 100;
 			yield return new WaitForSeconds (0.1f);
 		}
+		audioSource.volume = 0;
 		Debug.Log ("[MUSIC] Fade out complete");
 		audioSource.Stop ();
 	}

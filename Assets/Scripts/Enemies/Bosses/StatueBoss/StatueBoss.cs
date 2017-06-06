@@ -65,7 +65,7 @@ public class StatueBoss : MonoBehaviour {
 	 */
 	void Defeated() {
 		//Play correct animation and such.
-		musicplay.StopPlaying (true);
+		musicplay.Play (0, 1, true);
 		Destroy(this.gameObject.transform.parent.gameObject);
 	}
 }

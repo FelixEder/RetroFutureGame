@@ -106,8 +106,8 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 683, y: 492}
-  m_MaxSize: {x: 14208, y: 14042}
+  m_MinSize: {x: 683, y: 342}
+  m_MaxSize: {x: 12008, y: 8042}
   vertical: 0
   controlID: 11
 --- !u!114 &6
@@ -130,8 +130,8 @@ MonoBehaviour:
     y: 0
     width: 1351
     height: 947
-  m_MinSize: {x: 406, y: 492}
-  m_MaxSize: {x: 10206, y: 14042}
+  m_MinSize: {x: 406, y: 342}
+  m_MaxSize: {x: 8006, y: 8042}
   vertical: 1
   controlID: 12
 --- !u!114 &7
@@ -230,10 +230,14 @@ MonoBehaviour:
     y: 670
     width: 1351
     height: 277
-  m_MinSize: {x: 336, y: 271}
-  m_MaxSize: {x: 10206, y: 10021}
+  m_MinSize: {x: 206, y: 121}
+  m_MaxSize: {x: 4206, y: 4021}
   vertical: 0
+<<<<<<< HEAD
   controlID: 106
+=======
+  controlID: 35
+>>>>>>> 7993c92ef24b5229d6a2f4c41cbbad49a1fd719a
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -252,16 +256,16 @@ MonoBehaviour:
     y: 0
     width: 1144
     height: 277
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
-  m_ActualView: {fileID: 18}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 18}
   - {fileID: 19}
   - {fileID: 20}
   - {fileID: 21}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -416,9 +420,15 @@ MonoBehaviour:
     height: 649
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: 2ae8ffff00000000
+=======
+    m_SelectedIDs: 1a69ffff
+    m_LastClickedID: -38630
+    m_ExpandedIDs: c6f8ffffe4fbffff00000000d2380000
+>>>>>>> 7993c92ef24b5229d6a2f4c41cbbad49a1fd719a
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -468,14 +478,20 @@ MonoBehaviour:
     width: 1125
     height: 649
   m_SceneLighting: 1
-  lastFramingTime: 5640.872936150327
+  lastFramingTime: 592.4120720492608
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 80.69931, y: -49.40943, z: -0.045958035}
     speed: 2
     m_Value: {x: 80.69931, y: -49.40943, z: -0.045958035}
+=======
+    m_Target: {x: 117.70905, y: -52.510906, z: 0}
+    speed: 2
+    m_Value: {x: 117.70905, y: -52.510906, z: 0}
+>>>>>>> 7993c92ef24b5229d6a2f4c41cbbad49a1fd719a
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -502,9 +518,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 54.52376
     speed: 2
     m_Value: 54.52376
+=======
+    m_Target: 47.447094
+    speed: 2
+    m_Value: 47.447094
+>>>>>>> 7993c92ef24b5229d6a2f4c41cbbad49a1fd719a
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -578,19 +600,34 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
+<<<<<<< HEAD
     - Assets
   m_ViewMode: 1
   m_StartGridSize: 72
   m_LastFolders:
   - Assets
+=======
+    - Assets/Scripts/Other/Audio
+  m_ViewMode: 1
+  m_StartGridSize: 72
+  m_LastFolders:
+  - Assets/Scripts/Other/Audio
+>>>>>>> 7993c92ef24b5229d6a2f4c41cbbad49a1fd719a
   m_LastFoldersGridSize: 72
   m_LastProjectPath: D:\Spelprojekt\Games\RetroFutureGame
   m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 95}
     m_SelectedIDs: 2e310000
     m_LastClickedID: 12590
     m_ExpandedIDs: 000000002e310000563100005a31000060310000b83100000a320000523200008a3200008c320000dc3200006c330000703300004e34000066340000683400008234000088340000a0340000c2340000d2340000e034000000ca9a3bffffff7f
+=======
+    scrollPos: {x: 0, y: 705.2742}
+    m_SelectedIDs: 36270000
+    m_LastClickedID: 10038
+    m_ExpandedIDs: 0000000096250000c4250000c8250000d22500004a260000fa26000062270000c2270000c42700003e2800002829000030290000c62a0000ee2a0000f02a00000a2b0000142b00002e2b00006e2b00007e2b0000942b000000ca9a3bffffff7f
+>>>>>>> 7993c92ef24b5229d6a2f4c41cbbad49a1fd719a
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -618,7 +655,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 000000002e310000563100005a31000060310000b83100000a320000523200008a3200008c320000dc3200006c330000703300004e34000066340000683400008234000088340000a0340000c2340000d2340000e0340000
+=======
+    m_ExpandedIDs: 0000000096250000c4250000c8250000d22500004a260000fa26000062270000c2270000c42700003e2800002829000030290000c62a0000ee2a0000f02a00000a2b0000142b00002e2b00006e2b00007e2b0000942b0000
+>>>>>>> 7993c92ef24b5229d6a2f4c41cbbad49a1fd719a
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

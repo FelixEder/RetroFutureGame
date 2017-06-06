@@ -114,6 +114,7 @@
      <Compile Include="Assets\Scripts\Interactables\Misc\PrefabSpawner.cs" />
      <Compile Include="Assets\Scripts\Other\Audio\AudioPlayer.cs" />
      <Compile Include="Assets\Scripts\Other\Audio\MusicPlayer.cs" />
+     <Compile Include="Assets\Scripts\Other\Audio\MusicTrigger.cs" />
      <Compile Include="Assets\Scripts\Other\AudioControl.cs" />
      <Compile Include="Assets\Scripts\Other\AudioManager.cs" />
      <Compile Include="Assets\Scripts\Other\CameraAdjuster.cs" />

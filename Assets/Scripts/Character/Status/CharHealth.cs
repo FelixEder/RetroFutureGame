@@ -25,7 +25,7 @@ public class CharHealth : MonoBehaviour {
 	public void TakeDamage(int damage) {
 		//Maybe give a few seconds invincibility and make sprite blink or so?
 		if (!status.Invulnerable ()) {
-			audioplay.PlayClip (Random.Range (0, 5), 0.2f);
+			audioplay.PlayClip (Random.Range (0, 5), 0.5f);
 
 			if (currentHealth - damage <= 0) {
 				currentHealth = 0;
@@ -93,6 +93,7 @@ public class CharHealth : MonoBehaviour {
 		rb2D.AddForce (Vector2.up * 300);
 		rb2D.angularVelocity = 90;
 		SetHealthSlider ();
+		audioplay.PlayClip (Random.Range (0, 5), 1f);
 		transform.GetChild (0).GetComponent<Animator> ().SetBool ("dead", true);
 		GameObject.Find ("GameOverScreen").GetComponent<GameOverScreen> ().Gameover ();
 	}

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour {
 	public AudioClip[] audioClips;
+	public int currentAudio = -1;
 	float masterVolume, fadeSpeed = 10;
 	AudioSource audioSource;
 	AudioControl control;
@@ -11,7 +12,7 @@ public class MusicPlayer : MonoBehaviour {
 	void Start () {
 		audioSource = GetComponent<AudioSource> ();
 		control = GameObject.Find ("Audio").GetComponent<AudioControl>();
-		Play (0, 1, false);
+//		Play (0, 1, false);
 	}
 
 	void Update () {
@@ -28,6 +29,7 @@ public class MusicPlayer : MonoBehaviour {
 		else if (index < audioClips.Length && index >= 0) {
 			Debug.Log ("[MUSIC] Playing");
 			audioSource.PlayOneShot (audioClips [index], volumeScale);
+			currentAudio = index;
 			if (fadeIn)
 				StartCoroutine (FadeIn ());
 			StartCoroutine (Loop (index, volumeScale));
@@ -41,8 +43,10 @@ public class MusicPlayer : MonoBehaviour {
 		StopCoroutine ("Loop");
 		if (fadeOut)
 			StartCoroutine (FadeOut ());
-		else
+		else {
 			audioSource.Stop ();
+			currentAudio = -1;
+		}
 	}
 
 	public void Mute (bool mute) {
@@ -81,6 +85,7 @@ public class MusicPlayer : MonoBehaviour {
 		audioSource.volume = 0;
 		Debug.Log ("[MUSIC] Fade out complete");
 		audioSource.Stop ();
+		currentAudio = -1;
 	}
 
 	IEnumerator SwapPlaying (int index, float volumeScale, bool fadeIn) {

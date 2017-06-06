@@ -176,8 +176,8 @@ MonoBehaviour:
     y: 0
     width: 222
     height: 670
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_MinSize: {x: 336, y: 271}
   m_MaxSize: {x: 10206, y: 10021}
   vertical: 0
-  controlID: 70
+  controlID: 106
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -280,8 +280,8 @@ MonoBehaviour:
     y: 0
     width: 207
     height: 277
-  m_MinSize: {x: 104, y: 121}
-  m_MaxSize: {x: 204, y: 146}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 200, y: 125}
   m_ActualView: {fileID: 22}
   m_Panes:
   - {fileID: 22}
@@ -416,9 +416,9 @@ MonoBehaviour:
     height: 649
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 30060000
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0459faff5859faffc6f8ffffe4fbffff00000000f82c00000c3000008c30000016380000c0380000d4390000
+    m_ExpandedIDs: 2ae8ffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -473,9 +473,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 139.03206, y: -50.258232, z: 0}
+    m_Target: {x: 80.69931, y: -49.40943, z: -0.045958035}
     speed: 2
-    m_Value: {x: 139.03206, y: -50.258232, z: 0}
+    m_Value: {x: 80.69931, y: -49.40943, z: -0.045958035}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -502,9 +502,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 49.929043
+    m_Target: 54.52376
     speed: 2
-    m_Value: 49.929043
+    m_Value: 54.52376
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -578,19 +578,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts/UI
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 72
   m_LastFolders:
-  - Assets/Scripts/UI
+  - Assets
   m_LastFoldersGridSize: 72
-  m_LastProjectPath: F:\Unity Projects\RetroFutureGame
+  m_LastProjectPath: D:\Spelprojekt\Games\RetroFutureGame
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 601}
-    m_SelectedIDs: a8270000
-    m_LastClickedID: 10152
-    m_ExpandedIDs: 0000000094250000c2250000c6250000d025000048260000f826000060270000c0270000c22700003c280000262900002e290000c22a0000ea2a0000ec2a0000062b0000102b00002a2b0000682b0000782b00008e2b000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 95}
+    m_SelectedIDs: 2e310000
+    m_LastClickedID: 12590
+    m_ExpandedIDs: 000000002e310000563100005a31000060310000b83100000a320000523200008a3200008c320000dc3200006c330000703300004e34000066340000683400008234000088340000a0340000c2340000d2340000e034000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -618,7 +618,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000094250000c2250000c6250000d025000048260000f826000060270000c0270000c22700003c280000262900002e290000c22a0000ea2a0000ec2a0000062b0000102b00002a2b0000682b0000782b00008e2b0000
+    m_ExpandedIDs: 000000002e310000563100005a31000060310000b83100000a320000523200008a3200008c320000dc3200006c330000703300004e34000066340000683400008234000088340000a0340000c2340000d2340000e0340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -645,7 +645,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 5a260000382a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

@@ -23,7 +23,7 @@ public class CharStatus : MonoBehaviour {
 	}
 
 	void OnDrawGizmosSelected() {
-		Gizmos.color = new Color (1, 0, 0, 0.5f);
+		Gizmos.color = new Color (1, 1, 0, 0.5f);
 		Gizmos.DrawCube (downCheck.position, new Vector3 (0.55f, 0.1f, 1));
 		Gizmos.DrawCube (backCheck.position, new Vector3 (0.1f, 1.9f, 1));
 		Gizmos.DrawCube (frontCheck.position, new Vector3 (0.1f, 1.9f, 1));

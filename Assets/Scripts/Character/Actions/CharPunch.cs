@@ -34,7 +34,7 @@ public class CharPunch : MonoBehaviour {
 		else if (input.GetKey ("attack") && !holdPunch && !charStatus.isSmall) {
 			holdPunch = true;
 			if (!onCooldown)
-				damage = ExecutePunch ();
+				ExecutePunch ();
 		}
 
 		//MEGA
@@ -45,7 +45,7 @@ public class CharPunch : MonoBehaviour {
 	}
 
 	//PUNCH
-	int ExecutePunch() {
+	void ExecutePunch() {
 		onCooldown = true;
 		if (charInventory.IsHoldingItem ()) {
 			GameObject holdingItem = charInventory.GetHoldingItem ();
@@ -54,25 +54,28 @@ public class CharPunch : MonoBehaviour {
 			case "Rock":
 				//Play correct animation
 				attackType = "Rock";
+				damage = holdingItem.GetComponent<PickUpableItem> ().damage;
 				StartCoroutine (DamageArea (1.1f, 0.6f));
-				return holdingItem.GetComponent<PickUpableItem>().damage;
+				return;
 
 			case "Branch":
 				//Play correct animation
 				attackType = "Branch";
+				damage = holdingItem.GetComponent<PickUpableItem> ().damage;
 				StartCoroutine (DamageArea (1.5f, 0.75f));
-				return holdingItem.GetComponent<PickUpableItem>().damage;
+				return;
 
 			default:
 				attackType = "ItemError";
-				return 1;
+				damage = 1;
+				return;
 			}
 		}
 		else {
 			//Play the standard animation
 			attackType = "Punch";
+			damage = 1;
 			StartCoroutine (DamageArea (1.1f, 0.6f));
-			return 1;
 		}
 	}
 		

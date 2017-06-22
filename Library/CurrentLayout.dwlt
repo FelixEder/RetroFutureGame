@@ -70,7 +70,11 @@ MonoBehaviour:
   m_MinSize: {x: 336, y: 271}
   m_MaxSize: {x: 10206, y: 10021}
   vertical: 0
+<<<<<<< HEAD
   controlID: 75
+=======
+  controlID: 47
+>>>>>>> c954bbca75a1b7757c4e067654eeca833797214f
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -438,10 +442,17 @@ MonoBehaviour:
     width: 333
     height: 895
   m_TreeViewState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 306}
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: fce6ffff00000000503b0000623d00001a3f0000643f00009e420000
+=======
+    scrollPos: {x: 0, y: 494}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: e4fbffff0000000024320000ee35000038360000
+>>>>>>> c954bbca75a1b7757c4e067654eeca833797214f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -496,9 +507,15 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 111.96572, y: -48.30396, z: 0}
     speed: 2
     m_Value: {x: 111.96572, y: -48.30396, z: 0}
+=======
+    m_Target: {x: 128.5862, y: -50.7109, z: -0.09375}
+    speed: 2
+    m_Value: {x: 128.5862, y: -50.7109, z: -0.09375}
+>>>>>>> c954bbca75a1b7757c4e067654eeca833797214f
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -525,9 +542,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 29.573765
     speed: 2
     m_Value: 29.573765
+=======
+    m_Target: 111.13274
+    speed: 2
+    m_Value: 111.13274
+>>>>>>> c954bbca75a1b7757c4e067654eeca833797214f
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -607,6 +630,7 @@ MonoBehaviour:
   m_LastFolders:
   - Assets
   m_LastFoldersGridSize: 96
+<<<<<<< HEAD
   m_LastProjectPath: C:\Users\Viktor Espinoza\Documents\GitHub\RetroFutureGame
   m_IsLocked: 0
   m_FolderTreeState:
@@ -614,6 +638,15 @@ MonoBehaviour:
     m_SelectedIDs: e2310000
     m_LastClickedID: 12770
     m_ExpandedIDs: 00000000e23100000a3200000e3200001232000072320000c8320000143300004c3300004e330000a63300003434000038340000083500002635000042350000443500005e35000064350000663500007c3500009e350000ac350000ba35000000ca9a3bffffff7f
+=======
+  m_LastProjectPath: D:\Spelprojekt\Games\RetroFutureGame
+  m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 907}
+    m_SelectedIDs: c22b0000
+    m_LastClickedID: 11202
+    m_ExpandedIDs: 00000000a8250000d6250000da250000e6250000662600001a27000086270000e6270000e82700006c280000562900005e290000de2a0000062b00002e2b0000302b00004a2b0000542b0000562b0000702b0000b22b0000c22b0000d82b000000ca9a3bffffff7f
+>>>>>>> c954bbca75a1b7757c4e067654eeca833797214f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -641,7 +674,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000e23100000a3200000e3200001232000072320000c8320000143300004c3300004e330000a63300003434000038340000083500002635000042350000443500005e35000064350000663500007c3500009e350000ac350000ba350000
+=======
+    m_ExpandedIDs: 00000000a8250000d6250000da250000e6250000662600001a27000086270000e6270000e82700006c280000562900005e290000de2a0000062b00002e2b0000302b00004a2b0000542b0000562b0000702b0000b22b0000c22b0000d82b0000
+>>>>>>> c954bbca75a1b7757c4e067654eeca833797214f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

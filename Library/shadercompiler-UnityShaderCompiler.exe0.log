@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Base path: D:/Unity/Editor/Data
+=======
+Base path: D:/Spelprojekt/NewUnity/Editor/Data
+>>>>>>> c954bbca75a1b7757c4e067654eeca833797214f
 Cmd: initializeCompiler
 Cmd: preprocess
   insize=1245 outsize=1022 ok=1

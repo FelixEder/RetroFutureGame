@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CharTriggerPlatform : MonoBehaviour {
 	public GameObject player, platformCollider;
-
+/*
 	void OnTriggerStay2D(Collider2D col) {
 		if (col.gameObject.tag == "Platform") {
 			if (player.GetComponent<CharJump> ().jumpDown) {
@@ -18,4 +18,5 @@ public class CharTriggerPlatform : MonoBehaviour {
 			Physics2D.IgnoreCollision (platformCollider.GetComponent<Collider2D> (), col.gameObject.GetComponent<Collider2D> (), false);
 		}
 	}
+	*/
 }

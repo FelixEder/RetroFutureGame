@@ -7,17 +7,15 @@ public class CharStatus : MonoBehaviour {
 	public float velocityX, velocityY;
 
 	public bool grounded, againstLeft, againstRight, onPlatform;
-	public LayerMask whatIsGround, whatIsWall;
+	public LayerMask whatIsGround, whatIsPlatform, whatIsWall;
 	public Transform downCheck, backCheck, frontCheck;
 
 	void Update() {
 		velocityX = GetComponent<Rigidbody2D> ().velocity.x;
 		velocityY = GetComponent<Rigidbody2D>().velocity.y;
-	}
-
-	void FixedUpdate() {
+	
 		grounded = GetComponent<Rigidbody2D>().velocity.y < 1f ? Physics2D.OverlapBox (downCheck.position, new Vector2 (0.6f, 0.1f), 0, whatIsGround) : false;
-		onPlatform = Physics2D.OverlapBox (downCheck.position, new Vector2 (0.59f, 0.1f), 0, LayerMask.NameToLayer("Platform"));
+		onPlatform = Physics2D.OverlapBox (downCheck.position, new Vector2 (0.6f, 0.1f), 0, whatIsPlatform);
 		againstLeft = isMirrored ? Physics2D.OverlapBox (frontCheck.position, new Vector2 (0.1f, 1.9f), 0, whatIsWall) : Physics2D.OverlapBox (backCheck.position, new Vector2 (0.1f, 1.9f), 0, whatIsWall);
 		againstRight = isMirrored ? Physics2D.OverlapBox (backCheck.position, new Vector2 (0.1f, 1.9f), 0, whatIsWall) : Physics2D.OverlapBox (frontCheck.position, new Vector2 (0.1f, 1.9f), 0, whatIsWall);
 	}

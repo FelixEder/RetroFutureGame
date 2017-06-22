@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlatformLogic : MonoBehaviour {
 	CharJump jump;
-
+/*
 	void Start() {
 		jump = GameObject.Find ("Char").GetComponent<CharJump> ();
 	}
@@ -30,5 +30,6 @@ public class PlatformLogic : MonoBehaviour {
 	public void ignoreCollision(bool input) {
 		Physics2D.IgnoreCollision (GameObject.Find ("Char").GetComponent<Collider2D> (), transform.parent.GetComponent<Collider2D> (), input);
 	}
+	*/
 }
 

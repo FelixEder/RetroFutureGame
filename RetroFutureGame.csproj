@@ -114,6 +114,7 @@
     <Compile Include="Assets\Scripts\Enemies\Bosses\FinalBoss\Phase3\Phase3Head.cs" />
     <Compile Include="Assets\Scripts\Enemies\Bosses\StatueBoss\StatueBoss.cs" />
     <Compile Include="Assets\Scripts\Enemies\Bosses\StatueBoss\StatueBossLaser.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Bosses\StatueBoss\StatueBossPlayerAim.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemies\BigEyeGuy\BigEyeGuy.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemies\BigEyeGuy\BigEyeGuyJumpingTrigger.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemies\BigEyeGuy\BigEyeGuyLaser.cs" />
@@ -143,6 +144,9 @@
     <Compile Include="Assets\Scripts\Interactables\Map\MapCover.cs" />
     <Compile Include="Assets\Scripts\Interactables\Misc\PickupableItemSpawner.cs" />
     <Compile Include="Assets\Scripts\Interactables\Misc\PrefabSpawner.cs" />
+    <Compile Include="Assets\Scripts\Other\Audio\AudioPlayer.cs" />
+    <Compile Include="Assets\Scripts\Other\Audio\MusicPlayer.cs" />
+    <Compile Include="Assets\Scripts\Other\Audio\MusicTrigger.cs" />
     <Compile Include="Assets\Scripts\Other\AudioControl.cs" />
     <Compile Include="Assets\Scripts\Other\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Other\CameraAdjuster.cs" />
@@ -158,6 +162,7 @@
     <Compile Include="Assets\Scripts\UI\GameOverScreen.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenuLogo.cs" />
+    <Compile Include="Assets\Scripts\UI\MenuControl.cs" />
     <Compile Include="Assets\Scripts\UI\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\UI\PauseStatistics.cs" />
     <Compile Include="Assets\Scripts\UI\TutorialManager.cs" />
@@ -167,6 +172,10 @@
   <ItemGroup>
     <None Include="Assets\Materials\Shaders\Solid Color.shader" />
     <None Include="Assets\Materials\Shaders\Sprite Glitch.shader" />
+    <None Include="Assets\Materials\Shaders\Stencil Mask 1.shader" />
+    <None Include="Assets\Materials\Shaders\Stencil Mask 2.shader" />
+    <None Include="Assets\Materials\Shaders\Stencil Object 1.shader" />
+    <None Include="Assets\Materials\Shaders\Stencil Object 2.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

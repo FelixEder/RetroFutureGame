@@ -123,6 +123,7 @@
     <Compile Include="Assets\Editor\AutoSnap.cs" />
     <Compile Include="Assets\Editor\CustomAssetImporter.cs" />
     <Compile Include="Assets\Editor\FindSceneObjectsWithTag.cs" />
+    <Compile Include="Assets\Editor\GroupCommand.cs" />
     <Compile Include="Assets\Editor\HiddenObjectExplorer.cs" />
     <Compile Include="Assets\Editor\SceneViewWindow.cs" />
     <Compile Include="Assets\Editor\SimpleCCDEditor.cs" />
@@ -130,6 +131,10 @@
   <ItemGroup>
     <None Include="Assets\Materials\Shaders\Solid Color.shader" />
     <None Include="Assets\Materials\Shaders\Sprite Glitch.shader" />
+    <None Include="Assets\Materials\Shaders\Stencil Mask 1.shader" />
+    <None Include="Assets\Materials\Shaders\Stencil Mask 2.shader" />
+    <None Include="Assets\Materials\Shaders\Stencil Object 1.shader" />
+    <None Include="Assets\Materials\Shaders\Stencil Object 2.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

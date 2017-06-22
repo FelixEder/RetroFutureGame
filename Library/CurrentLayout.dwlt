@@ -70,7 +70,7 @@ MonoBehaviour:
   m_MinSize: {x: 336, y: 271}
   m_MaxSize: {x: 10206, y: 10021}
   vertical: 0
-  controlID: 1769
+  controlID: 47
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -438,10 +438,10 @@ MonoBehaviour:
     width: 249
     height: 643
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 50320000
-    m_LastClickedID: 12880
-    m_ExpandedIDs: d2fbffff000000001e310000f03500003a360000a63a0000
+    scrollPos: {x: 0, y: 494}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: e4fbffff0000000024320000ee35000038360000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -496,9 +496,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 66.350586, y: -41.94292, z: 0}
+    m_Target: {x: 128.5862, y: -50.7109, z: -0.09375}
     speed: 2
-    m_Value: {x: 66.350586, y: -41.94292, z: 0}
+    m_Value: {x: 128.5862, y: -50.7109, z: -0.09375}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -525,9 +525,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 41.98316
+    m_Target: 111.13274
     speed: 2
-    m_Value: 41.98316
+    m_Value: 111.13274
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -607,13 +607,13 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Sprites/Enviroment/Nature
   m_LastFoldersGridSize: 96
-  m_LastProjectPath: F:\Unity Projects\RetroFutureGame
+  m_LastProjectPath: D:\Spelprojekt\Games\RetroFutureGame
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 907}
     m_SelectedIDs: c22b0000
     m_LastClickedID: 11202
-    m_ExpandedIDs: 00000000ac250000da250000de250000ea2500006a2600001e2700008a270000ea270000ec270000702800005a29000062290000de2a0000062b00002e2b0000302b00004a2b0000542b0000562b0000702b0000b22b0000c22b0000d82b000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000a8250000d6250000da250000e6250000662600001a27000086270000e6270000e82700006c280000562900005e290000de2a0000062b00002e2b0000302b00004a2b0000542b0000562b0000702b0000b22b0000c22b0000d82b000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -641,7 +641,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ac250000da250000de250000ea2500006a2600001e2700008a270000ea270000ec270000702800005a29000062290000de2a0000062b00002e2b0000302b00004a2b0000542b0000562b0000702b0000b22b0000c22b0000d82b0000
+    m_ExpandedIDs: 00000000a8250000d6250000da250000e6250000662600001a27000086270000e6270000e82700006c280000562900005e290000de2a0000062b00002e2b0000302b00004a2b0000542b0000562b0000702b0000b22b0000c22b0000d82b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

@@ -13,6 +13,7 @@ public class Phase2Head : MonoBehaviour {
 
 	public void Blued() {
 		//This should only change the head-sprite, so maybe this should affect a child somehow?
+		Debug.Log ("You blued the boss!");
 		GetComponent<SpriteRenderer>().sprite = blueFace;
 		actualBoss.blued = true;
 		actualBoss.Stunned(10f);
@@ -21,7 +22,8 @@ public class Phase2Head : MonoBehaviour {
 
 	void Unblued() {
 		GetComponent<SpriteRenderer>().sprite = normalHead;
-		actualBoss.blued = false;
+		Debug.Log ("unblued");
+ 		actualBoss.blued = false;
 	}
 
 	void Spit() {
@@ -35,9 +37,12 @@ public class Phase2Head : MonoBehaviour {
 	}
 
 	void StopSpit() {
-		GetComponent<SpriteRenderer> ().sprite = normalHead;
-		transform.GetChild (0).GetComponent<FinalBossSpitAttack> ().enabled = false;
-		transform.GetChild (0).GetComponent<CircleCollider2D> ().enabled = false;
+		if (!actualBoss.blued) {
+			Debug.Log ("stopped spitting");
+			CloseMouth ();
+			transform.GetChild (0).GetComponent<FinalBossSpitAttack> ().enabled = false;
+			transform.GetChild (0).GetComponent<CircleCollider2D> ().enabled = false;
+		}
 	}
 		
 	public void OpenMouth(float time) {

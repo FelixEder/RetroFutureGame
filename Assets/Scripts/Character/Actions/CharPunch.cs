@@ -207,7 +207,7 @@ public class CharPunch : MonoBehaviour {
 				}
 				break;
 
-			case "FinalBossArmor":
+			case "FinalBossArmor2":
 				if (victim.gameObject.GetComponent<Phase2> ().blued) {
 					if (attackType == "FullMega") {
 						Debug.Log ("Full MegaPunched the boss phase 2!"); 

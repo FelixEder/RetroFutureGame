@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Phase2 : MonoBehaviour {
-	public float knockForce;
+	public float knockForce, movespeed = 3;
 	float moveSpeed = 3;
 	public int health, spawnLoc = 2;
 	public Sprite normal, kickPunching;
@@ -17,6 +17,7 @@ public class Phase2 : MonoBehaviour {
 		InvokeRepeating ("Charge", 5f, 20f);
 		ResetDeltaX ();
 		transform.GetChild (0).GetComponent<Phase2Head> ().enabled = true;
+		moveSpeed = movespeed;
 	}
 
 	void Update() {
@@ -90,7 +91,9 @@ public class Phase2 : MonoBehaviour {
 			DropSpawner ("HealthDrop", transform.position);
 			DropSpawner ("EnergyDrop", transform.position);
 		}
-		transform.GetChild (0).GetComponent<Phase2Head> ().OpenMouth (3f);
+		if (!blued) {
+			transform.GetChild (0).GetComponent<Phase2Head> ().OpenMouth (3f);
+		}
 		Invoke ("UnStunned", time);
 	}
 
@@ -107,26 +110,29 @@ public class Phase2 : MonoBehaviour {
 	}
 
 	void Charge() {
+		if (blued)
+			return;
 		if (!walksRight)
 			walksRight = true;
 		//FinalBoss is charging, play relevant things
 		Debug.Log("FinalBoss is charging");
 		transform.GetChild (0).GetComponent<Phase2Head> ().OpenMouth (3f);
-		moveSpeed += 5;
+		moveSpeed = movespeed + 5;
 		damage += 2;
 		Invoke ("StopCharge", 1f);
 	}
 
 	void StopCharge() {
-		Debug.Log ("FinalBoss stopped rushing");
+		Debug.Log ("FinalBoss stopped charging");
 		//FinalBoss stops charging, play relevant things
 		damage -= 2;
-		moveSpeed -= 5;
+		moveSpeed = movespeed;
 	}
 
 	void KickPunching() {
 		if (!stunned) {
 			GetComponent<SpriteRenderer> ().sprite = kickPunching;
+			Debug.Log ("kickpunching");
 			this.gameObject.transform.GetChild (1).gameObject.SetActive (true);
 			Invoke ("FinishKickPunching", 1f);
 		}
@@ -135,8 +141,9 @@ public class Phase2 : MonoBehaviour {
 
 	void FinishKickPunching() {
 		GetComponent<SpriteRenderer> ().sprite = normal;
+		Debug.Log ("finish kickpunching");
 		this.gameObject.transform.GetChild (1).gameObject.SetActive (false);	
-		moveSpeed = 3;
+		moveSpeed = movespeed;
 	}
 
 	public void TakeDamage (int damage) {

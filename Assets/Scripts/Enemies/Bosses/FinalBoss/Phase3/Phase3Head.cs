@@ -161,7 +161,7 @@ public class Phase3Head : MonoBehaviour {
 
 	IEnumerator Invulnerable() {
 		invulnerable = true;
-		yield return new WaitForSeconds (1f);
+		yield return new WaitForSeconds (5f);
 		invulnerable = false;
 	}
 

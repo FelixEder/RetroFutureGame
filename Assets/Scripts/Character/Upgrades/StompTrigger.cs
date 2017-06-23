@@ -45,5 +45,6 @@ public class StompTrigger : MonoBehaviour {
 			col.gameObject.GetComponent<Phase3Head> ().TakeDamage ();
 			break;
 		}
+		Debug.Log ("STOMPED: " + col.gameObject.name + " with tag: " + col.gameObject.tag);
 	}
 }

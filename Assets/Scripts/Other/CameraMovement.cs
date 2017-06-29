@@ -11,15 +11,15 @@ public class CameraMovement : MonoBehaviour {
 		StartCoroutine (AdjustFocus (5));
 	}
 
-	void Update () {
+	void FixedUpdate () {
 		followPos = followTarget.transform.position;
 		position = transform.position;
-		transform.position = new Vector3 (Mathf.Lerp (position.x, target.x + adjustX, Time.deltaTime * followSpeed), Mathf.Lerp(position.y, target.y + adjustY, Time.deltaTime * followSpeed), -10);
+		transform.position = new Vector3 (Mathf.Lerp (position.x, target.x + adjustX, Time.fixedDeltaTime * followSpeed), Mathf.Lerp(position.y, target.y + adjustY, Time.fixedDeltaTime * followSpeed), -10);
 		GetComponent<Camera> ().orthographicSize = Mathf.Lerp (GetComponent<Camera> ().orthographicSize, size, Time.deltaTime);
 		//Background camera
-		transform.GetChild(0).GetComponent<Camera>().fieldOfView = Mathf.Lerp (transform.GetChild(0).GetComponent<Camera>().fieldOfView, 40 + size * 7, Time.deltaTime);
+		transform.GetChild(0).GetComponent<Camera>().fieldOfView = Mathf.Lerp (transform.GetChild(0).GetComponent<Camera>().fieldOfView, 40 + size * 7, Time.fixedDeltaTime);
 		//Foreground camera
-		transform.GetChild(1).GetComponent<Camera>().fieldOfView = Mathf.Lerp (transform.GetChild(1).GetComponent<Camera>().fieldOfView, 20 + size * 10, Time.deltaTime);
+		transform.GetChild(1).GetComponent<Camera>().fieldOfView = Mathf.Lerp (transform.GetChild(1).GetComponent<Camera>().fieldOfView, 20 + size * 10, Time.fixedDeltaTime);
 	}
 
 	public void AdjustPosition(float x, float y, float newSize, float speed, GameObject focus) {

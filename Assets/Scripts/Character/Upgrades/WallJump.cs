@@ -20,14 +20,14 @@ public class WallJump : MonoBehaviour {
 		if (!input.GetKey ("jump")) {
 			holdJump = false;
 		}
-		if(input.GetKey ("jump") && (status.onLeftWall || status.onRightWall) && !holdJump && !status.onSurface) {
+		if(input.GetKey ("jump") && (status.againstLeft || status.againstRight) && !holdJump && !status.grounded) {
 			holdJump = true;
 			float axisH = input.GetAxis ("X");
-			if(status.onLeftWall && axisH > 0) {
+			if(status.againstLeft && axisH > 0) {
 				rigidBody2D.velocity = new Vector2 (WallJumpSpeed, jump.jumpSpeed / 1.2f);
 				jump.hasSecondJumped = false;
 			}
-			else if(status.onRightWall && axisH < 0) {
+			else if(status.againstRight && axisH < 0) {
 				rigidBody2D.velocity = new Vector2 (-WallJumpSpeed, jump.jumpSpeed / 1.2f);
 				jump.hasSecondJumped = false;
 			}

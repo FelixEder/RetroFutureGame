@@ -29,13 +29,9 @@ public class HardCritter : MonoBehaviour {
 		switch(col.gameObject.tag) {
 
 		case "Char":
-			if (col.gameObject.GetComponent<CharStatus> ().IsMegaPunching())
-				GetMirrored ();
-			else {
-				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage, gameObject, knockForce);
-				Rush ();
-			}
-			GetMirrored();
+			GetMirrored ();
+			col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage, gameObject, knockForce);
+			Rush ();
 			break;
 
 		case "SmallCritter":

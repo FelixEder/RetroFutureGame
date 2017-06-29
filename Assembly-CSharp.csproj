@@ -46,7 +46,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Character\Actions\CharMegaPunch.cs" />
      <Compile Include="Assets\Scripts\Character\Actions\CharPickUp.cs" />
      <Compile Include="Assets\Scripts\Character\Actions\CharPunch.cs" />
      <Compile Include="Assets\Scripts\Character\Movement\CharJump.cs" />
@@ -57,9 +56,6 @@
      <Compile Include="Assets\Scripts\Character\Status\CharHealth.cs" />
      <Compile Include="Assets\Scripts\Character\Status\CharInventory.cs" />
      <Compile Include="Assets\Scripts\Character\Status\CharStatus.cs" />
-     <Compile Include="Assets\Scripts\Character\Triggers\CharTriggerBack.cs" />
-     <Compile Include="Assets\Scripts\Character\Triggers\CharTriggerDown.cs" />
-     <Compile Include="Assets\Scripts\Character\Triggers\CharTriggerFront.cs" />
      <Compile Include="Assets\Scripts\Character\Triggers\CharTriggerPlatform.cs" />
      <Compile Include="Assets\Scripts\Character\Upgrades\CharFloat.cs" />
      <Compile Include="Assets\Scripts\Character\Upgrades\CharStomp.cs" />

@@ -5,10 +5,12 @@ public class CharStomp : MonoBehaviour {
 	Rigidbody2D rigidBody2D;
 	CharStatus status;
 	InputManager input;
-	public GameObject triggerStomp;
-	//I think groundStomping is unneccecary
-	public bool isStomping, groundStomping;
-	bool holdStomp;
+
+	public float knockForce;
+	bool holdStomp, isStomping;
+	public LayerMask whatIsHurtable;
+	public Transform stompCenter;
+	Collider2D[] victims;
 
 	// Use this for initialization
 	void Start () {
@@ -21,33 +23,76 @@ public class CharStomp : MonoBehaviour {
 	void FixedUpdate() {
 		if (!input.GetKey ("attack"))
 			holdStomp = false;
-		if (status.InAir () && !status.isSmall && !status.isFloating && input.GetAxis ("Y") < -0.3f && input.GetKey ("attack") && !holdStomp) {
+		if (status.InAir () && !status.isSmall && !status.isFloating && input.GetAxis ("Y") < -0.3f && input.GetAxis ("Ybool") < 0f && input.GetKey ("attack") && !holdStomp) {
 			holdStomp = true;
 			isStomping = true;
-			rigidBody2D.velocity = new Vector2 (0, 0);
-			rigidBody2D.gravityScale = 0.0f;
-			//Play stomp-animation
-			Invoke ("Stomp", 0.5f);
+
+			StartCoroutine (Stomp ());
 		}
-		else if (status.onSurface && isStomping) {
-			//Play stomp-on-ground animation
-			Debug.Log("You are stomping something!");
-			groundStomping = true;
-			isStomping = false;
-			Invoke ("FinishedStomp", 0.25f);
+		else if (status.grounded && isStomping) {
+			
+			FinishStomp ();
 		}
 	}
 
-	void FinishedStomp() {
-		status.invulnerable = false;
-		groundStomping = false;
-		triggerStomp.SetActive (false);
-	}
 
-	void Stomp() {
+	IEnumerator Stomp() {
+		Debug.Log ("Started Stomp");
+		rigidBody2D.velocity = new Vector2 (0, 0);
+		rigidBody2D.gravityScale = 0.0f;
+
+		yield return new WaitForSeconds (0.2f);
 		status.invulnerable = true;
 		rigidBody2D.gravityScale = 2.0f;
 		rigidBody2D.velocity = new Vector2 (0, -9f);
-		triggerStomp.SetActive (true);
-	}	
+	}
+
+	void FinishStomp() {
+		Debug.Log ("Finished Stomp");
+		GetComponent<AudioPlayer> ().PlayClip (5, 2f);
+		isStomping = false;
+		status.Invulnerable (0.2f);
+
+		victims = Physics2D.OverlapBoxAll (stompCenter.position, new Vector2 (4f, 2f), 0, whatIsHurtable);
+
+		foreach (Collider2D victim in victims) {
+			switch (victim.gameObject.tag) {
+
+			case "SmallCritter":
+				victim.gameObject.GetComponent<SmallCritter> ().TakeDamage (3);
+				victim.gameObject.GetComponent<EnemyKnockback> ().Knockback (GameObject.Find ("Char"), knockForce);
+				break;
+
+			case "JumpingCritter":
+				victim.gameObject.GetComponent<JumpingCritter> ().TakeDamage (3);
+				victim.gameObject.GetComponent<EnemyKnockback> ().Knockback (GameObject.Find ("Char"), knockForce);
+				break;
+
+			case "CrawlerCritter":
+				Debug.Log ("Hit crawler!");
+				//Really bad code, should be re-written
+				CrawlerCritter crawlerCritter = victim.gameObject.GetComponent<CrawlerCritter> ();
+				if (!crawlerCritter.deShelled) {
+					crawlerCritter.TakeDamage (1);
+				} else if (crawlerCritter.deShelled) {
+					crawlerCritter.TakeDamage (2);
+				} 
+				break;
+
+			case "ShellMan":
+				ShellMan shellMan = victim.gameObject.GetComponent<ShellMan> ();
+				if (!shellMan.deShelled) {
+					shellMan.TakeDamage (1);
+				} else if (shellMan.deShelled) {
+					shellMan.TakeDamage (2);
+				}
+				break;
+
+			case "FinalBossLastForm":
+				victim.gameObject.GetComponent<Phase3Head> ().TakeDamage ();
+				break;
+			}
+			Debug.Log ("STOMPED: " + victim.gameObject.name + " with tag: " + victim.gameObject.tag);
+		}
+	}
 }

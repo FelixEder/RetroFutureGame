@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class CharStatus : MonoBehaviour {
-	public bool onGround, onLeftWall, onRightWall, isMirrored, isFloating, onSurface, invulnerable;
-	public bool megaPunch, chargedMegaPunch, isSmall;
+	public bool isMirrored, isFloating, invulnerable, isSmall;
 	public float velocityX, velocityY;
 
 	public bool grounded, againstLeft, againstRight, onPlatform;
@@ -34,6 +33,7 @@ public class CharStatus : MonoBehaviour {
 		return (!grounded && !againstLeft && !againstRight);
 	}
 
+/*
 	public bool IsMegaPunching() {
 		return (megaPunch || chargedMegaPunch);
 	}
@@ -42,6 +42,7 @@ public class CharStatus : MonoBehaviour {
 		megaPunch = false;
 		chargedMegaPunch = false;
 	}
+*/
 
 	public void Invulnerable(float time) {
 		invulnerable = true;

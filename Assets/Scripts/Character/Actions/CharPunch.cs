@@ -31,7 +31,7 @@ public class CharPunch : MonoBehaviour {
 		//PUNCH
 		if (!input.GetKey ("attack") && holdPunch)
 			holdPunch = false;
-		else if (input.GetKey ("attack") && !holdPunch && !charStatus.isSmall) {
+		else if (input.GetKey ("attack") && !(input.GetAxis("Ybool") < 0f && charStatus.InAir()) && !holdPunch && !charStatus.isSmall) {
 			holdPunch = true;
 			if (!onCooldown)
 				ExecutePunch ();

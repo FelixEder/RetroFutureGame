@@ -19,7 +19,7 @@ public class CharFloat : MonoBehaviour {
 			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, -1f);
 			status.isFloating = true;
 		}
-		else
+		else if (status.isFloating)
 			status.isFloating = false;
 	}
 }

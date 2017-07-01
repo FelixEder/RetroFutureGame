@@ -4340,7 +4340,7 @@ See DecoratorDrawer for an example of how to use this.</para>
     </member>
     <member name="T:UnityEditor.DefaultAsset">
       <summary>
-        <para>DefaultAsset is used for assets that does not have a specific type (yet).</para>
+        <para>DefaultAsset is used for assets that do not have a specific type (yet).</para>
       </summary>
     </member>
     <member name="M:UnityEditor.DefaultAsset.#ctor">
@@ -12094,7 +12094,18 @@ More information - https:msdn.microsoft.comen-uslibrary/dn584397(v=vs.110).aspx.
       <summary>
         <para>Select a new build target to be active.</para>
       </summary>
-      <param name="target"></param>
+      <param name="target">Target build platform.</param>
+      <param name="targetGroup">Build target group.</param>
+      <returns>
+        <para>True if the build target was successfully switched, false otherwise (for example, if license checks fail, files are missing, or if the user has cancelled the operation via the UI).</para>
+      </returns>
+    </member>
+    <member name="M:UnityEditor.EditorUserBuildSettings.SwitchActiveBuildTarget(UnityEditor.BuildTargetGroup,UnityEditor.BuildTarget)">
+      <summary>
+        <para>Select a new build target to be active.</para>
+      </summary>
+      <param name="target">Target build platform.</param>
+      <param name="targetGroup">Build target group.</param>
       <returns>
         <para>True if the build target was successfully switched, false otherwise (for example, if license checks fail, files are missing, or if the user has cancelled the operation via the UI).</para>
       </returns>
@@ -12128,6 +12139,22 @@ More information - https:msdn.microsoft.comen-uslibrary/dn584397(v=vs.110).aspx.
         <para>Calculates and returns a list of all assets the assets listed in roots depend on.</para>
       </summary>
       <param name="roots"></param>
+    </member>
+    <member name="M:UnityEditor.EditorUtility.CompressCubemapTexture(UnityEngine.Cubemap,UnityEngine.TextureFormat,System.Int32)">
+      <summary>
+        <para>Compress a cubemap texture.</para>
+      </summary>
+      <param name="texture"></param>
+      <param name="format"></param>
+      <param name="quality"></param>
+    </member>
+    <member name="M:UnityEditor.EditorUtility.CompressCubemapTexture(UnityEngine.Cubemap,UnityEngine.TextureFormat,UnityEngine.TextureCompressionQuality)">
+      <summary>
+        <para>Compress a cubemap texture.</para>
+      </summary>
+      <param name="texture"></param>
+      <param name="format"></param>
+      <param name="quality"></param>
     </member>
     <member name="M:UnityEditor.EditorUtility.CompressTexture(UnityEngine.Texture2D,UnityEngine.TextureFormat,System.Int32)">
       <summary>
@@ -14928,7 +14955,7 @@ Note: Use HandleUtility.GetHandleSize where you might want to have constant scre
     </member>
     <member name="P:UnityEditor.IMGUI.Controls.PrimitiveBoundsHandle.midpointHandleSizeFunction">
       <summary>
-        <para>An optional Handles.HandleSizeFunction to specify how large the control handles should be in the space of Handles.matrix. Defaults to a fixed screen-space size.</para>
+        <para>An optional Handles.SizeFunction to specify how large the control handles should be in the space of Handles.matrix. Defaults to a fixed screen-space size.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.IMGUI.Controls.PrimitiveBoundsHandle.wireframeColor">
@@ -16929,6 +16956,16 @@ GUILayout.MaxHeight, GUILayout.ExpandWidth, GUILayout.ExpandHeight.</param>
       <param name="label"></param>
       <param name="position"></param>
     </member>
+    <member name="M:UnityEditor.MaterialEditor.DoubleSidedGIField">
+      <summary>
+        <para>Display UI for editing a material's Double Sided Global Illumination setting.
+Returns true if the UI is indeed displayed i.e. the material supports the Double Sided Global Illumination setting.
++See Also: Material.doubleSidedGI.</para>
+      </summary>
+      <returns>
+        <para>True if the UI is displayed, false otherwise.</para>
+      </returns>
+    </member>
     <member name="M:UnityEditor.MaterialEditor.EmissionEnabledProperty">
       <summary>
         <para>This function will draw the UI for controlling whether emission is enabled or not on a material.</para>
@@ -17920,7 +17957,7 @@ See Also: MaterialLightmapFlags.</para>
     </member>
     <member name="T:UnityEditor.MenuCommand">
       <summary>
-        <para>Used to extract the context for a MenuItem. MenuCommand objects are passed to custom menu item functions defined using the MenuItem attribute.</para>
+        <para>Used to extract the context for a MenuItem.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.MenuCommand.context">
@@ -19510,7 +19547,7 @@ See Also: PhysicsVisualizationSettings.</para>
     </member>
     <member name="P:UnityEditor.PlayerSettings.applicationIdentifier">
       <summary>
-        <para>Set the application identifier for the currently selected build target.</para>
+        <para>The application identifier for the currently selected build target.</para>
       </summary>
     </member>
     <member name="P:UnityEditor.PlayerSettings.bakeCollisionMeshes">
@@ -22225,7 +22262,7 @@ For more information - https:msdn.microsoft.comlibrarywindowsappshh779671https:m
     </member>
     <member name="T:UnityEditor.Rendering.PlatformShaderSettings">
       <summary>
-        <para>Used to set up shader settings, per-platorm and per-shader-hardware-tier.</para>
+        <para>Used to set up shader settings, per-platform and per-shader-hardware-tier.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.Rendering.PlatformShaderSettings.cascadedShadowMaps">

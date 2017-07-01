@@ -6024,7 +6024,7 @@ Characters 0-9, . (dot), and - (dash / minus sign) are allowed. The dash is only
     </member>
     <member name="M:UnityEngine.UI.VertexHelper.AddUIVertexStream(System.Collections.Generic.List`1&lt;UnityEngine.UIVertex&gt;,System.Collections.Generic.List`1&lt;System.Int32&gt;)">
       <summary>
-        <para>Add a stream of custom UIVertex and corrisponding indices.</para>
+        <para>Add a stream of custom UIVertex and corresponding indices.</para>
       </summary>
       <param name="verts">The custom stream of verts to add to the helpers internal data.</param>
       <param name="indices">The custom stream of indices to add to the helpers internal data.</param>

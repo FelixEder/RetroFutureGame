@@ -81,7 +81,7 @@ public class SmallCritter : MonoBehaviour {
 		case "PickupableItem":
 			switch (col.gameObject.GetComponent<PickUpableItem> ().GetItemType ()) {
 			case "Rock":
-				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f) {
+				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
 					TakeDamage (col.gameObject.GetComponent<PickUpableItem> ().damage);
 				}
 				break;

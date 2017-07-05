@@ -8,7 +8,9 @@ public class CharMovement : MonoBehaviour {
 	InputManager input;
 	Animator childAnim;
 	public float moveSpeed, airSpeed, maxMoveSpeed, maxFallSpeed;
-	float axisH;
+	float axisH, steppingSpeed;
+
+	public bool smoothIncline;
 
 	void Start() {
 		status = GetComponent<CharStatus> ();
@@ -19,6 +21,8 @@ public class CharMovement : MonoBehaviour {
 		
 	void FixedUpdate() {
 		axisH = input.GetAxis("X");
+		steppingSpeed = moveSpeed - Mathf.Abs(rb2D.velocity.x);
+
 		if (axisH != 0) {
 			//Test if trying to move towards left wall and stop movement as well as decrease negative y velocity.
 			if (status.againstLeft && axisH < 0) {
@@ -39,17 +43,16 @@ public class CharMovement : MonoBehaviour {
 				if (Mathf.Sign (axisH) != Mathf.Sign (rb2D.velocity.x))
 					rb2D.velocity += new Vector2 (axisH * airSpeed / 2, 0);
 				else if (Mathf.Abs (rb2D.velocity.x) < maxMoveSpeed)
-					rb2D.velocity = new Vector2 (Mathf.Lerp (rb2D.velocity.x, axisH * airSpeed, Time.deltaTime * 5), rb2D.velocity.y);
+					rb2D.velocity = new Vector2 (Mathf.Lerp (rb2D.velocity.x, axisH * airSpeed, Time.fixedDeltaTime * 5), rb2D.velocity.y);
 			}
 			//Movement
 			else if (Mathf.Abs (rb2D.velocity.x) < maxMoveSpeed)
 				rb2D.velocity = new Vector2 (axisH * moveSpeed, rb2D.velocity.y);
 			else if (Mathf.Sign (axisH) != Mathf.Sign (rb2D.velocity.x))
 				rb2D.velocity = new Vector2 (axisH * moveSpeed, rb2D.velocity.y);
-			/*
-			if (rigidBody2D.velocity.y < -maxFallSpeed)
-				rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, -maxFallSpeed);
-			*/
+			//Movement up steps and inclines
+			if(!status.againtsFront && status.againstStep && rb2D.velocity.y < steppingSpeed)
+				rb2D.velocity = new Vector2(rb2D.velocity.x, steppingSpeed);
 		}
 	}
 

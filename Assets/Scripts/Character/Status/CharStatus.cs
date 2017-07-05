@@ -5,7 +5,7 @@ public class CharStatus : MonoBehaviour {
 	public bool isMirrored, isFloating, invulnerable, isSmall;
 	public float velocityX, velocityY;
 
-	public bool grounded, againstLeft, againstRight, onPlatform;
+	public bool grounded, againstLeft, againstRight, onPlatform, againtsFront, againstStep;
 	public LayerMask whatIsGround, whatIsPlatform, whatIsWall;
 	public Transform downCheck, backCheck, frontCheck;
 
@@ -13,17 +13,22 @@ public class CharStatus : MonoBehaviour {
 		velocityX = GetComponent<Rigidbody2D>().velocity.x;
 		velocityY = GetComponent<Rigidbody2D>().velocity.y;
 	
-		grounded = GetComponent<Rigidbody2D>().velocity.y < 1f ? Physics2D.OverlapBox (downCheck.position, new Vector2 (0.55f, 0.1f), 0, whatIsGround) : false;
+		grounded = GetComponent<Rigidbody2D>().velocity.y < 1f || grounded ? Physics2D.OverlapBox (downCheck.position, new Vector2 (0.55f, 0.1f), 0, whatIsGround) : false;
 		onPlatform = Physics2D.OverlapBox (downCheck.position, new Vector2 (0.6f, 0.1f), 0, whatIsPlatform);
-		againstLeft = isMirrored ? Physics2D.OverlapBox (frontCheck.position, new Vector2 (0.1f, 1.9f), 0, whatIsWall) : Physics2D.OverlapBox (backCheck.position, new Vector2 (0.1f, 1.9f), 0, whatIsWall);
-		againstRight = isMirrored ? Physics2D.OverlapBox (backCheck.position, new Vector2 (0.1f, 1.9f), 0, whatIsWall) : Physics2D.OverlapBox (frontCheck.position, new Vector2 (0.1f, 1.9f), 0, whatIsWall);
+		againstLeft = isMirrored ? Physics2D.OverlapBox (frontCheck.position, new Vector2 (0.1f, 1.7f), 0, whatIsWall) : Physics2D.OverlapBox (backCheck.position, new Vector2 (0.1f, 1.9f), 0, whatIsWall);
+		againstRight = isMirrored ? Physics2D.OverlapBox (backCheck.position, new Vector2 (0.1f, 1.9f), 0, whatIsWall) : Physics2D.OverlapBox (frontCheck.position, new Vector2 (0.1f, 1.7f), 0, whatIsWall);
+
+		againtsFront = Physics2D.OverlapBox(frontCheck.position, new Vector2(0.1f, 1.7f), 0, whatIsWall);
+		againstStep = Physics2D.OverlapBox(frontCheck.position + new Vector3 (0, -0.95f, 0), new Vector2(0.1f, 0.2f), 0, whatIsWall);
 	}
 
 	void OnDrawGizmosSelected() {
 		Gizmos.color = new Color (1, 1, 0, 0.5f);
 		Gizmos.DrawCube (downCheck.position, new Vector3 (0.55f, 0.1f, 1));
 		Gizmos.DrawCube (backCheck.position, new Vector3 (0.1f, 1.9f, 1));
-		Gizmos.DrawCube (frontCheck.position, new Vector3 (0.1f, 1.9f, 1));
+		Gizmos.DrawCube (frontCheck.position, new Vector3 (0.1f, 1.7f, 1));
+		Gizmos.color = new Color(0, 1f, 0, 0.5f);
+		Gizmos.DrawCube(frontCheck.position + new Vector3 (0, -0.95f, 0), new Vector3(0.1f, 0.2f, 1));
 	}
 
 	/**

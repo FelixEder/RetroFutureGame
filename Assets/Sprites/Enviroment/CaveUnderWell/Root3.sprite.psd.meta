@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Sprites/Enviroment/CaveUnderWell/Root3.sprite.psd.meta
 guid: 4b1c53043a7d0fa4f84362af21014649
 timeCreated: 1499257478
+=======
+guid: 3468fc7cded20d84ea23b00a39f1c1fa
+timeCreated: 1499006565
+>>>>>>> ddc58546c4bf7e654265c6fa883c7d0f34d4f2e9:Assets/Sprites/Enviroment/CaveUnderWell/Root3.sprite.psd.meta
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}

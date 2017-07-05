@@ -10,10 +10,10 @@ public class CharStatus : MonoBehaviour {
 	public Transform downCheck, backCheck, frontCheck;
 
 	void Update() {
-		velocityX = GetComponent<Rigidbody2D> ().velocity.x;
+		velocityX = GetComponent<Rigidbody2D>().velocity.x;
 		velocityY = GetComponent<Rigidbody2D>().velocity.y;
 	
-		grounded = GetComponent<Rigidbody2D>().velocity.y < 1f ? Physics2D.OverlapBox (downCheck.position, new Vector2 (0.6f, 0.1f), 0, whatIsGround) : false;
+		grounded = GetComponent<Rigidbody2D>().velocity.y < 1f ? Physics2D.OverlapBox (downCheck.position, new Vector2 (0.55f, 0.1f), 0, whatIsGround) : false;
 		onPlatform = Physics2D.OverlapBox (downCheck.position, new Vector2 (0.6f, 0.1f), 0, whatIsPlatform);
 		againstLeft = isMirrored ? Physics2D.OverlapBox (frontCheck.position, new Vector2 (0.1f, 1.9f), 0, whatIsWall) : Physics2D.OverlapBox (backCheck.position, new Vector2 (0.1f, 1.9f), 0, whatIsWall);
 		againstRight = isMirrored ? Physics2D.OverlapBox (backCheck.position, new Vector2 (0.1f, 1.9f), 0, whatIsWall) : Physics2D.OverlapBox (frontCheck.position, new Vector2 (0.1f, 1.9f), 0, whatIsWall);

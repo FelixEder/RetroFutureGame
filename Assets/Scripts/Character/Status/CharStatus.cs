@@ -20,15 +20,17 @@ public class CharStatus : MonoBehaviour {
 
 		againtsFront = Physics2D.OverlapBox(frontCheck.position, new Vector2(0.1f, 1.7f), 0, whatIsWall);
 		againstStep = Physics2D.OverlapBox(frontCheck.position + new Vector3 (0, -0.95f, 0), new Vector2(0.1f, 0.2f), 0, whatIsWall);
+
+		//NOTE: if first statement (before ?) is true, var equals first value (after ?), else it equals second value (after :).
 	}
 
 	void OnDrawGizmosSelected() {
-		Gizmos.color = new Color (1, 1, 0, 0.5f);
-		Gizmos.DrawCube (downCheck.position, new Vector3 (0.55f, 0.1f, 1));
-		Gizmos.DrawCube (backCheck.position, new Vector3 (0.1f, 1.9f, 1));
-		Gizmos.DrawCube (frontCheck.position, new Vector3 (0.1f, 1.7f, 1));
-		Gizmos.color = new Color(0, 1f, 0, 0.5f);
-		Gizmos.DrawCube(frontCheck.position + new Vector3 (0, -0.95f, 0), new Vector3(0.1f, 0.2f, 1));
+		Gizmos.color = new Color (1, 1, 0, 0.5f); //yellow
+		Gizmos.DrawCube (downCheck.position, new Vector3 (0.55f, 0.1f, 1)); //downcheck
+		Gizmos.DrawCube (backCheck.position, new Vector3 (0.1f, 1.9f, 1)); //backcheck
+		Gizmos.DrawCube (frontCheck.position, new Vector3 (0.1f, 1.7f, 1)); //frontcheck
+		Gizmos.color = new Color(0, 1f, 0, 0.5f); //green
+		Gizmos.DrawCube(frontCheck.position + new Vector3 (0, -0.95f, 0), new Vector3(0.1f, 0.2f, 1)); //stepcheck
 	}
 
 	/**
@@ -37,17 +39,6 @@ public class CharStatus : MonoBehaviour {
 	public bool InAir() {
 		return (!grounded && !againstLeft && !againstRight);
 	}
-
-/*
-	public bool IsMegaPunching() {
-		return (megaPunch || chargedMegaPunch);
-	}
-
-	public void NoLongerMegaPunching() {
-		megaPunch = false;
-		chargedMegaPunch = false;
-	}
-*/
 
 	public void Invulnerable(float time) {
 		invulnerable = true;

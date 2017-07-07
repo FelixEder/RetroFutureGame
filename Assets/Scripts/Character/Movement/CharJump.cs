@@ -16,7 +16,7 @@ public class CharJump : MonoBehaviour {
 	}
 		
 	void Update () {
-		if ((hasJumped || hasSecondJumped) && status.grounded) {
+		if (!input.GetKey("jump") && (hasJumped || hasSecondJumped) && status.grounded) {
 			hasJumped = false;
 			hasSecondJumped = false;
 		}
@@ -56,7 +56,7 @@ public class CharJump : MonoBehaviour {
 			holdJump = true;
 		}
 		//decrease vertical velocity if let go of jump early
-		else if (!input.GetKey ("jump") && hasJumped && rb2D.velocity.y > jumpSpeed / 1.8f)
-			rb2D.velocity = new Vector2 (rb2D.velocity.x, jumpSpeed / 1.8f);
+		else if (!input.GetKey ("jump") && hasJumped && rb2D.velocity.y > jumpSpeed / 2f)
+			rb2D.velocity = new Vector2 (rb2D.velocity.x, rb2D.velocity.y / 1.5f);
 	}
 }

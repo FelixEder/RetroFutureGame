@@ -16,47 +16,53 @@ public class CharJump : MonoBehaviour {
 	}
 		
 	void Update () {
-		if (!input.GetKey("jump") && (hasJumped || hasSecondJumped) && status.grounded) {
+		if (!input.GetKey("jump") && (hasJumped || hasSecondJumped) && status.grounded && !holdJump) {
 			hasJumped = false;
 			hasSecondJumped = false;
 		}
 		//enable jump button when not holding button and on surface
-		if (!input.GetKey ("jump") && holdJump && status.grounded) {
+		if (!input.GetKey ("jump") && holdJump) {
 			holdJump = false;
 		}
-		else if (!input.GetKey ("jump") && holdJump && gotSecondJump && !hasSecondJumped)
-			holdJump = false;
-		
+
 		//jump down through platform when holding down and pressing jump
-		if (input.GetAxis ("Y") < -0.3f && input.GetAxis ("Ybool") < 0f) {
-			if (input.GetKey ("jump") && !holdJump && status.onPlatform) {
-				Debug.Log ("JUMPDOWN");
+		if(input.GetAxis("Y") < -0.3f && input.GetAxis("Ybool") < 0f) {
+			if(input.GetKey("jump") && !holdJump && status.onPlatform) {
+				Debug.Log("JUMPDOWN");
 				jumpDown = true;
 				holdJump = true;
-				rb2D.velocity = new Vector2 (rb2D.velocity.x, -1f);
-				transform.GetChild (1).gameObject.SetActive (false);
+				rb2D.velocity = new Vector2(rb2D.velocity.x, -1f);
+				transform.GetChild(1).gameObject.SetActive(false);
 			}
-			if (jumpDown)
-				rb2D.velocity = status.onPlatform ? new Vector2 (rb2D.velocity.x, -1f) : rb2D.velocity;
+			if(jumpDown)
+				rb2D.velocity = status.onPlatform ? new Vector2(rb2D.velocity.x, -1f) : rb2D.velocity;
 		}
-		else if (jumpDown) {
-			transform.GetChild (1).gameObject.SetActive (true);
+		else if(jumpDown) {
+			transform.GetChild(1).gameObject.SetActive(true);
 			jumpDown = false;
 		}
+
+		//swim in water
+		else if(input.GetKey("jump") && status.inWater) {
+			rb2D.velocity = rb2D.velocity.y < jumpSpeed / 2 ? new Vector2(rb2D.velocity.x, rb2D.velocity.y + (jumpSpeed / 20)) : rb2D.velocity;
+			holdJump = true;
+		}
+
 		//jump when on surface and pressing jump
-		else if (input.GetKey ("jump") && !holdJump && status.grounded) {
-			rb2D.velocity = new Vector2 (rb2D.velocity.x, jumpSpeed);
+		else if(input.GetKey("jump") && !holdJump && status.grounded && !hasJumped) {
+			rb2D.velocity = new Vector2(rb2D.velocity.x, jumpSpeed);
 			hasJumped = true;
 			holdJump = true;
 		}
 		//jump in air when have secondjump and has not secondjumped.
-		else if (input.GetKey ("jump") && gotSecondJump && !holdJump) {
-			rb2D.velocity = new Vector2 (rb2D.velocity.x, secondJumpSpeed);
+		else if(input.GetKey("jump") && gotSecondJump && !holdJump && !hasSecondJumped) {
+			rb2D.velocity = new Vector2(rb2D.velocity.x, secondJumpSpeed);
 			hasSecondJumped = true;
 			holdJump = true;
 		}
+
 		//decrease vertical velocity if let go of jump early
-		else if (!input.GetKey ("jump") && hasJumped && rb2D.velocity.y > jumpSpeed / 2f)
-			rb2D.velocity = new Vector2 (rb2D.velocity.x, rb2D.velocity.y / 1.5f);
+		else if(!input.GetKey("jump") && hasJumped && rb2D.velocity.y > jumpSpeed / 2f)
+			rb2D.velocity = new Vector2(rb2D.velocity.x, rb2D.velocity.y / 1.5f);
 	}
 }

@@ -13,41 +13,46 @@ public class SmallCritter : MonoBehaviour {
 	bool invulnerable, touchingSomething, hasSeenPlayer, wanderLeft;
 
 	void Start() {
-		audioplay = GetComponent<AudioPlayer> ();
-		player = GameObject.Find ("Char");
+		audioplay = GetComponent<AudioPlayer>();
+		player = GameObject.Find("Char");
 		startPos = transform.position.x;
-		if (Random.Range (0, 2) == 0)
+		if(Random.Range(0, 2) == 0)
 			wanderLeft = true;
-		initialFreezeTime = GetComponent<SpawnProperties> ().initialFreezeTime;
-		wanderDistance = GetComponent<SpawnProperties> ().wanderDistance;
-		rb2D = GetComponent<Rigidbody2D> ();
-		if (initialFreezeTime > 0)
-			Invoke ("InitializeMoveSpeed", initialFreezeTime);
+		initialFreezeTime = GetComponent<SpawnProperties>().initialFreezeTime;
+		wanderDistance = GetComponent<SpawnProperties>().wanderDistance;
+		rb2D = GetComponent<Rigidbody2D>();
+		if(initialFreezeTime > 0)
+			Invoke("InitializeMoveSpeed", initialFreezeTime);
 	}
 
 	void FixedUpdate() {
-		calculateMirror ();
-		if (activeMoveSpeed > 0 && touchingSomething) {
-			if (PlayerInRange () && DistanceFromPlayer() > 1) { //follow player if player is in range
-				rb2D.velocity = new Vector2 (activeMoveSpeed * Mathf.Sign (player.transform.position.x - transform.position.x), rb2D.velocity.y);
+		calculateMirror();
+		if(activeMoveSpeed > 0 && touchingSomething) {
+			if(PlayerInRange() && DistanceFromPlayer() > 1) { //follow player if player is in range
+				rb2D.velocity = new Vector2(activeMoveSpeed * Mathf.Sign(player.transform.position.x - transform.position.x), rb2D.velocity.y);
 			}
-			else if (!PlayerInRange()) { //wander within start pos if outside followdistance.
-				if (transform.position.x - startPos > wanderDistance)
+			else if(!PlayerInRange()) { //wander within start pos if outside followdistance.
+				if(transform.position.x - startPos > wanderDistance)
 					wanderLeft = true;
-				else if (startPos - transform.position.x > wanderDistance)
+				else if(startPos - transform.position.x > wanderDistance)
 					wanderLeft = false;
-				
-				if (wanderLeft)
-					rb2D.velocity = new Vector2 (activeMoveSpeed * -0.7f, rb2D.velocity.y);
+
+				if(wanderLeft)
+					rb2D.velocity = new Vector2(activeMoveSpeed * -0.7f, rb2D.velocity.y);
 				else
-					rb2D.velocity = new Vector2 (activeMoveSpeed * 0.7f, rb2D.velocity.y);
+					rb2D.velocity = new Vector2(activeMoveSpeed * 0.7f, rb2D.velocity.y);
 			}
 		}
 	}
 
 	void OnBecameVisible() {
-		if (initialFreezeTime == 0)
-			InitializeMoveSpeed ();
+		if(initialFreezeTime == 0)
+			InitializeMoveSpeed();
+	}
+
+	void OnTriggerStay2D(Collider2D col) {
+		if(col.gameObject.tag.Equals("Water"))
+			TakeDamage(Random.Range(0, 2));
 	}
 
 	void OnCollisionStay2D() {
@@ -61,39 +66,39 @@ public class SmallCritter : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col) {
 		switch(col.gameObject.tag) {
 
-		case "Char":
-			col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage, gameObject, knockForce);
+			case "Char":
+				col.gameObject.GetComponent<CharHealth>().TakeDamage(damage, gameObject, knockForce);
 
-			break;
-
-		case "SmallCritter":
-		case "JumpingCritter":
-		case "HardEnemy":
-		case "BigEyeGuy":
-		case "CrawlerCritter":
-		case "ShellMan":
-		case "Wall":
-		case "Door":
-		case "Barrier":
-			wanderLeft = !wanderLeft;
-			break;
-
-		case "PickupableItem":
-			switch (col.gameObject.GetComponent<PickUpableItem> ().GetItemType ()) {
-			case "Rock":
-				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
-					TakeDamage (col.gameObject.GetComponent<PickUpableItem> ().damage);
-				}
 				break;
 
-			case "Branch":
-				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
-					TakeDamage (col.gameObject.GetComponent<PickUpableItem> ().damage);
-					col.gameObject.GetComponent<PickUpableItem> ().Break ();
+			case "SmallCritter":
+			case "JumpingCritter":
+			case "HardEnemy":
+			case "BigEyeGuy":
+			case "CrawlerCritter":
+			case "ShellMan":
+			case "Wall":
+			case "Door":
+			case "Barrier":
+				wanderLeft = !wanderLeft;
+				break;
+
+			case "PickupableItem":
+				switch(col.gameObject.GetComponent<PickUpableItem>().GetItemType()) {
+					case "Rock":
+						if(col.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude >= 2.0f) {
+							TakeDamage(col.gameObject.GetComponent<PickUpableItem>().damage);
+						}
+						break;
+
+					case "Branch":
+						if(col.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude >= 2.0f) {
+							TakeDamage(col.gameObject.GetComponent<PickUpableItem>().damage);
+							col.gameObject.GetComponent<PickUpableItem>().Break();
+						}
+						break;
 				}
 				break;
-			}
-			break;
 		}
 	}
 
@@ -101,26 +106,28 @@ public class SmallCritter : MonoBehaviour {
 	 * Mirrors the enemy and therefor makes it change direction.
 	 */
 	void calculateMirror() {
-		if (!invulnerable) {
-			if (rb2D.velocity.x > 1) {
-				transform.rotation = Quaternion.Euler (0, 180, 0);
-				GetComponent<Animator> ().enabled = true;
-			} else if (rb2D.velocity.x < -1) {
-				transform.rotation = Quaternion.Euler (0, 0, 0);
-				GetComponent<Animator> ().enabled = true;
-			} else {
-				GetComponent<Animator> ().enabled = false;
+		if(!invulnerable) {
+			if(rb2D.velocity.x > 1) {
+				transform.rotation = Quaternion.Euler(0, 180, 0);
+				GetComponent<Animator>().enabled = true;
+			}
+			else if(rb2D.velocity.x < -1) {
+				transform.rotation = Quaternion.Euler(0, 0, 0);
+				GetComponent<Animator>().enabled = true;
+			}
+			else {
+				GetComponent<Animator>().enabled = false;
 			}
 		}
 	}
 
 	float DistanceFromPlayer() {
-		return Mathf.Abs (player.transform.position.x - transform.position.x);
+		return Mathf.Abs(player.transform.position.x - transform.position.x);
 	}
 
 	bool PlayerInRange() {
 		Vector2 pPos = player.transform.position, pos = transform.position;
-		if (Mathf.Abs (pPos.x - pos.x) < followDistance//player within follow distance in X;
+		if(Mathf.Abs(pPos.x - pos.x) < followDistance//player within follow distance in X;
 			&& pos.y - pPos.y < followDistanceDown//player less than 2u below;
 			&& pPos.y - pos.y < followDistanceUP)//player less than 6u above;
 			return true;
@@ -132,15 +139,15 @@ public class SmallCritter : MonoBehaviour {
 	 * Method called when enemy is hit by the player
 	 */
 	public void TakeDamage(int damage) {
-		if (!invulnerable) {
+		if(!invulnerable) {
 			//Play a sound and animation.
-			audioplay.PlayClip (0, 1, 0.5f, 1.5f);
+			audioplay.PlayClip(0, 1, 0.5f, 1.5f);
 			health -= damage;
 			invulnerable = true;
-			Invoke ("SetVulnerable", invulnerabilityTime);
-			if (health <= 0)
-				StartCoroutine(Die ());
-				
+			Invoke("SetVulnerable", invulnerabilityTime);
+			if(health <= 0)
+				StartCoroutine(Die());
+
 		}
 	}
 
@@ -149,27 +156,28 @@ public class SmallCritter : MonoBehaviour {
 	}
 
 	public void Knockback(GameObject attacker, float force) {
-		if (!invulnerable) {
+		if(!invulnerable) {
 			activeMoveSpeed = 0;
-			if (transform.position.x < attacker.transform.position.x)
-				GetComponent<Rigidbody2D> ().velocity = new Vector2 (-force, 2);
+			if(transform.position.x < attacker.transform.position.x)
+				GetComponent<Rigidbody2D>().velocity = new Vector2(-force, 2);
 			else
-				GetComponent<Rigidbody2D> ().velocity = new Vector2 (force, 2);
-			Invoke ("InitializeMoveSpeed", invulnerabilityTime);
+				GetComponent<Rigidbody2D>().velocity = new Vector2(force, 2);
+			Invoke("InitializeMoveSpeed", invulnerabilityTime);
 		}
 	}
 
 	IEnumerator Die() {
-		audioplay.PlayDetached (1, 1, 0.5f, 1.5f);
-		GetComponent<SpriteRenderer> ().material = glitchMaterial;
-		yield return new WaitForSeconds (0.2f);
+		audioplay.PlayDetached(1, 1, 0.5f, 1.5f);
+		GetComponent<SpriteRenderer>().material = glitchMaterial;
+		yield return new WaitForSeconds(0.2f);
 		int ranNumb = Random.Range(0, 60);
-		if (ranNumb < 20) {
-			Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
-		} else if (ranNumb < 40) {
-			Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
+		if(ranNumb < 20) {
+			Instantiate(Resources.Load("HealthDrop"), transform.position, Quaternion.identity);
 		}
-		Destroy (this.gameObject);
+		else if(ranNumb < 40) {
+			Instantiate(Resources.Load("EnergyDrop"), transform.position, Quaternion.identity);
+		}
+		Destroy(this.gameObject);
 	}
 
 	void InitializeMoveSpeed() {

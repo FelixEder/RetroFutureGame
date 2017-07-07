@@ -5,8 +5,8 @@ public class CharStatus : MonoBehaviour {
 	public bool isMirrored, isFloating, invulnerable, isSmall;
 	public float velocityX, velocityY;
 
-	public bool grounded, againstLeft, againstRight, onPlatform, againtsFront, againstStep;
-	public LayerMask whatIsGround, whatIsPlatform, whatIsWall;
+	public bool grounded, againstLeft, againstRight, onPlatform, againtsFront, againstStep, inWater;
+	public LayerMask whatIsGround, whatIsPlatform, whatIsWall, whatIsWater;
 	public Transform downCheck, backCheck, frontCheck;
 
 	void Update() {
@@ -20,6 +20,8 @@ public class CharStatus : MonoBehaviour {
 
 		againtsFront = Physics2D.OverlapBox(frontCheck.position, new Vector2(0.1f, 1.7f), 0, whatIsWall);
 		againstStep = Physics2D.OverlapBox(frontCheck.position + new Vector3 (0, -0.95f, 0), new Vector2(0.1f, 0.2f), 0, whatIsWall);
+
+		inWater = Physics2D.OverlapBox(transform.position, new Vector2(0.6f, 0.1f), 0, whatIsWater) && Physics2D.OverlapBox(downCheck.position, new Vector2(0.6f, 0.1f), 0, whatIsWater);
 
 		//NOTE: if first statement (before ?) is true, var equals first value (after ?), else it equals second value (after :).
 	}

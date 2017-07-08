@@ -10,7 +10,6 @@ public class SpikesfromGoogle : MonoBehaviour {
 
 		case "Char":
 			col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage, gameObject, knockForce);
-			col.gameObject.GetComponent<Rigidbody2D> ().AddForce (new Vector2(0, knockForce / 2),ForceMode2D.Impulse);
 			break;
 
 		case "SmallCritter":

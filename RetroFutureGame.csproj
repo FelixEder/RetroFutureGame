@@ -121,7 +121,9 @@
     <Compile Include="Assets\Scripts\Enemies\Enemies\StompEnemies\CrawlerCritter.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemies\StompEnemies\ShellMan.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemies\StompEnemies\ShellManJumpingTrigger.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyKnockback.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Enemies\SpawnProperties.cs" />
     <Compile Include="Assets\Scripts\Enviroment\BackgroundParallax.cs" />
     <Compile Include="Assets\Scripts\Enviroment\ForegroundCover.cs" />

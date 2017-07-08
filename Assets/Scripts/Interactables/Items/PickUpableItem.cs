@@ -19,18 +19,13 @@ public class PickUpableItem : MonoBehaviour {
 		player = GameObject.Find ("Char");
 	}
 
-	void FixedUpdate() {
+	void Update() {
 		if (beingHeld) {
 			transform.position = holdPosition.position;
 			transform.rotation = holdPosition.rotation;
-			//transform.localPosition = new Vector2 (HoldPositionX, HoldPositionY);
-			//transform.localPosition += new Vector3 (0.1f, -0.1f, 0);
+
 		}
-		/*
-		if (rigidBody2D.velocity.y < -8) {
-			rigidBody2D.velocity = new Vector2 (rigidBody2D.velocity.x, -8);
-		}
-		*/
+
 	}
 
 	/**Sets the gameobject as child of "player" and freezes all it's movement.*/
@@ -40,7 +35,7 @@ public class PickUpableItem : MonoBehaviour {
 		transform.localRotation = Quaternion.Euler (new Vector3 (0, 0, 0));
 		beingHeld = true;
 		Debug.Log ("Pickup " + gameObject);
-		InvokeRepeating ("QuestionExistance", 20f, 15f);
+		InvokeRepeating ("QuestionExistance", 20f, 20f);
 	}
 
 	/**
@@ -105,8 +100,19 @@ public class PickUpableItem : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
-		if (gameObject.layer == LayerMask.NameToLayer ("CPickupableItem"))
-			Invoke ("ResetLayer", 0.1f);
+		Debug.Log(rb2D.velocity.magnitude);
+		if(rb2D.velocity.magnitude > 2f) {
+			switch(col.gameObject.tag) {
+				case "SmallCritter":
+				case "JumpingCritter":
+					col.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+					if(itemType == "Branch")
+						Break();
+				break;
+			}
+		}
+		if(gameObject.layer == LayerMask.NameToLayer("CPickupableItem"))
+			Invoke("ResetLayer", 0.1f);
 	}
 
 	void ResetLayer() {

@@ -155,8 +155,8 @@ public class CharPunch : MonoBehaviour {
 				break;
 
 			case "SmallCritter" :
-				victim.gameObject.GetComponent<SmallCritter>().Knockback(gameObject, 4);
-				victim.gameObject.GetComponent<SmallCritter>().TakeDamage(damage);
+				victim.gameObject.GetComponent<EnemyHealth>().Knockback(gameObject, 4);
+				victim.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
 				break;
 
 			case "JumpingCritter":

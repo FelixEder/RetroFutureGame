@@ -16,37 +16,37 @@ public class Electrohaz : MonoBehaviour {
 		sr.sprite = inactive;
 		InvokeRepeating("EspisMetod", 0, 2);
 		*/
-		audioplay = GetComponent<AudioPlayer> ();
-		StartCoroutine (GustavsMetod ());
+		audioplay = GetComponent<AudioPlayer>();
+		StartCoroutine(GustavsMetod());
 	}
 
 	void Update() {
-		transform.localPosition = new Vector2 (transform.localPosition.x + 0.1f, transform.localPosition.y);
-		transform.localPosition = new Vector2 (transform.localPosition.x - 0.1f, transform.localPosition.y);
+		transform.localPosition = new Vector2(transform.localPosition.x + 0.1f, transform.localPosition.y);
+		transform.localPosition = new Vector2(transform.localPosition.x - 0.1f, transform.localPosition.y);
 	}
 
 	IEnumerator GustavsMetod() {
-		while (true) {
+		while(true) {
 			//Idle
-			yield return new WaitForSeconds (5f);
+			yield return new WaitForSeconds(5f);
 
-			GetComponent<Animator> ().SetTrigger ("Start");
-			while (GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName ("idle")) {
+			GetComponent<Animator>().SetTrigger("Start");
+			while(GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("idle")) {
 				yield return 0;
 			}
 			//Charging
-			audioplay.PlayClip (2, 1);
+			audioplay.PlayClip(2, 1);
 
-			while (GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName ("lightning_charge")) {
+			while(GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("lightning_charge")) {
 				yield return 0;
 			}
 			//Active
 			isActive = true;
 			audioplay.StopPlaying();
-			audioplay.PlayClip (1, 1);
-			audioplay.PlayClip (0, 1);
+			audioplay.PlayClip(1, 1);
+			audioplay.PlayClip(0, 1);
 
-			while (GetComponent<Animator> ().GetCurrentAnimatorStateInfo (0).IsName ("lightning_active")) {
+			while(GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("lightning_active")) {
 				yield return 0;
 			}
 			//Idle
@@ -74,29 +74,27 @@ public class Electrohaz : MonoBehaviour {
 	*/
 
 	void OnTriggerStay2D(Collider2D col) {
-		if (isActive) {
-			switch (col.gameObject.tag) {
-			case "Char":
-				col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage, gameObject, 5f);
-				break;
+		if(isActive) {
+			switch(col.gameObject.tag) {
+				case "Char":
+					col.gameObject.GetComponent<CharHealth>().TakeDamage(damage, gameObject, 5f);
+					break;
 
-			case "SmallCritter":
-				col.gameObject.GetComponent<SmallCritter>().Knockback(gameObject, 0);
-				col.gameObject.GetComponent<SmallCritter> ().TakeDamage (99);
-				break;
+				case "SmallCritter":
+				case "JumpingCritter":
+				case "HardEnemy":
+				case "BigEyeGuy":
+				case "CrawlerCritter":
+				case "ShellMan":
+					col.gameObject.GetComponent<EnemyHealth>().TakeDamage(99);
+					break;
 
-			case "JumpingCritter":
-			case "HardEnemy":
-			case "BigEyeGuy":
-			case "CrawlerCritter":
-			case "ShellMan":
-			case "Wall":
-			case "Door":
-				break;
-
-			case "PickupableItem":
-				col.gameObject.GetComponent<PickUpableItem> ().Break ();
-				break;
+				case "PickupableItem":
+					col.gameObject.GetComponent<PickUpableItem>().Break();
+					break;
+				case "Wall":
+				case "Door":
+					break;
 			}
 		}
 	}

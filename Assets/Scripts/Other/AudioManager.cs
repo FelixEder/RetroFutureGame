@@ -9,58 +9,58 @@ public class AudioManager : MonoBehaviour {
 	AudioControl control;
 
 	void Start() {
-		audioSource = GetComponent<AudioSource> ();
-		control = GameObject.Find ("Audio").GetComponent<AudioControl>();
+		audioSource = GetComponent<AudioSource>();
+		control = GameObject.Find("Audio").GetComponent<AudioControl>();
 		targetVolume = audioSource.volume;
 		controlVolume = 100;
 	}
 
 	void Update() {
-		if (controlVolume != control.GetMaster ()) {
-			controlVolume = control.GetMaster ();
-			if (controlVolume == 100)
-				ResetVolume ();
+		if(controlVolume != control.GetMaster()) {
+			controlVolume = control.GetMaster();
+			if(controlVolume == 100)
+				ResetVolume();
 			else
-				SetVolume (controlVolume);
+				SetVolume(controlVolume);
 		}
 	}
 
 	void OnTriggerEnter2D() {
-		if (playOnEnter) {
-			if (fadeIn) {
+		if(playOnEnter) {
+			if(fadeIn) {
 				StopAllCoroutines();
-				StartCoroutine (FadeIn ());
+				StartCoroutine(FadeIn());
 			}
 			else
-				audioSource.Play ();
+				audioSource.Play();
 		}
 	}
 
 	IEnumerator FadeIn() {
-		audioSource.Play ();
-		for (float volume = 0; volume < targetVolume; volume += fadeInSpeed) {
+		audioSource.Play();
+		for(float volume = 0; volume < targetVolume; volume += fadeInSpeed) {
 			audioSource.volume = volume;
-			yield return new WaitForSeconds (0.1f);
+			yield return new WaitForSeconds(0.1f);
 		}
 	}
 
 	void OnTriggerExit2D() {
-		if (stopOnExit) {
-			if (fadeOut) {
+		if(stopOnExit) {
+			if(fadeOut) {
 				StopAllCoroutines();
-				StartCoroutine (FadeOut ());
+				StartCoroutine(FadeOut());
 			}
 			else
-				audioSource.Stop ();
+				audioSource.Stop();
 		}
 	}
 
 	IEnumerator FadeOut() {
-		for (float volume = audioSource.volume; volume > 0; volume -= fadeOutSpeed) {
+		for(float volume = audioSource.volume; volume > 0; volume -= fadeOutSpeed) {
 			audioSource.volume = volume;
-			yield return new WaitForSeconds (0.1f);
+			yield return new WaitForSeconds(0.1f);
 		}
-		audioSource.Stop ();
+		audioSource.Stop();
 	}
 
 	/**Control the volume of the audio track in percent.*/

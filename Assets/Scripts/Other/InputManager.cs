@@ -6,24 +6,24 @@ public class InputManager : MonoBehaviour {
 	//jump, attack, grab, leaf, pause, shoot, mega, small;
 
 	public void Disable(float time) {
-		if (force)
+		if(force)
 			return;
-		Disable ();
-		CancelInvoke ("Enable");
-		Invoke ("Enable", time);
+		Disable();
+		CancelInvoke("Enable");
+		Invoke("Enable", time);
 	}
 
 	public void Disable() {
-		if (force)
+		if(force)
 			return;
-		CancelInvoke ("Enable");
+		CancelInvoke("Enable");
 		inputEnabled = false;
 	}
 
 	public void Enable() {
-		if (force)
+		if(force)
 			return;
-		CancelInvoke ("Enable");
+		CancelInvoke("Enable");
 		inputEnabled = true;
 	}
 
@@ -37,52 +37,52 @@ public class InputManager : MonoBehaviour {
 	}
 
 	public bool GetKey(string key) {
-		if (!inputEnabled)
+		if(!inputEnabled)
 			return false;
-		switch (key.ToLower()) {
+		switch(key.ToLower()) {
 
-		case "jump":
-			return Input.GetButton("Jump");
+			case "jump":
+				return Input.GetButton("Jump");
 
-		case "attack":
-			return Input.GetButton ("Attack");
+			case "attack":
+				return Input.GetButton("Attack");
 
-		case "grab":
-			return Input.GetButton ("Pickup");
+			case "grab":
+				return Input.GetButton("Pickup");
 
-		case "float":
-			return (Input.GetButton ("Leaf") || Input.GetAxis("Leaf") > 0);
+			case "float":
+				return (Input.GetButton("Leaf") || Input.GetAxis("Leaf") > 0);
 
-		case "shoot":
-			return Input.GetButton ("Shoot");
+			case "shoot":
+				return Input.GetButton("Shoot");
 
-		case "mega":
-			return Input.GetButton ("MegaAttack");
+			case "mega":
+				return Input.GetButton("MegaAttack");
 
-		case "small":
-			return Input.GetButton ("SmallButton");
+			case "small":
+				return Input.GetButton("SmallButton");
 
-		default:
-			return false;
+			default:
+				return false;
 		}
 	}
 
 	public float GetAxis(string axis) {
-		if (!inputEnabled)
+		if(!inputEnabled)
 			return 0;
-		switch (axis.ToLower()) {
+		switch(axis.ToLower()) {
 
-		case "x":
-			return Input.GetAxis ("Horizontal");
+			case "x":
+				return Input.GetAxis("Horizontal");
 
-		case "y":
-			return Input.GetAxis ("Vertical");
+			case "y":
+				return Input.GetAxis("Vertical");
 
-		case "ybool":
-			return Input.GetAxis ("VerticalBool");
+			case "ybool":
+				return Input.GetAxis("VerticalBool");
 
-		default:
-			return 0;
+			default:
+				return 0;
 		}
 	}
 }

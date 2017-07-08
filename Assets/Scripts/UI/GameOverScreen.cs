@@ -7,56 +7,56 @@ public class GameOverScreen : MonoBehaviour {
 	MenuControl menu;
 	InputManager input;
 
-	void Start () {
-		menu = GetComponent<MenuControl> ();
-		input = GameObject.Find ("InputManager").GetComponent<InputManager> ();
-		player = GameObject.Find ("Char");
+	void Start() {
+		menu = GetComponent<MenuControl>();
+		input = GameObject.Find("InputManager").GetComponent<InputManager>();
+		player = GameObject.Find("Char");
 
 		prefabspawners = GameObject.FindGameObjectsWithTag("PrefabSpawner");
 		itemspawners = GameObject.FindGameObjectsWithTag("PIS");
-		player = GameObject.Find ("Char");
-		menu.HideOverlay ();
+		player = GameObject.Find("Char");
+		menu.HideOverlay();
 	}
 
-	public void Gameover () {
-		input.Force (false, true);
-		menu.ShowOverlay ();
+	public void Gameover() {
+		input.Force(false, true);
+		menu.ShowOverlay();
 	}
 
-	public void Respawn () {
+	public void Respawn() {
 		//Revive player.
-		player.GetComponent<CharHealth> ().Revive ();
+		player.GetComponent<CharHealth>().Revive();
 
 		//Reset prefabspawners.
-		foreach (GameObject g in prefabspawners) {
-			g.GetComponent<PrefabSpawner> ().KillChildren ();
-			g.GetComponent<PrefabSpawner> ().SetToRespawn ();
+		foreach(GameObject g in prefabspawners) {
+			g.GetComponent<PrefabSpawner>().KillChildren();
+			g.GetComponent<PrefabSpawner>().SetToRespawn();
 		}
 
 		//Reset undefeated bosses.
 		GameObject[] bossSpawners = GameObject.FindGameObjectsWithTag("BossActivator");
-		foreach (GameObject g in bossSpawners) {
-			g.GetComponent<BossActivator> ().KillExtraChild ();
-			g.GetComponent<BossActivator> ().Trigger (true);
+		foreach(GameObject g in bossSpawners) {
+			g.GetComponent<BossActivator>().KillExtraChild();
+			g.GetComponent<BossActivator>().Trigger(true);
 		}
 
 		//Destroy pickupable items.
-		foreach (GameObject g in itemspawners)
-			g.GetComponent<PickupableItemSpawner> ().KillChildren ();
+		foreach(GameObject g in itemspawners)
+			g.GetComponent<PickupableItemSpawner>().KillChildren();
 
 		//Destroy monsterdrops.
 		GameObject[] drops = GameObject.FindGameObjectsWithTag("Drops");
 		foreach(GameObject g in drops)
-			Destroy (g);
+			Destroy(g);
 
 		//Place player at last checkpoint, reset camera and hide gameover overlay.
-		player.transform.position = player.GetComponent<Checkpoint> ().activeCheckpoint.transform.position;
-		player.transform.position += new Vector3 (0, 1, 0);
-		GameObject camera = GameObject.Find ("Main Camera");
+		player.transform.position = player.GetComponent<Checkpoint>().activeCheckpoint.transform.position;
+		player.transform.position += new Vector3(0, 1, 0);
+		GameObject camera = GameObject.Find("Main Camera");
 		camera.transform.position = player.transform.position;
-		camera.GetComponent<CameraMovement> ().followSpeed = 5;
+		camera.GetComponent<CameraMovement>().followSpeed = 5;
 
-		input.Force (true, false);
-		menu.HideOverlay ();
+		input.Force(true, false);
+		menu.HideOverlay();
 	}
 }

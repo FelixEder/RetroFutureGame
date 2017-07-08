@@ -15,27 +15,27 @@ public class Barriers : MonoBehaviour {
 	void Broken() {
 		broken = true;
 		//Play animation and 
-		if (barrierType == "Branch") {
-			GetComponent<SpriteRenderer> ().sprite = sprite;
-			StartCoroutine (Lower ());
+		if(barrierType == "Branch") {
+			GetComponent<SpriteRenderer>().sprite = sprite;
+			StartCoroutine(Lower());
 		}
 		else
 			Destroy(gameObject);
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
-		if (col.gameObject.tag == "PickupableItem" && col.gameObject.GetComponent<PickUpableItem>().GetItemType() == barrierType && col.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude >= 1.0f) {
-			TakeDamage (col.gameObject.GetComponent<PickUpableItem>().damage);
-			if (col.gameObject.GetComponent<PickUpableItem> ().GetItemType () == "Branch")
-				col.gameObject.GetComponent<PickUpableItem> ().Break ();
+		if(col.gameObject.tag == "PickupableItem" && col.gameObject.GetComponent<PickUpableItem>().GetItemType() == barrierType && col.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude >= 1.0f) {
+			TakeDamage(col.gameObject.GetComponent<PickUpableItem>().damage);
+			if(col.gameObject.GetComponent<PickUpableItem>().GetItemType() == "Branch")
+				col.gameObject.GetComponent<PickUpableItem>().Break();
 		}
 	}
 
 	public void TakeDamage(int damage) {
-		if (broken)
+		if(broken)
 			return;
 		health -= damage;
-		if (health <= 0) {
+		if(health <= 0) {
 			Broken();
 		}
 	}
@@ -46,10 +46,10 @@ public class Barriers : MonoBehaviour {
 	}
 
 	IEnumerator Lower() {
-		GetComponent<AudioPlayer> ().PlayClip (0, 0.6f);
-		yield return new WaitForSeconds (0.5f);
-		for (int i = 0; i < GetComponent<SpriteRenderer>().size.y / 0.05f + 2; i++) {
-			transform.position = new Vector2 (transform.position.x, transform.position.y - 0.05f);
+		GetComponent<AudioPlayer>().PlayClip(0, 0.6f);
+		yield return new WaitForSeconds(0.5f);
+		for(int i = 0; i < GetComponent<SpriteRenderer>().size.y / 0.05f + 2; i++) {
+			transform.position = new Vector2(transform.position.x, transform.position.y - 0.05f);
 			yield return 0;
 		}
 	}

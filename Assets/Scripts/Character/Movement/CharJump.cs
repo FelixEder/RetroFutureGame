@@ -9,19 +9,19 @@ public class CharJump : MonoBehaviour {
 	public bool jumpDown, holdJump, gotSecondJump, hasSecondJumped;
 	[SerializeField] bool hasJumped, jumpingBackward;
 
-	void Start () {
-		status = GetComponent<CharStatus> ();
-		rb2D = GetComponent<Rigidbody2D> ();
-		input = GameObject.Find ("InputManager").GetComponent<InputManager> ();
+	void Start() {
+		status = GetComponent<CharStatus>();
+		rb2D = GetComponent<Rigidbody2D>();
+		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 	}
-		
-	void Update () {
-		if (!input.GetKey("jump") && (hasJumped || hasSecondJumped) && status.grounded && !holdJump) {
+
+	void Update() {
+		if(!input.GetKey("jump") && (hasJumped || hasSecondJumped) && status.grounded && !holdJump) {
 			hasJumped = false;
 			hasSecondJumped = false;
 		}
 		//enable jump button when not holding button and on surface
-		if (!input.GetKey ("jump") && holdJump) {
+		if(!input.GetKey("jump") && holdJump) {
 			holdJump = false;
 		}
 

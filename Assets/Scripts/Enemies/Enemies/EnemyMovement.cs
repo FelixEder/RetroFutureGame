@@ -5,6 +5,10 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour {
 	public float followDist, followDistUp, followDistDown, wanderDist;
 	public float moveSpeed;
+	public bool jump;
+	public float jumpForce;
+	[Range(1, 100)]
+	public int jumpChance = 1;
 	public Vector2 groundcheckPos, wallcheckPos;
 	public LayerMask groundcheckMask, wallcheckMask, raycastMask;
 
@@ -21,7 +25,7 @@ public class EnemyMovement : MonoBehaviour {
 		Gizmos.DrawCube(transform.position - new Vector3(wallcheckPos.x * -wanderDir, 0, 0), new Vector3(0.1f, wallcheckPos.y, 0));
 	}
 
-	void Start () {
+	void Start() {
 		rb2D = GetComponent<Rigidbody2D>();
 		player = GameObject.Find("Char");
 		startPos = transform.position.x;
@@ -41,16 +45,23 @@ public class EnemyMovement : MonoBehaviour {
 
 		if(grounded) {
 			if(raycastHit) {
-				if(raycastHit.transform.name == "Char")
+				if(raycastHit.transform.name == "Char") {
 					rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < moveSpeed ? new Vector2(moveSpeed * 0.1f * Mathf.Sign(player.transform.position.x - transform.position.x), 0) : Vector2.zero;
+					wanderDir *= (int)Mathf.Sign(player.transform.position.x - transform.position.x);
+				}
 				else
 					rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < moveSpeed * 0.7f ? new Vector2(moveSpeed * 0.07f * wanderDir, 0) : Vector2.zero;
 			}
 			else
-				rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < moveSpeed * 0.7f ? new Vector2(moveSpeed * 0.07f * wanderDir, 0): Vector2.zero;
+				rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < moveSpeed * 0.7f ? new Vector2(moveSpeed * 0.07f * wanderDir, 0) : Vector2.zero;
 
 			if(transform.position.x - startPos > wanderDist && wanderDir == 1 || startPos - transform.position.x > wanderDist && wanderDir == -1)
 				wanderDir *= -1;
+
+			if(jump) {
+				if(Random.Range(0, 1000) < jumpChance)
+					rb2D.AddForce(new Vector2(-moveSpeed / 2, jumpForce), ForceMode2D.Impulse);
+			}
 		}
 	}
 
@@ -63,18 +74,17 @@ public class EnemyMovement : MonoBehaviour {
 	}
 
 	void SpriteFacing() {
-		if(grounded) {
-			if(rb2D.velocity.x > 1) {
-				transform.rotation = Quaternion.Euler(0, 180, 0);
-				GetComponent<Animator>().enabled = true;
-			}
-			else if(rb2D.velocity.x < -1) {
-				transform.rotation = Quaternion.Euler(0, 0, 0);
-				GetComponent<Animator>().enabled = true;
-			}
-			else {
-				GetComponent<Animator>().enabled = false;
-			}
+		if(rb2D.velocity.x > 1f) {
+			transform.rotation = Quaternion.Euler(0, 180, 0);
+			GetComponent<Animator>().enabled = true;
 		}
+		else if(rb2D.velocity.x < -1f) {
+			transform.rotation = Quaternion.Euler(0, 0, 0);
+			GetComponent<Animator>().enabled = true;
+		}
+		else {
+			GetComponent<Animator>().enabled = false;
+		}
+
 	}
 }

@@ -20,35 +20,36 @@ public class PrefabSpawner : MonoBehaviour {
 
 	void Start() {
 		willRespawn = true;
-		InvokeRepeating ("SpawnCheck", spawnStart, spawnInterval);
+		InvokeRepeating("SpawnCheck", spawnStart, spawnInterval);
 	}
 
 	/**Instantiates "type" prefab as gameobject and sets this gameobject as parent if the parent's childcount is less than maxSimultaneous.*/
 	void SpawnCheck() {
-		if (transform.childCount < maxSimultaneous && continuousRespawn) {
-			Spawn ();
-		} else if (transform.childCount < maxSimultaneous && !continuousRespawn && willRespawn) {
-			Spawn ();
-			if (transform.childCount >= maxSimultaneous)
+		if(transform.childCount < maxSimultaneous && continuousRespawn) {
+			Spawn();
+		}
+		else if(transform.childCount < maxSimultaneous && !continuousRespawn && willRespawn) {
+			Spawn();
+			if(transform.childCount >= maxSimultaneous)
 				willRespawn = false;
 		}
 	}
 
 	void Spawn() {
-		GameObject instance = Instantiate (Resources.Load (prefab), transform.position, Quaternion.identity) as GameObject;
+		GameObject instance = Instantiate(Resources.Load(prefab), transform.position, Quaternion.identity) as GameObject;
 		instance.transform.parent = transform;
-		if (setExtraOptions) {
-			instance.GetComponent<SpawnProperties> ().initialFreezeTime = prefabInitialFreezeTime;
-			instance.GetComponent<SpawnProperties> ().wanderDistance = prefabWanderDistance;
+		if(setExtraOptions) {
+			instance.GetComponent<SpawnProperties>().initialFreezeTime = prefabInitialFreezeTime;
+			instance.GetComponent<SpawnProperties>().wanderDistance = prefabWanderDistance;
 		}
-		instance.GetComponent<SpriteRenderer> ().sortingOrder = (int)Time.timeSinceLevelLoad;
+		instance.GetComponent<SpriteRenderer>().sortingOrder = (int) Time.timeSinceLevelLoad;
 	}
 
 	public void KillChildren() {
-		foreach (Transform child in transform) {
-			GameObject.Destroy (child.gameObject);
+		foreach(Transform child in transform) {
+			GameObject.Destroy(child.gameObject);
 		}
-		Debug.Log ("Prefab spawner:\nKilled all children.");
+		Debug.Log("Prefab spawner:\nKilled all children.");
 	}
 
 	public void SetToRespawn() {

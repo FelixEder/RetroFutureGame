@@ -9,8 +9,8 @@ public class BirdBossWingAttack : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
-		if (!col.collider.isTrigger && col.gameObject.tag.Equals("Char")) {
-			col.gameObject.GetComponent<CharHealth> ().TakeDamage (2, gameObject, 3f);
+		if(!col.collider.isTrigger && col.gameObject.tag.Equals("Char")) {
+			col.gameObject.GetComponent<CharHealth>().TakeDamage(2, gameObject, 3f);
 			//Play fitting soundFX
 		}
 	}

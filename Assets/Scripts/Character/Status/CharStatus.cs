@@ -12,14 +12,14 @@ public class CharStatus : MonoBehaviour {
 	void Update() {
 		velocityX = GetComponent<Rigidbody2D>().velocity.x;
 		velocityY = GetComponent<Rigidbody2D>().velocity.y;
-	
-		grounded = GetComponent<Rigidbody2D>().velocity.y < 1f || grounded ? Physics2D.OverlapBox (downCheck.position, new Vector2 (0.55f, 0.1f), 0, whatIsGround) : false;
-		onPlatform = Physics2D.OverlapBox (downCheck.position, new Vector2 (0.6f, 0.1f), 0, whatIsPlatform);
-		againstLeft = isMirrored ? Physics2D.OverlapBox (frontCheck.position, new Vector2 (0.1f, 1.7f), 0, whatIsWall) : Physics2D.OverlapBox (backCheck.position, new Vector2 (0.1f, 1.9f), 0, whatIsWall);
-		againstRight = isMirrored ? Physics2D.OverlapBox (backCheck.position, new Vector2 (0.1f, 1.9f), 0, whatIsWall) : Physics2D.OverlapBox (frontCheck.position, new Vector2 (0.1f, 1.7f), 0, whatIsWall);
+
+		grounded = GetComponent<Rigidbody2D>().velocity.y < 1f || grounded ? Physics2D.OverlapBox(downCheck.position, new Vector2(0.55f, 0.1f), 0, whatIsGround) : false;
+		onPlatform = Physics2D.OverlapBox(downCheck.position, new Vector2(0.6f, 0.1f), 0, whatIsPlatform);
+		againstLeft = isMirrored ? Physics2D.OverlapBox(frontCheck.position, new Vector2(0.1f, 1.7f), 0, whatIsWall) : Physics2D.OverlapBox(backCheck.position, new Vector2(0.1f, 1.9f), 0, whatIsWall);
+		againstRight = isMirrored ? Physics2D.OverlapBox(backCheck.position, new Vector2(0.1f, 1.9f), 0, whatIsWall) : Physics2D.OverlapBox(frontCheck.position, new Vector2(0.1f, 1.7f), 0, whatIsWall);
 
 		againtsFront = Physics2D.OverlapBox(frontCheck.position, new Vector2(0.1f, 1.7f), 0, whatIsWall);
-		againstStep = Physics2D.OverlapBox(frontCheck.position + new Vector3 (0, -0.95f, 0), new Vector2(0.1f, 0.2f), 0, whatIsWall);
+		againstStep = Physics2D.OverlapBox(frontCheck.position + new Vector3(0, -0.95f, 0), new Vector2(0.1f, 0.2f), 0, whatIsWall);
 
 		inWater = Physics2D.OverlapBox(transform.position, new Vector2(0.6f, 0.1f), 0, whatIsWater) && Physics2D.OverlapBox(downCheck.position, new Vector2(0.6f, 0.1f), 0, whatIsWater);
 
@@ -27,12 +27,12 @@ public class CharStatus : MonoBehaviour {
 	}
 
 	void OnDrawGizmosSelected() {
-		Gizmos.color = new Color (1, 1, 0, 0.5f); //yellow
-		Gizmos.DrawCube (downCheck.position, new Vector3 (0.55f, 0.1f, 1)); //downcheck
-		Gizmos.DrawCube (backCheck.position, new Vector3 (0.1f, 1.9f, 1)); //backcheck
-		Gizmos.DrawCube (frontCheck.position, new Vector3 (0.1f, 1.7f, 1)); //frontcheck
+		Gizmos.color = new Color(1, 1, 0, 0.5f); //yellow
+		Gizmos.DrawCube(downCheck.position, new Vector3(0.55f, 0.1f, 1)); //downcheck
+		Gizmos.DrawCube(backCheck.position, new Vector3(0.1f, 1.9f, 1)); //backcheck
+		Gizmos.DrawCube(frontCheck.position, new Vector3(0.1f, 1.7f, 1)); //frontcheck
 		Gizmos.color = new Color(0, 1f, 0, 0.5f); //green
-		Gizmos.DrawCube(frontCheck.position + new Vector3 (0, -0.95f, 0), new Vector3(0.1f, 0.2f, 1)); //stepcheck
+		Gizmos.DrawCube(frontCheck.position + new Vector3(0, -0.95f, 0), new Vector3(0.1f, 0.2f, 1)); //stepcheck
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class CharStatus : MonoBehaviour {
 
 	public void Invulnerable(float time) {
 		invulnerable = true;
-		Invoke ("SetVulnerable", time);
+		Invoke("SetVulnerable", time);
 	}
 
 	void SetVulnerable() {

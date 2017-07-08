@@ -13,59 +13,59 @@ public class MenuControl : MonoBehaviour {
 
 	void Awake() {
 		overlayObjects = GameObject.FindGameObjectsWithTag(overlayObjectsTag);
-		eventSystem = GameObject.Find ("EventSystem").GetComponent<EventSystem> ();
+		eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
 	}
 
 	void Update() {
 		//Detects if none of the buttons are selected and selects the last selected
-		if (GameObject.Find ("EventSystem").GetComponent<EventSystem> ().currentSelectedGameObject == null)
-			SetSelected (lastSelected);
+		if(GameObject.Find("EventSystem").GetComponent<EventSystem>().currentSelectedGameObject == null)
+			SetSelected(lastSelected);
 	}
 
 	public void ShowOverlay() {
-		foreach (GameObject g in overlayObjects) {
+		foreach(GameObject g in overlayObjects) {
 			g.SetActive(true);
 		}
-		SetSelected (firstSelected);
+		SetSelected(firstSelected);
 	}
 
 	//hides objects with ShowOnPause tag
 	public void HideOverlay() {
-		foreach (GameObject g in overlayObjects) {
+		foreach(GameObject g in overlayObjects) {
 			g.SetActive(false);
 		}
-		SetSelected (null);
-		HideOnOverlayHide ();
+		SetSelected(null);
+		HideOnOverlayHide();
 	}
 
 	//hides objects with HideOnPlay tag
 	public void HideOnOverlayHide() {
-		if (hideOnOverlayHideObjects != null) {
-			foreach (GameObject g in hideOnOverlayHideObjects) {
-				g.SetActive (false);
+		if(hideOnOverlayHideObjects != null) {
+			foreach(GameObject g in hideOnOverlayHideObjects) {
+				g.SetActive(false);
 			}
 		}
 	}
 
 	//shows a gameobject and updates the hideOnPlay array
 	public void ShowDialog(GameObject dialog) {
-		dialog.SetActive (true);
-		UpdateHideOnPlay ();
+		dialog.SetActive(true);
+		UpdateHideOnPlay();
 	}
 
 	//hides a gameobject and updates the hideOnPlay array
 	public void HideDialog(GameObject dialog) {
-		dialog.SetActive (false);
-		UpdateHideOnPlay ();
+		dialog.SetActive(false);
+		UpdateHideOnPlay();
 	}
 
 	public void UpdateHideOnPlay() {
-		hideOnOverlayHideObjects = GameObject.FindGameObjectsWithTag ("HideOnPlay");
+		hideOnOverlayHideObjects = GameObject.FindGameObjectsWithTag("HideOnPlay");
 	}
 
 	//sets a gameobject as selected and updates lastSelected
 	public void SetSelected(GameObject selected) {
-		eventSystem.SetSelectedGameObject (selected);
+		eventSystem.SetSelectedGameObject(selected);
 		lastSelected = selected;
 	}
 }

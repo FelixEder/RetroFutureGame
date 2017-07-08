@@ -11,18 +11,18 @@ public class PauseMenu : MonoBehaviour {
 	void Start() {
 		Time.timeScale = 1;
 
-		input = GameObject.Find ("InputManager").GetComponent<InputManager> ();
-		audiocontrol = GameObject.Find ("Audio").GetComponent<AudioControl> ();
+		input = GameObject.Find("InputManager").GetComponent<InputManager>();
+		audiocontrol = GameObject.Find("Audio").GetComponent<AudioControl>();
 
-		menu = GetComponent<MenuControl> ();
-		menu.HideOverlay ();
+		menu = GetComponent<MenuControl>();
+		menu.HideOverlay();
 
 	}
-		
+
 	void Update() {
 		//uses the Escape button to pause and unpause the game
-		if (Input.GetButtonDown ("Pause")) {
-			PauseControl ();
+		if(Input.GetButtonDown("Pause")) {
+			PauseControl();
 		}
 	}
 
@@ -33,30 +33,30 @@ public class PauseMenu : MonoBehaviour {
 
 	//controls the pausing of the scene
 	public void PauseControl() {
-		if (Time.timeScale == 1) {
-			Pause ();
+		if(Time.timeScale == 1) {
+			Pause();
 		}
-		else if (Time.timeScale == 0) {
-			Play ();
+		else if(Time.timeScale == 0) {
+			Play();
 		}
 	}
 
-	void Play () {
+	void Play() {
 		Time.timeScale = 1;
-		if (!inputWasDisabled)
-			input.Disable (0.2f);
+		if(!inputWasDisabled)
+			input.Disable(0.2f);
 		inputWasDisabled = false;
-		audiocontrol.SetMultiplier (100);
-		menu.HideOverlay ();
+		audiocontrol.SetMultiplier(100);
+		menu.HideOverlay();
 	}
 
-	void Pause () {
+	void Pause() {
 		Time.timeScale = 0;
-		if (!input.Enabled ())
+		if(!input.Enabled())
 			inputWasDisabled = true;
-		input.Disable ();
-		audiocontrol.SetMultiplier (20);
-		menu.ShowOverlay ();
+		input.Disable();
+		audiocontrol.SetMultiplier(20);
+		menu.ShowOverlay();
 	}
 
 	//loads inputted level
@@ -67,8 +67,8 @@ public class PauseMenu : MonoBehaviour {
 
 	//resumes the game
 	public void Resume() {
-		GameObject.Find ("Char").GetComponent<CharJump> ().holdJump = true; //prevent jumping when resuming
-		PauseControl ();
-		Debug.Log ("Resume");
+		GameObject.Find("Char").GetComponent<CharJump>().holdJump = true; //prevent jumping when resuming
+		PauseControl();
+		Debug.Log("Resume");
 	}
 }

@@ -8,33 +8,38 @@ public class CameraMovement : MonoBehaviour {
 
 	void Start() {
 		transform.position = followTarget.transform.position;
-		StartCoroutine (AdjustFocus (5));
+		StartCoroutine(AdjustFocus(5));
 	}
 
-	void FixedUpdate () {
+	void FixedUpdate() {
 		followPos = followTarget.transform.position;
 		position = transform.position;
-		transform.position = new Vector3 (Mathf.Lerp (position.x, target.x + adjustX, Time.fixedDeltaTime * followSpeed), Mathf.Lerp(position.y, target.y + adjustY, Time.fixedDeltaTime * followSpeed), -10);
-		GetComponent<Camera> ().orthographicSize = Mathf.Lerp (GetComponent<Camera> ().orthographicSize, size, Time.deltaTime);
+		transform.position = new Vector3(Mathf.Lerp(position.x, target.x + adjustX, FollowSpeed()), Mathf.Lerp(position.y, target.y + adjustY, FollowSpeed()), -10);
+		GetComponent<Camera>().orthographicSize = Mathf.Lerp(GetComponent<Camera>().orthographicSize, size, Time.fixedDeltaTime);
 		//Background camera
-		transform.GetChild(0).GetComponent<Camera>().fieldOfView = Mathf.Lerp (transform.GetChild(0).GetComponent<Camera>().fieldOfView, 40 + size * 7, Time.fixedDeltaTime);
+		transform.GetChild(0).GetComponent<Camera>().fieldOfView = Mathf.Lerp(transform.GetChild(0).GetComponent<Camera>().fieldOfView, 40 + size * 7, Time.fixedDeltaTime);
 		//Foreground camera
-		transform.GetChild(1).GetComponent<Camera>().fieldOfView = Mathf.Lerp (transform.GetChild(1).GetComponent<Camera>().fieldOfView, 20 + size * 10, Time.fixedDeltaTime);
+		transform.GetChild(1).GetComponent<Camera>().fieldOfView = Mathf.Lerp(transform.GetChild(1).GetComponent<Camera>().fieldOfView, 20 + size * 10, Time.fixedDeltaTime);
+		Debug.Log(FollowSpeed());
+	}
+
+	float FollowSpeed() {
+		return 0.05f * Vector2.Distance(transform.position, followTarget.transform.position);
 	}
 
 	public void AdjustPosition(float x, float y, float newSize, float speed, GameObject focus) {
 		focusTarget = focus;
-		StopAllCoroutines ();
-		StartCoroutine (AdjustTransition (x, y, newSize, speed));
-		StartCoroutine (AdjustFocus (speed));
+		StopAllCoroutines();
+		StartCoroutine(AdjustTransition(x, y, newSize, speed));
+		StartCoroutine(AdjustFocus(speed));
 	}
 
 	IEnumerator AdjustTransition(float x, float y, float newSize, float speed) {
-		while (adjustX < x - 0.1f || adjustY < y - 0.1f || size < newSize - 0.1f || adjustX > x + 0.1f || adjustY > y + 0.1f || size > newSize + 0.1f) {
-			adjustX = Mathf.Lerp (adjustX, x, Time.deltaTime * speed);
-			adjustY = Mathf.Lerp (adjustY, y, Time.deltaTime * speed);
-			size = Mathf.Lerp (size, newSize, Time.deltaTime * speed);
-			yield return new WaitForSeconds (0.01f);
+		while(adjustX < x - 0.1f || adjustY < y - 0.1f || size < newSize - 0.1f || adjustX > x + 0.1f || adjustY > y + 0.1f || size > newSize + 0.1f) {
+			adjustX = Mathf.Lerp(adjustX, x, FollowSpeed() * speed);
+			adjustY = Mathf.Lerp(adjustY, y, FollowSpeed() * speed);
+			size = Mathf.Lerp(size, newSize, FollowSpeed() * speed);
+			yield return new WaitForSeconds(0.01f);
 		}
 		adjustX = x;
 		adjustY = y;
@@ -42,15 +47,15 @@ public class CameraMovement : MonoBehaviour {
 	}
 
 	IEnumerator AdjustFocus(float speed) {
-		while (focusTarget != null) {
-			target = new Vector2 (Mathf.Lerp (target.x, (followPos.x + focusTarget.transform.position.x) / 2, Time.deltaTime * speed), Mathf.Lerp (target.y, (followPos.y + focusTarget.transform.position.y) / 2, Time.deltaTime * speed));
-			yield return new WaitForSeconds (0.01f);
+		while(focusTarget != null) {
+			target = new Vector2(Mathf.Lerp(target.x, (followPos.x + focusTarget.transform.position.x) / 2, FollowSpeed() * speed), Mathf.Lerp(target.y, (followPos.y + focusTarget.transform.position.y) / 2, FollowSpeed() * speed));
+			yield return new WaitForSeconds(0.01f);
 		}
-		while (target.x < followPos.x - 0.1f || target.y < followPos.y - 0.1f || target.x > followPos.x + 0.1f || target.y > followPos.y + 0.1f) {
-			target = new Vector2 (Mathf.Lerp(target.x, followTarget.transform.position.x, Time.deltaTime * speed), Mathf.Lerp(target.y, followTarget.transform.position.y, Time.deltaTime * followSpeed * 2));
-			yield return new WaitForSeconds (0.01f);
+		while(target.x < followPos.x - 0.1f || target.y < followPos.y - 0.1f || target.x > followPos.x + 0.1f || target.y > followPos.y + 0.1f) {
+			target = new Vector2(Mathf.Lerp(target.x, followTarget.transform.position.x, FollowSpeed() * speed), Mathf.Lerp(target.y, followTarget.transform.position.y, FollowSpeed() * followSpeed * 2));
+			yield return new WaitForSeconds(0.01f);
 		}
-		while (focusTarget == null) {
+		while(focusTarget == null) {
 			target = followPos;
 			yield return 0;
 		}

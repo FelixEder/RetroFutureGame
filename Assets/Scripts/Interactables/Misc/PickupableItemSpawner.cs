@@ -15,23 +15,23 @@ public class PickupableItemSpawner : MonoBehaviour {
 	Vector3 spawnLoc;
 
 	void Start() {
-		InvokeRepeating ("Spawn", spawnStart, spawnInterval);
+		InvokeRepeating("Spawn", spawnStart, spawnInterval);
 		spawnLoc = transform.position;
 	}
 
 	/**Instantiates "type" prefab as gameobject and sets this gameobject as parent if the parent's childcount is less than maxSimultaneous.*/
 	void Spawn() {
-		if (transform.childCount < maxSimultaneous) {
-			Vector3 babyBoom = new Vector3 (spawnLoc.x + Random.Range (-spawnAreaX, spawnAreaX), spawnLoc.y + Random.Range (-spawnAreaY, spawnAreaY), spawnLoc.z);
-			GameObject instance = Instantiate (Resources.Load (prefab), babyBoom, Quaternion.identity) as GameObject;
+		if(transform.childCount < maxSimultaneous) {
+			Vector3 babyBoom = new Vector3(spawnLoc.x + Random.Range(-spawnAreaX, spawnAreaX), spawnLoc.y + Random.Range(-spawnAreaY, spawnAreaY), spawnLoc.z);
+			GameObject instance = Instantiate(Resources.Load(prefab), babyBoom, Quaternion.identity) as GameObject;
 			instance.transform.parent = transform;
 		}
 	}
 
 	public void KillChildren() {
-		foreach (Transform child in transform) {
-			GameObject.Destroy (child.gameObject);
+		foreach(Transform child in transform) {
+			GameObject.Destroy(child.gameObject);
 		}
-		Debug.Log ("Prefab spawner:\nKilled all children.");
+		Debug.Log("Prefab spawner:\nKilled all children.");
 	}
 }

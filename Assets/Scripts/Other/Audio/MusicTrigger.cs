@@ -8,12 +8,12 @@ public class MusicTrigger : MonoBehaviour {
 	public bool andFade;
 	public GameObject musicObject;
 
-	void OnTriggerEnter2D (Collider2D col) {
-		if (col.gameObject.tag.Equals ("Char")) {
-			MusicPlayer musicPlay = musicObject.GetComponent<MusicPlayer> ();
-			if (musicPlay.currentAudio != playMusicFromIndex) {
-				Debug.Log ("Playing music from index " + playMusicFromIndex);
-				musicPlay.Play (playMusicFromIndex, withWolumeScale, andFade);
+	void OnTriggerEnter2D(Collider2D col) {
+		if(col.gameObject.tag.Equals("Char")) {
+			MusicPlayer musicPlay = musicObject.GetComponent<MusicPlayer>();
+			if(musicPlay.currentAudio != playMusicFromIndex) {
+				Debug.Log("Playing music from index " + playMusicFromIndex);
+				musicPlay.Play(playMusicFromIndex, withWolumeScale, andFade);
 			}
 		}
 	}

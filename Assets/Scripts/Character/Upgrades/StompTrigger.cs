@@ -9,42 +9,39 @@ public class StompTrigger : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
-		switch (col.gameObject.tag) {
-		
-		case "SmallCritter":
-			col.gameObject.GetComponent<SmallCritter> ().TakeDamage (3);
-			col.gameObject.GetComponent<EnemyKnockback> ().Knockback (GameObject.Find ("Char"), knockForce);
-			break;
+		switch(col.gameObject.tag) {
 
-		case "JumpingCritter":
-			col.gameObject.GetComponent<JumpingCritter> ().TakeDamage (3);
-			col.gameObject.GetComponent<EnemyKnockback> ().Knockback (GameObject.Find ("Char"), knockForce);
-			break;
+			case "SmallCritter":
+			case "JumpingCritter":
+				col.gameObject.GetComponent<EnemyHealth>().TakeDamage(3, gameObject, knockForce);
+				break;
 
-		case "CrawlerCritter":
-			Debug.Log ("Hit crawler!");
-			//Really bad code, should be re-written
-			CrawlerCritter crawlerCritter = col.gameObject.GetComponent<CrawlerCritter> ();
-			if (!crawlerCritter.deShelled) {
-				crawlerCritter.TakeDamage (1);
-			} else if (crawlerCritter.deShelled) {
-				crawlerCritter.TakeDamage (2);
-			} 
-			break;
+			case "CrawlerCritter":
+				Debug.Log("Hit crawler!");
+				//TODO: Really bad code, should be re-written
+				CrawlerCritter crawlerCritter = col.gameObject.GetComponent<CrawlerCritter>();
+				if(!crawlerCritter.deShelled) {
+					crawlerCritter.TakeDamage(1);
+				}
+				else if(crawlerCritter.deShelled) {
+					crawlerCritter.TakeDamage(2);
+				}
+				break;
 
-		case "ShellMan":
-			ShellMan shellMan = col.gameObject.GetComponent<ShellMan> ();
-			if (!shellMan.deShelled) {
-				shellMan.TakeDamage (1);
-			} else if (shellMan.deShelled) {
-				shellMan.TakeDamage (2);
-			}
-			break;
+			case "ShellMan":
+				ShellMan shellMan = col.gameObject.GetComponent<ShellMan>();
+				if(!shellMan.deShelled) {
+					shellMan.TakeDamage(1);
+				}
+				else if(shellMan.deShelled) {
+					shellMan.TakeDamage(2);
+				}
+				break;
 
-		case "FinalBossLastForm":
-			col.gameObject.GetComponent<Phase3Head> ().TakeDamage ();
-			break;
+			case "FinalBossLastForm":
+				col.gameObject.GetComponent<Phase3Head>().TakeDamage();
+				break;
 		}
-		Debug.Log ("STOMPED: " + col.gameObject.name + " with tag: " + col.gameObject.tag);
+		Debug.Log("STOMPED: " + col.gameObject.name + " with tag: " + col.gameObject.tag);
 	}
 }

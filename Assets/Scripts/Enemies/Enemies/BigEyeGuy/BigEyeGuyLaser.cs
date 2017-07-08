@@ -7,34 +7,34 @@ public class BigEyeGuyLaser : MonoBehaviour {
 	public int damage = 2;
 
 	void Start() {
-		lineRenderer = GetComponent<LineRenderer> ();
+		lineRenderer = GetComponent<LineRenderer>();
 		lineRenderer.useWorldSpace = true;
-		InvokeRepeating ("Shoot", 2f, 2f);
+		InvokeRepeating("Shoot", 2f, 2f);
 	}
 
 	public void Shoot() {
-		Debug.Log ("Is shooting laser!");
+		Debug.Log("Is shooting laser!");
 		lineRenderer.enabled = true;
-		RaycastHit2D hit = Physics2D.Raycast (transform.position, transform.right);
-		Debug.DrawLine (transform.position, hit.point);
-		Debug.Log (hit.collider.gameObject);
+		RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right);
+		Debug.DrawLine(transform.position, hit.point);
+		Debug.Log(hit.collider.gameObject);
 		laserHit.position = hit.point;
-		lineRenderer.SetPosition (0, transform.position);
-		lineRenderer.SetPosition (1, laserHit.position);
-		HitByLaser (hit);
-		Invoke ("KillLaser", 0.2f);
+		lineRenderer.SetPosition(0, transform.position);
+		lineRenderer.SetPosition(1, laserHit.position);
+		HitByLaser(hit);
+		Invoke("KillLaser", 0.2f);
 	}
 
-	void  KillLaser() {
+	void KillLaser() {
 		lineRenderer.enabled = false;
 	}
 
 	void HitByLaser(RaycastHit2D victim) {
 		switch(victim.collider.gameObject.tag) {
 			case "Char":
-			Debug.Log ("Hit by laser!!");
-			victim.collider.gameObject.GetComponent<CharHealth> ().TakeDamage (damage, gameObject, 3f);
-			break;
+				Debug.Log("Hit by laser!!");
+				victim.collider.gameObject.GetComponent<CharHealth>().TakeDamage(damage, gameObject, 3f);
+				break;
 		}
 	}
 }

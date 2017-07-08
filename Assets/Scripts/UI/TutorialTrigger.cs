@@ -6,14 +6,14 @@ public class TutorialTrigger : MonoBehaviour {
 	TutorialManager manager;
 
 	void Start() {
-		manager = GameObject.Find("tutorialPanel").GetComponent<TutorialManager> ();
+		manager = GameObject.Find("tutorialPanel").GetComponent<TutorialManager>();
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
-		if (col.gameObject.tag.Equals ("Char")) {
-			Debug.Log ("Tutorial triggered");
-			manager.DisplayTutorial (tutorial);
-			Destroy (gameObject);
+		if(col.gameObject.tag.Equals("Char")) {
+			Debug.Log("Tutorial triggered");
+			manager.DisplayTutorial(tutorial);
+			Destroy(gameObject);
 		}
 	}
 }

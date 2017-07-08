@@ -8,18 +8,19 @@ public class HardCritter : MonoBehaviour {
 	public int health = 5, damage = 3, invulnerabilityTime;
 
 	void Start() {
-		rb2D = GetComponent<Rigidbody2D> ();
-		initialFreezeTime = gameObject.GetComponent<SpawnProperties> ().initialFreezeTime;
-		if (initialFreezeTime > 0)
-			Invoke ("InitializeMoveSpeed", initialFreezeTime);
+		rb2D = GetComponent<Rigidbody2D>();
+		initialFreezeTime = gameObject.GetComponent<SpawnProperties>().initialFreezeTime;
+		if(initialFreezeTime > 0)
+			Invoke("InitializeMoveSpeed", initialFreezeTime);
 	}
 
 	void FixedUpdate() {
-		if (activeMoveSpeed > 0) {
-			if (isMirrored) {
-				rb2D.velocity = new Vector2 (-1 * activeMoveSpeed, rb2D.velocity.y);
-			} else {
-				rb2D.velocity = new Vector2 (activeMoveSpeed, rb2D.velocity.y);
+		if(activeMoveSpeed > 0) {
+			if(isMirrored) {
+				rb2D.velocity = new Vector2(-1 * activeMoveSpeed, rb2D.velocity.y);
+			}
+			else {
+				rb2D.velocity = new Vector2(activeMoveSpeed, rb2D.velocity.y);
 			}
 		}
 	}
@@ -28,59 +29,59 @@ public class HardCritter : MonoBehaviour {
 
 		switch(col.gameObject.tag) {
 
-		case "Char":
-			GetMirrored ();
-			col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage, gameObject, knockForce);
-			Rush ();
-			break;
+			case "Char":
+				GetMirrored();
+				col.gameObject.GetComponent<CharHealth>().TakeDamage(damage, gameObject, knockForce);
+				Rush();
+				break;
 
-		case "SmallCritter":
-		case "JumpingCritter":
-		case "HardEnemy":
-		case "BigEyeGuy":
-		case "CrawlerCritter":
-		case "ShellMan":
-		case "Barrier":
-			GetMirrored ();
-			break;
+			case "SmallCritter":
+			case "JumpingCritter":
+			case "HardEnemy":
+			case "BigEyeGuy":
+			case "CrawlerCritter":
+			case "ShellMan":
+			case "Barrier":
+				GetMirrored();
+				break;
 
-		case "Wall":
-		case "Door":
-			GetMirrored ();
-			Rush ();
-			break;
+			case "Wall":
+			case "Door":
+				GetMirrored();
+				Rush();
+				break;
 
-		case "PickupableItem":
-			if (col.gameObject.GetComponent<PickUpableItem> ().GetItemType () == "Rock") {
-				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f) {
-					TakeDamage (col.gameObject.GetComponent<PickUpableItem> ().damage);
-					break;
+			case "PickupableItem":
+				if(col.gameObject.GetComponent<PickUpableItem>().GetItemType() == "Rock") {
+					if(col.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude >= 3.0f) {
+						TakeDamage(col.gameObject.GetComponent<PickUpableItem>().damage);
+						break;
+					}
 				}
-			}
-			GetMirrored ();
-			Rush ();
-			break;
+				GetMirrored();
+				Rush();
+				break;
 		}
 	}
 
 	void OnBecameVisible() {
-		if (initialFreezeTime == 0)
-			InitializeMoveSpeed ();
+		if(initialFreezeTime == 0)
+			InitializeMoveSpeed();
 	}
 
 	public void Rush() {
 		//Enemy is rushing, play relevant things
-		if (!rushing && Random.Range(0, 4) == 0) {
-			Debug.Log ("Enemy is rushing");
+		if(!rushing && Random.Range(0, 4) == 0) {
+			Debug.Log("Enemy is rushing");
 			damage += 2;
 			moveSpeed += 5;
 			rushing = true;
-			Invoke ("StopRush", 1f);
+			Invoke("StopRush", 1f);
 		}
 	}
 
 	void StopRush() {
-		Debug.Log ("Enemy stopped rushing");
+		Debug.Log("Enemy stopped rushing");
 		//Enemy stops rushing, play relevant things
 		damage -= 2;
 		moveSpeed -= 5;
@@ -105,22 +106,23 @@ public class HardCritter : MonoBehaviour {
 	 * Method called when enemy is hit by the player
 	 */
 	public void TakeDamage(int damage) {
-		if (!invulnerable) {
+		if(!invulnerable) {
 			//Play a sound and animation.
 			health -= damage;
 			invulnerable = true;
-			Invoke ("SetVulnerable", invulnerabilityTime);
-			if (health <= 0) {
+			Invoke("SetVulnerable", invulnerabilityTime);
+			if(health <= 0) {
 				//Enemy is dead, play animation and sound.
-				int ranNumb = Random.Range (0, 60);
-				if (ranNumb < 20) {
-					Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
-				} else if (ranNumb < 40) {
-					Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
+				int ranNumb = Random.Range(0, 60);
+				if(ranNumb < 20) {
+					Instantiate(Resources.Load("HealthDrop"), transform.position, Quaternion.identity);
 				}
-				Destroy (this.gameObject);
+				else if(ranNumb < 40) {
+					Instantiate(Resources.Load("EnergyDrop"), transform.position, Quaternion.identity);
+				}
+				Destroy(this.gameObject);
 			}
-			GetMirrored ();
+			GetMirrored();
 		}
 	}
 

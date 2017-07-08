@@ -7,29 +7,25 @@ public class SpikesfromGoogle : MonoBehaviour {
 
 	void OnCollisionStay2D(Collision2D col) {
 		switch(col.gameObject.tag) {
+			case "Char":
+				col.gameObject.GetComponent<CharHealth>().TakeDamage(damage, gameObject, knockForce);
+				break;
 
-		case "Char":
-			col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage, gameObject, knockForce);
-			break;
+			case "SmallCritter":
+			case "JumpingCritter":
+			case "HardEnemy":
+			case "BigEyeGuy":
+			case "CrawlerCritter":
+			case "ShellMan":
+				col.gameObject.GetComponent<EnemyHealth>().TakeDamage(99);
+				break;
 
-		case "SmallCritter":
-			col.gameObject.GetComponent<SmallCritter>().Knockback(gameObject, 0);
-			col.gameObject.GetComponent<SmallCritter> ().TakeDamage (99);
-			break;
-
-		case "JumpingCritter":
-		case "HardEnemy":
-		case "BigEyeGuy":
-		case "CrawlerCritter":
-		case "ShellMan":
-		case "Wall":
-		case "Door":
-			break;
-
-		case "PickupableItem":
-			col.gameObject.GetComponent<PickUpableItem> ().Break ();
-			break;
-
+			case "PickupableItem":
+				col.gameObject.GetComponent<PickUpableItem>().Break();
+				break;
+			case "Wall":
+			case "Door":
+				break;
 		}
 	}
 }

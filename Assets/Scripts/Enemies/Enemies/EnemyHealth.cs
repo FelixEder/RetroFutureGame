@@ -9,8 +9,8 @@ public class EnemyHealth : MonoBehaviour {
 
 	bool invulnerable;
 	AudioPlayer audioplay;
-	
-	void Start () {
+
+	void Start() {
 		audioplay = GetComponent<AudioPlayer>();
 	}
 

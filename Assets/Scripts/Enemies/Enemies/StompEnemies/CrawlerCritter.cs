@@ -10,62 +10,63 @@ public class CrawlerCritter : MonoBehaviour {
 	public int health = 2, damage = 2, invulnerabilityTime;
 
 	void Start() {
-		rb2D = GetComponent<Rigidbody2D> ();
-		initialFreezeTime = gameObject.GetComponent<SpawnProperties> ().initialFreezeTime;
-		if (initialFreezeTime > 0)
-			Invoke ("InitializeMoveSpeed", initialFreezeTime);
+		rb2D = GetComponent<Rigidbody2D>();
+		initialFreezeTime = gameObject.GetComponent<SpawnProperties>().initialFreezeTime;
+		if(initialFreezeTime > 0)
+			Invoke("InitializeMoveSpeed", initialFreezeTime);
 	}
 
 	void FixedUpdate() {
-		if (activeMoveSpeed > 0) {
-			if (isMirrored) {
-				rb2D.velocity = new Vector2 (-1 * activeMoveSpeed, rb2D.velocity.y);
-			} else {
-				rb2D.velocity = new Vector2 (activeMoveSpeed, rb2D.velocity.y);
+		if(activeMoveSpeed > 0) {
+			if(isMirrored) {
+				rb2D.velocity = new Vector2(-1 * activeMoveSpeed, rb2D.velocity.y);
+			}
+			else {
+				rb2D.velocity = new Vector2(activeMoveSpeed, rb2D.velocity.y);
 			}
 		}
 	}
 
 	void OnBecameVisible() {
-		if (initialFreezeTime == 0)
-			InitializeMoveSpeed ();
+		if(initialFreezeTime == 0)
+			InitializeMoveSpeed();
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
 		switch(col.gameObject.tag) {
-		case "Char":
-			col.gameObject.GetComponent<CharHealth> ().TakeDamage (damage, gameObject, knockForce);
-			GetMirrored();
-			break;
-
-		case "SmallCritter":
-		case "JumpingCritter":
-		case "HardEnemy":
-		case "BigEyeGuy":
-		case "CrawlerCritter":
-		case "ShellMan":
-		case "Wall":
-		case "Door":
-		case "Barrier":
-			GetMirrored ();
-			break;
-
-		case "PickupableItem":
-			switch (col.gameObject.GetComponent<PickUpableItem> ().GetItemType ()) {
-			case "Rock":
-				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 3.0f) {
-					TakeDamage (col.gameObject.GetComponent<PickUpableItem> ().damage);
-				}
+			case "Char":
+				col.gameObject.GetComponent<CharHealth>().TakeDamage(damage, gameObject, knockForce);
+				GetMirrored();
 				break;
 
-			case "Branch":
-				if (col.gameObject.GetComponent<Rigidbody2D> ().velocity.magnitude >= 2.0f) {
-					TakeDamage (col.gameObject.GetComponent<PickUpableItem> ().damage);
-				}
+			case "SmallCritter":
+			case "JumpingCritter":
+			case "HardEnemy":
+			case "BigEyeGuy":
+			case "CrawlerCritter":
+			case "ShellMan":
+			case "Wall":
+			case "Door":
+			case "Barrier":
+				GetMirrored();
 				break;
-			}
-			GetMirrored ();
-			break;
+
+			case "PickupableItem":
+				switch(col.gameObject.GetComponent<PickUpableItem>().GetItemType()) {
+					case "Rock":
+						if(col.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude >= 3.0f) {
+							TakeDamage(col.gameObject.GetComponent<PickUpableItem>().damage);
+						}
+						break;
+
+					case "Branch":
+						if(col.gameObject.GetComponent<Rigidbody2D>().velocity.magnitude >= 2.0f) {
+							TakeDamage(col.gameObject.GetComponent<PickUpableItem>().damage);
+						}
+						break;
+				}
+				GetMirrored();
+				break;
 		}
 	}
 
@@ -96,22 +97,23 @@ public class CrawlerCritter : MonoBehaviour {
 	 * Method called when enemy is hit by the player
 	 */
 	public void TakeDamage(int damage) {
-		if (!invulnerable) {
+		if(!invulnerable) {
 			//Play a sound and animation.
 			health -= damage;
 			invulnerable = true;
-			Invoke ("SetVulnerable", invulnerabilityTime);
-			if (health <= 0) {
+			Invoke("SetVulnerable", invulnerabilityTime);
+			if(health <= 0) {
 				//Enemy is dead, play animation and sound.
-				int ranNumb = Random.Range (0, 60);
-				if (ranNumb < 20) {
-					Instantiate (Resources.Load ("HealthDrop"), transform.position, Quaternion.identity);
-				} else if (ranNumb < 40) {
-					Instantiate (Resources.Load ("EnergyDrop"), transform.position, Quaternion.identity);
+				int ranNumb = Random.Range(0, 60);
+				if(ranNumb < 20) {
+					Instantiate(Resources.Load("HealthDrop"), transform.position, Quaternion.identity);
 				}
-				Destroy (this.gameObject);
+				else if(ranNumb < 40) {
+					Instantiate(Resources.Load("EnergyDrop"), transform.position, Quaternion.identity);
+				}
+				Destroy(this.gameObject);
 			}
-			GetMirrored ();
+			GetMirrored();
 		}
 	}
 

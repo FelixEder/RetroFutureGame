@@ -9,26 +9,26 @@ public class WallJump : MonoBehaviour {
 	public float WallJumpSpeed;
 	bool holdJump;
 
-	void Start () {
-		status = GetComponent<CharStatus> ();
-		jump = GetComponent<CharJump> ();
-		rigidBody2D = GetComponent<Rigidbody2D> ();
-		input = GameObject.Find ("InputManager").GetComponent<InputManager> ();
+	void Start() {
+		status = GetComponent<CharStatus>();
+		jump = GetComponent<CharJump>();
+		rigidBody2D = GetComponent<Rigidbody2D>();
+		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 	}
 
 	void FixedUpdate() {
-		if (!input.GetKey ("jump")) {
+		if(!input.GetKey("jump")) {
 			holdJump = false;
 		}
-		if(input.GetKey ("jump") && (status.againstLeft || status.againstRight) && !holdJump && !status.grounded) {
+		if(input.GetKey("jump") && (status.againstLeft || status.againstRight) && !holdJump && !status.grounded) {
 			holdJump = true;
-			float axisH = input.GetAxis ("X");
+			float axisH = input.GetAxis("X");
 			if(status.againstLeft && axisH > 0) {
-				rigidBody2D.velocity = new Vector2 (WallJumpSpeed, jump.jumpSpeed / 1.2f);
+				rigidBody2D.velocity = new Vector2(WallJumpSpeed, jump.jumpSpeed / 1.2f);
 				jump.hasSecondJumped = false;
 			}
 			else if(status.againstRight && axisH < 0) {
-				rigidBody2D.velocity = new Vector2 (-WallJumpSpeed, jump.jumpSpeed / 1.2f);
+				rigidBody2D.velocity = new Vector2(-WallJumpSpeed, jump.jumpSpeed / 1.2f);
 				jump.hasSecondJumped = false;
 			}
 		}

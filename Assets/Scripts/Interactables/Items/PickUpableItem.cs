@@ -11,16 +11,16 @@ public class PickUpableItem : MonoBehaviour {
 	public string itemType;
 	bool beingHeld;
 	public int damage, health;
-		
+
 	void Start() {
-		rb2D = GetComponent<Rigidbody2D> ();
+		rb2D = GetComponent<Rigidbody2D>();
 		originalParent = transform.parent;
-		holdPosition = GameObject.Find ("holdPosition").transform;
-		player = GameObject.Find ("Char");
+		holdPosition = GameObject.Find("holdPosition").transform;
+		player = GameObject.Find("Char");
 	}
 
 	void Update() {
-		if (beingHeld) {
+		if(beingHeld) {
 			transform.position = holdPosition.position;
 			transform.rotation = holdPosition.rotation;
 
@@ -30,12 +30,12 @@ public class PickUpableItem : MonoBehaviour {
 
 	/**Sets the gameobject as child of "player" and freezes all it's movement.*/
 	public void PickUp(GameObject player) {
-		transform.SetParent (player.transform);
-		GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.FreezeAll;
-		transform.localRotation = Quaternion.Euler (new Vector3 (0, 0, 0));
+		transform.SetParent(player.transform);
+		GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+		transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 0));
 		beingHeld = true;
-		Debug.Log ("Pickup " + gameObject);
-		InvokeRepeating ("QuestionExistance", 20f, 20f);
+		Debug.Log("Pickup " + gameObject);
+		InvokeRepeating("QuestionExistance", 20f, 20f);
 	}
 
 	/**
@@ -43,15 +43,15 @@ public class PickUpableItem : MonoBehaviour {
 	 * If canThrow; adds a force to gamobject relative to input if player has horizontal input.
 	 */
 	public void Drop(bool canThrow) {
-		transform.localPosition = new Vector2 (0.5f, 0);
-		gameObject.layer = LayerMask.NameToLayer ("CPickupableItem");
-		transform.SetParent (originalParent);
-		GetComponent<Rigidbody2D> ().constraints = RigidbodyConstraints2D.None;
-		if (canThrow && (Input.GetAxis ("Horizontal") > 0.2 || Input.GetAxis ("Horizontal") < -0.2)) {
-			rb2D.AddForce (Vector2.right * 500 * Mathf.Sign (Input.GetAxis ("Horizontal")));
+		transform.localPosition = new Vector2(0.5f, 0);
+		gameObject.layer = LayerMask.NameToLayer("CPickupableItem");
+		transform.SetParent(originalParent);
+		GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+		if(canThrow && (Input.GetAxis("Horizontal") > 0.2 || Input.GetAxis("Horizontal") < -0.2)) {
+			rb2D.AddForce(Vector2.right * 500 * Mathf.Sign(Input.GetAxis("Horizontal")));
 		}
 		beingHeld = false;
-		Debug.Log ("Drop " + gameObject);
+		Debug.Log("Drop " + gameObject);
 	}
 
 	/**
@@ -62,13 +62,13 @@ public class PickUpableItem : MonoBehaviour {
 	public int Break() {
 		health--;
 		//Play animation and such
-		GetComponent<SpriteRenderer>().sprite = sprites[Mathf.Max (0, health)];
+		GetComponent<SpriteRenderer>().sprite = sprites[Mathf.Max(0, health)];
 		//Kill if health is 0 or less
-		if (health <= 0) {
-			GetComponent<AudioPlayer> ().PlayClip (0, 1, 0.7f, 0.7f);
-			if (!transform.GetChild (0).GetComponent<ParticleSystem> ().isPlaying)
-				transform.GetChild (0).GetComponent<ParticleSystem> ().Play();
-			GetComponent<Collider2D> ().enabled = false;
+		if(health <= 0) {
+			GetComponent<AudioPlayer>().PlayClip(0, 1, 0.7f, 0.7f);
+			if(!transform.GetChild(0).GetComponent<ParticleSystem>().isPlaying)
+				transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+			GetComponent<Collider2D>().enabled = false;
 			Invoke("Kill", 0.5f);
 		}
 		return health;
@@ -76,12 +76,12 @@ public class PickUpableItem : MonoBehaviour {
 
 	public int Break(int damage) {
 		health -= damage - 1;
-		return Break ();
+		return Break();
 	}
 
 	public void Kill() {
-		CancelInvoke ();
-		Destroy (gameObject);
+		CancelInvoke();
+		Destroy(gameObject);
 	}
 
 	/**Returns the item type.*/
@@ -90,12 +90,12 @@ public class PickUpableItem : MonoBehaviour {
 	}
 
 	void QuestionExistance() {
-		float Spawndist = Mathf.Abs (Vector3.Distance (gameObject.transform.position, transform.parent.position));
-		float PlayDist = Mathf.Abs (Vector3.Distance (gameObject.transform.position, player.transform.position));
-//		Debug.Log ("SpawnDist: " + Spawndist + "\nPlayDist: " + PlayDist);
-		if (Spawndist > 20f && PlayDist > 20f) {
-			Debug.Log ("Removed illegal item!");
-			Kill ();
+		float Spawndist = Mathf.Abs(Vector3.Distance(gameObject.transform.position, transform.parent.position));
+		float PlayDist = Mathf.Abs(Vector3.Distance(gameObject.transform.position, player.transform.position));
+		//		Debug.Log ("SpawnDist: " + Spawndist + "\nPlayDist: " + PlayDist);
+		if(Spawndist > 20f && PlayDist > 20f) {
+			Debug.Log("Removed illegal item!");
+			Kill();
 		}
 	}
 
@@ -108,7 +108,7 @@ public class PickUpableItem : MonoBehaviour {
 					col.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
 					if(itemType == "Branch")
 						Break();
-				break;
+					break;
 			}
 		}
 		if(gameObject.layer == LayerMask.NameToLayer("CPickupableItem"))
@@ -116,6 +116,6 @@ public class PickUpableItem : MonoBehaviour {
 	}
 
 	void ResetLayer() {
-		gameObject.layer = LayerMask.NameToLayer ("PickupableItem");
+		gameObject.layer = LayerMask.NameToLayer("PickupableItem");
 	}
 }

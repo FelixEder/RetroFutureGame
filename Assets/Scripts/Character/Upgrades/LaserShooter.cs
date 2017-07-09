@@ -3,6 +3,7 @@ using System.Collections;
 
 public class LaserShooter : MonoBehaviour {
 	public LayerMask hitLayers;
+	public Transform holdTarget;
 	private LineRenderer lineRenderer;
 	CharStatus charStatus;
 	CharEnergy charEnergy;
@@ -31,6 +32,11 @@ public class LaserShooter : MonoBehaviour {
 				StartCoroutine(ActivateLaser());
 			}
 		}
+	}
+
+	private void FixedUpdate() {
+		transform.position = holdTarget.position;
+		//transform.rotation = holdTarget.rotation;
 	}
 
 	IEnumerator ActivateLaser() {

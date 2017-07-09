@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 0b96e38d5cad8a244a7eab0216c2e5ce
-timeCreated: 1499609848
+timeCreated: 1499616278
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -8,6 +8,10 @@ TextureImporter:
     21300002: LaserGun.sprite_1
     21300004: LaserGun.sprite_2
     21300006: LaserGun.sprite_3
+    21300008: LaserGun.sprite_4
+    21300010: LaserGun.sprite_5
+    21300012: LaserGun.sprite_6
+    21300014: LaserGun.sprite_7
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -77,12 +81,12 @@ TextureImporter:
       name: LaserGun.sprite_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 25
-        width: 26
-        height: 7
+        x: 0
+        y: 57.75
+        width: 28
+        height: 8.25
       alignment: 9
-      pivot: {x: 0.1, y: 0.5}
+      pivot: {x: 0.1, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -90,12 +94,12 @@ TextureImporter:
       name: LaserGun.sprite_1
       rect:
         serializedVersion: 2
-        x: 1
-        y: 17
-        width: 26
-        height: 7
+        x: 0
+        y: 49.75
+        width: 28
+        height: 8.25
       alignment: 9
-      pivot: {x: 0.1, y: 0.5}
+      pivot: {x: 0.1, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -103,12 +107,12 @@ TextureImporter:
       name: LaserGun.sprite_2
       rect:
         serializedVersion: 2
-        x: 1
-        y: 9
-        width: 26
-        height: 7
+        x: 0
+        y: 41.75
+        width: 28
+        height: 8.25
       alignment: 9
-      pivot: {x: 0.1, y: 0.5}
+      pivot: {x: 0.1, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -116,12 +120,64 @@ TextureImporter:
       name: LaserGun.sprite_3
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 26
-        height: 7
+        x: 0
+        y: 33.75
+        width: 28
+        height: 8.25
       alignment: 9
-      pivot: {x: 0.1, y: 0.5}
+      pivot: {x: 0.1, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: LaserGun.sprite_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 25.75
+        width: 28
+        height: 8.25
+      alignment: 9
+      pivot: {x: 0.1, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: LaserGun.sprite_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 17.75
+        width: 28
+        height: 8.25
+      alignment: 9
+      pivot: {x: 0.1, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: LaserGun.sprite_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9.75
+        width: 28
+        height: 8.25
+      alignment: 9
+      pivot: {x: 0.1, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: LaserGun.sprite_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.75
+        width: 28
+        height: 8.25
+      alignment: 9
+      pivot: {x: 0.1, y: 0.3}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

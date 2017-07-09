@@ -20,7 +20,6 @@ public class CameraMovement : MonoBehaviour {
 		transform.GetChild(0).GetComponent<Camera>().fieldOfView = Mathf.Lerp(transform.GetChild(0).GetComponent<Camera>().fieldOfView, 40 + size * 7, Time.fixedDeltaTime);
 		//Foreground camera
 		transform.GetChild(1).GetComponent<Camera>().fieldOfView = Mathf.Lerp(transform.GetChild(1).GetComponent<Camera>().fieldOfView, 20 + size * 10, Time.fixedDeltaTime);
-		Debug.Log(FollowSpeed());
 	}
 
 	float FollowSpeed() {

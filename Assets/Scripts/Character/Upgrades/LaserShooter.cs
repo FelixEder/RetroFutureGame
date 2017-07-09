@@ -12,6 +12,9 @@ public class LaserShooter : MonoBehaviour {
 	bool holdShoot, canShoot = true;
 	public int damage = 2;
 
+	Vector3 aimDir;
+	Vector2 analogDir;
+
 	void Start() {
 		//Change player sprite and display tutorial
 		lineRenderer = GetComponent<LineRenderer>();
@@ -22,6 +25,11 @@ public class LaserShooter : MonoBehaviour {
 	}
 
 	void Update() {
+		aimDir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+		analogDir = new Vector2(Input.GetAxis("RightAnalogH"), Input.GetAxis("RightAnalogV"));
+		if(analogDir.magnitude != 0)
+			aimDir = analogDir;
+
 		if(!input.GetKey("shoot")) {
 			holdShoot = false;
 		}
@@ -35,14 +43,16 @@ public class LaserShooter : MonoBehaviour {
 	}
 
 	private void FixedUpdate() {
-		transform.position = holdTarget.position;
+		transform.position = new Vector3(holdTarget.position.x, holdTarget.position.y + 0.3f, holdTarget.position.z);
 		//transform.rotation = holdTarget.rotation;
 	}
 
 	IEnumerator ActivateLaser() {
-		RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, Mathf.Infinity, hitLayers);
+		Debug.Log(analogDir.magnitude);
+
+		RaycastHit2D hit = Physics2D.Raycast(transform.position, aimDir, Mathf.Infinity, hitLayers);
 		if(hit.point != new Vector2(0, 0)) {
-			lineRenderer.SetPosition(0, new Vector3(transform.position.x + 0.5f, transform.position.y, -5));
+			lineRenderer.SetPosition(0, new Vector3(transform.position.x, transform.position.y, -5));
 			lineRenderer.SetPosition(1, new Vector3(hit.point.x, hit.point.y, -5));
 			lineRenderer.enabled = true;
 			HitByLaser(hit);

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: c12ff6cedad42804ab6104696c0b695d
-timeCreated: 1499593738
+timeCreated: 1499599390
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -99,8 +99,8 @@ TextureImporter:
       name: Bush.sprite_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 22
+        x: 1
+        y: 24
         width: 37
         height: 22
       alignment: 1
@@ -112,8 +112,8 @@ TextureImporter:
       name: Bush.sprite_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 1
+        y: 1
         width: 37
         height: 22
       alignment: 1

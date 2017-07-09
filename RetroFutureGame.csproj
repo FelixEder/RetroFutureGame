@@ -116,6 +116,7 @@
     <Compile Include="Assets\Scripts\Enemies\Enemies\BigEyeGuy\BigEyeGuyLaser.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemies\EnemyAttack.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemies\EnemyHealth.cs" />
+    <Compile Include="Assets\Scripts\Enemies\Enemies\EnemyJump.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemies\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemies\HardEnemies\HardCritter.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemies\SoftEnemies\JumpingCritter.cs" />

@@ -5,11 +5,8 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour {
 	public float followDist, followDistUp, followDistDown, wanderDist;
 	public float moveSpeed;
-	public bool jump;
-	public float jumpForce;
-	[Range(1, 100)]
-	public int jumpChance = 1;
-	public Vector2 groundcheckPos, wallcheckPos;
+	
+	public Vector2 groundcheckPos = Vector2.one, wallcheckPos = Vector2.one;
 	public LayerMask groundcheckMask, wallcheckMask, raycastMask;
 
 	bool grounded, wallcheck;
@@ -38,8 +35,10 @@ public class EnemyMovement : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		if(wallcheck)
-			wanderDir *= -1;
+		if(wallcheck) {
+//			if(Random.Range(0, 100) == 0)
+				wanderDir *= -1;
+		}
 
 		SpriteFacing();
 
@@ -50,25 +49,20 @@ public class EnemyMovement : MonoBehaviour {
 					wanderDir *= (int)Mathf.Sign(player.transform.position.x - transform.position.x);
 				}
 				else
-					rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < moveSpeed * 0.7f ? new Vector2(moveSpeed * 0.07f * wanderDir, 0) : Vector2.zero;
+					rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < moveSpeed * 0.5f ? new Vector2(moveSpeed * 0.1f * wanderDir, 0) : Vector2.zero;
 			}
 			else
-				rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < moveSpeed * 0.7f ? new Vector2(moveSpeed * 0.07f * wanderDir, 0) : Vector2.zero;
+				rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < moveSpeed * 0.5f ? new Vector2(moveSpeed * 0.1f * wanderDir, 0) : Vector2.zero;
 
 			if(transform.position.x - startPos > wanderDist && wanderDir == 1 || startPos - transform.position.x > wanderDist && wanderDir == -1)
 				wanderDir *= -1;
-
-			if(jump) {
-				if(Random.Range(0, 1000) < jumpChance)
-					rb2D.AddForce(new Vector2(-moveSpeed / 2, jumpForce), ForceMode2D.Impulse);
-			}
 		}
 	}
 
 	Vector2 RaycastDirection() {
 		Vector2 raycastDirection = player.transform.position - transform.position;
-		if(raycastDirection.y < -followDistDown || raycastDirection.y > followDistUp)
-			raycastDirection = Vector2.left;
+		if(raycastDirection.y < -followDistDown || raycastDirection.y > followDistUp || Mathf.Abs(raycastDirection.x) > followDist)
+			raycastDirection = new Vector2(followDist * wanderDir, 0);
 		Debug.DrawRay(transform.position, raycastDirection);
 		return raycastDirection;
 	}

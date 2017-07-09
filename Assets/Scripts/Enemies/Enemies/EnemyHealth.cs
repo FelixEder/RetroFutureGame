@@ -20,8 +20,8 @@ public class EnemyHealth : MonoBehaviour {
 	}
 
 	public void TakeDamage(int damage, GameObject attacker, float knockbackForce) {
-		TakeDamage(damage);
 		Knockback(attacker, knockbackForce);
+		TakeDamage(damage);
 	}
 
 	public void TakeDamage(int damage) {

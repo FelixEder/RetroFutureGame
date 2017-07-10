@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyJump : MonoBehaviour {
-	public float jumpForce;
+	public float jumpForce = 7;
 	[Range(1, 100)]
-	public int jumpChance = 1;
+	public int jumpChance = 10;
 
 	public Vector2 groundcheckPos = Vector2.one, wallcheckPos = Vector2.one;
 	public LayerMask groundcheckMask, wallcheckMask;
@@ -29,7 +29,7 @@ public class EnemyJump : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		if(grounded) {
+		if(grounded && rb2D.velocity.y < jumpForce / 10) {
 			if(wallcheck) {
 				if(Random.Range(0, 10) < 1)
 					rb2D.AddForce(new Vector2(jumpForce / -5 * FrontCheckDir(), jumpForce), ForceMode2D.Impulse);

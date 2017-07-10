@@ -30,9 +30,21 @@ public class LaserShooter : MonoBehaviour {
 		if(analogDir.magnitude != 0)
 			aimDir = analogDir;
 
+		if(input.GetKey("shoot") && !holdShoot) {
+			holdShoot = true;
+		}
+
+		if(!input.GetKey("shoot") && holdShoot && canShoot && !charStatus.isSmall) {
+			if(charEnergy.UseEnergy(2)) {
+				canShoot = false;
+				StartCoroutine(ActivateLaser());
+			}
+		}
+
 		if(!input.GetKey("shoot")) {
 			holdShoot = false;
 		}
+		/*
 		if(input.GetKey("shoot") && !holdShoot && canShoot && !charStatus.isSmall) {
 			holdShoot = true;
 			if(charEnergy.UseEnergy(2)) {
@@ -40,6 +52,7 @@ public class LaserShooter : MonoBehaviour {
 				StartCoroutine(ActivateLaser());
 			}
 		}
+		*/
 	}
 
 	private void FixedUpdate() {
@@ -48,8 +61,6 @@ public class LaserShooter : MonoBehaviour {
 	}
 
 	IEnumerator ActivateLaser() {
-		Debug.Log(analogDir.magnitude);
-
 		RaycastHit2D hit = Physics2D.Raycast(transform.position, aimDir, Mathf.Infinity, hitLayers);
 		if(hit.point != new Vector2(0, 0)) {
 			lineRenderer.SetPosition(0, new Vector3(transform.position.x, transform.position.y, -5));

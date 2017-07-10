@@ -5,15 +5,22 @@ using System.Collections;
  * This class spawns prefabs with regular intervals.
  */
 public class PrefabSpawner : MonoBehaviour {
-	/**The amount of time in seconds between each spawn*/
+	[Header("Spawner")]
+	public GameObject prefab;
 	public float spawnStart, spawnInterval;
-	/**The max amount of simultaneously spawned prefabs.*/
 	public int maxSimultaneous;
-	/**The name of the prefab to spawn*/
-	public string prefab;
+	[Tooltip("Should a new prefab spawn when another is killed and current amount is less than max simultaneous?"), Space(10)]
+	public bool continuousRespawn;
+	[Header("Movement")]
+	public float moveSpeed;
+	public float timeBeforeWander, wanderDistance;
+	[Header("Jump")]
+	public float jumpForce;
+	[Range(1, 100)]
+	public float jumpchance = 1;
+	[Header("Health")]
 
-	public bool continuousRespawn, setExtraOptions;
-	public float prefabInitialFreezeTime, prefabWanderDistance;
+	[Header("Attack")]
 
 
 	bool willRespawn;
@@ -36,12 +43,11 @@ public class PrefabSpawner : MonoBehaviour {
 	}
 
 	void Spawn() {
-		GameObject instance = Instantiate(Resources.Load(prefab), transform.position, Quaternion.identity) as GameObject;
+		GameObject instance = Instantiate(prefab, transform.position, Quaternion.identity) as GameObject;
 		instance.transform.parent = transform;
-		if(setExtraOptions) {
-			instance.GetComponent<SpawnProperties>().initialFreezeTime = prefabInitialFreezeTime;
-			instance.GetComponent<SpawnProperties>().wanderDistance = prefabWanderDistance;
-		}
+
+	//Set all variables here!
+
 		instance.GetComponent<SpriteRenderer>().sortingOrder = (int) Time.timeSinceLevelLoad;
 	}
 

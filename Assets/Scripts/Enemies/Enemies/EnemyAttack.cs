@@ -2,8 +2,8 @@ using UnityEngine;
 using System.Collections;
 
 public class EnemyAttack : MonoBehaviour {
-	public int damage;
-	public float knockbackForce;
+	public int damage = 1;
+	public float knockbackForce = 5;
 
 	void OnCollisionStay2D(Collision2D col) {
 		switch(col.gameObject.tag) {

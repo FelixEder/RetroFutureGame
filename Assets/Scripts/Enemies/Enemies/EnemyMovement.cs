@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class EnemyMovement : MonoBehaviour {
-	public float followDist, followDistUp, followDistDown, wanderDist;
-	public float moveSpeed;
-	
-	public Vector2 groundcheckPos = Vector2.one, wallcheckPos = Vector2.one;
-	public LayerMask groundcheckMask, wallcheckMask, raycastMask;
+	public float followDist = 5, followDistUp = 5, followDistDown = 5;
+	[Space(10)]
+	public float moveSpeed = 3, wanderDist = 5;
+	public float timeBeforeWander;
+	[Space(10)]
+	public Vector2 groundcheckPos = Vector2.one;
+	public Vector2 wallcheckPos = Vector2.one;
+	[Space(10)]
+	public LayerMask groundcheckMask;
+	public LayerMask wallcheckMask, raycastMask;
 
 	bool grounded, wallcheck;
 	int wanderDir = -1;
@@ -26,32 +32,33 @@ public class EnemyMovement : MonoBehaviour {
 		rb2D = GetComponent<Rigidbody2D>();
 		player = GameObject.Find("Char");
 		startPos = transform.position.x;
+		wanderDir = 0;
+		Invoke("StartWander", timeBeforeWander);
 	}
 
 	void Update() {
 		raycastHit = Physics2D.Raycast(transform.position, RaycastDirection(), followDist, raycastMask);
 		grounded = Physics2D.OverlapBox(transform.position - new Vector3(0, groundcheckPos.y, 0), new Vector3(groundcheckPos.x, 0.1f, 0), 0, groundcheckMask);
 		wallcheck = Physics2D.OverlapBox(transform.position - new Vector3(wallcheckPos.x * -wanderDir, 0, 0), new Vector3(0.1f, wallcheckPos.y, 0), 0, wallcheckMask);
-	}
 
-	void FixedUpdate() {
 		if(wallcheck) {
-//			if(Random.Range(0, 100) == 0)
-				wanderDir *= -1;
+			wanderDir *= -1;
 		}
 
 		SpriteFacing();
+	}
 
+	void FixedUpdate() {
 		if(grounded) {
 			if(raycastHit) {
 				if(raycastHit.transform.name == "Char") {
 					rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < moveSpeed ? new Vector2(moveSpeed * 0.1f * Mathf.Sign(player.transform.position.x - transform.position.x), 0) : Vector2.zero;
-					wanderDir *= (int)Mathf.Sign(player.transform.position.x - transform.position.x);
+					wanderDir *= (int) Mathf.Sign(player.transform.position.x - transform.position.x);
 				}
-				else
-					rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < moveSpeed * 0.5f ? new Vector2(moveSpeed * 0.1f * wanderDir, 0) : Vector2.zero;
+				else if(!(wanderDist == 0 && Mathf.Abs(transform.position.x - startPos) < 0.5f))
+						rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < moveSpeed * 0.5f ? new Vector2(moveSpeed * 0.1f * wanderDir, 0) : Vector2.zero;
 			}
-			else
+			else if(!(wanderDist == 0 && Mathf.Abs(transform.position.x - startPos) < 0.5f))
 				rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < moveSpeed * 0.5f ? new Vector2(moveSpeed * 0.1f * wanderDir, 0) : Vector2.zero;
 
 			if(transform.position.x - startPos > wanderDist && wanderDir == 1 || startPos - transform.position.x > wanderDist && wanderDir == -1)
@@ -80,5 +87,12 @@ public class EnemyMovement : MonoBehaviour {
 			GetComponent<Animator>().enabled = false;
 		}
 
+	}
+
+	void StartWander() {
+		if(Random.Range(0, 2) == 0)
+			wanderDir = -1;
+		else
+			wanderDir = 1;
 	}
 }

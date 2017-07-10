@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour {
-	public int health;
-	public float invulnerabilityTime;
+	public int health = 1;
+	public float invulnerabilityTime = 0.5f;
 	public Material deathMaterial;
 
 	bool invulnerable;
@@ -15,8 +15,8 @@ public class EnemyHealth : MonoBehaviour {
 	}
 
 	void OnTriggerStay2D(Collider2D col) {
-		if(col.gameObject.tag.Equals("Water"))
-			TakeDamage(Random.Range(0, 2));
+		if(col.gameObject.tag.Equals("Water")) 
+			TakeDamage(1);
 	}
 
 	public void TakeDamage(int damage, GameObject attacker, float knockbackForce) {

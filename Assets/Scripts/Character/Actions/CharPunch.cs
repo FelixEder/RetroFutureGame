@@ -177,9 +177,9 @@ public class CharPunch : MonoBehaviour {
 
 				case "HardEnemy":
 					if(attackType == "Rock")
-						victim.gameObject.transform.parent.GetComponent<HardCritter>().TakeDamage(1);
+						victim.gameObject.GetComponent<EnemyHealth>().TakeDamage(1);
 					if(attackType == "Mega" || attackType == "FullMega")
-						victim.gameObject.GetComponent<HardCritter>().TakeDamage(damage);
+						victim.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
 					break;
 
 				case "BigEyeBuyWeakSpot":

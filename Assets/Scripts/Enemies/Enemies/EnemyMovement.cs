@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class FollowRange {
+	public float vertical, up, down;
+}
+
 [RequireComponent(typeof(Animator))]
 public class EnemyMovement : MonoBehaviour {
-	public float followDist = 5, followDistUp = 5, followDistDown = 5;
+	public FollowRange followRange;
 	[Space(10)]
-	public float moveSpeed = 3, wanderDist = 5;
-	public float timeBeforeWander;
+	public float moveSpeed = 3, wanderSpeed;
+	public float wanderDist = 5, timeBeforeWander;
 	[Space(10)]
 	public Vector2 groundcheckPos = Vector2.one;
 	public Vector2 wallcheckPos = Vector2.one;
@@ -33,11 +38,12 @@ public class EnemyMovement : MonoBehaviour {
 		player = GameObject.Find("Char");
 		startPos = transform.position.x;
 		wanderDir = 0;
-		Invoke("StartWander", timeBeforeWander);
+		if(timeBeforeWander > 0)
+			Invoke("StartWander", timeBeforeWander);
 	}
 
 	void Update() {
-		raycastHit = Physics2D.Raycast(transform.position, RaycastDirection(), followDist, raycastMask);
+		raycastHit = Physics2D.Raycast(transform.position, RaycastDirection(), followRange.vertical, raycastMask);
 		grounded = Physics2D.OverlapBox(transform.position - new Vector3(0, groundcheckPos.y, 0), new Vector3(groundcheckPos.x, 0.1f, 0), 0, groundcheckMask);
 		wallcheck = Physics2D.OverlapBox(transform.position - new Vector3(wallcheckPos.x * -wanderDir, 0, 0), new Vector3(0.1f, wallcheckPos.y, 0), 0, wallcheckMask);
 
@@ -56,10 +62,10 @@ public class EnemyMovement : MonoBehaviour {
 					wanderDir *= (int) Mathf.Sign(player.transform.position.x - transform.position.x);
 				}
 				else if(!(wanderDist == 0 && Mathf.Abs(transform.position.x - startPos) < 0.5f))
-						rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < moveSpeed * 0.5f ? new Vector2(moveSpeed * 0.1f * wanderDir, 0) : Vector2.zero;
+						rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < wanderSpeed ? new Vector2(moveSpeed * 0.1f * wanderDir, 0) : Vector2.zero;
 			}
 			else if(!(wanderDist == 0 && Mathf.Abs(transform.position.x - startPos) < 0.5f))
-				rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < moveSpeed * 0.5f ? new Vector2(moveSpeed * 0.1f * wanderDir, 0) : Vector2.zero;
+				rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < wanderSpeed ? new Vector2(moveSpeed * 0.1f * wanderDir, 0) : Vector2.zero;
 
 			if(transform.position.x - startPos > wanderDist && wanderDir == 1 || startPos - transform.position.x > wanderDist && wanderDir == -1)
 				wanderDir *= -1;
@@ -68,8 +74,8 @@ public class EnemyMovement : MonoBehaviour {
 
 	Vector2 RaycastDirection() {
 		Vector2 raycastDirection = player.transform.position - transform.position;
-		if(raycastDirection.y < -followDistDown || raycastDirection.y > followDistUp || Mathf.Abs(raycastDirection.x) > followDist)
-			raycastDirection = new Vector2(followDist * wanderDir, 0);
+		if(raycastDirection.y < -followRange.down || raycastDirection.y > followRange.up || Mathf.Abs(raycastDirection.x) > followRange.vertical)
+			raycastDirection = new Vector2(followRange.vertical * wanderDir, 0);
 		Debug.DrawRay(transform.position, raycastDirection);
 		return raycastDirection;
 	}
@@ -87,6 +93,11 @@ public class EnemyMovement : MonoBehaviour {
 			GetComponent<Animator>().enabled = false;
 		}
 
+	}
+
+	void OnBecameVisible() {
+		if(timeBeforeWander == 0)
+			StartWander();
 	}
 
 	void StartWander() {

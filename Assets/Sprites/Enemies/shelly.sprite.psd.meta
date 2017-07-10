@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: 22dde3a2a0ff36143b52d32e0e47493d
-timeCreated: 1487095591
+guid: be749b02fed806c44955dc643a88ef1e
+timeCreated: 1499702819
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: blob_0
-    21300002: blob_1
-    21300004: blob_2
-    21300006: blob_3
+    21300000: shelly.sprite_0
+    21300002: shelly.sprite_1
+    21300004: shelly.sprite_2
+    21300006: shelly.sprite_3
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -28,11 +28,11 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
     filterMode: 0
-    aniso: 16
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -55,18 +55,18 @@ TextureImporter:
   textureFormatSet: 0
   platformSettings:
   - buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
-    textureFormat: -1
+    maxTextureSize: 4096
+    textureFormat: 4
     textureCompression: 1
-    compressionQuality: 50
+    compressionQuality: 100
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
   - buildTarget: Standalone
-    maxTextureSize: 2048
-    textureFormat: -1
+    maxTextureSize: 4096
+    textureFormat: 4
     textureCompression: 1
-    compressionQuality: 50
+    compressionQuality: 100
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
@@ -74,54 +74,54 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: blob_0
+      name: shelly.sprite_0
       rect:
         serializedVersion: 2
         x: 2
-        y: 0
-        width: 24
-        height: 25
+        y: 2
+        width: 30
+        height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: blob_1
+      name: shelly.sprite_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 24
-        height: 25
+        x: 38
+        y: 2
+        width: 30
+        height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: blob_2
+      name: shelly.sprite_2
       rect:
         serializedVersion: 2
-        x: 62
-        y: 0
-        width: 24
-        height: 24
+        x: 74
+        y: 2
+        width: 30
+        height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: blob_3
+      name: shelly.sprite_3
       rect:
         serializedVersion: 2
-        x: 91
-        y: 0
-        width: 25
-        height: 24
+        x: 110
+        y: 2
+        width: 30
+        height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

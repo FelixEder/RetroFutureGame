@@ -1,9 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
-public class CharStomp : MonoBehaviour {
+public class Stomp : MonoBehaviour {
 	Rigidbody2D rigidBody2D;
-	CharStatus status;
+	PlayerStatus status;
 	InputManager input;
 
 	public float knockForce;
@@ -15,7 +15,7 @@ public class CharStomp : MonoBehaviour {
 	// Use this for initialization
 	void Start() {
 		rigidBody2D = GetComponent<Rigidbody2D>();
-		status = GetComponent<CharStatus>();
+		status = GetComponent<PlayerStatus>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 		//Change sprite, display correct tutorial and play theme.
 	}
@@ -27,7 +27,7 @@ public class CharStomp : MonoBehaviour {
 			holdStomp = true;
 			isStomping = true;
 
-			StartCoroutine(Stomp());
+			StartCoroutine(StartStomp());
 		}
 		else if(status.grounded && isStomping) {
 
@@ -36,7 +36,7 @@ public class CharStomp : MonoBehaviour {
 	}
 
 
-	IEnumerator Stomp() {
+	IEnumerator StartStomp() {
 		Debug.Log("Started Stomp");
 		rigidBody2D.velocity = new Vector2(0, 0);
 		rigidBody2D.gravityScale = 0.0f;

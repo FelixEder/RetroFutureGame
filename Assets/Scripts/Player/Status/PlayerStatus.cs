@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CharStatus : MonoBehaviour {
+public class PlayerStatus : MonoBehaviour {
 	public bool isMirrored, isFloating, invulnerable, isSmall;
 	public float velocityX, velocityY;
 

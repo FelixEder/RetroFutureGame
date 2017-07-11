@@ -38,7 +38,7 @@ public class EnemyMovement : MonoBehaviour {
 
 	void Start() {
 		rb2D = GetComponent<Rigidbody2D>();
-		player = GameObject.Find("Char");
+		player = GameObject.Find("Player");
 		startPos = transform.position.x;
 		wanderDir = 0;
 		if(timeBeforeWander > 0)
@@ -60,7 +60,7 @@ public class EnemyMovement : MonoBehaviour {
 	void FixedUpdate() {
 		if(grounded) {
 			if(raycastHit) {
-				if(raycastHit.transform.name == "Char") {
+				if(raycastHit.transform.name == "Player") {
 					rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < moveSpeed ? new Vector2(moveSpeed * 0.1f * Mathf.Sign(player.transform.position.x - transform.position.x), 0) : Vector2.zero;
 					wanderDir = (int) Mathf.Sign(player.transform.position.x - transform.position.x);
 				}
@@ -100,7 +100,7 @@ public class EnemyMovement : MonoBehaviour {
 		}
 		
 		if(raycastHit) {
-			if(raycastHit.transform.name.Equals("Char")) {
+			if(raycastHit.transform.name.Equals("Player")) {
 				if(player.transform.position.x - transform.position.x < 0)
 					transform.rotation = Quaternion.Euler(0, 0, 0);
 				else

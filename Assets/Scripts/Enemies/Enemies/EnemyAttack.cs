@@ -8,8 +8,8 @@ public class EnemyAttack : MonoBehaviour {
 	void OnCollisionStay2D(Collision2D col) {
 		switch(col.gameObject.tag) {
 
-			case "Char":
-				col.gameObject.GetComponent<CharHealth>().TakeDamage(damage, gameObject, knockbackForce);
+			case "Player":
+				col.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage, gameObject, knockbackForce);
 
 				break;
 		}

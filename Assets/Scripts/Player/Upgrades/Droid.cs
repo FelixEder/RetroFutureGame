@@ -38,7 +38,7 @@ public class Droid : MonoBehaviour {
 
 	void FixedUpdate () {
 		Vector3 position = transform.position, target = followTarget.position;
-		if(player.GetComponent<CharStatus>().inWater)
+		if(player.GetComponent<PlayerStatus>().inWater)
 			target = new Vector3(target.x, lastYpos, target.y);
 		else
 			lastYpos = target.y;

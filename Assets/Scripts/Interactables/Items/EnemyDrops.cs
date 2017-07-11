@@ -14,16 +14,16 @@ public class EnemyDrops : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
-		if(col.gameObject.tag.Equals("Char")) {
+		if(col.gameObject.tag.Equals("Player")) {
 			//Play correct music and animation depending on what upgrade is choosen
 			switch(dropType) {
 				//Add more switch-statements as more drops are implemented in the game.
 				case "Health":
-					col.gameObject.GetComponent<CharHealth>().IncreaseCurrentHealth(1);
+					col.gameObject.GetComponent<PlayerHealth>().IncreaseCurrentHealth(1);
 					break;
 
 				case "Energy":
-					col.gameObject.GetComponent<CharEnergy>().IncreaseCurrentEnergy(1);
+					col.gameObject.GetComponent<PlayerEnergy>().IncreaseCurrentEnergy(1);
 					break;
 			}
 			GetComponent<AudioPlayer>().PlayDetached(0, 0.7f, 0.7f, 1.3f);

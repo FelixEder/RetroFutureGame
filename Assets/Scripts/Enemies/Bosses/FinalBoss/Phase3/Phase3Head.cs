@@ -46,15 +46,15 @@ public class Phase3Head : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col) {
 		switch(col.gameObject.tag) {
-			case "Char":
+			case "Player":
 				//Does the speed need to be higher or lower?
 				if(rb2D.velocity.y > 5f) {
-					col.gameObject.GetComponent<CharHealth>().TakeDamage(damage);
+					col.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
 				}
 				else {
 					Bite();
 				}
-				col.gameObject.GetComponent<CharKnockback>().Knockback(gameObject, knockForce);
+				col.gameObject.GetComponent<PlayerHealth>().Knockback(gameObject, knockForce);
 				break;
 
 			case "PickupableItem":
@@ -116,10 +116,9 @@ public class Phase3Head : MonoBehaviour {
 		moveSpeed -= 5;
 	}
 
-	void OnTriggerEnter2D(Collider2D snack) {
-		if(snack.gameObject.tag.Equals("Char")) {
-			snack.gameObject.GetComponent<CharHealth>().TakeDamage(damage + 2);
-			snack.gameObject.GetComponent<CharKnockback>().Knockback(gameObject, knockForce);
+	void OnTriggerEnter2D(Collider2D col) {
+		if(col.gameObject.tag.Equals("Player")) {
+			col.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage + 2, gameObject, knockForce);
 		}
 	}
 

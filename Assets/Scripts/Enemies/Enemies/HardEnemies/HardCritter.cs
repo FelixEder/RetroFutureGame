@@ -53,7 +53,7 @@ public class HardCritter : MonoBehaviour {
 			case "ShellMan":
 				break;
 
-			case "Char":
+			case "Player":
 			case "Wall":
 			case "Door":
 			case "Barrier":

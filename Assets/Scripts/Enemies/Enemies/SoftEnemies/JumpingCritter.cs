@@ -34,8 +34,8 @@ public class JumpingCritter : MonoBehaviour {
 
 		switch(col.gameObject.tag) {
 
-			case "Char":
-				col.gameObject.GetComponent<CharHealth>().TakeDamage(damage, gameObject, knockForce);
+			case "Player":
+				col.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage, gameObject, knockForce);
 				GetMirrored();
 				break;
 

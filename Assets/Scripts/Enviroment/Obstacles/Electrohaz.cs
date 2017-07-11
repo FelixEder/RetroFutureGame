@@ -76,8 +76,8 @@ public class Electrohaz : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D col) {
 		if(isActive) {
 			switch(col.gameObject.tag) {
-				case "Char":
-					col.gameObject.GetComponent<CharHealth>().TakeDamage(damage, gameObject, 5f);
+				case "Player":
+					col.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage, gameObject, 5f);
 					break;
 
 				case "SmallCritter":

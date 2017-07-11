@@ -16,7 +16,7 @@ public class PickUpableItem : MonoBehaviour {
 		rb2D = GetComponent<Rigidbody2D>();
 		originalParent = transform.parent;
 		holdPosition = GameObject.Find("holdPosition").transform;
-		player = GameObject.Find("Char");
+		player = GameObject.Find("Player");
 	}
 
 	void Update() {

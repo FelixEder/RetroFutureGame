@@ -104,7 +104,7 @@ public class SimpleCCD : MonoBehaviour {
 	}
 
 	float ClampAngle(float angle, float min, float max) {
-		if(GameObject.Find("Char").GetComponent<CharStatus>().isMirrored) {
+		if(GameObject.Find("Player").GetComponent<PlayerStatus>().isMirrored) {
 			min += 180;
 			max += 180;
 			if(min > 360)

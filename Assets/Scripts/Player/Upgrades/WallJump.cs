@@ -2,16 +2,16 @@ using UnityEngine;
 using System.Collections;
 
 public class WallJump : MonoBehaviour {
-	CharStatus status;
-	CharJump jump;
+	PlayerStatus status;
+	PlayerJump jump;
 	Rigidbody2D rigidBody2D;
 	InputManager input;
 	public float WallJumpSpeed;
 	bool holdJump;
 
 	void Start() {
-		status = GetComponent<CharStatus>();
-		jump = GetComponent<CharJump>();
+		status = GetComponent<PlayerStatus>();
+		jump = GetComponent<PlayerJump>();
 		rigidBody2D = GetComponent<Rigidbody2D>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 	}

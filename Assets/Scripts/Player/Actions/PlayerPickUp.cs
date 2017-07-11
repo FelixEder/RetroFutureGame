@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CharPickUp : MonoBehaviour {
-	CharStatus status;
-	CharInventory inventory;
+public class PlayerPickUp : MonoBehaviour {
+	PlayerStatus status;
+	PlayerInventory inventory;
 	InputManager input;
 	bool holdPickup;
 
@@ -15,8 +15,8 @@ public class CharPickUp : MonoBehaviour {
 	}
 
 	void Start() {
-		inventory = transform.parent.GetComponent<CharInventory>();
-		status = transform.parent.GetComponent<CharStatus>();
+		inventory = transform.parent.GetComponent<PlayerInventory>();
+		status = transform.parent.GetComponent<PlayerStatus>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 	}
 

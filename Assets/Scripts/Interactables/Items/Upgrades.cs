@@ -6,16 +6,16 @@ public class Upgrades : MonoBehaviour {
 	public string upgradeType;
 
 	void OnTriggerEnter2D(Collider2D col) {
-		if(col.gameObject.name == "Char") {
+		if(col.gameObject.name == "Player") {
 			//Play correct music and animation depending on what switch-option is chosen
 			switch(upgradeType) {
 
 				case "Float":
-					col.gameObject.GetComponent<CharFloat>().enabled = true;
+					col.gameObject.GetComponent<Float>().enabled = true;
 					break;
 
 				case "SecondJump":
-					col.gameObject.GetComponent<CharJump>().gotSecondJump = true;
+					col.gameObject.GetComponent<PlayerJump>().gotSecondJump = true;
 					break;
 
 				case "WallJump":
@@ -23,7 +23,7 @@ public class Upgrades : MonoBehaviour {
 					break;
 
 				case "Stomp":
-					col.gameObject.GetComponent<CharStomp>().enabled = true;
+					col.gameObject.GetComponent<Stomp>().enabled = true;
 					break;
 
 				case "Laser":
@@ -31,22 +31,22 @@ public class Upgrades : MonoBehaviour {
 					break;
 
 				case "Health":
-					col.gameObject.GetComponent<CharHealth>().IncreaseMaxHealth();
-					col.gameObject.GetComponent<CharInventory>().collectItem();
+					col.gameObject.GetComponent<PlayerHealth>().IncreaseMaxHealth();
+					col.gameObject.GetComponent<PlayerInventory>().collectItem();
 					break;
 
 				case "Speed":
-					col.gameObject.GetComponent<CharMovement>().moveSpeed++;
-					col.gameObject.GetComponent<CharInventory>().collectItem();
+					col.gameObject.GetComponent<PlayerMovement>().moveSpeed++;
+					col.gameObject.GetComponent<PlayerInventory>().collectItem();
 					break;
 
 				case "Energy":
-					col.gameObject.GetComponent<CharEnergy>().IncreaseMaxEnergy();
-					col.gameObject.GetComponent<CharInventory>().collectItem();
+					col.gameObject.GetComponent<PlayerEnergy>().IncreaseMaxEnergy();
+					col.gameObject.GetComponent<PlayerInventory>().collectItem();
 					break;
 
 				case "MegaPunch":
-					col.gameObject.transform.GetChild(5).GetComponent<CharPunch>().megaAquired = true;
+					col.gameObject.transform.GetChild(5).GetComponent<PlayerPunch>().megaAquired = true;
 					break;
 			}
 			if(GetComponent<AudioPlayer>().audioClips.Length > 0)

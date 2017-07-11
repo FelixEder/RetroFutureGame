@@ -29,7 +29,7 @@ public class BossActivator : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
-		if(!col.isTrigger && col.gameObject.tag.Equals("Char")) {
+		if(!col.isTrigger && col.gameObject.tag.Equals("Player")) {
 			Trigger(false);
 			Spawn();
 		}

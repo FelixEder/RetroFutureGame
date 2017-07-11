@@ -10,10 +10,10 @@ public class ChargeStation : MonoBehaviour {
 	}
 
 	void OnCollisionStay2D(Collision2D col) {
-		if(col.gameObject.tag.Equals("char") && Input.GetButton("Attack") && !deCharged) {
+		if(col.gameObject.tag.Equals("Player") && Input.GetButton("Attack") && !deCharged) {
 			//Play relevant things
-			col.gameObject.GetComponent<CharHealth>().MaximizeHealth();
-			col.gameObject.GetComponent<CharEnergy>().MaximizeEnergy();
+			col.gameObject.GetComponent<PlayerHealth>().MaximizeHealth();
+			col.gameObject.GetComponent<PlayerEnergy>().MaximizeEnergy();
 			deCharged = true;
 			//Change sprite to the deCharged version
 		}

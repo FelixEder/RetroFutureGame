@@ -2,14 +2,14 @@ using UnityEngine;
 using System.Collections;
 
 public class PlatformLogic : MonoBehaviour {
-	CharJump jump;
+	PlayerJump jump;
 	/*
 		void Start() {
-			jump = GameObject.Find ("Char").GetComponent<CharJump> ();
+			jump = GameObject.Find ("Player").GetComponent<PlayerJump> ();
 		}
 
 		void OnTriggerEnter2D(Collider2D col) {
-			if (col.gameObject.name == "Char")
+			if (col.gameObject.name == "Player")
 				ignoreCollision (true);
 			if (col.gameObject.name == "triggerPlatform" && jump.jumpDown) {
 				ignoreCollision (true);
@@ -24,11 +24,11 @@ public class PlatformLogic : MonoBehaviour {
 			}
 		}
 		void OnTriggerExit2D(Collider2D col) {
-			if (col.gameObject.name == "Char")
+			if (col.gameObject.name == "Player")
 				ignoreCollision (false);
 		}
 		public void ignoreCollision(bool input) {
-			Physics2D.IgnoreCollision (GameObject.Find ("Char").GetComponent<Collider2D> (), transform.parent.GetComponent<Collider2D> (), input);
+			Physics2D.IgnoreCollision (GameObject.Find ("Player").GetComponent<Collider2D> (), transform.parent.GetComponent<Collider2D> (), input);
 		}
 		*/
 }

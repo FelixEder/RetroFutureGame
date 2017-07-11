@@ -99,9 +99,9 @@ public class StatueBossLaser : MonoBehaviour {
 	void HitByLaser(RaycastHit2D victim) {
 		switch(victim.collider.gameObject.tag) {
 
-			case "Char":
+			case "Player":
 				Debug.Log("Hit by laser!!");
-				victim.transform.gameObject.GetComponent<CharHealth>().TakeDamage(damage, gameObject, 10f);
+				victim.transform.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage, gameObject, 10f);
 				break;
 
 			case "SmallCritter":

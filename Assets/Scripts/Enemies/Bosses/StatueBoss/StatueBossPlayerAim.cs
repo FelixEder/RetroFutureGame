@@ -7,7 +7,7 @@ public class StatueBossPlayerAim : MonoBehaviour {
 	public bool aim = true, raging;
 
 	void Start() {
-		player = GameObject.Find("Char");
+		player = GameObject.Find("Player");
 	}
 
 	void Update() {

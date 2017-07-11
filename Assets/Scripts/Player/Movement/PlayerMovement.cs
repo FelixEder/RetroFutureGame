@@ -2,8 +2,8 @@
 using System.Collections;
 
 //This class handles the movement for the player, including walking and jumps.
-public class CharMovement : MonoBehaviour {
-	CharStatus status;
+public class PlayerMovement : MonoBehaviour {
+	PlayerStatus status;
 	Rigidbody2D rb2D;
 	InputManager input;
 	Animator childAnim;
@@ -13,7 +13,7 @@ public class CharMovement : MonoBehaviour {
 	public bool smoothIncline;
 
 	void Start() {
-		status = GetComponent<CharStatus>();
+		status = GetComponent<PlayerStatus>();
 		rb2D = GetComponent<Rigidbody2D>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 		childAnim = transform.GetChild(0).GetComponent<Animator>();

@@ -48,10 +48,10 @@ public class Phase2 : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col) {
 		switch(col.gameObject.tag) {
-			case "Char":
+			case "Player":
 				if(!stunned) {
 					KickPunching();
-					col.gameObject.GetComponent<CharHealth>().TakeDamage(5, gameObject, 5f);
+					col.gameObject.GetComponent<PlayerHealth>().TakeDamage(5, gameObject, 5f);
 					//Should also knock the player away
 					walksRight = false;
 					ResetDeltaX();

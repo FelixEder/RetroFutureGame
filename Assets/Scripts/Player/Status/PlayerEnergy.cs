@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class CharEnergy : MonoBehaviour {
+public class PlayerEnergy : MonoBehaviour {
 	public int currentEnergy, maxEnergy, rechargeTime;
 	bool reCharging;
 	Slider slider, rechargeSlider;

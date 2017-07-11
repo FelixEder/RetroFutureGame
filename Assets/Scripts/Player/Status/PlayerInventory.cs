@@ -1,17 +1,17 @@
 using UnityEngine;
 using System.Collections;
 
-public class CharInventory : MonoBehaviour {
+public class PlayerInventory : MonoBehaviour {
 	//The upgrades-scripts, add more when more upgrades are included
-	//	CharFloat CharFloat;
+	//	PlayerFloat playerFloat;
 	//The item that can be picked up by the player
 	public GameObject pickupableItem;
 	int collectedItems;
 
 	void Start() {
 		//As we implement more upgrades in the game, more scripts will be added in the fields and here and disabled.
-		//	CharFloat = GetComponent<CharFloat> ();
-		//	CharFloat.enabled = false;
+		//	playerFloat = GetComponent<PlayerFloat> ();
+		//	playerFloat.enabled = false;
 	}
 
 	/**

@@ -10,11 +10,11 @@ public class GameOverScreen : MonoBehaviour {
 	void Start() {
 		menu = GetComponent<MenuControl>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
-		player = GameObject.Find("Char");
+		player = GameObject.Find("Player");
 
 		prefabspawners = GameObject.FindGameObjectsWithTag("PrefabSpawner");
 		itemspawners = GameObject.FindGameObjectsWithTag("PIS");
-		player = GameObject.Find("Char");
+		player = GameObject.Find("Player");
 		menu.HideOverlay();
 	}
 
@@ -25,7 +25,7 @@ public class GameOverScreen : MonoBehaviour {
 
 	public void Respawn() {
 		//Revive player.
-		player.GetComponent<CharHealth>().Revive();
+		player.GetComponent<PlayerHealth>().Revive();
 
 		//Reset prefabspawners.
 		foreach(GameObject g in prefabspawners) {

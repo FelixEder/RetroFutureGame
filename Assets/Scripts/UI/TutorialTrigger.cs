@@ -10,7 +10,7 @@ public class TutorialTrigger : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
-		if(col.gameObject.tag.Equals("Char")) {
+		if(col.gameObject.tag.Equals("Player")) {
 			Debug.Log("Tutorial triggered");
 			manager.DisplayTutorial(tutorial);
 			Destroy(gameObject);

@@ -78,24 +78,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Character\Actions\CharPickUp.cs" />
-    <Compile Include="Assets\Scripts\Character\Actions\CharPunch.cs" />
-    <Compile Include="Assets\Scripts\Character\Movement\CharJump.cs" />
-    <Compile Include="Assets\Scripts\Character\Movement\CharKnockback.cs" />
-    <Compile Include="Assets\Scripts\Character\Movement\CharMirror.cs" />
-    <Compile Include="Assets\Scripts\Character\Movement\CharMovement.cs" />
-    <Compile Include="Assets\Scripts\Character\Status\CharEnergy.cs" />
-    <Compile Include="Assets\Scripts\Character\Status\CharHealth.cs" />
-    <Compile Include="Assets\Scripts\Character\Status\CharInventory.cs" />
-    <Compile Include="Assets\Scripts\Character\Status\CharStatus.cs" />
-    <Compile Include="Assets\Scripts\Character\Triggers\CharTriggerPlatform.cs" />
-    <Compile Include="Assets\Scripts\Character\Upgrades\CharFloat.cs" />
-    <Compile Include="Assets\Scripts\Character\Upgrades\CharStomp.cs" />
-    <Compile Include="Assets\Scripts\Character\Upgrades\Droid.cs" />
-    <Compile Include="Assets\Scripts\Character\Upgrades\LaserShooter.cs" />
-    <Compile Include="Assets\Scripts\Character\Upgrades\SmallFry.cs" />
-    <Compile Include="Assets\Scripts\Character\Upgrades\StompTrigger.cs" />
-    <Compile Include="Assets\Scripts\Character\Upgrades\WallJump.cs" />
     <Compile Include="Assets\Scripts\Enemies\Bosses\BigBadBird\BigBadBird.cs" />
     <Compile Include="Assets\Scripts\Enemies\Bosses\BigBadBird\BirdBossSpitAttack.cs" />
     <Compile Include="Assets\Scripts\Enemies\Bosses\BigBadBird\BirdBossWingAttack.cs" />
@@ -154,6 +136,21 @@
     <Compile Include="Assets\Scripts\Other\CameraTrigger.cs" />
     <Compile Include="Assets\Scripts\Other\InputManager.cs" />
     <Compile Include="Assets\Scripts\Other\PlatformLogic.cs" />
+    <Compile Include="Assets\Scripts\Player\Actions\PlayerPickUp.cs" />
+    <Compile Include="Assets\Scripts\Player\Actions\PlayerPunch.cs" />
+    <Compile Include="Assets\Scripts\Player\Movement\PlayerJump.cs" />
+    <Compile Include="Assets\Scripts\Player\Movement\PlayerMirror.cs" />
+    <Compile Include="Assets\Scripts\Player\Movement\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Player\Status\PlayerEnergy.cs" />
+    <Compile Include="Assets\Scripts\Player\Status\PlayerHealth.cs" />
+    <Compile Include="Assets\Scripts\Player\Status\PlayerInventory.cs" />
+    <Compile Include="Assets\Scripts\Player\Status\PlayerStatus.cs" />
+    <Compile Include="Assets\Scripts\Player\Upgrades\Droid.cs" />
+    <Compile Include="Assets\Scripts\Player\Upgrades\Float.cs" />
+    <Compile Include="Assets\Scripts\Player\Upgrades\LaserShooter.cs" />
+    <Compile Include="Assets\Scripts\Player\Upgrades\SmallFry.cs" />
+    <Compile Include="Assets\Scripts\Player\Upgrades\Stomp.cs" />
+    <Compile Include="Assets\Scripts\Player\Upgrades\WallJump.cs" />
     <Compile Include="Assets\Scripts\SimpleCCD.cs" />
     <Compile Include="Assets\Scripts\UI\BootLogo.cs" />
     <Compile Include="Assets\Scripts\UI\CallOnVictory.cs" />

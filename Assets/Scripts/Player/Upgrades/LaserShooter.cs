@@ -5,8 +5,8 @@ public class LaserShooter : MonoBehaviour {
 	public LayerMask hitLayers;
 	public Transform holdTarget;
 	private LineRenderer lineRenderer;
-	CharStatus charStatus;
-	CharEnergy charEnergy;
+	PlayerStatus playerStatus;
+	PlayerEnergy playerEnergy;
 	InputManager input;
 
 	bool holdShoot, canShoot = true;
@@ -19,8 +19,8 @@ public class LaserShooter : MonoBehaviour {
 		//Change player sprite and display tutorial
 		lineRenderer = GetComponent<LineRenderer>();
 		lineRenderer.useWorldSpace = true;
-		charStatus = transform.parent.GetComponent<CharStatus>();
-		charEnergy = GameObject.Find("Char").GetComponent<CharEnergy>();
+		playerStatus = transform.parent.GetComponent<PlayerStatus>();
+		playerEnergy = GameObject.Find("Player").GetComponent<PlayerEnergy>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 	}
 
@@ -34,8 +34,8 @@ public class LaserShooter : MonoBehaviour {
 			holdShoot = true;
 		}
 
-		if(!input.GetKey("shoot") && holdShoot && canShoot && !charStatus.isSmall) {
-			if(charEnergy.UseEnergy(2)) {
+		if(!input.GetKey("shoot") && holdShoot && canShoot && !playerStatus.isSmall) {
+			if(playerEnergy.UseEnergy(2)) {
 				canShoot = false;
 				StartCoroutine(ActivateLaser());
 			}
@@ -47,7 +47,7 @@ public class LaserShooter : MonoBehaviour {
 		/*
 		if(input.GetKey("shoot") && !holdShoot && canShoot && !charStatus.isSmall) {
 			holdShoot = true;
-			if(charEnergy.UseEnergy(2)) {
+			if(playerEnergy.UseEnergy(2)) {
 				canShoot = false;
 				StartCoroutine(ActivateLaser());
 			}
@@ -158,7 +158,7 @@ public class LaserShooter : MonoBehaviour {
 			Vector3 target = transform.position;
 			Invoke ("CanShoot", 1);
 			yield return new WaitForSeconds (0.1f);
-			if (transform.parent.gameObject.GetComponent<CharStatus> ().isMirrored) {
+			if (transform.parent.gameObject.GetComponent<PlayerStatus> ().isMirrored) {
 				while (lineRenderer.enabled && Mathf.Abs (target.x) > Mathf.Abs (laserHit.position.x)) {
 					lineRenderer.SetPosition (0, target);
 					target -= transform.right * -1;

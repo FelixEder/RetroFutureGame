@@ -13,7 +13,7 @@ public class BigBadBird : MonoBehaviour {
 
 	void Start() {
 		rb2D = GetComponent<Rigidbody2D>();
-		player = GameObject.Find("Char");
+		player = GameObject.Find("Player");
 		GetComponent<SpriteRenderer>().sprite = regular;
 		//Set the start values here
 		//Also set the standard sprite.
@@ -54,8 +54,8 @@ public class BigBadBird : MonoBehaviour {
 				WingAttack();
 				break;
 
-			case "Char":
-				col.gameObject.GetComponent<CharHealth>().TakeDamage(damage, gameObject, knockForce);
+			case "Player":
+				col.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage, gameObject, knockForce);
 				GetMirrored();
 				WingAttack();
 				break;

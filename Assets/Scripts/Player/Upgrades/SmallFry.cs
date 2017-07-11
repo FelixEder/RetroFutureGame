@@ -2,15 +2,15 @@ using UnityEngine;
 using System.Collections;
 
 public class SmallFry : MonoBehaviour {
-	CharStatus status;
-	CharInventory inventory;
+	PlayerStatus status;
+	PlayerInventory inventory;
 	InputManager input;
 	bool holdSmall;
 	//	public Sprite normal, smallFry;
 
 	void Start() {
-		status = transform.parent.GetComponent<CharStatus>();
-		inventory = transform.parent.GetComponent<CharInventory>();
+		status = transform.parent.GetComponent<PlayerStatus>();
+		inventory = transform.parent.GetComponent<PlayerInventory>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 	}
 

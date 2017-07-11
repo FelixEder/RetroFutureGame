@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CharJump : MonoBehaviour {
-	CharStatus status;
+public class PlayerJump : MonoBehaviour {
+	PlayerStatus status;
 	Rigidbody2D rb2D;
 	InputManager input;
 	public float jumpSpeed, secondJumpSpeed;
@@ -10,7 +10,7 @@ public class CharJump : MonoBehaviour {
 	[SerializeField] bool hasJumped, jumpingBackward;
 
 	void Start() {
-		status = GetComponent<CharStatus>();
+		status = GetComponent<PlayerStatus>();
 		rb2D = GetComponent<Rigidbody2D>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 	}

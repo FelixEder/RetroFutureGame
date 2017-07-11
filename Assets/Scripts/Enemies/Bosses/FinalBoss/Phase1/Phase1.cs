@@ -16,13 +16,13 @@ public class Phase1 : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col) {
 		switch(col.gameObject.tag) {
-			case "Char":
+			case "Player":
 				if(!stunned) {
 					KickPunching();
-					col.gameObject.GetComponent<CharHealth>().TakeDamage(5, gameObject, 5f);
+					col.gameObject.GetComponent<PlayerHealth>().TakeDamage(5, gameObject, 5f);
 				}
 				else if(rb2D.velocity.y > 5f)
-					col.gameObject.GetComponent<CharHealth>().TakeDamage(5, gameObject, 5f);
+					col.gameObject.GetComponent<PlayerHealth>().TakeDamage(5, gameObject, 5f);
 				break;
 
 			case "PickupableItem":

@@ -2,18 +2,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class CharHealth : MonoBehaviour {
+public class PlayerHealth : MonoBehaviour {
 	public int currentHealth, maxHealth;
 	public float invulnerabilityTime;
 	bool dead;
 
 	Slider slider;
-	CharStatus status;
+	PlayerStatus status;
+	PlayerInventory inventory;
 	Rigidbody2D rb2D;
 	AudioPlayer audioplay;
 
 	void Start() {
-		status = GameObject.Find("Char").GetComponent<CharStatus>();
+		status = GameObject.Find("Player").GetComponent<PlayerStatus>();
+		inventory = GetComponent<PlayerInventory>();
 		rb2D = GetComponent<Rigidbody2D>();
 
 		audioplay = GetComponent<AudioPlayer>();
@@ -40,12 +42,23 @@ public class CharHealth : MonoBehaviour {
 	}
 
 	public void TakeDamage(int damage, GameObject attacker, float knockbackForce) {
-		GetComponent<CharKnockback>().Knockback(attacker, knockbackForce);
+		Knockback(attacker, knockbackForce);
 		TakeDamage(damage);
 	}
 
-	public void Knockback(GameObject attacker, float knockbackForce) {
-
+	public void Knockback(GameObject attacker, float force) {
+		if(!GetComponent<PlayerStatus>().Invulnerable()) {
+			GameObject.Find("InputManager").GetComponent<InputManager>().Disable(0.2f);
+			if(transform.position.x < attacker.transform.position.x)
+				GetComponent<Rigidbody2D>().velocity = new Vector2(-force, 2);
+			else
+				GetComponent<Rigidbody2D>().velocity = new Vector2(force, 2);
+			//Drops the item the player is holding.
+			if(inventory.IsHoldingItem()) {
+				inventory.GetHoldingItem().GetComponent<PickUpableItem>().Drop(false);
+				inventory.SetHoldingItem(null);
+			}
+		}
 	}
 
 	public void IncreaseCurrentHealth(int amount) {
@@ -108,7 +121,7 @@ public class CharHealth : MonoBehaviour {
 		currentHealth = maxHealth;
 		SetHealthSlider();
 		transform.GetChild(0).GetComponent<Animator>().SetBool("dead", false);
-		GetComponent<CharEnergy>().MaximizeEnergy();
+		GetComponent<PlayerEnergy>().MaximizeEnergy();
 		status.isMirrored = false;
 	}
 }

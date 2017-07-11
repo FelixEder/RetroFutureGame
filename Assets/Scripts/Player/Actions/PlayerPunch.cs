@@ -1,10 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
-public class CharPunch : MonoBehaviour {
-	CharEnergy charEnergy;
-	CharInventory charInventory;
-	CharStatus charStatus;
+public class PlayerPunch : MonoBehaviour {
+	PlayerEnergy playerEnergy;
+	PlayerInventory playerInventory;
+	PlayerStatus playerStatus;
 	InputManager input;
 	public bool holdPunch, holdMega, onCooldown, branchInv, megaAquired;
 	bool animationCooldown;
@@ -12,6 +12,7 @@ public class CharPunch : MonoBehaviour {
 	int damage, charge, limit = 200;
 
 	Collider2D[] victims;
+	RaycastHit2D[] castVictims;
 	public LayerMask whatIsPunchable;
 	float gizmoSizeX = 1f;
 
@@ -21,9 +22,9 @@ public class CharPunch : MonoBehaviour {
 	}
 
 	void Start() {
-		charEnergy = transform.parent.GetComponent<CharEnergy>();
-		charInventory = transform.parent.GetComponent<CharInventory>();
-		charStatus = transform.parent.GetComponent<CharStatus>();
+		playerEnergy = transform.parent.GetComponent<PlayerEnergy>();
+		playerInventory = transform.parent.GetComponent<PlayerInventory>();
+		playerStatus = transform.parent.GetComponent<PlayerStatus>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 	}
 
@@ -31,14 +32,14 @@ public class CharPunch : MonoBehaviour {
 		//PUNCH
 		if(!input.GetKey("attack") && holdPunch)
 			holdPunch = false;
-		else if(input.GetKey("attack") && !(input.GetAxis("Ybool") < 0f && charStatus.InAir()) && !holdPunch && !charStatus.isSmall) {
+		else if(input.GetKey("attack") && !(input.GetAxis("Ybool") < 0f && playerStatus.InAir()) && !holdPunch && !playerStatus.isSmall) {
 			holdPunch = true;
 			if(!onCooldown)
 				ExecutePunch();
 		}
 
 		//MEGA
-		if(input.GetKey("mega") && !charStatus.isSmall && !holdMega && megaAquired) {
+		if(input.GetKey("mega") && !playerStatus.isSmall && !holdMega && megaAquired) {
 			holdMega = true;
 			StartCoroutine(ChargeMega());
 		}
@@ -47,22 +48,22 @@ public class CharPunch : MonoBehaviour {
 	//PUNCH
 	void ExecutePunch() { //TODO: INSERT CODE INTO MEGAEXECUTE and actually return an int, run execute in damagearea coroutine starter.
 		onCooldown = true;
-		if(charInventory.IsHoldingItem()) {
-			GameObject holdingItem = charInventory.GetHoldingItem();
+		if(playerInventory.IsHoldingItem()) {
+			GameObject holdingItem = playerInventory.GetHoldingItem();
 			switch(holdingItem.GetComponent<PickUpableItem>().GetItemType()) {
 
 				case "Rock":
 					//Play correct animation
 					attackType = "Rock";
 					damage = holdingItem.GetComponent<PickUpableItem>().damage;
-					StartCoroutine(DamageArea(1.1f, 0.6f));
+					StartCoroutine(DamageArea(1.1f));
 					return;
 
 				case "Branch":
 					//Play correct animation
 					attackType = "Branch";
 					damage = holdingItem.GetComponent<PickUpableItem>().damage;
-					StartCoroutine(DamageArea(1.5f, 0.75f));
+					StartCoroutine(DamageArea(1.5f));
 					return;
 
 				default:
@@ -75,7 +76,7 @@ public class CharPunch : MonoBehaviour {
 			//Play the standard animation
 			attackType = "Punch";
 			damage = 1;
-			StartCoroutine(DamageArea(1.1f, 0.6f));
+			StartCoroutine(DamageArea(1.1f));
 		}
 	}
 
@@ -97,10 +98,10 @@ public class CharPunch : MonoBehaviour {
 
 	int ExecuteMega() { //TODO: ADD PUNCH EXECUTE AT END AND IF CHARGE TO LOW DO PUNCH INSTEAD. ATTACKTYPE()
 		if(charge == limit) {
-			if(charEnergy.UseEnergy(3)) {
+			if(playerEnergy.UseEnergy(3)) {
 				Debug.Log("Full MegaPunch");
 				attackType = "FullMega";
-				StartCoroutine(DamageArea(2f, 1f));
+				StartCoroutine(DamageArea(2f));
 				return 5;
 			}
 			else {
@@ -109,10 +110,10 @@ public class CharPunch : MonoBehaviour {
 			}
 		}
 		else if(charge >= 50) {
-			if(charEnergy.UseEnergy(1)) {
+			if(playerEnergy.UseEnergy(1)) {
 				Debug.Log("Regular MegaPunch");
 				attackType = "Mega";
-				StartCoroutine(DamageArea(2f, 1f));
+				StartCoroutine(DamageArea(2f));
 				return 3;
 			}
 			else {
@@ -128,16 +129,17 @@ public class CharPunch : MonoBehaviour {
 	}
 
 	//OverlapBox check and damage all victims in area.
-	IEnumerator DamageArea(float sizeX, float posX) {
-		transform.localPosition = new Vector2(posX, -0.2f);
+	IEnumerator DamageArea(float sizeX) {
+		transform.localPosition = new Vector2(sizeX / 2, -0.2f);
 		gizmoSizeX = sizeX;
 		victims = Physics2D.OverlapBoxAll(transform.position, new Vector2(sizeX, 2f), 0, whatIsPunchable);
+		
 
 		foreach(Collider2D victim in victims) {
 			var enemyHealth = victim.gameObject.GetComponent<EnemyHealth>();
 			if(attackType == "Branch" && !branchInv && victim.gameObject.tag != "Door") {
-				if(charInventory.GetHoldingItem().GetComponent<PickUpableItem>().Break() <= 0) {
-					charInventory.SetHoldingItem(null);
+				if(playerInventory.GetHoldingItem().GetComponent<PickUpableItem>().Break() <= 0) {
+					playerInventory.SetHoldingItem(null);
 				}
 				branchInv = true;
 			}
@@ -186,10 +188,10 @@ public class CharPunch : MonoBehaviour {
 
 				case "StatueBossEye":
 					if(attackType == "Branch") {
-						if(charInventory.IsHoldingItem()) {
+						if(playerInventory.IsHoldingItem()) {
 							victim.gameObject.GetComponent<StatueBossLaser>().TakeDamage(1);
-							charInventory.GetHoldingItem().GetComponent<PickUpableItem>().Break(3);
-							charInventory.SetHoldingItem(null);
+							playerInventory.GetHoldingItem().GetComponent<PickUpableItem>().Break(3);
+							playerInventory.SetHoldingItem(null);
 						}
 					}
 					break;

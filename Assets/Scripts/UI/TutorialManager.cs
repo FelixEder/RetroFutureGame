@@ -30,7 +30,7 @@ public class TutorialManager : MonoBehaviour {
 						HideTutorial(4);
 					break;
 				case "secondjump":
-					if(GameObject.Find("Char").GetComponent<CharJump>().hasSecondJumped)
+					if(GameObject.Find("Player").GetComponent<PlayerJump>().hasSecondJumped)
 						HideTutorial(4);
 					break;
 				case "checkpoint":

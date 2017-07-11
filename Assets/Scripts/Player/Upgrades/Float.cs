@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CharFloat : MonoBehaviour {
+public class Float : MonoBehaviour {
 	Rigidbody2D rigidBody2D;
-	CharStatus status;
+	PlayerStatus status;
 	InputManager input;
 
 	// Use this for initialization
 	void Start() {
 		rigidBody2D = GetComponent<Rigidbody2D>();
-		status = GetComponent<CharStatus>();
+		status = GetComponent<PlayerStatus>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 	}
 

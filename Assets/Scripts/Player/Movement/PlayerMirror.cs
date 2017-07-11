@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CharMirror : MonoBehaviour {
-	CharStatus status;
+public class PlayerMirror : MonoBehaviour {
+	PlayerStatus status;
 	InputManager input;
 	Rigidbody2D rb2D;
 
 	void Start() {
-		status = GetComponent<CharStatus>();
+		status = GetComponent<PlayerStatus>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 		rb2D = GetComponent<Rigidbody2D>();
 	}

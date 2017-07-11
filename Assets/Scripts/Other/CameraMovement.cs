@@ -2,8 +2,10 @@
 using System.Collections;
 
 public class CameraMovement : MonoBehaviour {
-	public float followSpeed; float adjustX, adjustY, size = 5;
+	public float followSpeed, maxSpeed;
 	public GameObject followTarget, focusTarget;
+
+	float adjustX, adjustY, size = 5;
 	Vector3 target, position, followPos;
 
 	void Start() {
@@ -14,16 +16,20 @@ public class CameraMovement : MonoBehaviour {
 	void FixedUpdate() {
 		followPos = followTarget.transform.position;
 		position = transform.position;
-		transform.position = new Vector3(Mathf.Lerp(position.x, target.x + adjustX, FollowSpeed()), Mathf.Lerp(position.y, target.y + adjustY, FollowSpeed()), -10);
-		GetComponent<Camera>().orthographicSize = Mathf.Lerp(GetComponent<Camera>().orthographicSize, size, Time.fixedDeltaTime);
+		transform.position = new Vector2(Mathf.Lerp(position.x, target.x + adjustX, FollowSpeed()), Mathf.Lerp(position.y, target.y + adjustY, FollowSpeed()));
+		//Main camera
+		transform.GetChild(0).GetComponent<Camera>().orthographicSize = Mathf.Lerp(GetComponent<Camera>().orthographicSize, size, Time.fixedDeltaTime);
 		//Background camera
-		transform.GetChild(0).GetComponent<Camera>().fieldOfView = Mathf.Lerp(transform.GetChild(0).GetComponent<Camera>().fieldOfView, 40 + size * 7, Time.fixedDeltaTime);
+		transform.GetChild(1).GetComponent<Camera>().fieldOfView = Mathf.Lerp(transform.GetChild(0).GetComponent<Camera>().fieldOfView, 40 + size * 7, Time.fixedDeltaTime);
 		//Foreground camera
-		transform.GetChild(1).GetComponent<Camera>().fieldOfView = Mathf.Lerp(transform.GetChild(1).GetComponent<Camera>().fieldOfView, 20 + size * 10, Time.fixedDeltaTime);
+		transform.GetChild(2).GetComponent<Camera>().fieldOfView = Mathf.Lerp(transform.GetChild(1).GetComponent<Camera>().fieldOfView, 20 + size * 10, Time.fixedDeltaTime);
 	}
 
 	float FollowSpeed() {
-		return 0.05f * Vector2.Distance(transform.position, followTarget.transform.position);
+		var speed = followSpeed * 0.01f * Vector2.Distance(transform.position, followTarget.transform.position);
+		if(speed > maxSpeed)
+			speed = maxSpeed;
+		return speed;
 	}
 
 	public void AdjustPosition(float x, float y, float newSize, float speed, GameObject focus) {

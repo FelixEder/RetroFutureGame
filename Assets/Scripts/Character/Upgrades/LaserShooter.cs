@@ -79,13 +79,14 @@ public class LaserShooter : MonoBehaviour {
 	void HitByLaser(RaycastHit2D victim) {
 		Debug.Log("Player shot: " + victim.collider.gameObject.name + " with tag: " + victim.collider.gameObject.tag);
 
+		var enemyHealth = victim.transform.gameObject.GetComponent<EnemyHealth>();
 		//victim.transform returns parent transform, victim.collider returns the hit collider.
 		switch(victim.collider.gameObject.tag) {
 
 			//Add more cases as more types of enemies are added to the game
 			case "SmallCritter":
 			case "JumpingCritter":
-				victim.transform.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+				enemyHealth.TakeDamage(damage);
 				break;
 
 			case "HardEnemy":
@@ -97,9 +98,8 @@ public class LaserShooter : MonoBehaviour {
 				break;
 
 			case "CrawlerCritter":
-				CrawlerCritter crawlercritter = victim.transform.gameObject.GetComponent<CrawlerCritter>();
-				if(crawlercritter.deShelled) {
-					crawlercritter.TakeDamage(damage);
+				if(victim.transform.gameObject.GetComponent<CrawlerCritter>().noShell) {
+					enemyHealth.TakeDamage(damage);
 				}
 				else {
 					//Can't be hurt by laser, play relevant things
@@ -109,7 +109,7 @@ public class LaserShooter : MonoBehaviour {
 			case "ShellMan":
 				ShellMan shellMan = victim.transform.gameObject.GetComponent<ShellMan>();
 				if(shellMan.deShelled) {
-					shellMan.TakeDamage(damage);
+					enemyHealth.TakeDamage(damage);
 				}
 				else {
 					//Can't be hurt by laser, play relevant things

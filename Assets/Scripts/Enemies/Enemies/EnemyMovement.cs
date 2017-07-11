@@ -17,8 +17,8 @@ public class EnemyMovement : MonoBehaviour {
 	public Vector2 groundcheckPos = Vector2.one;
 	public Vector2 wallcheckPos = Vector2.one;
 	[Space(10)]
-	public LayerMask groundcheckMask;
-	public LayerMask wallcheckMask, raycastMask;
+	public LayerMask groundMask = 262656;
+	public LayerMask wallMask = 268763136, raycastMask = 256;
 
 	bool grounded, wallcheck;
 	int wanderDir = -1;
@@ -29,8 +29,10 @@ public class EnemyMovement : MonoBehaviour {
 
 	void OnDrawGizmosSelected() {
 		Gizmos.color = new Color(1, 1, 0, 0.5f); //yellow
-		Gizmos.DrawCube(transform.position - new Vector3(0, groundcheckPos.y, 0), new Vector3(groundcheckPos.x, 0.1f, 0));
+		Gizmos.DrawCube(transform.position - new Vector3(0, groundcheckPos.y / 2, 0), new Vector3(groundcheckPos.x, groundcheckPos.y, 0));
 		Gizmos.DrawCube(transform.position - new Vector3(wallcheckPos.x * -wanderDir, 0, 0), new Vector3(0.1f, wallcheckPos.y, 0));
+		Gizmos.color = new Color(1, 1, 1, 0.3f); //white
+		Gizmos.DrawCube(transform.position + new Vector3(0, (followRange.up - followRange.down) / 2, 0), new Vector3(followRange.vertical * 2, followRange.up + followRange.down, 0));
 	}
 
 	void Start() {
@@ -44,8 +46,8 @@ public class EnemyMovement : MonoBehaviour {
 
 	void Update() {
 		raycastHit = Physics2D.Raycast(transform.position, RaycastDirection(), followRange.vertical, raycastMask);
-		grounded = Physics2D.OverlapBox(transform.position - new Vector3(0, groundcheckPos.y, 0), new Vector3(groundcheckPos.x, 0.1f, 0), 0, groundcheckMask);
-		wallcheck = Physics2D.OverlapBox(transform.position - new Vector3(wallcheckPos.x * -wanderDir, 0, 0), new Vector3(0.1f, wallcheckPos.y, 0), 0, wallcheckMask);
+		grounded = Physics2D.OverlapBox(transform.position - new Vector3(0, groundcheckPos.y / 2, 0), new Vector3(groundcheckPos.x, groundcheckPos.y, 0), 0, groundMask);
+		wallcheck = Physics2D.OverlapBox(transform.position - new Vector3(wallcheckPos.x * -wanderDir, 0, 0), new Vector3(0.1f, wallcheckPos.y, 0), 0, wallMask);
 
 		if(wallcheck) {
 			wanderDir *= -1;
@@ -81,16 +83,17 @@ public class EnemyMovement : MonoBehaviour {
 	}
 
 	void SpriteFacing() {
+		var anim = GetComponent<Animator>();
 		if(rb2D.velocity.x > 1f) {
 			transform.rotation = Quaternion.Euler(0, 180, 0);
-			GetComponent<Animator>().enabled = true;
+			anim.speed = Mathf.Clamp01(Mathf.Abs(rb2D.velocity.x));
 		}
 		else if(rb2D.velocity.x < -1f) {
 			transform.rotation = Quaternion.Euler(0, 0, 0);
-			GetComponent<Animator>().enabled = true;
+			anim.speed = Mathf.Clamp01(Mathf.Abs(rb2D.velocity.x));
 		}
 		else {
-			GetComponent<Animator>().enabled = false;
+			anim.speed = 0f;
 		}
 
 	}

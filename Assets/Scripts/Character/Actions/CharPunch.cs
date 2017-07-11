@@ -134,6 +134,7 @@ public class CharPunch : MonoBehaviour {
 		victims = Physics2D.OverlapBoxAll(transform.position, new Vector2(sizeX, 2f), 0, whatIsPunchable);
 
 		foreach(Collider2D victim in victims) {
+			var enemyHealth = victim.gameObject.GetComponent<EnemyHealth>();
 			if(attackType == "Branch" && !branchInv && victim.gameObject.tag != "Door") {
 				if(charInventory.GetHoldingItem().GetComponent<PickUpableItem>().Break() <= 0) {
 					charInventory.SetHoldingItem(null);
@@ -156,30 +157,29 @@ public class CharPunch : MonoBehaviour {
 					break;
 
 				case "SmallCritter":
-					victim.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage, gameObject, 4f);
+					enemyHealth.TakeDamage(damage, gameObject, 4f);
 					break;
 
 				case "JumpingCritter":
-					victim.gameObject.GetComponent<JumpingCritter>().TakeDamage(damage);
+					enemyHealth.TakeDamage(damage);
 					break;
 
 				case "CrawlerCritter":
-					CrawlerCritter crawlerCritter = victim.gameObject.GetComponent<CrawlerCritter>();
-					if(crawlerCritter.deShelled)
-						crawlerCritter.TakeDamage(damage);
+					if(victim.gameObject.GetComponent<CrawlerCritter>().noShell)
+						enemyHealth.TakeDamage(damage, gameObject, 4f);
 					break;
 
 				case "ShellMan":
 					ShellMan shellMan = victim.gameObject.GetComponent<ShellMan>();
 					if(shellMan.deShelled)
-						shellMan.TakeDamage(damage);
+						enemyHealth.TakeDamage(damage);
 					break;
 
 				case "HardEnemy":
 					if(attackType == "Rock")
-						victim.gameObject.GetComponent<EnemyHealth>().TakeDamage(1);
+						enemyHealth.TakeDamage(1);
 					if(attackType == "Mega" || attackType == "FullMega")
-						victim.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+						enemyHealth.TakeDamage(damage);
 					break;
 
 				case "BigEyeBuyWeakSpot":
@@ -231,8 +231,7 @@ public class CharPunch : MonoBehaviour {
 		}
 
 		transform.GetChild(0).GetComponent<Animator>().SetTrigger(attackType);
-		if(attackType == "Door" || attackType == "Barrier") { }
-		else
+		if(!(attackType == "Door" || attackType == "Barrier"))
 			GetComponent<AudioPlayer>().PlayClip(0, 1, 0.7f, 1.3f);
 
 		yield return new WaitForSeconds(0.2f);

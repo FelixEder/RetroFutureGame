@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class StompTrigger : MonoBehaviour {
+public class StompTrigger : MonoBehaviour { /*
 	public float knockForce;
 
 	void Start() {
@@ -44,4 +44,4 @@ public class StompTrigger : MonoBehaviour {
 		}
 		Debug.Log("STOMPED: " + col.gameObject.name + " with tag: " + col.gameObject.tag);
 	}
-}
+*/}

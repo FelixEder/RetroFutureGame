@@ -2,16 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioPlayer))]
 public class EnemyHealth : MonoBehaviour {
 	public int health = 1;
 	public float invulnerabilityTime = 0.5f;
 	public Material deathMaterial;
+	[Space(10)]
+	public bool hasAudio;
 
 	bool invulnerable;
 	AudioPlayer audioplay;
 
 	void Start() {
-		audioplay = GetComponent<AudioPlayer>();
+		if(hasAudio)
+			audioplay = GetComponent<AudioPlayer>();
 	}
 
 	void OnTriggerStay2D(Collider2D col) {
@@ -27,7 +31,8 @@ public class EnemyHealth : MonoBehaviour {
 	public void TakeDamage(int damage) {
 		if(!invulnerable) {
 			//Play a sound and animation.
-			audioplay.PlayClip(0, 1, 0.5f, 1.5f);
+			if(hasAudio)
+				audioplay.PlayClip(0, 1, 0.5f, 1.5f);
 			health -= damage;
 			StartCoroutine(Invulnerability());
 			if(health <= 0)
@@ -47,7 +52,8 @@ public class EnemyHealth : MonoBehaviour {
 	}
 
 	IEnumerator Die() {
-		audioplay.PlayDetached(1, 1, 0.5f, 1.5f);
+		if(hasAudio)
+			audioplay.PlayDetached(1, 1, 0.5f, 1.5f);
 		GetComponent<SpriteRenderer>().material = deathMaterial;
 		yield return new WaitForSeconds(0.2f);
 		int ranNumb = Random.Range(0, 60);

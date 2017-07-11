@@ -56,32 +56,32 @@ public class CharStomp : MonoBehaviour {
 		victims = Physics2D.OverlapBoxAll(stompCenter.position, new Vector2(4f, 2f), 0, whatIsHurtable);
 
 		foreach(Collider2D victim in victims) {
+			var enemyHealth = victim.gameObject.GetComponent<EnemyHealth>();
 			switch(victim.gameObject.tag) {
 
 				case "SmallCritter":
 				case "JumpingCritter":
-					victim.gameObject.GetComponent<EnemyHealth>().TakeDamage(3, gameObject, knockForce);
+					enemyHealth.TakeDamage(3, gameObject, knockForce);
 					break;
 
 				case "CrawlerCritter":
 					Debug.Log("Hit crawler!");
-					//Really bad code, should be re-written
-					CrawlerCritter crawlerCritter = victim.gameObject.GetComponent<CrawlerCritter>();
-					if(!crawlerCritter.deShelled) {
-						crawlerCritter.TakeDamage(1);
+					var crawler = victim.gameObject.GetComponent<CrawlerCritter>();
+					if(!crawler.noShell) {
+						enemyHealth.TakeDamage(1);
+						crawler.BreakShell();
 					}
-					else if(crawlerCritter.deShelled) {
-						crawlerCritter.TakeDamage(2);
-					}
+					else
+						enemyHealth.TakeDamage(2);
 					break;
 
 				case "ShellMan":
 					ShellMan shellMan = victim.gameObject.GetComponent<ShellMan>();
 					if(!shellMan.deShelled) {
-						shellMan.TakeDamage(1);
+						enemyHealth.TakeDamage(1);
 					}
 					else if(shellMan.deShelled) {
-						shellMan.TakeDamage(2);
+						enemyHealth.TakeDamage(2);
 					}
 					break;
 

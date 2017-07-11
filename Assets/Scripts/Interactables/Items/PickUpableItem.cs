@@ -100,7 +100,6 @@ public class PickUpableItem : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
-		Debug.Log(rb2D.velocity.magnitude);
 		if(rb2D.velocity.magnitude > 2f) {
 			switch(col.gameObject.tag) {
 				case "SmallCritter":

@@ -2,8 +2,11 @@ using UnityEngine;
 using System.Collections;
 
 public class HardCritter : MonoBehaviour {
-	int rushDamage, originalDamage;
-	float rushSpeed, originalSpeed;
+	public float rushSpeed;
+	public int rushDamage;
+
+	float originalSpeed;
+	int originalDamage;
 	bool rushing;
 	Rigidbody2D rb2D;
 	EnemyMovement movement;
@@ -35,28 +38,35 @@ public class HardCritter : MonoBehaviour {
 			case "Wall":
 			case "Door":
 			case "Barrier":
-				if(Random.Range(0, 4) == 0)
+				if(Random.Range(0, 4) < 1)
+					Rush();
+				break;
+			default:
+				if(Random.Range(0, 10) < 1)
 					Rush();
 				break;
 		}
 	}
 
-	public void Rush() {
-		//Enemy is rushing, play relevant things
+	IEnumerator Rush() {
 		if(!rushing) {
+			Debug.Log("Enemy is preparing rush");
+			rushing = true;
+			movement.moveSpeed = 0;
+			movement.wanderSpeed = 0;
+			yield return new WaitForSeconds(1f);
+
 			Debug.Log("Enemy is rushing");
 			attack.damage = rushDamage;
 			movement.moveSpeed = rushSpeed;
-			rushing = true;
-			Invoke("StopRush", 1f);
-		}
-	}
+			movement.wanderSpeed = rushSpeed;
+			yield return new WaitForSeconds(1f);
 
-	void StopRush() {
-		Debug.Log("Enemy stopped rushing");
-		//Enemy stops rushing, play relevant things
-		attack.damage = originalDamage;
-		movement.moveSpeed = originalSpeed;
-		rushing = false;
+			Debug.Log("Enemy stopped rushing");
+			attack.damage = originalDamage;
+			movement.moveSpeed = originalSpeed;
+			movement.wanderSpeed = originalSpeed;
+			rushing = false;
+		}
 	}
 }

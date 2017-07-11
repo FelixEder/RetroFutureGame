@@ -4,13 +4,23 @@ using System.Collections;
 public class HardCritter : MonoBehaviour {
 	public float rushSpeed;
 	public int rushDamage;
+	[Range(1, 100)]
+	public int rushChance = 1;
+	[Space(10)]
+	public Vector3 targetcheckPos = Vector2.one;
+	public LayerMask targetMask = 256;
 
 	float originalSpeed;
 	int originalDamage;
-	bool rushing;
+	bool rushing, rushcheck;
 	Rigidbody2D rb2D;
 	EnemyMovement movement;
 	EnemyAttack attack;
+
+	void OnDrawGizmosSelected() {
+		Gizmos.color = new Color(0, 1, 0, 0.5f); //green
+		Gizmos.DrawCube(transform.position - new Vector3((targetcheckPos.x + targetcheckPos.z) / 2 * FrontCheckDir(), 0, 0), new Vector3(targetcheckPos.x - targetcheckPos.z, targetcheckPos.y, 0));
+	}
 
 	void Start() {
 		rb2D = GetComponent<Rigidbody2D>();
@@ -19,6 +29,15 @@ public class HardCritter : MonoBehaviour {
 
 		originalDamage = attack.damage;
 		originalSpeed = movement.moveSpeed;
+	}
+
+	void Update() {
+		rushcheck = Physics2D.OverlapBox(transform.position - new Vector3((targetcheckPos.x + targetcheckPos.z) / 2 * FrontCheckDir(), 0, 0), new Vector3(targetcheckPos.x - targetcheckPos.z, targetcheckPos.y, 0), 0, targetMask);
+
+		if(rushcheck) {
+			if(Random.Range(0, 100) < rushChance)
+				StartCoroutine(Rush());
+		}
 	}
 
 
@@ -38,35 +57,41 @@ public class HardCritter : MonoBehaviour {
 			case "Wall":
 			case "Door":
 			case "Barrier":
-				if(Random.Range(0, 4) < 1)
-					Rush();
-				break;
-			default:
-				if(Random.Range(0, 10) < 1)
-					Rush();
 				break;
 		}
 	}
 
 	IEnumerator Rush() {
 		if(!rushing) {
-			Debug.Log("Enemy is preparing rush");
+			Debug.Log("HardCritter is preparing rush");
 			rushing = true;
 			movement.moveSpeed = 0;
 			movement.wanderSpeed = 0;
+
 			yield return new WaitForSeconds(1f);
 
-			Debug.Log("Enemy is rushing");
+			Debug.Log("HardCritter is rushing");
 			attack.damage = rushDamage;
 			movement.moveSpeed = rushSpeed;
 			movement.wanderSpeed = rushSpeed;
+
 			yield return new WaitForSeconds(1f);
 
-			Debug.Log("Enemy stopped rushing");
+			Debug.Log("HardCritter stopped rushing");
 			attack.damage = originalDamage;
 			movement.moveSpeed = originalSpeed;
 			movement.wanderSpeed = originalSpeed;
 			rushing = false;
+
+			yield return new WaitForSeconds(2f);
+			Debug.Log("HardCritter rush cooldown ended");
 		}
+	}
+
+	int FrontCheckDir() {
+		if(transform.rotation.y == 0)
+			return 1;
+		else
+			return -1;
 	}
 }

@@ -90,7 +90,7 @@ public class LaserShooter : MonoBehaviour {
 				break;
 
 			case "HardEnemy":
-				victim.transform.gameObject.GetComponent<HardCritter>().Rush();
+				//victim.transform.gameObject.GetComponent<HardCritter>().Rush();
 				break;
 
 			case "BigEyeGuy":

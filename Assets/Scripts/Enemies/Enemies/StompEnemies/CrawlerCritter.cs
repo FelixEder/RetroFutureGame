@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CrawlerCritter : MonoBehaviour {
 	public bool noShell;
-	public float newSpeed, newKnockbackForce;
+	public float newKnockbackForce;
 	public int newDamage;
 	public FollowRange newFollowRange;
 
@@ -23,8 +23,6 @@ public class CrawlerCritter : MonoBehaviour {
 		attack.damage = newDamage;
 		attack.knockbackForce = newKnockbackForce;
 		var movement = GetComponent<EnemyMovement>();
-		movement.moveSpeed = newSpeed;
-		movement.wanderSpeed = newSpeed;
 		movement.followRange = newFollowRange;
 	}
 }

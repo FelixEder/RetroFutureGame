@@ -17,7 +17,7 @@ public class EnemyJump : MonoBehaviour {
 	void OnDrawGizmosSelected() {
 		Gizmos.color = new Color(0, 0, 1, 0.5f); //blue
 		Gizmos.DrawCube(transform.position - new Vector3(0, groundcheckPos.y / 2, 0), new Vector3(groundcheckPos.x, groundcheckPos.y, 0));
-		Gizmos.DrawCube(transform.position - new Vector3((obstaclecheckPos.x + obstaclecheckPos.z)/ 2 * FrontCheckDir(), 0, 0), new Vector3(obstaclecheckPos.x - obstaclecheckPos.z, obstaclecheckPos.y, 0));
+		Gizmos.DrawCube(transform.position - new Vector3((obstaclecheckPos.x + obstaclecheckPos.z) / 2 * FrontCheckDir(), 0, 0), new Vector3(obstaclecheckPos.x - obstaclecheckPos.z, obstaclecheckPos.y, 0));
 	}
 
 	void Start() {
@@ -26,7 +26,7 @@ public class EnemyJump : MonoBehaviour {
 
 	void Update() {
 		grounded = Physics2D.OverlapBox(transform.position - new Vector3(0, groundcheckPos.y / 2, 0), new Vector3(groundcheckPos.x, groundcheckPos.y, 0), 0, groundMask);
-		obstaclecheck = Physics2D.OverlapBox(transform.position - new Vector3(obstaclecheckPos.x / 2 * FrontCheckDir(), 0, 0), new Vector3(obstaclecheckPos.x, obstaclecheckPos.y, 0), 0, obstacleMask);
+		obstaclecheck = Physics2D.OverlapBox(transform.position - new Vector3((obstaclecheckPos.x + obstaclecheckPos.z) / 2 * FrontCheckDir(), 0, 0), new Vector3(obstaclecheckPos.x - obstaclecheckPos.z, obstaclecheckPos.y, 0), 0, obstacleMask);
 	}
 
 	void FixedUpdate() {

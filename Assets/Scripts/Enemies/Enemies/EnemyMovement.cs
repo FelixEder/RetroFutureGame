@@ -65,10 +65,10 @@ public class EnemyMovement : MonoBehaviour {
 					wanderDir = (int) Mathf.Sign(player.transform.position.x - transform.position.x);
 				}
 				else if(!(wanderDist == 0 && Mathf.Abs(transform.position.x - startPos) < 0.5f))
-						rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < wanderSpeed ? new Vector2(moveSpeed * 0.1f * wanderDir, 0) : Vector2.zero;
+						rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < wanderSpeed ? new Vector2(wanderSpeed * 0.1f * wanderDir, 0) : Vector2.zero;
 			}
 			else if(!(wanderDist == 0 && Mathf.Abs(transform.position.x - startPos) < 0.5f))
-				rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < wanderSpeed ? new Vector2(moveSpeed * 0.1f * wanderDir, 0) : Vector2.zero;
+				rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < wanderSpeed ? new Vector2(wanderSpeed * 0.1f * wanderDir, 0) : Vector2.zero;
 
 		}
 	}

@@ -27,7 +27,7 @@ public class CharPunch : MonoBehaviour {
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 	}
 
-	void Update() {
+	void Update() { //TODO: COMBINE BUTTONS TO SAME KEY.
 		//PUNCH
 		if(!input.GetKey("attack") && holdPunch)
 			holdPunch = false;
@@ -45,7 +45,7 @@ public class CharPunch : MonoBehaviour {
 	}
 
 	//PUNCH
-	void ExecutePunch() {
+	void ExecutePunch() { //TODO: INSERT CODE INTO MEGAEXECUTE and actually return an int, run execute in damagearea coroutine starter.
 		onCooldown = true;
 		if(charInventory.IsHoldingItem()) {
 			GameObject holdingItem = charInventory.GetHoldingItem();
@@ -80,7 +80,7 @@ public class CharPunch : MonoBehaviour {
 	}
 
 	//MEGA
-	IEnumerator ChargeMega() {
+	IEnumerator ChargeMega() { //TODO: USE FOR HOLD KEY CHECK THEN CHECK CHARGE FOR TYPE. ATTACKCHARGE
 		while(input.GetKey("mega")) {
 			while(charge < limit && input.GetKey("mega")) {
 				charge++;
@@ -95,7 +95,7 @@ public class CharPunch : MonoBehaviour {
 		holdMega = false;
 	}
 
-	int ExecuteMega() {
+	int ExecuteMega() { //TODO: ADD PUNCH EXECUTE AT END AND IF CHARGE TO LOW DO PUNCH INSTEAD. ATTACKTYPE()
 		if(charge == limit) {
 			if(charEnergy.UseEnergy(3)) {
 				Debug.Log("Full MegaPunch");
@@ -122,12 +122,12 @@ public class CharPunch : MonoBehaviour {
 		}
 		else {
 			Debug.Log("MegaPunch canceled");
-			//Too low chargecounter, play correct things
+			//Too low chargecounter, play correct things //new: and check punch instead.
 		}
 		return 1;
 	}
 
-	//OverlapBox check
+	//OverlapBox check and damage all victims in area.
 	IEnumerator DamageArea(float sizeX, float posX) {
 		transform.localPosition = new Vector2(posX, -0.2f);
 		gizmoSizeX = sizeX;
@@ -157,11 +157,8 @@ public class CharPunch : MonoBehaviour {
 					break;
 
 				case "SmallCritter":
-					enemyHealth.TakeDamage(damage, gameObject, 4f);
-					break;
-
 				case "JumpingCritter":
-					enemyHealth.TakeDamage(damage);
+					enemyHealth.TakeDamage(damage, gameObject, 4f);
 					break;
 
 				case "CrawlerCritter":

@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 879, y: 492}
   m_MaxSize: {x: 16004, y: 14042}
   vertical: 0
-  controlID: 10207
+  controlID: 15104
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_MinSize: {x: 602, y: 492}
   m_MaxSize: {x: 12002, y: 14042}
   vertical: 1
-  controlID: 10208
+  controlID: 15105
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_MinSize: {x: 602, y: 221}
   m_MaxSize: {x: 12002, y: 4021}
   vertical: 0
-  controlID: 10151
+  controlID: 15106
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,8 +167,8 @@ MonoBehaviour:
     y: 0
     width: 252
     height: 496
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -201,10 +201,10 @@ MonoBehaviour:
     width: 250
     height: 475
   m_TreeViewState:
-    scrollPos: {x: 0, y: 240}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: c26cfdffe6fbffff00000000062e0000ca2e0000783100002a33000048370000d23a0000d83a0000
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 303af9ff
+    m_LastClickedID: -443856
+    m_ExpandedIDs: c26cfdffe6fbffff00000000ca2e0000783100002a33000048370000d23a0000d83a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -286,9 +286,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 61.159153, y: -42.004166, z: -10}
+    m_Target: {x: 86.139885, y: -40.73413, z: -10}
     speed: 2
-    m_Value: {x: 61.159153, y: -42.004166, z: -10}
+    m_Value: {x: 86.139885, y: -40.73413, z: -10}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -315,9 +315,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 17.571981
+    m_Target: 3.1712005
     speed: 2
-    m_Value: 17.571981
+    m_Value: 3.1712005
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -459,7 +459,7 @@ MonoBehaviour:
   m_MinSize: {x: 336, y: 271}
   m_MaxSize: {x: 10206, y: 10021}
   vertical: 0
-  controlID: 10209
+  controlID: 15090
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -528,7 +528,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Enemies/Enemies
+  - Assets/Sprites/Enemies/_old
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\Gustav\GitHub\RetrofutureGame
   m_IsLocked: 0
@@ -589,8 +589,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 303af9ff
+    m_LastClickedInstanceID: -443856
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 2c2a0000862600009c290000000000005a290000862a0000e8dc0100ac260000
     m_RenameOverlay:
@@ -741,8 +741,8 @@ MonoBehaviour:
     y: 0
     width: 324
     height: 767
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}

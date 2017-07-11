@@ -18,7 +18,7 @@ public class EnemyMovement : MonoBehaviour {
 	public Vector2 wallcheckPos = Vector2.one;
 	[Space(10)]
 	public LayerMask groundMask = 262656;
-	public LayerMask wallMask = 268763136, raycastMask = 256;
+	public LayerMask wallMask = 268763136, raycastMask = 268697856;
 
 	bool grounded, wallcheck;
 	int wanderDir = -1;

@@ -26,7 +26,7 @@ public class PlayerJump : MonoBehaviour {
 		}
 
 		//jump down through platform when holding down and pressing jump
-		if(input.GetAxis("Y") < -0.3f && input.GetAxis("Ybool") < 0f) {
+		if(input.GetAxis("Y") < -0.3f && input.GetAxis("ysign") < 0f) {
 			if(input.GetKey("jump") && !holdJump && status.onPlatform) {
 				Debug.Log("JUMPDOWN");
 				jumpDown = true;

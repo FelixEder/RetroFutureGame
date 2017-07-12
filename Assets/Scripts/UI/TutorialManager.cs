@@ -3,10 +3,13 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class TutorialManager : MonoBehaviour {
-	Text text;
-	string currentTutorial;
-	InputManager input;
 	public Color panelColor, textColor;
+
+	string currentTutorial;
+	float displayTime;
+	bool tutorialIsKey;
+	Text text;
+	InputManager input;
 
 	void Start() {
 		text = transform.GetChild(0).GetComponent<Text>();
@@ -15,70 +18,39 @@ public class TutorialManager : MonoBehaviour {
 
 	void Update() {
 		if(currentTutorial != null) {
-			switch(currentTutorial) {
+			if(tutorialIsKey) {
+				if(input.GetKey(currentTutorial))
+					HideTutorial(displayTime);
+			}
+			else {
+				switch(currentTutorial) {
 
-				case "jump":
-					if(input.GetKey("Jump"))
-						HideTutorial(4);
-					break;
-				case "punch":
-					if(input.GetKey("Attack"))
-						HideTutorial(4);
-					break;
-				case "float":
-					if(input.GetKey("Float"))
-						HideTutorial(4);
-					break;
-				case "secondjump":
-					if(GameObject.Find("Player").GetComponent<PlayerJump>().hasSecondJumped)
-						HideTutorial(4);
-					break;
-				case "checkpoint":
-					HideTutorial(1.5f);
-					break;
+					case "secondjump":
+						if(GameObject.Find("Player").GetComponent<PlayerJump>().hasSecondJumped)
+							HideTutorial(displayTime);
+						break;
 
-				default:
-					HideTutorial(5);
-					break;
+					default:
+						HideTutorial(displayTime);
+						break;
+				}
 			}
 		}
 	}
 
-	public void DisplayTutorial(string tutorial, string tutorialText) {
+	public void DisplayTutorial(string tutorial, string tutorialText, bool stringIsKey, float time) {
 		StopAllCoroutines();
 
 		Debug.Log("Display tutorial [ " + tutorial + " ]");
-		/*
-		switch(tutorial.ToLower()) {
 
-			case "jump":
-				text.text = "Tutorial\n\nPress SPACE to jump.\nHold SPACE to jump higher.";
-				break;
-			case "punch":
-				text.text = "Tutorial\n\nPress K to punch.\nPunch doors to open them.";
-				break;
-			case "health":
-				text.text = "You just picked up extra health.";
-				break;
-			case "float":
-				text.text = "Leaf.\n\nUse SHIFT to float in the air.";
-				break;
-			case "secondjump":
-				text.text = "Doublejump.\n\nPress SPACE in the air to jump even higher.";
-				break;
-			case "checkpoint":
-				text.text = "Checkpoint reached";
-				break;
-
-			default:
-				text.text = "undefined";
-				break;
-		}
-		*/
 		text.text = tutorialText;
 
+		tutorialIsKey = stringIsKey;
+		displayTime = time;
 		currentTutorial = tutorial;
+
 		StartCoroutine(ShowPanel());
+
 	}
 
 	void HideTutorial(float time) {
@@ -87,18 +59,18 @@ public class TutorialManager : MonoBehaviour {
 	}
 
 	IEnumerator ShowPanel() {
-		for(float a = 0; a < 1; a += 0.05f) {
+		for(float a = 0; a < panelColor.a; a += 0.05f) {
 			GetComponent<Image>().color = new Color(panelColor.r, panelColor.g, panelColor.b, a);
 			text.color = new Color(textColor.r, textColor.g, textColor.b, a);
 			yield return new WaitForSeconds(0.01f);
 		}
-		GetComponent<Image>().color = new Color(panelColor.r, panelColor.g, panelColor.b, 1);
-		text.color = new Color(textColor.r, textColor.g, textColor.b, 1);
+		GetComponent<Image>().color = new Color(panelColor.r, panelColor.g, panelColor.b, panelColor.a);
+		text.color = new Color(textColor.r, textColor.g, textColor.b, textColor.a);
 	}
 
 	IEnumerator HidePanel(float time) {
 		yield return new WaitForSeconds(time);
-		for(float a = 1; a > 0; a -= 0.05f) {
+		for(float a = panelColor.a; a > 0; a -= 0.05f) {
 			GetComponent<Image>().color = new Color(panelColor.r, panelColor.g, panelColor.b, a);
 			text.color = new Color(textColor.r, textColor.g, textColor.b, a);
 			yield return new WaitForSeconds(0.01f);

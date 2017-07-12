@@ -53,7 +53,7 @@ public class Upgrades : MonoBehaviour {
 			}
 			if(GetComponent<AudioPlayer>().audioClips.Length > 0)
 				GetComponent<AudioPlayer>().PlayDetached(0, 1, 1, 1);
-			GameObject.Find("tutorialPanel").GetComponent<TutorialManager>().DisplayTutorial(upgradeType, tutorialText);
+			GameObject.Find("tutorialPanel").GetComponent<TutorialManager>().DisplayTutorial(upgradeType, tutorialText, false, 5f);
 			Destroy(gameObject);
 		}
 	}

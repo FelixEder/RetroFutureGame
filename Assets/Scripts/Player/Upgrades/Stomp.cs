@@ -23,7 +23,7 @@ public class Stomp : MonoBehaviour {
 	void FixedUpdate() {
 		if(!input.GetKey("attack"))
 			holdStomp = false;
-		if(status.InAir() && !status.isSmall && !status.isFloating && input.GetAxis("Y") < -0.3f && input.GetAxis("Ybool") < 0f && input.GetKey("attack") && !holdStomp) {
+		if(status.InAir() && !status.isSmall && !status.isFloating && input.GetAxis("Y") < -0.3f && input.GetAxis("ysign") < 0f && input.GetKey("attack") && !holdStomp) {
 			holdStomp = true;
 			isStomping = true;
 

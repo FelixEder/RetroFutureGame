@@ -32,7 +32,7 @@ public class PlayerPunch : MonoBehaviour {
 		//PUNCH
 		if(!input.GetKey("attack") && holdPunch)
 			holdPunch = false;
-		else if(input.GetKey("attack") && !(input.GetAxis("Ybool") < 0f && playerStatus.InAir()) && !holdPunch && !playerStatus.isSmall) {
+		else if(input.GetKey("attack") && !(input.GetAxis("ysign") < 0f && playerStatus.InAir()) && !holdPunch && !playerStatus.isSmall) {
 			holdPunch = true;
 			if(!onCooldown)
 				ExecutePunch();

@@ -62,6 +62,12 @@ public class InputManager : MonoBehaviour {
 			case "small":
 				return Input.GetButton("SmallButton");
 
+			case "x":
+				return Input.GetAxis("Horizontal") != 0;
+
+			case "y":
+				return Input.GetAxis("Vertical") != 0;
+
 			default:
 				return false;
 		}
@@ -78,7 +84,7 @@ public class InputManager : MonoBehaviour {
 			case "y":
 				return Input.GetAxis("Vertical");
 
-			case "ybool":
+			case "ysign":
 				return Input.GetAxis("VerticalBool");
 
 			default:

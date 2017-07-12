@@ -9,10 +9,11 @@ public class FollowRange {
 
 [RequireComponent(typeof(Animator))]
 public class EnemyMovement : MonoBehaviour {
+	public float followSpeed = 3;
 	public FollowRange followRange;
 	public bool canSeeBehind;
 	[Space(10)]
-	public float moveSpeed = 3, wanderSpeed;
+	public float wanderSpeed;
 	public float wanderDist = 5, timeBeforeWander;
 	[Space(10)]
 	public Vector2 groundcheckPos = Vector2.one;
@@ -61,7 +62,7 @@ public class EnemyMovement : MonoBehaviour {
 		if(grounded) {
 			if(raycastHit) {
 				if(raycastHit.transform.name == "Player") {
-					rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < moveSpeed ? new Vector2(moveSpeed * 0.1f * Mathf.Sign(player.transform.position.x - transform.position.x), 0) : Vector2.zero;
+					rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < followSpeed ? new Vector2(followSpeed * 0.1f * Mathf.Sign(player.transform.position.x - transform.position.x), 0) : Vector2.zero;
 					wanderDir = (int) Mathf.Sign(player.transform.position.x - transform.position.x);
 				}
 				else if(!(wanderDist == 0 && Mathf.Abs(transform.position.x - startPos) < 0.5f))
@@ -75,7 +76,7 @@ public class EnemyMovement : MonoBehaviour {
 
 	Vector2 RaycastDirection() {
 		Vector2 raycastDirection = player.transform.position - transform.position;
-		if((raycastDirection.y < -followRange.down || raycastDirection.y > followRange.up || Mathf.Abs(raycastDirection.x) > followRange.vertical) || (raycastDirection.x * wanderDir < 0 && !canSeeBehind)) {
+		if((raycastDirection.y < -followRange.down || raycastDirection.y > followRange.up || Mathf.Abs(raycastDirection.x) > followRange.vertical) || (raycastDirection.x * wanderDir < -2f && !canSeeBehind)) {
 			raycastDirection = new Vector2(followRange.vertical * wanderDir, 0);
 			if(transform.position.x - startPos > wanderDist && wanderDir == 1 || startPos - transform.position.x > wanderDist && wanderDir == -1)
 				wanderDir *= -1;

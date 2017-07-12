@@ -28,7 +28,7 @@ public class HardCritter : MonoBehaviour {
 		attack = GetComponent<EnemyAttack>();
 
 		originalDamage = attack.damage;
-		originalSpeed = movement.moveSpeed;
+		originalSpeed = movement.followSpeed;
 	}
 
 	void Update() {
@@ -65,21 +65,21 @@ public class HardCritter : MonoBehaviour {
 		if(!rushing) {
 			Debug.Log("HardCritter is preparing rush");
 			rushing = true;
-			movement.moveSpeed = 0;
+			movement.followSpeed = 0;
 			movement.wanderSpeed = 0;
 
 			yield return new WaitForSeconds(1f);
 
 			Debug.Log("HardCritter is rushing");
 			attack.damage = rushDamage;
-			movement.moveSpeed = rushSpeed;
+			movement.followSpeed = rushSpeed;
 			movement.wanderSpeed = rushSpeed;
 
 			yield return new WaitForSeconds(1f);
 
 			Debug.Log("HardCritter stopped rushing");
 			attack.damage = originalDamage;
-			movement.moveSpeed = originalSpeed;
+			movement.followSpeed = originalSpeed;
 			movement.wanderSpeed = originalSpeed;
 			rushing = false;
 

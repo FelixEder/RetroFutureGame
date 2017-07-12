@@ -12,10 +12,11 @@ public class PrefabSpawner : MonoBehaviour {
 
 	[Header("Movement")]
 	public bool setMovement;
+	[Space(5), Tooltip("If set to 0, prefab will move OnBecameVisible")]
+	public float timeBeforeWander;
+	public float wanderSpeed, wanderDistance;
 	[Space(5)]
-	public float moveSpeed = 3;
-	public float timeBeforeWander, wanderSpeed, wanderDistance;
-	[Space(5)]
+	public float followSpeed = 3;
 	public FollowRange followRange;
 
 	[Header("Jump")]
@@ -67,7 +68,7 @@ public class PrefabSpawner : MonoBehaviour {
 		//Set all variables here!
 		if(setMovement) {
 			var movement = instance.GetComponent<EnemyMovement>();
-			movement.moveSpeed = moveSpeed;
+			movement.followSpeed = followSpeed;
 			movement.timeBeforeWander = timeBeforeWander;
 			movement.wanderSpeed = wanderSpeed;
 			movement.wanderDist = wanderDistance;

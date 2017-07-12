@@ -5,13 +5,16 @@ using UnityEngine;
 public class Droid : MonoBehaviour {
 	public Transform followTarget;
 	public GameObject player;
+	public LayerMask aimHitMask;
 
 	float lastYpos;
 	LineRenderer line;
+	Animator anim;
 	InputManager input;
 
 	void Start () {
 		line = GetComponent<LineRenderer>();
+		anim = GetComponent<Animator>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 	}
 
@@ -19,25 +22,27 @@ public class Droid : MonoBehaviour {
 
 	void Update() {
 		if(input.GetKey("shoot") || Input.GetAxis("RightAnalogH") != 0 || Input.GetAxis("RightAnalogV") != 0) {
-			Vector3 origin = transform.GetChild(0).transform.position + new Vector3(0, 0.3f, -5);
-
-			//line position 0
-			line.SetPosition(0, origin);
-
-			//line position 1
-			Vector3 aimDir = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			aimDir = (origin - (origin - new Vector3(aimDir.x, aimDir.y)) * 100);
-			Vector3 analogDir = new Vector3(Input.GetAxis("RightAnalogH"), Input.GetAxis("RightAnalogV"));
+			Vector3 origin = transform.GetChild(0).transform.position + new Vector3(0, 0.3f, -5f), analogDir = new Vector3(Input.GetAxis("RightAnalogH"), Input.GetAxis("RightAnalogV"));
+			Vector2 aimDir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - origin;
 			if(analogDir.magnitude != 0)
-				aimDir = origin + analogDir * 100 + new Vector3 (0, 0, -5);
-			line.SetPosition(1, aimDir);
+				aimDir = origin + analogDir;
 
-			//enable line
+			var raycastHit = Physics2D.Raycast(origin, aimDir, Mathf.Infinity, aimHitMask);
+
+			line.SetPosition(0, origin);
+			line.SetPosition(1, raycastHit.point);
+
 			line.enabled = true;
+
+			if(anim.speed > 0.01f)
+				anim.speed -= 0.01f;
 		}
-		else
-			//disable line
+		else {
 			line.enabled = false;
+
+			if(anim.speed < 0.99f)
+				anim.speed += 0.01f;
+		}
 	}
 
 	void FixedUpdate () {

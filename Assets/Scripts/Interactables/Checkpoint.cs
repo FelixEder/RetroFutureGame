@@ -20,7 +20,7 @@ public class Checkpoint : MonoBehaviour {
 		activeCheckpoint = checkpoint;
 		//Maybe do some nice animation and add sound.
 		checkpoint.GetComponent<AudioPlayer>().PlayClip(0, 1);
-		GameObject.Find("tutorialPanel").GetComponent<TutorialManager>().DisplayTutorial("checkpoint");
+		GameObject.Find("tutorialPanel").GetComponent<TutorialManager>().DisplayTutorial("checkpoint", "Checkpoint");
 		Debug.Log("Checkpoint activated.\nLocation has been set to: " + checkpoint.transform.position);
 	}
 }

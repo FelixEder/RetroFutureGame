@@ -7,16 +7,16 @@ public class CameraTrigger : MonoBehaviour {
 	GameObject lastFocus;
 
 	void OnTriggerEnter2D(Collider2D col) {
-		Debug.Log("Adjusting Camera  | " + col.gameObject.name + " " + col.gameObject.layer);
+		Debug.Log("Camera | Adjusting | " + col.gameObject.name + " " + col.gameObject.layer);
 		CameraAdjuster adjust = col.gameObject.GetComponent<CameraAdjuster>();
 		cameraGameobject.GetComponent<CameraMovement>().AdjustPosition(adjust.GetX(), adjust.GetY(), adjust.GetSize(), adjust.GetSpeed(), adjust.GetFocus());
 	}
 
 	void OnTriggerExit2D(Collider2D col) {
-		Debug.Log("Exited adjuster | " + col.gameObject.name);
-		CameraAdjuster adjust = col.gameObject.GetComponent<CameraAdjuster>();
+		Debug.Log("Camera | Exited adjuster | " + col.gameObject.name);
+		var adjust = col.gameObject.GetComponent<CameraAdjuster>();
 		if(adjust.GetReset()) {
-			Debug.Log(lastX + "|" + lastY + "|" + lastSize + "|" + lastFocus);
+			Debug.Log("Camera | Reverting to " + lastX + ", " + lastY + ", " + lastSize + ", " + lastFocus);
 			cameraGameobject.GetComponent<CameraMovement>().AdjustPosition(lastX, lastY, lastSize, adjust.GetSpeed(), lastFocus);
 		}
 		else {

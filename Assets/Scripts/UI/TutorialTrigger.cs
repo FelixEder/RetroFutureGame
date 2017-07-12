@@ -3,6 +3,9 @@ using System.Collections;
 
 public class TutorialTrigger : MonoBehaviour {
 	public string tutorial;
+	[TextArea]
+	public string tutorialText;
+
 	TutorialManager manager;
 
 	void Start() {
@@ -12,7 +15,7 @@ public class TutorialTrigger : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col) {
 		if(col.gameObject.tag.Equals("Player")) {
 			Debug.Log("Tutorial triggered");
-			manager.DisplayTutorial(tutorial);
+			manager.DisplayTutorial(tutorial, tutorialText);
 			Destroy(gameObject);
 		}
 	}

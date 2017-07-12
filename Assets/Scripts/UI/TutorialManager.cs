@@ -23,7 +23,7 @@ public class TutorialManager : MonoBehaviour {
 					break;
 				case "punch":
 					if(input.GetKey("Attack"))
-						HideTutorial(10);
+						HideTutorial(4);
 					break;
 				case "float":
 					if(input.GetKey("Float"))
@@ -44,10 +44,11 @@ public class TutorialManager : MonoBehaviour {
 		}
 	}
 
-	public void DisplayTutorial(string tutorial) {
+	public void DisplayTutorial(string tutorial, string tutorialText) {
 		StopAllCoroutines();
 
 		Debug.Log("Display tutorial [ " + tutorial + " ]");
+		/*
 		switch(tutorial.ToLower()) {
 
 			case "jump":
@@ -73,6 +74,9 @@ public class TutorialManager : MonoBehaviour {
 				text.text = "undefined";
 				break;
 		}
+		*/
+		text.text = tutorialText;
+
 		currentTutorial = tutorial;
 		StartCoroutine(ShowPanel());
 	}

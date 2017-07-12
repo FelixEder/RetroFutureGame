@@ -4,6 +4,8 @@ using System.Collections;
 public class Upgrades : MonoBehaviour {
 	//Name has to be the same 
 	public string upgradeType;
+	[TextArea]
+	public string tutorialText;
 
 	void OnTriggerEnter2D(Collider2D col) {
 		if(col.gameObject.name == "Player") {
@@ -51,7 +53,7 @@ public class Upgrades : MonoBehaviour {
 			}
 			if(GetComponent<AudioPlayer>().audioClips.Length > 0)
 				GetComponent<AudioPlayer>().PlayDetached(0, 1, 1, 1);
-			GameObject.Find("tutorialPanel").GetComponent<TutorialManager>().DisplayTutorial(upgradeType);
+			GameObject.Find("tutorialPanel").GetComponent<TutorialManager>().DisplayTutorial(upgradeType, tutorialText);
 			Destroy(gameObject);
 		}
 	}

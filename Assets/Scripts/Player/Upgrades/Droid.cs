@@ -15,17 +15,21 @@ public class Droid : MonoBehaviour {
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 	}
 
+	//MAKE ANIM SLOW DOWN WHEN AMING!
+
 	void Update() {
 		if(input.GetKey("shoot") || Input.GetAxis("RightAnalogH") != 0 || Input.GetAxis("RightAnalogV") != 0) {
+			Vector3 origin = transform.GetChild(0).transform.position + new Vector3(0, 0.3f, -5);
+
 			//line position 0
-			line.SetPosition(0, transform.position + new Vector3(0, 0.3f, -5));
+			line.SetPosition(0, origin);
 
 			//line position 1
 			Vector3 aimDir = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			aimDir = new Vector3(aimDir.x, aimDir.y, -5);
-			Vector3 analogDir = new Vector3(Input.GetAxis("RightAnalogH") * 100, Input.GetAxis("RightAnalogV") * 100, -5);
+			aimDir = (origin - (origin - new Vector3(aimDir.x, aimDir.y)) * 100);
+			Vector3 analogDir = new Vector3(Input.GetAxis("RightAnalogH"), Input.GetAxis("RightAnalogV"));
 			if(analogDir.magnitude != 0)
-				aimDir = transform.position + analogDir;
+				aimDir = origin + analogDir * 100 + new Vector3 (0, 0, -5);
 			line.SetPosition(1, aimDir);
 
 			//enable line

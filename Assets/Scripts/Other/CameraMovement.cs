@@ -18,17 +18,20 @@ public class CameraMovement : MonoBehaviour {
 		position = transform.position;
 		transform.position = new Vector2(Mathf.Lerp(position.x, target.x + adjustX, FollowSpeed()), Mathf.Lerp(position.y, target.y + adjustY, FollowSpeed()));
 		//Main camera
-		transform.GetChild(0).GetComponent<Camera>().orthographicSize = Mathf.Lerp(GetComponent<Camera>().orthographicSize, size, Time.fixedDeltaTime);
+		var mainCamera = transform.GetChild(0).GetComponent<Camera>();
+		mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, size, Time.fixedDeltaTime);
 		//Background camera
-		transform.GetChild(1).GetComponent<Camera>().fieldOfView = Mathf.Lerp(transform.GetChild(0).GetComponent<Camera>().fieldOfView, 40 + size * 7, Time.fixedDeltaTime);
+		var backCamera = transform.GetChild(1).GetComponent<Camera>();
+		backCamera.fieldOfView = Mathf.Lerp(backCamera.fieldOfView, 40 + size * 7, Time.fixedDeltaTime);
 		//Foreground camera
-		transform.GetChild(2).GetComponent<Camera>().fieldOfView = Mathf.Lerp(transform.GetChild(1).GetComponent<Camera>().fieldOfView, 20 + size * 10, Time.fixedDeltaTime);
+		var foreCamera = transform.GetChild(2).GetComponent<Camera>();
+		foreCamera.fieldOfView = Mathf.Lerp(foreCamera.fieldOfView, 20 + size * 10, Time.fixedDeltaTime);
 	}
 
 	float FollowSpeed() {
 		var speed = followSpeed * 0.01f * Vector2.Distance(transform.position, followTarget.transform.position);
-		if(speed > maxSpeed)
-			speed = maxSpeed;
+		if(speed > maxSpeed / 100)
+			speed = maxSpeed / 100;
 		return speed;
 	}
 

@@ -24,5 +24,7 @@ public class CrawlerCritter : MonoBehaviour {
 		attack.knockbackForce = newKnockbackForce;
 		var movement = GetComponent<EnemyMovement>();
 		movement.followRange = newFollowRange;
+		var jump = GetComponent<EnemyJump>();
+		jump.enabled = true;
 	}
 }

@@ -14,7 +14,7 @@ public class PrefabSpawner : MonoBehaviour {
 	public bool setMovement;
 	[Space(5)]
 	public float moveSpeed = 3;
-	public float timeBeforeWander, wanderDistance;
+	public float timeBeforeWander, wanderSpeed, wanderDistance;
 	[Space(5)]
 	public FollowRange followRange;
 
@@ -36,6 +36,10 @@ public class PrefabSpawner : MonoBehaviour {
 	[Space(5)]
 	public int damage = 1;
 	public float knockbackForce = 5;
+
+	[Header("Color")]
+	public bool setColor;
+	public Color color = Color.white;
 
 	bool willRespawn = true;
 
@@ -65,6 +69,7 @@ public class PrefabSpawner : MonoBehaviour {
 			var movement = instance.GetComponent<EnemyMovement>();
 			movement.moveSpeed = moveSpeed;
 			movement.timeBeforeWander = timeBeforeWander;
+			movement.wanderSpeed = wanderSpeed;
 			movement.wanderDist = wanderDistance;
 			movement.followRange = followRange;
 }
@@ -82,7 +87,9 @@ public class PrefabSpawner : MonoBehaviour {
 			var attack = instance.GetComponent<EnemyAttack>();
 			attack.damage = damage;
 			attack.knockbackForce = knockbackForce;
-
+		}
+		if(setColor) {
+			instance.GetComponent<SpriteRenderer>().color = color;
 		}
 	}
 

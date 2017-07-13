@@ -8,21 +8,23 @@ public class Droid : MonoBehaviour {
 	public LayerMask aimHitMask;
 
 	float lastYpos;
+	Transform sprite;
 	LineRenderer line;
 	Animator anim;
 	InputManager input;
 
 	void Start () {
+		sprite = transform.GetChild(0);
 		line = GetComponent<LineRenderer>();
 		anim = GetComponent<Animator>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 	}
 
-	//MAKE ANIM SLOW DOWN WHEN AMING!
-
 	void Update() {
-		if(input.GetKey("shoot") || Input.GetAxis("RightAnalogH") != 0 || Input.GetAxis("RightAnalogV") != 0) {
-			Vector3 origin = transform.GetChild(0).transform.position + new Vector3(0, 0.3f, -5f), analogDir = new Vector3(Input.GetAxis("RightAnalogH"), Input.GetAxis("RightAnalogV"));
+
+		if((input.GetKey("shoot") || Input.GetAxis("RightAnalogH") != 0 || Input.GetAxis("RightAnalogV") != 0) && sprite.GetComponent<DroidLaser>().canShoot) {
+
+			Vector3 origin = sprite.position + new Vector3(0, 0.3f, -5f), analogDir = new Vector3(Input.GetAxis("RightAnalogH"), Input.GetAxis("RightAnalogV"));
 			Vector2 aimDir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - origin;
 			if(analogDir.magnitude != 0)
 				aimDir = origin + analogDir;

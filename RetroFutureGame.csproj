@@ -146,8 +146,8 @@
     <Compile Include="Assets\Scripts\Player\Status\PlayerInventory.cs" />
     <Compile Include="Assets\Scripts\Player\Status\PlayerStatus.cs" />
     <Compile Include="Assets\Scripts\Player\Upgrades\Droid.cs" />
+    <Compile Include="Assets\Scripts\Player\Upgrades\DroidLaser.cs" />
     <Compile Include="Assets\Scripts\Player\Upgrades\Float.cs" />
-    <Compile Include="Assets\Scripts\Player\Upgrades\LaserShooter.cs" />
     <Compile Include="Assets\Scripts\Player\Upgrades\SmallFry.cs" />
     <Compile Include="Assets\Scripts\Player\Upgrades\Stomp.cs" />
     <Compile Include="Assets\Scripts\Player\Upgrades\WallJump.cs" />

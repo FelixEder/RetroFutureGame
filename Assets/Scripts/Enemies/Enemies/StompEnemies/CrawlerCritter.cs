@@ -6,12 +6,10 @@ public class CrawlerCritter : MonoBehaviour {
 	public float newKnockbackForce;
 	public int newDamage;
 	public FollowRange newFollowRange;
-
-	Rigidbody2D rb2D;
+	
 	Animator anim;
 
 	void Start() {
-		rb2D = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
 	}
 

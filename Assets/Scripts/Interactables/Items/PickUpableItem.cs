@@ -2,15 +2,14 @@
 using System.Collections;
 
 public class PickUpableItem : MonoBehaviour {
-	public Rigidbody2D rb2D;
-	public Transform originalParent, holdPosition;
 	public Sprite[] sprites;
-	GameObject player;
-	public float HoldPositionX = 0.341f, HoldPositionY = -0.332f;
-	/**the type*/
 	public string itemType;
-	bool beingHeld;
 	public int damage, health;
+
+	Transform originalParent, holdPosition;
+	Rigidbody2D rb2D;
+	GameObject player;
+	bool beingHeld;
 
 	void Start() {
 		rb2D = GetComponent<Rigidbody2D>();

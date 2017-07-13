@@ -174,11 +174,11 @@ public class PlayerPunch : MonoBehaviour {
 						enemyHealth.TakeDamage(damage);
 					break;
 
-				case "HardEnemy":
+				case "HardCritter":
 					if(attackType == "Rock")
-						enemyHealth.TakeDamage(1);
+						enemyHealth.TakeDamage(1, gameObject, 4f);
 					if(attackType == "Mega" || attackType == "FullMega")
-						enemyHealth.TakeDamage(damage);
+						enemyHealth.TakeDamage(damage, gameObject, 4f);
 					break;
 
 				case "BigEyeBuyWeakSpot":

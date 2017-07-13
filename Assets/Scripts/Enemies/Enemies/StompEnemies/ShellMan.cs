@@ -41,7 +41,7 @@ public class ShellMan : MonoBehaviour {
 
 			case "SmallCritter":
 			case "JumpingCritter":
-			case "HardEnemy":
+			case "HardCritter":
 			case "BigEyeGuy":
 			case "CrawlerCritter":
 			case "ShellMan":

@@ -61,7 +61,7 @@ public class EnemyMovement : MonoBehaviour {
 	void FixedUpdate() {
 		if(grounded) {
 			if(raycastHit) {
-				if(raycastHit.transform.name == "Player") {
+				if(raycastHit.collider.name == "Player") {
 					rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < followSpeed ? new Vector2(followSpeed * 0.1f * Mathf.Sign(player.transform.position.x - transform.position.x), 0) : Vector2.zero;
 					wanderDir = (int) Mathf.Sign(player.transform.position.x - transform.position.x);
 				}
@@ -90,18 +90,18 @@ public class EnemyMovement : MonoBehaviour {
 
 		if(rb2D.velocity.x > 1f) {
 			transform.rotation = Quaternion.Euler(0, 180, 0);
-			anim.speed = Mathf.Clamp01(Mathf.Abs(rb2D.velocity.x));
+			anim.SetFloat("velocity", Mathf.Clamp01(Mathf.Abs(rb2D.velocity.x)));
 		}
 		else if(rb2D.velocity.x < -1f) {
 			transform.rotation = Quaternion.Euler(0, 0, 0);
-			anim.speed = Mathf.Clamp01(Mathf.Abs(rb2D.velocity.x));
+			anim.SetFloat("velocity", Mathf.Clamp01(Mathf.Abs(rb2D.velocity.x)));
 		}
 		else {
-			anim.speed = 0.1f;
+			anim.SetFloat("velocity", 0.1f);
 		}
 		
 		if(raycastHit) {
-			if(raycastHit.transform.name.Equals("Player")) {
+			if(raycastHit.collider.name.Equals("Player")) {
 				if(player.transform.position.x - transform.position.x < 0)
 					transform.rotation = Quaternion.Euler(0, 0, 0);
 				else

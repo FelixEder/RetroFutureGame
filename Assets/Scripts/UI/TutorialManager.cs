@@ -11,6 +11,8 @@ public class TutorialManager : MonoBehaviour {
 	Text text;
 	InputManager input;
 
+	//ADD IMAGE UI TO PANEL AND CHANGE IMAGE TO KEY.
+
 	void Start() {
 		text = transform.GetChild(0).GetComponent<Text>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();

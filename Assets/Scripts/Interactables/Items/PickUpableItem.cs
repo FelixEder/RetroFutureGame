@@ -103,7 +103,8 @@ public class PickUpableItem : MonoBehaviour {
 			switch(col.gameObject.tag) {
 				case "SmallCritter":
 				case "JumpingCritter":
-					col.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+				case "HardCritter":
+					col.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage, gameObject, 4f);
 					if(itemType == "Branch")
 						Break();
 					break;

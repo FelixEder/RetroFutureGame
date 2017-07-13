@@ -8,12 +8,14 @@ public class SpikesfromGoogle : MonoBehaviour {
 	void OnCollisionStay2D(Collision2D col) {
 		switch(col.gameObject.tag) {
 			case "Player":
-				col.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage, gameObject, knockForce);
+				if(!col.gameObject.GetComponent<PlayerStatus>().Invulnerable())
+					col.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * knockForce, ForceMode2D.Impulse);
+				col.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
 				break;
 
 			case "SmallCritter":
 			case "JumpingCritter":
-			case "HardCritter":
+		//	case "HardCritter":
 			case "BigEyeGuy":
 			case "CrawlerCritter":
 			case "ShellMan":

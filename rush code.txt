@@ -1,0 +1,96 @@
+using UnityEngine;
+using System.Collections;
+
+public class HardCritter : MonoBehaviour {
+	public float rushSpeed;
+	public int rushDamage;
+	[Range(0, 100)]
+	public int rushChance = 1;
+	[Space(10)]
+	public Vector3 targetcheckPos = Vector2.one, emergedcheckPos = Vector2.one;
+	public LayerMask targetMask = 256;
+
+	float originalSpeed;
+	int originalDamage;
+	bool rushing, playerCheck;
+	Animator anim;
+	EnemyMovement movement;
+	EnemyAttack attack;
+
+	void OnDrawGizmosSelected() {
+		Gizmos.color = new Color(0, 1, 0, 0.5f); //green
+		Gizmos.DrawCube(transform.position - new Vector3((targetcheckPos.x + targetcheckPos.z) / 2 * FrontCheckDir(), 0, 0), new Vector3(targetcheckPos.x - targetcheckPos.z, targetcheckPos.y, 0));
+	}
+
+	void Start() {
+		anim = GetComponent<Animator>();
+		movement = GetComponent<EnemyMovement>();
+		attack = GetComponent<EnemyAttack>();
+
+		originalDamage = attack.damage;
+		originalSpeed = movement.followSpeed;
+	}
+
+	void Update() {
+		playerCheck = Physics2D.OverlapBox(transform.position - new Vector3((targetcheckPos.x + targetcheckPos.z) / 2 * FrontCheckDir(), 0, 0), new Vector3(targetcheckPos.x - targetcheckPos.z, targetcheckPos.y, 0), 0, targetMask);
+
+		if(playerCheck) {
+			if(Random.Range(0, 100) < rushChance)
+				StartCoroutine(Rush());
+		}
+	}
+
+	void OnCollisionEnter2D(Collision2D col) {
+
+		switch(col.gameObject.tag) {
+
+			case "SmallCritter":
+			case "JumpingCritter":
+			case "HardCritter":
+			case "BigEyeGuy":
+			case "CrawlerCritter":
+			case "ShellMan":
+				break;
+
+			case "Player":
+			case "Wall":
+			case "Door":
+			case "Barrier":
+				break;
+		}
+	}
+
+	IEnumerator Rush() {
+		if(!rushing) {
+			Debug.Log("HardCritter is preparing rush");
+			rushing = true;
+			movement.followSpeed = 0;
+			movement.wanderSpeed = 0;
+
+			yield return new WaitForSeconds(1f);
+
+			Debug.Log("HardCritter is rushing");
+			attack.damage = rushDamage;
+			movement.followSpeed = rushSpeed;
+			movement.wanderSpeed = rushSpeed;
+
+			yield return new WaitForSeconds(1f);
+
+			Debug.Log("HardCritter stopped rushing");
+			attack.damage = originalDamage;
+			movement.followSpeed = originalSpeed;
+			movement.wanderSpeed = originalSpeed;
+			rushing = false;
+
+			yield return new WaitForSeconds(2f);
+			Debug.Log("HardCritter rush cooldown ended");
+		}
+	}
+
+	int FrontCheckDir() {
+		if(transform.rotation.y == 0)
+			return 1;
+		else
+			return -1;
+	}
+}

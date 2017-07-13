@@ -176,20 +176,20 @@ public class PlayerPunch : MonoBehaviour {
 
 				case "HardCritter":
 					if(attackType == "Rock")
-						enemyHealth.TakeDamage(1, gameObject, 4f);
+						enemyHealth.TakeDamage(damage, gameObject, 4f);
 					if(attackType == "Mega" || attackType == "FullMega")
 						enemyHealth.TakeDamage(damage, gameObject, 4f);
 					break;
 
 				case "BigEyeBuyWeakSpot":
 					if(attackType == "Branch")
-						victim.gameObject.transform.parent.GetComponent<BigEyeGuy>().TakeDamage(1);
+						victim.gameObject.transform.parent.GetComponent<BigEyeGuy>().TakeDamage(damage);
 					break;
 
 				case "StatueBossEye":
 					if(attackType == "Branch") {
 						if(playerInventory.IsHoldingItem()) {
-							victim.gameObject.GetComponent<StatueBossLaser>().TakeDamage(1);
+							victim.gameObject.GetComponent<StatueBossLaser>().TakeDamage(damage);
 							playerInventory.GetHoldingItem().GetComponent<PickUpableItem>().Break(3);
 							playerInventory.SetHoldingItem(null);
 						}
@@ -199,11 +199,11 @@ public class PlayerPunch : MonoBehaviour {
 				case "FinalBossWeakSpot":
 					if(attackType == "FullMega") {
 						Debug.Log("Full MegaPunched the boss!");
-						victim.gameObject.GetComponent<Phase1>().TakeDamage(3);
+						victim.gameObject.GetComponent<Phase1>().TakeDamage(damage);
 					}
 					else if(attackType == "Mega") {
 						Debug.Log("Regular MegaPunched the boss!");
-						victim.gameObject.GetComponent<Phase1>().TakeDamage(1);
+						victim.gameObject.GetComponent<Phase1>().TakeDamage(damage);
 					}
 					else {
 						Debug.Log("Invulnerable to AttackType [ " + attackType + " ]");
@@ -214,11 +214,11 @@ public class PlayerPunch : MonoBehaviour {
 					if(victim.gameObject.GetComponent<Phase2>().blued) {
 						if(attackType == "FullMega") {
 							Debug.Log("Full MegaPunched the boss phase 2!");
-							victim.gameObject.GetComponent<Phase2>().TakeDamage(3);
+							victim.gameObject.GetComponent<Phase2>().TakeDamage(damage);
 						}
 						else if(attackType == "Mega") {
 							Debug.Log("Regular MegaPunched the boss phase 2!");
-							victim.gameObject.GetComponent<Phase2>().TakeDamage(1);
+							victim.gameObject.GetComponent<Phase2>().TakeDamage(damage);
 						}
 						else {
 							Debug.Log("Invulnerable to AttackType [ " + attackType + " ]");

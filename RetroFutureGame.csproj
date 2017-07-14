@@ -106,7 +106,6 @@
     <Compile Include="Assets\Scripts\Enemies\Enemies\SoftEnemies\JumpingCritterTrigger.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemies\StompEnemies\CrawlerCritter.cs" />
     <Compile Include="Assets\Scripts\Enemies\Enemies\StompEnemies\ShellMan.cs" />
-    <Compile Include="Assets\Scripts\Enemies\Enemies\StompEnemies\ShellManJumpingTrigger.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyKnockback.cs" />
     <Compile Include="Assets\Scripts\Enemies\SpawnProperties.cs" />
     <Compile Include="Assets\Scripts\Enviroment\BackgroundParallax.cs" />

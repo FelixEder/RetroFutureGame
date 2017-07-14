@@ -4,6 +4,12 @@ using System.Collections;
 public class Upgrades : MonoBehaviour {
 	//Name has to be the same 
 	public string upgradeType;
+	public GameObject upgradeLocation;
+	[Header("Tutorial")]
+	public GameObject manager;
+	public float timeToDisplay;
+	public bool stringIsHideKey;
+	public string tutorial;
 	[TextArea]
 	public string tutorialText;
 
@@ -29,7 +35,7 @@ public class Upgrades : MonoBehaviour {
 					break;
 
 				case "Laser":
-					col.gameObject.transform.GetChild(9).gameObject.SetActive(true);
+					upgradeLocation.SetActive(true);
 					break;
 
 				case "Health":
@@ -48,12 +54,12 @@ public class Upgrades : MonoBehaviour {
 					break;
 
 				case "MegaPunch":
-					col.gameObject.transform.GetChild(5).GetComponent<PlayerPunch>().megaAquired = true;
+					upgradeLocation.GetComponent<PlayerPunch>().megaAquired = true;
 					break;
 			}
 			if(GetComponent<AudioPlayer>().audioClips.Length > 0)
 				GetComponent<AudioPlayer>().PlayDetached(0, 1, 1, 1);
-			GameObject.Find("tutorialPanel").GetComponent<TutorialManager>().DisplayTutorial(upgradeType, tutorialText, false, 5f);
+			manager.GetComponent<TutorialManager>().DisplayTutorial(tutorial, tutorialText, stringIsHideKey, timeToDisplay); ;
 			Destroy(gameObject);
 		}
 	}

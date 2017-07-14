@@ -8,13 +8,11 @@ public class HardCritter : MonoBehaviour {
 	public Vector2 hidingCheckPos = Vector2.one, emergedCheckPos = Vector2.one;
 	public LayerMask targetMask = 256;
 
-	float originalSpeed, count = 0;
-	int originalDamage;
-	bool rushing, playerCheck;
+	float origFollowSpeed, origWanderSpeed, count = 0;
+	bool playerCheck;
 	Vector3 checkPos;
 	Animator anim;
 	EnemyMovement movement;
-	EnemyAttack attack;
 
 	void OnDrawGizmosSelected() {
 		Gizmos.color = new Color(1, 0, 0, 0.5f); //red
@@ -26,10 +24,9 @@ public class HardCritter : MonoBehaviour {
 	void Start() {
 		anim = GetComponent<Animator>();
 		movement = GetComponent<EnemyMovement>();
-		attack = GetComponent<EnemyAttack>();
 
-		originalDamage = attack.damage;
-		originalSpeed = movement.followSpeed;
+		origFollowSpeed = movement.followSpeed;
+		origWanderSpeed = movement.wanderSpeed;
 
 		if(hide) {
 			StartCoroutine(Hide());
@@ -61,8 +58,8 @@ public class HardCritter : MonoBehaviour {
 
 		yield return new WaitForSeconds(0.5f);
 
-		movement.followSpeed = originalSpeed;
-		movement.wanderSpeed = originalSpeed;
+		movement.followSpeed = origFollowSpeed;
+		movement.wanderSpeed = origWanderSpeed;
 		movement.canSeeBehind = true;
 
 		checkPos = emergedCheckPos;

@@ -2,29 +2,41 @@ using UnityEngine;
 using System.Collections;
 
 public class PlayerPunch : MonoBehaviour {
+	public bool megaAquired;
+	public int minLimit, maxLimit = 200;
+	public float offset;
+	public GameObject punchVisual;
+	public LayerMask whatIsPunchable;
+
+	bool animationCooldown, holdPunch, onCooldown, branchInv;
+	string attackType;
+	int damage, charge;
+	float gizmoSizeX = 1f;
+
 	PlayerEnergy energy;
 	PlayerInventory inventory;
 	PlayerStatus status;
 	InputManager input;
-	public bool holdPunch, holdMega, onCooldown, branchInv, megaAquired;
-	bool animationCooldown;
-	string attackType;
-	int damage, charge, limit = 200;
 
 	Collider2D[] victims;
 	RaycastHit2D[] castVictims;
-	public LayerMask whatIsPunchable;
-	float gizmoSizeX = 1f;
 
 	void OnDrawGizmosSelected() {
 		Gizmos.color = new Color(1, 0, 0, 0.5f);
-		Gizmos.DrawCube(transform.position, new Vector3(gizmoSizeX, 2f, 1));
+		if(status) {
+			if(status.isMirrored)
+				Gizmos.DrawCube(transform.position + new Vector3(-gizmoSizeX / 2, offset), new Vector3(gizmoSizeX, 2f));
+			else
+				Gizmos.DrawCube(transform.position + new Vector3(gizmoSizeX / 2, offset), new Vector3(gizmoSizeX, 2f));
+		}
+		else
+			Gizmos.DrawCube(transform.position + new Vector3(gizmoSizeX / 2, offset), new Vector3(gizmoSizeX, 2f));
 	}
 
 	void Start() {
-		energy = transform.parent.GetComponent<PlayerEnergy>();
-		inventory = transform.parent.GetComponent<PlayerInventory>();
-		status = transform.parent.GetComponent<PlayerStatus>();
+		energy = GetComponent<PlayerEnergy>();
+		inventory = GetComponent<PlayerInventory>();
+		status = GetComponent<PlayerStatus>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 	}
 
@@ -41,9 +53,9 @@ public class PlayerPunch : MonoBehaviour {
 	//MEGA
 	IEnumerator AttackCharge() {
 		while(input.GetKey("attack")) {
-			while(charge < limit && input.GetKey("attack")) {
+			while(charge < maxLimit && input.GetKey("attack")) {
 				charge ++;
-				if(charge == 50 || charge == limit)
+				if(charge == minLimit || charge == maxLimit)
 					Debug.Log("MegaPunch charge [ " + charge + " ]");
 				yield return 0;
 			}
@@ -55,7 +67,7 @@ public class PlayerPunch : MonoBehaviour {
 
 	void AttackType() {
 		onCooldown = true;
-		if(charge == limit && megaAquired) {
+		if(charge == maxLimit && megaAquired) {
 			if(energy.UseEnergy(3)) {
 				Debug.Log("Full MegaPunch");
 				attackType = "FullMega";
@@ -68,7 +80,7 @@ public class PlayerPunch : MonoBehaviour {
 				//No energy, play correct things
 			}
 		}
-		else if(charge >= 50 && megaAquired) {
+		else if(charge >= minLimit && megaAquired) {
 			if(energy.UseEnergy(1)) {
 				Debug.Log("Regular MegaPunch");
 				attackType = "Mega";
@@ -116,11 +128,13 @@ public class PlayerPunch : MonoBehaviour {
 
 	//OverlapBox check and damage all victims in area.
 	IEnumerator DamageArea(float sizeX) {
-		transform.localPosition = new Vector2(sizeX / 2, -0.2f);
 		gizmoSizeX = sizeX;
-		victims = Physics2D.OverlapBoxAll(transform.position, new Vector2(sizeX, 2f), 0, whatIsPunchable);
-		
 
+		if(status.isMirrored)
+			victims = Physics2D.OverlapBoxAll(transform.position + new Vector3(-sizeX / 2, offset), new Vector2(sizeX, 2f), 0, whatIsPunchable);
+		else
+			victims = Physics2D.OverlapBoxAll(transform.position + new Vector3(sizeX / 2, offset), new Vector2(sizeX, 2f), 0, whatIsPunchable);
+		
 		foreach(Collider2D victim in victims) {
 			var enemyHealth = victim.gameObject.GetComponent<EnemyHealth>();
 			if(attackType == "Branch" && !branchInv && victim.gameObject.tag != "Door") {
@@ -221,9 +235,11 @@ public class PlayerPunch : MonoBehaviour {
 			Debug.Log("Punched [ " + victim + " ] - tag [ " + victim.gameObject.tag + " ] - attackType [ " + attackType + " ] - damage [ " + damage + " ]");
 		}
 
-		transform.GetChild(0).GetComponent<Animator>().SetTrigger(attackType);
+		punchVisual.transform.localPosition = new Vector3(sizeX / 2, offset);
+		punchVisual.GetComponent<Animator>().SetTrigger(attackType);
+
 		if(!(attackType == "Door" || attackType == "Barrier"))
-			GetComponent<AudioPlayer>().PlayClip(0, 1, 0.7f, 1.3f);
+			GetComponent<AudioPlayer>().PlayClip(6, 1, 0.7f, 1.3f);
 
 		yield return new WaitForSeconds(0.2f);
 

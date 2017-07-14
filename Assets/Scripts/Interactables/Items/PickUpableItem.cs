@@ -103,10 +103,19 @@ public class PickUpableItem : MonoBehaviour {
 			switch(col.gameObject.tag) {
 				case "SmallCritter":
 				case "JumpingCritter":
-				case "HardCritter":
-					col.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage, gameObject, 4f);
+					col.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage, gameObject, 3f);
 					if(itemType == "Branch")
 						Break();
+					break;
+
+				case "HardCritter":
+					if(itemType == "Rock")
+						col.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage, gameObject, 3f);
+					break;
+
+				case "ShellMan":
+					if(itemType == "Rock" && col.gameObject.GetComponent<ShellMan>().deShelled)
+						col.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage, gameObject, 3f);
 					break;
 			}
 		}

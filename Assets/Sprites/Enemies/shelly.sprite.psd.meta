@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: be749b02fed806c44955dc643a88ef1e
-timeCreated: 1499702819
+timeCreated: 1500031872
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -77,10 +77,10 @@ TextureImporter:
       name: shelly.sprite_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
-        width: 30
-        height: 21
+        x: 0
+        y: 0
+        width: 33
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -90,10 +90,10 @@ TextureImporter:
       name: shelly.sprite_1
       rect:
         serializedVersion: 2
-        x: 38
-        y: 2
-        width: 30
-        height: 21
+        x: 36
+        y: 0
+        width: 33
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -103,10 +103,10 @@ TextureImporter:
       name: shelly.sprite_2
       rect:
         serializedVersion: 2
-        x: 74
-        y: 2
-        width: 30
-        height: 21
+        x: 72
+        y: 0
+        width: 33
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -116,10 +116,10 @@ TextureImporter:
       name: shelly.sprite_3
       rect:
         serializedVersion: 2
-        x: 110
-        y: 2
-        width: 30
-        height: 21
+        x: 108
+        y: 0
+        width: 33
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

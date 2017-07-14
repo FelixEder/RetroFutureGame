@@ -2,9 +2,9 @@ using UnityEngine;
 using System.Collections;
 
 public class PlayerPunch : MonoBehaviour {
-	PlayerEnergy energy;
-	PlayerInventory inventory;
-	PlayerStatus status;
+	PlayerEnergy playerEnergy;
+	PlayerInventory playerInventory;
+	PlayerStatus playerStatus;
 	InputManager input;
 	public bool holdPunch, holdMega, onCooldown, branchInv, megaAquired;
 	bool animationCooldown;
@@ -22,76 +22,45 @@ public class PlayerPunch : MonoBehaviour {
 	}
 
 	void Start() {
-		energy = transform.parent.GetComponent<PlayerEnergy>();
-		inventory = transform.parent.GetComponent<PlayerInventory>();
-		status = transform.parent.GetComponent<PlayerStatus>();
+		playerEnergy = transform.parent.GetComponent<PlayerEnergy>();
+		playerInventory = transform.parent.GetComponent<PlayerInventory>();
+		playerStatus = transform.parent.GetComponent<PlayerStatus>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 	}
 
-	void Update() {
+	void Update() { //TODO: COMBINE BUTTONS TO SAME KEY.
+		//PUNCH
 		if(!input.GetKey("attack") && holdPunch)
 			holdPunch = false;
-		else if(input.GetKey("attack") && !(input.GetAxis("ysign") < 0f && status.InAir()) && !holdPunch && !status.isSmall) {
+		else if(input.GetKey("attack") && !(input.GetAxis("ysign") < 0f && playerStatus.InAir()) && !holdPunch && !playerStatus.isSmall) {
 			holdPunch = true;
 			if(!onCooldown)
-				StartCoroutine(AttackCharge());
+				ExecutePunch();
+		}
+
+		//MEGA
+		if(input.GetKey("mega") && !playerStatus.isSmall && !holdMega && megaAquired) {
+			holdMega = true;
+			StartCoroutine(ChargeMega());
 		}
 	}
 
-	//MEGA
-	IEnumerator AttackCharge() {
-		while(input.GetKey("attack")) {
-			while(charge < limit && input.GetKey("attack")) {
-				charge ++;
-				if(charge == 50 || charge == limit)
-					Debug.Log("MegaPunch charge [ " + charge + " ]");
-				yield return 0;
-			}
-			yield return 0;
-		}
-		AttackType();
-		charge = 0;
-	}
-
-	void AttackType() {
+	//PUNCH
+	void ExecutePunch() { //TODO: INSERT CODE INTO MEGAEXECUTE and actually return an int, run execute in damagearea coroutine starter.
 		onCooldown = true;
-		if(charge == limit && megaAquired) {
-			if(energy.UseEnergy(3)) {
-				Debug.Log("Full MegaPunch");
-				attackType = "FullMega";
-				damage = 5;
-				StartCoroutine(DamageArea(2f));
-				return;
-			}
-			else {
-				Debug.Log("Not enough energy for Full MegaPunch");
-				//No energy, play correct things
-			}
-		}
-		else if(charge >= 50 && megaAquired) {
-			if(energy.UseEnergy(1)) {
-				Debug.Log("Regular MegaPunch");
-				attackType = "Mega";
-				damage = 3;
-				StartCoroutine(DamageArea(2f));
-				return;
-			}
-			else {
-				Debug.Log("Not enough energy for Regular MegaPunch");
-				//No energy, play correct things
-			}
-		}
-		else if(inventory.IsHoldingItem()) {
-			GameObject holdingItem = inventory.GetHoldingItem();
+		if(playerInventory.IsHoldingItem()) {
+			GameObject holdingItem = playerInventory.GetHoldingItem();
 			switch(holdingItem.GetComponent<PickUpableItem>().GetItemType()) {
 
 				case "Rock":
+					//Play correct animation
 					attackType = "Rock";
 					damage = holdingItem.GetComponent<PickUpableItem>().damage;
 					StartCoroutine(DamageArea(1.1f));
 					return;
 
 				case "Branch":
+					//Play correct animation
 					attackType = "Branch";
 					damage = holdingItem.GetComponent<PickUpableItem>().damage;
 					StartCoroutine(DamageArea(1.5f));
@@ -100,18 +69,63 @@ public class PlayerPunch : MonoBehaviour {
 				default:
 					attackType = "ItemError";
 					damage = 1;
-					StartCoroutine(DamageArea(1.5f));
 					return;
 			}
 		}
 		else {
+			//Play the standard animation
 			attackType = "Punch";
 			damage = 1;
 			StartCoroutine(DamageArea(1.1f));
-			return;
 		}
-		//if none of the above is executed reset cooldown;
-		onCooldown = false;
+	}
+
+	//MEGA
+	IEnumerator ChargeMega() { //TODO: USE FOR HOLD KEY CHECK THEN CHECK CHARGE FOR TYPE. ATTACKCHARGE
+		while(input.GetKey("mega")) {
+			while(charge < limit && input.GetKey("mega")) {
+				charge++;
+				if(charge == 50 || charge == limit)
+					Debug.Log("MegaPunch charge [ " + charge + " ]");
+				yield return 0;
+			}
+			yield return 0;
+		}
+		damage = ExecuteMega();
+		charge = 0;
+		holdMega = false;
+	}
+
+	int ExecuteMega() { //TODO: ADD PUNCH EXECUTE AT END AND IF CHARGE TO LOW DO PUNCH INSTEAD. ATTACKTYPE()
+		if(charge == limit) {
+			if(playerEnergy.UseEnergy(3)) {
+				Debug.Log("Full MegaPunch");
+				attackType = "FullMega";
+				StartCoroutine(DamageArea(2f));
+				return 5;
+			}
+			else {
+				Debug.Log("Not enough energy for Full MegaPunch");
+				//No energy, play correct things
+			}
+		}
+		else if(charge >= 50) {
+			if(playerEnergy.UseEnergy(1)) {
+				Debug.Log("Regular MegaPunch");
+				attackType = "Mega";
+				StartCoroutine(DamageArea(2f));
+				return 3;
+			}
+			else {
+				Debug.Log("Not enough energy for Regular MegaPunch");
+				//No energy, play correct things
+			}
+		}
+		else {
+			Debug.Log("MegaPunch canceled");
+			//Too low chargecounter, play correct things //new: and check punch instead.
+		}
+		return 1;
 	}
 
 	//OverlapBox check and damage all victims in area.
@@ -124,8 +138,8 @@ public class PlayerPunch : MonoBehaviour {
 		foreach(Collider2D victim in victims) {
 			var enemyHealth = victim.gameObject.GetComponent<EnemyHealth>();
 			if(attackType == "Branch" && !branchInv && victim.gameObject.tag != "Door") {
-				if(inventory.GetHoldingItem().GetComponent<PickUpableItem>().Break() <= 0) {
-					inventory.SetHoldingItem(null);
+				if(playerInventory.GetHoldingItem().GetComponent<PickUpableItem>().Break() <= 0) {
+					playerInventory.SetHoldingItem(null);
 				}
 				branchInv = true;
 			}
@@ -180,10 +194,10 @@ public class PlayerPunch : MonoBehaviour {
 
 				case "StatueBossEye":
 					if(attackType == "Branch") {
-						if(inventory.IsHoldingItem()) {
+						if(playerInventory.IsHoldingItem()) {
 							victim.gameObject.GetComponent<StatueBossLaser>().TakeDamage(damage);
-							inventory.GetHoldingItem().GetComponent<PickUpableItem>().Break(3);
-							inventory.SetHoldingItem(null);
+							playerInventory.GetHoldingItem().GetComponent<PickUpableItem>().Break(3);
+							playerInventory.SetHoldingItem(null);
 						}
 					}
 					break;
@@ -226,7 +240,6 @@ public class PlayerPunch : MonoBehaviour {
 			GetComponent<AudioPlayer>().PlayClip(0, 1, 0.7f, 1.3f);
 
 		yield return new WaitForSeconds(0.2f);
-
 		onCooldown = false;
 		branchInv = false;
 	}

@@ -63,6 +63,7 @@ public class HardCritter : MonoBehaviour {
 
 		movement.followSpeed = originalSpeed;
 		movement.wanderSpeed = originalSpeed;
+		movement.canSeeBehind = true;
 
 		checkPos = emergedCheckPos;
 	}
@@ -70,6 +71,7 @@ public class HardCritter : MonoBehaviour {
 	IEnumerator Hide() {
 		movement.followSpeed = 0;
 		movement.wanderSpeed = 0;
+		movement.canSeeBehind = false;
 
 		yield return new WaitForSeconds(0.5f);
 

@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class Stomp : MonoBehaviour {
-	Rigidbody2D rigidBody2D;
+	Rigidbody2D rb2D;
 	PlayerStatus status;
 	InputManager input;
 
@@ -14,7 +14,7 @@ public class Stomp : MonoBehaviour {
 
 	// Use this for initialization
 	void Start() {
-		rigidBody2D = GetComponent<Rigidbody2D>();
+		rb2D = GetComponent<Rigidbody2D>();
 		status = GetComponent<PlayerStatus>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 		//Change sprite, display correct tutorial and play theme.
@@ -38,18 +38,20 @@ public class Stomp : MonoBehaviour {
 
 	IEnumerator StartStomp() {
 		Debug.Log("Started Stomp");
-		rigidBody2D.velocity = new Vector2(0, 0);
-		rigidBody2D.gravityScale = 0.0f;
+		rb2D.velocity = new Vector2(0, 0);
+		rb2D.gravityScale = 0.0f;
 
 		yield return new WaitForSeconds(0.2f);
 		status.invulnerable = true;
-		rigidBody2D.gravityScale = 2.0f;
-		rigidBody2D.velocity = new Vector2(0, -9f);
+		rb2D.gravityScale = 2.0f;
+		rb2D.velocity = new Vector2(0, -9f);
 	}
 
 	void LandStomp() {
 		Debug.Log("Finished Stomp");
 		GetComponent<AudioPlayer>().PlayClip(5, 2f);
+
+		rb2D.velocity = new Vector2(rb2D.velocity.x, 0);
 		isStomping = false;
 		status.Invulnerable(0.2f);
 
@@ -68,25 +70,30 @@ public class Stomp : MonoBehaviour {
 					Debug.Log("Hit crawler!");
 					var crawler = victim.gameObject.GetComponent<CrawlerCritter>();
 					if(!crawler.noShell) {
-						enemyHealth.TakeDamage(1);
+						enemyHealth.TakeDamage(1, gameObject, knockForce);
 						crawler.BreakShell();
 					}
 					else
-						enemyHealth.TakeDamage(2);
+						enemyHealth.TakeDamage(2, gameObject, knockForce);
 					break;
 
 				case "ShellMan":
-					ShellMan shellMan = victim.gameObject.GetComponent<ShellMan>();
+					var shellMan = victim.gameObject.GetComponent<ShellMan>();
 					if(!shellMan.deShelled) {
-						enemyHealth.TakeDamage(1);
+						enemyHealth.TakeDamage(1, gameObject, knockForce);
 					}
 					else if(shellMan.deShelled) {
-						enemyHealth.TakeDamage(2);
+						enemyHealth.TakeDamage(2, gameObject, knockForce);
 					}
 					break;
 
 				case "FinalBossLastForm":
 					victim.gameObject.GetComponent<Phase3Head>().TakeDamage();
+					break;
+
+				default:
+					if(enemyHealth)
+						enemyHealth.Knockback(gameObject, knockForce);
 					break;
 			}
 			Debug.Log("STOMPED: " + victim.gameObject.name + " with tag: " + victim.gameObject.tag);

@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetrofutureGame", "RetrofutureGame.csproj", "{9E25AE52-17E6-0E68-361F-D080925221A6}"
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetroFutureGame.CSharp", "RetroFutureGame.CSharp.csproj", "{C20ABA2B-03BB-9182-EDF1-04CF6108ECC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetrofutureGame.Editor", "RetrofutureGame.Editor.csproj", "{1EC8EAC4-E501-A39D-3EFB-67482DB2BDAE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetroFutureGame.CSharp.Editor", "RetroFutureGame.CSharp.Editor.csproj", "{A966150B-5576-6271-BF8A-DAF27212B22B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,14 +11,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9E25AE52-17E6-0E68-361F-D080925221A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9E25AE52-17E6-0E68-361F-D080925221A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9E25AE52-17E6-0E68-361F-D080925221A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9E25AE52-17E6-0E68-361F-D080925221A6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1EC8EAC4-E501-A39D-3EFB-67482DB2BDAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1EC8EAC4-E501-A39D-3EFB-67482DB2BDAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1EC8EAC4-E501-A39D-3EFB-67482DB2BDAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1EC8EAC4-E501-A39D-3EFB-67482DB2BDAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C20ABA2B-03BB-9182-EDF1-04CF6108ECC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C20ABA2B-03BB-9182-EDF1-04CF6108ECC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C20ABA2B-03BB-9182-EDF1-04CF6108ECC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C20ABA2B-03BB-9182-EDF1-04CF6108ECC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A966150B-5576-6271-BF8A-DAF27212B22B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A966150B-5576-6271-BF8A-DAF27212B22B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A966150B-5576-6271-BF8A-DAF27212B22B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A966150B-5576-6271-BF8A-DAF27212B22B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

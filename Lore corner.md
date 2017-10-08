@@ -1,5 +1,5 @@
-##RetroFutureGame - Lore corner
-This is the lore corner of the game, here the lore behind the game is spoken about.
+#RetroFutureGame - Lore corner
+####This is the lore corner of the game, here the lore behind the game is stated.
 
 This game takes place decades (or centuries) after an accident at a strange research facility. Little is know about this place. It lies in a peaceful nature place. There is a little well and a courtyard with a big statue of the company's create, Ara Something. The facility has a huge mansion above ground, where supposedly medical research was being made. But nobody really knew this for a fact. 
 
@@ -12,3 +12,5 @@ They also created a lot of machinery that the scientists could use, everything f
 They continued their research and created something truly horrifying deep in the dungeons, something they had to lock up. They knew they had finally gone to far when one of their own was lost to the beast. Due to bad morale, one of the scientist made an error and the beasts from the dungeons made it out and overwhelmed the facility. They lost room by room to the creatures. In a final effort, the scientist and the owner went into the experimental area and made one last transformation on the owner, into a mighty warrior. But as the owner was transformed, so was his mental space and he became savage and dangerous. He killed all remaining scientists and then went into a deep slumber.
 
 Many many years went by and the facility lives its own life now. No one dares go near it until the property was bought by a rich investor. Since this person doesn't belive in the myths, he hires an investigator (you!) to go to the facility and find out what really happened. Have fun!
+
+*//Felix*

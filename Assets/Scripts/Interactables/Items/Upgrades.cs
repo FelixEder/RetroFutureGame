@@ -15,27 +15,33 @@ public class Upgrades : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col) {
 		if(col.gameObject.name == "Player") {
+			PlayerInventory playInv = col.gameObject.GetComponent<PlayerInventory>();
 			//Play correct music and animation depending on what switch-option is chosen
 			switch(upgradeType) {
 
 				case "Float":
 					col.gameObject.GetComponent<Float>().enabled = true;
+					playInv.addUpgrade("float");
 					break;
 
 				case "SecondJump":
 					col.gameObject.GetComponent<PlayerJump>().gotSecondJump = true;
+					playInv.addUpgrade("secondJump");
 					break;
 
 				case "WallJump":
 					col.gameObject.GetComponent<WallJump>().enabled = true;
+					playInv.addUpgrade("wallJump");
 					break;
 
 				case "Stomp":
 					col.gameObject.GetComponent<Stomp>().enabled = true;
+					playInv.addUpgrade("stomp");
 					break;
 
 				case "Laser":
 					upgradeLocation.SetActive(true);
+					playInv.addUpgrade("laser");
 					break;
 
 				case "Health":
@@ -55,6 +61,12 @@ public class Upgrades : MonoBehaviour {
 
 				case "MegaPunch":
 					upgradeLocation.GetComponent<PlayerPunch>().megaAquired = true;
+					playInv.addUpgrade("megaPunch");
+					break;
+
+                case "Small":
+                    col.gameObject.GetComponent<SmallFry>().enabled = true;
+					playInv.addUpgrade("small");
 					break;
 			}
 			if(GetComponent<AudioPlayer>().audioClips.Length > 0)

@@ -6,7 +6,6 @@ public class SmallFry : MonoBehaviour {
 	PlayerInventory inventory;
 	InputManager input;
 	bool holdSmall;
-	//	public Sprite normal, smallFry;
 
 	void Start() {
 		status = transform.parent.GetComponent<PlayerStatus>();
@@ -29,16 +28,16 @@ public class SmallFry : MonoBehaviour {
 	}
 
 	void GrowSmall() {
-		transform.parent.GetComponent<PolygonCollider2D>().enabled = false;
-		transform.parent.GetComponent<CircleCollider2D>().enabled = true;
+		transform.parent.GetComponent<Collider2D>().enabled = false;
+		GetComponent<Collider2D>().enabled = true;
 		status.isSmall = true;
 		if(inventory.IsHoldingItem())
 			inventory.SetHoldingItem(null);
 	}
 
 	void GrowBig() {
-		transform.parent.GetComponent<PolygonCollider2D>().enabled = true;
-		transform.parent.GetComponent<CircleCollider2D>().enabled = false;
+		transform.parent.GetComponent<Collider2D>().enabled = true;
+		GetComponent<Collider2D>().enabled = false;
 		status.isSmall = false;
 	}
 }

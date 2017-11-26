@@ -42,7 +42,11 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 5}
+<<<<<<< HEAD
   m_MinSize: {x: 950, y: 521}
+=======
+  m_MinSize: {x: 950, y: 300}
+>>>>>>> 9d6301b728699f3bdb53b6226d1343cfe97fdb8f
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -91,7 +95,11 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 122}
   m_MaxSize: {x: 200, y: 147}
   vertical: 0
+<<<<<<< HEAD
   controlID: 31
+=======
+  controlID: 77
+>>>>>>> 9d6301b728699f3bdb53b6226d1343cfe97fdb8f
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -113,7 +121,11 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
+<<<<<<< HEAD
   m_MinSize: {x: 950, y: 521}
+=======
+  m_MinSize: {x: 950, y: 300}
+>>>>>>> 9d6301b728699f3bdb53b6226d1343cfe97fdb8f
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &6
 MonoBehaviour:
@@ -179,7 +191,11 @@ MonoBehaviour:
   m_MinSize: {x: 681, y: 471}
   m_MaxSize: {x: 14000, y: 14021}
   vertical: 0
+<<<<<<< HEAD
   controlID: 6091
+=======
+  controlID: 64
+>>>>>>> 9d6301b728699f3bdb53b6226d1343cfe97fdb8f
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -203,7 +219,11 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 471}
   m_MaxSize: {x: 10000, y: 14021}
   vertical: 1
+<<<<<<< HEAD
   controlID: 6092
+=======
+  controlID: 139
+>>>>>>> 9d6301b728699f3bdb53b6226d1343cfe97fdb8f
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -227,7 +247,11 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
+<<<<<<< HEAD
   controlID: 6093
+=======
+  controlID: 140
+>>>>>>> 9d6301b728699f3bdb53b6226d1343cfe97fdb8f
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -461,10 +485,17 @@ MonoBehaviour:
     width: 377
     height: 552
   m_TreeViewState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 1104}
     m_SelectedIDs: ee380000
     m_LastClickedID: 14574
     m_ExpandedIDs: 1afcffff00000000f4320000e23400003c39000090390000623f000044410000
+=======
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 86e7ffff00000000
+>>>>>>> 9d6301b728699f3bdb53b6226d1343cfe97fdb8f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -667,10 +698,11 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Sprites/Enviroment/SewerDungeon
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
+<<<<<<< HEAD
   - Assets/Sprites/Enviroment/SewerDungeon
   m_LastFoldersGridSize: 96
   m_LastProjectPath: F:\Unity Projects\RetroFutureGame
@@ -680,6 +712,17 @@ MonoBehaviour:
     m_SelectedIDs: 6e2d0000
     m_LastClickedID: 11630
     m_ExpandedIDs: 00000000fe2600001e270000222700002e270000c0270000e627000080280000fe28000080290000822900001c2a00001a2b0000222b0000762b0000ea2c0000222d0000242d0000422d00004a2d00004c2d0000662d0000ac2d0000cc2d0000ea2d000000ca9a3bffffff7f
+=======
+  - Assets
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: D:\Spelprojekt\Games\RetroFutureGame
+  m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 95}
+    m_SelectedIDs: 46310000
+    m_LastClickedID: 12614
+    m_ExpandedIDs: 0000000046310000623100006631000070310000ee310000043200008e320000f63200005633000058330000c43300009c340000a0340000ee340000303600005c3600005e3600007c36000084360000863600009e360000ce360000ea3600000237000000ca9a3bffffff7f
+>>>>>>> 9d6301b728699f3bdb53b6226d1343cfe97fdb8f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -707,7 +750,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000fe2600001e270000222700002e270000c0270000e627000080280000fe28000080290000822900001c2a00001a2b0000222b0000762b0000ea2c0000222d0000242d0000422d00004a2d00004c2d0000662d0000ac2d0000cc2d0000ea2d000000ca9a3bffffff7f
+=======
+    m_ExpandedIDs: 0000000046310000623100006631000070310000ee310000043200008e320000f63200005633000058330000c43300009c340000a0340000ee340000303600005c3600005e3600007c36000084360000863600009e360000ce360000ea36000002370000
+>>>>>>> 9d6301b728699f3bdb53b6226d1343cfe97fdb8f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

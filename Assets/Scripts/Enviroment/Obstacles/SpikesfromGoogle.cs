@@ -15,7 +15,7 @@ public class SpikesfromGoogle : MonoBehaviour {
 
 			case "SmallCritter":
 			case "JumpingCritter":
-		//	case "HardCritter":
+			case "HardCritter":
 			case "BigEyeGuy":
 			case "CrawlerCritter":
 			case "ShellMan":
@@ -25,6 +25,7 @@ public class SpikesfromGoogle : MonoBehaviour {
 			case "PickupableItem":
 				col.gameObject.GetComponent<PickUpableItem>().Break();
 				break;
+
 			case "Wall":
 			case "Door":
 				break;

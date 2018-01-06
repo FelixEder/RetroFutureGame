@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 471}
   m_MaxSize: {x: 14002, y: 14021}
   vertical: 0
-  controlID: 15921
+  controlID: 18213
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 471}
   m_MaxSize: {x: 10000, y: 14021}
   vertical: 1
-  controlID: 15922
+  controlID: 18193
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 15923
+  controlID: 18194
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -203,10 +203,10 @@ MonoBehaviour:
     height: 655
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 290}
-    m_SelectedIDs: e832f0ff
-    m_LastClickedID: -1035544
-    m_ExpandedIDs: c4c4f2ff36edf2ff4a93fbff90a5fbffd2a9fbff7abefbff6efafbff7c03fcff1e3fffffb861ffff0c73ffffcabfffff3cc2ffffdec9ffff5aefffff00000000b006010032250100
+    scrollPos: {x: 0, y: 354}
+    m_SelectedIDs: dcffeeff
+    m_LastClickedID: -1114148
+    m_ExpandedIDs: 5000efff0e23efff0ad9efff00f2efffc4c4f2ff36edf2ff4a93fbff90a5fbffd2a9fbff7abefbff6efafbff7c03fcff1e3fffffb861ffff0c73ffffcabfffff3cc2ffffdec9ffff5aefffff00000000b0060100322501006821020046260200c2320200c4590200b85b020096600200de630200206d0200
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -315,9 +315,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 192.08763, y: -53.15363, z: -0.296875}
+    m_Target: {x: 194.82997, y: -70.77698, z: 0.25976562}
     speed: 2
-    m_Value: {x: 192.08763, y: -53.15363, z: -0.296875}
+    m_Value: {x: 194.82997, y: -70.77698, z: 0.25976562}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -345,9 +345,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 52.32682
+    m_Target: 9.167712
     speed: 2
-    m_Value: 52.32682
+    m_Value: 9.167712
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -455,7 +455,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Resources/Enviroment/Nature
+  - Assets/Scripts/Enviroment
   m_LastFoldersGridSize: 96
   m_LastProjectPath: D:\Spelprojekt\Games\RetroFutureGame
   m_IsLocked: 0
@@ -463,7 +463,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 04ca9a3b
     m_LastClickedID: 1000000004
-    m_ExpandedIDs: 00000000642f0000962f0000383000005c300000003100008a3100000e3200001032000012320000b2320000d033000038340000fe350000203600002e3600005036000098360000d436000010b7000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000642f0000962f0000383000005c300000003100008a3100000e3200001032000012320000b2320000d033000038340000fe35000000360000203600002e3600005036000098360000d436000010b7000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -491,7 +491,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000642f0000962f0000383000005c300000003100008a3100000e3200001032000012320000b2320000d033000038340000fe350000203600002e3600005036000098360000d436000010b7000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000642f0000962f0000383000005c300000003100008a3100000e3200001032000012320000b2320000d033000038340000fe35000000360000203600002e3600005036000098360000d436000010b7000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -516,9 +516,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: e832f0ff
-    m_LastClickedInstanceID: -1035544
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: dcffeeff
+    m_LastClickedInstanceID: -1114148
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300004e500000d8360000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

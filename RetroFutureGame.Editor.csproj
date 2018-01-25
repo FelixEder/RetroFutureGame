@@ -338,6 +338,14 @@
     <Compile Include="Assets\Editor\HiddenObjectExplorer.cs" />
     <Compile Include="Assets\Editor\SceneViewWindow.cs" />
     <Compile Include="Assets\Editor\SimpleCCDEditor.cs" />
+    <Compile Include="Assets\Tilemap\Brushes\Coordinate Brush\Scripts\Editor\CoordinateBrush.cs" />
+    <Compile Include="Assets\Tilemap\Brushes\GameObject Brush\Scripts\Editor\GameObjectBrush.cs" />
+    <Compile Include="Assets\Tilemap\Brushes\Line Brush\Scripts\Editor\LineBrush.cs" />
+    <Compile Include="Assets\Tilemap\Brushes\Prefab Brush\Scripts\Editor\PrefabBrush.cs" />
+    <Compile Include="Assets\Tilemap\Brushes\Random Brush\Scripts\Editor\RandomBrush.cs" />
+    <Compile Include="Assets\Tilemap\Brushes\Tint Brush Smooth\Scripts\Editor\TintBrushSmooth.cs" />
+    <Compile Include="Assets\Tilemap\Brushes\Tint Brush\Scripts\Editor\TintBrush.cs" />
+    <Compile Include="Assets\Tilemap\Tiles\Rule Tile\Scripts\Editor\RuleTileEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Cinemachine\ReleaseNotes.txt" />
@@ -347,6 +355,7 @@
     <None Include="Assets\Materials\Shaders\Stencil Mask 2.shader" />
     <None Include="Assets\Materials\Shaders\Stencil Object 1.shader" />
     <None Include="Assets\Materials\Shaders\Stencil Object 2.shader" />
+    <None Include="Assets\Tilemap\Brushes\Tint Brush Smooth\Shaders\TintedTilemap.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

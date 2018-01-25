@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetroFutureGame", "RetroFutureGame.csproj", "{3AD2D19B-0F25-9752-B587-447F67DB0CFA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetroFutureGame.Editor", "RetroFutureGame.Editor.csproj", "{391573D8-7D43-B836-1C89-38EE31DDCBDA}"

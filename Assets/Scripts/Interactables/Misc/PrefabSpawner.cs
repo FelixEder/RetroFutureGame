@@ -63,7 +63,6 @@ public class PrefabSpawner : MonoBehaviour {
 	void Spawn() {
 		GameObject instance = Instantiate(prefab, transform.position, Quaternion.identity) as GameObject;
 		instance.transform.parent = transform;
-		instance.GetComponent<SpriteRenderer>().sortingOrder = (int) Time.timeSinceLevelLoad;
 
 		//Set all variables here!
 		if(setMovement) {

@@ -2,7 +2,6 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
-using System.Collections;
 
 public class MainMenu : MonoBehaviour {
 	public GameObject loadingImage;
@@ -24,6 +23,7 @@ public class MainMenu : MonoBehaviour {
 
 	/**Quits the application.*/
 	public void ExitApplication() {
+		Debug.Log("Exit application");
 		Application.Quit();
 	}
 

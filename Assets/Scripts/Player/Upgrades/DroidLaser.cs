@@ -50,7 +50,7 @@ public class DroidLaser : MonoBehaviour {
 			holdShoot = true;
 		}
 
-		if(!input.GetKey("shoot") && holdShoot && canShoot && !status.isSmall) {
+		if(!input.GetKey("shoot") && holdShoot && canShoot) {
 			if(energy.UseEnergy(2)) {
 				canShoot = false;
 				StartCoroutine(ActivateLaser());

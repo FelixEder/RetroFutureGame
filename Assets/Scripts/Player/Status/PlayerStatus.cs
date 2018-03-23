@@ -23,6 +23,11 @@ public class PlayerStatus : MonoBehaviour {
 
 		inWater = Physics2D.OverlapBox(transform.position, new Vector2(0.6f, 0.1f), 0, whatIsWater) && Physics2D.OverlapBox(downCheck.position, new Vector2(0.6f, 0.1f), 0, whatIsWater);
 
+		if (isSmall) {
+			againtsFront = false;
+			againstLeft = false;
+			againstRight = false;
+		}
 		//NOTE: if first statement (before ?) is true, var equals first value (after ?), else it equals second value (after :).
 	}
 

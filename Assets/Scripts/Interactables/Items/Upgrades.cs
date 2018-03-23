@@ -65,7 +65,7 @@ public class Upgrades : MonoBehaviour {
 					break;
 
                 case "Small":
-                    col.gameObject.GetComponent<SmallFry>().enabled = true;
+                    upgradeLocation.SetActive(true);
 					playInv.addUpgrade("small");
 					break;
 			}

@@ -30,6 +30,10 @@ public class SmallFry : MonoBehaviour {
 	void GrowSmall() {
 		transform.parent.GetComponent<Collider2D>().enabled = false;
 		GetComponent<Collider2D>().enabled = true;
+
+		GetComponent<SpriteRenderer>().enabled = true;
+		transform.parent.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
+
 		status.isSmall = true;
 		if(inventory.IsHoldingItem())
 			inventory.SetHoldingItem(null);
@@ -38,6 +42,10 @@ public class SmallFry : MonoBehaviour {
 	void GrowBig() {
 		transform.parent.GetComponent<Collider2D>().enabled = true;
 		GetComponent<Collider2D>().enabled = false;
+
+		GetComponent<SpriteRenderer>().enabled = false;
+		transform.parent.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
+
 		status.isSmall = false;
 	}
 }

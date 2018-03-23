@@ -7,19 +7,22 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Build 0.1/Boot.unity
-    guid: 00000000000000000000000000000000
+    guid: 251208a85a2f10e4c8618a3f58d75501
   - enabled: 1
     path: Assets/Scenes/Build 0.1/MainMenu.unity
-    guid: 00000000000000000000000000000000
+    guid: 6e5845e79a2c19d44a5ce2a772380f9a
   - enabled: 1
-    path: Assets/Scenes/Build 0.1/Stage.unity
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/MVP.unity
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/EarlyGame.unity
-    guid: 00000000000000000000000000000000
+    path: Assets/Scenes/Release build/Game.unity
+    guid: 50fdc0ead0089714db67268c9bc93c20
   - enabled: 1
     path: Assets/Scenes/Credits.unity
+    guid: 123cccccef90db34fbc65616c16302b5
+  - enabled: 0
+    path: Assets/Scenes/Build 0.1/Stage.unity
+    guid: 9151d18f7b9d9c44e9e721a2d3467ada
+  - enabled: 0
+    path: Assets/Scenes/MVP.unity
+    guid: 33faf75adcf2c414698af2e7e3e60bb4
+  - enabled: 0
+    path: 
     guid: 00000000000000000000000000000000

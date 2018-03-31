@@ -5,7 +5,9 @@ public class SmallFry : MonoBehaviour {
 	PlayerStatus status;
 	PlayerInventory inventory;
 	InputManager input;
-	bool holdSmall;
+	bool holdSmall, somethingAbove;
+	public LayerMask whatIsRoof;
+	public Transform aboveCheck;
 
 	void Start() {
 		status = transform.parent.GetComponent<PlayerStatus>();
@@ -14,15 +16,20 @@ public class SmallFry : MonoBehaviour {
 	}
 
 	void Update() {
-		if(!input.GetKey("small") && holdSmall)
+		somethingAbove = Physics2D.OverlapBox(aboveCheck.position, new Vector2(0.7f, 1.2f), 0, whatIsRoof);
+
+		if (!input.GetKey("small") && holdSmall)
 			holdSmall = false;
 		if(input.GetKey("small") && !holdSmall) {
 			holdSmall = true;
-			if(status.isSmall) {
+			if(!status.isSmall) {
+				GrowSmall();
+			}
+			else if (!somethingAbove) {
 				GrowBig();
 			}
 			else {
-				GrowSmall();
+				Debug.Log("Something above player");
 			}
 		}
 	}

@@ -5,9 +5,9 @@ public class PlayerStatus : MonoBehaviour {
 	public bool isMirrored, isFloating, invulnerable, isSmall;
 	public float velocityX, velocityY;
 
-	public bool grounded, againstLeft, againstRight, onPlatform, againtsFront, againstStep, inWater;
+	public bool grounded, againstLeft, againstRight, onPlatform, againstFront, againstStep, inWater;
 	public LayerMask whatIsGround, whatIsPlatform, whatIsWall, whatIsWater;
-	public Transform downCheck, backCheck, frontCheck;
+	public Transform downCheck, backCheck, frontCheck, smallFront, smallBack;
 
 	void Update() {
 		velocityX = GetComponent<Rigidbody2D>().velocity.x;
@@ -15,18 +15,19 @@ public class PlayerStatus : MonoBehaviour {
 
 		grounded = GetComponent<Rigidbody2D>().velocity.y < 1f || grounded ? Physics2D.OverlapBox(downCheck.position, new Vector2(0.55f, 0.1f), 0, whatIsGround) : false;
 		onPlatform = Physics2D.OverlapBox(downCheck.position, new Vector2(0.6f, 0.1f), 0, whatIsPlatform);
-		againstLeft = isMirrored ? Physics2D.OverlapBox(frontCheck.position, new Vector2(0.1f, 1.7f), 0, whatIsWall) : Physics2D.OverlapBox(backCheck.position, new Vector2(0.1f, 1.9f), 0, whatIsWall);
-		againstRight = isMirrored ? Physics2D.OverlapBox(backCheck.position, new Vector2(0.1f, 1.9f), 0, whatIsWall) : Physics2D.OverlapBox(frontCheck.position, new Vector2(0.1f, 1.7f), 0, whatIsWall);
-
-		againtsFront = Physics2D.OverlapBox(frontCheck.position, new Vector2(0.1f, 1.7f), 0, whatIsWall);
+		
 		againstStep = Physics2D.OverlapBox(frontCheck.position + new Vector3(0, -0.95f, 0), new Vector2(0.1f, 0.2f), 0, whatIsWall);
 
 		inWater = Physics2D.OverlapBox(transform.position, new Vector2(0.6f, 0.1f), 0, whatIsWater) && Physics2D.OverlapBox(downCheck.position, new Vector2(0.6f, 0.1f), 0, whatIsWater);
 
 		if (isSmall) {
-			againtsFront = false;
-			againstLeft = false;
-			againstRight = false;
+			againstLeft = isMirrored ? Physics2D.OverlapBox(smallFront.position, new Vector2(0.1f, 0.5f), 0, whatIsWall) : Physics2D.OverlapBox(smallBack.position, new Vector2(0.1f, 0.7f), 0, whatIsWall);
+			againstRight = isMirrored ? Physics2D.OverlapBox(smallBack.position, new Vector2(0.1f, 0.7f), 0, whatIsWall) : Physics2D.OverlapBox(smallFront.position, new Vector2(0.1f, 0.5f), 0, whatIsWall);
+			againstFront = Physics2D.OverlapBox(smallFront.position, new Vector2(0.1f, 0.5f), 0, whatIsWall);
+		} else {
+			againstLeft = isMirrored ? Physics2D.OverlapBox(frontCheck.position, new Vector2(0.1f, 1.7f), 0, whatIsWall) : Physics2D.OverlapBox(backCheck.position, new Vector2(0.1f, 1.9f), 0, whatIsWall);
+			againstRight = isMirrored ? Physics2D.OverlapBox(backCheck.position, new Vector2(0.1f, 1.9f), 0, whatIsWall) : Physics2D.OverlapBox(frontCheck.position, new Vector2(0.1f, 1.7f), 0, whatIsWall);
+			againstFront = Physics2D.OverlapBox(frontCheck.position, new Vector2(0.1f, 1.7f), 0, whatIsWall);
 		}
 		//NOTE: if first statement (before ?) is true, var equals first value (after ?), else it equals second value (after :).
 	}

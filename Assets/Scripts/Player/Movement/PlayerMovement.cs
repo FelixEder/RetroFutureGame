@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour {
 			else if(Mathf.Sign(axisH) != Mathf.Sign(rb2D.velocity.x))
 				rb2D.velocity = new Vector2(axisH * moveSpeed, rb2D.velocity.y);
 			//Movement up steps and inclines
-			if(!status.againtsFront && status.againstStep && rb2D.velocity.y < steppingSpeed)
+			if(!status.againstFront && status.againstStep && rb2D.velocity.y < steppingSpeed)
 				rb2D.velocity = new Vector2(rb2D.velocity.x, steppingSpeed);
 		}
 	}

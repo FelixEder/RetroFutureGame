@@ -55,7 +55,7 @@ public class PlayerJump : MonoBehaviour {
 			holdJump = true;
 		}
 		//jump in air when have secondjump and has not secondjumped.
-		else if(input.GetKey("jump") && gotSecondJump && !holdJump && !hasSecondJumped) {
+		else if(input.GetKey("jump") && gotSecondJump && !holdJump && !hasSecondJumped && !status.isSmall) {
 			rb2D.velocity = new Vector2(rb2D.velocity.x, secondJumpSpeed);
 			hasSecondJumped = true;
 			holdJump = true;

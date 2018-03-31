@@ -20,7 +20,7 @@ public class WallJump : MonoBehaviour {
 		if(!input.GetKey("jump")) {
 			holdJump = false;
 		}
-		if(input.GetKey("jump") && (status.againstLeft || status.againstRight) && !holdJump && !status.grounded) {
+		if(input.GetKey("jump") && (status.againstLeft || status.againstRight) && !holdJump && !status.grounded && !status.isSmall) {
 			holdJump = true;
 			float axisH = input.GetAxis("X");
 			if(status.againstLeft && axisH > 0) {

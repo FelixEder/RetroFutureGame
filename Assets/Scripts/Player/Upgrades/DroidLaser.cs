@@ -35,7 +35,7 @@ public class DroidLaser : MonoBehaviour {
 		var origin = transform.position + new Vector3(0, 0.3f, -5f);
 
 		aimDir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - origin;
-		analogDir = new Vector2(Input.GetAxis("RightAnalogH"), Input.GetAxis("RightAnalogV"));
+		analogDir = new Vector2(input.GetAxis("rightX"), input.GetAxis("rightY"));
 		if(analogDir.magnitude != 0)
 			aimDir = analogDir;
 

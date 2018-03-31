@@ -7,7 +7,7 @@ InputManager:
   m_Axes:
   - serializedVersion: 3
     m_Name: Horizontal
-    descriptiveName: 
+    descriptiveName: Keyboard for left/right
     descriptiveNegativeName: 
     negativeButton: left
     positiveButton: right
@@ -23,7 +23,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Vertical
-    descriptiveName: 
+    descriptiveName: keyboard for up/down
     descriptiveNegativeName: 
     negativeButton: down
     positiveButton: up
@@ -39,7 +39,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Attack
-    descriptiveName: 
+    descriptiveName: keyboard and mouse for attack
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: k
@@ -55,7 +55,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Pickup
-    descriptiveName: 
+    descriptiveName: keyboard and mouse for grab/throw
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: l
@@ -71,7 +71,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Y
-    descriptiveName: 
+    descriptiveName: unused?
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: left shift
@@ -87,12 +87,12 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Jump
-    descriptiveName: 
+    descriptiveName: keyboard and joystick for jump
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: space
     altNegativeButton: 
-    altPositiveButton: 
+    altPositiveButton: joystick button 0
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -103,7 +103,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Mouse X
-    descriptiveName: 
+    descriptiveName: Unused?
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
@@ -119,7 +119,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Mouse Y
-    descriptiveName: 
+    descriptiveName: Unused?
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
@@ -135,7 +135,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Mouse ScrollWheel
-    descriptiveName: 
+    descriptiveName: Unused?
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
@@ -151,7 +151,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Horizontal
-    descriptiveName: 
+    descriptiveName: joystick for left/right
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
@@ -167,7 +167,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Vertical
-    descriptiveName: 
+    descriptiveName: joystick for up/down
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
@@ -183,7 +183,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Attack
-    descriptiveName: 
+    descriptiveName: joystick for attack
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick button 2
@@ -199,7 +199,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Pickup
-    descriptiveName: 
+    descriptiveName: joystick for grab/throw
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick button 1
@@ -215,7 +215,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Y
-    descriptiveName: 
+    descriptiveName: unused?
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick button 4
@@ -230,8 +230,8 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
-    m_Name: Jump
-    descriptiveName: 
+    m_Name: Jumpty
+    descriptiveName: unused!
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick button 0
@@ -247,7 +247,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Submit
-    descriptiveName: 
+    descriptiveName: default ui
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: return
@@ -263,7 +263,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Submit
-    descriptiveName: 
+    descriptiveName: default ui
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: enter
@@ -279,7 +279,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Cancel
-    descriptiveName: 
+    descriptiveName: default ui
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: escape
@@ -295,7 +295,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Leaf
-    descriptiveName: 
+    descriptiveName: keyboard for float
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: left shift
@@ -311,7 +311,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Leaf
-    descriptiveName: 
+    descriptiveName: joystick for float
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
@@ -323,11 +323,11 @@ InputManager:
     snap: 1
     invert: 0
     type: 2
-    axis: 9
+    axis: 8
     joyNum: 0
   - serializedVersion: 3
     m_Name: Pause
-    descriptiveName: 
+    descriptiveName: keyboard and joystick for pause
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: escape
@@ -343,12 +343,12 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: Shoot
-    descriptiveName: 
+    descriptiveName: keyboard for laser
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: o
     altNegativeButton: 
-    altPositiveButton: 
+    altPositiveButton: c
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -359,7 +359,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: MegaAttack
-    descriptiveName: 
+    descriptiveName: unused!
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: i
@@ -375,12 +375,12 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: SmallButton
-    descriptiveName: 
+    descriptiveName: keyboard and joystick for smallfry
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: z
+    positiveButton: i
     altNegativeButton: 
-    altPositiveButton: 
+    altPositiveButton: joystick button 3
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -391,7 +391,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: VerticalBool
-    descriptiveName: 
+    descriptiveName: Determine if player is pressing up or down
     descriptiveNegativeName: 
     negativeButton: down
     positiveButton: up
@@ -406,8 +406,24 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
+    m_Name: VerticalBoolController
+    descriptiveName: Determine if player is pressing up or down
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.19
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 1
+    joyNum: 0
+  - serializedVersion: 3
     m_Name: RightAnalogH
-    descriptiveName: 
+    descriptiveName: keyboard for aiming laser left/right
     descriptiveNegativeName: 
     negativeButton: f
     positiveButton: h
@@ -423,7 +439,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: RightAnalogV
-    descriptiveName: 
+    descriptiveName: keyboard for aiming laser up/down
     descriptiveNegativeName: 
     negativeButton: g
     positiveButton: t
@@ -436,4 +452,68 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: SmallButton
+    descriptiveName: unused!
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick button 3
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 1
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: Shoot
+    descriptiveName: joystick for laser
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.19
+    sensitivity: 1000
+    snap: 1
+    invert: 0
+    type: 2
+    axis: 9
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: RightAnalogH
+    descriptiveName: joystick for aming laser left/right
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.19
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 3
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: RightAnalogV
+    descriptiveName: joystick for aming laser up/down
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.19
+    sensitivity: 1
+    snap: 0
+    invert: 1
+    type: 2
+    axis: 4
     joyNum: 0

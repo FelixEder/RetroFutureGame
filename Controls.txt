@@ -1,0 +1,11 @@
+X Jump - 	A	SPACE
+
+X Punch/stomp - X	K / LMB
+
+X Grab/Throw - 	B	L / RMB
+
+X Float - 	LT	LEFT SHIFT
+
+X Shoot - 	RT	O > C
+
+X Small - 	Y	I > CTRL

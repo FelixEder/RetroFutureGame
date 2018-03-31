@@ -51,10 +51,10 @@ public class InputManager : MonoBehaviour {
 				return Input.GetButton("Pickup");
 
 			case "float":
-				return (Input.GetButton("Leaf") || Input.GetAxis("Leaf") > 0);
+				return Input.GetButton("Leaf") || Input.GetAxis("Leaf") > 0;
 
 			case "shoot":
-				return Input.GetButton("Shoot");
+				return Input.GetButton("Shoot") || Input.GetAxis("Shoot") > 0;
 
 			case "mega":
 				return Input.GetButton("MegaAttack");
@@ -85,7 +85,13 @@ public class InputManager : MonoBehaviour {
 				return Input.GetAxis("Vertical");
 
 			case "ysign":
-				return Input.GetAxis("VerticalBool");
+				return Mathf.Sign(Input.GetAxis("VerticalBool") + Input.GetAxis("VerticalBoolController"));
+
+			case "rightX":
+				return Input.GetAxis("RightAnalogH");
+
+			case "rightY":
+				return Input.GetAxis("RightAnalogV");
 
 			default:
 				return 0;

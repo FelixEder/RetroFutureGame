@@ -91,6 +91,12 @@ public class Stomp : MonoBehaviour {
 					victim.gameObject.GetComponent<Phase3Head>().TakeDamage();
 					break;
 
+				case "Barrier":
+					if(victim.gameObject.GetComponent<Barriers>().GetBarrierType().Equals("Stomp")) {
+						victim.gameObject.GetComponent<Barriers>().TakeDamage(1);
+					}
+					break;
+
 				default:
 					if(enemyHealth)
 						enemyHealth.Knockback(gameObject, knockForce);

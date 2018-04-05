@@ -19,7 +19,7 @@ public class Barriers : MonoBehaviour {
 			GetComponent<SpriteRenderer>().sprite = sprite;
 			StartCoroutine(Lower());
 		}
-		else
+		else //TODO Here cool animations could also be added when the barrier gets destroyed
 			Destroy(gameObject);
 	}
 

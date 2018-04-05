@@ -43,9 +43,12 @@ public class PlayerPunch : MonoBehaviour {
 	void Update() {
 		if(!input.GetKey("attack") && holdPunch)
 			holdPunch = false;
-		else if(input.GetKey("attack") && !(input.GetAxis("ysign") < 0f && status.InAir()) && !holdPunch && !status.isSmall) {
+		else if(input.GetKey("attack") && !holdPunch && !status.isSmall) {
 			holdPunch = true;
-			if(!onCooldown)
+			attackType = "Punch";
+			damage = 1;
+			StartCoroutine(DamageArea(1.1f));
+			if (!onCooldown && megaAquired)
 				StartCoroutine(AttackCharge());
 		}
 	}
@@ -115,12 +118,6 @@ public class PlayerPunch : MonoBehaviour {
 					StartCoroutine(DamageArea(1.5f));
 					return;
 			}
-		}
-		else {
-			attackType = "Punch";
-			damage = 1;
-			StartCoroutine(DamageArea(1.1f));
-			return;
 		}
 		//if none of the above is executed reset cooldown;
 		onCooldown = false;

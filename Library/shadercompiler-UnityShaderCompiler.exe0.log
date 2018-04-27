@@ -1,16 +1,2 @@
-Base path: C:/Program Files/Unity/Editor/Data
+Base path: D:/Spelprojekt/NewUnity/Editor/Data
 Cmd: initializeCompiler
-Cmd: preprocess
-  insize=1245 outsize=1022 ok=1
-Cmd: preprocess
-  insize=1170 outsize=385 ok=1
-Cmd: preprocess
-  insize=1191 outsize=976 ok=1
-Cmd: preprocess
-  insize=9317 outsize=2579 ok=1
-Cmd: preprocess
-  insize=132 outsize=129 ok=1
-Cmd: preprocess
-  insize=1200 outsize=977 ok=1
-Cmd: preprocess
-  insize=1149 outsize=934 ok=1

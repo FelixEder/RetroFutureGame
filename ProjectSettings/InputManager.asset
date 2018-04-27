@@ -378,7 +378,7 @@ InputManager:
     descriptiveName: keyboard and joystick for smallfry
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: i
+    positiveButton: left ctrl
     altNegativeButton: 
     altPositiveButton: joystick button 3
     gravity: 1000

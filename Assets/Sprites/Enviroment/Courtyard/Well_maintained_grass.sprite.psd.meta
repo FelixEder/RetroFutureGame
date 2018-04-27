@@ -80,7 +80,11 @@ TextureImporter:
   spriteSheet:
     serializedVersion: 2
     sprites: []
-    outline: []
+    outline:
+    - - {x: -40, y: -50}
+      - {x: -40, y: 37}
+      - {x: 42, y: 37}
+      - {x: 42, y: -50}
     physicsShape: []
   spritePackingTag: 
   userData: 

@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -106,10 +106,14 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 681, y: 492}
-  m_MaxSize: {x: 14004, y: 14042}
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
+<<<<<<< HEAD
   controlID: 41
+=======
+  controlID: 43
+>>>>>>> eac93c0f7977f6f4865aa04ae56ded955907b544
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +137,11 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 21
+=======
+  controlID: 44
+>>>>>>> eac93c0f7977f6f4865aa04ae56ded955907b544
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +165,11 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
+<<<<<<< HEAD
   controlID: 22
+=======
+  controlID: 45
+>>>>>>> eac93c0f7977f6f4865aa04ae56ded955907b544
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -296,9 +308,15 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 54.289165, y: -49.1742, z: 0.13886672}
     speed: 2
     m_Value: {x: 54.289165, y: -49.1742, z: 0.13886672}
+=======
+    m_Target: {x: 100.47825, y: -43.386986, z: -0.9375}
+    speed: 2
+    m_Value: {x: 100.47825, y: -43.386986, z: -0.9375}
+>>>>>>> eac93c0f7977f6f4865aa04ae56ded955907b544
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -326,9 +344,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 7.5670896
     speed: 2
     m_Value: 7.5670896
+=======
+    m_Target: 86.239334
+    speed: 2
+    m_Value: 86.239334
+>>>>>>> eac93c0f7977f6f4865aa04ae56ded955907b544
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -369,9 +393,15 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 74480000
     m_LastClickedID: 18548
     m_ExpandedIDs: b0d8ffff00000000a8440000
+=======
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 16fbffff00000000
+>>>>>>> eac93c0f7977f6f4865aa04ae56ded955907b544
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: Player
@@ -572,10 +602,17 @@ MonoBehaviour:
   m_LastProjectPath: F:\Unity Projects\RetroFutureGame
   m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 95}
     m_SelectedIDs: 623f0000
     m_LastClickedID: 16226
     m_ExpandedIDs: 00000000623f0000823f0000863f00008c3f00000e4000001840000080400000ea400000164100003c4100003e4100004441000096410000d64100003842000042420000a2420000b84200003c4300004043000078430000c4430000c6430000dc430000124400002a44000042440000604400007a440000144b000000ca9a3bffffff7f
+=======
+    scrollPos: {x: 0, y: 823}
+    m_SelectedIDs: 0e330000
+    m_LastClickedID: 13070
+    m_ExpandedIDs: 00000000aa290000d0290000d4290000e2290000b02a0000de2a0000542c0000ea2c0000542d0000822d0000842d00008a2d0000442e0000c22e00007c2f00008c2f00000c3000002c300000e6300000fc3000009a3100002032000022320000463200008a320000ac320000de3200000e33000038330000203c000000ca9a3bffffff7f
+>>>>>>> eac93c0f7977f6f4865aa04ae56ded955907b544
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -603,7 +640,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000623f0000823f0000863f00008c3f00000e4000001840000080400000ea400000164100003c4100003e4100004441000096410000d64100003842000042420000a2420000b84200003c4300004043000078430000c4430000c6430000dc430000124400002a44000042440000604400007a440000144b0000
+=======
+    m_ExpandedIDs: 00000000aa290000d0290000d4290000e2290000b02a0000de2a0000542c0000ea2c0000542d0000822d0000842d00008a2d0000442e0000c22e00007c2f00008c2f00000c3000002c300000e6300000fc3000009a3100002032000022320000463200008a320000ac320000de3200000e33000038330000203c0000
+>>>>>>> eac93c0f7977f6f4865aa04ae56ded955907b544
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -630,7 +671,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300004e500000d8360000ac4a0100b2300000ac2e0000102b00001a310000fa300000a82b0000082d0000322d0000b42d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

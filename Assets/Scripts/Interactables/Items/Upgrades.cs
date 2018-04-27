@@ -69,8 +69,10 @@ public class Upgrades : MonoBehaviour {
 					playInv.addUpgrade("small");
 					break;
 			}
+			/*
 			if(GetComponent<AudioPlayer>().audioClips.Length > 0)
 				GetComponent<AudioPlayer>().PlayDetached(0, 1, 1, 1);
+			*/
 			//manager.GetComponent<TutorialManager>().DisplayTutorial(tutorial, tutorialText, stringIsHideKey, timeToDisplay);
 			Destroy(gameObject);
 		}

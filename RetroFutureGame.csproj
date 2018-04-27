@@ -339,6 +339,8 @@
     <Compile Include="Assets\Scripts\Other\Audio\MusicTrigger.cs" />
     <Compile Include="Assets\Scripts\Other\AudioControl.cs" />
     <Compile Include="Assets\Scripts\Other\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\Other\Camera\VCamActivator.cs" />
+    <Compile Include="Assets\Scripts\Other\Camera\VCamManager.cs" />
     <Compile Include="Assets\Scripts\Other\CameraAdjuster.cs" />
     <Compile Include="Assets\Scripts\Other\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Other\CameraParallax.cs" />

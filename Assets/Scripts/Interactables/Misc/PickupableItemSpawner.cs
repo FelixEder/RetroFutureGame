@@ -32,6 +32,6 @@ public class PickupableItemSpawner : MonoBehaviour {
 		foreach(Transform child in transform) {
 			GameObject.Destroy(child.gameObject);
 		}
-		Debug.Log("Prefab spawner:\nKilled all children.");
+		Debug.Log("Item spawner:\nKilled all children.");
 	}
 }

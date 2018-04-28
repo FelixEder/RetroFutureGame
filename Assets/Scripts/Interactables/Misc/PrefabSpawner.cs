@@ -5,7 +5,9 @@ using System.Collections;
 public class PrefabSpawner : MonoBehaviour {
 	[Header("Spawner")]
 	public GameObject prefab;
-	public float spawnStart, spawnInterval;
+	public float spawnStart;
+	[Range(0.1f, 1000f)]
+	public float spawnInterval;
 	public int maxSimultaneous;
 	[Tooltip("Should a new prefab spawn when another is killed and current amount is less than max simultaneous?"), Space(5)]
 	public bool continuousRespawn;

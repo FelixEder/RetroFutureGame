@@ -71,7 +71,7 @@ MonoBehaviour:
   - {fileID: 21300004, guid: 9254130471fd96b429fbff9a986d0203, type: 3}
   - {fileID: 21300002, guid: 9254130471fd96b429fbff9a986d0203, type: 3}
   itemType: Branch
-  damage: 2
+  damage: 1
   health: 3
 --- !u!212 &21263926
 SpriteRenderer:

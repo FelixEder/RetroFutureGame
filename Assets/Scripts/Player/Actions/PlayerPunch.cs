@@ -47,7 +47,7 @@ public class PlayerPunch : MonoBehaviour {
 			holdPunch = true;
 			attackType = "Punch";
 			damage = 1;
-			StartCoroutine(DamageArea(1.1f));
+			AttackType();
 			if (!onCooldown && megaAquired)
 				StartCoroutine(AttackCharge());
 		}
@@ -75,7 +75,7 @@ public class PlayerPunch : MonoBehaviour {
 				Debug.Log("Full MegaPunch");
 				attackType = "FullMega";
 				damage = 5;
-				StartCoroutine(DamageArea(2f));
+				StartCoroutine(DamageArea(2.5f));
 				return;
 			}
 			else {
@@ -88,7 +88,7 @@ public class PlayerPunch : MonoBehaviour {
 				Debug.Log("Regular MegaPunch");
 				attackType = "Mega";
 				damage = 3;
-				StartCoroutine(DamageArea(2f));
+				StartCoroutine(DamageArea(2.2f));
 				return;
 			}
 			else {
@@ -103,21 +103,24 @@ public class PlayerPunch : MonoBehaviour {
 				case "Rock":
 					attackType = "Rock";
 					damage = holdingItem.GetComponent<PickUpableItem>().damage;
-					StartCoroutine(DamageArea(1.1f));
+					StartCoroutine(DamageArea(1.3f));
 					return;
 
 				case "Branch":
 					attackType = "Branch";
 					damage = holdingItem.GetComponent<PickUpableItem>().damage;
-					StartCoroutine(DamageArea(1.5f));
+					StartCoroutine(DamageArea(1.6f));
 					return;
 
 				default:
 					attackType = "ItemError";
 					damage = 1;
-					StartCoroutine(DamageArea(1.5f));
+					StartCoroutine(DamageArea(1.3f));
 					return;
 			}
+		}
+		else {
+			StartCoroutine(DamageArea(1.3f));
 		}
 		//if none of the above is executed reset cooldown;
 		onCooldown = false;

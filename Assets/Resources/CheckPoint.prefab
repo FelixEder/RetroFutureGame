@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4000013389203018}
   - component: {fileID: 212000010752310584}
-  - component: {fileID: 60000012521204222}
   - component: {fileID: 82820690105847276}
   - component: {fileID: 114656808490027524}
+  - component: {fileID: 61993225756477404}
   m_Layer: 24
   m_Name: CheckPoint
   m_TagString: CheckPoint
@@ -43,8 +43,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60000012521204222
-PolygonCollider2D:
+--- !u!61 &61993225756477404
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -59,33 +59,15 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.19, y: 2.75}
+    oldSize: {x: 2, y: 3}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 1.035, y: -1.015}
-      - {x: 0.905, y: -0.375}
-      - {x: 0.875, y: -0.225}
-      - {x: 0.865, y: -0.185}
-      - {x: 0.78499997, y: 0.21499999}
-      - {x: 0.755, y: 0.355}
-      - {x: 0.635, y: 0.965}
-      - {x: 0.615, y: 1.055}
-      - {x: 0.585, y: 1.1949999}
-      - {x: 0.565, y: 1.295}
-      - {x: 0.545, y: 1.345}
-      - {x: -0.545, y: 1.345}
-      - {x: -0.565, y: 1.3249999}
-      - {x: -1.095, y: -1.295}
-      - {x: -1.095, y: -1.345}
-      - {x: -1.0849999, y: -1.355}
-      - {x: 1.0749999, y: -1.355}
-      - {x: 1.095, y: -1.345}
-      - {x: 1.095, y: -1.255}
+  serializedVersion: 2
+  m_Size: {x: 2, y: 3}
+  m_EdgeRadius: 0
 --- !u!82 &82820690105847276
 AudioSource:
   m_ObjectHideFlags: 1
@@ -213,7 +195,7 @@ SpriteRenderer:
   m_SortingLayerID: 1833100911
   m_SortingLayer: -7
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 44d70928098f6dd42b87acc54b210c39, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0906c7a193def9443b39c58c071d396b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

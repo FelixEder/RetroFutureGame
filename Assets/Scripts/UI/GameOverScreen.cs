@@ -2,8 +2,6 @@
 using System.Collections;
 
 public class GameOverScreen : MonoBehaviour {
-	public GameObject _camera;
-
 	GameObject[] prefabspawners, itemspawners;
 	GameObject player;
 	MenuControl menu;
@@ -51,11 +49,9 @@ public class GameOverScreen : MonoBehaviour {
 		foreach(GameObject g in drops)
 			Destroy(g);
 
-		//Place player at last checkpoint, reset camera and hide gameover overlay.
+		//Place player at last checkpoint and hide gameover overlay.
 		player.transform.position = player.GetComponent<Checkpoint>().activeCheckpoint.transform.position;
 		player.transform.position += new Vector3(0, 1, 0);
-		//_camera.transform.position = player.transform.position;
-		_camera.GetComponent<CameraMovement>().followSpeed = 5;
 
 		input.Force(true, false);
 		menu.HideOverlay();

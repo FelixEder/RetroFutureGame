@@ -6,7 +6,7 @@ public class Checkpoint : MonoBehaviour {
 	public GameObject activeCheckpoint;
 
 	void Start() {
-		activeCheckpoint = GameObject.Find("CheckPoint (1)");
+		//activeCheckpoint = GameObject.Find("CheckPoint (1)");
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {

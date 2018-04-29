@@ -13,9 +13,12 @@ public class EnemyHealth : MonoBehaviour {
 	bool invulnerable;
 	AudioPlayer audioplay;
 
+	PlayerEnergy playerEnergy;
+
 	void Start() {
 		if(hasAudio)
 			audioplay = GetComponent<AudioPlayer>();
+		playerEnergy = GameObject.Find("Player").GetComponent<PlayerEnergy>();
 	}
 
 	void OnTriggerStay2D(Collider2D col) {
@@ -60,7 +63,7 @@ public class EnemyHealth : MonoBehaviour {
 		if(ranNumb < 20) {
 			Instantiate(Resources.Load("HealthDrop"), transform.position, Quaternion.identity);
 		}
-		else if(ranNumb < 40) {
+		else if(ranNumb < 40 && playerEnergy.maxEnergy > 0) {
 			Instantiate(Resources.Load("EnergyDrop"), transform.position, Quaternion.identity);
 		}
 		Destroy(this.gameObject);

@@ -23,7 +23,7 @@ public class Checkpoint : MonoBehaviour {
 
 		}
 		else {
-			checkpoint.GetComponent<AudioPlayer>().PlayClip(0, 1);
+			checkpoint.GetComponent<AudioPlayer>().PlayClip(0, 0.5f);
 			GameObject.Find("tutorialPanel").GetComponent<TutorialManager>().DisplayTutorial("", "Checkpoint", false, 1.5f);
 		}
 		Debug.Log("Checkpoint activated.\nLocation has been set to: " + checkpoint.transform.position);

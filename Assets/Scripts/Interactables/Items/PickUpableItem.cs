@@ -34,7 +34,6 @@ public class PickUpableItem : MonoBehaviour {
 		transform.localRotation = Quaternion.Euler(new Vector3(0, 0, 0));
 		beingHeld = true;
 		Debug.Log("Pickup " + gameObject);
-		InvokeRepeating("QuestionExistance", 20f, 20f);
 	}
 
 	/**
@@ -125,5 +124,13 @@ public class PickUpableItem : MonoBehaviour {
 
 	void ResetLayer() {
 		gameObject.layer = LayerMask.NameToLayer("PickupableItem");
+	}
+
+	private void OnBecameInvisible() {
+		Invoke("QuestionExistance", 20f);
+	}
+
+	private void OnBecameVisible() {
+		CancelInvoke("QuestionExistance");
 	}
 }

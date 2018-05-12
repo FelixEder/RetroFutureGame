@@ -12,12 +12,13 @@ public class EnemyHealth : MonoBehaviour {
 
 	bool invulnerable;
 	AudioPlayer audioplay;
-
 	PlayerEnergy playerEnergy;
+	SpriteRenderer sprite;
 
 	void Start() {
 		if(hasAudio)
 			audioplay = GetComponent<AudioPlayer>();
+		sprite = GetComponent<SpriteRenderer>();
 		playerEnergy = GameObject.Find("Player").GetComponent<PlayerEnergy>();
 	}
 
@@ -38,6 +39,7 @@ public class EnemyHealth : MonoBehaviour {
 				audioplay.PlayClip(0, 1, 0.5f, 1.5f);
 			health -= damage;
 			StartCoroutine(Invulnerability());
+			StartCoroutine(Flash());
 			if(health <= 0)
 				StartCoroutine(Die());
 		}
@@ -46,6 +48,13 @@ public class EnemyHealth : MonoBehaviour {
 	public void Knockback(GameObject attacker, float force) {
 		if(!invulnerable)
 			GetComponent<Rigidbody2D>().velocity = new Vector2(force * Mathf.Sign(transform.position.x - attacker.transform.position.x), force / 2);
+	}
+
+	IEnumerator Flash() {
+		Color orig = sprite.color;
+		sprite.color = new Color(orig.r + 0.2f, orig.g - 0.5f, orig.b - 0.5f);
+		yield return new WaitForSeconds(0.2f);
+		sprite.color = orig;
 	}
 
 	IEnumerator Invulnerability() {

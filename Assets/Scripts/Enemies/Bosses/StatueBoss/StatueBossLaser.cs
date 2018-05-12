@@ -5,7 +5,7 @@ public class StatueBossLaser : MonoBehaviour {
 	public LayerMask hitLayers;
 	public GameObject aimTarget;
 	public GameObject playerAim;
-	public int damage = 1, health;
+	public int damage = 1;
 
 	AudioPlayer audioplay;
 	private LineRenderer lineRenderer, childLineRenderer;
@@ -125,12 +125,5 @@ public class StatueBossLaser : MonoBehaviour {
 		//Play animation and 
 		Destroy(gameObject);
 		Destroy(transform.parent.gameObject);
-	}
-
-	public void TakeDamage(int damage) {
-		health -= damage;
-		if(health <= 0) {
-			Broken();
-		}
 	}
 }

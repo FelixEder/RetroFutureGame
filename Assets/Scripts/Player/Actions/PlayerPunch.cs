@@ -195,7 +195,7 @@ public class PlayerPunch : MonoBehaviour {
 				case "StatueBossEye":
 					if(attackType == "Branch") {
 						if(inventory.IsHoldingItem()) {
-							victim.gameObject.GetComponent<StatueBossLaser>().TakeDamage(damage);
+							enemyHealth.TakeDamage(damage);
 							inventory.GetHoldingItem().GetComponent<PickUpableItem>().Break(3);
 							inventory.SetHoldingItem(null);
 						}

@@ -35,6 +35,8 @@ public class SmallFry : MonoBehaviour {
 	}
 
 	void GrowSmall() {
+		transform.parent.GetChild(0).GetComponent<Animator>().SetBool("small", true);
+
 		transform.parent.GetComponent<Collider2D>().enabled = false;
 		GetComponent<Collider2D>().enabled = true;
 
@@ -47,6 +49,8 @@ public class SmallFry : MonoBehaviour {
 	}
 
 	void GrowBig() {
+		transform.parent.GetChild(0).GetComponent<Animator>().SetBool("small", false);
+
 		transform.parent.GetComponent<Collider2D>().enabled = true;
 		GetComponent<Collider2D>().enabled = false;
 

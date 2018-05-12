@@ -69,6 +69,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -143,6 +144,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114013490756272450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -167,7 +169,7 @@ MonoBehaviour:
   wallcheckPos: {x: 0.7, y: 1}
   groundMask:
     serializedVersion: 2
-    m_Bits: 262656
+    m_Bits: 4456960
   wallMask:
     serializedVersion: 2
     m_Bits: 268763136

@@ -19,10 +19,28 @@ Physics2DSettings:
   m_LinearSleepTolerance: 0.01
   m_AngularSleepTolerance: 2
   m_DefaultContactOffset: 0.01
+  m_JobOptions:
+    serializedVersion: 2
+    useMultithreading: 0
+    useConsistencySorting: 0
+    m_InterpolationPosesPerJob: 100
+    m_NewContactsPerJob: 30
+    m_CollideContactsPerJob: 100
+    m_ClearFlagsPerJob: 200
+    m_ClearBodyForcesPerJob: 200
+    m_SyncDiscreteFixturesPerJob: 50
+    m_SyncContinuousFixturesPerJob: 50
+    m_FindNearestContactsPerJob: 100
+    m_UpdateTriggerContactsPerJob: 100
+    m_IslandSolverCostThreshold: 100
+    m_IslandSolverBodyCostScale: 1
+    m_IslandSolverContactCostScale: 10
+    m_IslandSolverJointCostScale: 10
+    m_IslandSolverBodiesPerJob: 50
+    m_IslandSolverContactsPerJob: 50
   m_AutoSimulation: 1
   m_QueriesHitTriggers: 1
   m_QueriesStartInColliders: 0
-  m_ChangeStopsCallbacks: 0
   m_CallbacksOnDisable: 1
   m_AutoSyncTransforms: 1
   m_AlwaysShowColliders: 0
@@ -34,4 +52,4 @@ Physics2DSettings:
   m_ColliderAsleepColor: {r: 0.5686275, g: 0.95686275, b: 0.54509807, a: 0.36078432}
   m_ColliderContactColor: {r: 1, g: 0, b: 1, a: 0.6862745}
   m_ColliderAABBColor: {r: 1, g: 1, b: 0, a: 0.2509804}
-  m_LayerCollisionMatrix: ff4777fbff67f7ffff47f7ffffffffffff67f7ffff47f7ffffffffffffffffffff01f7f9ff4275efff0444e8c80800e0c840f0e0da00f3f0ff5276f3c88000e0ff2375f3ff6196f3ff47f7ffc80088e0ff7397f0ff73e5e1ff7765e1fe31bef0ff4367f3ff4207f3fe0204e0ff0704f8ff6197fbffffffffffffffffffffffff
+  m_LayerCollisionMatrix: ff4777fbff67f7ffff47f7ffffffffffff67f7ffff47f7ffffffffffffffffffff01f7f9ff4235efff0404e8c80800e0c840b0e0da00b3f0ff5276f3c88000e0ff2375f3ff61d6f3ff47f7ffc80088e0ff7397f0ff73a5e1ff4147e3fe31bef0ff4367f3ff4247f3fe0204e0ff0704f8ff6197fbffffffffffffffffffffffff

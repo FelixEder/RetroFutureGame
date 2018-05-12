@@ -63,13 +63,13 @@ TagManager:
   - AudioLayer
   - CharTrigger
   - ForegroundCover
-  - 
+  - Barrier
   - FinalBossPunchLayer
   - Other
   - CPickupableItem
   - OnlyEnviromentalCollision
   - UpgradesDrops
-  - Doors
+  - 
   - 
   - 
   - 

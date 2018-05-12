@@ -155,7 +155,7 @@ public class PlayerPunch : MonoBehaviour {
 					Debug.Log("BarrierType: " + victim.gameObject.GetComponent<Barriers>().GetBarrierType());
 					if(attackType == victim.gameObject.GetComponent<Barriers>().GetBarrierType())
 						victim.gameObject.GetComponent<Barriers>().TakeDamage(damage);
-					attackType = "Barrier";
+			//		attackType = "Barrier";
 					break;
 
 				case "SmallCritter":
@@ -238,7 +238,7 @@ public class PlayerPunch : MonoBehaviour {
 		punchVisual.transform.localPosition = new Vector3(sizeX / 2, offset);
 		punchVisual.GetComponent<Animator>().SetTrigger(attackType);
 
-		if(!(attackType == "Door" || attackType == "Barrier"))
+	//	if(!(attackType == "Door" || attackType == "Barrier"))
 			GetComponent<AudioPlayer>().PlayClip(6, 1, 0.7f, 1.3f);
 
 		yield return new WaitForSeconds(0.2f);

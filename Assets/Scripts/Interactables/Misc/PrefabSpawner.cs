@@ -11,6 +11,10 @@ public class PrefabSpawner : MonoBehaviour {
 	public int maxSimultaneous;
 	[Tooltip("Should a new prefab spawn when another is killed and current amount is less than max simultaneous?"), Space(5)]
 	public bool continuousRespawn;
+	[Tooltip("Should a new prefab spawn when the spawner is outside the camera view?\n(Not used when continous respawn is active)")]
+	public bool respawnOutsideCamera;
+	[Tooltip("The time it takes for the prefab to respawn after the spawner leaves the camera view.")]
+	public float respawnTime;
 
 	[Header("Movement")]
 	public bool setMovement;
@@ -45,6 +49,7 @@ public class PrefabSpawner : MonoBehaviour {
 	public Color color = Color.white;
 
 	bool willRespawn = true;
+	bool visibleToCamera;
 
 	void Start() {
 		InvokeRepeating("SpawnCheck", spawnStart, spawnInterval);
@@ -56,9 +61,11 @@ public class PrefabSpawner : MonoBehaviour {
 			Spawn();
 		}
 		else if(transform.childCount < maxSimultaneous && !continuousRespawn && willRespawn) {
-			Spawn();
-			if(transform.childCount >= maxSimultaneous)
-				willRespawn = false;
+			if ((respawnOutsideCamera && !visibleToCamera) || !respawnOutsideCamera) {
+				Spawn();
+				if (transform.childCount >= maxSimultaneous)
+					willRespawn = false;
+			}
 		}
 	}
 
@@ -104,5 +111,15 @@ public class PrefabSpawner : MonoBehaviour {
 
 	public void SetToRespawn() {
 		willRespawn = true;
+	}
+
+	private void OnBecameInvisible() {
+			visibleToCamera = false;
+		Invoke("SetToRespawn", respawnTime);
+	}
+
+	private void OnBecameVisible() {
+			visibleToCamera = true;
+		CancelInvoke("SetToRespawn");
 	}
 }

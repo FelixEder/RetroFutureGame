@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - component: {fileID: 414204}
   - component: {fileID: 21280500}
-  - component: {fileID: 6015574}
+  - component: {fileID: 61713244613149078}
   - component: {fileID: 11451000}
   - component: {fileID: 82920156945597312}
   - component: {fileID: 114916165016954666}
@@ -33,70 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &6015574
-PolygonCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 127480}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.39, y: 1.33}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.035, y: -0.415}
-      - {x: 0.185, y: -0.525}
-      - {x: 0.265, y: -0.575}
-      - {x: 0.385, y: -0.66499996}
-      - {x: 0.435, y: -0.66499996}
-      - {x: 0.445, y: -0.645}
-      - {x: 0.42499998, y: -0.585}
-      - {x: 0.375, y: -0.385}
-      - {x: 0.305, y: -0.21499999}
-      - {x: 0.285, y: -0.16499999}
-      - {x: 0.475, y: -0.024999999}
-      - {x: 0.59499997, y: 0.055}
-      - {x: 0.625, y: 0.085}
-      - {x: 0.695, y: 0.145}
-      - {x: 0.695, y: 0.185}
-      - {x: 0.175, y: 0.185}
-      - {x: 0.155, y: 0.265}
-      - {x: 0.035, y: 0.625}
-      - {x: 0.015, y: 0.66499996}
-      - {x: -0.035, y: 0.66499996}
-      - {x: -0.055, y: 0.635}
-      - {x: -0.074999996, y: 0.53499997}
-      - {x: -0.13499999, y: 0.345}
-      - {x: -0.185, y: 0.185}
-      - {x: -0.695, y: 0.185}
-      - {x: -0.695, y: 0.125}
-      - {x: -0.645, y: 0.085}
-      - {x: -0.525, y: 0.005}
-      - {x: -0.45499998, y: -0.055}
-      - {x: -0.295, y: -0.16499999}
-      - {x: -0.325, y: -0.205}
-      - {x: -0.355, y: -0.33499998}
-      - {x: -0.435, y: -0.585}
-      - {x: -0.445, y: -0.655}
-      - {x: -0.445, y: -0.66499996}
-      - {x: -0.385, y: -0.66499996}
-      - {x: -0.345, y: -0.645}
-      - {x: -0.235, y: -0.555}
-      - {x: -0.085, y: -0.445}
-      - {x: -0.005, y: -0.375}
 --- !u!114 &11451000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,6 +67,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -173,6 +110,31 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 127480}
   m_IsPrefabParent: 1
+--- !u!61 &61713244613149078
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127480}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.39, y: 1.33}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.39, y: 1.33}
+  m_EdgeRadius: 0
 --- !u!82 &82920156945597312
 AudioSource:
   m_ObjectHideFlags: 1
@@ -202,54 +164,69 @@ AudioSource:
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
+    - serializedVersion: 3
       time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    - serializedVersion: 2
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
       time: 1
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
+    - serializedVersion: 3
       time: 0
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
+    - serializedVersion: 3
       time: 0
       value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - serializedVersion: 2
+    - serializedVersion: 3
       time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Release build/EarlyGame.unity
+- path: Assets/Scenes/Personal scenes/Espi - UI.unity
   isLoaded: 1
   isActive: 1

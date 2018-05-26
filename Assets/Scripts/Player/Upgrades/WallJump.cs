@@ -7,7 +7,7 @@ public class WallJump : MonoBehaviour {
 	Rigidbody2D rigidBody2D;
 	InputManager input;
 	public float WallJumpSpeed;
-	bool holdJump;
+	public bool holdJump, leftWall, rightWall;
 
 	void Start() {
 		status = GetComponent<PlayerStatus>();
@@ -20,14 +20,18 @@ public class WallJump : MonoBehaviour {
 		if(!input.GetKey("jump")) {
 			holdJump = false;
 		}
-		if(input.GetKey("jump") && (status.againstLeft || status.againstRight) && !holdJump && !status.grounded && !status.isSmall) {
+
+		leftWall = Physics2D.OverlapBox(transform.position, new Vector2(-0.8f, 1f), 0, status.whatIsWall);
+		rightWall = Physics2D.OverlapBox(transform.position, new Vector2(0.8f, 1f), 0, status.whatIsWall);
+		
+		if(input.GetKey("jump") && !holdJump && !status.grounded && !status.isSmall) {
 			holdJump = true;
 			float axisH = input.GetAxis("X");
-			if(status.againstLeft && axisH > 0) {
+			if(leftWall && axisH > 0) {
 				rigidBody2D.velocity = new Vector2(WallJumpSpeed, jump.jumpSpeed / 1.2f);
 				jump.hasSecondJumped = false;
 			}
-			else if(status.againstRight && axisH < 0) {
+			else if(rightWall && axisH < 0) {
 				rigidBody2D.velocity = new Vector2(-WallJumpSpeed, jump.jumpSpeed / 1.2f);
 				jump.hasSecondJumped = false;
 			}

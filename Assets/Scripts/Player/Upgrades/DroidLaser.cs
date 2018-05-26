@@ -155,6 +155,12 @@ public class DroidLaser : MonoBehaviour {
 				//Check so that it goes after the correct child
 				victim.collider.gameObject.transform.GetChild(0).GetComponent<BigEyeGuyLaser>().Shoot();
 				break;
+
+			case "Barrier":
+				Debug.Log("Laser hit barrier");
+				if(victim.collider.GetComponent<Barrier>().GetBarrierType().Equals("Laser"))
+					victim.collider.GetComponent<Barrier>().TakeDamage(1);
+				break;
 		}
 	}
 }

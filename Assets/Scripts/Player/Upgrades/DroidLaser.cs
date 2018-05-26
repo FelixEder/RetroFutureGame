@@ -15,14 +15,12 @@ public class DroidLaser : MonoBehaviour {
 
 	Animator anim;
 	LineRenderer line;
-	PlayerStatus status;
 	PlayerEnergy energy;
 	InputManager input;
 	RaycastHit2D raycastHit;
 
 
 	void Start() {
-		status = player.GetComponent<PlayerStatus>();
 		energy = player.GetComponent<PlayerEnergy>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 

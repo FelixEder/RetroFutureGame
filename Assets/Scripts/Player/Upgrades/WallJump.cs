@@ -21,19 +21,17 @@ public class WallJump : MonoBehaviour {
 			holdJump = false;
 		}
 
-		leftWall = Physics2D.OverlapBox(transform.position, new Vector2(-0.8f, 1f), 0, status.whatIsWall);
-		rightWall = Physics2D.OverlapBox(transform.position, new Vector2(0.8f, 1f), 0, status.whatIsWall);
+		leftWall = Physics2D.OverlapBox(new Vector2(transform.position.x - 0.1f, transform.position.y), new Vector2(0.7f, 1f), 0, status.whatIsWall);
+		rightWall = Physics2D.OverlapBox(new Vector2(transform.position.x + 0.1f, transform.position.y), new Vector2(0.7f, 1f), 0, status.whatIsWall);
 		
 		if(input.GetKey("jump") && !holdJump && !status.grounded && !status.isSmall) {
 			holdJump = true;
 			float axisH = input.GetAxis("X");
 			if(leftWall && axisH > 0) {
 				rigidBody2D.velocity = new Vector2(WallJumpSpeed, jump.jumpSpeed / 1.2f);
-				jump.hasSecondJumped = false;
 			}
 			else if(rightWall && axisH < 0) {
 				rigidBody2D.velocity = new Vector2(-WallJumpSpeed, jump.jumpSpeed / 1.2f);
-				jump.hasSecondJumped = false;
 			}
 		}
 	}

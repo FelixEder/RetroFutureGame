@@ -15,7 +15,7 @@ public class PlayerJump : MonoBehaviour {
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 	}
 
-	void Update() {
+	void FixedUpdate() {
 		if(!input.GetKey("jump") && (hasJumped || hasSecondJumped) && status.grounded && !holdJump) {
 			hasJumped = false;
 			hasSecondJumped = false;

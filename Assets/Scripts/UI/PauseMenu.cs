@@ -8,6 +8,8 @@ public class PauseMenu : MonoBehaviour {
 	AudioControl audiocontrol;
 	bool inputWasDisabled;
 
+	public GameObject HUD;
+
 	void Start() {
 		Time.timeScale = 1;
 
@@ -48,6 +50,7 @@ public class PauseMenu : MonoBehaviour {
 		inputWasDisabled = false;
 		audiocontrol.SetMultiplier(100);
 		menu.HideOverlay();
+		HUD.SetActive(true);
 	}
 
 	void Pause() {
@@ -57,6 +60,7 @@ public class PauseMenu : MonoBehaviour {
 		input.Disable();
 		audiocontrol.SetMultiplier(20);
 		menu.ShowOverlay();
+		HUD.SetActive(false);
 	}
 
 	//loads inputted level

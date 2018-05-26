@@ -92,8 +92,8 @@ public class Stomp : MonoBehaviour {
 					break;
 
 				case "Barrier":
-					if(victim.gameObject.GetComponent<Barriers>().GetBarrierType().Equals("Stomp")) {
-						victim.gameObject.GetComponent<Barriers>().TakeDamage(1);
+					if(victim.gameObject.GetComponent<Barrier>().GetBarrierType().Equals("Stomp")) {
+						victim.gameObject.GetComponent<Barrier>().TakeDamage(1);
 					}
 					break;
 

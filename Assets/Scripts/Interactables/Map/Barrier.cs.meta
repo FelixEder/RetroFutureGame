@@ -1,12 +1,7 @@
 fileFormatVersion: 2
-guid: d9f6b69a7b8579e458d020f7a356d278
-<<<<<<< HEAD
-timeCreated: 1468095655
-=======
-timeCreated: 1467924154
->>>>>>> Enemy_Drops
-licenseType: Free
+guid: 49a004350392161439d094a8865af1c2
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
   defaultReferences: []
   executionOrder: 0

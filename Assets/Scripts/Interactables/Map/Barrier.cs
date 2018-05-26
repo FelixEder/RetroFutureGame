@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Barriers : MonoBehaviour {
+public class Barrier : MonoBehaviour {
 	//The speciality of this door, is given in the editor as indicated by which item is needed to destroy it.
 	//Ex. "rock" for doors that can only be destroyed by regular doors.
 	public string barrierType;

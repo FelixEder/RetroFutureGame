@@ -152,9 +152,9 @@ public class PlayerPunch : MonoBehaviour {
 					break;
 
 				case "Barrier":
-					Debug.Log("BarrierType: " + victim.gameObject.GetComponent<Barriers>().GetBarrierType());
-					if(attackType == victim.gameObject.GetComponent<Barriers>().GetBarrierType())
-						victim.gameObject.GetComponent<Barriers>().TakeDamage(damage);
+					Debug.Log("BarrierType: " + victim.gameObject.GetComponent<Barrier>().GetBarrierType());
+					if(attackType == victim.gameObject.GetComponent<Barrier>().GetBarrierType())
+						victim.gameObject.GetComponent<Barrier>().TakeDamage(damage);
 			//		attackType = "Barrier";
 					break;
 

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Personal scenes/Espi - UI.unity
+- path: Assets/Scenes/Release build/Game.unity
   isLoaded: 1
   isActive: 1

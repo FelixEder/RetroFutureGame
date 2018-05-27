@@ -1,13 +1,7 @@
 ﻿
-<<<<<<< HEAD
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetroFutureGame", "Assembly-CSharp.csproj", "{3CBFC496-3BD9-0ED6-922C-A02C97138AD6}"
-=======
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetroFutureGame", "RetroFutureGame.csproj", "{3AD2D19B-0F25-9752-B587-447F67DB0CFA}"
->>>>>>> origin/EspiUI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetroFutureGame", "Assembly-CSharp-Editor.csproj", "{70AFECE5-41DD-9F6A-0985-8C2281DA0E8D}"
 EndProject

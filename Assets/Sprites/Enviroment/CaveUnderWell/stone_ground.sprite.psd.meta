@@ -84,15 +84,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-<<<<<<< HEAD
     spriteID: c84eceb5b2daed94087822ca4394c3d8
-=======
-<<<<<<< HEAD
-    spriteID: 4ebf15f957f33db429c84b8b15df3a0e
-=======
-    spriteID: 8f72a01775661be44929d89b596d2fb1
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI
     vertices: []
     indices: 
     edges: []

@@ -278,15 +278,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 93f8b0e369fa12f4fa0630638f00f158
-=======
-<<<<<<< HEAD
-      spriteID: c45cb18975b50e740a2db710546a3eae
-=======
-      spriteID: 7bdf99a8bf50b42409e6785a347babad
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -306,15 +298,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 80047b7bff41c7a458a75a9fb6084ceb
-=======
-<<<<<<< HEAD
-      spriteID: 2947bb42a21bca04f9e823b3a7c8d68e
-=======
-      spriteID: 74e1218c2c8a8c944a3a6cc2107ba1eb
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -334,15 +318,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: cba45d4186c37234d850d0bd00e974b7
-=======
-<<<<<<< HEAD
-      spriteID: 47b4c453b2aa81445a827ba2934047cd
-=======
-      spriteID: a26d5ae7dfa1a854b991d6c5db8f7232
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -362,15 +338,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 470de6009db5c8b4e9d91a2787df28c6
-=======
-<<<<<<< HEAD
-      spriteID: 60743c5a7e0192b40823b8effb55610b
-=======
-      spriteID: fee017377065ec94d917f87b974c3b72
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -390,15 +358,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 6d4c580acbe66784e93e22ebb727c9c2
-=======
-<<<<<<< HEAD
-      spriteID: 917dfe7dc59a51d48b6f2b6578786951
-=======
-      spriteID: 5127afb86a78e9a49b9548f38b17cf50
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -408,10 +368,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 100
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
         y: 180
-=======
-        y: 380
         width: 20
         height: 20
       alignment: 0
@@ -421,40 +378,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
-      spriteID: 877e830cd4b2a024d95151eb71515e65
-=======
-      spriteID: f5a922eb1c065c1448364e3cb41fb019
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_6
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 380
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 5adb22febd5a25f498a66b4fe5f622a0
-=======
-<<<<<<< HEAD
-      spriteID: 0e02a1eaf2cb97043be38d86dc3dea35
-=======
-      spriteID: d26ac1e0989836844bdee77a97f0c548
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -474,15 +398,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 413a9967ae2d6784c8c033da19826344
-=======
-<<<<<<< HEAD
-      spriteID: 8ba167e7ed880bc43b6b63076cbed4ac
-=======
-      spriteID: 53f3440c3f640f04490b7d21126e7cb0
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -502,15 +418,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 56fcd83fcc3d8ea43b54c62a3d374559
-=======
-<<<<<<< HEAD
-      spriteID: 52bc58242b4692f4b9ce11f312f463a9
-=======
-      spriteID: 95a892d814fdf54499e8e6e9af60d4e7
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -530,15 +438,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: e638c2ac095c956419bb78f0fd6a8941
-=======
-<<<<<<< HEAD
-      spriteID: 6b55a2e2d36d05a43af8e33b3cf08fdf
-=======
-      spriteID: 1eb6f69ac15d3344280b4975f600c6a6
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -558,15 +458,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: e8930769ff68ca244a90e48b46b81af8
-=======
-<<<<<<< HEAD
-      spriteID: 9ea67382cc6a19b4893595e693b434c0
-=======
-      spriteID: 8fa0442b0293d2d498cf57aa98d1c357
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -576,10 +468,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 220
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
         y: 180
-=======
-        y: 380
         width: 20
         height: 20
       alignment: 0
@@ -589,40 +478,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
-      spriteID: b85542f9c8ac93f4180265eaa293eaa9
-=======
-      spriteID: 98ec76b880eb2df4ca416a6a5c870d46
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_12
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 380
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 01d04b855c0c8af4c917b676355a52d4
-=======
-<<<<<<< HEAD
-      spriteID: 77dfad39a037c8f43af384ad8bbe3414
-=======
-      spriteID: 353f1afc042776845a89b69935f6136a
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -642,15 +498,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: f9a905f00ad35754d8e09ee447268e41
-=======
-<<<<<<< HEAD
-      spriteID: 2d8f28238af5e6b4e87db49261b10af9
-=======
-      spriteID: 3b21bd1ee4d3edd42b740366d7bcd867
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -670,15 +518,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 97bd5cb75a125e34ba903f3b34becbc2
-=======
-<<<<<<< HEAD
-      spriteID: a0259a8cf7b46e14faa1ff36101f333c
-=======
-      spriteID: bd8d1a7ac9c80ed4ea953cfd4115ec01
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -698,15 +538,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: f376dfe4937c9bc45b9add9234942c06
-=======
-<<<<<<< HEAD
-      spriteID: 38a0d3c668ee9e243aa6e97c5faf6af6
-=======
-      spriteID: ea1cae2f008b156428f8ff07a87a3630
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -726,15 +558,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: cf716039b29bda046a2f85dbb71226ae
-=======
-<<<<<<< HEAD
-      spriteID: f6ad09ca335c1534bb3345c012c42165
-=======
-      spriteID: bbf0da445a7d95f47abdc3d1bedb235b
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -754,15 +578,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: bc555e214cd50354bb2b45c30ec4b400
-=======
-<<<<<<< HEAD
-      spriteID: e69a9fbd5358a444e9ec92c571a4c615
-=======
-      spriteID: f4e8fb114daf78c4288fab08252fb937
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -772,10 +588,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 100
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
         y: 160
-=======
-        y: 360
         width: 20
         height: 20
       alignment: 0
@@ -785,40 +598,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
-      spriteID: 6bc60a134ef101845849f0291c6d5d05
-=======
-      spriteID: e290a294a3cf24a4e909a5bf438130d5
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_19
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 360
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 89678f38bac26b94aafa3a4f27bab178
-=======
-<<<<<<< HEAD
-      spriteID: a8db2ee0c57e961478237be5a23ccd98
-=======
-      spriteID: 208ef01b7b6b2bc45877d2208cc6ad0e
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -838,15 +618,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 362a0c14e27917d41993c7da043ab08d
-=======
-<<<<<<< HEAD
-      spriteID: 7f9d25bd6bc6ec64b9889deeae2fb9ea
-=======
-      spriteID: db2ed01a2e308144d879e34e9412feaf
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -866,15 +638,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 5f21a377fb163f7468acad68da44f37d
-=======
-<<<<<<< HEAD
-      spriteID: da529c51ab97f674bbe0d4ccd9ab9183
-=======
-      spriteID: d233a3469644faf4391aa1d7474a666f
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -894,15 +658,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 77d4b70050560414590f5eb2ed62175f
-=======
-<<<<<<< HEAD
-      spriteID: 1c7a7afc20bcbc44e87283b8be004736
-=======
-      spriteID: 9646fd9647d004b41aafc05d24872386
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -922,15 +678,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 413c92b7443f1d2409cb2deaac929b4e
-=======
-<<<<<<< HEAD
-      spriteID: 9b18188858526d044b6d5834294ea426
-=======
-      spriteID: d151a1913ee2ff84ba6194d6fe42e871
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -940,10 +688,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 220
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
         y: 160
-=======
-        y: 360
         width: 20
         height: 20
       alignment: 0
@@ -953,40 +698,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
-      spriteID: 171afedf465dbef4db38d3be6e871686
-=======
-      spriteID: 1205c21dbf07b774e9aedbbedbe86100
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_25
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 360
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 88273d5efc7c2a64c9f6e03a55324b34
-=======
-<<<<<<< HEAD
-      spriteID: 8aed8466beeaf74409d4cf8ecff6a538
-=======
-      spriteID: ca94373b200d21648a376d500abea351
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1006,15 +718,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 071b42bfa7e08de4f98ad30598e0eccf
-=======
-<<<<<<< HEAD
-      spriteID: 7a3c351015369574397339955539c830
-=======
-      spriteID: 821ac32a5aa0b1f4bb7f61414658b747
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1034,15 +738,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 62d0b0fe419744c4e9378dde523e812b
-=======
-<<<<<<< HEAD
-      spriteID: 75229b95b948fc746ac51baefc9f7038
-=======
-      spriteID: 0074b84675417ee42a8e7366dac3ef54
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1062,15 +758,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 2dfb63a9806fa2a458ca6935451773ad
-=======
-<<<<<<< HEAD
-      spriteID: b8e284c67c48c7047a7b3887ba4845e3
-=======
-      spriteID: 1c2e2d1b55428ff4998d3cec1f0f9503
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1090,15 +778,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 0b5d468e879e8a04b843bdfa44122c44
-=======
-<<<<<<< HEAD
-      spriteID: 7c3e428889cc38f43a9ec41f413f992c
-=======
-      spriteID: adcbc4b0481c4464bbf71ed196bc3abf
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1118,15 +798,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 7642cecd3adfd304aa86211962b40da7
-=======
-<<<<<<< HEAD
-      spriteID: 8f50eb7657770af4d8e9b8aff0da3553
-=======
-      spriteID: 0b2fff2bddc511249a4f085525dbcc84
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1136,10 +808,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 100
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
         y: 140
-=======
-        y: 340
         width: 20
         height: 20
       alignment: 0
@@ -1149,40 +818,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
-      spriteID: e814dc4a745272e448441f1ff9f4a221
-=======
-      spriteID: ad8c5ac8b815b7c4581976bb41bc103a
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_32
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 340
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: b6dee106df7522746a81d8798c478160
-=======
-<<<<<<< HEAD
-      spriteID: 69ddb17edbee2d542ac6ec44601c6f2d
-=======
-      spriteID: 793d7b2d610596147b428303715e9fa9
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1202,15 +838,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 4e20c0f8ecdbfd041bacb9b458d18e58
-=======
-<<<<<<< HEAD
-      spriteID: b6b2cc0c976930d43a956fc8b37d295a
-=======
-      spriteID: 6183ba5fd7f1ff643aba82e4f05d3456
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1230,15 +858,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: bdb489ba55e8c2e4f91ec825e8434b55
-=======
-<<<<<<< HEAD
-      spriteID: 104b46a937fa56b4d93f94e9b316a265
-=======
-      spriteID: 82718385a74e567478967cdd9b41d7c9
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1258,15 +878,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 4095cf3236935d442b66256141032ca1
-=======
-<<<<<<< HEAD
-      spriteID: 59fba68b2c39728468ab121cd28f2071
-=======
-      spriteID: 438abe5ee2517b04385112eaa0823915
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1286,15 +898,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: a1eb63176fb074b4b910288566db8e93
-=======
-<<<<<<< HEAD
-      spriteID: 6f8a06945129bf24f9e99d6d973970d9
-=======
-      spriteID: 8033ec672711d714db55c6a4cf6799a8
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1314,15 +918,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 7c20f9993d3b0da4cb59ce9ff3b47c5f
-=======
-<<<<<<< HEAD
-      spriteID: a36826a936d606d46a1266c53690abd7
-=======
-      spriteID: e20beb8c821afcb42b4dca759aaf1674
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1342,15 +938,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 0137520c5f32620408ab4ec814ef0d1d
-=======
-<<<<<<< HEAD
-      spriteID: eb6c766073d18e54d91dbf5afd62688f
-=======
-      spriteID: 63a7b3ee7313dcf4598325b1e48dda17
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1370,15 +958,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 32b20812c065718438c18ab1f709d502
-=======
-<<<<<<< HEAD
-      spriteID: 0d7ab26a645b76640bf73d93776d3958
-=======
-      spriteID: 59a6a9976c1641b4b85c30bb5bc56c5f
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1398,15 +978,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: ab547e3954f947f4dbeec80f43cb9e4c
-=======
-<<<<<<< HEAD
-      spriteID: 36924687d0b113048a3ddd7a628c2490
-=======
-      spriteID: 32c329f4b48365148b10d6d91b790f10
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1426,15 +998,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 7f9fbddd938128d4e88d8a8fdb1c23a0
-=======
-<<<<<<< HEAD
-      spriteID: ad820747aa6e44b40bef78447eb2e735
-=======
-      spriteID: b890c4fdb8d9dd944974fc9e248c9372
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1454,15 +1018,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 0f57b313bf00c894d8455ff82e001658
-=======
-<<<<<<< HEAD
-      spriteID: efed78dfaeacad640a99139698db882a
-=======
-      spriteID: ed4db511031535f41a05055049718e05
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1482,15 +1038,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: b5278c58955b9fe45b190d7fc7b121ff
-=======
-<<<<<<< HEAD
-      spriteID: 1a98df108405e864e9a778d1cd099e93
-=======
-      spriteID: d8f5bc0f45f135e4fa619d0b44d5b2f5
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1510,15 +1058,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: ac45b5a40b259f94ab45efe225530333
-=======
-<<<<<<< HEAD
-      spriteID: c31340a034afd0b4fa116fe2964d7c21
-=======
-      spriteID: 59a9d5a3a0c06b94289a80a045813531
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1538,15 +1078,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: e16c46c322f46eb4cbfc9063728a42d9
-=======
-<<<<<<< HEAD
-      spriteID: adaa1eec9efaaf748836c3bf1eac2244
-=======
-      spriteID: d55813873522405488483f23d0ebac51
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1566,15 +1098,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 178fd1b9d4cf2a14a96b9fac464443ed
-=======
-<<<<<<< HEAD
-      spriteID: 71c3d699167984043a98e85c0a126fba
-=======
-      spriteID: 3007e1e24a6e0164183022d21ff1feba
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1594,15 +1118,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 985075ef240631c4a9888ae98af0b35d
-=======
-<<<<<<< HEAD
-      spriteID: 15359e551d4ba004ba2a72147792438c
-=======
-      spriteID: 43021ee3ad4ce3a49bba981b9d7bd3a1
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1622,15 +1138,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 51c4f27515fec924b8a0d6ba657b7849
-=======
-<<<<<<< HEAD
-      spriteID: 338d0e1c9d131e64da1a060e497b4a03
-=======
-      spriteID: 9b275f782e7d019438dfd5ac48b52a09
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1650,15 +1158,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: cc98d9a154e5602468c9e1f3d5da8b8c
-=======
-<<<<<<< HEAD
-      spriteID: 74da7682ec01ee44fa271b3be31e379f
-=======
-      spriteID: 652eb46e53be8d54a98709dcf09374bc
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1678,15 +1178,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 39f571c57e2a541468670bcfdb592bce
-=======
-<<<<<<< HEAD
-      spriteID: 3db0302b2c787b44b80a9e8c4b41420a
-=======
-      spriteID: 4c8c2c497948a0f48821e343414deb63
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1706,15 +1198,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 4870d8c7946e4ad43ade0b91d3c0dc69
-=======
-<<<<<<< HEAD
-      spriteID: c1b675bd78414784bbfb2490e319f6d5
-=======
-      spriteID: e6fe2fb67d42f1f4b9ece3844e6049de
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1734,15 +1218,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: eecb9a4fb86a8974396c745965222005
-=======
-<<<<<<< HEAD
-      spriteID: b2b7c2907d698344a9480fbe474e9b46
-=======
-      spriteID: 26b37adeda45d0647af64e63a2a86389
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1762,15 +1238,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 37abc1d3da13c1b428edbed466d3aa83
-=======
-<<<<<<< HEAD
-      spriteID: 1f7e320014f821749a1d1b4919df8b59
-=======
-      spriteID: dab474560750e224a8aa5c3deb5cb9cc
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1790,15 +1258,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 07868063ed3029540b4d11eb84d87681
-=======
-<<<<<<< HEAD
-      spriteID: 2b022c0025ffe954ab83d355b633efe7
-=======
-      spriteID: bbb17a11e898c764daeebe559f201cfa
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1808,10 +1268,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
         y: 80
-=======
-        y: 300
         width: 20
         height: 20
       alignment: 0
@@ -1821,64 +1278,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
-      spriteID: 18a1e08ce071530439ba27b2329ff8ed
-=======
-      spriteID: b561711056ad0eb4dbb7b15aa7afa791
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_56
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 300
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: d8a5cc897a596ed47af949630752552d
-=======
-      spriteID: b91094edb96060a4a983efffb83a0017
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_57
-      rect:
-        serializedVersion: 2
-        x: 180
-        y: 300
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 96202090c113613468682cbcdc5ec6cb
-=======
-<<<<<<< HEAD
-      spriteID: bc290fa6ee4e7ab47ac922702e68459e
-=======
-      spriteID: 9a53c802e041d0140b3b1c7dbe36144f
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1898,15 +1298,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 87a860e40a5582d4081168e1e73d2f8f
-=======
-<<<<<<< HEAD
-      spriteID: 4c753cb8d64f0fa4f916bee56adb9efd
-=======
-      spriteID: 772dd2db8d3a4c045af4a26a3c39ca69
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1926,15 +1318,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 5370716c18e4b164cad8d5630ec0f0c3
-=======
-<<<<<<< HEAD
-      spriteID: 8aea59e7987ef8d4c973c03249708bb4
-=======
-      spriteID: 27583caa2adc9df449b314975876bcac
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1954,15 +1338,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 72073703efd31a14ba4cd5c76c487041
-=======
-<<<<<<< HEAD
-      spriteID: 3a798c9eea75bea48821528b4e7976df
-=======
-      spriteID: d72b06a9c3bb2234fab0ebf3d9c52104
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -1982,15 +1358,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: a4274a5b542d7e3448abf6ba3bdca095
-=======
-<<<<<<< HEAD
-      spriteID: 38048bf0376b4ea44b0e808b70e31e15
-=======
-      spriteID: 3b51a3ff3e49a2c4198f63b99f5d211a
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2010,15 +1378,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 01425f67ebdb7384395656c0d60eae64
-=======
-<<<<<<< HEAD
-      spriteID: fe324636801529d4fb26199071ac98d9
-=======
-      spriteID: 213e6de64ba67b6468537e83adeb63c0
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2038,15 +1398,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 79b82cdb4461e25498a26862b294eb7a
-=======
-<<<<<<< HEAD
-      spriteID: 8aeae5437ee8668499c5886f399f0e17
-=======
-      spriteID: 0ba06668368d24f41963968d49102bb6
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2066,15 +1418,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 4bfa5345adc188f4da8356846b6e7108
-=======
-<<<<<<< HEAD
-      spriteID: 23f38931d49fd1547998fb5d2e6bc6d3
-=======
-      spriteID: c054584fa8fff0745ba5009053d90550
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2094,15 +1438,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 1863ccbe61e26d048bc96ed8cd38858f
-=======
-<<<<<<< HEAD
-      spriteID: 0e46e854b5ec5824fb66b379b099ae43
-=======
-      spriteID: 90f1fbab51bb5574ab149332f2a89f3b
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2122,15 +1458,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: ce9f72279edb9a946882b8eed51f9f75
-=======
-<<<<<<< HEAD
-      spriteID: cec9dd9a78fbc4144877d9459ca5880f
-=======
-      spriteID: 465c89dace56098479a6b2517497eb22
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2150,15 +1478,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: a653d3dba799792468d0998d75239bb6
-=======
-<<<<<<< HEAD
-      spriteID: 1a6281912ec6f2b4a8855252a199de52
-=======
-      spriteID: 11c1a8b784914ce46b79b414ea1d1d65
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2178,15 +1498,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: e3d0fae8dc1078a41a4cf13387f0c48b
-=======
-<<<<<<< HEAD
-      spriteID: 3326f11773552a6409fdcc0ea448734a
-=======
-      spriteID: 393fd56b167acda479c84c3a9deb10fd
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2206,15 +1518,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: a436996187c2a6e45a25462fb77e6691
-=======
-<<<<<<< HEAD
-      spriteID: 2c1289a2bccf896488a346644650fc32
-=======
-      spriteID: 53e6fbad2cf462847b72553f8f513c52
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2234,15 +1538,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 0742d1b906b132e4a81e356deb999ec2
-=======
-<<<<<<< HEAD
-      spriteID: bdbae2203337cd14bb5396b033031369
-=======
-      spriteID: defb2bdcad2bf044391a6bb4851d1789
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2262,15 +1558,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: e9952f97e41edbf409cfa53ad5f12d53
-=======
-<<<<<<< HEAD
-      spriteID: b94ed2d11e760cf4aae54deeef5cd52c
-=======
-      spriteID: 1475378b731417e4580ab977181f634d
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2290,15 +1578,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 46cab310606065040a0957fb27d972c7
-=======
-<<<<<<< HEAD
-      spriteID: c6698948b0ab7bc4ebb5ed7668001357
-=======
-      spriteID: 7789408457e2f5248bf0cd9f52c7604b
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2318,15 +1598,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: bb5d5936993a6c345bcbb3d98cd0c865
-=======
-<<<<<<< HEAD
-      spriteID: c0c5a91da8b1346419b1957a2cc265e2
-=======
-      spriteID: 013e867cc18b9cc489e5ed45933ef0a1
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2346,15 +1618,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 3818af6e9037ea241af7233fdd9d6971
-=======
-<<<<<<< HEAD
-      spriteID: a3e566a7d06bcee45a8d1176b61cf5f1
-=======
-      spriteID: 83942b399c9010144934a1039d7b575e
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2374,15 +1638,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 45b640f672863b24586d655cc2715099
-=======
-<<<<<<< HEAD
-      spriteID: 14caa3f3a9c483846843f44d18954033
-=======
-      spriteID: 1af62a0e102ac054695976be8ce4b25b
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2402,15 +1658,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 976b1c65198d1b145ada9779bc761397
-=======
-<<<<<<< HEAD
-      spriteID: 8bb54167cde25ab47895307ac863ae9e
-=======
-      spriteID: e51be864193dbaf4e8499f7c96680816
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2430,15 +1678,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 7acf2f2339d2bb64d97bf1bdfd9d173e
-=======
-<<<<<<< HEAD
-      spriteID: 79a3b3588e922dc4f98bb9ed6f7c0743
-=======
-      spriteID: c410a661503dbe44a97a5d34cc18dc0a
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2458,15 +1698,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: c8c6a6c6451b56045b38c7d2ce6e1053
-=======
-<<<<<<< HEAD
-      spriteID: d354f8381aa6e5645aaabf5712ad3972
-=======
-      spriteID: 5abb55bbc6ef61d498e6195794c13189
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2486,15 +1718,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: fec0e74bfcac1f942984350d4e53bec7
-=======
-<<<<<<< HEAD
-      spriteID: ba5f0de059bd4514599da734da491518
-=======
-      spriteID: 837d3c6ede000bd43be793b36f0e95db
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2514,15 +1738,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: e478caeb5c39bc144a1077a84622449b
-=======
-<<<<<<< HEAD
-      spriteID: 1118b4d00c7d5a64197bfef0c8cb72f9
-=======
-      spriteID: 684d357672c66f645a2e2345b05e4412
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2542,15 +1758,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: a52d72d88860b0b409a405d15c69376e
-=======
-<<<<<<< HEAD
-      spriteID: da8d83a135d63af498af1867f8606389
-=======
-      spriteID: 0015923210761504ea5cb055492868ed
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2570,15 +1778,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 306f5b52c2ac3604a89ba15a08a5896f
-=======
-<<<<<<< HEAD
-      spriteID: 0606f61832962244181c665221c4a5d8
-=======
-      spriteID: 168b86e7c136cb54e9cc3e715fd2b7e2
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2598,15 +1798,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 08a56a7eca7d52c408613d468092348d
-=======
-<<<<<<< HEAD
-      spriteID: 7db27ca9018720b439ee206d5a441b18
-=======
-      spriteID: b5932fd66c375064a9ca2c6469934764
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2626,15 +1818,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 0f4008fb334625549a23e323e39d16d0
-=======
-<<<<<<< HEAD
-      spriteID: b02eb667e70c22942b0ea8e8d7b12a4a
-=======
-      spriteID: 570a975d2dbd97a4ba8795b76af40936
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2654,15 +1838,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 07c2fe26e322dfb41ad44b9e611b22bc
-=======
-<<<<<<< HEAD
-      spriteID: bbf8b331a680ebd40b2a51226cfed0e9
-=======
-      spriteID: f924f0d7e9fe4c741bbb36cc4cb937f3
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2682,15 +1858,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 767a982af0f3d5043a34529b568ac2b8
-=======
-<<<<<<< HEAD
-      spriteID: a13226e9bda4b624da6d0bfe18bfb5d9
-=======
-      spriteID: 986773c6c3bb400468133b6309dd1ca4
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2710,15 +1878,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 7237f52cd42472e449e7983b18758aff
-=======
-<<<<<<< HEAD
-      spriteID: 400b93880899f91429ee4854edda8d17
-=======
-      spriteID: af87f6c631b5b8949bf48119acf7ce43
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2738,15 +1898,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: be44eff9a97d86343bda920b549488cd
-=======
-<<<<<<< HEAD
-      spriteID: 7247037c58483fb41bc3a406e8680b5b
-=======
-      spriteID: fa290f22fc406d345bd051df3b9df974
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2766,15 +1918,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 16684728cb3719246ac813da9ce2a502
-=======
-<<<<<<< HEAD
-      spriteID: 49e7ccfcb91fb464e966ea336a92e595
-=======
-      spriteID: 6c71ac383ccc45847be6c8b9da6a38e6
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2794,15 +1938,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: f2d99597711d0264aa007df0cf5b49dc
-=======
-<<<<<<< HEAD
-      spriteID: 259c94bf98bd7a14aaabae59eedec9fb
-=======
-      spriteID: e4dcdcf9fe434e347a66992564b8d656
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2822,15 +1958,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 6beb9fecfbdca1f4897d73d3f7ec5186
-=======
-<<<<<<< HEAD
-      spriteID: edeb2a66e1702414cba59a105663ada8
-=======
-      spriteID: 9162ba3e1cb47124784f54bf8ed2670e
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2850,15 +1978,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 35f235d6d0155f641b287cf1428f9d01
-=======
-<<<<<<< HEAD
-      spriteID: b0346340ff184624ab43643a6a01891a
-=======
-      spriteID: 5c0d1c082416de443a164205e1458333
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2878,15 +1998,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: ae792522aa26a9f4f8a51433747af5ae
-=======
-<<<<<<< HEAD
-      spriteID: a0d8d742d7533cf4ab12404e0aa12f21
-=======
-      spriteID: be36026a2a988384a9d742ecac456b67
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2906,15 +2018,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: f81faab5fe786454f9cec8cf13c5976d
-=======
-<<<<<<< HEAD
-      spriteID: d807632462481cb459ca376756f7e6aa
-=======
-      spriteID: 9c7b529eef57edd498f558c4267f6427
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2934,15 +2038,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 1efd66ef3ae50d34bad6bbdaad18d2f0
-=======
-<<<<<<< HEAD
-      spriteID: 58ccfb164cfba084db561acc255abdc7
-=======
-      spriteID: 6c5fe2e4b0191194e8ac0d0d244d590d
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2962,15 +2058,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 992d7716636d6bc4895ec99cce9938eb
-=======
-<<<<<<< HEAD
-      spriteID: 8c3d5d23cfc175e42a7576b5b7246414
-=======
-      spriteID: 073468d087159924f8bf29277acc674b
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -2990,15 +2078,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: ac973c7199d945a4c8e14bd31f3375ba
-=======
-<<<<<<< HEAD
-      spriteID: b6358e40f99eec64495da5eddad3a5e8
-=======
-      spriteID: 31d54dbb7c055634d9b4d593c83f730d
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -3018,15 +2098,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 2f282e3fece9553499de480362a9bcc6
-=======
-<<<<<<< HEAD
-      spriteID: 6df6e4204071cf042a9d32753a881bd6
-=======
-      spriteID: 09755c360b9453c43b87805a6263c0ff
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -3036,10 +2108,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 120
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
         y: 0
-=======
-        y: 200
         width: 20
         height: 20
       alignment: 0
@@ -3049,40 +2118,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
-      spriteID: 45c9e2ae053571040bc26799585d6ef8
-=======
-      spriteID: bd52eec8e48c756448a8b6a4171661a2
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_100
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 200
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: a8f685f906e69a84597fec6b4408cb19
-=======
-<<<<<<< HEAD
-      spriteID: 197d30f582235654496791fdf256f37a
-=======
-      spriteID: 72d05d4ed4ded6e479132702c617650c
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -3102,15 +2138,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 32535293d8c831e4b8152eb6001b64b4
-=======
-<<<<<<< HEAD
-      spriteID: 992d188bfbb5d4d4f8c7f4058ab9c50f
-=======
-      spriteID: e49292a0e4869d24cbfe4c217ba16791
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -3130,15 +2158,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 5b6ca134e36273e44a49613dc4d51b00
-=======
-<<<<<<< HEAD
-      spriteID: 87ea0cfb02471e4439e856b8d12e8fb8
-=======
-      spriteID: ab438ad03643e3c43826c4f5e960bdf2
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -3158,15 +2178,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: f5f16d5a227e93e4ead4b67b26fce488
-=======
-<<<<<<< HEAD
-      spriteID: af817e1dd45ee6a4e9071dea42e94090
-=======
-      spriteID: 8c5a38709ea1b07478af204961ed122f
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -3186,15 +2198,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: b523c08a539ad314c81b7a2d4d61db5f
-=======
-<<<<<<< HEAD
-      spriteID: 23e78e05f9694414b88478991025d3ac
-=======
-      spriteID: a5bb81e2a302c8345a5b4266dae22abb
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -3214,15 +2218,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 281ed58a1d40e3b41af885eaae7f77d3
-=======
-<<<<<<< HEAD
-      spriteID: fd04ce74eb8f39c42b5075826c5c2f5c
-=======
-      spriteID: 0cfc2a23460d0664eae6999aa8d97a43
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -3242,15 +2238,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 1fc890128fa26cd4b915b03cd7db4ad5
-=======
-<<<<<<< HEAD
-      spriteID: 73d217f5ad44dca428364215604bbfac
-=======
-      spriteID: 7b17b64be83eddc429b9ff7256edfeef
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []
@@ -3259,1044 +2247,8 @@ TextureImporter:
       name: facility_back_13
       rect:
         serializedVersion: 2
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
         x: 180
         y: 20
-=======
-        x: 120
-        y: 180
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 823d9041746ae7e41a16934c46ccd687
-=======
-      spriteID: 867a5753b84edc64fb62344b72106849
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_108
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 180
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 9e3fec7d43cf7374da45ba31a56fbe5c
-=======
-      spriteID: 7d9785bba8a3dab49bb1236c7e2a6b53
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_109
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 160
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: df3a5c713d36b07418dfd9da36dc8d0b
-=======
-      spriteID: 95a4f501b69342146963fce7ec08f8a3
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_110
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 160
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 17ef48a4853479d46812226ec0ba8c0d
-=======
-      spriteID: 3ed789b4f0fb6ef4ba8331526dea261e
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_111
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 160
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: fbdcd991043768446b9a5167745d6f82
-=======
-      spriteID: b3151a4e69e217e479e0f3bbf6aa6da9
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_112
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 160
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: d669dae0da00c6b42814d91506b3fbbd
-=======
-      spriteID: 56930a7bbc976074fb5f3b6e79c480d8
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_113
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 160
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: dcf646e66e1bcf9449c4db6b426a410b
-=======
-      spriteID: a99b0bca665476947b37f6f3b56ae851
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_114
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 160
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: a07973d7094a727408d2d5481f4419bd
-=======
-      spriteID: 9cbfc008adfe2d5428fcd289141e1c13
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_115
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 160
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 80dfd09c961bbc84aa9fa08be1a55c4a
-=======
-      spriteID: c2ac65f313573e14da8ea1627dc88ed5
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_116
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 160
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 83c8f55e74a106b4aa58475d9e70275f
-=======
-      spriteID: f4872488f121e184e992316a1df3e9b0
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_117
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 140
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 6bd2859665b4a5d40a8a8759caecb941
-=======
-      spriteID: 67807a63c8ceaa3449c431dff46a50fb
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_118
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 140
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 8f413b1fb339fd949bee6b8d8c9fbdd2
-=======
-      spriteID: 50707fee1bd93764b8331ddd13b26a39
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_119
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 140
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 1ecb066e7bd63c24cb64b4d22027e2f3
-=======
-      spriteID: f43f57c337b374e4fa371b7c48449fa8
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_120
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 140
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: c81f3b7735a815b49b43dfac460aae39
-=======
-      spriteID: ff85d22b3d2a4fc44b1266ce35d9d12f
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_121
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 140
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: a1643fe06add9044a92b3cd12d74117b
-=======
-      spriteID: 1ccc13cef9bd1b541b9c9d53560d100a
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_122
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 140
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: cf5e63d80f442724bb87c38e31b67e9b
-=======
-      spriteID: 527be41fe8e6a914d9c63cfbe54011bb
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_123
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 140
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: b4bc103bd8a60084aa7acbcf51d518a1
-=======
-      spriteID: 2d2de88f7dcdabb43bf0470c6f340fd6
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_124
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 140
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 9a9808eaa03587a47ba3a472ecb3524f
-=======
-      spriteID: 8f04ee9da87b5b9468f4bb7709aacc99
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_125
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 120
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 1a2515e9b998b574cbcc5ac1ead8da31
-=======
-      spriteID: faedbb28e0c6151489ed680f025302b6
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_126
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 120
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 3cc7271ac82ae6c468ea7d00747a4d92
-=======
-      spriteID: 4a1c5e24a1ac9cd46955178b6edd5599
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_127
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 120
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 3d66a2cb5f23bab41af48682dd9660c3
-=======
-      spriteID: 54c766a3bd17d5b4abca10b96be3310f
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_128
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 120
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: a1d4131e8ff1ccf44bb2bfb5d7ecd850
-=======
-      spriteID: 8f659196431d12d49b0d55702ad568b7
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_129
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 120
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 261bf0c0b97424d47b0eb4002f82f238
-=======
-      spriteID: ea8977af8835b9b4a81db668afdf52f3
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_130
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 120
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: b9ca32e99aca1c54bab1962e886c2526
-=======
-      spriteID: 80784074cdf9df4469634cff8d3e56b8
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_131
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 100
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: ef132e0d6548f8f48a5bdf983caa97c7
-=======
-      spriteID: 254fc4fa71fa8b24d839e62a8cc49703
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_132
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 100
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: cd86a1b9a93781a47af2a03ddf759a44
-=======
-      spriteID: aba388b8e198ff1418431a6895b6bf95
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_133
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 100
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 77bad09fd93cd2c49a80ba57516eb63d
-=======
-      spriteID: d1348b613af486c41bb9c9fb557cc0c5
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_134
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 100
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: cf5f2d76085652b41ac321170ca9c7ea
-=======
-      spriteID: feaa9247b615c2546acfd3f6d1908e76
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_135
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 100
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 5f10171343ff28546948ef4b2fe803c6
-=======
-      spriteID: b52ca067637bc5542baf4940e9c4f2d6
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_136
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 100
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 45fdc8fade248b54a8e3a7b3003d2607
-=======
-      spriteID: 6cc5d77552f241a4b97348f9cd60d3f7
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_137
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 80
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 9d2ed61dfbd7a3943917d442526e570e
-=======
-      spriteID: 6fe42dd95618c5f42aaec1826e8596fe
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_138
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 80
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 52e2835cdc7901648b9c76cce75b7a28
-=======
-      spriteID: 9174033990c09304fbcd9ee062b5a703
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_139
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 80
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 7b30fbba2ddf12843ae0928f72d3ee9c
-=======
-      spriteID: 33555bf21bf54c54ab2d43e760c3a669
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_140
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 80
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: f52093a493e5e714dba70532ce6924d1
-=======
-      spriteID: c211c0f6ab66e154fb709b3ca006253e
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_141
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 80
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 8079d0db278f89b4e87e21c17a865854
-=======
-      spriteID: 6b9f42c11663091438635497c1b25366
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_142
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 60
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 392b98a0d2ff2464e95714e0cf161d56
-=======
-      spriteID: f0ceb07dce339b44799f0b7b9e35c3d4
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_143
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 60
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: ba774b5763ebcb444838c4d78379f614
-=======
-      spriteID: 9e0a6b5c2f5daff43910d2ffa2a81998
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_144
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 60
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: ec6ab9c05eaf81d4aacace8e8732a223
-=======
-      spriteID: bf8a3527ecc690a408f10d5a76aecbaf
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_145
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 60
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 91b83a6b73738944b98a46ab3bce87c5
-=======
-      spriteID: 82965fac20ff17f4fbbac35130311505
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_146
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 60
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 7fde464d942008149b0f000212513e0f
-=======
-      spriteID: f92443773d21f2144af3ad3be05da3ae
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_147
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 40
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 9669650c9d8e78a49ae36c628718fcc6
-=======
-      spriteID: a286370d1bb454d4086f21b70873fd81
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_148
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 40
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 12a1f3e937acce441a502ada30abcc46
-=======
-      spriteID: d1448c5ff1ab4714dab0ba851949a9ec
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_149
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 40
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 66fdc8464364d094abe6618b401f5e0d
-=======
-      spriteID: f48f292975c37de49ac1ea2e782637bf
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_150
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 320
         width: 20
         height: 20
       alignment: 0
@@ -4306,88 +2258,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< HEAD
-      spriteID: 94ed453f1b391d44ca13d8dd44271e57
-=======
-      spriteID: 72dc5703d9f642d40b46be5a0a281ab6
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_151
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 320
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 72c342d1f07e3654dacaffe60a32ccdc
-=======
-      spriteID: d5abd030875505149902d337eed79195
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_152
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 300
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD
-      spriteID: 410a878da89b5cf4498cea985ec351af
-=======
-      spriteID: 27de5ecb1afa2424386bef7a8ed29344
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enviroment_spritesheetl.sprite_153
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 300
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
-        width: 20
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< HEAD:Assets/Sprites/Enviroment/enviroment_spritesheet.sprite.psd.meta
       spriteID: 2c755fc8448c85d47bf712bc29beb8bd
-=======
-<<<<<<< HEAD
-      spriteID: e998aebf991216244a922b957a7b4470
-=======
-      spriteID: 8573cb7f705907e47b430dce1be9184a
->>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
->>>>>>> origin/EspiUI:Assets/Sprites/Enviroment/enviroment_spritesheetl.sprite.psd.meta
       vertices: []
       indices: 
       edges: []

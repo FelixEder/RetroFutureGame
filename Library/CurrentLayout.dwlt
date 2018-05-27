@@ -20,7 +20,11 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
+<<<<<<< HEAD
   m_MinSize: {x: 950, y: 542}
+=======
+  m_MinSize: {x: 950, y: 300}
+>>>>>>> origin/EspiUI
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -41,8 +45,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
+    width: 2560
+    height: 1357
+=======
     width: 1920
     height: 997
+>>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
   m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
@@ -109,7 +118,11 @@ MonoBehaviour:
   m_MinSize: {x: 681, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
+<<<<<<< HEAD
   controlID: 1759
+=======
+  controlID: 9
+>>>>>>> origin/EspiUI
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +146,11 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 1760
+=======
+  controlID: 10
+>>>>>>> origin/EspiUI
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -152,12 +169,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1332
     height: 573
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
   controlID: 1761
+=======
+    width: 1573
+    height: 676
+  m_MinSize: {x: 404, y: 221}
+  m_MaxSize: {x: 8004, y: 4021}
+  vertical: 0
+  controlID: 11
+>>>>>>> origin/EspiUI
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -174,8 +200,18 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 333
     height: 573
+=======
+<<<<<<< HEAD
+    width: 372
+    height: 933
+=======
+    width: 279
+    height: 676
+>>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
+>>>>>>> origin/EspiUI
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
@@ -200,10 +236,24 @@ MonoBehaviour:
     serializedVersion: 2
     x: 333
     y: 0
+<<<<<<< HEAD
     width: 999
     height: 573
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
+=======
+<<<<<<< HEAD
+    width: 1725
+    height: 933
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+=======
+    width: 1294
+    height: 676
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
+>>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
+>>>>>>> origin/EspiUI
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -253,6 +303,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 1332
     y: 0
+<<<<<<< HEAD
     width: 588
     height: 947
   m_MinSize: {x: 277, y: 71}
@@ -263,6 +314,24 @@ MonoBehaviour:
   - {fileID: 20}
   m_Selected: 0
   m_LastSelected: 1
+=======
+<<<<<<< HEAD
+    width: 463
+    height: 1307
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+=======
+    width: 347
+    height: 947
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
+>>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
+  m_ActualView: {fileID: 19}
+  m_Panes:
+  - {fileID: 19}
+  m_Selected: 0
+  m_LastSelected: 0
+>>>>>>> origin/EspiUI
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -337,7 +406,11 @@ MonoBehaviour:
   m_LastWindowPixelSize: {x: 995, y: 552}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
+<<<<<<< HEAD
   m_LowResolutionForAspectRatios: 01000000000000000100
+=======
+  m_LowResolutionForAspectRatios: 01000000000100000100
+>>>>>>> origin/EspiUI
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -364,10 +437,23 @@ MonoBehaviour:
     height: 552
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 777}
     m_SelectedIDs: 2480fdff
     m_LastClickedID: -163804
     m_ExpandedIDs: 2480fdff32f7ffff000000004c420000d6420000ac4600002a470000
+=======
+    scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 9cfbffff00000000
+=======
+    m_SelectedIDs: e6750000
+    m_LastClickedID: 0
+    m_ExpandedIDs: 8c9fffff2ca1fffffac9ffff0000000010530000b6590000d4590000165a00003e5c0000ca5c00004c5d0000
+>>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
+>>>>>>> origin/EspiUI
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -386,7 +472,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
   m_ExpandedScenes:
-  - Game
+  - Espi - UI
   m_CurrenRootInstanceID: 0
   m_LockTracker:
     m_IsLocked: 0
@@ -441,14 +527,24 @@ MonoBehaviour:
     height: 552
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
+<<<<<<< HEAD
   lastFramingTime: 3239.5976296197414
+=======
+  lastFramingTime: 1222.136779542047
+>>>>>>> origin/EspiUI
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 281.00275, y: -122.73547, z: 0}
     speed: 2
     m_Value: {x: 281.00275, y: -122.73547, z: 0}
+=======
+    m_Target: {x: 912.1193, y: 226.4674, z: -177.64073}
+    speed: 2
+    m_Value: {x: 912.1193, y: 226.4674, z: -177.64073}
+>>>>>>> origin/EspiUI
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -480,15 +576,25 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 16.84552
     speed: 2
     m_Value: 16.84552
+=======
+    m_Target: 219.80562
+    speed: 2
+    m_Value: 219.80562
+>>>>>>> origin/EspiUI
   m_Ortho:
     m_Target: 1
     speed: 2
     m_Value: 1
   m_ShowGlobalGrid: 1
+<<<<<<< HEAD
   m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+=======
+  m_LastSceneViewRotation: {x: 0.1509659, y: -0.7108845, z: 0.16069245, w: 0.66785514}
+>>>>>>> origin/EspiUI
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -556,10 +662,17 @@ MonoBehaviour:
     m_ScenePaths: []
     m_ShowAllHits: 0
     m_SearchArea: 0
+<<<<<<< HEAD
     m_Folders: []
+=======
+    m_Folders:
+<<<<<<< HEAD
+    - Assets
+>>>>>>> origin/EspiUI
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
+<<<<<<< HEAD
   - Assets/Sprites/Enviroment/Facility
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Spelprojekt\Games\RetroFutureGame
@@ -570,6 +683,33 @@ MonoBehaviour:
     m_SelectedIDs: 04ca9a3b
     m_LastClickedID: 1000000004
     m_ExpandedIDs: 00000000b6370000de370000e2370000f0370000d438000006390000dc390000783a0000e23a0000163b00001a3b0000203b0000e23b0000623c00001a3d00001c3d00002c3d0000c43d0000e63d0000b83e0000ce3e0000ac3f0000f23f0000f43f00001a400000244000006a4000008c400000ca400000fe40000024410000d64b000000ca9a3bffffff7f
+=======
+  - Assets
+  m_LastFoldersGridSize: 96
+  m_LastProjectPath: D:\Programmering\EspiFutureGame
+  m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 9c290000
+    m_LastClickedID: 10652
+    m_ExpandedIDs: 000000009c290000c0290000da290000482b00004a2d0000f42d0000a82e0000e02e0000ea2e0000f42f00004c3100006031000048320000723400001635000046350000ce350000f6350000383600006c36000096360000b43c000000ca9a3bffffff7f
+=======
+    - Assets/Sprites/UI
+  m_ViewMode: 1
+  m_StartGridSize: 96
+  m_LastFolders:
+  - Assets/Sprites/UI
+  m_LastFoldersGridSize: 96
+  m_LastProjectPath: C:\Users\vikto\OneDrive\Dokument\GitHub\RetroFutureGame
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 331}
+    m_SelectedIDs: b04e0000
+    m_LastClickedID: 20144
+    m_ExpandedIDs: 00000000ca440000f24400000e4500006e46000040470000f047000090480000cc480000d2480000ea490000424b0000524b0000344c00004a4e0000da4e0000004f0000804f0000a44f0000e24f00000a500000345000005e55000000ca9a3bffffff7f
+>>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
+>>>>>>> origin/EspiUI
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -585,7 +725,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 10}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -597,7 +737,15 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000b6370000de370000e2370000f0370000d438000006390000dc390000783a0000e23a0000163b00001a3b0000203b0000e23b0000623c00001a3d00001c3d00002c3d0000c43d0000e63d0000b83e0000ce3e0000ac3f0000f23f0000f43f00001a400000244000006a4000008c400000ca400000fe40000024410000d64b000000ca9a3bffffff7f
+=======
+<<<<<<< HEAD
+    m_ExpandedIDs: 000000009c290000c0290000da290000482b00004a2d0000f42d0000a82e0000e02e0000ea2e0000f42f00004c3100006031000048320000723400001635000046350000ce350000f6350000383600006c36000096360000b43c0000
+=======
+    m_ExpandedIDs: 00000000ca440000f24400000e4500006e46000040470000f047000090480000cc480000d2480000ea490000424b0000524b0000344c00004a4e0000da4e0000004f0000804f0000a44f0000e24f00000a500000345000005e550000
+>>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
+>>>>>>> origin/EspiUI
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -624,8 +772,13 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
+<<<<<<< HEAD
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: aa3a0000
+=======
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c62300004e500000d8360000ac4a010008330000
+>>>>>>> origin/EspiUI
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -641,7 +794,11 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
+<<<<<<< HEAD
       m_ClientGUIView: {fileID: 0}
+=======
+      m_ClientGUIView: {fileID: 10}
+>>>>>>> origin/EspiUI
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -650,8 +807,13 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
+<<<<<<< HEAD
     m_GridSize: 64
   m_DirectoriesAreaWidth: 204
+=======
+    m_GridSize: 96
+  m_DirectoriesAreaWidth: 271
+>>>>>>> origin/EspiUI
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -673,8 +835,13 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
     y: 665
     width: 1529
+=======
+    y: 1025
+    width: 2095
+>>>>>>> origin/EspiUI
     height: 353
   m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &19

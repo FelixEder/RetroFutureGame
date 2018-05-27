@@ -101,7 +101,15 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< HEAD
       spriteID: 328dcd63a05ccaf4c84b203e53a4a1d7
+=======
+<<<<<<< HEAD
+      spriteID: 22cd2617a1062984886cf394c8e023ab
+=======
+      spriteID: 17a44ff60bda8a44caa0e0812407567b
+>>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
+>>>>>>> origin/EspiUI
       vertices: []
       indices: 
       edges: []
@@ -121,7 +129,15 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< HEAD
       spriteID: 2fe6a4fdf2e1e52469d83a38954d011f
+=======
+<<<<<<< HEAD
+      spriteID: 2aeb4eea5ed4853498e3d7256dcdbca5
+=======
+      spriteID: cb1c363ce0ecb3f4db18bc4e50e706be
+>>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
+>>>>>>> origin/EspiUI
       vertices: []
       indices: 
       edges: []
@@ -141,7 +157,15 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< HEAD
       spriteID: b05f764c2710f85488e8b3829749f268
+=======
+<<<<<<< HEAD
+      spriteID: 83b97dfdbbff0a64d9bccbdd0f9cf160
+=======
+      spriteID: 2b30fe7dd0000b140803f1b61258358d
+>>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
+>>>>>>> origin/EspiUI
       vertices: []
       indices: 
       edges: []
@@ -161,7 +185,15 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< HEAD
       spriteID: 6911d88848198da44af52c458c46b96d
+=======
+<<<<<<< HEAD
+      spriteID: 1603c6c9bde97ae45a97329f1d0ceed6
+=======
+      spriteID: 24efd264a41a10d4a976fbae05e57bd0
+>>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
+>>>>>>> origin/EspiUI
       vertices: []
       indices: 
       edges: []
@@ -181,7 +213,15 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< HEAD
       spriteID: 88c298d1193b72e479ba0a358162e4e5
+=======
+<<<<<<< HEAD
+      spriteID: 4a40d0e363e49e0468b2757abfc9b045
+=======
+      spriteID: e04d12e771b0fb24e96d920a9cf5408a
+>>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
+>>>>>>> origin/EspiUI
       vertices: []
       indices: 
       edges: []

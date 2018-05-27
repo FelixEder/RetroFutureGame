@@ -58,6 +58,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
+<<<<<<< HEAD
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: 4
@@ -69,6 +70,8 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
+=======
+>>>>>>> origin/EspiUI
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: 4
@@ -84,7 +87,11 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
+<<<<<<< HEAD
     spriteID: 04760ffbbf8e9b54c8b911f45f6ff055
+=======
+    spriteID: 
+>>>>>>> origin/EspiUI
     vertices: []
     indices: 
     edges: []

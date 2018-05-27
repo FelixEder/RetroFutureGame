@@ -131,7 +131,15 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< HEAD
       spriteID: 6811140007d471f43b4ac4f64b649832
+=======
+<<<<<<< HEAD
+      spriteID: 1316d1959b248a74caa701448bcd8d53
+=======
+      spriteID: 2e3432bc47f50a044b65a4bf0be60a90
+>>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
+>>>>>>> origin/EspiUI
       vertices: []
       indices: 
       edges: []
@@ -151,7 +159,15 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< HEAD
       spriteID: dcc4f0e483a7491409b0444036c7dcc4
+=======
+<<<<<<< HEAD
+      spriteID: fa7e799853bae47449214d3461e7b71d
+=======
+      spriteID: d65ffcfef52db7146985c819f2de5713
+>>>>>>> c652c2d93c354c1817fe028451fa82dec94f25c8
+>>>>>>> origin/EspiUI
       vertices: []
       indices: 
       edges: []

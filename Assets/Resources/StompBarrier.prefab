@@ -82,8 +82,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1663112840099260}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 252, y: -66.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 159, y: -52.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4783220276915570}
@@ -121,7 +121,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 4, y: 1}
+    newSize: {x: 4.1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0
@@ -232,11 +232,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1663112840099260}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9f6b69a7b8579e458d020f7a356d278, type: 3}
+  m_Script: {fileID: 11500000, guid: 49a004350392161439d094a8865af1c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barrierType: Stomp
-  health: 1
+  barrierType: 
+  health: 0
   sprite: {fileID: 0}
 --- !u!114 &114873187456218790
 MonoBehaviour:
@@ -331,12 +331,12 @@ SpriteRenderer:
   m_SortingLayerID: -129168063
   m_SortingLayer: -1
   m_SortingOrder: 192
-  m_Sprite: {fileID: 21300084, guid: 0dacd4b3fdf758845b91e6a4e8365b8a, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 0dacd4b3fdf758845b91e6a4e8365b8a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 4, y: 1}
+  m_Size: {x: 4.1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 0dacd4b3fdf758845b91e6a4e8365b8a
-timeCreated: 1516731747
-licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: enviroment_spritesheetl.sprite_0
@@ -159,7 +157,7 @@ TextureImporter:
     21300304: enviroment_spritesheetl.sprite_152
     21300306: enviroment_spritesheetl.sprite_153
   externalObjects: {}
-  serializedVersion: 4
+  serializedVersion: 5
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -199,18 +197,21 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 20
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
+  singleChannelComponent: 0
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - buildTarget: DefaultTexturePlatform
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: 4
@@ -220,7 +221,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - buildTarget: Standalone
+  - serializedVersion: 2
+    buildTarget: Standalone
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: 4
@@ -247,6 +249,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c45cb18975b50e740a2db710546a3eae
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_1
       rect:
@@ -261,6 +269,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2947bb42a21bca04f9e823b3a7c8d68e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_2
       rect:
@@ -275,6 +289,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 47b4c453b2aa81445a827ba2934047cd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_3
       rect:
@@ -289,6 +309,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 60743c5a7e0192b40823b8effb55610b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_4
       rect:
@@ -303,6 +329,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 917dfe7dc59a51d48b6f2b6578786951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_5
       rect:
@@ -317,6 +349,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 877e830cd4b2a024d95151eb71515e65
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_6
       rect:
@@ -331,6 +369,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0e02a1eaf2cb97043be38d86dc3dea35
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_7
       rect:
@@ -345,6 +389,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8ba167e7ed880bc43b6b63076cbed4ac
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_8
       rect:
@@ -359,6 +409,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 52bc58242b4692f4b9ce11f312f463a9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_9
       rect:
@@ -373,6 +429,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6b55a2e2d36d05a43af8e33b3cf08fdf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_10
       rect:
@@ -387,6 +449,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 9ea67382cc6a19b4893595e693b434c0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_11
       rect:
@@ -401,6 +469,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: b85542f9c8ac93f4180265eaa293eaa9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_12
       rect:
@@ -415,6 +489,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 77dfad39a037c8f43af384ad8bbe3414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_13
       rect:
@@ -429,6 +509,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2d8f28238af5e6b4e87db49261b10af9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_14
       rect:
@@ -443,6 +529,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a0259a8cf7b46e14faa1ff36101f333c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_15
       rect:
@@ -457,6 +549,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 38a0d3c668ee9e243aa6e97c5faf6af6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_16
       rect:
@@ -471,6 +569,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: f6ad09ca335c1534bb3345c012c42165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_17
       rect:
@@ -485,6 +589,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e69a9fbd5358a444e9ec92c571a4c615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_18
       rect:
@@ -499,6 +609,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6bc60a134ef101845849f0291c6d5d05
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_19
       rect:
@@ -513,6 +629,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a8db2ee0c57e961478237be5a23ccd98
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_20
       rect:
@@ -527,6 +649,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 7f9d25bd6bc6ec64b9889deeae2fb9ea
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_21
       rect:
@@ -541,6 +669,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: da529c51ab97f674bbe0d4ccd9ab9183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_22
       rect:
@@ -555,6 +689,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 1c7a7afc20bcbc44e87283b8be004736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_23
       rect:
@@ -569,6 +709,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 9b18188858526d044b6d5834294ea426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_24
       rect:
@@ -583,6 +729,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 171afedf465dbef4db38d3be6e871686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_25
       rect:
@@ -597,6 +749,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8aed8466beeaf74409d4cf8ecff6a538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_26
       rect:
@@ -611,6 +769,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 7a3c351015369574397339955539c830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_27
       rect:
@@ -625,6 +789,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 75229b95b948fc746ac51baefc9f7038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_28
       rect:
@@ -639,6 +809,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: b8e284c67c48c7047a7b3887ba4845e3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_29
       rect:
@@ -653,6 +829,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 7c3e428889cc38f43a9ec41f413f992c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_30
       rect:
@@ -667,6 +849,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8f50eb7657770af4d8e9b8aff0da3553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_31
       rect:
@@ -681,6 +869,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e814dc4a745272e448441f1ff9f4a221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_32
       rect:
@@ -695,6 +889,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 69ddb17edbee2d542ac6ec44601c6f2d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_33
       rect:
@@ -709,6 +909,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: b6b2cc0c976930d43a956fc8b37d295a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_34
       rect:
@@ -723,6 +929,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 104b46a937fa56b4d93f94e9b316a265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_35
       rect:
@@ -737,6 +949,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 59fba68b2c39728468ab121cd28f2071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_36
       rect:
@@ -751,6 +969,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6f8a06945129bf24f9e99d6d973970d9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_37
       rect:
@@ -765,6 +989,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a36826a936d606d46a1266c53690abd7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_38
       rect:
@@ -779,6 +1009,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: eb6c766073d18e54d91dbf5afd62688f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_39
       rect:
@@ -793,6 +1029,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0d7ab26a645b76640bf73d93776d3958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_40
       rect:
@@ -807,6 +1049,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 36924687d0b113048a3ddd7a628c2490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_41
       rect:
@@ -821,6 +1069,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ad820747aa6e44b40bef78447eb2e735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_42
       rect:
@@ -835,6 +1089,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: efed78dfaeacad640a99139698db882a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_43
       rect:
@@ -849,6 +1109,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 1a98df108405e864e9a778d1cd099e93
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_44
       rect:
@@ -863,6 +1129,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c31340a034afd0b4fa116fe2964d7c21
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_45
       rect:
@@ -877,6 +1149,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: adaa1eec9efaaf748836c3bf1eac2244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_46
       rect:
@@ -891,6 +1169,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 71c3d699167984043a98e85c0a126fba
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_47
       rect:
@@ -905,6 +1189,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 15359e551d4ba004ba2a72147792438c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_48
       rect:
@@ -919,6 +1209,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 338d0e1c9d131e64da1a060e497b4a03
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_49
       rect:
@@ -933,6 +1229,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 74da7682ec01ee44fa271b3be31e379f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_50
       rect:
@@ -947,6 +1249,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 3db0302b2c787b44b80a9e8c4b41420a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_51
       rect:
@@ -961,6 +1269,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c1b675bd78414784bbfb2490e319f6d5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_52
       rect:
@@ -975,6 +1289,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: b2b7c2907d698344a9480fbe474e9b46
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_53
       rect:
@@ -989,6 +1309,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 1f7e320014f821749a1d1b4919df8b59
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_54
       rect:
@@ -1003,6 +1329,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2b022c0025ffe954ab83d355b633efe7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_55
       rect:
@@ -1017,6 +1349,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 18a1e08ce071530439ba27b2329ff8ed
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_56
       rect:
@@ -1031,6 +1369,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: d8a5cc897a596ed47af949630752552d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_57
       rect:
@@ -1045,6 +1389,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: bc290fa6ee4e7ab47ac922702e68459e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_58
       rect:
@@ -1059,6 +1409,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 4c753cb8d64f0fa4f916bee56adb9efd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_59
       rect:
@@ -1073,6 +1429,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8aea59e7987ef8d4c973c03249708bb4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_60
       rect:
@@ -1087,6 +1449,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 3a798c9eea75bea48821528b4e7976df
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_61
       rect:
@@ -1101,6 +1469,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 38048bf0376b4ea44b0e808b70e31e15
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_62
       rect:
@@ -1115,6 +1489,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: fe324636801529d4fb26199071ac98d9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_63
       rect:
@@ -1129,6 +1509,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8aeae5437ee8668499c5886f399f0e17
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_64
       rect:
@@ -1143,6 +1529,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23f38931d49fd1547998fb5d2e6bc6d3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_65
       rect:
@@ -1157,6 +1549,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0e46e854b5ec5824fb66b379b099ae43
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_66
       rect:
@@ -1171,6 +1569,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: cec9dd9a78fbc4144877d9459ca5880f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_67
       rect:
@@ -1185,6 +1589,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 1a6281912ec6f2b4a8855252a199de52
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_68
       rect:
@@ -1199,6 +1609,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 3326f11773552a6409fdcc0ea448734a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_69
       rect:
@@ -1213,6 +1629,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 2c1289a2bccf896488a346644650fc32
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_70
       rect:
@@ -1227,6 +1649,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: bdbae2203337cd14bb5396b033031369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_71
       rect:
@@ -1241,6 +1669,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: b94ed2d11e760cf4aae54deeef5cd52c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_72
       rect:
@@ -1255,6 +1689,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c6698948b0ab7bc4ebb5ed7668001357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_73
       rect:
@@ -1269,6 +1709,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c0c5a91da8b1346419b1957a2cc265e2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_74
       rect:
@@ -1283,6 +1729,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a3e566a7d06bcee45a8d1176b61cf5f1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_75
       rect:
@@ -1297,6 +1749,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 14caa3f3a9c483846843f44d18954033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_76
       rect:
@@ -1311,6 +1769,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8bb54167cde25ab47895307ac863ae9e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_77
       rect:
@@ -1325,6 +1789,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 79a3b3588e922dc4f98bb9ed6f7c0743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_78
       rect:
@@ -1339,6 +1809,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: d354f8381aa6e5645aaabf5712ad3972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_79
       rect:
@@ -1353,6 +1829,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ba5f0de059bd4514599da734da491518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_80
       rect:
@@ -1367,6 +1849,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 1118b4d00c7d5a64197bfef0c8cb72f9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_81
       rect:
@@ -1381,6 +1869,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: da8d83a135d63af498af1867f8606389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_82
       rect:
@@ -1395,6 +1889,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 0606f61832962244181c665221c4a5d8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_83
       rect:
@@ -1409,6 +1909,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 7db27ca9018720b439ee206d5a441b18
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_84
       rect:
@@ -1423,6 +1929,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: b02eb667e70c22942b0ea8e8d7b12a4a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_85
       rect:
@@ -1437,6 +1949,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: bbf8b331a680ebd40b2a51226cfed0e9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_86
       rect:
@@ -1451,6 +1969,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a13226e9bda4b624da6d0bfe18bfb5d9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_87
       rect:
@@ -1465,6 +1989,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 400b93880899f91429ee4854edda8d17
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_88
       rect:
@@ -1479,6 +2009,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 7247037c58483fb41bc3a406e8680b5b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_89
       rect:
@@ -1493,6 +2029,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 49e7ccfcb91fb464e966ea336a92e595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_90
       rect:
@@ -1507,6 +2049,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 259c94bf98bd7a14aaabae59eedec9fb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_91
       rect:
@@ -1521,6 +2069,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: edeb2a66e1702414cba59a105663ada8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_92
       rect:
@@ -1535,6 +2089,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: b0346340ff184624ab43643a6a01891a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_93
       rect:
@@ -1549,6 +2109,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a0d8d742d7533cf4ab12404e0aa12f21
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_94
       rect:
@@ -1563,6 +2129,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: d807632462481cb459ca376756f7e6aa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_95
       rect:
@@ -1577,6 +2149,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 58ccfb164cfba084db561acc255abdc7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_96
       rect:
@@ -1591,6 +2169,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8c3d5d23cfc175e42a7576b5b7246414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_97
       rect:
@@ -1605,6 +2189,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: b6358e40f99eec64495da5eddad3a5e8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_98
       rect:
@@ -1619,6 +2209,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6df6e4204071cf042a9d32753a881bd6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_99
       rect:
@@ -1633,6 +2229,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 45c9e2ae053571040bc26799585d6ef8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_100
       rect:
@@ -1647,6 +2249,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 197d30f582235654496791fdf256f37a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_101
       rect:
@@ -1661,6 +2269,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 992d188bfbb5d4d4f8c7f4058ab9c50f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_102
       rect:
@@ -1675,6 +2289,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 87ea0cfb02471e4439e856b8d12e8fb8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_103
       rect:
@@ -1689,6 +2309,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: af817e1dd45ee6a4e9071dea42e94090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_104
       rect:
@@ -1703,6 +2329,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 23e78e05f9694414b88478991025d3ac
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_105
       rect:
@@ -1717,6 +2349,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: fd04ce74eb8f39c42b5075826c5c2f5c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_106
       rect:
@@ -1731,6 +2369,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 73d217f5ad44dca428364215604bbfac
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_107
       rect:
@@ -1745,6 +2389,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 823d9041746ae7e41a16934c46ccd687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_108
       rect:
@@ -1759,6 +2409,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 9e3fec7d43cf7374da45ba31a56fbe5c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_109
       rect:
@@ -1773,6 +2429,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: df3a5c713d36b07418dfd9da36dc8d0b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_110
       rect:
@@ -1787,6 +2449,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 17ef48a4853479d46812226ec0ba8c0d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_111
       rect:
@@ -1801,6 +2469,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: fbdcd991043768446b9a5167745d6f82
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_112
       rect:
@@ -1815,6 +2489,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: d669dae0da00c6b42814d91506b3fbbd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_113
       rect:
@@ -1829,6 +2509,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: dcf646e66e1bcf9449c4db6b426a410b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_114
       rect:
@@ -1843,6 +2529,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a07973d7094a727408d2d5481f4419bd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_115
       rect:
@@ -1857,6 +2549,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 80dfd09c961bbc84aa9fa08be1a55c4a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_116
       rect:
@@ -1871,6 +2569,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 83c8f55e74a106b4aa58475d9e70275f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_117
       rect:
@@ -1885,6 +2589,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 6bd2859665b4a5d40a8a8759caecb941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_118
       rect:
@@ -1899,6 +2609,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8f413b1fb339fd949bee6b8d8c9fbdd2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_119
       rect:
@@ -1913,6 +2629,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 1ecb066e7bd63c24cb64b4d22027e2f3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_120
       rect:
@@ -1927,6 +2649,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: c81f3b7735a815b49b43dfac460aae39
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_121
       rect:
@@ -1941,6 +2669,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a1643fe06add9044a92b3cd12d74117b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_122
       rect:
@@ -1955,6 +2689,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: cf5e63d80f442724bb87c38e31b67e9b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_123
       rect:
@@ -1969,6 +2709,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: b4bc103bd8a60084aa7acbcf51d518a1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_124
       rect:
@@ -1983,6 +2729,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 9a9808eaa03587a47ba3a472ecb3524f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_125
       rect:
@@ -1997,6 +2749,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 1a2515e9b998b574cbcc5ac1ead8da31
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_126
       rect:
@@ -2011,6 +2769,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 3cc7271ac82ae6c468ea7d00747a4d92
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_127
       rect:
@@ -2025,6 +2789,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 3d66a2cb5f23bab41af48682dd9660c3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_128
       rect:
@@ -2039,6 +2809,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: a1d4131e8ff1ccf44bb2bfb5d7ecd850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_129
       rect:
@@ -2053,6 +2829,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 261bf0c0b97424d47b0eb4002f82f238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_130
       rect:
@@ -2067,6 +2849,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: b9ca32e99aca1c54bab1962e886c2526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_131
       rect:
@@ -2081,6 +2869,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ef132e0d6548f8f48a5bdf983caa97c7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_132
       rect:
@@ -2095,6 +2889,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: cd86a1b9a93781a47af2a03ddf759a44
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_133
       rect:
@@ -2109,6 +2909,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 77bad09fd93cd2c49a80ba57516eb63d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_134
       rect:
@@ -2123,6 +2929,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: cf5f2d76085652b41ac321170ca9c7ea
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_135
       rect:
@@ -2137,6 +2949,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 5f10171343ff28546948ef4b2fe803c6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_136
       rect:
@@ -2151,6 +2969,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 45fdc8fade248b54a8e3a7b3003d2607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_137
       rect:
@@ -2165,6 +2989,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 9d2ed61dfbd7a3943917d442526e570e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_138
       rect:
@@ -2179,6 +3009,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 52e2835cdc7901648b9c76cce75b7a28
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_139
       rect:
@@ -2193,6 +3029,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 7b30fbba2ddf12843ae0928f72d3ee9c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_140
       rect:
@@ -2207,6 +3049,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: f52093a493e5e714dba70532ce6924d1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_141
       rect:
@@ -2221,6 +3069,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 8079d0db278f89b4e87e21c17a865854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_142
       rect:
@@ -2235,6 +3089,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 392b98a0d2ff2464e95714e0cf161d56
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_143
       rect:
@@ -2249,6 +3109,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ba774b5763ebcb444838c4d78379f614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_144
       rect:
@@ -2263,6 +3129,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: ec6ab9c05eaf81d4aacace8e8732a223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_145
       rect:
@@ -2277,6 +3149,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 91b83a6b73738944b98a46ab3bce87c5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_146
       rect:
@@ -2291,6 +3169,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 7fde464d942008149b0f000212513e0f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_147
       rect:
@@ -2305,6 +3189,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 9669650c9d8e78a49ae36c628718fcc6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_148
       rect:
@@ -2319,6 +3209,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 12a1f3e937acce441a502ada30abcc46
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_149
       rect:
@@ -2333,6 +3229,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 66fdc8464364d094abe6618b401f5e0d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_150
       rect:
@@ -2347,6 +3249,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 94ed453f1b391d44ca13d8dd44271e57
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_151
       rect:
@@ -2361,6 +3269,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 72c342d1f07e3654dacaffe60a32ccdc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_152
       rect:
@@ -2375,6 +3289,12 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: 410a878da89b5cf4498cea985ec351af
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     - serializedVersion: 2
       name: enviroment_spritesheetl.sprite_153
       rect:
@@ -2389,8 +3309,20 @@ TextureImporter:
       outline: []
       physicsShape: []
       tessellationDetail: 0
+      bones: []
+      spriteID: e998aebf991216244a922b957a7b4470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
+    bones: []
+    spriteID: 
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

@@ -47,7 +47,8 @@ public class PlayerPunch : MonoBehaviour {
 			holdPunch = true;
 			attackType = "Punch";
 			damage = 1;
-			AttackType();
+			if (!onCooldown)
+				AttackType();
 			if (!onCooldown && megaAquired)
 				StartCoroutine(AttackCharge());
 		}
@@ -121,6 +122,7 @@ public class PlayerPunch : MonoBehaviour {
 		}
 		else {
 			StartCoroutine(DamageArea(1.3f));
+			return;
 		}
 		//if none of the above is executed reset cooldown;
 		onCooldown = false;
@@ -241,7 +243,7 @@ public class PlayerPunch : MonoBehaviour {
 	//	if(!(attackType == "Door" || attackType == "Barrier"))
 			GetComponent<AudioPlayer>().PlayClip(6, 1, 0.7f, 1.3f);
 
-		yield return new WaitForSeconds(0.2f);
+		yield return new WaitForSeconds(0.1f);
 
 		onCooldown = false;
 		branchInv = false;

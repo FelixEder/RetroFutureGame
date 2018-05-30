@@ -3,12 +3,9 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class DebugMenu : MonoBehaviour {
-	GameObject player, droid;
-	public GameObject HUD;
+	public GameObject player, droid, HUD;
 
 	void Start() {
-		player = GameObject.Find("Player");
-		droid = GameObject.Find("Droid");
 		InvokeRepeating("UpdateToggles", 1, 5f);
 	}
 
@@ -37,6 +34,10 @@ public class DebugMenu : MonoBehaviour {
 
 			case "MegaPunch":
 				player.GetComponent<PlayerPunch>().megaAquired = !player.GetComponent<PlayerPunch>().megaAquired;
+				break;
+
+			case "Small":
+				player.transform.GetChild(5).gameObject.SetActive(!player.transform.GetChild(5).gameObject.activeInHierarchy);
 				break;
 
 			case "Health":
@@ -78,6 +79,8 @@ public class DebugMenu : MonoBehaviour {
 		transform.GetChild(4).GetComponent<Toggle>().isOn = droid.activeInHierarchy;
 		//MegaPunch
 		transform.GetChild(5).GetComponent<Toggle>().isOn = player.GetComponent<PlayerPunch>().megaAquired;
+		//Small
+		transform.GetChild(6).GetComponent<Toggle>().isOn = player.transform.GetChild(5).gameObject.activeInHierarchy;
 		//Health
 		transform.GetChild(7).GetComponent<Slider>().value = (float) player.GetComponent<PlayerHealth>().currentHealth;
 		transform.GetChild(7).GetComponent<Slider>().maxValue = (float) player.GetComponent<PlayerHealth>().maxHealth + 1;

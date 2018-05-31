@@ -4,23 +4,21 @@ using System.Collections;
 public class GameOverScreen : MonoBehaviour {
 	GameObject[] prefabspawners, itemspawners;
 	GameObject player;
-	MenuControl menu;
 	InputManager input;
+	Animator anim;
 
 	void Start() {
-		menu = GetComponent<MenuControl>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 		player = GameObject.Find("Player");
 
 		prefabspawners = GameObject.FindGameObjectsWithTag("PrefabSpawner");
 		itemspawners = GameObject.FindGameObjectsWithTag("PIS");
-		player = GameObject.Find("Player");
-		menu.HideOverlay();
+		anim = GetComponent<Animator>();
 	}
 
 	public void Gameover() {
 		input.Force(false, true);
-		menu.ShowOverlay();
+		anim.SetTrigger("GameOver");
 	}
 
 	public void Respawn() {
@@ -55,6 +53,5 @@ public class GameOverScreen : MonoBehaviour {
 		player.GetComponent<PlayerHealth>().Revive();
 
 		input.Force(true, false);
-		menu.HideOverlay();
 	}
 }

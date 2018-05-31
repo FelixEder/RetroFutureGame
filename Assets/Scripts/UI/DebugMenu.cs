@@ -3,18 +3,10 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class DebugMenu : MonoBehaviour {
-	GameObject player;
-	bool shown;
+	public GameObject player, droid, HUD;
 
 	void Start() {
-		player = GameObject.Find("Player");
-		GetComponent<RectTransform>().position = new Vector3(-Screen.width, Screen.height, 0);
-		transform.GetChild(11).gameObject.GetComponent<RectTransform>().position = new Vector3(0, Screen.height, 0);
 		InvokeRepeating("UpdateToggles", 1, 5f);
-	}
-
-	void Update() {
-		transform.GetChild(11).gameObject.GetComponent<RectTransform>().position = new Vector3(0, Screen.height, 0);
 	}
 
 	public void ToggleUpgradeState(string upgradeType) {
@@ -37,32 +29,38 @@ public class DebugMenu : MonoBehaviour {
 				break;
 
 			case "Laser":
-				player.transform.GetChild(9).gameObject.SetActive(!player.transform.GetChild(9).gameObject.activeInHierarchy);
+				droid.SetActive(!droid.activeInHierarchy);
 				break;
 
 			case "MegaPunch":
-				player.transform.GetChild(6).GetComponent<PlayerPunch>().megaAquired = !player.transform.GetChild(6).GetComponent<PlayerPunch>().megaAquired;
+				player.GetComponent<PlayerPunch>().megaAquired = !player.GetComponent<PlayerPunch>().megaAquired;
+				break;
+
+			case "Small":
+				player.transform.GetChild(5).gameObject.SetActive(!player.transform.GetChild(5).gameObject.activeInHierarchy);
 				break;
 
 			case "Health":
-				if(transform.GetChild(8).GetComponent<Slider>().value > player.GetComponent<PlayerHealth>().maxHealth)
+				HUD.SetActive(true);
+				if(transform.GetChild(7).GetComponent<Slider>().value > player.GetComponent<PlayerHealth>().maxHealth)
 					player.GetComponent<PlayerHealth>().IncreaseMaxHealth();
-				player.GetComponent<PlayerHealth>().currentHealth = (int) transform.GetChild(8).GetComponent<Slider>().value;
+				player.GetComponent<PlayerHealth>().currentHealth = (int) transform.GetChild(7).GetComponent<Slider>().value;
 				player.GetComponent<PlayerHealth>().SetHealthSlider();
-				transform.GetChild(8).GetChild(4).GetComponent<Text>().text = transform.GetChild(8).GetComponent<Slider>().value.ToString();
+				transform.GetChild(7).GetChild(4).GetComponent<Text>().text = transform.GetChild(7).GetComponent<Slider>().value.ToString();
 				break;
 
 			case "Speed":
-				player.GetComponent<PlayerMovement>().moveSpeed = transform.GetChild(10).GetComponent<Slider>().value;
-				transform.GetChild(10).GetChild(4).GetComponent<Text>().text = transform.GetChild(10).GetComponent<Slider>().value.ToString();
+				player.GetComponent<PlayerMovement>().moveSpeed = transform.GetChild(9).GetComponent<Slider>().value;
+				transform.GetChild(9).GetChild(4).GetComponent<Text>().text = transform.GetChild(9).GetComponent<Slider>().value.ToString();
 				break;
 
 			case "Energy":
-				if(transform.GetChild(9).GetComponent<Slider>().value > player.GetComponent<PlayerEnergy>().maxEnergy)
+				HUD.SetActive(true);
+				if(transform.GetChild(8).GetComponent<Slider>().value > player.GetComponent<PlayerEnergy>().maxEnergy)
 					player.GetComponent<PlayerEnergy>().IncreaseMaxEnergy();
-				player.GetComponent<PlayerEnergy>().currentEnergy = (int) transform.GetChild(9).GetComponent<Slider>().value;
+				player.GetComponent<PlayerEnergy>().currentEnergy = (int) transform.GetChild(8).GetComponent<Slider>().value;
 				player.GetComponent<PlayerEnergy>().SetEnergySlider();
-				transform.GetChild(9).GetChild(4).GetComponent<Text>().text = transform.GetChild(9).GetComponent<Slider>().value.ToString();
+				transform.GetChild(8).GetChild(4).GetComponent<Text>().text = transform.GetChild(8).GetComponent<Slider>().value.ToString();
 				break;
 		}
 		UpdateToggles();
@@ -70,36 +68,29 @@ public class DebugMenu : MonoBehaviour {
 
 	public void UpdateToggles() {
 		//Float
-		transform.GetChild(1).GetComponent<Toggle>().isOn = player.GetComponent<Float>().enabled;
+		transform.GetChild(0).GetComponent<Toggle>().isOn = player.GetComponent<Float>().enabled;
 		//SecondJump
-		transform.GetChild(2).GetComponent<Toggle>().isOn = player.GetComponent<PlayerJump>().gotSecondJump;
+		transform.GetChild(1).GetComponent<Toggle>().isOn = player.GetComponent<PlayerJump>().gotSecondJump;
 		//WallJump
-		transform.GetChild(3).GetComponent<Toggle>().isOn = player.GetComponent<WallJump>().enabled;
+		transform.GetChild(2).GetComponent<Toggle>().isOn = player.GetComponent<WallJump>().enabled;
 		//Stomp
-		transform.GetChild(4).GetComponent<Toggle>().isOn = player.GetComponent<Stomp>().enabled;
+		transform.GetChild(3).GetComponent<Toggle>().isOn = player.GetComponent<Stomp>().enabled;
 		//Laser
-		transform.GetChild(5).GetComponent<Toggle>().isOn = player.transform.GetChild(9).gameObject.activeInHierarchy;
+		transform.GetChild(4).GetComponent<Toggle>().isOn = droid.activeInHierarchy;
 		//MegaPunch
-		transform.GetChild(6).GetComponent<Toggle>().isOn = player.transform.GetChild(6).GetComponent<PlayerPunch>().megaAquired;
+		transform.GetChild(5).GetComponent<Toggle>().isOn = player.GetComponent<PlayerPunch>().megaAquired;
+		//Small
+		transform.GetChild(6).GetComponent<Toggle>().isOn = player.transform.GetChild(5).gameObject.activeInHierarchy;
 		//Health
-		transform.GetChild(8).GetComponent<Slider>().value = (float) player.GetComponent<PlayerHealth>().currentHealth;
-		transform.GetChild(8).GetComponent<Slider>().maxValue = (float) player.GetComponent<PlayerHealth>().maxHealth + 1;
-		transform.GetChild(8).GetChild(4).GetComponent<Text>().text = transform.GetChild(8).GetComponent<Slider>().value.ToString() + "/" + player.GetComponent<PlayerHealth>().maxHealth.ToString();
+		transform.GetChild(7).GetComponent<Slider>().value = (float) player.GetComponent<PlayerHealth>().currentHealth;
+		transform.GetChild(7).GetComponent<Slider>().maxValue = (float) player.GetComponent<PlayerHealth>().maxHealth + 1;
+		transform.GetChild(7).GetChild(4).GetComponent<Text>().text = transform.GetChild(7).GetComponent<Slider>().value.ToString() + "/" + player.GetComponent<PlayerHealth>().maxHealth.ToString();
 		//Speed
-		transform.GetChild(10).GetComponent<Slider>().value = player.GetComponent<PlayerMovement>().moveSpeed;
-		transform.GetChild(10).GetChild(4).GetComponent<Text>().text = transform.GetChild(10).GetComponent<Slider>().value.ToString();
+		transform.GetChild(9).GetComponent<Slider>().value = player.GetComponent<PlayerMovement>().moveSpeed;
+		transform.GetChild(9).GetChild(4).GetComponent<Text>().text = transform.GetChild(9).GetComponent<Slider>().value.ToString();
 		//Energy
-		transform.GetChild(9).GetComponent<Slider>().value = (float) player.GetComponent<PlayerEnergy>().currentEnergy;
-		transform.GetChild(9).GetComponent<Slider>().maxValue = (float) player.GetComponent<PlayerEnergy>().maxEnergy + 1;
-		transform.GetChild(9).GetChild(4).GetComponent<Text>().text = transform.GetChild(9).GetComponent<Slider>().value.ToString() + "/" + player.GetComponent<PlayerEnergy>().maxEnergy.ToString();
+		transform.GetChild(8).GetComponent<Slider>().value = (float) player.GetComponent<PlayerEnergy>().currentEnergy;
+		transform.GetChild(8).GetComponent<Slider>().maxValue = (float) player.GetComponent<PlayerEnergy>().maxEnergy + 1;
+		transform.GetChild(8).GetChild(4).GetComponent<Text>().text = transform.GetChild(8).GetComponent<Slider>().value.ToString() + "/" + player.GetComponent<PlayerEnergy>().maxEnergy.ToString();
 	}
-
-	public void ToggleDebugMenu() {
-		if(shown)
-			GetComponent<RectTransform>().position = new Vector3(-Screen.width, Screen.height, 0);
-		else
-			GetComponent<RectTransform>().position = new Vector3(0, Screen.height, 0);
-		shown = !shown;
-	}
-
 }

@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour {
 	AudioPlayer audioplay;
 
 	void Start() {
-		status = GameObject.Find("Player").GetComponent<PlayerStatus>();
+		status = GetComponent<PlayerStatus>();
 		inventory = GetComponent<PlayerInventory>();
 		rb2D = GetComponent<Rigidbody2D>();
 

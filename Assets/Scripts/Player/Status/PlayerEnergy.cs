@@ -58,8 +58,9 @@ public class PlayerEnergy : MonoBehaviour {
 	}
 
 	void SetEnergySliderSize() {
-		GameObject.Find("energySlider").GetComponent<RectTransform>().sizeDelta = new Vector2(8 + 32 * (float) maxEnergy, 32);
-		GameObject.Find("energyRechargeSlider").GetComponent<RectTransform>().sizeDelta = new Vector2(8 + 32 * (float) maxEnergy, 32);
+		slider.GetComponent<RectTransform>().sizeDelta = new Vector2(8 + 32 * (float) maxEnergy, 32);
+		rechargeSlider.GetComponent<RectTransform>().sizeDelta = new Vector2(8 + 32 * (float) maxEnergy, 32);
+		rechargeSlider.transform.GetChild(0).GetComponent<Image>().enabled = maxEnergy > 0;
 	}
 
 	void OutOfEnergy() {

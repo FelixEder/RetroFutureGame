@@ -69,7 +69,7 @@ public class EnemyHealth : MonoBehaviour {
 		GetComponent<SpriteRenderer>().material = deathMaterial;
 		yield return new WaitForSeconds(0.2f);
 		int ranNumb = Random.Range(0, 60);
-		if(ranNumb < 20) {
+		if(ranNumb < 30) {
 			Instantiate(Resources.Load("HealthDrop"), transform.position, Quaternion.identity);
 		}
 		else if(ranNumb < 40 && playerEnergy.maxEnergy > 0) {

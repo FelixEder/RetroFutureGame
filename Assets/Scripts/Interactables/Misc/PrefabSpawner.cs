@@ -114,12 +114,14 @@ public class PrefabSpawner : MonoBehaviour {
 	}
 
 	private void OnBecameInvisible() {
-			visibleToCamera = false;
-		Invoke("SetToRespawn", respawnTime);
+		visibleToCamera = false;
+		if(respawnOutsideCamera)
+			Invoke("SetToRespawn", respawnTime);
 	}
 
 	private void OnBecameVisible() {
-			visibleToCamera = true;
-		CancelInvoke("SetToRespawn");
+		visibleToCamera = true;
+		if(respawnOutsideCamera)
+			CancelInvoke("SetToRespawn");
 	}
 }

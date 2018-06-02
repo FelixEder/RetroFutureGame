@@ -83,7 +83,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1663112840099260}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 159, y: -52.5, z: 0}
+  m_LocalPosition: {x: 252, y: -66.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4783220276915570}
@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49a004350392161439d094a8865af1c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barrierType: 
+  barrierType: Stomp
   health: 0
   sprite: {fileID: 0}
 --- !u!114 &114873187456218790

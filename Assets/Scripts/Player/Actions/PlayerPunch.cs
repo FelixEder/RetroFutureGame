@@ -189,9 +189,8 @@ public class PlayerPunch : MonoBehaviour {
 						enemyHealth.Knockback(gameObject, 4f);
 					break;
 
-				case "BigEyeBuyWeakSpot":
-					if(attackType == "Branch")
-						victim.gameObject.transform.parent.GetComponent<BigEyeGuy>().TakeDamage(damage);
+				case "BigEyeGuy":
+					enemyHealth.Knockback(gameObject, 4f);
 					break;
 
 				case "StatueBossEye":

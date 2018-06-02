@@ -4,11 +4,10 @@ using UnityEngine.EventSystems;
 using System.Collections;
 
 public class MenuControl : MonoBehaviour {
-	public GameObject firstSelected;
+	public GameObject firstSelected, lastSelected;
 	public string overlayObjectsTag;
 
 	GameObject[] overlayObjects, hideOnOverlayHideObjects;
-	GameObject lastSelected;
 	EventSystem eventSystem;
 
 	void Awake() {
@@ -18,7 +17,7 @@ public class MenuControl : MonoBehaviour {
 
 	void Update() {
 		//Detects if none of the buttons are selected and selects the last selected
-		if(GameObject.Find("EventSystem").GetComponent<EventSystem>().currentSelectedGameObject == null)
+		if(eventSystem.currentSelectedGameObject == null)
 			SetSelected(lastSelected);
 	}
 

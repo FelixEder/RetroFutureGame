@@ -41,16 +41,24 @@ public class PlayerPunch : MonoBehaviour {
 	}
 
 	void Update() {
-		if(!input.GetKey("attack") && holdPunch)
+		Debug.Log(charge + "  " + input.GetKey("attack"));
+		if(!input.GetKey("attack") && holdPunch) {
 			holdPunch = false;
+			Debug.Log("Starting regular-punch");
+		}
 		else if(input.GetKey("attack") && !holdPunch && !status.isSmall) {
+			Debug.Log("Entered the else-if");
 			holdPunch = true;
 			attackType = "Punch";
 			damage = 1;
-			if (!onCooldown)
+			if (!onCooldown) {
+				Debug.Log("Not on cooldown");
 				AttackType();
-			if (!onCooldown && megaAquired)
+			}
+			if (!onCooldown && megaAquired) {
+				Debug.Log("Starting mega-punch");
 				StartCoroutine(AttackCharge());
+			}
 		}
 	}
 

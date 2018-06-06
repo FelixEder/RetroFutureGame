@@ -126,7 +126,7 @@ public class DroidLaser : MonoBehaviour {
 
 			case "BigEyeGuyWeakSpot":
 				Debug.Log("Hit EyeGuy in the Eye!");
-				victim.collider.gameObject.GetComponent<BigEyeGuy>().TakeDamage(damage);
+				enemyHealth.TakeDamage(damage);
 				break;
 
 			case "FinalBossArmor":

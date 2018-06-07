@@ -10,9 +10,12 @@ public LayerMask hitLayers;
 	Vector2 laserHit;
 	RaycastHit2D hit;
 	bool shooting;
+	
+	EnemyMovement enemyMove;
 
 	void Start() {
 //		audioplay = GetComponent<AudioPlayer>();
+		enemyMove = transform.parent.GetComponent<EnemyMovement>();
 		lineRenderer = GetComponent<LineRenderer>();
 		lineRenderer.useWorldSpace = true;
 		
@@ -20,15 +23,13 @@ public LayerMask hitLayers;
 	}
 
 	void Update() {
-		//keep eye sprite upright.
-		transform.rotation = Quaternion.identity;
 
 		//Calculate laser trajectory with raycast.
-		hit = Physics2D.Raycast(transform.position, Vector2.left, Mathf.Infinity, hitLayers);
+		hit = Physics2D.Raycast(transform.position, new Vector2(enemyMove.wanderDir, 0), Mathf.Infinity, hitLayers);
 		laserHit = hit.point;
 
 		//Set linerenderer positions.
-		lineRenderer.SetPosition(0, transform.position);
+		lineRenderer.SetPosition(0, transform.position + Vector3.back);
 		lineRenderer.SetPosition(1, laserHit);
 
 		if(shooting)
@@ -36,11 +37,12 @@ public LayerMask hitLayers;
 	}
 
 	public void Shoot() {
-		StartCoroutine(ShootLaser());
+		if(enemyMove.raycastHit.collider.name == "Player")
+			StartCoroutine(ShootLaser());
 	}
 
 	IEnumerator ShootLaser() {
-		//disable aimObject animation.
+		
 
 //		audioplay.PlayClip(1, 0.7f);
 

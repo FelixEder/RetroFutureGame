@@ -23,9 +23,9 @@ public class EnemyMovement : MonoBehaviour {
 	public LayerMask wallMask = 268763136, raycastMask = 268697856;
 
 	bool grounded, wallcheck;
-	int wanderDir = -1;
+	public int wanderDir = -1;
 	float startPos;
-	RaycastHit2D raycastHit;
+	public RaycastHit2D raycastHit;
 	Rigidbody2D rb2D;
 	GameObject player;
 
@@ -88,11 +88,11 @@ public class EnemyMovement : MonoBehaviour {
 	void SpriteFacing() {
 		var anim = GetComponent<Animator>();
 
-		if(rb2D.velocity.x > 1f) {
+		if(rb2D.velocity.x > 0.2f) {
 			transform.rotation = Quaternion.Euler(0, 180, 0);
 			anim.SetFloat("velocity", Mathf.Clamp01(Mathf.Abs(rb2D.velocity.x)));
 		}
-		else if(rb2D.velocity.x < -1f) {
+		else if(rb2D.velocity.x < -0.2f) {
 			transform.rotation = Quaternion.Euler(0, 0, 0);
 			anim.SetFloat("velocity", Mathf.Clamp01(Mathf.Abs(rb2D.velocity.x)));
 		}

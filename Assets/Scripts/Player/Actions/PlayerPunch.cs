@@ -41,29 +41,57 @@ public class PlayerPunch : MonoBehaviour {
 	}
 
 	void Update() {
-		Debug.Log(charge + "  " + input.GetKey("attack"));
 		if(!input.GetKey("attack") && holdPunch) {
 			holdPunch = false;
-			Debug.Log("Starting regular-punch");
 		}
 		else if(input.GetKey("attack") && !holdPunch && !status.isSmall) {
-			Debug.Log("Entered the else-if");
 			holdPunch = true;
 			attackType = "Punch";
 			damage = 1;
 			if (!onCooldown) {
-				Debug.Log("Not on cooldown");
-				AttackType();
+				Debug.Log("Calling Regular Punch");
+				RegularPunch();
 			}
-			if (!onCooldown && megaAquired) {
-				Debug.Log("Starting mega-punch");
-				StartCoroutine(AttackCharge());
+			if (megaAquired) {
+				Debug.Log("Calling Mega Charge");
+				StartCoroutine(MegaCharge());
 			}
+		}
+	}
+	
+	//Regular Punch
+	void RegularPunch() {
+		if(inventory.IsHoldingItem()) {
+			GameObject holdingItem = inventory.GetHoldingItem();
+			switch(holdingItem.GetComponent<PickUpableItem>().GetItemType()) {
+
+				case "Rock":
+					attackType = "Rock";
+					damage = holdingItem.GetComponent<PickUpableItem>().damage;
+					StartCoroutine(DamageArea(1.3f));
+					return;
+
+				case "Branch":
+					attackType = "Branch";
+					damage = holdingItem.GetComponent<PickUpableItem>().damage;
+					StartCoroutine(DamageArea(1.6f));
+					return;
+
+				default:
+					attackType = "ItemError";
+					damage = 1;
+					StartCoroutine(DamageArea(1.3f));
+					return;
+			}
+		}
+		else {
+			StartCoroutine(DamageArea(1.3f));
+			return;
 		}
 	}
 
 	//MEGA
-	IEnumerator AttackCharge() {
+	IEnumerator MegaCharge() {
 		while(input.GetKey("attack")) {
 			while(charge < maxLimit && input.GetKey("attack")) {
 				charge ++;
@@ -73,11 +101,11 @@ public class PlayerPunch : MonoBehaviour {
 			}
 			yield return 0;
 		}
-		AttackType();
+		MegaType();
 		charge = 0;
 	}
 
-	void AttackType() {
+	void MegaType() {
 		onCooldown = true;
 		if(charge == maxLimit && megaAquired) {
 			if(energy.UseEnergy(3)) {
@@ -104,33 +132,6 @@ public class PlayerPunch : MonoBehaviour {
 				Debug.Log("Not enough energy for Regular MegaPunch");
 				//No energy, play correct things
 			}
-		}
-		else if(inventory.IsHoldingItem()) {
-			GameObject holdingItem = inventory.GetHoldingItem();
-			switch(holdingItem.GetComponent<PickUpableItem>().GetItemType()) {
-
-				case "Rock":
-					attackType = "Rock";
-					damage = holdingItem.GetComponent<PickUpableItem>().damage;
-					StartCoroutine(DamageArea(1.3f));
-					return;
-
-				case "Branch":
-					attackType = "Branch";
-					damage = holdingItem.GetComponent<PickUpableItem>().damage;
-					StartCoroutine(DamageArea(1.6f));
-					return;
-
-				default:
-					attackType = "ItemError";
-					damage = 1;
-					StartCoroutine(DamageArea(1.3f));
-					return;
-			}
-		}
-		else {
-			StartCoroutine(DamageArea(1.3f));
-			return;
 		}
 		//if none of the above is executed reset cooldown;
 		onCooldown = false;

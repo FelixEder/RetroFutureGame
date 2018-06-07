@@ -11,7 +11,7 @@ public class PauseStatistics : MonoBehaviour {
 	void Update() {
 		timeText.GetComponent<Text>().text = ((int) Time.timeSinceLevelLoad / 60 / 60).ToString("D2") + ":" + ((int) Time.timeSinceLevelLoad / 60).ToString("D2") + ":" + ((int) Time.timeSinceLevelLoad % 60).ToString("D2");
 		
-//		if(eventSystem.currentSelectedGameObject != null) {
+		if(eventSystem.currentSelectedGameObject != null) {
 			if(eventSystem.currentSelectedGameObject.GetComponent<UpgradeSlot>() != null) {
 				tooltipText.GetComponent<Text>().text = eventSystem.currentSelectedGameObject.GetComponent<UpgradeSlot>().tooltip;
 				tooltipText.transform.parent.GetComponent<Image>().enabled = true;
@@ -20,6 +20,6 @@ public class PauseStatistics : MonoBehaviour {
 				tooltipText.GetComponent<Text>().text = null;
 				tooltipText.transform.parent.GetComponent<Image>().enabled = false;
 			}
-//		}
+		}
 	}
 }

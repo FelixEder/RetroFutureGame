@@ -151,7 +151,7 @@ public class DroidLaser : MonoBehaviour {
 			case "FinalBossLastForm":
 				Debug.Log("Shot last boss form");
 				//Check so that it goes after the correct child
-				victim.collider.gameObject.transform.GetChild(0).GetComponent<BigEyeGuyLaser>().Shoot();
+				victim.collider.gameObject.transform.GetChild(0).GetComponent<BigEyeGuy>().Shoot();
 				break;
 
 			case "Barrier":

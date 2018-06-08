@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 
 public class TutorialManager : MonoBehaviour {
 	public Color panelColor, textColor;
@@ -8,13 +9,13 @@ public class TutorialManager : MonoBehaviour {
 	string currentTutorial;
 	float displayTime;
 	bool tutorialIsKey;
-	Text text;
+	TextMeshProUGUI text;
 	InputManager input;
 
 	//ADD IMAGE UI TO PANEL AND CHANGE IMAGE TO KEY.
 
 	void Start() {
-		text = transform.GetChild(0).GetComponent<Text>();
+		text = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 	}
 
@@ -46,6 +47,7 @@ public class TutorialManager : MonoBehaviour {
 		Debug.Log("Display tutorial [ " + tutorial + " ]");
 
 		text.text = tutorialText;
+		text.UpdateMeshPadding();
 
 		tutorialIsKey = stringIsKey;
 		displayTime = time;

@@ -7,7 +7,7 @@ public class ShellMan : MonoBehaviour {
 	public int newDamage;
 	private float newKnockbackForce;
 	public FollowRange newFollowRange;
-	
+
 	void start() {
 		anim = GetComponent<Animator>();
 	}
@@ -24,5 +24,9 @@ public class ShellMan : MonoBehaviour {
 		moment.followRange = newFollowRange;
 		var jump = GetComponent<EnemyJump>();
 		jump.enabled = true;
+	}
+
+	public bool getDeShelled() {
+		return deShelled;
 	}
 }

@@ -183,10 +183,14 @@ public class PlayerPunch : MonoBehaviour {
 
 				case "ShellMan":
 					ShellMan shellMan = victim.gameObject.GetComponent<ShellMan>();
-					if(shellMan.deShelled)
+					if(shellMan.getDeShelled())
 						enemyHealth.TakeDamage(damage);
-					else
-						enemyHealth.Knockback(gameObject, 4f);
+					else {
+						if(attackType == "Mega" || attackType == "FullMega") 
+							shellMan.BreakShield();
+						else
+							enemyHealth.Knockback(gameObject, 4f);
+					}
 					break;
 
 				case "HardCritter":

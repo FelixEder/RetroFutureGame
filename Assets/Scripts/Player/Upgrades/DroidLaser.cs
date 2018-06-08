@@ -111,7 +111,7 @@ public class DroidLaser : MonoBehaviour {
 
 			case "ShellMan":
 				ShellMan shellMan = victim.collider.gameObject.GetComponent<ShellMan>();
-				if(shellMan.deShelled) {
+				if(shellMan.getDeShelled()) {
 					enemyHealth.TakeDamage(damage);
 				}
 				else {
@@ -151,7 +151,7 @@ public class DroidLaser : MonoBehaviour {
 			case "FinalBossLastForm":
 				Debug.Log("Shot last boss form");
 				//Check so that it goes after the correct child
-				victim.collider.gameObject.transform.GetChild(0).GetComponent<BigEyeGuy>().Shoot();
+				//victim.collider.gameObject.transform.GetChild(0).GetComponent<BigEyeGuy>().Shoot();
 				break;
 
 			case "Barrier":

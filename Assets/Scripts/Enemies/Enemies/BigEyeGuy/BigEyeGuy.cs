@@ -5,60 +5,66 @@ public class BigEyeGuy : MonoBehaviour {
     public LayerMask hitLayers;
     public int damage = 1;
 
-//	AudioPlayer audioplay;
+	AudioPlayer audioplay;
     public LineRenderer lineRenderer;
     Vector2 laserHit;
     RaycastHit2D hit;
-    bool shooting;
+    bool shooting, laserActive;
 
     EnemyMovement enemyMove;
 
     void Start() {
-//		audioplay = GetComponent<AudioPlayer>();
-        enemyMove = transform.parent.GetComponent<EnemyMovement>();
-        lineRenderer = GetComponent<LineRenderer>();
+		audioplay = GetComponent<AudioPlayer>();
+        enemyMove = transform.GetComponent<EnemyMovement>();
         lineRenderer.useWorldSpace = true;
-
-        InvokeRepeating("Shoot", 5f, 5f);
     }
 
     void Update() {
 
         //Calculate laser trajectory with raycast.
-        hit = Physics2D.Raycast(transform.position, new Vector2(enemyMove.wanderDir, 0), Mathf.Infinity, hitLayers);
+        hit = Physics2D.Raycast(lineRenderer.transform.position, new Vector2(enemyMove.wanderDir, 0), Mathf.Infinity, hitLayers);
         laserHit = hit.point;
 
         //Set linerenderer positions.
-        lineRenderer.SetPosition(0, transform.position + Vector3.back);
+        lineRenderer.SetPosition(0, lineRenderer.transform.position + Vector3.back);
         lineRenderer.SetPosition(1, laserHit);
 
+
+        if(enemyMove.raycastHit && !laserActive) {
+            if(enemyMove.raycastHit.collider.name == "Player") {
+                laserActive = true;
+                StartCoroutine(ShootLaser());
+            }
+        }
+        
         if(shooting)
             HitByLaser(hit);
     }
 
-    public void Shoot() {
-        if(enemyMove.raycastHit) {
-            if(enemyMove.raycastHit.collider.name == "Player")
-                StartCoroutine(ShootLaser());
-        }
-    }
-
     IEnumerator ShootLaser() {
+        yield return new WaitForSeconds(1f);
 
+        audioplay.PlayClip(0, 0.7f);
 
-//		audioplay.PlayClip(1, 0.7f);
+        yield return new WaitForSeconds(1.5f);
 
         //enable line and set shooting.
+        audioplay.PlayClip(1, 0.7f);
         lineRenderer.enabled = true;
         shooting = true;
 
         yield return new WaitForSeconds(0.1f);
 
         //disable line and set not shooting.
+        audioplay.StopPlaying();
         lineRenderer.enabled = false;
         shooting = false;
 
-//		audioplay.StopPlaying();
+        yield return new WaitForSeconds(1f);
+
+        laserActive = false;
+        
+		
     }
 
     public void CancelLaser() {

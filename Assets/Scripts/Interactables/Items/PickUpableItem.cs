@@ -113,7 +113,7 @@ public class PickUpableItem : MonoBehaviour {
 					break;
 
 				case "ShellMan":
-					if(itemType == "Rock" && col.gameObject.GetComponent<ShellMan>().deShelled)
+					if(itemType == "Rock" && col.gameObject.GetComponent<ShellMan>().getDeShelled())
 						col.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage, gameObject, 3f);
 					break;
 			}

@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 82870214098452916}
   - component: {fileID: 114179606214152522}
   - component: {fileID: 114037977181954756}
+  - component: {fileID: 114358590430407848}
+  - component: {fileID: 114079709026240050}
   m_Layer: 16
   m_Name: ShellMan
   m_TagString: ShellMan
@@ -31,8 +33,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 66.5, y: -50.15, z: 0}
-  m_LocalScale: {x: 0.7007987, y: 0.7007987, z: 0.7007987}
+  m_LocalPosition: {x: 67.335, y: -49.992, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -269,6 +271,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioClips: []
+--- !u!114 &114079709026240050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac5992d1229318b4ba9d00cd1c23712e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followSpeed: 1.7
+  followRange:
+    vertical: 8
+    up: 2
+    down: 2
+  canSeeBehind: 1
+  wanderSpeed: 2
+  wanderDist: 5
+  timeBeforeWander: 0
+  groundcheckPos: {x: 1, y: 1}
+  wallcheckPos: {x: 1, y: 1}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 262656
+  wallMask:
+    serializedVersion: 2
+    m_Bits: 268763136
+  raycastMask:
+    serializedVersion: 2
+    m_Bits: 268697856
+  wanderDir: -1
 --- !u!114 &114179606214152522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -284,6 +318,19 @@ MonoBehaviour:
   invulnerabilityTime: 0.5
   deathMaterial: {fileID: 0}
   hasAudio: 0
+--- !u!114 &114358590430407848
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1de1d1e49ecb0948b099cb3f121f913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  knockbackForce: 5
 --- !u!114 &114896875747089950
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class BossActivator : MonoBehaviour {
-	public string prefab;
+	public GameObject prefab;
 	int startChildren;
 
 	void Start() {
@@ -11,7 +11,7 @@ public class BossActivator : MonoBehaviour {
 
 	void Spawn() {
 		if(transform.childCount == startChildren) {
-			GameObject instance = Instantiate(Resources.Load(prefab), transform.position, Quaternion.identity) as GameObject;
+			GameObject instance = Instantiate(prefab, transform.position, Quaternion.identity) as GameObject;
 			instance.transform.parent = transform;
 			//		instance.GetComponent<SpriteRenderer> ().sortingOrder = (int)Time.timeSinceLevelLoad;
 		}

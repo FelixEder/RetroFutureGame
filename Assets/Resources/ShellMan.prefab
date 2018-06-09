@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5076574}
   - component: {fileID: 70942761338243972}
   - component: {fileID: 11450012}
-  - component: {fileID: 114896875747089950}
   - component: {fileID: 95986933899103748}
   - component: {fileID: 82870214098452916}
   - component: {fileID: 114179606214152522}
@@ -33,7 +32,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 67.18, y: -48.78, z: 0}
+  m_LocalPosition: {x: 54.45, y: -49.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -70,11 +69,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e79a8ec164c8b443988c61db622a479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newDamage: 0
-  newFollowRange:
-    vertical: 0
-    up: 0
-    down: 0
+  newDamage: 3
+  newKnockbackForce: 5
+  newMoveSpeed: 2.5
+  newFollowSpeed: 2.5
 --- !u!212 &21263860
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -291,8 +289,8 @@ MonoBehaviour:
   wanderSpeed: 2
   wanderDist: 5
   timeBeforeWander: 0
-  groundcheckPos: {x: 1, y: 1}
-  wallcheckPos: {x: 1, y: 1}
+  groundcheckPos: {x: 1, y: 1.1}
+  wallcheckPos: {x: 1, y: 1.7}
   groundMask:
     serializedVersion: 2
     m_Bits: 262656
@@ -314,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f9a9f53ce509ef498a00f0b4b15afa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 4
   invulnerabilityTime: 0.5
   deathMaterial: {fileID: 0}
   hasAudio: 0
@@ -329,18 +327,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1de1d1e49ecb0948b099cb3f121f913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 2
   knockbackForce: 5
---- !u!114 &114896875747089950
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 141202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e116a26071965f4c813db34dd7f5471, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialFreezeTime: 0
-  wanderDistance: 0

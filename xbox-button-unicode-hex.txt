@@ -1,0 +1,13 @@
+ = \uE800 = A
+ = \uE801 = B
+ = \uE802 = D-pad
+ = \uE803 = L-stick
+ = \uE804 = LB
+ = \uE805 = LT
+ = \uE806 = menu/start
+ = \uE807 = R-stick
+ = \uE808 = RB
+ = \uE809 = RT
+ = \uE80a = windows/select
+ = \uE80b = X
+ = \uE80c = Y

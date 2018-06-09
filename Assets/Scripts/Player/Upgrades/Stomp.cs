@@ -78,13 +78,7 @@ public class Stomp : MonoBehaviour {
 					break;
 
 				case "ShellMan":
-					var shellMan = victim.gameObject.GetComponent<ShellMan>();
-					if(!shellMan.deShelled) {
-						enemyHealth.TakeDamage(1, gameObject, knockForce);
-					}
-					else if(shellMan.deShelled) {
-						enemyHealth.TakeDamage(2, gameObject, knockForce);
-					}
+					enemyHealth.Knockback(gameObject, 4f);
 					break;
 
 				case "FinalBossLastForm":

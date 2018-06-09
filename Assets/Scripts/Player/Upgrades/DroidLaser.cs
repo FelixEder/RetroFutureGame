@@ -34,7 +34,6 @@ public class DroidLaser : MonoBehaviour {
 
 		aimDir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - origin;
 		analogDir = new Vector2(input.GetAxis("RightX"), input.GetAxis("RightY"));
-		Debug.Log(analogDir);
 		if(analogDir.magnitude != 0)
 			aimDir = analogDir;
 
@@ -127,7 +126,7 @@ public class DroidLaser : MonoBehaviour {
 
 			case "BigEyeGuyWeakSpot":
 				Debug.Log("Hit EyeGuy in the Eye!");
-				enemyHealth.TakeDamage(damage);
+				victim.collider.transform.parent.GetComponent<EnemyHealth>().TakeDamage(damage);
 				break;
 
 			case "FinalBossArmor":

@@ -33,7 +33,8 @@ public class DroidLaser : MonoBehaviour {
 		var origin = transform.position + new Vector3(0, 0.3f, -5f);
 
 		aimDir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - origin;
-		analogDir = new Vector2(input.GetAxis("rightX"), input.GetAxis("rightY"));
+		analogDir = new Vector2(input.GetAxis("RightX"), input.GetAxis("RightY"));
+		Debug.Log(analogDir);
 		if(analogDir.magnitude != 0)
 			aimDir = analogDir;
 
@@ -121,7 +122,7 @@ public class DroidLaser : MonoBehaviour {
 
 			case "BirdBossWeakSpot":
 				Debug.Log("Hit Bird in the Mouth!");
-				victim.collider.gameObject.GetComponent<BigBadBird>().TakeDamage();
+				victim.collider.transform.parent.GetComponent<BigBadBird>().TakeDamage();
 				break;
 
 			case "BigEyeGuyWeakSpot":

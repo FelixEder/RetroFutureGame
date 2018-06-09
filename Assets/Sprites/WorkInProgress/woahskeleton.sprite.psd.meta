@@ -9,6 +9,12 @@ TextureImporter:
     21300008: woahskeleton.sprite_4
     21300010: woahskeleton.sprite_5
     21300012: woahskeleton.sprite_6
+    21300014: woahskeleton.sprite_7
+    21300016: woahskeleton.sprite_8
+    21300018: woahskeleton.sprite_9
+    21300020: woahskeleton.sprite_10
+    21300022: woahskeleton.sprite_11
+    21300024: woahskeleton.sprite_12
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -93,17 +99,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 46
         width: 34
         height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d250c5369e467f447b268113f2ee3458
+      spriteID: ed35a3cdb8c0dd54d9a9f94a99f5cbe9
       vertices: []
       indices: 
       edges: []
@@ -113,17 +119,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 34
-        y: 0
+        y: 46
         width: 34
         height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17697b7178e9bf54b94aab319a908b63
+      spriteID: f16d948227afae74f8452e7d163c3d09
       vertices: []
       indices: 
       edges: []
@@ -133,17 +139,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 68
-        y: 0
+        y: 46
         width: 34
         height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b2f38858ea0d394eba30bd6ee8e6312
+      spriteID: 8d475a6b83b2e634faba9a3bbc06df4c
       vertices: []
       indices: 
       edges: []
@@ -153,17 +159,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 102
-        y: 0
+        y: 46
         width: 34
         height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 591920dc79ea1b544a57a549627f7c4b
+      spriteID: 2570b345d4e2eb54aaa14ffb75ffdff2
       vertices: []
       indices: 
       edges: []
@@ -173,23 +179,143 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 136
-        y: 0
+        y: 46
         width: 34
         height: 46
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edeac6ca1383680458088561a5bb9fbe
+      spriteID: 88b29a664dc76dd4288f6f3159d67f89
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
       name: woahskeleton.sprite_5
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 46
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5ec289d6e3f3ff41b70bc70e17a9740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: woahskeleton.sprite_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d081a75352df23499d6ab56db25d334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: woahskeleton.sprite_8
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 0
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 071ccc02a05f9f04bb0d57761b0b45e4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: woahskeleton.sprite_9
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 0
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f02fdb02b46645e40a71f1f68b3535ed
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: woahskeleton.sprite_10
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 0
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a89081faa8b6c814ab878fafa6bf4040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: woahskeleton.sprite_11
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 0
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f40a19186307124f8b2c4dee039178a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: woahskeleton.sprite_12
       rect:
         serializedVersion: 2
         x: 170
@@ -203,27 +329,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d19949eb564e074ab5cee2e4a2b38a9
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: woahskeleton.sprite_6
-      rect:
-        serializedVersion: 2
-        x: 204
-        y: 0
-        width: 34
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 201e0492b78602a42b99fc5414c63b27
+      spriteID: 4b1a5e30a126b7e47a6b1e148aec5d7b
       vertices: []
       indices: 
       edges: []

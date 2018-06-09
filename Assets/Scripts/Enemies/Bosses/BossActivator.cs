@@ -25,7 +25,7 @@ public class BossActivator : MonoBehaviour {
 	}
 
 	public void Trigger(bool state) {
-		GetComponent<EdgeCollider2D>().enabled = state;
+		GetComponent<Collider2D>().enabled = state;
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {

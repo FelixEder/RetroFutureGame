@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Cinemachine;
 
 public class BigBadBird : MonoBehaviour {
 	public Sprite regular, spitting, winging;
@@ -17,6 +18,8 @@ public class BigBadBird : MonoBehaviour {
 		GetComponent<SpriteRenderer>().sprite = regular;
 		//Set the start values here
 		//Also set the standard sprite.
+
+		GameObject.Find("BirdBoss target").GetComponent<CinemachineTargetGroup>().m_Targets[0].target = transform;
 	}
 
 	void Update() {

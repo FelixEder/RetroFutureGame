@@ -8,7 +8,7 @@ public class ShellMan : MonoBehaviour {
 	private float newKnockbackForce;
 	public FollowRange newFollowRange;
 
-	void start() {
+	void Start() {
 		anim = GetComponent<Animator>();
 	}
 

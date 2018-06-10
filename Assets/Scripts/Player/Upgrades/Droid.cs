@@ -32,9 +32,12 @@ public class Droid : MonoBehaviour {
 			var raycastHit = Physics2D.Raycast(origin, aimDir, Mathf.Infinity, aimHitMask);
 
 			line.SetPosition(0, origin);
-			line.SetPosition(1, raycastHit.point);
+			if(raycastHit)
+				line.SetPosition(1, raycastHit.point);
+			else
+                line.SetPosition(1, (Vector2)origin + (aimDir * 100));
 
-			line.enabled = true;
+            line.enabled = true;
 
 			if(anim.speed > 0.01f)
 				anim.speed -= 0.01f;

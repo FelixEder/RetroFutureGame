@@ -10,14 +10,14 @@ public class DroidLaser : MonoBehaviour {
 
 	bool holdShoot;
 
-	Vector3 aimDir;
 	Vector2 analogDir;
+	Vector3 origin, aimDir;
+	float speed = 0.7f;
 
 	Animator anim;
 	LineRenderer line;
 	PlayerEnergy energy;
 	InputManager input;
-	RaycastHit2D raycastHit;
 
 
 	void Start() {
@@ -30,23 +30,8 @@ public class DroidLaser : MonoBehaviour {
 	}
 
 	void Update() {
-		var origin = transform.position + new Vector3(0, 0.3f, -5f);
-
-		aimDir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - origin;
-		analogDir = new Vector2(input.GetAxis("RightX"), input.GetAxis("RightY"));
-		if(analogDir.magnitude != 0)
-			aimDir = analogDir;
-
-		raycastHit = Physics2D.Raycast(origin, aimDir, Mathf.Infinity, hitLayers);
-
-		if(raycastHit) {
-			line.SetPosition(0, origin);
-			line.SetPosition(1, raycastHit.point);
-		}
-
-		if(input.GetKey("shoot") && !holdShoot) {
+		if(input.GetKey("shoot") && !holdShoot)
 			holdShoot = true;
-		}
 
 		if(!input.GetKey("shoot") && holdShoot && canShoot) {
 			if(energy.UseEnergy(2)) {
@@ -55,27 +40,65 @@ public class DroidLaser : MonoBehaviour {
 			}
 		}
 
-		if(!input.GetKey("shoot")) {
+		if(!input.GetKey("shoot"))
 			holdShoot = false;
-		}
 	}
 
 	IEnumerator ActivateLaser() {
-		if(raycastHit) {
-			line.enabled = true;
-			HitByLaser(raycastHit);
+		origin = transform.position + new Vector3(0, 0.3f, -5f);
 
-			yield return new WaitForSeconds(0.1f);
+		aimDir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - origin;
+		analogDir = new Vector2(input.GetAxis("RightX"), input.GetAxis("RightY"));
+		if(analogDir.magnitude != 0)
+			aimDir = analogDir;
+		
+		aimDir = ((Vector2)aimDir * 10).normalized;
 
-			anim.SetTrigger("charge");
-			line.enabled = false;
+		line.SetPosition(0, origin);
+		line.SetPosition(1, origin);
+		line.enabled = true;
 
-			yield return new WaitForSeconds(1f);
+		StartCoroutine(DeactivateLaser());
 
-			canShoot = true;
+		RaycastHit2D raycastHit = new RaycastHit2D();
+
+		for(int i = 0; !raycastHit && i < 50; i++) {
+			raycastHit = Physics2D.Raycast(origin, aimDir, 3f, hitLayers);
+Debug.Log("TEST");
+			if(raycastHit)
+				line.SetPosition(1, raycastHit.point);
+			else if(i < 7)
+				line.SetPosition(1, origin + (aimDir * i * 0.5f));
+			else
+				line.SetPosition(1, origin + (aimDir * 3f));
+
+			yield return new WaitForSeconds(0.0001f);
 		}
-		else
-			canShoot = true;
+		if(raycastHit)
+			HitByLaser(raycastHit);
+	}
+
+	IEnumerator DeactivateLaser() {
+		yield return new WaitForSeconds(0.1f);
+
+		StartCoroutine(ChargeLaser());
+		for(float i = 0; Mathf.Sign(line.GetPosition(1).x - line.GetPosition(0).x) == Mathf.Sign(aimDir.x) && Mathf.Sign(line.GetPosition(1).y - line.GetPosition(0).y) == Mathf.Sign(aimDir.y) && i < 50; i++) {
+			origin += (aimDir * speed);
+			line.SetPosition(0, origin);
+			Debug.Log("Origin = " + origin);
+
+			yield return new WaitForSeconds(0.0001f);
+		}
+
+		line.enabled = false;
+	}
+
+	IEnumerator ChargeLaser() {
+		anim.SetTrigger("charge");
+
+		yield return new WaitForSeconds(1f);
+
+		canShoot = true;
 	}
 
 	void HitByLaser(RaycastHit2D victim) {
@@ -85,8 +108,8 @@ public class DroidLaser : MonoBehaviour {
 
 		//NOTE: RaycastHit2D.transform returns parent transform, RaycastHit2D.collider returns the hit collider.
 		switch(victim.collider.gameObject.tag) {
-
 			//Add more cases as more types of enemies are added to the game
+
 			case "SmallCritter":
 			case "JumpingCritter":
 				enemyHealth.TakeDamage(damage);

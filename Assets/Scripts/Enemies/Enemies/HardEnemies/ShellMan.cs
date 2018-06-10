@@ -5,25 +5,24 @@ public class ShellMan : MonoBehaviour {
 	private bool deShelled;
 	private Animator anim;
 	public int newDamage;
-	private float newKnockbackForce;
-	public FollowRange newFollowRange;
+	public float newKnockbackForce, newMoveSpeed, newFollowSpeed;
 
 	void Start() {
 		anim = GetComponent<Animator>();
 	}
 
-	public void BreakShield() {
+	public void BreakShield(GameObject attacker) {
 		anim.SetTrigger("next");
 		deShelled = true;
 
+		GetComponent<EnemyHealth>().Knockback(attacker, 5f);
+
 		var attack = GetComponent<EnemyAttack>();
 		attack.damage = newDamage;
-		attack.knockbackForce = newKnockbackForce;
 
-		var moment = GetComponent<EnemyMovement>();
-		moment.followRange = newFollowRange;
-		var jump = GetComponent<EnemyJump>();
-		jump.enabled = true;
+		var movement = GetComponent<EnemyMovement>();
+		movement.wanderSpeed = newMoveSpeed;
+		movement.followSpeed = newFollowSpeed;
 	}
 
 	public bool getDeShelled() {

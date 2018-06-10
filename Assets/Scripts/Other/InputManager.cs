@@ -87,10 +87,10 @@ public class InputManager : MonoBehaviour {
 			case "ysign":
 				return Mathf.Sign(Input.GetAxis("VerticalBool") + Input.GetAxis("VerticalBoolController"));
 
-			case "rightX":
+			case "rightx":
 				return Input.GetAxis("RightAnalogH");
 
-			case "rightY":
+			case "righty":
 				return Input.GetAxis("RightAnalogV");
 
 			default:

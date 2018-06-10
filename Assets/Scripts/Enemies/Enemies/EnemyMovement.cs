@@ -71,6 +71,8 @@ public class EnemyMovement : MonoBehaviour {
             else if(!(wanderDist == 0 && Mathf.Abs(transform.position.x - startPos) < 0.5f))
                 rb2D.velocity += Mathf.Abs(rb2D.velocity.x) < wanderSpeed ? new Vector2(wanderSpeed * 0.1f * wanderDir, 0) : Vector2.zero;
         }
+        if(rb2D.velocity.y < -15)
+            rb2D.velocity = new Vector2(rb2D.velocity.x, -15);
     }
 
     Vector2 RaycastDirection() {

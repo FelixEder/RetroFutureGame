@@ -4,7 +4,7 @@ using System.Collections;
 public class BigEyeGuy : MonoBehaviour {
 	public LayerMask hitLayers;
 	public int damage = 1;
-	bool shooting, canShoot = true;
+	bool canShoot = true;
 
 	Vector3 origin, aimDir;
 	float speed = 0.5f, origWanderSpeed;

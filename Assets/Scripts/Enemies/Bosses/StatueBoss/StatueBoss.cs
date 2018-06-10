@@ -49,14 +49,14 @@ public class StatueBoss : MonoBehaviour {
 			StatueBossLaser leftLaser = leftEye.GetComponent<StatueBossLaser>();
 			leftLaser.laserChargeTime = 0.7f;
 			leftLaser.laserActiveTime = 0.7f;
-			leftLaser.CancelLaser();
+			leftLaser.CancelShoot();
 		}
 		else if(rightEye != null) {
 			rightEye.GetComponent<SpriteRenderer>().color = new Color(1, 0.5f, 0.5f);
 			StatueBossLaser rightLaser = rightEye.GetComponent<StatueBossLaser>();
 			rightLaser.laserChargeTime = 0.7f;
 			rightLaser.laserActiveTime = 0.7f;
-			rightLaser.CancelLaser();
+			rightLaser.CancelShoot();
 		}
 	}
 

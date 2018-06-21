@@ -23,9 +23,10 @@ public class Stomp : MonoBehaviour {
 	void FixedUpdate() {
 		if(!input.GetKey("attack"))
 			holdStomp = false;
-		if(status.InAir() && !status.isSmall && !status.isFloating && input.GetAxis("Y") < -0.3f && input.GetAxis("ysign") < 0f && input.GetKey("attack") && !holdStomp) {
+		if(status.InAir() && !status.isSmall && !status.isFloating && input.GetAxis("Y") < -0.3f && input.GetAxis("ysign") < 0f && input.GetKey("attack") && !holdStomp && !isStomping) {
 			holdStomp = true;
 			isStomping = true;
+			status.isStomping = true;
 
 			StartCoroutine(StartStomp());
 		}
@@ -53,6 +54,7 @@ public class Stomp : MonoBehaviour {
 
 		rb2D.velocity = new Vector2(rb2D.velocity.x, 0);
 		isStomping = false;
+		status.isStomping = false;
 		status.Invulnerable(0.2f);
 
 		victims = Physics2D.OverlapBoxAll(stompCenter.position, new Vector2(4f, 2f), 0, whatIsHurtable);

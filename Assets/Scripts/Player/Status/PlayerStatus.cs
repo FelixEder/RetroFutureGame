@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class PlayerStatus : MonoBehaviour {
-	public bool isMirrored, isFloating, invulnerable, isSmall;
+	public bool isMirrored, isFloating, invulnerable, isSmall, isStomping;
 	public float velocityX, velocityY;
 
 	public bool grounded, againstLeft, againstRight, onPlatform, againstFront, againstStep, inWater;

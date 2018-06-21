@@ -5,12 +5,12 @@ public class InputManager : MonoBehaviour {
 	[SerializeField] bool inputEnabled = true, force;
 	//jump, attack, grab, leaf, pause, shoot, mega, small;
 
-	public void Disable(float time) {
+	public void Disable(float duration) {
 		if(force)
 			return;
 		Disable();
 		CancelInvoke("Enable");
-		Invoke("Enable", time);
+		Invoke("Enable", duration);
 	}
 
 	public void Disable() {
@@ -31,9 +31,9 @@ public class InputManager : MonoBehaviour {
 		return inputEnabled;
 	}
 
-	public void Force(bool input, bool force1) {
+	public void Force(bool input, bool _force) {
 		inputEnabled = input;
-		force = force1;
+		force = _force;
 	}
 
 	public bool GetKey(string key) {

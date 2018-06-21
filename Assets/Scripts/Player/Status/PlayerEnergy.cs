@@ -47,8 +47,8 @@ public class PlayerEnergy : MonoBehaviour {
 	}
 
 	public void MaximizeEnergy() {
-		SetEnergySlider();
 		currentEnergy = maxEnergy;
+		SetEnergySlider();
 		StartCoroutine(TransitionEnergySlider());
 	}
 

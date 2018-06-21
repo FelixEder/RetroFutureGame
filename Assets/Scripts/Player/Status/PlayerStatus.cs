@@ -48,9 +48,9 @@ public class PlayerStatus : MonoBehaviour {
 		return (!grounded && !againstLeft && !againstRight);
 	}
 
-	public void Invulnerable(float time) {
+	public void Invulnerable(float duration) {
 		invulnerable = true;
-		Invoke("SetVulnerable", time);
+		Invoke("SetVulnerable", duration);
 	}
 
 	void SetVulnerable() {

@@ -45,10 +45,6 @@ public class GameOverScreen : MonoBehaviour {
 		foreach(GameObject g in drops)
 			Destroy(g);
 
-		//Place player at last checkpoint and hide gameover overlay.
-		player.transform.position = player.GetComponent<Checkpoint>().activeCheckpoint.transform.position;
-		player.transform.position += new Vector3(0, 1, 0);
-
 		//Revive player.
 		player.GetComponent<PlayerHealth>().Revive();
 

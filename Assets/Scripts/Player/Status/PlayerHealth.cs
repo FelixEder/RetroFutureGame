@@ -47,7 +47,7 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 	public void Knockback(GameObject attacker, float force) {
-		if(!GetComponent<PlayerStatus>().Invulnerable()) {
+		if(!status.Invulnerable()) {
 			GameObject.Find("InputManager").GetComponent<InputManager>().Disable(0.1f);
 			GetComponent<PlayerMovement>().Stun(0.3f);
 			if(transform.position.x < attacker.transform.position.x)
@@ -94,35 +94,54 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 	public void MaximizeHealth() {
-		SetHealthSlider();
 		currentHealth = maxHealth;
+		SetHealthSlider();
 		StartCoroutine(TransitionHealthSlider());
 	}
 
 	void Die() {
 		Debug.Log("YOU DIED");
 		dead = true;
-		audioplay.Mute(true);
+		
+		SetHealthSlider();
+		
+		transform.GetChild(0).GetComponent<Animator>().SetBool("dead", true);
+		
 		rb2D.constraints = RigidbodyConstraints2D.None;
 		rb2D.AddForce(Vector2.up * 300);
 		rb2D.angularVelocity = 90;
-		SetHealthSlider();
-		audioplay.PlayClip(Random.Range(0, 5), 1f);
-		transform.GetChild(0).GetComponent<Animator>().SetBool("dead", true);
+		audioplay.PlayDetached(Random.Range(0, 5), 1f, 1f, 1f);
+		audioplay.Mute(true);
 		GameObject.Find("GameOverScreen").GetComponent<GameOverScreen>().Gameover();
 	}
 
 	public void Revive() {
-		Debug.Log("The angels have granted your wish");
+		Debug.Log("REVIVED");
 		dead = false;
+		
+		//Maximize health and energy.
+		MaximizeHealth();
+		GetComponent<PlayerEnergy>().MaximizeEnergy();
+		
+		//Fix sprite and audio
+		transform.GetChild(0).GetComponent<Animator>().SetBool("dead", false);
+		status.isMirrored = false;
+		
+		//Place player at last checkpoint and set transforms.
+		rb2D.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+		transform.position = GetComponent<Checkpoint>().activeCheckpoint.transform.position;
+		transform.position += new Vector3(0, 1, 0);
+		transform.rotation = Quaternion.Euler(0, 0, 0);
+		
+		//Keep immovable and muted and set invulnerable for duration.
+		status.CancelInvoke("SetVulnerable");
+		status.Invulnerable(2f);
+		Invoke("FinishRevive", 1.5f);
+	}
+	
+	void FinishRevive() {
 		audioplay.Mute(false);
 		rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
 		rb2D.velocity = new Vector2(0, 0);
-		transform.rotation = Quaternion.Euler(0, 0, 0);
-		currentHealth = maxHealth;
-		SetHealthSlider();
-		transform.GetChild(0).GetComponent<Animator>().SetBool("dead", false);
-		GetComponent<PlayerEnergy>().MaximizeEnergy();
-		status.isMirrored = false;
 	}
 }

@@ -5,6 +5,7 @@ public class SmallFry : MonoBehaviour {
 	PlayerStatus status;
 	PlayerInventory inventory;
 	InputManager input;
+	Animator anim;
 	bool holdSmall, somethingAbove;
 	public LayerMask whatIsRoof;
 	public Transform aboveCheck;
@@ -13,6 +14,7 @@ public class SmallFry : MonoBehaviour {
 		status = GetComponent<PlayerStatus>();
 		inventory = GetComponent<PlayerInventory>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
+		anim = GetComponent<Animator>();
 	}
 
 	void Update() {
@@ -32,17 +34,15 @@ public class SmallFry : MonoBehaviour {
 				Debug.Log("Something above player");
 			}
 		}
+		
+		if(status.grounded && status.isSmall)
+			anim.speed = 1;
+		else if(!status.grounded && status.isSmall)
+			anim.speed = 0.7f;
 	}
 
 	void GrowSmall() {
-		GetComponent<Animator>().SetBool("small", true);
-		/*
-		transform.parent.GetComponent<Collider2D>().enabled = false;
-		GetComponent<Collider2D>().enabled = true;
-
-		GetComponent<SpriteRenderer>().enabled = true;
-		transform.parent.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
-		*/
+		anim.SetBool("small", true);
 		status.isSmall = true;
 		if(inventory.IsHoldingItem()) {
 			inventory.GetHoldingItem().GetComponent<PickUpableItem>().Drop(false);
@@ -50,15 +50,8 @@ public class SmallFry : MonoBehaviour {
 		}
 	}
 
-	void GrowBig() {
-		GetComponent<Animator>().SetBool("small", false);
-		/*
-		transform.parent.GetComponent<Collider2D>().enabled = true;
-		GetComponent<Collider2D>().enabled = false;
-
-		GetComponent<SpriteRenderer>().enabled = false;
-		transform.parent.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
-		*/
+	public void GrowBig() {
+		anim.SetBool("small", false);
 		status.isSmall = false;
 	}
 }

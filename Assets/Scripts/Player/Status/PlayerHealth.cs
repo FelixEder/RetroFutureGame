@@ -126,6 +126,8 @@ public class PlayerHealth : MonoBehaviour {
 		//Fix sprite and audio
 		GetComponent<Animator>().SetBool("dead", false);
 		status.isMirrored = false;
+		if(GetComponent<SmallFry>().enabled)
+			GetComponent<SmallFry>().GrowBig();
 		
 		//Place player at last checkpoint and set transforms.
 		rb2D.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;

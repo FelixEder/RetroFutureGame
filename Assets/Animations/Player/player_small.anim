@@ -19,7 +19,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.099990845, y: -1.75, z: -3}
+        value: {x: -0.79999924, y: -0.8500023, z: -3}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -36,17 +36,25 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300084, guid: 566c74ccc55153844b4dbef9996dabcf, type: 3}
+    - time: 0.125
+      value: {fileID: 21300086, guid: 566c74ccc55153844b4dbef9996dabcf, type: 3}
     - time: 0.25
       value: {fileID: 21300088, guid: 566c74ccc55153844b4dbef9996dabcf, type: 3}
-    - time: 0.5
+    - time: 0.375
       value: {fileID: 21300090, guid: 566c74ccc55153844b4dbef9996dabcf, type: 3}
-    - time: 0.75
+    - time: 0.5
       value: {fileID: 21300092, guid: 566c74ccc55153844b4dbef9996dabcf, type: 3}
+    - time: 0.625
+      value: {fileID: 21300094, guid: 566c74ccc55153844b4dbef9996dabcf, type: 3}
+    - time: 0.75
+      value: {fileID: 21300096, guid: 566c74ccc55153844b4dbef9996dabcf, type: 3}
+    - time: 0.875
+      value: {fileID: 21300098, guid: 566c74ccc55153844b4dbef9996dabcf, type: 3}
     attribute: m_Sprite
     path: player_sprite
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 4
+  m_SampleRate: 8
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -69,9 +77,13 @@ AnimationClip:
       isPPtrCurve: 0
     pptrCurveMapping:
     - {fileID: 21300084, guid: 566c74ccc55153844b4dbef9996dabcf, type: 3}
+    - {fileID: 21300086, guid: 566c74ccc55153844b4dbef9996dabcf, type: 3}
     - {fileID: 21300088, guid: 566c74ccc55153844b4dbef9996dabcf, type: 3}
     - {fileID: 21300090, guid: 566c74ccc55153844b4dbef9996dabcf, type: 3}
     - {fileID: 21300092, guid: 566c74ccc55153844b4dbef9996dabcf, type: 3}
+    - {fileID: 21300094, guid: 566c74ccc55153844b4dbef9996dabcf, type: 3}
+    - {fileID: 21300096, guid: 566c74ccc55153844b4dbef9996dabcf, type: 3}
+    - {fileID: 21300098, guid: 566c74ccc55153844b4dbef9996dabcf, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -98,7 +110,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.099990845
+        value: -0.79999924
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -117,7 +129,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -1.75
+        value: -0.8500023
         inSlope: 0
         outSlope: 0
         tangentMode: 136

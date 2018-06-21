@@ -7,8 +7,6 @@ public class EnemyHealth : MonoBehaviour {
 	public int health = 1;
 	public float invulnerabilityTime = 0.5f;
 	public Material deathMaterial;
-	[Space(10)]
-	public bool hasAudio;
 
 	bool invulnerable;
 	AudioPlayer audioplay;
@@ -16,7 +14,7 @@ public class EnemyHealth : MonoBehaviour {
 	SpriteRenderer sprite;
 
 	void Start() {
-		if(hasAudio)
+		if(GetComponent<AudioPlayer>())
 			audioplay = GetComponent<AudioPlayer>();
 		sprite = GetComponent<SpriteRenderer>();
 		playerEnergy = GameObject.Find("Player").GetComponent<PlayerEnergy>();
@@ -35,7 +33,7 @@ public class EnemyHealth : MonoBehaviour {
 	public void TakeDamage(int damage) {
 		if(!invulnerable) {
 			//Play a sound and animation.
-			if(hasAudio)
+			if(audioplay)
 				audioplay.PlayClip(0, 1, 0.5f, 1.5f);
 			health -= damage;
 			StartCoroutine(Invulnerability());
@@ -64,8 +62,10 @@ public class EnemyHealth : MonoBehaviour {
 	}
 
 	IEnumerator Die() {
-		if(hasAudio)
+		if(audioplay)
 			audioplay.PlayDetached(1, 1, 0.5f, 1.5f);
+		if(GetComponent<EnemyAttack>())
+			GetComponent<EnemyAttack>().enabled = false;
 		GetComponent<SpriteRenderer>().material = deathMaterial;
 		yield return new WaitForSeconds(0.2f);
 		int ranNumb = Random.Range(0, 60);

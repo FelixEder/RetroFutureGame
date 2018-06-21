@@ -48,7 +48,8 @@ public class PlayerHealth : MonoBehaviour {
 
 	public void Knockback(GameObject attacker, float force) {
 		if(!GetComponent<PlayerStatus>().Invulnerable()) {
-			GameObject.Find("InputManager").GetComponent<InputManager>().Disable(0.3f);
+			GameObject.Find("InputManager").GetComponent<InputManager>().Disable(0.1f);
+			GetComponent<PlayerMovement>().Stun(0.3f);
 			if(transform.position.x < attacker.transform.position.x)
 				GetComponent<Rigidbody2D>().velocity = new Vector2(-force, 2);
 			else

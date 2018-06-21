@@ -41,7 +41,6 @@ public class BigEyeGuy : MonoBehaviour {
 		yield return new WaitForSeconds(1.5f);
 
 		origin = line.transform.position + new Vector3(0, 0, -5f);
-		var start = origin;
 
 		line.SetPosition(0, origin);
 		line.SetPosition(1, origin);
@@ -94,7 +93,7 @@ public class BigEyeGuy : MonoBehaviour {
 
 			case "Player":
 				Debug.Log("Hit by laser!!");
-				victim.collider.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage, gameObject, 10f);
+				victim.collider.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage, gameObject, 6f);
 				break;
 
 			case "SmallCritter":

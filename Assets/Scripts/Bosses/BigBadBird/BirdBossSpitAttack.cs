@@ -32,7 +32,6 @@ public class BirdBossSpitAttack : MonoBehaviour {
 				return;
 			GameObject instance = Instantiate(Resources.Load(spawnType), transform.position, Quaternion.identity) as GameObject;
 			instance.transform.parent = transform.parent.parent;
-			instance.GetComponent<SpawnProperties>().initialFreezeTime = 1;
 			instance.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.parent.gameObject.GetComponent<Rigidbody2D>().velocity.x * 1.5f, 0);
 		}
 	}

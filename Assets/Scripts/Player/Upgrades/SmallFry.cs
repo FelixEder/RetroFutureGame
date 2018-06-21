@@ -10,8 +10,8 @@ public class SmallFry : MonoBehaviour {
 	public Transform aboveCheck;
 
 	void Start() {
-		status = transform.parent.GetComponent<PlayerStatus>();
-		inventory = transform.parent.GetComponent<PlayerInventory>();
+		status = GetComponent<PlayerStatus>();
+		inventory = GetComponent<PlayerInventory>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
 	}
 
@@ -35,28 +35,30 @@ public class SmallFry : MonoBehaviour {
 	}
 
 	void GrowSmall() {
-		transform.parent.GetChild(0).GetComponent<Animator>().SetBool("small", true);
-
+		GetComponent<Animator>().SetBool("small", true);
+		/*
 		transform.parent.GetComponent<Collider2D>().enabled = false;
 		GetComponent<Collider2D>().enabled = true;
 
 		GetComponent<SpriteRenderer>().enabled = true;
 		transform.parent.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
-
+		*/
 		status.isSmall = true;
-		if(inventory.IsHoldingItem())
+		if(inventory.IsHoldingItem()) {
+			inventory.GetHoldingItem().GetComponent<PickUpableItem>().Drop(false);
 			inventory.SetHoldingItem(null);
+		}
 	}
 
 	void GrowBig() {
-		transform.parent.GetChild(0).GetComponent<Animator>().SetBool("small", false);
-
+		GetComponent<Animator>().SetBool("small", false);
+		/*
 		transform.parent.GetComponent<Collider2D>().enabled = true;
 		GetComponent<Collider2D>().enabled = false;
 
 		GetComponent<SpriteRenderer>().enabled = false;
 		transform.parent.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
-
+		*/
 		status.isSmall = false;
 	}
 }

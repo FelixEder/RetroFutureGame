@@ -105,7 +105,7 @@ public class PlayerHealth : MonoBehaviour {
 		
 		SetHealthSlider();
 		
-		transform.GetChild(0).GetComponent<Animator>().SetBool("dead", true);
+		GetComponent<Animator>().SetBool("dead", true);
 		
 		rb2D.constraints = RigidbodyConstraints2D.None;
 		rb2D.AddForce(Vector2.up * 300);
@@ -124,7 +124,7 @@ public class PlayerHealth : MonoBehaviour {
 		GetComponent<PlayerEnergy>().MaximizeEnergy();
 		
 		//Fix sprite and audio
-		transform.GetChild(0).GetComponent<Animator>().SetBool("dead", false);
+		GetComponent<Animator>().SetBool("dead", false);
 		status.isMirrored = false;
 		
 		//Place player at last checkpoint and set transforms.

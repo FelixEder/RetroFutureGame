@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour {
 	PlayerStatus status;
 	Rigidbody2D rb2D;
 	InputManager input;
-	Animator childAnim;
+	Animator anim;
 	public float moveSpeed, airSpeed, maxMoveSpeed;
 	float axisH, steppingSpeed;
 	bool stunned;
@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour {
 		status = GetComponent<PlayerStatus>();
 		rb2D = GetComponent<Rigidbody2D>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
-		childAnim = transform.GetChild(0).GetComponent<Animator>();
+		anim = GetComponent<Animator>();
 	}
 
 	void FixedUpdate() {
@@ -63,11 +63,11 @@ public class PlayerMovement : MonoBehaviour {
 
 	void Update() {
 		bool movingAxisH = Mathf.Abs(input.GetAxis("X")) > 0 ? true : false;
-		childAnim.SetBool("axisX", movingAxisH);
-		childAnim.SetFloat("axisXvalue", input.GetAxis("X"));
-		childAnim.SetFloat("velocityX", Mathf.Abs(rb2D.velocity.x));
-		childAnim.SetBool("grounded", status.grounded);
-		childAnim.SetBool("mirrored", status.isMirrored);
+		anim.SetBool("axisX", movingAxisH);
+		anim.SetFloat("axisXvalue", input.GetAxis("X"));
+		anim.SetFloat("velocityX", Mathf.Abs(rb2D.velocity.x));
+		anim.SetBool("grounded", status.grounded);
+		anim.SetBool("mirrored", status.isMirrored);
 		/*
 		if (axisH != 0) {
 			if (Mathf.Abs (rb2D.velocity.x) > 3f && status.grounded)

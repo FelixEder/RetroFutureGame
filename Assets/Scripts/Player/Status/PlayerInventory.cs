@@ -5,11 +5,19 @@ public class PlayerInventory : MonoBehaviour {
     private ArrayList acquiredUpgrades;
 	//The item that can be picked up by the player
 	public GameObject pickupableItem;
+	public Transform holdPos;
 	int collectedItems;
 
 	void Start() {
         //As we implement more upgrades in the game, more scripts will be added in the fields and here and disabled.
         acquiredUpgrades = new ArrayList();
+	}
+	
+	void Update() {
+		if(pickupableItem != null) {
+			pickupableItem.transform.position = holdPos.position;
+			pickupableItem.transform.rotation = holdPos.rotation;
+		}
 	}
 
 	/**

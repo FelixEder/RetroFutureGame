@@ -45,8 +45,7 @@ public class SmallFry : MonoBehaviour {
 		anim.SetBool("small", true);
 		status.isSmall = true;
 		if(inventory.IsHoldingItem()) {
-			inventory.GetHoldingItem().GetComponent<PickUpableItem>().Drop(false);
-			inventory.SetHoldingItem(null);
+			GetComponent<PlayerPickUp>().Drop(false);
 		}
 	}
 

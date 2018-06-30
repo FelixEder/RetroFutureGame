@@ -54,8 +54,7 @@ public class PlayerHealth : MonoBehaviour {
 				GetComponent<Rigidbody2D>().velocity = new Vector2(force, 2);
 			//Drops the item the player is holding.
 			if(inventory.IsHoldingItem()) {
-				inventory.GetHoldingItem().GetComponent<PickUpableItem>().Drop(false);
-				inventory.SetHoldingItem(null);
+				GetComponent<PlayerPickUp>().Drop(false);
 			}
 		}
 	}

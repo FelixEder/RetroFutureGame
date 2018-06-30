@@ -6,7 +6,7 @@ public class PlayerJump : MonoBehaviour {
 	Rigidbody2D rb2D;
 	InputManager input;
 	public float jumpSpeed, secondJumpSpeed;
-	public bool jumpDown, holdJump, gotSecondJump, hasSecondJumped;
+	public bool jumpDown, holdJump, secondJumpAcquired, hasSecondJumped;
 	[SerializeField] bool hasJumped, jumpingBackward;
 
 	void Start() {
@@ -55,7 +55,7 @@ public class PlayerJump : MonoBehaviour {
 			holdJump = true;
 		}
 		//jump in air when have secondjump and has not secondjumped.
-		else if(input.GetKey("jump") && gotSecondJump && !holdJump && !hasSecondJumped && !status.isSmall) {
+		else if(input.GetKey("jump") && secondJumpAcquired && !holdJump && !hasSecondJumped && !status.isSmall) {
 			rb2D.velocity = new Vector2(rb2D.velocity.x, secondJumpSpeed);
 			hasSecondJumped = true;
 			holdJump = true;

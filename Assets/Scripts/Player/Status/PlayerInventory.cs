@@ -41,15 +41,19 @@ public class PlayerInventory : MonoBehaviour {
 		return pickupableItem;
 	}
 
-	public void collectItem() {
+	public void CollectItem() {
 		collectedItems++;
 	}
 
-    public void addUpgrade(string upgrade) {
+    public void AddUpgrade(string upgrade) {
         acquiredUpgrades.Add(upgrade);
     }
 
-    public ArrayList getUpgradeList() {
+    public ArrayList GetUpgradeList() {
         return acquiredUpgrades;
     }
+	
+	public bool HasAcquired(object upgrade) {
+		return acquiredUpgrades.Contains(upgrade);
+	}
 }

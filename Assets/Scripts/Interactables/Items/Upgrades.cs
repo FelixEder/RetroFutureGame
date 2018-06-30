@@ -21,52 +21,52 @@ public class Upgrades : MonoBehaviour {
 
 				case "Float":
 					col.gameObject.GetComponent<Float>().enabled = true;
-					playInv.addUpgrade("float");
+					playInv.AddUpgrade("float");
 					break;
 
 				case "SecondJump":
-					col.gameObject.GetComponent<PlayerJump>().gotSecondJump = true;
-					playInv.addUpgrade("secondJump");
+					col.gameObject.GetComponent<PlayerJump>().secondJumpAcquired = true;
+					playInv.AddUpgrade("secondJump");
 					break;
 
 				case "WallJump":
 					col.gameObject.GetComponent<WallJump>().enabled = true;
-					playInv.addUpgrade("wallJump");
+					playInv.AddUpgrade("wallJump");
 					break;
 
 				case "Stomp":
 					col.gameObject.GetComponent<Stomp>().enabled = true;
-					playInv.addUpgrade("stomp");
+					playInv.AddUpgrade("stomp");
 					break;
 
 				case "Laser":
 					upgradeLocation.SetActive(true);
-					playInv.addUpgrade("laser");
+					playInv.AddUpgrade("laser");
 					break;
 
 				case "Health":
 					col.gameObject.GetComponent<PlayerHealth>().IncreaseMaxHealth();
-					col.gameObject.GetComponent<PlayerInventory>().collectItem();
+					col.gameObject.GetComponent<PlayerInventory>().CollectItem();
 					break;
 
 				case "Speed":
 					col.gameObject.GetComponent<PlayerMovement>().moveSpeed++;
-					col.gameObject.GetComponent<PlayerInventory>().collectItem();
+					col.gameObject.GetComponent<PlayerInventory>().CollectItem();
 					break;
 
 				case "Energy":
 					col.gameObject.GetComponent<PlayerEnergy>().IncreaseMaxEnergy();
-					col.gameObject.GetComponent<PlayerInventory>().collectItem();
+					col.gameObject.GetComponent<PlayerInventory>().CollectItem();
 					break;
 
 				case "MegaPunch":
-					upgradeLocation.GetComponent<PlayerPunch>().megaAquired = true;
-					playInv.addUpgrade("megaPunch");
+					upgradeLocation.GetComponent<PlayerPunch>().megaAcquired = true;
+					playInv.AddUpgrade("mega");
 					break;
 
                 case "Small":
                     upgradeLocation.SetActive(true);
-					playInv.addUpgrade("small");
+					playInv.AddUpgrade("small");
 					break;
 			}
 			/*

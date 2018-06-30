@@ -17,7 +17,7 @@ public class DebugMenu : MonoBehaviour {
 				break;
 
 			case "SecondJump":
-				player.GetComponent<PlayerJump>().gotSecondJump = !player.GetComponent<PlayerJump>().gotSecondJump;
+				player.GetComponent<PlayerJump>().secondJumpAcquired = !player.GetComponent<PlayerJump>().secondJumpAcquired;
 				break;
 
 			case "WallJump":
@@ -33,7 +33,7 @@ public class DebugMenu : MonoBehaviour {
 				break;
 
 			case "MegaPunch":
-				player.GetComponent<PlayerPunch>().megaAquired = !player.GetComponent<PlayerPunch>().megaAquired;
+				player.GetComponent<PlayerPunch>().megaAcquired = !player.GetComponent<PlayerPunch>().megaAcquired;
 				break;
 
 			case "Small":
@@ -72,7 +72,7 @@ public class DebugMenu : MonoBehaviour {
 		//Float
 		transform.GetChild(0).GetComponent<Toggle>().isOn = player.GetComponent<Float>().enabled;
 		//SecondJump
-		transform.GetChild(1).GetComponent<Toggle>().isOn = player.GetComponent<PlayerJump>().gotSecondJump;
+		transform.GetChild(1).GetComponent<Toggle>().isOn = player.GetComponent<PlayerJump>().secondJumpAcquired;
 		//WallJump
 		transform.GetChild(2).GetComponent<Toggle>().isOn = player.GetComponent<WallJump>().enabled;
 		//Stomp
@@ -80,7 +80,7 @@ public class DebugMenu : MonoBehaviour {
 		//Laser
 		transform.GetChild(4).GetComponent<Toggle>().isOn = droid.activeInHierarchy;
 		//MegaPunch
-		transform.GetChild(5).GetComponent<Toggle>().isOn = player.GetComponent<PlayerPunch>().megaAquired;
+		transform.GetChild(5).GetComponent<Toggle>().isOn = player.GetComponent<PlayerPunch>().megaAcquired;
 		//Small
 		transform.GetChild(6).GetComponent<Toggle>().isOn = player.transform.GetChild(5).gameObject.activeInHierarchy;
 		//Health

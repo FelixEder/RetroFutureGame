@@ -88,7 +88,6 @@ public class PickUpableItem : MonoBehaviour {
 
 	void ResetLayer() {
 		gameObject.layer = LayerMask.NameToLayer("PickupableItem");
-		Debug.Log("Item layer reset");
 	}
 
 	private void OnBecameInvisible() {

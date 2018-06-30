@@ -42,10 +42,11 @@ public class DebugMenu : MonoBehaviour {
 
 			case "Health":
 				HUD.SetActive(true);
-				if(transform.GetChild(7).GetComponent<Slider>().value > player.GetComponent<PlayerHealth>().maxHealth)
-					player.GetComponent<PlayerHealth>().IncreaseMaxHealth();
-				player.GetComponent<PlayerHealth>().currentHealth = (int) transform.GetChild(7).GetComponent<Slider>().value;
-				player.GetComponent<PlayerHealth>().SetHealthSlider();
+				var health = player.GetComponent<PlayerHealth>();
+				if(transform.GetChild(7).GetComponent<Slider>().value > health.maxHealth)
+					health.IncreaseMaxHealth();
+				health.currentHealth = (int) transform.GetChild(7).GetComponent<Slider>().value;
+				health.SetHealthSlider();
 				transform.GetChild(7).GetChild(4).GetComponent<Text>().text = transform.GetChild(7).GetComponent<Slider>().value.ToString();
 				break;
 
@@ -56,10 +57,11 @@ public class DebugMenu : MonoBehaviour {
 
 			case "Energy":
 				HUD.SetActive(true);
-				if(transform.GetChild(8).GetComponent<Slider>().value > player.GetComponent<PlayerEnergy>().maxEnergy)
-					player.GetComponent<PlayerEnergy>().IncreaseMaxEnergy();
-				player.GetComponent<PlayerEnergy>().currentEnergy = (int) transform.GetChild(8).GetComponent<Slider>().value;
-				player.GetComponent<PlayerEnergy>().SetEnergySlider();
+				var energy = player.GetComponent<PlayerEnergy>();
+				if(transform.GetChild(8).GetComponent<Slider>().value > energy.maxEnergy)
+					energy.IncreaseMaxEnergy();
+				energy.currentEnergy = (int) transform.GetChild(8).GetComponent<Slider>().value;
+				energy.SetEnergySlider(energy.slider);
 				transform.GetChild(8).GetChild(4).GetComponent<Text>().text = transform.GetChild(8).GetComponent<Slider>().value.ToString();
 				break;
 		}
@@ -82,15 +84,17 @@ public class DebugMenu : MonoBehaviour {
 		//Small
 		transform.GetChild(6).GetComponent<Toggle>().isOn = player.transform.GetChild(5).gameObject.activeInHierarchy;
 		//Health
-		transform.GetChild(7).GetComponent<Slider>().value = (float) player.GetComponent<PlayerHealth>().currentHealth;
-		transform.GetChild(7).GetComponent<Slider>().maxValue = (float) player.GetComponent<PlayerHealth>().maxHealth + 1;
-		transform.GetChild(7).GetChild(4).GetComponent<Text>().text = transform.GetChild(7).GetComponent<Slider>().value.ToString() + "/" + player.GetComponent<PlayerHealth>().maxHealth.ToString();
+		var health = player.GetComponent<PlayerHealth>();
+		transform.GetChild(7).GetComponent<Slider>().value = (float) health.currentHealth;
+		transform.GetChild(7).GetComponent<Slider>().maxValue = (float) health.maxHealth + 1;
+		transform.GetChild(7).GetChild(4).GetComponent<Text>().text = transform.GetChild(7).GetComponent<Slider>().value.ToString() + "/" + health.maxHealth.ToString();
 		//Speed
 		transform.GetChild(9).GetComponent<Slider>().value = player.GetComponent<PlayerMovement>().moveSpeed;
 		transform.GetChild(9).GetChild(4).GetComponent<Text>().text = transform.GetChild(9).GetComponent<Slider>().value.ToString();
 		//Energy
-		transform.GetChild(8).GetComponent<Slider>().value = (float) player.GetComponent<PlayerEnergy>().currentEnergy;
-		transform.GetChild(8).GetComponent<Slider>().maxValue = (float) player.GetComponent<PlayerEnergy>().maxEnergy + 1;
-		transform.GetChild(8).GetChild(4).GetComponent<Text>().text = transform.GetChild(8).GetComponent<Slider>().value.ToString() + "/" + player.GetComponent<PlayerEnergy>().maxEnergy.ToString();
+		var energy = player.GetComponent<PlayerEnergy>();
+		transform.GetChild(8).GetComponent<Slider>().value = (float) energy.currentEnergy;
+		transform.GetChild(8).GetComponent<Slider>().maxValue = (float) energy.maxEnergy + 1;
+		transform.GetChild(8).GetChild(4).GetComponent<Text>().text = transform.GetChild(8).GetComponent<Slider>().value.ToString() + "/" + energy.maxEnergy.ToString();
 	}
 }

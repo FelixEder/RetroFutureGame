@@ -5,13 +5,12 @@ using System.Collections;
 public class PlayerEnergy : MonoBehaviour {
 	public int currentEnergy, maxEnergy, rechargeTime;
 	bool reCharging;
-	Slider slider, rechargeSlider;
+	public Slider slider, rechargeSlider;
 
 	void Start() {
-		slider = GameObject.Find("energySlider").GetComponent<Slider>();
-		rechargeSlider = GameObject.Find("energyRechargeSlider").GetComponent<Slider>();
 		SetEnergySliderSize();
-		SetEnergySlider();
+		SetEnergySlider(slider);
+		SetEnergySlider(rechargeSlider);
 	}
 
 	void Update() {
@@ -27,7 +26,7 @@ public class PlayerEnergy : MonoBehaviour {
 		}
 		else {
 			currentEnergy -= amount;
-			StartCoroutine(TransitionEnergySlider());
+			TransitionEnergySlider();
 			return true;
 		}
 	}
@@ -36,25 +35,24 @@ public class PlayerEnergy : MonoBehaviour {
 		currentEnergy += amount;
 		if(currentEnergy > maxEnergy)
 			currentEnergy = maxEnergy;
-		StartCoroutine(TransitionEnergySlider());
+		TransitionEnergySlider();
 	}
 
 	public void IncreaseMaxEnergy() {
 		maxEnergy++;
 		currentEnergy = maxEnergy;
 		SetEnergySliderSize();
-		StartCoroutine(TransitionEnergySlider());
+		TransitionEnergySlider();
 	}
 
 	public void MaximizeEnergy() {
 		currentEnergy = maxEnergy;
-		SetEnergySlider();
-		StartCoroutine(TransitionEnergySlider());
+		TransitionEnergySlider();
 	}
 
 
-	public void SetEnergySlider() {
-		slider.value = (float) currentEnergy / maxEnergy;
+	public void SetEnergySlider(Slider _slider) {
+		_slider.value = (float) currentEnergy / maxEnergy;
 	}
 
 	void SetEnergySliderSize() {
@@ -69,27 +67,38 @@ public class PlayerEnergy : MonoBehaviour {
 
 	IEnumerator EnergyRecharge() {
 		reCharging = true;
+		yield return new WaitForSeconds(2.0f);
 		int startEnergy = currentEnergy;
 		while(currentEnergy < maxEnergy && startEnergy == currentEnergy) {
 			rechargeSlider.value = (float) startEnergy / maxEnergy;
-			while(rechargeSlider.value * (float) maxEnergy < startEnergy + 0.9f && currentEnergy < maxEnergy && startEnergy == currentEnergy) {
+			while(rechargeSlider.value * (float) maxEnergy < startEnergy + 1f && currentEnergy < maxEnergy && startEnergy == currentEnergy) {
 				rechargeSlider.value += Time.deltaTime / (rechargeTime * 5);
 				yield return new WaitForSeconds(0.01f);
 			}
-			if(startEnergy == currentEnergy)
+			if(startEnergy == currentEnergy) {
 				IncreaseCurrentEnergy(1);
+				SetEnergySlider(rechargeSlider);
+			}
 		}
-		yield return new WaitForSeconds(1.0f);
-		rechargeSlider.value = 0.0f;
 		reCharging = false;
 	}
+	
+	void TransitionEnergySlider() {
+		StopCoroutine(TransitionSlider());
+		StartCoroutine(TransitionSlider());
+	}
 
-	IEnumerator TransitionEnergySlider() {
-		float transitionSpeed = (maxEnergy - Mathf.Abs(slider.value * maxEnergy - currentEnergy));
+	IEnumerator TransitionSlider() {
 		while(slider.value * (float) maxEnergy < currentEnergy - 0.1f || slider.value * (float) maxEnergy > currentEnergy + 0.1f) {
-			slider.value = Mathf.Lerp(slider.value, (float) currentEnergy / maxEnergy, Time.deltaTime * transitionSpeed);
+			slider.value = Mathf.Lerp(slider.value, (float) currentEnergy / maxEnergy, Time.deltaTime * 5);
 			yield return new WaitForSeconds(0.01f);
 		}
-		SetEnergySlider();
+		SetEnergySlider(slider);
+		
+		while(rechargeSlider.value * (float) maxEnergy < currentEnergy - 0.1f || rechargeSlider.value * (float) maxEnergy > currentEnergy + 0.1f) {
+			rechargeSlider.value = Mathf.Lerp(rechargeSlider.value, (float) currentEnergy / maxEnergy, Time.deltaTime * 5);
+			yield return new WaitForSeconds(0.01f);
+		}
+		SetEnergySlider(rechargeSlider);
 	}
 }

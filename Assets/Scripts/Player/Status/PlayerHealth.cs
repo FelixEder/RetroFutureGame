@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour {
 	public float invulnerabilityTime;
 	bool dead;
 
-	Slider slider;
+	public Slider slider;
 	PlayerStatus status;
 	PlayerInventory inventory;
 	Rigidbody2D rb2D;
@@ -19,13 +19,11 @@ public class PlayerHealth : MonoBehaviour {
 		rb2D = GetComponent<Rigidbody2D>();
 
 		audioplay = GetComponent<AudioPlayer>();
-		slider = GameObject.Find("healthSlider").GetComponent<Slider>();
 		SetHealthSliderSize();
 		SetHealthSlider();
 	}
 
 	public void TakeDamage(int damage) {
-		//Maybe give a few seconds invincibility and make sprite blink or so?
 		if(!status.Invulnerable()) {
 			audioplay.PlayClip(Random.Range(0, 5), 0.5f);
 
@@ -37,7 +35,7 @@ public class PlayerHealth : MonoBehaviour {
 			else
 				currentHealth -= damage;
 			status.Invulnerable(invulnerabilityTime);
-			StartCoroutine(TransitionHealthSlider());
+			TransitionHealthSlider();
 		}
 	}
 
@@ -66,14 +64,14 @@ public class PlayerHealth : MonoBehaviour {
 		currentHealth += amount;
 		if(currentHealth > maxHealth)
 			currentHealth = maxHealth;
-		StartCoroutine(TransitionHealthSlider());
+		TransitionHealthSlider();
 	}
 
 	public void IncreaseMaxHealth() {
 		maxHealth++;
 		currentHealth = maxHealth;
 		SetHealthSliderSize();
-		StartCoroutine(TransitionHealthSlider());
+		TransitionHealthSlider();
 	}
 
 	public void SetHealthSlider() {
@@ -84,10 +82,14 @@ public class PlayerHealth : MonoBehaviour {
 		GameObject.Find("healthSlider").GetComponent<RectTransform>().sizeDelta = new Vector2(8 + 32 * (float) maxHealth, 32);
 	}
 
-	IEnumerator TransitionHealthSlider() {
-		float transitionSpeed = (maxHealth - Mathf.Abs(slider.value * maxHealth - currentHealth)) / 2;
+	void TransitionHealthSlider() {
+		StopCoroutine(TransitionSlider());
+		StartCoroutine(TransitionSlider());
+	}
+
+	IEnumerator TransitionSlider() {
 		while(slider.value * (float) maxHealth < currentHealth - 0.1 || slider.value * (float) maxHealth > currentHealth + 0.1) {
-			slider.value = Mathf.Lerp(slider.value, (float) currentHealth / maxHealth, Time.deltaTime * transitionSpeed);
+			slider.value = Mathf.Lerp(slider.value, (float) currentHealth / maxHealth, Time.deltaTime * 8);
 			yield return new WaitForSeconds(0.01f);
 		}
 		SetHealthSlider();
@@ -95,15 +97,12 @@ public class PlayerHealth : MonoBehaviour {
 
 	public void MaximizeHealth() {
 		currentHealth = maxHealth;
-		SetHealthSlider();
-		StartCoroutine(TransitionHealthSlider());
+		TransitionHealthSlider();
 	}
 
 	void Die() {
 		Debug.Log("YOU DIED");
 		dead = true;
-		
-		SetHealthSlider();
 		
 		GetComponent<Animator>().SetBool("dead", true);
 		

@@ -13,49 +13,49 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: VelocityY
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: axisXvalue
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: axisX
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: grounded
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: mirrored
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: dead
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: small
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -1083,7 +1083,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102513916927563886}
-    m_Position: {x: 360, y: 240, z: 0}
+    m_Position: {x: 336, y: 240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102597146099188424}
     m_Position: {x: 720, y: 60, z: 0}
@@ -1104,15 +1104,15 @@ AnimatorStateMachine:
   - {fileID: 1101827743425166470}
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: 1107052164216137898}
-    second:
-    - {fileID: 1109713282961875198}
-    - {fileID: 1109553720845295024}
   - first: {fileID: 1107988773211551486}
     second:
     - {fileID: 1109206266575639774}
     - {fileID: 1109085390647262528}
     - {fileID: 1109248837428556004}
+  - first: {fileID: 1107052164216137898}
+    second:
+    - {fileID: 1109713282961875198}
+    - {fileID: 1109553720845295024}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 120, y: 240, z: 0}
   m_EntryPosition: {x: 120, y: 120, z: 0}

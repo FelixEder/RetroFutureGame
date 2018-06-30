@@ -18,32 +18,6 @@ public class Upgrades : MonoBehaviour {
 			PlayerInventory playInv = col.gameObject.GetComponent<PlayerInventory>();
 			//Play correct music and animation depending on what switch-option is chosen
 			switch(upgradeType) {
-
-				case "Float":
-					col.gameObject.GetComponent<Float>().enabled = true;
-					playInv.AddUpgrade("float");
-					break;
-
-				case "SecondJump":
-					col.gameObject.GetComponent<PlayerJump>().secondJumpAcquired = true;
-					playInv.AddUpgrade("secondJump");
-					break;
-
-				case "WallJump":
-					col.gameObject.GetComponent<WallJump>().enabled = true;
-					playInv.AddUpgrade("wallJump");
-					break;
-
-				case "Stomp":
-					col.gameObject.GetComponent<Stomp>().enabled = true;
-					playInv.AddUpgrade("stomp");
-					break;
-
-				case "Laser":
-					upgradeLocation.SetActive(true);
-					playInv.AddUpgrade("laser");
-					break;
-
 				case "Health":
 					col.gameObject.GetComponent<PlayerHealth>().IncreaseMaxHealth();
 					col.gameObject.GetComponent<PlayerInventory>().CollectItem();
@@ -58,16 +32,10 @@ public class Upgrades : MonoBehaviour {
 					col.gameObject.GetComponent<PlayerEnergy>().IncreaseMaxEnergy();
 					col.gameObject.GetComponent<PlayerInventory>().CollectItem();
 					break;
-
-				case "MegaPunch":
-					upgradeLocation.GetComponent<PlayerPunch>().megaAcquired = true;
-					playInv.AddUpgrade("mega");
-					break;
-
-                case "Small":
-                    upgradeLocation.SetActive(true);
-					playInv.AddUpgrade("small");
-					break;
+					
+				default:
+					playInv.AddUpgrade(upgradeType);
+				break;
 			}
 			/*
 			if(GetComponent<AudioPlayer>().audioClips.Length > 0)

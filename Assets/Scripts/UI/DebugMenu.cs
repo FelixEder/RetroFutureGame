@@ -11,35 +11,6 @@ public class DebugMenu : MonoBehaviour {
 
 	public void ToggleUpgradeState(string upgradeType) {
 		switch(upgradeType) {
-
-			case "Float":
-				player.GetComponent<Float>().enabled = !player.GetComponent<Float>().enabled;
-				break;
-
-			case "SecondJump":
-				player.GetComponent<PlayerJump>().secondJumpAcquired = !player.GetComponent<PlayerJump>().secondJumpAcquired;
-				break;
-
-			case "WallJump":
-				player.GetComponent<WallJump>().enabled = !player.GetComponent<WallJump>().enabled;
-				break;
-
-			case "Stomp":
-				player.GetComponent<Stomp>().enabled = !player.GetComponent<Stomp>().enabled;
-				break;
-
-			case "Laser":
-				droid.SetActive(!droid.activeInHierarchy);
-				break;
-
-			case "MegaPunch":
-				player.GetComponent<PlayerPunch>().megaAcquired = !player.GetComponent<PlayerPunch>().megaAcquired;
-				break;
-
-			case "Small":
-				player.transform.GetChild(5).gameObject.SetActive(!player.transform.GetChild(5).gameObject.activeInHierarchy);
-				break;
-
 			case "Health":
 				HUD.SetActive(true);
 				var health = player.GetComponent<PlayerHealth>();
@@ -64,25 +35,30 @@ public class DebugMenu : MonoBehaviour {
 				energy.SetEnergySlider(energy.slider);
 				transform.GetChild(8).GetChild(4).GetComponent<Text>().text = transform.GetChild(8).GetComponent<Slider>().value.ToString();
 				break;
+				
+			default:
+				player.GetComponent<PlayerInventory>().AddUpgrade(upgradeType);
+			break;
 		}
 		UpdateToggles();
 	}
 
 	public void UpdateToggles() {
+		var inventory = player.GetComponent<PlayerInventory>();
 		//Float
-		transform.GetChild(0).GetComponent<Toggle>().isOn = player.GetComponent<Float>().enabled;
+		transform.GetChild(0).GetComponent<Toggle>().isOn = inventory.HasAcquired("float");
 		//SecondJump
-		transform.GetChild(1).GetComponent<Toggle>().isOn = player.GetComponent<PlayerJump>().secondJumpAcquired;
+		transform.GetChild(1).GetComponent<Toggle>().isOn = inventory.HasAcquired("secondJump");
 		//WallJump
-		transform.GetChild(2).GetComponent<Toggle>().isOn = player.GetComponent<WallJump>().enabled;
+		transform.GetChild(2).GetComponent<Toggle>().isOn = inventory.HasAcquired("walljump");
 		//Stomp
-		transform.GetChild(3).GetComponent<Toggle>().isOn = player.GetComponent<Stomp>().enabled;
+		transform.GetChild(3).GetComponent<Toggle>().isOn = inventory.HasAcquired("stomp");
 		//Laser
-		transform.GetChild(4).GetComponent<Toggle>().isOn = droid.activeInHierarchy;
+		transform.GetChild(4).GetComponent<Toggle>().isOn = inventory.HasAcquired("laser");
 		//MegaPunch
-		transform.GetChild(5).GetComponent<Toggle>().isOn = player.GetComponent<PlayerPunch>().megaAcquired;
+		transform.GetChild(5).GetComponent<Toggle>().isOn = inventory.HasAcquired("mega");
 		//Small
-		transform.GetChild(6).GetComponent<Toggle>().isOn = player.transform.GetChild(5).gameObject.activeInHierarchy;
+		transform.GetChild(6).GetComponent<Toggle>().isOn = inventory.HasAcquired("small");
 		//Health
 		var health = player.GetComponent<PlayerHealth>();
 		transform.GetChild(7).GetComponent<Slider>().value = (float) health.currentHealth;

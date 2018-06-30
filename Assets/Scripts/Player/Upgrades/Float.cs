@@ -15,9 +15,8 @@ public class Float : MonoBehaviour {
     }
 
     void Update() {
-        if(GetComponent<PlayerInventory>().HasAcquired("float") && !acquired) {
+        if(GetComponent<PlayerInventory>().HasAcquired("float") && !acquired)
             acquired = true;
-        }
     }
 
     void FixedUpdate() {

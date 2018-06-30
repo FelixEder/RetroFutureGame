@@ -21,9 +21,8 @@ public class Stomp : MonoBehaviour {
     }
 
     void Update() {
-        if(GetComponent<PlayerInventory>().HasAcquired("stomp") && !acquired) {
+        if(GetComponent<PlayerInventory>().HasAcquired("stomp") && !acquired)
             acquired = true;
-        }
     }
 
     void FixedUpdate() {

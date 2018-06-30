@@ -2,13 +2,13 @@ using UnityEngine;
 using System.Collections;
 
 public class PlayerPunch : MonoBehaviour {
-	public bool megaAcquired;
+	
 	public int minLimit, maxLimit = 200;
 	public float offset;
 	public GameObject punchVisual;
 	public LayerMask whatIsPunchable;
 
-	bool animationCooldown, holdPunch, onCooldown, branchInv;
+	bool animationCooldown, holdPunch, onCooldown, branchInv, megaAcquired;
 	string attackType;
 	int damage, charge;
 	float gizmoSizeX = 1f;
@@ -41,10 +41,8 @@ public class PlayerPunch : MonoBehaviour {
 	}
 
 	void Update() {
-        if(GetComponent<PlayerInventory>().HasAcquired("float") && !megaAcquired) {
+        if(GetComponent<PlayerInventory>().HasAcquired("float") && !megaAcquired)
             megaAcquired = true;
-        }
-    
 		
 		if(!input.GetKey("attack") && holdPunch) {
 			holdPunch = false;

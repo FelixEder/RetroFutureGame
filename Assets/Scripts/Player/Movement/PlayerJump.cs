@@ -6,13 +6,18 @@ public class PlayerJump : MonoBehaviour {
 	Rigidbody2D rb2D;
 	InputManager input;
 	public float jumpSpeed, secondJumpSpeed;
-	public bool jumpDown, holdJump, secondJumpAcquired, hasSecondJumped;
-	[SerializeField] bool hasJumped, jumpingBackward;
+	public bool jumpDown, holdJump, hasSecondJumped;
+	bool hasJumped, jumpingBackward, secondJumpAcquired;
 
 	void Start() {
 		status = GetComponent<PlayerStatus>();
 		rb2D = GetComponent<Rigidbody2D>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
+	}
+	
+	void Update() {
+		if(GetComponent<PlayerInventory>().HasAcquired("secondJump") && !secondJumpAcquired)
+			secondJumpAcquired = true;
 	}
 
 	void FixedUpdate() {

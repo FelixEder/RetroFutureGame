@@ -50,7 +50,7 @@ public class DebugMenu : MonoBehaviour {
 		//SecondJump
 		transform.GetChild(1).GetComponent<Toggle>().isOn = inventory.HasAcquired("secondJump");
 		//WallJump
-		transform.GetChild(2).GetComponent<Toggle>().isOn = inventory.HasAcquired("walljump");
+		transform.GetChild(2).GetComponent<Toggle>().isOn = inventory.HasAcquired("wallJump");
 		//Stomp
 		transform.GetChild(3).GetComponent<Toggle>().isOn = inventory.HasAcquired("stomp");
 		//Laser

@@ -18,9 +18,8 @@ public class WallJump : MonoBehaviour {
     }
 
     void Update() {
-        if(GetComponent<PlayerInventory>().HasAcquired("wallJump") && !acquired) {
+        if(GetComponent<PlayerInventory>().HasAcquired("wallJump") && !acquired)
             acquired = true;
-        }
     }
 
     void FixedUpdate() {

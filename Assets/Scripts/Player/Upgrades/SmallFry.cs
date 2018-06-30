@@ -18,9 +18,8 @@ public class SmallFry : MonoBehaviour {
     }
 
     void Update() {
-        if(GetComponent<PlayerInventory>().HasAcquired("small") && !acquired) {
+        if(GetComponent<PlayerInventory>().HasAcquired("small") && !acquired)
             acquired = true;
-        }
 
         if(acquired) {
             somethingAbove = Physics2D.OverlapBox(aboveCheck.position, new Vector2(0.7f, 1.2f), 0, whatIsRoof);

@@ -24,19 +24,19 @@ public class TutorialTrigger : MonoBehaviour {
 		}
 	}
 	*/
+	
 	public TutorialMover tutorialMover;
 	public GameObject tutorial;
 	public Rigidbody2D target;
-	
-	
-	
+	public float distance = 1;
+
 	void OnTriggerEnter2D(Collider2D col) {
 		if(col.gameObject.tag.Equals("Player"))
-			tutorialMover.SetCurrent(tutorial, target);
+			tutorialMover.SetCurrent(tutorial, target, distance);
 	}
 	
 	void OnTriggerExit2D(Collider2D col) {
 		if(col.gameObject.tag.Equals("Player"))
-			tutorialMover.ChangeTarget(col.GetComponent<Rigidbody2D>());
+			tutorialMover.ChangeTarget(null, 1f);
 	}
 }

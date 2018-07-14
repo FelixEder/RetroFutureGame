@@ -4,14 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class AreaTitle : MonoBehaviour {
-	public string area;
 	public Text areaText;
 	public Animator anim;
-
-	void OnTriggerEnter2D(Collider2D col) {
-		if(col.gameObject.tag.Equals("Player")) {
-			areaText.text = area;
-			anim.SetTrigger("Start");
+	private string areaToDisplay;
+	
+	// Update is called once per frame
+	void Update () {
+		if(anim.GetCurrentAnimatorStateInfo(0).IsName("areaTextHidden")) {
+			areaText.text = areaToDisplay;
 		}
+	}
+
+	public void SetAreaText(string areaText) {
+		areaToDisplay = areaText;
+		anim.SetTrigger("Start");
 	}
 }

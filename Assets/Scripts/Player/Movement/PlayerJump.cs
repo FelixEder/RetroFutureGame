@@ -74,8 +74,8 @@ public class PlayerJump : MonoBehaviour {
 		else if(!input.GetKey("jump") && hasJumped && rb2D.velocity.y > jumpSpeed / 2f)
 			rb2D.velocity = new Vector2(rb2D.velocity.x, rb2D.velocity.y / 1.5f);
 			
-		if(Physics2D.OverlapBox(ceilingCheck.position, new Vector2(0.6f, 0.1f), 0, whatIsCeiling)) {
-			
+		if(Physics2D.OverlapBox(ceilingCheck.position, new Vector2(0.5f, 0.3f), 0, whatIsCeiling) && rb2D.velocity.y > 0) {
+			rb2D.velocity = new Vector2(rb2D.velocity.x, 0);
 		}
 	}
 }

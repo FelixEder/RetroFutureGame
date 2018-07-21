@@ -5,6 +5,7 @@ public class StatueBoss : MonoBehaviour {
 	public GameObject leftEye, rightEye, playerAim;
 	public float shootRepeatRate;
 	public bool raging;
+	public AreaTitle areaTitle;
 
 	MusicPlayer musicplay;
 
@@ -66,6 +67,7 @@ public class StatueBoss : MonoBehaviour {
 	void Defeated() {
 		//Play correct animation and such.
 		musicplay.Play(0, 1, true);
+		areaTitle.SetBossDefeatText();
 		Destroy(this.gameObject.transform.parent.gameObject);
 	}
 }

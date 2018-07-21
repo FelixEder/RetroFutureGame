@@ -7,6 +7,7 @@ public class AreaTitle : MonoBehaviour {
 	public Text areaText;
 	public Animator anim;
 	private string areaToDisplay;
+	public string bossText;
 	
 	// Update is called once per frame
 	void Update () {
@@ -21,5 +22,10 @@ public class AreaTitle : MonoBehaviour {
 			areaToDisplay = areaText;
 			anim.SetTrigger("Start");
 		}
+	}
+
+	public void SetBossDefeatText() {
+		areaText.text = bossText;
+		anim.SetTrigger("Start");
 	}
 }

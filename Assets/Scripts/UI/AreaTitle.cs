@@ -7,7 +7,15 @@ public class AreaTitle : MonoBehaviour {
 	public Text areaText;
 	public Animator anim;
 	private string areaToDisplay;
+	public AudioClip newAreaClip, bossClip;
+	private AudioSource audioSource;
+	private bool bossClipSet;
 	
+	void Start() {
+		audioSource = gameObject.GetComponent<AudioSource>();
+		bossClipSet = false;
+	}
+
 	// Update is called once per frame
 	void Update () {
 		if(anim.GetCurrentAnimatorStateInfo(0).IsName("areaTextHidden")) {
@@ -18,13 +26,19 @@ public class AreaTitle : MonoBehaviour {
 	public void SetAreaText(string areaText) {
 		//Only display area title if it isn't the area the player is currently in.
 		if(!areaText.Equals(areaToDisplay)) {
+			if(bossClipSet) {
+				audioSource.clip = newAreaClip;
+				bossClipSet = false;
+			}
 			areaToDisplay = areaText;
 			anim.SetTrigger("Start");
 		}
 	}
 
 	public void SetBossDefeatText(string bossText) {
+		audioSource.clip = bossClip;
 		areaText.text = bossText;
 		anim.SetTrigger("Start");
+		bossClipSet = true;
 	}
 }

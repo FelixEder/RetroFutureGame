@@ -5,11 +5,12 @@ public class StatueBoss : MonoBehaviour {
 	public GameObject leftEye, rightEye, playerAim;
 	public float shootRepeatRate;
 	public bool raging;
-
+	private AreaTitle areaTitle;
 	MusicPlayer musicplay;
 
 	void Start() {
 		musicplay = GameObject.Find("Music").GetComponent<MusicPlayer>();
+		areaTitle = GameObject.Find("AreaTitle").GetComponent<AreaTitle>();
 
 		InvokeRepeating("ShootLasers", shootRepeatRate, shootRepeatRate);
 		musicplay.Play(1, 1, true);
@@ -66,8 +67,7 @@ public class StatueBoss : MonoBehaviour {
 	void Defeated() {
 		//TODO Play correct animation and such.
 		musicplay.Play(0, 1, true);
-		GameObject.Find("AreaTitle").GetComponent<AreaTitle>()
-			.SetBossDefeatText("Statue Boss Defeated");
+		areaTitle.SetBossDefeatText("Statue Boss Defeated");
 		for(int i = 0; i < 5; i++) {
 			Instantiate(Resources.Load("HealthDrop"), transform.position, Quaternion.identity);
 			Instantiate(Resources.Load("EnergyDrop"), transform.position, Quaternion.identity);

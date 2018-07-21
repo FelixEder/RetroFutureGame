@@ -175,6 +175,8 @@ public class BigBadBird : MonoBehaviour {
 
 	void Defeated() {
 		//PLay fitting animation and sound
+		GameObject.Find("AreaTitle").GetComponent<AreaTitle>()
+			.SetBossDefeatText("BigBadBird Defeated");
 		for(int i = 0; i < 5; i++) {
 			Instantiate(Resources.Load("HealthDrop"), transform.position, Quaternion.identity);
 			Instantiate(Resources.Load("EnergyDrop"), transform.position, Quaternion.identity);

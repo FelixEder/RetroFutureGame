@@ -175,11 +175,11 @@ public class BigBadBird : MonoBehaviour {
 
 	void Defeated() {
 		//PLay fitting animation and sound
-		Destroy(this.gameObject.transform.parent.gameObject);
 		for(int i = 0; i < 5; i++) {
 			Instantiate(Resources.Load("HealthDrop"), transform.position, Quaternion.identity);
 			Instantiate(Resources.Load("EnergyDrop"), transform.position, Quaternion.identity);
 		}
+		Destroy(this.gameObject.transform.parent.gameObject);
 	}
 
 	IEnumerator OverrideY(float y) {

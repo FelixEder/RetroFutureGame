@@ -16,7 +16,10 @@ public class AreaTitle : MonoBehaviour {
 	}
 
 	public void SetAreaText(string areaText) {
-		areaToDisplay = areaText;
-		anim.SetTrigger("Start");
+		//Only display area title if it isn't the area the player is currently in.
+		if(!areaText.Equals(areaToDisplay)) {
+			areaToDisplay = areaText;
+			anim.SetTrigger("Start");
+		}
 	}
 }

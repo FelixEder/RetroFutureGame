@@ -22,4 +22,9 @@ public class AreaTitle : MonoBehaviour {
 			anim.SetTrigger("Start");
 		}
 	}
+
+	public void SetBossDefeatText(string bossText) {
+		areaText.text = bossText;
+		anim.SetTrigger("Start");
+	}
 }

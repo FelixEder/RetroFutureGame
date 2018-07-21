@@ -68,9 +68,8 @@ public class StatueBoss : MonoBehaviour {
 		//TODO Play correct animation and such.
 		musicplay.Play(0, 1, true);
 		areaTitle.SetBossDefeatText("Statue Boss Defeated");
-		for(int i = 0; i < 5; i++) {
-			Instantiate(Resources.Load("HealthDrop"), transform.position, Quaternion.identity);
-			Instantiate(Resources.Load("EnergyDrop"), transform.position, Quaternion.identity);
+		for(int i = 0; i < 6; i++) {
+			Instantiate(Resources.Load("HealthDrop"), transform.position + new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0), Quaternion.identity);
 		}
 		Destroy(this.gameObject.transform.parent.gameObject);
 	}

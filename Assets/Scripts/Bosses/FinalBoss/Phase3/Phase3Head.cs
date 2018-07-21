@@ -155,9 +155,9 @@ public class Phase3Head : MonoBehaviour {
 		//TODO Blow up the face and start the count-down
 		GameObject.Find("AreaTitle").GetComponent<AreaTitle>()
 			.SetBossDefeatText("Final Boss Defeated");
-		for(int i = 0; i < 10; i++) {
-			DropSpawner("HealthDrop", transform.position);
-			DropSpawner("EnergyDrop", transform.position);
+		for(int i = 0; i < 9; i++) {
+			Instantiate(Resources.Load("HealthDrop"), transform.position + new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0), Quaternion.identity);
+			Instantiate(Resources.Load("EnergyDrop"), transform.position + new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0), Quaternion.identity);
 		}
 		Destroy(gameObject);
 		//Start the countdown somehow
@@ -167,10 +167,5 @@ public class Phase3Head : MonoBehaviour {
 		invulnerable = true;
 		yield return new WaitForSeconds(5f);
 		invulnerable = false;
-	}
-
-	void DropSpawner(string type, Vector3 pos) {
-		Vector3 dropLoc = new Vector3(pos.x + Random.Range(-spawnLoc, spawnLoc), pos.y + Random.Range(-spawnLoc, spawnLoc), pos.z);
-		Instantiate(Resources.Load(type), dropLoc, Quaternion.identity);
 	}
 }

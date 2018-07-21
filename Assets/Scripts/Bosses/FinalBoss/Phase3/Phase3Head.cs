@@ -152,7 +152,9 @@ public class Phase3Head : MonoBehaviour {
 	}
 
 	void Defeated() {
-		//Blow up the face and start the count-down
+		//TODO Blow up the face and start the count-down
+		GameObject.Find("AreaTitle").GetComponent<AreaTitle>()
+			.SetBossDefeatText("Final Boss Defeated");
 		for(int i = 0; i < 10; i++) {
 			DropSpawner("HealthDrop", transform.position);
 			DropSpawner("EnergyDrop", transform.position);

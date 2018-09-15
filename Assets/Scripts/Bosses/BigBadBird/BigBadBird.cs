@@ -30,6 +30,7 @@ public class BigBadBird : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
+		/*
 		if(!forceY) {
 			vertDir = 0;
 			if(isMirrored && transform.position.x - player.transform.position.x > 0 || !isMirrored && transform.position.x - player.transform.position.x < 0)
@@ -43,6 +44,11 @@ public class BigBadBird : MonoBehaviour {
 		else {
 			rb2D.velocity = new Vector2(moveSpeed, vertDir * 0.2f);
 		}
+		*/
+
+		
+		transform.position = new Vector3(Mathf.Lerp(transform.position.x, player.transform.position.x, moveSpeed), Mathf.Lerp(transform.position.y, player.transform.position.y + 4, moveSpeed), 15);
+
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {

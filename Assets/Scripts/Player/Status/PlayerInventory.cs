@@ -2,15 +2,25 @@ using UnityEngine;
 using System.Collections;
 
 public class PlayerInventory : MonoBehaviour {
-    private ArrayList acquiredUpgrades;
+	private ArrayList acquiredUpgrades;
 	//The item that can be picked up by the player
+	public bool enableAllUpgrades;
 	public GameObject pickupableItem;
 	public Transform holdPos;
 	int collectedItems;
 
 	void Start() {
-        //As we implement more upgrades in the game, more scripts will be added in the fields and here and disabled.
-        acquiredUpgrades = new ArrayList();
+		//As we implement more upgrades in the game, more scripts will be added in the fields and here and disabled.
+		acquiredUpgrades = new ArrayList();
+		if(enableAllUpgrades) {
+			acquiredUpgrades.Add("secondJump");
+			acquiredUpgrades.Add("float");
+			acquiredUpgrades.Add("laser");
+			acquiredUpgrades.Add("small");
+			acquiredUpgrades.Add("stomp");
+			acquiredUpgrades.Add("mega");
+			acquiredUpgrades.Add("wallJump");
+		}
 	}
 	
 	void Update() {

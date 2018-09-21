@@ -51,7 +51,7 @@ public class DroidLaser : MonoBehaviour {
     }
 
     IEnumerator ActivateLaser() {
-        origin = transform.position + new Vector3(0, 0.3f, -5f);
+        origin = transform.position + new Vector3(0, 0.3f, -1f);
 
         aimDir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - origin;
         analogDir = new Vector2(input.GetAxis("RightX"), input.GetAxis("RightY"));

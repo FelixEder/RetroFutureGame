@@ -19,7 +19,7 @@ public class BigBadBird : MonoBehaviour {
 		//Set the start values here
 		//Also set the standard sprite.
 
-		GameObject.Find("BirdBoss target").GetComponent<CinemachineTargetGroup>().m_Targets[0].target = transform;
+		GameObject.Find("BirdBoss target").GetComponent<CinemachineTargetGroup>().m_Targets[0].target = transform.GetChild(2);
 	}
 
 	void Update() {
@@ -27,6 +27,11 @@ public class BigBadBird : MonoBehaviour {
 			Defeated();
 		if(Random.Range(0, spitChance) < 1 && !isSpitting)
 			SpitAttack();
+
+		if(Vector2.Distance(transform.position, player.transform.position) < 2) {
+			WingAttack();
+		}
+		
 	}
 
 	void FixedUpdate() {
@@ -45,10 +50,21 @@ public class BigBadBird : MonoBehaviour {
 			rb2D.velocity = new Vector2(moveSpeed, vertDir * 0.2f);
 		}
 		*/
-
 		
-		transform.position = new Vector3(Mathf.Lerp(transform.position.x, player.transform.position.x, moveSpeed), Mathf.Lerp(transform.position.y, player.transform.position.y + 4, moveSpeed), 15);
+		Vector3 B = new Vector3(
+			Mathf.Lerp(transform.position.x, player.transform.position.x, 0.5f), 
+				Mathf.Lerp(transform.position.y, player.transform.position.y, 0.5f) + Mathf.Abs(transform.position.x - player.transform.position.x),
+					15);
 
+		Vector2 AtoB = Vector2.Lerp(transform.position, B, 0.5f);
+		Vector2 BtoC = Vector2.Lerp(B, player.transform.position, 0.5f);
+		Vector3 final = Vector2.Lerp(AtoB, BtoC, 0.5f);
+		Vector3[] line = new Vector3[] { transform.position, AtoB, BtoC, player.transform.position };
+		GetComponent<LineRenderer>().SetPositions(line);
+
+		//transform.position = new Vector3(Mathf.Lerp(transform.position.x, player.transform.position.x, moveSpeed), Mathf.Lerp(transform.position.y, player.transform.position.y + 4, moveSpeed), 15);
+		final += Vector3.forward * 15;
+		transform.position = Vector3.MoveTowards(transform.position, final, moveSpeed);
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {

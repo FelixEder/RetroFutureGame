@@ -28,7 +28,7 @@ public class Droid : MonoBehaviour {
         if(acquired) {
             if((input.GetKey("shoot") || input.GetAxis("RightX") != 0 || input.GetAxis("RightY") != 0) && sprite.GetComponent<DroidLaser>().canShoot) {
 
-                Vector3 origin = sprite.position + new Vector3(0, 0.3f, -5f), analogDir = new Vector3(input.GetAxis("RightX"), input.GetAxis("RightY"));
+                Vector3 origin = sprite.position + new Vector3(0, 0.3f, -1f), analogDir = new Vector3(input.GetAxis("RightX"), input.GetAxis("RightY"));
                 Vector2 aimDir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - origin;
                 if(analogDir.magnitude != 0)
                     aimDir = analogDir;

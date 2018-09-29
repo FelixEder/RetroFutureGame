@@ -41,7 +41,8 @@ public class Upgrades : MonoBehaviour {
 			if(GetComponent<AudioPlayer>().audioClips.Length > 0)
 				GetComponent<AudioPlayer>().PlayDetached(0, 1, 1, 1);
 			*/
-			manager.GetComponent<TutorialManager>().DisplayTutorial(tutorial, tutorialText, stringIsHideKey, timeToDisplay);
+			//Disable old tutorial display system
+			//manager.GetComponent<TutorialManager>().DisplayTutorial(tutorial, tutorialText, stringIsHideKey, timeToDisplay);
 			Destroy(gameObject);
 		}
 	}

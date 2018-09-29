@@ -59,12 +59,11 @@ public class BigBadBird : MonoBehaviour {
 		Vector2 AtoB = Vector2.Lerp(transform.position, B, 0.5f);
 		Vector2 BtoC = Vector2.Lerp(B, player.transform.position, 0.5f);
 		Vector3 final = Vector2.Lerp(AtoB, BtoC, 0.5f);
-		Vector3[] line = new Vector3[] { transform.position, AtoB, BtoC, player.transform.position };
-		GetComponent<LineRenderer>().SetPositions(line);
 
 		//transform.position = new Vector3(Mathf.Lerp(transform.position.x, player.transform.position.x, moveSpeed), Mathf.Lerp(transform.position.y, player.transform.position.y + 4, moveSpeed), 15);
 		final += Vector3.forward * 15;
-		transform.position = Vector3.MoveTowards(transform.position, final, moveSpeed);
+		Vector3 followPos = new Vector3(player.transform.GetChild(7).position.x, player.transform.GetChild(7).position.y, 15);
+		transform.position = Vector3.Lerp(transform.position, followPos, moveSpeed);
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {

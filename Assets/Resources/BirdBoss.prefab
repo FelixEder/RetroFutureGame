@@ -559,8 +559,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   regular: {fileID: 21300000, guid: bcc33036499f9ac42b29eb8299725735, type: 3}
   spitting: {fileID: 21300000, guid: bcc33036499f9ac42b29eb8299725735, type: 3}
-  winging: {fileID: 21300000, guid: bcc33036499f9ac42b29eb8299725735, type: 3}
-  moveSpeed: 0.03
+  winging: {fileID: 21300000, guid: 9ab908275b4c53d48a61d9ef73480d44, type: 3}
+  moveSpeed: 0.01
   knockForce: 5
   vertDir: 0
   isMirrored: 0

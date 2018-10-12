@@ -7,15 +7,19 @@ public class BigBadBird : MonoBehaviour {
 	public float moveSpeed, knockForce, vertDir;
 	public bool isMirrored, isSpitting, mirrorCooldown, forceY;
 	public int health = 6, damage;
+	Vector3 followPos;
+	SpriteRenderer spriteRend;
 	//Should it really use a rigidBody?
 	Rigidbody2D rb2D;
 	GameObject player;
+	float attackTimer;
 	int spitChance = 100;
 
 	void Start() {
 		rb2D = GetComponent<Rigidbody2D>();
 		player = GameObject.Find("Player");
-		GetComponent<SpriteRenderer>().sprite = regular;
+		spriteRend = transform.GetChild(0).GetComponent<SpriteRenderer>();
+		spriteRend.sprite = regular;
 		//Set the start values here
 		//Also set the standard sprite.
 
@@ -27,30 +31,20 @@ public class BigBadBird : MonoBehaviour {
 			Defeated();
 		if(Random.Range(0, spitChance) < 1 && !isSpitting)
 			SpitAttack();
+			
 
-		if(Vector2.Distance(transform.position, player.transform.position) < 2) {
-			WingAttack();
-		}
 		
+		if(Vector2.Distance(transform.position, followPos) < 4) {
+			attackTimer += Time.deltaTime;
+		}
+		else if (attackTimer != 0)
+			attackTimer = 0;
+			
+		if(attackTimer > 1)
+			WingAttack();
 	}
 
 	void FixedUpdate() {
-		/*
-		if(!forceY) {
-			vertDir = 0;
-			if(isMirrored && transform.position.x - player.transform.position.x > 0 || !isMirrored && transform.position.x - player.transform.position.x < 0)
-				vertDir = (transform.position.y - player.transform.position.y) * -1;
-			else
-				vertDir = 5;
-		}
-		if(isMirrored) {
-			rb2D.velocity = new Vector2(-1 * moveSpeed, vertDir * 0.2f);
-		}
-		else {
-			rb2D.velocity = new Vector2(moveSpeed, vertDir * 0.2f);
-		}
-		*/
-		
 		Vector3 B = new Vector3(
 			Mathf.Lerp(transform.position.x, player.transform.position.x, 0.5f), 
 				Mathf.Lerp(transform.position.y, player.transform.position.y, 0.5f) + Mathf.Abs(transform.position.x - player.transform.position.x),
@@ -60,9 +54,8 @@ public class BigBadBird : MonoBehaviour {
 		Vector2 BtoC = Vector2.Lerp(B, player.transform.position, 0.5f);
 		Vector3 final = Vector2.Lerp(AtoB, BtoC, 0.5f);
 
-		//transform.position = new Vector3(Mathf.Lerp(transform.position.x, player.transform.position.x, moveSpeed), Mathf.Lerp(transform.position.y, player.transform.position.y + 4, moveSpeed), 15);
 		final += Vector3.forward * 15;
-		Vector3 followPos = new Vector3(player.transform.GetChild(7).position.x, player.transform.GetChild(7).position.y, 15);
+		followPos = new Vector3(player.transform.GetChild(7).position.x, player.transform.GetChild(7).position.y, 15);
 		transform.position = Vector3.Lerp(transform.position, followPos, moveSpeed);
 	}
 
@@ -160,28 +153,28 @@ public class BigBadBird : MonoBehaviour {
 		//Make some swooshing animation with feather
 		//If player is hit by the hitbox, he will get hurt
 		//Will probably activate some child-trigger that roughly encapsulates the wing being slapped.
-		this.gameObject.transform.GetChild(1).gameObject.SetActive(true);
-		GetComponent<SpriteRenderer>().sprite = winging;
+		this.gameObject.transform.GetChild(2).gameObject.SetActive(true);
+		spriteRend.sprite = winging;
 		//Is there a better way to disable a child after a certain time than a Invoke-call to an unneccecary method?
 		Invoke("FinishWingAttack", 0.6f);
 	}
 
 	void FinishWingAttack() {
-		this.gameObject.transform.GetChild(1).gameObject.SetActive(false);
-		GetComponent<SpriteRenderer>().sprite = regular;
+		this.gameObject.transform.GetChild(2).gameObject.SetActive(false);
+		spriteRend.sprite = regular;
 	}
 
 	void SpitAttack() {
 		isSpitting = true;
 		CancelInvoke("FinishSpitAttack");
-		this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+		this.gameObject.transform.GetChild(1).gameObject.SetActive(true);
 		//		GetComponent<SpriteRenderer> ().sprite = spitting;
 		Invoke("FinishSpitAttack", 1f);
 	}
 
 	void FinishSpitAttack() {
 		//		GetComponent<SpriteRenderer> ().sprite = regular;
-		this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+		this.gameObject.transform.GetChild(1).gameObject.SetActive(false);
 		isSpitting = false;
 		//Play animation that closes mouth
 	}

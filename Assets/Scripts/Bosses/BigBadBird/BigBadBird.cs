@@ -13,6 +13,7 @@ public class BigBadBird : MonoBehaviour {
 	Rigidbody2D rb2D;
 	GameObject player;
 	float attackTimer;
+	bool attacking;
 	int spitChance = 100;
 
 	void Start() {
@@ -34,13 +35,13 @@ public class BigBadBird : MonoBehaviour {
 			
 
 		
-		if(Vector2.Distance(transform.position, followPos) < 4) {
+		if(Vector2.Distance(transform.position, followPos) < 5) {
 			attackTimer += Time.deltaTime;
 		}
 		else if (attackTimer != 0)
 			attackTimer = 0;
 			
-		if(attackTimer > 1)
+		if(attackTimer > 1 && !attacking)
 			WingAttack();
 	}
 
@@ -72,7 +73,7 @@ public class BigBadBird : MonoBehaviour {
 				break;
 
 			case "Player":
-				col.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage, gameObject, knockForce);
+				col.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage, gameObject.transform.position, knockForce);
 				GetMirrored();
 				WingAttack();
 				break;
@@ -150,16 +151,22 @@ public class BigBadBird : MonoBehaviour {
 
 	void WingAttack() {
 		CancelInvoke("FinishWingAttack");
+
+		attackTimer = 0;
+		attacking = true;
+		GetComponent<Animator>().SetTrigger("attack");
 		//Make some swooshing animation with feather
+
 		//If player is hit by the hitbox, he will get hurt
-		//Will probably activate some child-trigger that roughly encapsulates the wing being slapped.
 		this.gameObject.transform.GetChild(2).gameObject.SetActive(true);
 		spriteRend.sprite = winging;
-		//Is there a better way to disable a child after a certain time than a Invoke-call to an unneccecary method?
 		Invoke("FinishWingAttack", 0.6f);
 	}
 
 	void FinishWingAttack() {
+		attacking = false;
+		GetComponent<Animator>().SetTrigger("fly");
+
 		this.gameObject.transform.GetChild(2).gameObject.SetActive(false);
 		spriteRend.sprite = regular;
 	}

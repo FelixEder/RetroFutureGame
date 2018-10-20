@@ -51,7 +51,7 @@ public class Phase2 : MonoBehaviour {
 			case "Player":
 				if(!stunned) {
 					KickPunching();
-					col.gameObject.GetComponent<PlayerHealth>().TakeDamage(5, gameObject, 5f);
+					col.gameObject.GetComponent<PlayerHealth>().TakeDamage(5, gameObject.transform.position, 5f);
 					//Should also knock the player away
 					walksRight = false;
 					ResetDeltaX();

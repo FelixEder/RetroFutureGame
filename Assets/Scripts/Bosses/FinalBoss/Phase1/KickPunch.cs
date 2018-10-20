@@ -11,7 +11,7 @@ public class KickPunch : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col) {
 		if(!col.collider.isTrigger && col.gameObject.tag.Equals("Player")) {
-			col.gameObject.GetComponent<PlayerHealth>().TakeDamage(5, gameObject, 3f);
+			col.gameObject.GetComponent<PlayerHealth>().TakeDamage(5, gameObject.transform.position, 3f);
 			//Play fitting soundFX
 		}
 	}

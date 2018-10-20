@@ -9,7 +9,7 @@ public class EnemyAttack : MonoBehaviour {
 		switch(col.gameObject.tag) {
 
 			case "Player":
-				col.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage, gameObject, knockbackForce);
+				col.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage, gameObject.transform.position, knockbackForce);
 
 				break;
 		}

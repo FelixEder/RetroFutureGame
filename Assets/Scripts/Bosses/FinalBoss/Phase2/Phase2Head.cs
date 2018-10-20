@@ -73,7 +73,7 @@ public class Phase2Head : MonoBehaviour {
 			case "Player":
 				if(!actualBoss.stunned && !actualBoss.blued) {
 					//Find a way to get KickPunching ();
-					col.gameObject.GetComponent<PlayerHealth>().TakeDamage(5, gameObject, 5f);
+					col.gameObject.GetComponent<PlayerHealth>().TakeDamage(5, gameObject.transform.position, 5f);
 					//Should also knock the player away
 					actualBoss.walksRight = false;
 					actualBoss.ResetDeltaX();

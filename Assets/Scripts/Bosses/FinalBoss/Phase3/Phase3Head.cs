@@ -54,7 +54,7 @@ public class Phase3Head : MonoBehaviour {
 				else {
 					Bite();
 				}
-				col.gameObject.GetComponent<PlayerHealth>().Knockback(gameObject, knockForce);
+				col.gameObject.GetComponent<PlayerHealth>().Knockback(gameObject.transform.position, knockForce);
 				break;
 
 			case "PickupableItem":
@@ -118,7 +118,7 @@ public class Phase3Head : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col) {
 		if(col.gameObject.tag.Equals("Player")) {
-			col.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage + 2, gameObject, knockForce);
+			col.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage + 2, gameObject.transform.position, knockForce);
 		}
 	}
 

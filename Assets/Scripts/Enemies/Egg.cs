@@ -13,7 +13,27 @@ public class Egg : MonoBehaviour {
 	
 	void Hatch() {
 		GetComponent<SpriteRenderer>().sprite = hatched;
-		//Here, Spawn random monster
+		//Play hatch SoundFX
+		string spawnType = "";
+		int critterChoice = Random.Range(0, 20);
+		if(critterChoice < 5) {
+			spawnType = "SmallCritter";
+		}
+		else if(critterChoice < 9) {
+			spawnType = "JumpingCritter";
+		}
+		else if(critterChoice < 11) {
+			spawnType = "CrawlerCritter";
+		}
+		else if(critterChoice < 14) {
+			spawnType = "BigEyeGuy";
+		}
+		else
+			return;
+		GameObject instance = Instantiate(Resources.Load(spawnType), transform.position, Quaternion.identity) as GameObject;
+		instance.transform.parent = transform.parent.parent;
+		instance.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.parent.gameObject.GetComponent<Rigidbody2D>().velocity.x * 1.5f, 0);
+
 		Invoke("Destroy", 2f);
 	}
 

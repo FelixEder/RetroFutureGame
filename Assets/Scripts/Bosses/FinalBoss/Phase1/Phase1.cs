@@ -19,10 +19,10 @@ public class Phase1 : MonoBehaviour {
 			case "Player":
 				if(!stunned) {
 					KickPunching();
-					col.gameObject.GetComponent<PlayerHealth>().TakeDamage(5, gameObject, 5f);
+					col.gameObject.GetComponent<PlayerHealth>().TakeDamage(5, gameObject.transform.position, 5f);
 				}
 				else if(rb2D.velocity.y > 5f)
-					col.gameObject.GetComponent<PlayerHealth>().TakeDamage(5, gameObject, 5f);
+					col.gameObject.GetComponent<PlayerHealth>().TakeDamage(5, gameObject.transform.position, 5f);
 				break;
 
 			case "PickupableItem":

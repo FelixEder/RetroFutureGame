@@ -132,7 +132,7 @@ public class StatueBossLaser : MonoBehaviour {
 
 			case "Player":
 				Debug.Log("Hit by laser!!");
-				victim.collider.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage, gameObject, 6f);
+				victim.collider.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage, gameObject.transform.position, 6f);
 				break;
 
 			case "SmallCritter":

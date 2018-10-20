@@ -39,19 +39,23 @@ public class PlayerHealth : MonoBehaviour {
 		}
 	}
 
-	public void TakeDamage(int damage, GameObject attacker, float knockbackForce) {
-		Knockback(attacker, knockbackForce);
+	public void TakeDamage(int damage, Vector2 attackerPos, float knockbackForce) {
+		Knockback(attackerPos, knockbackForce);
 		TakeDamage(damage);
 	}
 
-	public void Knockback(GameObject attacker, float force) {
+	public void Knockback(Vector2 attackerPos, float force) {
 		if(!status.Invulnerable()) {
 			GameObject.Find("InputManager").GetComponent<InputManager>().Disable(0.1f);
 			GetComponent<PlayerMovement>().Stun(0.3f);
+
+			GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Sign(transform.position.x - attackerPos.x) * force, 2);
+			/*
 			if(transform.position.x < attacker.transform.position.x)
 				GetComponent<Rigidbody2D>().velocity = new Vector2(-force, 2);
 			else
 				GetComponent<Rigidbody2D>().velocity = new Vector2(force, 2);
+				*/
 			//Drops the item the player is holding.
 			if(inventory.IsHoldingItem()) {
 				GetComponent<PlayerPickUp>().Drop(false);

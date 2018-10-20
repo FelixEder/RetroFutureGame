@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour {
 	public float invulnerabilityTime;
 	bool dead;
 
-	Slider slider;
+	public Slider slider;
 	PlayerStatus status;
 	PlayerInventory inventory;
 	Rigidbody2D rb2D;
@@ -19,13 +19,11 @@ public class PlayerHealth : MonoBehaviour {
 		rb2D = GetComponent<Rigidbody2D>();
 
 		audioplay = GetComponent<AudioPlayer>();
-		slider = GameObject.Find("healthSlider").GetComponent<Slider>();
 		SetHealthSliderSize();
 		SetHealthSlider();
 	}
 
 	public void TakeDamage(int damage) {
-		//Maybe give a few seconds invincibility and make sprite blink or so?
 		if(!status.Invulnerable()) {
 			audioplay.PlayClip(Random.Range(0, 5), 0.5f);
 
@@ -37,26 +35,30 @@ public class PlayerHealth : MonoBehaviour {
 			else
 				currentHealth -= damage;
 			status.Invulnerable(invulnerabilityTime);
-			StartCoroutine(TransitionHealthSlider());
+			TransitionHealthSlider();
 		}
 	}
 
-	public void TakeDamage(int damage, GameObject attacker, float knockbackForce) {
-		Knockback(attacker, knockbackForce);
+	public void TakeDamage(int damage, Vector2 attackerPos, float knockbackForce) {
+		Knockback(attackerPos, knockbackForce);
 		TakeDamage(damage);
 	}
 
-	public void Knockback(GameObject attacker, float force) {
-		if(!GetComponent<PlayerStatus>().Invulnerable()) {
-			GameObject.Find("InputManager").GetComponent<InputManager>().Disable(0.2f);
+	public void Knockback(Vector2 attackerPos, float force) {
+		if(!status.Invulnerable()) {
+			GameObject.Find("InputManager").GetComponent<InputManager>().Disable(0.1f);
+			GetComponent<PlayerMovement>().Stun(0.3f);
+
+			GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Sign(transform.position.x - attackerPos.x) * force, 2);
+			/*
 			if(transform.position.x < attacker.transform.position.x)
 				GetComponent<Rigidbody2D>().velocity = new Vector2(-force, 2);
 			else
 				GetComponent<Rigidbody2D>().velocity = new Vector2(force, 2);
+				*/
 			//Drops the item the player is holding.
 			if(inventory.IsHoldingItem()) {
-				inventory.GetHoldingItem().GetComponent<PickUpableItem>().Drop(false);
-				inventory.SetHoldingItem(null);
+				GetComponent<PlayerPickUp>().Drop(false);
 			}
 		}
 	}
@@ -65,14 +67,14 @@ public class PlayerHealth : MonoBehaviour {
 		currentHealth += amount;
 		if(currentHealth > maxHealth)
 			currentHealth = maxHealth;
-		StartCoroutine(TransitionHealthSlider());
+		TransitionHealthSlider();
 	}
 
 	public void IncreaseMaxHealth() {
 		maxHealth++;
 		currentHealth = maxHealth;
 		SetHealthSliderSize();
-		StartCoroutine(TransitionHealthSlider());
+		TransitionHealthSlider();
 	}
 
 	public void SetHealthSlider() {
@@ -83,45 +85,67 @@ public class PlayerHealth : MonoBehaviour {
 		GameObject.Find("healthSlider").GetComponent<RectTransform>().sizeDelta = new Vector2(8 + 32 * (float) maxHealth, 32);
 	}
 
-	IEnumerator TransitionHealthSlider() {
-		float transitionSpeed = (maxHealth - Mathf.Abs(slider.value * maxHealth - currentHealth)) / 2;
+	void TransitionHealthSlider() {
+		StopCoroutine(TransitionSlider());
+		StartCoroutine(TransitionSlider());
+	}
+
+	IEnumerator TransitionSlider() {
 		while(slider.value * (float) maxHealth < currentHealth - 0.1 || slider.value * (float) maxHealth > currentHealth + 0.1) {
-			slider.value = Mathf.Lerp(slider.value, (float) currentHealth / maxHealth, Time.deltaTime * transitionSpeed);
+			slider.value = Mathf.Lerp(slider.value, (float) currentHealth / maxHealth, Time.deltaTime * 8);
 			yield return new WaitForSeconds(0.01f);
 		}
 		SetHealthSlider();
 	}
 
 	public void MaximizeHealth() {
-		SetHealthSlider();
 		currentHealth = maxHealth;
-		StartCoroutine(TransitionHealthSlider());
+		TransitionHealthSlider();
 	}
 
 	void Die() {
 		Debug.Log("YOU DIED");
 		dead = true;
-		audioplay.Mute(true);
+		
+		GetComponent<Animator>().SetBool("dead", true);
+		
 		rb2D.constraints = RigidbodyConstraints2D.None;
 		rb2D.AddForce(Vector2.up * 300);
 		rb2D.angularVelocity = 90;
-		SetHealthSlider();
-		audioplay.PlayClip(Random.Range(0, 5), 1f);
-		transform.GetChild(0).GetComponent<Animator>().SetBool("dead", true);
+		audioplay.PlayDetached(Random.Range(0, 5), 1f, 1f, 1f);
+		audioplay.Mute(true);
 		GameObject.Find("GameOverScreen").GetComponent<GameOverScreen>().Gameover();
 	}
 
 	public void Revive() {
-		Debug.Log("The angels have granted your wish");
+		Debug.Log("REVIVED");
 		dead = false;
+		
+		//Maximize health and energy.
+		MaximizeHealth();
+		GetComponent<PlayerEnergy>().MaximizeEnergy();
+		
+		//Fix sprite and audio
+		GetComponent<Animator>().SetBool("dead", false);
+		status.isMirrored = false;
+		if(GetComponent<SmallFry>().enabled)
+			GetComponent<SmallFry>().GrowBig();
+		
+		//Place player at last checkpoint and set transforms.
+		rb2D.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+		transform.position = GetComponent<Checkpoint>().activeCheckpoint.transform.position;
+		transform.position += new Vector3(0, 1, 0);
+		transform.rotation = Quaternion.Euler(0, 0, 0);
+		
+		//Keep immovable and muted and set invulnerable for duration.
+		status.CancelInvoke("SetVulnerable");
+		status.Invulnerable(2f);
+		Invoke("FinishRevive", 1.5f);
+	}
+	
+	void FinishRevive() {
 		audioplay.Mute(false);
 		rb2D.constraints = RigidbodyConstraints2D.FreezeRotation;
 		rb2D.velocity = new Vector2(0, 0);
-		transform.rotation = Quaternion.Euler(0, 0, 0);
-		currentHealth = maxHealth;
-		SetHealthSlider();
-		transform.GetChild(0).GetComponent<Animator>().SetBool("dead", false);
-		GetComponent<PlayerEnergy>().MaximizeEnergy();
-		status.isMirrored = false;
 	}
 }

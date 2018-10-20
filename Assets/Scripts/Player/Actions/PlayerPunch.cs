@@ -2,13 +2,13 @@ using UnityEngine;
 using System.Collections;
 
 public class PlayerPunch : MonoBehaviour {
-	public bool megaAquired;
+	
 	public int minLimit, maxLimit = 200;
 	public float offset;
 	public GameObject punchVisual;
 	public LayerMask whatIsPunchable;
 
-	bool animationCooldown, holdPunch, onCooldown, branchInv;
+	bool animationCooldown, holdPunch, onCooldown, branchInv, megaAcquired;
 	string attackType;
 	int damage, charge;
 	float gizmoSizeX = 1f;
@@ -41,6 +41,9 @@ public class PlayerPunch : MonoBehaviour {
 	}
 
 	void Update() {
+        if(GetComponent<PlayerInventory>().HasAcquired("float") && !megaAcquired)
+            megaAcquired = true;
+		
 		if(!input.GetKey("attack") && holdPunch) {
 			holdPunch = false;
 		}
@@ -52,7 +55,7 @@ public class PlayerPunch : MonoBehaviour {
 				Debug.Log("Calling Regular Punch");
 				RegularPunch();
 			}
-			if (megaAquired) {
+			if (megaAcquired) {
 				Debug.Log("Calling Mega Charge");
 				StartCoroutine(MegaCharge());
 			}
@@ -107,7 +110,7 @@ public class PlayerPunch : MonoBehaviour {
 
 	void MegaType() {
 		onCooldown = true;
-		if(charge == maxLimit && megaAquired) {
+		if(charge == maxLimit && megaAcquired) {
 			if(energy.UseEnergy(3)) {
 				Debug.Log("Full MegaPunch");
 				attackType = "FullMega";
@@ -120,7 +123,7 @@ public class PlayerPunch : MonoBehaviour {
 				//No energy, play correct things
 			}
 		}
-		else if(charge >= minLimit && megaAquired) {
+		else if(charge >= minLimit && megaAcquired) {
 			if(energy.UseEnergy(1)) {
 				Debug.Log("Regular MegaPunch");
 				attackType = "Mega";

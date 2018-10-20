@@ -13,8 +13,15 @@ public class PauseStatistics : MonoBehaviour {
 		
 		if(eventSystem.currentSelectedGameObject != null) {
 			if(eventSystem.currentSelectedGameObject.GetComponent<UpgradeSlot>() != null) {
-				tooltipText.GetComponent<Text>().text = eventSystem.currentSelectedGameObject.GetComponent<UpgradeSlot>().tooltip;
-				tooltipText.transform.parent.GetComponent<Image>().enabled = true;
+				var upgradeSlot = eventSystem.currentSelectedGameObject.GetComponent<UpgradeSlot>();
+				if(upgradeSlot.inventory.HasAcquired(upgradeSlot.upgradeType)) {
+					tooltipText.GetComponent<Text>().text = eventSystem.currentSelectedGameObject.GetComponent<UpgradeSlot>().tooltip;
+					tooltipText.transform.parent.GetComponent<Image>().enabled = true;
+				}
+				else {
+					tooltipText.GetComponent<Text>().text = null;
+					tooltipText.transform.parent.GetComponent<Image>().enabled = false;
+				}
 			}
 			else {
 				tooltipText.GetComponent<Text>().text = null;

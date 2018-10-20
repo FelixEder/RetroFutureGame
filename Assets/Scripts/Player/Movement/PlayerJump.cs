@@ -5,14 +5,23 @@ public class PlayerJump : MonoBehaviour {
 	PlayerStatus status;
 	Rigidbody2D rb2D;
 	InputManager input;
+	public LayerMask whatIsCeiling;
+	public Transform ceilingCheck;
 	public float jumpSpeed, secondJumpSpeed;
-	public bool jumpDown, holdJump, gotSecondJump, hasSecondJumped;
-	[SerializeField] bool hasJumped, jumpingBackward;
+	public bool jumpDown, holdJump, hasSecondJumped;
+	bool hasJumped, jumpingBackward, secondJumpAcquired;
+	
+	public AreaTitle title;
 
 	void Start() {
 		status = GetComponent<PlayerStatus>();
 		rb2D = GetComponent<Rigidbody2D>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
+	}
+	
+	void Update() {
+		if(GetComponent<PlayerInventory>().HasAcquired("secondJump") && !secondJumpAcquired)
+			secondJumpAcquired = true;
 	}
 
 	void FixedUpdate() {
@@ -55,7 +64,7 @@ public class PlayerJump : MonoBehaviour {
 			holdJump = true;
 		}
 		//jump in air when have secondjump and has not secondjumped.
-		else if(input.GetKey("jump") && gotSecondJump && !holdJump && !hasSecondJumped && !status.isSmall) {
+		else if(input.GetKey("jump") && secondJumpAcquired && !holdJump && !hasSecondJumped && !status.isSmall) {
 			rb2D.velocity = new Vector2(rb2D.velocity.x, secondJumpSpeed);
 			hasSecondJumped = true;
 			holdJump = true;
@@ -64,5 +73,9 @@ public class PlayerJump : MonoBehaviour {
 		//decrease vertical velocity if let go of jump early
 		else if(!input.GetKey("jump") && hasJumped && rb2D.velocity.y > jumpSpeed / 2f)
 			rb2D.velocity = new Vector2(rb2D.velocity.x, rb2D.velocity.y / 1.5f);
+			
+		if(Physics2D.OverlapBox(ceilingCheck.position, new Vector2(0.5f, 0.3f), 0, whatIsCeiling) && rb2D.velocity.y > 0) {
+			rb2D.velocity = new Vector2(rb2D.velocity.x, 0);
+		}
 	}
 }

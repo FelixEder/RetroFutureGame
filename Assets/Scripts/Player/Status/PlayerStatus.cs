@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class PlayerStatus : MonoBehaviour {
-	public bool isMirrored, isFloating, invulnerable, isSmall;
+	public bool isMirrored, isFloating, invulnerable, isSmall, isStomping;
 	public float velocityX, velocityY;
 
 	public bool grounded, againstLeft, againstRight, onPlatform, againstFront, againstStep, inWater;
@@ -48,9 +48,9 @@ public class PlayerStatus : MonoBehaviour {
 		return (!grounded && !againstLeft && !againstRight);
 	}
 
-	public void Invulnerable(float time) {
+	public void Invulnerable(float duration) {
 		invulnerable = true;
-		Invoke("SetVulnerable", time);
+		Invoke("SetVulnerable", duration);
 	}
 
 	void SetVulnerable() {

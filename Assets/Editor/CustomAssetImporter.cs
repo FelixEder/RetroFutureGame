@@ -20,6 +20,8 @@ internal sealed class CustomAssetImporter : AssetPostprocessor {
 
 		// Get the reference to the assetImporter (From the AssetPostProcessor class) and unbox it to a TextureImporter (Which is inherited and extends the AssetImporter with texture specific utilities)
 		var importer = assetImporter as TextureImporter;
+		
+		if(importer.textureType == TextureImporterType.Sprite) return;
 
 		TextureImporterPlatformSettings platformSettings = new TextureImporterPlatformSettings();
 		platformSettings.maxTextureSize = standaloneTextureSize;

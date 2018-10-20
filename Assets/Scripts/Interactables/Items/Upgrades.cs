@@ -18,62 +18,31 @@ public class Upgrades : MonoBehaviour {
 			PlayerInventory playInv = col.gameObject.GetComponent<PlayerInventory>();
 			//Play correct music and animation depending on what switch-option is chosen
 			switch(upgradeType) {
-
-				case "Float":
-					col.gameObject.GetComponent<Float>().enabled = true;
-					playInv.addUpgrade("float");
-					break;
-
-				case "SecondJump":
-					col.gameObject.GetComponent<PlayerJump>().gotSecondJump = true;
-					playInv.addUpgrade("secondJump");
-					break;
-
-				case "WallJump":
-					col.gameObject.GetComponent<WallJump>().enabled = true;
-					playInv.addUpgrade("wallJump");
-					break;
-
-				case "Stomp":
-					col.gameObject.GetComponent<Stomp>().enabled = true;
-					playInv.addUpgrade("stomp");
-					break;
-
-				case "Laser":
-					upgradeLocation.SetActive(true);
-					playInv.addUpgrade("laser");
-					break;
-
 				case "Health":
 					col.gameObject.GetComponent<PlayerHealth>().IncreaseMaxHealth();
-					col.gameObject.GetComponent<PlayerInventory>().collectItem();
+					col.gameObject.GetComponent<PlayerInventory>().CollectItem();
 					break;
 
 				case "Speed":
 					col.gameObject.GetComponent<PlayerMovement>().moveSpeed++;
-					col.gameObject.GetComponent<PlayerInventory>().collectItem();
+					col.gameObject.GetComponent<PlayerInventory>().CollectItem();
 					break;
 
 				case "Energy":
 					col.gameObject.GetComponent<PlayerEnergy>().IncreaseMaxEnergy();
-					col.gameObject.GetComponent<PlayerInventory>().collectItem();
+					col.gameObject.GetComponent<PlayerInventory>().CollectItem();
 					break;
-
-				case "MegaPunch":
-					upgradeLocation.GetComponent<PlayerPunch>().megaAquired = true;
-					playInv.addUpgrade("megaPunch");
-					break;
-
-                case "Small":
-                    upgradeLocation.SetActive(true);
-					playInv.addUpgrade("small");
-					break;
+					
+				default:
+					playInv.AddUpgrade(upgradeType);
+				break;
 			}
 			/*
 			if(GetComponent<AudioPlayer>().audioClips.Length > 0)
 				GetComponent<AudioPlayer>().PlayDetached(0, 1, 1, 1);
 			*/
-			manager.GetComponent<TutorialManager>().DisplayTutorial(tutorial, tutorialText, stringIsHideKey, timeToDisplay);
+			//Disable old tutorial display system
+			//manager.GetComponent<TutorialManager>().DisplayTutorial(tutorial, tutorialText, stringIsHideKey, timeToDisplay);
 			Destroy(gameObject);
 		}
 	}

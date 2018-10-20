@@ -2,14 +2,32 @@ using UnityEngine;
 using System.Collections;
 
 public class PlayerInventory : MonoBehaviour {
-    private ArrayList acquiredUpgrades;
+	private ArrayList acquiredUpgrades;
 	//The item that can be picked up by the player
+	public bool enableAllUpgrades;
 	public GameObject pickupableItem;
+	public Transform holdPos;
 	int collectedItems;
 
 	void Start() {
-        //As we implement more upgrades in the game, more scripts will be added in the fields and here and disabled.
-        acquiredUpgrades = new ArrayList();
+		//As we implement more upgrades in the game, more scripts will be added in the fields and here and disabled.
+		acquiredUpgrades = new ArrayList();
+		if(enableAllUpgrades) {
+			acquiredUpgrades.Add("secondJump");
+			acquiredUpgrades.Add("float");
+			acquiredUpgrades.Add("laser");
+			acquiredUpgrades.Add("small");
+			acquiredUpgrades.Add("stomp");
+			acquiredUpgrades.Add("mega");
+			acquiredUpgrades.Add("wallJump");
+		}
+	}
+	
+	void Update() {
+		if(pickupableItem != null) {
+			pickupableItem.transform.position = holdPos.position;
+			pickupableItem.transform.rotation = holdPos.rotation;
+		}
 	}
 
 	/**
@@ -33,15 +51,19 @@ public class PlayerInventory : MonoBehaviour {
 		return pickupableItem;
 	}
 
-	public void collectItem() {
+	public void CollectItem() {
 		collectedItems++;
 	}
 
-    public void addUpgrade(string upgrade) {
+    public void AddUpgrade(string upgrade) {
         acquiredUpgrades.Add(upgrade);
     }
 
-    public ArrayList getUpgradeList() {
+    public ArrayList GetUpgradeList() {
         return acquiredUpgrades;
     }
+	
+	public bool HasAcquired(object upgrade) {
+		return acquiredUpgrades.Contains(upgrade);
+	}
 }

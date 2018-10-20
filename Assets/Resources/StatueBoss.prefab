@@ -355,7 +355,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1730692790403414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.4, y: -47.9, z: 0}
+  m_LocalPosition: {x: 394.44763, y: -67.396255, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4688667485895588}
@@ -889,9 +889,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitLayers:
     serializedVersion: 2
-    m_Bits: 33898752
+    m_Bits: 38093056
+  aimHitLayers:
+    serializedVersion: 2
+    m_Bits: 4456448
   aimTarget: {fileID: 1263602313493790}
   playerAim: {fileID: 1807174124811316}
+  statueVein: {fileID: 1743311605388806}
   damage: 1
   laserChargeTime: 1
   laserActiveTime: 2
@@ -934,9 +938,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitLayers:
     serializedVersion: 2
-    m_Bits: 33898752
+    m_Bits: 38093056
+  aimHitLayers:
+    serializedVersion: 2
+    m_Bits: 4456448
   aimTarget: {fileID: 1265641979957048}
   playerAim: {fileID: 1807174124811316}
+  statueVein: {fileID: 1476843622527858}
   damage: 1
   laserChargeTime: 1
   laserActiveTime: 2
@@ -986,6 +994,8 @@ MonoBehaviour:
   spawnInterval: 12
   maxSimultaneous: 8
   continuousRespawn: 1
+  respawnOutsideCamera: 0
+  respawnTime: 0
   setMovement: 1
   timeBeforeWander: 1
   wanderSpeed: 3

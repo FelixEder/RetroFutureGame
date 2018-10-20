@@ -6,9 +6,10 @@ public class PlayerMovement : MonoBehaviour {
 	PlayerStatus status;
 	Rigidbody2D rb2D;
 	InputManager input;
-	Animator childAnim;
-	public float moveSpeed, airSpeed, maxMoveSpeed, maxFallSpeed;
+	Animator anim;
+	public float moveSpeed, airSpeed, maxMoveSpeed;
 	float axisH, steppingSpeed;
+	bool stunned;
 
 	public bool smoothIncline;
 
@@ -16,14 +17,14 @@ public class PlayerMovement : MonoBehaviour {
 		status = GetComponent<PlayerStatus>();
 		rb2D = GetComponent<Rigidbody2D>();
 		input = GameObject.Find("InputManager").GetComponent<InputManager>();
-		childAnim = transform.GetChild(0).GetComponent<Animator>();
+		anim = GetComponent<Animator>();
 	}
 
 	void FixedUpdate() {
 		axisH = input.GetAxis("X");
 		steppingSpeed = moveSpeed - Mathf.Abs(rb2D.velocity.x);
 
-		if(axisH != 0) {
+		if(axisH != 0 && !stunned) {
 			//Test if trying to move towards left wall and stop movement as well as decrease negative y velocity.
 			if(status.againstLeft && axisH < 0) {
 				if(rb2D.velocity.y < -2)
@@ -54,15 +55,19 @@ public class PlayerMovement : MonoBehaviour {
 			if(!status.againstFront && status.againstStep && rb2D.velocity.y < steppingSpeed)
 				rb2D.velocity = new Vector2(rb2D.velocity.x, steppingSpeed);
 		}
+		
+		//Limit falling speed
+		if(rb2D.velocity.y < -15)
+            rb2D.velocity = new Vector2(rb2D.velocity.x, -15);
 	}
 
 	void Update() {
 		bool movingAxisH = Mathf.Abs(input.GetAxis("X")) > 0 ? true : false;
-		childAnim.SetBool("axisX", movingAxisH);
-		childAnim.SetFloat("axisXvalue", input.GetAxis("X"));
-		childAnim.SetFloat("velocityX", Mathf.Abs(rb2D.velocity.x));
-		childAnim.SetBool("grounded", status.grounded);
-		childAnim.SetBool("mirrored", status.isMirrored);
+		anim.SetBool("axisX", movingAxisH);
+		anim.SetFloat("axisXvalue", input.GetAxis("X"));
+		anim.SetFloat("velocityX", Mathf.Abs(rb2D.velocity.x));
+		anim.SetBool("grounded", status.grounded);
+		anim.SetBool("mirrored", status.isMirrored);
 		/*
 		if (axisH != 0) {
 			if (Mathf.Abs (rb2D.velocity.x) > 3f && status.grounded)
@@ -73,5 +78,16 @@ public class PlayerMovement : MonoBehaviour {
 		if (Mathf.Abs (rb2D.velocity.x) < 0.2f && status.grounded)
 			childAnim.SetTrigger ("idle");
 		*/
+	}
+	
+	public void Stun(float duration) {
+		if(stunned)
+			return;
+		stunned = true;
+		Invoke("RemoveStun", duration);
+	}
+	
+	void RemoveStun() {
+		stunned = false;
 	}
 }

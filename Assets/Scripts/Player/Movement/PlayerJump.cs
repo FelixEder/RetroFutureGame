@@ -73,8 +73,9 @@ public class PlayerJump : MonoBehaviour {
 		//decrease vertical velocity if let go of jump early
 		else if(!input.GetKey("jump") && hasJumped && rb2D.velocity.y > jumpSpeed / 2f)
 			rb2D.velocity = new Vector2(rb2D.velocity.x, rb2D.velocity.y / 1.5f);
+			//Should probably change to adding a downwards force rather than setting it to a fraction. (Maybe doesn't make a difference.
 			
-		if(Physics2D.OverlapBox(ceilingCheck.position, new Vector2(0.5f, 0.3f), 0, whatIsCeiling) && rb2D.velocity.y > 0) {
+		if(Physics2D.OverlapBox(ceilingCheck.position, new Vector2(0.5f, 0.3f), 0, whatIsCeiling) && rb2D.velocity.y > 0 && !status.isSmall) {
 			rb2D.velocity = new Vector2(rb2D.velocity.x, 0);
 		}
 	}

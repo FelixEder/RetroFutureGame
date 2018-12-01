@@ -452,7 +452,7 @@ BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1614018846205814}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -569,6 +569,7 @@ MonoBehaviour:
   forceY: 0
   health: 6
   damage: 2
+  attacking: 0
 --- !u!212 &212425970618396114
 SpriteRenderer:
   m_ObjectHideFlags: 1

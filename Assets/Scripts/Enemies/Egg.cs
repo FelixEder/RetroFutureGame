@@ -3,41 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Egg : MonoBehaviour {
-	public Sprite regular, hatched;
+	public Sprite hatched;
+//	public GameObject[] hatchlings;
 
 	// Use this for initialization
 	void Start () {
-		GetComponent<SpriteRenderer>().sprite = regular;
-		Invoke("Hatch", 10f);
+		Invoke("Hatch", 5f);
 	}
 	
 	void Hatch() {
 		GetComponent<SpriteRenderer>().sprite = hatched;
-		//Play hatch SoundFX
+		//Play hatch SoundFX	
 		string spawnType = "";
 		int critterChoice = Random.Range(0, 20);
 		if(critterChoice < 5) {
 			spawnType = "SmallCritter";
 		}
-		else if(critterChoice < 9) {
+		else if(critterChoice < 10) {
 			spawnType = "JumpingCritter";
 		}
-		else if(critterChoice < 11) {
+		else if(critterChoice < 15) {
 			spawnType = "CrawlerCritter";
 		}
-		else if(critterChoice < 14) {
+		else if(critterChoice < 20) {
 			spawnType = "BigEyeGuy";
-		}
-		else
-			return;
+		} 
+	
 		GameObject instance = Instantiate(Resources.Load(spawnType), transform.position, Quaternion.identity) as GameObject;
 		instance.transform.parent = transform.parent.parent;
-		instance.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.parent.gameObject.GetComponent<Rigidbody2D>().velocity.x * 1.5f, 0);
 
-		Invoke("Destroy", 2f);
+		Invoke("Kill", 2f);
 	}
 
-	void Destroy() {
+	void Kill() {
 		Destroy(gameObject);
 	}
 }

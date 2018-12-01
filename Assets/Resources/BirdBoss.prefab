@@ -52,7 +52,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4754389644969448}
-  m_Layer: 17
+  m_Layer: 28
   m_Name: cameraTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 114491404646641040}
   - component: {fileID: 58459070397601934}
   - component: {fileID: 212738620231504078}
-  m_Layer: 17
+  m_Layer: 28
   m_Name: SpitAttack
   m_TagString: BirdBossWeakSpot
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 114741276384507540}
   - component: {fileID: 212936744869188328}
   - component: {fileID: 61992640212518828}
-  m_Layer: 17
+  m_Layer: 28
   m_Name: WingAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 4311324860971474}
   - component: {fileID: 114861050100584508}
   - component: {fileID: 95551342602116242}
-  m_Layer: 17
+  m_Layer: 28
   m_Name: BirdBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 212445631362381224}
   - component: {fileID: 60817190001335264}
   - component: {fileID: 50142030678517866}
-  m_Layer: 17
+  m_Layer: 28
   m_Name: birdboss_sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1730870050887064}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.199997, y: -0.30000305, z: 0}
+  m_LocalPosition: {x: -4.1500015, y: -0.30000305, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4615764984257886}
@@ -267,7 +267,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1554475195688706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 87, y: -119.65, z: 0}
+  m_LocalPosition: {x: 87.25, y: -119.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4603585916230216}
@@ -297,13 +297,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1313964720768088}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.04126525, y: 0.0018309945, z: -0.00007562098, w: 0.9991466}
   m_LocalPosition: {x: 0, y: 0, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4311324860971474}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 4.73, y: 0.21, z: 0}
 --- !u!4 &4955488819885476
 Transform:
   m_ObjectHideFlags: 1
@@ -369,7 +369,7 @@ PolygonCollider2D:
     border: {x: 12.8, y: 2.45, z: 12.5, w: 8.2}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 20, y: 11}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 20, y: 11}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -655,7 +655,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 20, y: 11}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -759,7 +759,7 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1614018846205814}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

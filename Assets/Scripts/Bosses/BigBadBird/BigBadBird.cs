@@ -13,7 +13,7 @@ public class BigBadBird : MonoBehaviour {
 	Rigidbody2D rb2D;
 	GameObject player;
 	float attackTimer;
-	bool attacking;
+	public bool attacking;
 	int spitChance = 100;
 
 	void Start() {
@@ -150,25 +150,24 @@ public class BigBadBird : MonoBehaviour {
 	}
 
 	void WingAttack() {
-		CancelInvoke("FinishWingAttack");
-
 		attackTimer = 0;
 		attacking = true;
 		GetComponent<Animator>().SetTrigger("attack");
 		//Make some swooshing animation with feather
 
 		//If player is hit by the hitbox, he will get hurt
-		this.gameObject.transform.GetChild(2).gameObject.SetActive(true);
-		spriteRend.sprite = winging;
-		Invoke("FinishWingAttack", 0.6f);
+		//this.gameObject.transform.GetChild(2).gameObject.SetActive(true);
+		//spriteRend.sprite = winging;
+		//Invoke("FinishWingAttack", 0.6f);
 	}
 
 	void FinishWingAttack() {
+		Debug.Log("FINNISH");
 		attacking = false;
-		GetComponent<Animator>().SetTrigger("fly");
+		//GetComponent<Animator>().SetTrigger("fly");
 
-		this.gameObject.transform.GetChild(2).gameObject.SetActive(false);
-		spriteRend.sprite = regular;
+		//this.gameObject.transform.GetChild(2).gameObject.SetActive(false);
+		//spriteRend.sprite = regular;
 	}
 
 	void SpitAttack() {

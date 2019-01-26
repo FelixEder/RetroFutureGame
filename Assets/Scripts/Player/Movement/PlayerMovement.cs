@@ -27,14 +27,14 @@ public class PlayerMovement : MonoBehaviour {
 		if(axisH != 0 && !stunned) {
 			//Test if trying to move towards left wall and stop movement as well as decrease negative y velocity.
 			if(status.againstLeft && axisH < 0) {
-				if(rb2D.velocity.y < -2)
+				if(rb2D.velocity.y < -2 && !status.isSmall)
 					rb2D.velocity = new Vector2(0, -2);
 				else
 					rb2D.velocity = new Vector2(0, rb2D.velocity.y);
 			}
 			//Test if trying to move towards right wall and stop movement as well as decrease negative y velocity.
 			else if(status.againstRight && axisH > 0) {
-				if(rb2D.velocity.y < -2)
+				if(rb2D.velocity.y < -2 && !status.isSmall)
 					rb2D.velocity = new Vector2(0, -2);
 				else
 					rb2D.velocity = new Vector2(0, rb2D.velocity.y);

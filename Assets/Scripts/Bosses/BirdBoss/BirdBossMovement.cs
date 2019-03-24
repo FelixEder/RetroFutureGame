@@ -39,4 +39,13 @@ public class BirdBossMovement : MonoBehaviour {
             traveling = false;
         }
     }
+
+    void OnCollisionStay2D(Collision2D col) {
+		switch(col.gameObject.layer) {
+			case 18:
+                currentTarget = transform.position;
+                traveling = false;
+				break;
+        }
+    }
 }

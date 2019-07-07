@@ -24,6 +24,15 @@ public class PlayerMovement : MonoBehaviour {
 		axisH = input.GetAxis("X");
 		steppingSpeed = moveSpeed - Mathf.Abs(rb2D.velocity.x);
 
+		if(axisH != 0) {
+			Vector2 p = new Vector2(axisH * moveSpeed - rb2D.velocity.x, 0);
+			rb2D.AddForce(p, ForceMode2D.Impulse);
+			Debug.Log(p);
+		}
+		else if(rb2D.velocity.x != 0 && status.grounded)
+			rb2D.AddForce(new Vector2(-rb2D.velocity.x * moveSpeed, 0));
+
+		/*
 		if(axisH != 0 && !stunned) {
 			//Test if trying to move towards left wall and stop movement as well as decrease negative y velocity.
 			if(status.againstLeft && axisH < 0) {
@@ -55,12 +64,14 @@ public class PlayerMovement : MonoBehaviour {
 			if(!status.againstFront && status.againstStep && rb2D.velocity.y < steppingSpeed)
 				rb2D.velocity = new Vector2(rb2D.velocity.x, steppingSpeed);
 		}
-		
+		*/
+
 		//Limit falling speed
 		if(rb2D.velocity.y < -15)
             rb2D.velocity = new Vector2(rb2D.velocity.x, -15);
 	}
-
+	
+	//Animations
 	void Update() {
 		bool movingAxisH = Mathf.Abs(input.GetAxis("X")) > 0 ? true : false;
 		anim.SetBool("axisX", movingAxisH);
@@ -68,16 +79,7 @@ public class PlayerMovement : MonoBehaviour {
 		anim.SetFloat("velocityX", Mathf.Abs(rb2D.velocity.x));
 		anim.SetBool("grounded", status.grounded);
 		anim.SetBool("mirrored", status.isMirrored);
-		/*
-		if (axisH != 0) {
-			if (Mathf.Abs (rb2D.velocity.x) > 3f && status.grounded)
-				childAnim.SetTrigger ("run");
-			else if (Mathf.Abs (rb2D.velocity.x) > 0.2f && status.grounded)
-				childAnim.SetTrigger ("walk");
-		}
-		if (Mathf.Abs (rb2D.velocity.x) < 0.2f && status.grounded)
-			childAnim.SetTrigger ("idle");
-		*/
+
 	}
 	
 	public void Stun(float duration) {

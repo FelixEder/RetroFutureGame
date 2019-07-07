@@ -13,6 +13,8 @@ public class PlayerJump : MonoBehaviour {
 	
 	public AreaTitle title;
 
+	bool jumpInput = false;
+
 	void Start() {
 		status = GetComponent<PlayerStatus>();
 		rb2D = GetComponent<Rigidbody2D>();
@@ -25,18 +27,18 @@ public class PlayerJump : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		if(!input.GetKey("jump") && (hasJumped || hasSecondJumped) && status.grounded && !holdJump) {
+		if(!jumpInput && (hasJumped || hasSecondJumped) && status.grounded && !holdJump) {
 			hasJumped = false;
 			hasSecondJumped = false;
 		}
 		//enable jump button when not holding button and on surface
-		if(!input.GetKey("jump") && holdJump) {
+		if(!jumpInput && holdJump) {
 			holdJump = false;
 		}
 
 		//jump down through platform when holding down and pressing jump
 		if(input.GetAxis("Y") < -0.3f && input.GetAxis("ysign") < 0f) {
-			if(input.GetKey("jump") && !holdJump && status.onPlatform) {
+			if(jumpInput && !holdJump && status.onPlatform) {
 				Debug.Log("JUMPDOWN");
 				jumpDown = true;
 				holdJump = true;
@@ -52,31 +54,35 @@ public class PlayerJump : MonoBehaviour {
 		}
 
 		//swim in water
-		else if(input.GetKey("jump") && status.inWater) {
+		else if(jumpInput && status.inWater) {
 			rb2D.velocity = rb2D.velocity.y < jumpSpeed / 2 ? new Vector2(rb2D.velocity.x, rb2D.velocity.y + (jumpSpeed / 20)) : rb2D.velocity;
 			holdJump = true;
 		}
 
 		//jump when on surface and pressing jump
-		else if(input.GetKey("jump") && !holdJump && status.grounded && !hasJumped) {
+		else if(jumpInput && !holdJump && status.grounded && !hasJumped) {
 			rb2D.velocity = new Vector2(rb2D.velocity.x, jumpSpeed);
 			hasJumped = true;
 			holdJump = true;
 		}
 		//jump in air when have secondjump and has not secondjumped.
-		else if(input.GetKey("jump") && secondJumpAcquired && !holdJump && !hasSecondJumped && !status.isSmall) {
+		else if(jumpInput && secondJumpAcquired && !holdJump && !hasSecondJumped && !status.isSmall) {
 			rb2D.velocity = new Vector2(rb2D.velocity.x, secondJumpSpeed);
 			hasSecondJumped = true;
 			holdJump = true;
 		}
 
 		//decrease vertical velocity if let go of jump early
-		else if(!input.GetKey("jump") && hasJumped && rb2D.velocity.y > jumpSpeed / 2f)
+		else if(!jumpInput && hasJumped && rb2D.velocity.y > jumpSpeed / 2f)
 			rb2D.velocity = new Vector2(rb2D.velocity.x, rb2D.velocity.y / 1.5f);
 			//Should probably change to adding a downwards force rather than setting it to a fraction. (Maybe doesn't make a difference.
 			
 		if(Physics2D.OverlapBox(ceilingCheck.position, new Vector2(0.5f, 0.3f), 0, whatIsCeiling) && rb2D.velocity.y > 0 && !status.isSmall) {
 			rb2D.velocity = new Vector2(rb2D.velocity.x, 0);
 		}
+	}
+
+	public void JumpInput(float value) {
+		jumpInput = value == 0 ? false : true;
 	}
 }

@@ -66,7 +66,7 @@ public class BirdBossMovement : MonoBehaviour {
 		switch(col.gameObject.layer) {
 			case 18:
                 wallDetectCooldown --;
-                Debug.Log(wallDetectCooldown);
+//                Debug.Log(wallDetectCooldown);
                 if(!towardsPlayer && wallDetectCooldown <= 0) {
                     Debug.Log(wallDetectCooldown);
                     ResetTarget();

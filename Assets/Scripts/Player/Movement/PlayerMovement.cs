@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour {
 
 	public bool smoothIncline;
 
+	Vector2 moveInput;
+
 	void Start() {
 		status = GetComponent<PlayerStatus>();
 		rb2D = GetComponent<Rigidbody2D>();
@@ -24,13 +26,23 @@ public class PlayerMovement : MonoBehaviour {
 		axisH = input.GetAxis("X");
 		steppingSpeed = moveSpeed - Mathf.Abs(rb2D.velocity.x);
 
-		if(axisH != 0) {
-			Vector2 p = new Vector2(axisH * moveSpeed - rb2D.velocity.x, 0);
+		if(moveInput.x != 0 && status.grounded) {
+			Vector2 p = new Vector2(moveInput.x * moveSpeed - rb2D.velocity.x, 0);
 			rb2D.AddForce(p, ForceMode2D.Impulse);
-			Debug.Log(p);
+			Debug.Log("moving " + p);
+		}
+		else if(moveInput.x != 0 && (Mathf.Abs(rb2D.velocity.x) < airSpeed || moveInput.x * rb2D.velocity.x < 0)) {
+			Vector2 p = new Vector2(moveInput.x * airSpeed - rb2D.velocity.x, 0);
+			rb2D.AddForce(p, ForceMode2D.Impulse);
+			Debug.Log("moving (air) " + p);
+		}
+		else if(Mathf.Abs(rb2D.velocity.x) > 0.5 && status.grounded) {
+			Vector2 p = new Vector2(-rb2D.velocity.x * 2, 0);
+			rb2D.AddForce(p, ForceMode2D.Impulse);
+			Debug.Log("stopping " + p);
 		}
 		else if(rb2D.velocity.x != 0 && status.grounded)
-			rb2D.AddForce(new Vector2(-rb2D.velocity.x * moveSpeed, 0));
+			rb2D.velocity = new Vector2(0, rb2D.velocity.y);
 
 		/*
 		if(axisH != 0 && !stunned) {
@@ -81,7 +93,11 @@ public class PlayerMovement : MonoBehaviour {
 		anim.SetBool("mirrored", status.isMirrored);
 
 	}
-	
+
+	public void MoveInput(Vector2 value) {
+		moveInput = value;
+	}
+
 	public void Stun(float duration) {
 		if(stunned)
 			return;

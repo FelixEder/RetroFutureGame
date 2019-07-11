@@ -29,7 +29,7 @@ public class TutorialManager : MonoBehaviour {
 				switch(currentTutorial) {
 
 					case "secondjump":
-						if(GameObject.Find("Player").GetComponent<PlayerJump>().hasSecondJumped)
+						if(GameObject.Find("Player").GetComponent<PlayerJump>().secondJumped)
 							HideTutorial(displayTime);
 						break;
 

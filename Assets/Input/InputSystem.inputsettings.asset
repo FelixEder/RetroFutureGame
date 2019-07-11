@@ -15,6 +15,7 @@ MonoBehaviour:
   m_SupportedDevices:
   - Gamepad
   - Keyboard
+  - Mouse
   m_UpdateMode: 0
   m_ActionUpdateMode: 0
   m_TimesliceEvents: 1

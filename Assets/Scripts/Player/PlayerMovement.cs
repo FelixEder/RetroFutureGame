@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		//Limit falling speed
 		if(rb2D.velocity.y < -15)
-            rb2D.velocity = new Vector2(rb2D.velocity.x, -15);
+			rb2D.velocity = new Vector2(rb2D.velocity.x, -15);
 	}
 	
 	//Animations

@@ -4,8 +4,12 @@ using UnityEngine;
 
 [RequireComponent(typeof(AudioPlayer))]
 public class EnemyHealth : MonoBehaviour {
-	public int health = 1;
-	public float invulnerabilityTime = 0.5f;
+    public int health = 1;
+    [Header("Can be hurt by damageType")]
+    public bool punch;
+	public bool mega, branch, rock;
+	[Space(10)]
+    public float invulnerabilityTime = 0.5f;
 	public Material deathMaterial;
 
 	bool invulnerable;

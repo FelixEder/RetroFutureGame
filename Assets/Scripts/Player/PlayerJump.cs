@@ -81,4 +81,8 @@ public class PlayerJump : MonoBehaviour {
 		//jumpInput = value == 0 ? false : true;
 		jumpInput = (int)value;
 	}
+
+    public void MoveInput(Vector2 value) {
+        moveInput = value;
+    }
 }

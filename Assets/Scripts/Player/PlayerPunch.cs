@@ -9,7 +9,7 @@ public class PlayerPunch : MonoBehaviour {
 	public LayerMask whatIsPunchable;
 
 	bool animationCooldown, holdPunch, onCooldown, branchInv, megaAcquired;
-	string attackType;
+	string damageType;
 	int damage, charge;
 	float gizmoSizeX = 1f;
 
@@ -18,7 +18,9 @@ public class PlayerPunch : MonoBehaviour {
 	PlayerStatus status;
 	InputManager input;
 
-	Collider2D[] victims;
+    bool punchInput;
+
+    Collider2D[] victims;
 	RaycastHit2D[] castVictims;
 
 	void OnDrawGizmosSelected() {
@@ -49,7 +51,7 @@ public class PlayerPunch : MonoBehaviour {
 		}
 		else if(input.GetKey("attack") && !holdPunch && !status.isSmall) {
 			holdPunch = true;
-			attackType = "Punch";
+			damageType = "Punch";
 			damage = 1;
 			if (!onCooldown) {
 				Debug.Log("Calling Regular Punch");
@@ -69,19 +71,19 @@ public class PlayerPunch : MonoBehaviour {
 			switch(holdingItem.GetComponent<PickUpableItem>().GetItemType()) {
 
 				case "Rock":
-					attackType = "Rock";
+					damageType = "Rock";
 					damage = holdingItem.GetComponent<PickUpableItem>().damage;
 					StartCoroutine(DamageArea(1.3f));
 					return;
 
 				case "Branch":
-					attackType = "Branch";
+					damageType = "Branch";
 					damage = holdingItem.GetComponent<PickUpableItem>().damage;
 					StartCoroutine(DamageArea(1.6f));
 					return;
 
 				default:
-					attackType = "ItemError";
+					damageType = "ItemError";
 					damage = 1;
 					StartCoroutine(DamageArea(1.3f));
 					return;
@@ -113,7 +115,7 @@ public class PlayerPunch : MonoBehaviour {
 		if(charge == maxLimit && megaAcquired) {
 			if(energy.UseEnergy(3)) {
 				Debug.Log("Full MegaPunch");
-				attackType = "FullMega";
+				damageType = "FullMega";
 				damage = 5;
 				StartCoroutine(DamageArea(2.5f));
 				return;
@@ -126,7 +128,7 @@ public class PlayerPunch : MonoBehaviour {
 		else if(charge >= minLimit && megaAcquired) {
 			if(energy.UseEnergy(1)) {
 				Debug.Log("Regular MegaPunch");
-				attackType = "Mega";
+				damageType = "Mega";
 				damage = 3;
 				StartCoroutine(DamageArea(2.2f));
 				return;
@@ -143,15 +145,16 @@ public class PlayerPunch : MonoBehaviour {
 	//OverlapBox check and damage all victims in area.
 	IEnumerator DamageArea(float sizeX) {
 		gizmoSizeX = sizeX;
-
-		if(status.isMirrored)
-			victims = Physics2D.OverlapBoxAll(transform.position + new Vector3(-sizeX / 2, offset), new Vector2(sizeX, 2f), 0, whatIsPunchable);
+        Vector3 distance;
+        if(status.isMirrored)
+            distance = new Vector3(-sizeX / 2, offset);
 		else
-			victims = Physics2D.OverlapBoxAll(transform.position + new Vector3(sizeX / 2, offset), new Vector2(sizeX, 2f), 0, whatIsPunchable);
+            distance = new Vector3(sizeX / 2, offset);
+		victims = Physics2D.OverlapBoxAll(transform.position + distance, new Vector2(sizeX, 2f), 0, whatIsPunchable);
 		
 		foreach(Collider2D victim in victims) {
 			var enemyHealth = victim.gameObject.GetComponent<EnemyHealth>();
-			if(attackType == "Branch" && !branchInv && victim.gameObject.tag != "Door") {
+			if(damageType == "Branch" && !branchInv && victim.gameObject.tag != "Door") {
 				if(inventory.GetHoldingItem().GetComponent<PickUpableItem>().Break() <= 0) {
 					inventory.SetHoldingItem(null);
 				}
@@ -162,12 +165,12 @@ public class PlayerPunch : MonoBehaviour {
 
 				case "Door":
 					victim.gameObject.GetComponent<Door>().SetInvisible();
-					attackType = "Door";
+					damageType = "Door";
 					break;
 
 				case "Barrier":
 					Debug.Log("BarrierType: " + victim.gameObject.GetComponent<Barrier>().GetBarrierType());
-					if(attackType == victim.gameObject.GetComponent<Barrier>().GetBarrierType())
+					if(damageType == victim.gameObject.GetComponent<Barrier>().GetBarrierType())
 						victim.gameObject.GetComponent<Barrier>().TakeDamage(damage);
 			//		attackType = "Barrier";
 					break;
@@ -189,7 +192,7 @@ public class PlayerPunch : MonoBehaviour {
 					if(shellMan.getDeShelled())
 						enemyHealth.TakeDamage(damage, gameObject, 4f);
 					else {
-						if(attackType == "Mega" || attackType == "FullMega") 
+						if(damageType == "Mega" || damageType == "FullMega") 
 							shellMan.BreakShield(gameObject);
 						else
 							enemyHealth.Knockback(gameObject, 4f);
@@ -197,9 +200,9 @@ public class PlayerPunch : MonoBehaviour {
 					break;
 
 				case "HardCritter":
-					if(attackType == "Rock")
+					if(damageType == "Rock")
 						enemyHealth.TakeDamage(damage, gameObject, 4f);
-					else if(attackType == "Mega" || attackType == "FullMega")
+					else if(damageType == "Mega" || damageType == "FullMega")
 						enemyHealth.TakeDamage(damage, gameObject, 4f);
 					else
 						enemyHealth.Knockback(gameObject, 4f);
@@ -210,7 +213,7 @@ public class PlayerPunch : MonoBehaviour {
 					break;
 
 				case "StatueBossEye":
-					if(attackType == "Branch") {
+					if(damageType == "Branch") {
 						if(inventory.IsHoldingItem()) {
 							enemyHealth.TakeDamage(damage);
 							inventory.GetHoldingItem().GetComponent<PickUpableItem>().Break(3);
@@ -220,40 +223,40 @@ public class PlayerPunch : MonoBehaviour {
 					break;
 
 				case "FinalBossWeakSpot":
-					if(attackType == "FullMega") {
+					if(damageType == "FullMega") {
 						Debug.Log("Full MegaPunched the boss!");
 						victim.gameObject.GetComponent<Phase1>().TakeDamage(damage);
 					}
-					else if(attackType == "Mega") {
+					else if(damageType == "Mega") {
 						Debug.Log("Regular MegaPunched the boss!");
 						victim.gameObject.GetComponent<Phase1>().TakeDamage(damage);
 					}
 					else {
-						Debug.Log("Invulnerable to AttackType [ " + attackType + " ]");
+						Debug.Log("Invulnerable to AttackType [ " + damageType + " ]");
 					}
 					break;
 
 				case "FinalBossArmor2":
 					if(victim.gameObject.GetComponent<Phase2>().blued) {
-						if(attackType == "FullMega") {
+						if(damageType == "FullMega") {
 							Debug.Log("Full MegaPunched the boss phase 2!");
 							victim.gameObject.GetComponent<Phase2>().TakeDamage(damage);
 						}
-						else if(attackType == "Mega") {
+						else if(damageType == "Mega") {
 							Debug.Log("Regular MegaPunched the boss phase 2!");
 							victim.gameObject.GetComponent<Phase2>().TakeDamage(damage);
 						}
 						else {
-							Debug.Log("Invulnerable to AttackType [ " + attackType + " ]");
+							Debug.Log("Invulnerable to AttackType [ " + damageType + " ]");
 						}
 					}
 					break;
 			}
-			Debug.Log("Punched [ " + victim + " ] - tag [ " + victim.gameObject.tag + " ] - attackType [ " + attackType + " ] - damage [ " + damage + " ]");
+			Debug.Log("Punched [ " + victim + " ] - tag [ " + victim.gameObject.tag + " ] - attackType [ " + damageType + " ] - damage [ " + damage + " ]");
 		}
 
 		punchVisual.transform.localPosition = new Vector3(sizeX / 2, offset);
-		punchVisual.GetComponent<Animator>().SetTrigger(attackType);
+		punchVisual.GetComponent<Animator>().SetTrigger(damageType);
 
 	//	if(!(attackType == "Door" || attackType == "Barrier"))
 			GetComponent<AudioPlayer>().PlayClip(6, 1, 0.7f, 1.3f);

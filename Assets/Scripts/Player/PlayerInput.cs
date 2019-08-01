@@ -26,8 +26,8 @@ public class PlayerInput : MonoBehaviour, Controls.IPlayerActions {
 	}
 
 	public void OnAim(InputAction.CallbackContext context) {
-		gameObject.SendMessage("AimInput", context.ReadValue<Vector2>());
-		Debug.Log("Input: " + context.action + "\nValue: " + context.ReadValue<Vector2>());
+		//gameObject.SendMessage("AimInput", context.ReadValue<Vector2>());
+		//Debug.Log("Input: " + context.action + "\nValue: " + context.ReadValue<Vector2>());
 	}
 
 	public void OnJump(InputAction.CallbackContext context) {

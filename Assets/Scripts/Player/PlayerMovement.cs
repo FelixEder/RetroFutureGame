@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour {
 	Rigidbody2D rb2D;
 	InputManager input;
 	Animator anim;
-	public float moveSpeed, airSpeed, maxMoveSpeed;
+	public float moveSpeed, airSpeed, maxMoveSpeed, dampingAmount;
 	float axisH, steppingSpeed;
 	bool stunned;
 
@@ -34,12 +34,12 @@ public class PlayerMovement : MonoBehaviour {
 			Vector2 force = new Vector2(moveInput.x * airSpeed - rb2D.velocity.x, 0);
 			rb2D.AddForce(force, ForceMode2D.Impulse);
 		}
-		else if(Mathf.Abs(rb2D.velocity.x) > 0.5 && status.grounded) {
-			Vector2 force = new Vector2(-rb2D.velocity.x * 2, 0);
+		if(status.grounded) {
+			Vector2 force = new Vector2(-dampingAmount * rb2D.velocity.x, 0);
 			rb2D.AddForce(force, ForceMode2D.Impulse);
 		}
-		else if(rb2D.velocity.x != 0 && status.grounded)
-			rb2D.velocity = new Vector2(0, rb2D.velocity.y);
+		/* else if(rb2D.velocity.x != 0 && status.grounded)
+			rb2D.velocity = new Vector2(0, rb2D.velocity.y); */
 
 		/*
 		if(axisH != 0 && !stunned) {
